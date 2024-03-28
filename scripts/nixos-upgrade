@@ -1,0 +1,49 @@
+#!/bin/sh
+set -euo pipefail
+
+nixcfg=~/Projects/nixcfg
+
+cd "$nixcfg"
+tmpdir="$(mktemp -d)"
+outdir="$tmpdir/out"
+trap "git rm -f --ignore-unmatch flake.lock" EXIT
+ln -s ./hosts/$(hostname)/flake.lock .
+git add flake.lock
+nix flake update
+nom build -o "$outdir" ".#nixosConfigurations.$(hostname).config.system.build.toplevel"
+nvd diff /run/current-system "$outdir"
+
+if [ "$#" -gt 0 ] && [ "$1" = "-y" ]; then
+    echo 'Skipping prompt'
+else
+    echo
+    while true; do
+        read -p 'Do you want to process with upgrade [Y/n]' yn
+        case "$yn" in
+            [Yy]* ) 
+                break
+                ;;
+            [Nn]* ) 
+                exit 1
+                ;;
+            "")
+                break
+                ;;
+            * )
+                ;;
+        esac
+    done
+fi
+
+echo Upgrading...
+
+# Do system upgrade
+sudo rsync -rl --delete --exclude=".*" . /etc/nixos
+sudo ln -s "/etc/nixos/hosts/$(hostname)/hardware-configuration.nix" /etc/nixos/hardware-configuration.nix
+sudo nixos-rebuild switch
+
+if [ $(git status --porcelain ./hosts/$(hostname)/flake.lock | wc -l) -gt 0 ]; then
+    git rm -f flake.lock
+    git add ./hosts/$(hostname)/flake.lock
+    git commit -m "System upgrade $(hostname)"
+fi
