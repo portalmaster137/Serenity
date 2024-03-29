@@ -1,3 +1,5 @@
+{ inputs, outputs, config, pkgs, lib, ... }:
+
 {
   imports =
     [
@@ -51,7 +53,7 @@
   	gc = {
   	  automatic = true;
   	  dates = "daily";
-  	  options = "--delete-older-than 2d"
+  	  options = "--delete-older-than 2d";
   	  persistent = true;
   	};
   };
@@ -79,7 +81,7 @@
           # "$FOLDER_ID" = {
             # path = "/home/serenity/Documents/Notes";
             # devices = [ "hecate" "hades" ];
-          };
+          # };
 
         };
       };

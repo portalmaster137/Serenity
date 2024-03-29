@@ -5,6 +5,7 @@
     # ./packages
     # ./packages.nix
     ./users.nix
+    # <home-manager/nixos>
   ];
 
   nixpkgs.config = {
@@ -141,6 +142,7 @@
     # nix-output-monitor
     # nixpkgs-review
     appimage-run
+    # home-manager
     # nix-index
     # nix-tree
     # nix-init   

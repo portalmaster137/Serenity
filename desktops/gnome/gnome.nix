@@ -1,8 +1,9 @@
-{ config, pkgs, lib, osConfig, ... }:
+{ inputs, outputs, config, pkgs, lib, osConfig, ... }:
 
 {
  
   imports = [
+  # <home-manager/nixos>
   ];
 
   services = {
@@ -13,8 +14,8 @@
     };
     
     gnome = {
-      gnome-keying.enable = true;
-      gnome-online-accounts.enable = false;
+      # gnome-keying.enable = true;
+      # gnome-online-accounts.enable = false;
     };
 
     udev.packages = with pkgs; [
@@ -27,8 +28,8 @@
   };
 
   programs = {
-    home-manager.enable = true;
-  	dconf.enable = true;
+    # home-manager.enable = true;
+    dconf.enable = true;
   };
 
   environment = { 
