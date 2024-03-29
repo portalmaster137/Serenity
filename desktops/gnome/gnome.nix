@@ -38,7 +38,6 @@
   	  fragments
   	  gnome-photos
   	  gnome-secrets
-  	  gnome-decoder
   	  authenticator
   	  gnome-extension-manager
   	] ++ (with pkgs.gnome; with pkgs.gnomeExtensions; [
