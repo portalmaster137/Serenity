@@ -1,5 +1,5 @@
 let
-  gnomeProfile = import ../../profiles/gnome.nix;
+  gnomeProfile = import ../../desktops/gnome/profiles/gnome-profile.nix;
 in
 {
   imports = [

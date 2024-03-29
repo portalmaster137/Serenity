@@ -11,7 +11,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     # Packages
     # apoth-admin.url = "git+https://codeberg.org/Apothecary/apoth-admin.git";
-    #apoth-admin.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # apoth-admin.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   outputs =
