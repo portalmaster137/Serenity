@@ -59,7 +59,7 @@
   	  quick-settings-tweaker
   	  rounded-window-corners
   	]) ++ (with pkgs.unstable; [
-  	  mission.center
+  	  mission-center
   	  fractal
   	]);
   	# ]) ++ (import ./pkg-scripts pkgs);

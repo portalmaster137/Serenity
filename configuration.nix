@@ -263,8 +263,8 @@
 
   # Disable these cuz they cause problems. see: https://github.com/NixOS/nixpkgs/issues/180175
   systemd.services = {
-  	NetworkManager-wait-online.enable = lib.mkforce false;
-  	systemd-networkd-wait-online.enable = lib.mkforce false;
+  	NetworkManager-wait-online.enable = lib.mkForce false;
+  	systemd-networkd-wait-online.enable = lib.mkForce false;
   };
 
   # This value determines the NixOS release from which the default
