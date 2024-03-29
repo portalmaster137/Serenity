@@ -80,9 +80,9 @@
   	wireless.enable = false;
   	networkmanager = {
   	  enable = true;
-  	  insertNameServers = [
+  	  # insertNameServers = [
   	  	# "10.7.0.1"
-  	  ];
+  	  # ];
   	};
   	proxy = {
   	  # default = "https://user:password@proxy:port/";
