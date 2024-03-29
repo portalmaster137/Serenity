@@ -1,5 +1,10 @@
 { pkgs, lib, osConfig, ... }:
 {
+
+  imports = [
+    ./users.nix
+  ];
+
   programs.home-manager.enable = true;
 
   # Copy some files to where they go

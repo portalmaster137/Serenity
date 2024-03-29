@@ -4,7 +4,7 @@
   imports = [
     # ./packages
     # ./packages.nix
-    ./users.nix
+    # ./users.nix
     # <home-manager/nixos>
   ];
 
