@@ -8,6 +8,8 @@
   users = {
   	users.serenity = {
   	  description = "Serenity";
+  	  home = "/home/serenity";
+  	  createHome = true;
   	  initialPassword = "amogus";
   	  isNormalUser = true;
   	  extraGroups = [
