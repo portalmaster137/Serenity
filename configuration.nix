@@ -148,7 +148,7 @@
     # nix-init   
  # essentials
     # firefox
-    lagrange
+    # lagrange
     tor-browser-bundle-bin
  # misc/Fonts
     font-manager
