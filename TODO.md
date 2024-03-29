@@ -9,3 +9,5 @@
  - [ ] set up syncthing
  - [ ] prepare hades for nixos
  - [ ] uhhh, so much
+ - [x] get flake to actually build
+ - [ ] get `/home/serenity/` to show up (._.') (>-<;)
