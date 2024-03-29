@@ -69,31 +69,31 @@
     "org/gtk/gtk4/settings/file-chooser" = {
       sort-directories-first = true;
     };
-    "org/gnome/desktop/background" = {
-      picture-uri = "file:///home/sasha/.local/share/backgrounds/wallpaper.jpg";
-      picture-uri-dark = "file:///home/sasha/.local/share/backgrounds/wallpaper.jpg";
-      color-shading-type = "solid";
-      picture-options = "zoom";
-      primary-color = "#000000000000";
-      secondary-color = "#000000000000";
-    };
-    "org/gnome/desktop/screensaver" = {
-      picture-uri = "file:///home/sasha/.local/share/backgrounds/wallpaper.jpg";
-      color-shading-type = "solid";
-      picture-options = "zoom";
-      primary-color = "#000000000000";
-      secondary-color = "#000000000000";
-    };
+    # "org/gnome/desktop/background" = {
+      # picture-uri = "file:///home/sasha/.local/share/backgrounds/wallpaper.jpg";
+      # picture-uri-dark = "file:///home/sasha/.local/share/backgrounds/wallpaper.jpg";
+      # color-shading-type = "solid";
+      # picture-options = "zoom";
+      # primary-color = "#000000000000";
+      # secondary-color = "#000000000000";
+    # };
+    # "org/gnome/desktop/screensaver" = {
+      # picture-uri = "file:///home/sasha/.local/share/backgrounds/wallpaper.jpg";
+      # color-shading-type = "solid";
+      # picture-options = "zoom";
+      # primary-color = "#000000000000";
+      # secondary-color = "#000000000000";
+    # };
     # Pano settings
-    "org/gnome/shell/extensions/pano" = {
-      open-links-in-browser = false;
-      paste-on-select = false;
-    };
-    "org/gnome/shell/extensions/pano/text-item" = {
-      header-bg-color = "rgb(97,53,131)";
-      body-bg-color = "rgb(36,31,49)";
-      body-color = "rgb(255,255,255)";
-    };
+    # "org/gnome/shell/extensions/pano" = {
+      # open-links-in-browser = false;
+      # paste-on-select = false;
+    # };
+    # "org/gnome/shell/extensions/pano/text-item" = {
+      # header-bg-color = "rgb(97,53,131)";
+      # body-bg-color = "rgb(36,31,49)";
+      # body-color = "rgb(255,255,255)";
+    # };
   };
   
   # don't uh, change this or something might break lol idk

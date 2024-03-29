@@ -1,13 +1,13 @@
 {
   extensions = rec {
     base = [
-      "espresso@coadmunkee.github.com"
+      # "espresso@coadmunkee.github.com"
       "gsconnect@andyholmes.github.io"
       "rounded-window-corners@yilozt"
       "caffeine@patapon.info"
-      "appindicatorsupport@rgcjonas.gmail.com"
-      "aztaskbar@aztaskbar.gitlab.com"
-      "pano@elhan.io"
+      # "appindicatorsupport@rgcjonas.gmail.com"
+      # "aztaskbar@aztaskbar.gitlab.com"
+      # "pano@elhan.io"
     ];
     desktop = base ++ [
       "Current_screen_only_for_Alternate_Tab@bourcereau.fr"
@@ -17,7 +17,6 @@
   };
   pinnedApps = rec {
     base = [
-      "firefox.desktop"
     ];
     base-end = [
     ];

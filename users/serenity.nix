@@ -2,7 +2,7 @@
 
 {
   imports = [
-  	../desktops/gnome.nix
+  	../desktops/gnome/gnome.nix
   ]
 
   users = {
