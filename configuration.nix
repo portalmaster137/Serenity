@@ -5,7 +5,7 @@
     # ./packages
     # ./packages.nix
     # ./users.nix
-    ./desktops/gnome
+    ./desktops/gnome/gnome.nix
     # <home-manager/nixos>
   ];
 
