@@ -23,8 +23,8 @@
     ];
   };
 
-  qt = {
-    style = "adwaita-dark";
+  # qt = {
+    # style = "adwaita-dark";
   };
 
   programs = {
