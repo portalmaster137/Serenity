@@ -19,7 +19,7 @@
     , nixpkgs-unstable
     , home-manager
     , nixos-hardware
-    , apoth-admin
+    # , apoth-admin
     , ...
     }:
     let
