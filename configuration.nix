@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
-
 {
+
   imports = [
     # ./packages
     # ./packages.nix
@@ -25,6 +25,7 @@
         "nix-command"
         "flakes"
       ];
+    };
   # cleanup packages older than 3 days from nix store
     gc = {
       # automatic = true;
@@ -32,34 +33,32 @@
       # options = "--delete-older-than 5d";
       # persistent = true;
     };
-    
   };
-
   # Bootloader.
   boot = {
-  	loader = {
-  	  systemd-boot.enable = true;
-  	  systemd-boot.configurationLimit = 5;
-  	  efi.canTouchEfiVariables = true;
-  	};
-  	# plymouth.enable = true;
-  	initrd = {
-  	  systemd.enable = true;
-  	  secrets = {
-  	  	"/crypto_keyfile.bin" = null;
-  	  };
-  	 #  kernelParams = [
-  	  	# "quiet"
-  	  # ];
-  	  # kernel.sysctl = {
-  	  	# "kernel.sysrq" = 1;
-  	  # };
-  	  luks = {
-  	  	# devices."luks-uuid" = {
-  	  		# device = "/dev/disk/by-uuid/luks-uuid";
-  	  	# };
-  	  };
-  	};
+    loader = {
+      systemd-boot.enable = true;
+      systemd-boot.configurationLimit = 5;
+      efi.canTouchEfiVariables = true;
+    };
+    # plymouth.enable = true;
+    initrd = {
+      systemd.enable = true;
+      secrets = {
+        "/crypto_keyfile.bin" = null;
+      };
+      # kernelParams = [
+  	# "quiet"
+      # ];
+      # kernel.sysctl = {
+        # "kernel.sysrq" = 1;
+      # };
+      luks = {
+        # devices."luks-uuid" = {
+  	  # device = "/dev/disk/by-uuid/luks-uuid";
+        # };
+      };
+    };
   };
 
   # Run appimages normally
@@ -102,11 +101,11 @@
       # ];
       # checkReversePath = "loose";
       # interfaces."tun0".allowedTCPPorts = [ 28996 ];
-    # };
+    };
   };
 
   # Set your time zone.
-  time.timeZone = "Australia/Brisbane"
+  time.timeZone = "Australia/Brisbane";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
@@ -272,4 +271,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
+  
 }
