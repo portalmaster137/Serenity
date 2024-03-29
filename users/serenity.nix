@@ -3,7 +3,7 @@
 {
   imports = [
   	../desktops/gnome/gnome.nix
-  ]
+  ];
 
   users = {
   	users.serenity = {
