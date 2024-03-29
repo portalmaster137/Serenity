@@ -23,22 +23,23 @@
   	};
   };
 
-  home-manager = {
+  # home-manager = {
   	# extraSpecialArgs = { inherit inputs outputs; };
-  	users = {
+  	# users = {
   	  # Import your& home-manager configs
-  	  serenity = { pkgs, ... }:
+  	  # serenity = { pkgs, ... }:
   	  
-  	  {
+  	  # {
   	    # import ../../home-manager/home.nix;
-  	    home = { 
-  	      packages = with pkgs; [
+  	    # home = { 
+  	      # packages = with pkgs; [
   	        # micro
-  	      ];
-          stateVersion = "23.11";
-		};
-	  };
-	};
-  };
-		 
+  	      # ];
+          # stateVersion = "23.11";
+		# };
+	  # };
+	# };
+  # };
+
+  home.stateVersion = 23.11;		 
 }
