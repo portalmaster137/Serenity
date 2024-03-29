@@ -13,17 +13,26 @@
   # Enable swap on luks
   boot = {
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot = {
+        enable = true;
+	configurationLimit = 5;
+      };
       efi = {
         canTouchEfiVariables = true;
         # efiSysMountPoint = "/boot/efi";
       };
     };
     initrd = {
-      # luks.devices."luks-c2b8b1cb-6d01-4e7c-a659-1fcf01618c41" = {
-        # device = "/dev/disk/by-uuid/c2b8b1cb-6d01-4e7c-a659-1fcf01618c41";
+      systemd.enable = true;
+      secrets = {
+	# "crypto_keyfile.bin" = null;
+      };
+      luks = {
+	# devices."luks-DISK_UUID" = {
+          # device = "/dev/disk/by-uuid/DISK_UUID";
         # keyfile = "/crypto_keyfile.bin";
-      # };
+	# };
+      };
     };
   };
 

@@ -28,7 +28,6 @@
         "flakes"
       ];
     };
-  # cleanup packages older than 3 days from nix store
     gc = {
       # automatic = true;
       # dates = "weekly";
@@ -37,18 +36,18 @@
     };
   };
   # Bootloader.
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 5;
-      efi.canTouchEfiVariables = true;
-    };
+  # boot = {
+    # loader = {
+      # systemd-boot.enable = true;
+      # systemd-boot.configurationLimit = 5;
+      # efi.canTouchEfiVariables = true;
+    # };
     # plymouth.enable = true;
     initrd = {
-      systemd.enable = true;
-      secrets = {
-        "/crypto_keyfile.bin" = null;
-      };
+      # systemd.enable = true;
+      # secrets = {
+        # "/crypto_keyfile.bin" = null;
+      # };
       # kernelParams = [
   	# "quiet"
       # ];
