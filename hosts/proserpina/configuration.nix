@@ -16,14 +16,14 @@
       systemd-boot.enable = true;
       efi = {
         canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot/efi";
+        # efiSysMountPoint = "/boot/efi";
       };
     };
     initrd = {
-      luks.devices."luks-c2b8b1cb-6d01-4e7c-a659-1fcf01618c41" = {
-        device = "/dev/disk/by-uuid/c2b8b1cb-6d01-4e7c-a659-1fcf01618c41";
+      # luks.devices."luks-c2b8b1cb-6d01-4e7c-a659-1fcf01618c41" = {
+        # device = "/dev/disk/by-uuid/c2b8b1cb-6d01-4e7c-a659-1fcf01618c41";
         # keyfile = "/crypto_keyfile.bin";
-      };
+      # };
     };
   };
 
