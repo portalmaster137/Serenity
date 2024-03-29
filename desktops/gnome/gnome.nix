@@ -25,7 +25,7 @@
 
   # qt = {
     # style = "adwaita-dark";
-  };
+  # };
 
   programs = {
     # home-manager.enable = true;
