@@ -4,8 +4,8 @@
   imports = [
     # ./packages
     # ./packages.nix
-    ./users.nix
-    ./desktops/gnome/gnome.nix
+    # ./users.nix
+    # ./desktops/gnome/gnome.nix
     # <home-manager/nixos>
   ];
 
@@ -136,42 +136,42 @@
   };
 
   environment.systemPackages = with pkgs; [
+  
  # file system support
     ntfs3g
     xfsprogs
+    
  # nixos specific
-    # nix-output-monitor
-    # nixpkgs-review
     appimage-run
     # home-manager
+    # nix-output-monitor
+    # nixpkgs-review
     # nix-index
     # nix-tree
-    # nix-init   
- # essentials
+    # nix-init  
+     
+ # web browsers
     # firefox
     # lagrange
     tor-browser-bundle-bin
+    
  # misc/Fonts
-    font-manager
     (unstable.nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })
+    
  # cli
     file
     zip
     unzip
+    gnupg
+    micro
+    hyfetch
     busybox
     killall
     usbutils
     pciutils
     moreutils
-    
     libsecret
     git-crypt
-    gnupg
-
-    micro
-    ffmpeg
-    ventoy
-    hyfetch
     
  # languages
 
@@ -197,6 +197,7 @@
     # cargo-cross
     # cargo-bloat
     # cargo-msrv    
+    
   ];
 
   # Qt dark mode
@@ -205,6 +206,10 @@
   # More programs I want
   programs = {
     # home-manager.enable = true;
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
     traceroute.enable = true;
     corectrl.enable = true;
     firefox.enable = true;
@@ -258,7 +263,6 @@
   # Set up hardware acceleration
   # https://nixos.wiki/wiki/Accelerated_Video_Playback
   hardware = {
-    # MOVED
   };
 
   # Disable these cuz they cause problems. see: https://github.com/NixOS/nixpkgs/issues/180175
