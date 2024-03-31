@@ -29,11 +29,12 @@
   };
 
   outputs = { 
+    self,
     nixpkgs,
     nixpkgs-unstable,
-    home-manager,
-    hyprland,
     nixos-hardware,
+    home-manager,
+    hyprland,,
     ... }:
     let
       system = "x86_64-linux";
@@ -49,7 +50,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           # ASK AKESI ABOUT EASIER WAY TO LOAD ALL USERS MAYBE?
-          home-manager.users.serenity = toplevel;
+          # home-manager.users.serenity = toplevel;
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix
         }
@@ -64,6 +65,7 @@
       nixosConfigurations = {
         proserpina = nixpkgs.lib.nixosSystem {
           inherit system;
+          specialArgs = { inherit hyprland; };
           modules = [
             ./hosts/proserpina/configuration.nix # Load muir main nix config
             # nixos-hardware.nixosModules.$MODEL

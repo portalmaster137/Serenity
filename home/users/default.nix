@@ -1,6 +1,8 @@
+{ config, lib, pkgs, osConfig, ...}
+
 {
 
-  import = [
+  imports = [
 	./serenity.nix
   ];
 
