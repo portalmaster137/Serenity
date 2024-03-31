@@ -43,7 +43,6 @@
   # Configure muir programs
 
   programs = {
-  	gpg.enable = true;
   	direnv = {
   		enable = true;
   		nix-direnv.enable = true;

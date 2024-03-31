@@ -206,10 +206,10 @@
   # More programs I want
   programs = {
     # home-manager.enable = true;
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
+    # hyprland = {
+      # enable = true;
+      # xwayland.enable = true;
+    # };
     traceroute.enable = true;
     corectrl.enable = true;
     firefox.enable = true;
@@ -219,7 +219,6 @@
       enable = true;
       enableSSHSupport = false;
     };
-    
     fish = {
       enable = true;
       # import programs/fish.nix pkgs;
