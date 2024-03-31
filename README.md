@@ -1,2 +1,5 @@
-Wei grabbed most of this from the ever lovely Sashanoraa,<br>
-[have a look at zir project to see what wei missed](https://git.sr.ht/~zethra/nixcfg)
+uh so, yeah, wei dunno, wei couldn't even fiure out how to make flakes and home manager and w/e else work with GNOME,
+so instead wei are jumping into a tiling WM because that will definitely be "easier" ... right ? ... ? 
+
+
+[Hyprland](https://hyprland.org/)
