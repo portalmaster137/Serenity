@@ -2,11 +2,8 @@
 {
 
   imports = [
-    # ./packages
-    # ./packages.nix
-    # ./users.nix
-    # ./desktops/gnome/gnome.nix
-    # <home-manager/nixos>
+    ./home
+    ./modules
   ];
 
   nixpkgs.config = {
@@ -151,20 +148,23 @@
     # nix-init  
      
  # web browsers
-    # firefox
+    firefox
     # lagrange
     tor-browser-bundle-bin
     
  # misc/Fonts
     (unstable.nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })
+
+ # terminal stuff
+	kitty
+	micro
+	hyfetch
     
- # cli
+ # cli utilities
     file
     zip
     unzip
     gnupg
-    micro
-    hyfetch
     busybox
     killall
     usbutils

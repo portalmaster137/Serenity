@@ -2,8 +2,9 @@
 {
 
   imports = [
-    # ./users.nix
-    ./modules/hyprland.nix
+    ./users
+    ./desktop
+    
   ];
 
   programs.home-manager.enable = true;
@@ -16,15 +17,25 @@
 
  # Installing muir packages uvu
   home.packages = with pkgs; [
+
  # - Multimedia
-    gimp
     spotify
+    # nicotine-plus
     # jellyfin-media-player
+    # gimp
+    # krita
+    # inkscape
+    # obs
+    # ardour
+    
  #  - Web & Chat
+    # fractal
     schildichat-desktop
+    
  #  - Coding
     # vscodium
     # gitui
+    
   ];
 
 

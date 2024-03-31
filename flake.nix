@@ -2,26 +2,39 @@
   description = "Serenity's NixOS configuration";
 
   inputs = {
-    # Nixpkgs and home mananger
+  
+    # Nixpkgs and hardware specific configs
     nixpkgs.url = "nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    # Hardware specific configuration stuff
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    # Packages
-    # apoth-admin.url = "git+https://codeberg.org/Apothecary/apoth-admin.git";
-    # apoth-admin.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
+	# nixos user repository ? :o
+	nur.url "git:nix-community/NUR";
+
+	# nix gaming ?
+	nix-gaming.url = "github:fufexan/nix-gaming";
+	
+    # declarative dots
+    home-manager = {
+      url = "github:nix-community/home-manager/release-23.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+	};
+
+    # window manager (ricer friendly)
+    hyprland = { 
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+      
   };
 
-  outputs =
-    { nixpkgs
-    , nixpkgs-unstable
-    , home-manager
-    , nixos-hardware
-    # , apoth-admin
-    , ...
-    }:
+  outputs = { 
+    nixpkgs,
+    nixpkgs-unstable,
+    home-manager,
+    hyprland,
+    nixos-hardware,
+    ... }:
     let
       system = "x86_64-linux";
       overlay-unstable = final: prev: {
@@ -54,7 +67,7 @@
           modules = [
             ./hosts/proserpina/configuration.nix # Load muir main nix config
             # nixos-hardware.nixosModules.$MODEL
-          ] ++ home-manager-config (import ./hosts/proserpina/home.nix) ++ common-modules;
+          ] ++ home-manager-config (import ./home/home.nix) ++ common-modules;
         };
       };
     };

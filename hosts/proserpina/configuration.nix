@@ -77,7 +77,7 @@
   services = {
 
     syncthing = {
-      enable = true;
+      enable = false;
       dataDir = "/home/serenity/";
       configDir = "/home/serenity/.config/syncthing";
       user = "serenity";

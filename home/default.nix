@@ -1,0 +1,7 @@
+{
+
+  import = [
+  	./home.nix
+  ];
+	
+}
