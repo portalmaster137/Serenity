@@ -11,6 +11,9 @@
 	# nixos user repository ? :o
 	nur.url "git:nix-community/NUR";
 
+	# alejandra ?? think its a code formatter
+	# alejandra.url = "github:kamadorueda/alejandra/3.0.0";
+
 	# nix gaming ?
 	# nix-gaming.url = "github:fufexan/nix-gaming";
 	
@@ -19,12 +22,14 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
 	};
-
+	
     # window manager (ricer friendly)
     hyprland = { 
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprpicker.url = "github:hyprwm/hyprpicker";
+    # hypr-contrib.url = "github:hyprwm/contrib";
       
   };
 
@@ -49,7 +54,6 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          # ASK AKESI ABOUT EASIER WAY TO LOAD ALL USERS MAYBE?
           # home-manager.users.serenity = toplevel;
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix
