@@ -132,6 +132,15 @@
     # media-session.enable = true;
   };
 
+  environment.variables = {
+  	NIXOS_OZONE_WL = "1";
+    NIXPKGS_ALLOW_UNFREE = "1";
+  	PATH = [
+  	  "\${HOME}/.local/bin"
+      "\${HOME}/.config/rofi/scripts"
+  	];
+  };
+
   environment.systemPackages = with pkgs; [
   
  # file system support
