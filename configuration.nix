@@ -26,13 +26,13 @@
         "flakes"
       ];
     };
-    gc = {
-      # automatic = true;
-      # dates = "weekly";
-      # options = "--delete-older-than 5d";
-      # persistent = true;
-    };
   };
+
+  system.autoUpgrade = {
+  	enable = true;
+  	channel = "https://nixos.org/channels/nixos-23.11";
+  };
+  
   # Bootloader.
   boot = {
     # loader = {
