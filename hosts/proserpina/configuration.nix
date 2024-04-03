@@ -6,7 +6,7 @@
     "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
     ./disko-config.nix
     ./hardware-configuration.nix
-    ../../configuration.nix
+    ../../modules
   ];
 
   # Enable swap on luks

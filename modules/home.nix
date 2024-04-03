@@ -4,7 +4,7 @@
 
   imports = [
     # ./users
-    ./dots
+    ./home
   ];
 
   programs.home-manager.enable = true;

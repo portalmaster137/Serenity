@@ -1,9 +1,8 @@
 {
 
-  imports = [
-  	./services
-  	./packages
-  	./network
+  import = [
+    ./core
+  	./home.nix
   ];
 	
 }
