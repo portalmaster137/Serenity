@@ -1,21 +1,20 @@
 { inputs, outputs, config, pkgs, lib, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
-      # /disko-config.nix
-      ./hardware-configuration.nix
-      ../../configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
+    ./disko-config.nix
+    ./hardware-configuration.nix
+    ../../configuration.nix
+  ];
 
   # Enable swap on luks
   boot = {
     loader = {
       systemd-boot = {
         enable = true;
-	configurationLimit = 5;
+	    configurationLimit = 5;
       };
       efi = {
         canTouchEfiVariables = true;
@@ -75,7 +74,7 @@
   };
 
   services = {
-
+  
     syncthing = {
       enable = false;
       dataDir = "/home/serenity/";

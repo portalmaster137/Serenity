@@ -12,7 +12,7 @@
 	nur.url "git:nix-community/NUR";
 
 	# nix gaming ?
-	nix-gaming.url = "github:fufexan/nix-gaming";
+	# nix-gaming.url = "github:fufexan/nix-gaming";
 	
     # declarative dots
     home-manager = {

@@ -3,9 +3,8 @@
 {
 
   imports = [
-    ./users
-    ./desktop
-    
+    # ./users
+    ./dots
   ];
 
   programs.home-manager.enable = true;
