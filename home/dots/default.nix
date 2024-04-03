@@ -1,17 +1,20 @@
 {
 
   imports = [
-  	./hyprland
-  	# ./dunst
-  	# ./fish
+  
   	./git
-  	./hyprland
+  	./fish
+  	./micro
   	./kitty
-  	# ./micro
-  	# ./rofi
-  	# ./starship
-	# ./stylix
+  	./direnv
+  	./starship
+
+  	./rofi
+  	./dunst
   	./waybar
+	./stylix
+  	./hyprland
+  	
   ];
   
 }
