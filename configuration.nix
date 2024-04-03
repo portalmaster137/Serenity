@@ -109,7 +109,7 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
 
-  # Enable X11 & GNOME
+  # Enable X11
   services.xserver = {
   	enable = true;
   	# displayManager.gdm.enable = true;
@@ -181,32 +181,7 @@
     moreutils
     libsecret
     git-crypt
-    
- # languages
-
- #  - python
-    # python313
-
- #  - javascript/typescript
-
- #  - dart/flutter
-
- #  - golang
-
- # - c/++/#
-
- #  - rust
-    # rustc
-    # rustup
-    # cargo-edit
-    # cargo-outdated
-    # cargo-update
-    # cargo-auditable
-    # cargo-audit
-    # cargo-cross
-    # cargo-bloat
-    # cargo-msrv    
-    
+  
   ];
 
   # Qt dark mode
