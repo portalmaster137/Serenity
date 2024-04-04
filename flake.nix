@@ -28,8 +28,9 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
     hyprpicker.url = "github:hyprwm/hyprpicker";
-   #  hypr-contrib.url = "github:hyprwm/contrib";
+    # hypr-contrib.url = "github:hyprwm/contrib";
       
   };
 
@@ -39,7 +40,7 @@
     nixpkgs-unstable,
     nixos-hardware,
     home-manager,
-    hyprland,,
+    hyprland,
     ... }:
     let
       system = "x86_64-linux";
