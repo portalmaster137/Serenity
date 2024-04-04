@@ -12,7 +12,7 @@ in
   home-manager = {
   	userUserPackages = true;
   	userGlobalPackages = true;
-  	extraSpecialArgs = { inherit inputs; };
+  	# extraSpecialArgs = { inherit inputs; };
   	users.serenity = {
   	  imports = [ (import ./../home) ];
   	  home.username = "serenity";
