@@ -24,7 +24,7 @@
   	xkb.layout = "us"; # these 2 lolwut #
   	displayManager.autoLogin = {
   	  enable = true;
-  	  user = "${USERNAME}";
+  	  user = "serenity";
   	};
   	libinput = {
   	  enable = true;
