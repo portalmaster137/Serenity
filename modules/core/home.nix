@@ -2,12 +2,12 @@
 
 {
   imports = [
-    # inputs.home-manager.nixosModules.home-manager
+    inputs.home-manager.nixosModules.home-manager
   ];
   home-manager = {
   	userUserPackages = true;
   	userGlobalPackages = true;
-  	# extraSpecialArgs = { inherit inputs; };
+  	extraSpecialArgs = { inherit inputs; };
   	users.serenity = {
   	  imports = [ (import ./../home) ];
   	  home.username = "serenity";
