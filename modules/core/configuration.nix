@@ -2,73 +2,7 @@
 {
 
   imports = [
-    ./home
-    ./modules
   ];
-
- #  nixpkgs.config = {
-    # allowUnfree = true;
-    # permittedInsecurePackages = [
-      # "schildichat-web-1.11.30-sc.2"
-      # "electron-25.9.0"
-      # "nix-2.15.3"
-    # ];
-  # };
-
-  # nix options
-  # nix = {
-    # settings = {
-      # cores = 0;
-      # auto-optimise-store = true;
-      # allowed-users = [ "@wheel" ];
-      # experimental-features = [
-        # "nix-command"
-        # "flakes"
-      # ];
-    # };
-  # };
-
-  system.autoUpgrade = {
-  	enable = true;
-  	channel = "https://nixos.org/channels/nixos-23.11";
-  };
-  
-  # Bootloader.
-  boot = {
-    # loader = {
-      # systemd-boot.enable = true;
-      # systemd-boot.configurationLimit = 5;
-      # efi.canTouchEfiVariables = true;
-    # };
-    # plymouth.enable = true;
-    initrd = {
-      # systemd.enable = true;
-      # secrets = {
-        # "/crypto_keyfile.bin" = null;
-      # };
-      # kernelParams = [
-  	# "quiet"
-      # ];
-      # kernel.sysctl = {
-        # "kernel.sysrq" = 1;
-      # };
-      luks = {
-        # devices."luks-uuid" = {
-  	  # device = "/dev/disk/by-uuid/luks-uuid";
-        # };
-      };
-    };
-  };
-
-  # Run appimages normally
-  boot.binfmt.registrations.appimage = {
-    wrapInterpreterInShell = false;
-    interpreter = "${pkgs.appimage-run}/bin/appimage-run";
-    recognitionType = "magic";
-    offset = 0;
-    mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
-    magicOrExtension = ''\x7fELF....AI\x02'';
-  };
 
  security = {
    sudo.execWheelOnly = true;
@@ -132,14 +66,6 @@
     # media-session.enable = true;
   };
 
-  environment.variables = {
-  	NIXOS_OZONE_WL = "1";
-    NIXPKGS_ALLOW_UNFREE = "1";
-  	PATH = [
-  	  "\${HOME}/.local/bin"
-      "\${HOME}/.config/rofi/scripts"
-  	];
-  };
 
   environment.systemPackages = with pkgs; [
   
@@ -220,23 +146,27 @@
   
     flatpak.enable = true;
   
-    udev.packages = with pkgs; [
+    # udev.packages = with pkgs; [
       # yubikey-personalization
-    ];
+    # ];
+    
     locate = {
       enable = false;
       package = pkgs.plocate;
       localuser = null;
     };
+    
     printing = {
       enable = false;
-      # drivers = with pkgs; [ gutenprint hll2390dw-cups ];
+      # drivers = with pkgs; [ uwu-driver-cups ];
     };
+    
     avahi = {
       enable = false;
       nssmdns = false;
       openFirewall = false;
     };
+    
     openssh = {
       enable = false;
     };
