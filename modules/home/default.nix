@@ -1,8 +1,7 @@
 {
 
   imports = [
-    # ./shell
-  	# ./kitty
+  	./programs
   	./hyprland
   ];
   
