@@ -26,7 +26,7 @@ in
   	  	  config.load_dotenv = false;
   	  	};
   	  };
-  	  programs.home-manager.enable = true;
+  	  # programs.home-manager.enable = true;
   	};
   };
 
