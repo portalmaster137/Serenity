@@ -1,5 +1,5 @@
 {
-  description = "Serenity's NixOS configuration";
+  description = "SerenityOS v0.2.5";
 
   inputs = {
   
@@ -29,7 +29,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprpicker.url = "github:hyprwm/hyprpicker";
-    # hypr-contrib.url = "github:hyprwm/contrib";
+   #  hypr-contrib.url = "github:hyprwm/contrib";
       
   };
 
@@ -49,16 +49,6 @@
           config.allowUnfree = true;
         };
       };
-      home-manager-config = toplevel: [
-        home-manager.nixosModules.home-manager # Home manager go brrrr
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          # home-manager.users.serenity = toplevel;
-          # Optionally, use home-manager.extraSpecialArgs to pass
-          # arguments to home.nix
-        }
-      ];
       overlay-flake-pkgs = final: prev: {
       };
       common-modules = [
@@ -73,8 +63,9 @@
           modules = [
             ./hosts/proserpina/configuration.nix # Load muir main nix config
             # nixos-hardware.nixosModules.$MODEL
-          ] ++ home-manager-config (import ./home/home.nix) ++ common-modules;
+          ] ++ common-modules;
         };
       };
     };
+
 }

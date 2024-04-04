@@ -6,27 +6,27 @@
     ./modules
   ];
 
-  nixpkgs.config = {
-    allowUnfree = true;
-    permittedInsecurePackages = [
-      "schildichat-web-1.11.30-sc.2"
-      "electron-25.9.0"
-      "nix-2.15.3"
-    ];
-  };
+ #  nixpkgs.config = {
+    # allowUnfree = true;
+    # permittedInsecurePackages = [
+      # "schildichat-web-1.11.30-sc.2"
+      # "electron-25.9.0"
+      # "nix-2.15.3"
+    # ];
+  # };
 
   # nix options
-  nix = {
-    settings = {
-      cores = 0;
-      auto-optimise-store = true;
-      allowed-users = [ "@wheel" ];
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-    };
-  };
+  # nix = {
+    # settings = {
+      # cores = 0;
+      # auto-optimise-store = true;
+      # allowed-users = [ "@wheel" ];
+      # experimental-features = [
+        # "nix-command"
+        # "flakes"
+      # ];
+    # };
+  # };
 
   system.autoUpgrade = {
   	enable = true;
