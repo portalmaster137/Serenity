@@ -39,7 +39,7 @@
    	  	"schildichat-web-1.11.30-sc.2"
    	  	"electron-25.9.0"
    	  	# "nix-2.15.3"
-   	  ]
+   	  ];
     };
   };
 
