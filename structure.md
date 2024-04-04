@@ -1,3 +1,8 @@
+### Flake Structure
+
+---
+
+```
 .
 ├── README.md
 ├── TODO.md
@@ -38,3 +43,6 @@
         ├── starship
         ├── stylix
         └── waybar
+```
+
+---
