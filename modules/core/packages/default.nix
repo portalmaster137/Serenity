@@ -8,6 +8,8 @@
 
 
   services.flatpak.enable = true;
+
+  qt.style = "adwaita-dark";
   
   nix = {
     settings = {
