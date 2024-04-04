@@ -6,6 +6,9 @@
   	./packages.nix
   ];
 
+
+  services.flatpak.enable = true;
+  
   nix = {
     settings = {
       cores = 0;

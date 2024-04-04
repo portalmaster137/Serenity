@@ -140,38 +140,6 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # List services that you want to enable:
-
-  services = {
-  
-    flatpak.enable = true;
-  
-    # udev.packages = with pkgs; [
-      # yubikey-personalization
-    # ];
-    
-    locate = {
-      enable = false;
-      package = pkgs.plocate;
-      localuser = null;
-    };
-    
-    printing = {
-      enable = false;
-      # drivers = with pkgs; [ uwu-driver-cups ];
-    };
-    
-    avahi = {
-      enable = false;
-      nssmdns = false;
-      openFirewall = false;
-    };
-    
-    openssh = {
-      enable = false;
-    };
-    
-  };
 
   # Set up hardware acceleration
   # https://nixos.wiki/wiki/Accelerated_Video_Playback
