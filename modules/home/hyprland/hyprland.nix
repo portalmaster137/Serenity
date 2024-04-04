@@ -1,28 +1,41 @@
-{ inputs, pkgs, ...}: 
+{ inputs, pkgs, ...}:
+
 {
+
   home.packages = with pkgs; [
-    # swww
-    swaybg
+    wayland
+    
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
+
+    hyprlock
+    hyprpaper
     hyprpicker
+    hyprcursor
+
     wofi
     grim
+    dunst
     slurp
-    wl-clipboard
-    # cliphist
+    nm-applet
+    overskride
+    cliphist
+    wl-clip-persist
     wf-recorder
-    glib
-    wayland
-    direnv
+    
   ];
-  systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
+  
+  systemd.user.targets.hyprland-session.Unit.Wants = [
+  "xdg-desktop-autostart.target"
+  ];
+  
   wayland.windowManager.hyprland = {
+  
     enable = true;
+    systemd.enable = true;
     xwayland = {
       enable = true;
       # hidpi = true;
     };
-    # enableNvidiaPatches = false;
-    systemd.enable = true;
   };
+  
 }

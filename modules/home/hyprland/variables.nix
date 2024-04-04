@@ -1,6 +1,11 @@
 { ... }:
+
 {
   home.sessionVariables = {
+
+    TERMINAL = "kitty";
+    EDITOR = "micro";
+    BROWSER = "firefox";
     NIXOS_OZONE_WL = "1";
     __GL_GSYNC_ALLOWED = "0";
     __GL_VRR_ALLOWED = "0";
@@ -20,6 +25,8 @@
     WLR_BACKEND = "vulkan";
     WLR_RENDERER = "vulkan";
     WLR_NO_HARDWARE_CURSORS = "1";
+    XDG_CURRENT_DESKTOP = "hyprland";
+    XDG_SESSION_DESKTOP = "hyprland";
     XDG_SESSION_TYPE = "wayland";
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";

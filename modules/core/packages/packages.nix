@@ -10,6 +10,7 @@
   	firefox
 
   	## filsesystem support
+  	udiskie
   	ntfs3g
   	xfsprogs
   	
@@ -45,6 +46,11 @@
   	(unstable.nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })
 
     ## maybe more
+
+    ## libraries
+    glib
+    qt5-wayland
+    qt6-wayland
   	
   ];
 
