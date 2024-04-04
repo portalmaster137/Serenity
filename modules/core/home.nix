@@ -1,10 +1,5 @@
 { pkgs, inputs, lib, osConfig, ... }:
 
-let
-  packages = with pkgs; [
-  	fish
-  ];
-in
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
