@@ -5,8 +5,8 @@
     inputs.home-manager.nixosModules.home-manager
   ];
   home-manager = {
-  	userUserPackages = true;
-  	userGlobalPackages = true;
+  	useUserPackages = true;
+  	useGlobalPackages = true;
   	# extraSpecialArgs = { inherit inputs; };
   	users.serenity = {
   	  imports = [ (import ./../home) ];
@@ -16,8 +16,8 @@
   	  programs = {
   	  	home-manager.enable = true;
   	  	direnv = {
-  	  	  enable = true;
-  	  	  nix-direnv.enable = true;
+  	  	  enable = false;
+  	  	  nix-direnv.enable = false;
   	  	  config.load_dotenv = false;
   	  	};
   	  };
