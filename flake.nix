@@ -9,7 +9,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
 	# nixos user repository ? :o
-	nur.url = "git:nix-community/NUR";
+	# nur.url = "git:nix-community/NUR";
 
 	# alejandra ?? think its a code formatter
 	# alejandra.url = "github:kamadorueda/alejandra/3.0.0";
