@@ -34,14 +34,7 @@
       
   };
 
-  outputs = { 
-    self,
-    nixpkgs,
-    nixpkgs-unstable,
-    nixos-hardware,
-    home-manager,
-    hyprland,
-    ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixos-hardware, home-manager, hyprland, ... }:
     let
       system = "x86_64-linux";
       overlay-unstable = final: prev: {
@@ -53,18 +46,18 @@
       overlay-flake-pkgs = final: prev: {
       };
       common-modules = [
-        ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable overlay-flake-pkgs ]; })
+        # ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable overlay-flake-pkgs ]; })
       ];
     in
     {
       nixosConfigurations = {
         proserpina = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit hyprland; };
+          # specialArgs = { inherit hyprland; };
           modules = [
             ./hosts/proserpina/configuration.nix # Load muir main nix config
             # nixos-hardware.nixosModules.$MODEL
-          ] ++ common-modules;
+          ]; # ++ common-modules;
         };
       };
     };
