@@ -40,6 +40,6 @@
   # set up hardware video acceleration
   # https://nixos.wiki/wiki/Accelerated_Video_Playback
 
-  system.stateVersion = "23.11"
+  system.stateVersion = "23.11";
 
 }
