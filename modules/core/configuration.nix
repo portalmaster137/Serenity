@@ -2,40 +2,16 @@
 {
 
   imports = [
+
+  ./display.nix
+  ./services.nix
+  ./packages
+  
   ];
 
  security = {
    sudo.execWheelOnly = true;
  };
-
-  # Enable networking
-  networking = {
-  	wireless.enable = false;
-  	networkmanager = {
-  	  enable = true;
-  	  # insertNameServers = [
-  	  	# "10.7.0.1"
-  	  # ];
-  	};
-  	proxy = {
-  	  # default = "https://user:password@proxy:port/";
-  	  # noProxy = "127.0.0.1, localhost,internal.domain";
-  	};
-    firewall = {
-      enable = false;
-      # allowedTCPPorts = [ 22000 21027 25565 ];
-      # allowedUDPPorts = [ 41641 22000 21027 51820 ];
-      # allowedTCPPortRanges = [
-        # { from = 1714; to = 1764; } # KDE Connect
-        # { from = 2234; to = 2239; } # Nicotine+
-      # ];
-      # allowedUDPPortRanges = [
-        # { from = 1714; to = 1764; } # KDE Connect
-      # ];
-      # checkReversePath = "loose";
-      # interfaces."tun0".allowedTCPPorts = [ 28996 ];
-    };
-  };
 
   # Set your time zone.
   time.timeZone = "Australia/Brisbane";
@@ -46,8 +22,6 @@
   # Enable X11
   services.xserver = {
   	enable = true;
-  	# displayManager.gdm.enable = true;
-  	# desktopManager.gnome.enable = true;
   	layout = "us";
   	xkbVariant = "";
   };
@@ -147,10 +121,10 @@
   };
 
   # Disable these cuz they cause problems. see: https://github.com/NixOS/nixpkgs/issues/180175
-  systemd.services = {
-  	NetworkManager-wait-online.enable = lib.mkForce false;
-  	systemd-networkd-wait-online.enable = lib.mkForce false;
-  };
+  # systemd.services = {
+  	# NetworkManager-wait-online.enable = lib.mkForce false;
+  	# systemd-networkd-wait-online.enable = lib.mkForce false;
+  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -6,6 +6,7 @@
     "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
     ./disko-config.nix
     ./hardware-configuration.nix
+    ./network-configuration.nix
     ../../modules
   ];
 
@@ -69,34 +70,4 @@
   	};
   };
 
-  networking = {
-    hostName = "proserpina"; # Define your hostname
-  };
-
-  services = {
-  
-    syncthing = {
-      enable = false;
-      dataDir = "/home/serenity/";
-      configDir = "/home/serenity/.config/syncthing";
-      user = "serenity";
-      settings = {
-      
-        devices = {
-          # hades.id = "$DEVICE_ID";
-          # hecate.id = "$DEVICE_ID";
-          # proserpina.id = "$DEVICE_ID";
-        };
-        
-        folders = {
-          # "$FOLDER_ID" = {
-            # path = "/home/serenity/Documents/Notes";
-            # devices = [ "hecate" "hades" ];
-          # };
-
-        };
-      };
-    };
-  };
-  
 }

@@ -3,7 +3,6 @@
 {
 
   imports = [
-  	# file.nix
   ];
 
 
@@ -27,5 +26,12 @@
 
   };
   
+  systemd.services = {
+  	networkManager-wait-online.enable = lib.mkForce false;
+  	systemd-networkd-wait-online.enable = lib.mkForce false;
+  };
+
+
+  system.stateVersion = "23.11";
 
 }
