@@ -1,8 +1,0 @@
-{
-
-  import = [
-    ./core
-  	./home.nix
-  ];
-	
-}

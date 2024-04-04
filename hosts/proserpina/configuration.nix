@@ -5,9 +5,9 @@
     # Include the results of the hardware scan.
     "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
     ./disko-config.nix
-    ./hardware-configuration.nix
     ./network-configuration.nix
-    ../../modules
+    ./hardware-configuration.nix
+    ./../../modules/core/configuration.nix
   ];
 
   # Enable swap on luks

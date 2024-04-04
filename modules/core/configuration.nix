@@ -2,11 +2,10 @@
 {
 
   imports = [
-
-  ./display.nix
   ./services.nix
+  ./display.nix
+  ./home.nix
   ./packages
-  
   ];
 
  security = {
