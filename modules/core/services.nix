@@ -12,7 +12,7 @@
     dbus.enable = true;
     gnome-keyring.enable = true;
 
-    openssh.enable = false
+    openssh.enable = false;
 	
     avahi = {
       enable = false;
