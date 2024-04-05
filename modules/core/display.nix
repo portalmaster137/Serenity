@@ -9,11 +9,14 @@
   	
   };
 
-  services.xserver.displayManager.sddm = {
-  	enable = true;
-  	wayland.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager.sddm = {
+  	  enable = true;
+  	  wayland.enable = true;
+    };
   };
-
+  
   xdg.portal = {
   	enable = true;
   	wlr.enable = true;
