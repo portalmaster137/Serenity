@@ -50,7 +50,6 @@
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
-          extraSpecialArgs = { inherit inputs; };
           users.serenity = toplevel;
           # users.serenity = {
         	# imports = [
