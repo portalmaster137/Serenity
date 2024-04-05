@@ -1,12 +1,26 @@
-{ pkgs, config, ... }:
+{ pkgs, config, inputs, ... }:
 
 {
 
   imports = [
-  ../home
+    inputs.home-manager.nixosModules.home-manager
   ];
 
+  home-manager = {
+    useUserPackages = true;
+    useGlobalPkgs = true;
+    # extraSpecialArgs = { inherit inputs username; };
+    users.serenity = {
+      imports = [ (import ../home) ];
+      home.username = "serenity";
+      home.homeDirectory = "/home/serenity";
+      home.stateVersion = "23.11";
+      programs.home-manager.enable = true;
+    };
+  };
+
   users = {
+
   	defaultUserShell = pkgs.fish;
 
     users.serenity = {
@@ -20,6 +34,7 @@
     };
 
   };
+
 
   system.stateVersion = "23.11";
   
