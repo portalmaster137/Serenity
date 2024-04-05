@@ -17,7 +17,7 @@
       # imports = [ (import ../home) ];
       home = {
       	username = "serenity";
-      	homeDirectory = "/home/serenity"
+      	homeDirectory = "/home/serenity";
       	stateVersion = "23.11";
       };
     };
