@@ -52,11 +52,11 @@
           useUserPackages = true;
           extraSpecialArgs = { inherit inputs; };
           users.serenity = toplevel;
-          users.serenity = {
-        	imports = [
-        	  (import ./modules/core/home.nix)
-        	];        	  	
-          };
+          # users.serenity = {
+        	# imports = [
+        	  # (import ./modules/core/home.nix)
+        	# ];        	  	
+          # };
         };
       }
     ];
