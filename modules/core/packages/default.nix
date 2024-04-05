@@ -2,7 +2,7 @@
 
 {
 
-  import = [
+  imports = [
   	./packages.nix
   ];
 
