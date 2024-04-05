@@ -3,7 +3,7 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    "${builtins.fetchTarball 'https://github.com/nix-community/disko/archive/master.tar.gz'}/module.nix"
+    "${builtins.fetchTarball ''https://github.com/nix-community/disko/archive/master.tar.gz''}/module.nix"
     ./disko-config.nix
     ./network-configuration.nix
     ./hardware-configuration.nix
