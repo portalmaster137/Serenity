@@ -8,7 +8,12 @@
   	# package = inputs.hyprland.packages."${pkgs.system}";
   	
   };
-  
+
+  services.xserver.displayManager.sddm = {
+  	enable = true;
+  	wayland.enable = true;
+  };
+
   xdg.portal = {
   	enable = true;
   	wlr.enable = true;
