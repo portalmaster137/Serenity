@@ -14,7 +14,7 @@
     users.serenity = {
       programs.home-manager.enable = true;
       imports = [
-        ../home;
+        ../home
 	  ];
       home = {
       	username = "serenity";
