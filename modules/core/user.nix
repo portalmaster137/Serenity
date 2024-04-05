@@ -9,7 +9,7 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    # extraSpecialArgs = { inherit inputs username; };
+    extraSpecialArgs = { inherit inputs; };
     users.serenity = {
       imports = [ (import ../home) ];
       home.username = "serenity";
@@ -34,8 +34,5 @@
     };
 
   };
-
-
-  system.stateVersion = "23.11";
   
 }
