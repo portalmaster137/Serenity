@@ -1,19 +1,14 @@
-TODO
+To Do:
 ---
 
 > uh so, yeah, wei dunno, wei couldn't even fiure out how to make flakes and home manager and w/e else work
 > with GNOME, so instead wei are jumping into a new WM/DE because that will definitely be "easier",, right? 
+> - [Hyprland](https://hyprland.org/)
 
 ---
----
-
-- [Hyprland](https://hyprland.org/)
-
----
----
 
 
-> To Do, in order of priority
+> in order of priority
 
 
  - [ ] build ultraminimal general config **branch**
@@ -22,7 +17,7 @@ TODO
    - [ ] create new branch, merge, make default branch if:
    - [ ] get flake to actually build
 
-  - [X] steal, i mean, uh, look at, other creature's nixos/hyprland setups (FrostPhoenix)
+  - [X] steal, uh wei mean, uh, look at, other creature's nixos/hyprland setups (FrostPhoenix)
    - [ ] *fully* convert/swap/cannibalise configs to match needs/wants
  - [X] build ~~minimal~~ *near complete* system-framework/scaffolding for configuration around hyprland 
    - [ ] build user configuration
