@@ -17,15 +17,13 @@ To Do, in order of priority
    - [ ] create new branch, merge, make default branch if:
    - [ ] get flake to actually build
 
- - [?] build ~~minimal~~ *near complete* system-framework/scaffolding for configuration around hyprland
-
   - [X] steal, i mean, uh, look at, other creature's nixos/hyprland setups (FrostPhoenix)
-   - [?] *fully* convert/swap/cannibalise configs to match needs/wants
-   
- - [ ] build user configuration
-   - [ ] multi-user support
-   - [ ] select media for wallpapers, avatars, etc.
-   
+   - [ ] *fully* convert/swap/cannibalise configs to match needs/wants
+ - [X] build ~~minimal~~ *near complete* system-framework/scaffolding for configuration around hyprland
+   - [ ] build user configuration
+     - [ ] select media for wallpapers, avatars, etc.
+     - [ ] multi-user support
+     
  - [ ] per host hardware configurations
    - [ ] Hades
    - [X] Proserpina
