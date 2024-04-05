@@ -13,7 +13,9 @@
     extraSpecialArgs = { inherit inputs; };
     users.serenity = {
       programs.home-manager.enable = true;
-      import = ../home;
+      imports = [
+        ../home;
+	  ];
       home = {
       	username = "serenity";
       	homeDirectory = "/home/serenity";
