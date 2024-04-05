@@ -18,9 +18,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    home-manager = {
+  	  url = "github:nix-community/home-manager";
+  	  inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { nixpkgs, nixos-hardware, disko, ... }: {
+  outputs = { nixpkgs, nixos-hardware, disko, home-manager, hyprland, ... }: {
     nixosConfigurations = {
       proserpina = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
