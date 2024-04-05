@@ -28,14 +28,15 @@
     
   };
 
-  outputs = { nixpkgs, nixos-hardware, disko, home-manager, ... }: {
+  outputs = { self, nixpkgs, nixos-hardware, disko, ... }@inputs: {
     nixosConfigurations = {
       proserpina = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
         modules = [
-          # nixos-hardware.nixosModules.$MODEL
           ./hosts/proserpina/configuration.nix
+          # nixos-hardware.nixosModules.$MODEL
           disko.nixosModules.disko
+          inputs.home-manager.nixosModules.default
         ];
       };
     };
