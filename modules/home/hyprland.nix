@@ -12,11 +12,18 @@
   in
 {
 
+  imports = [
+  	inputs.home-manager.nixosModules.home-manager
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
 
     plugins = [
-      inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
+      inputs.hyprland-plugins = {
+        packages."${pkgs.system}".borders-plus-plus
+		packages."${pkgs.system}".hyprbars
+	  };
     ];
     
     settings = {
