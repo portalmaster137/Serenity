@@ -24,8 +24,8 @@
   };
 
   home-manager = {
-  	useUserPackages = true;
-  	useGlobalPackages = true;
+  	useUserPkgs = true;
+  	useGlobalPkgs = true;
   	# extraSpecialArgs = { inherit inputs; };
 
   	users.serenity = {
