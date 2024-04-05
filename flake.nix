@@ -41,7 +41,7 @@
   }: {
       nixosConfigurations = {
         proserpina = nixpkgs.lib.nixosSystem {
-          inherit system;
+          system = "x86_64-linux";
           specialArgs = { inherit hyprland; };
           modules = [
 
