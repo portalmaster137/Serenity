@@ -4,30 +4,27 @@
   inputs = {
   
     # Nixpkgs and hardware specific configs
-
-    # there was a way to have unstable as an overlay,
-    # will set it back up, lazy rn, for now pick one
-    # nixpkgs.url = "nixpkgs/nixos-23.11";
     nixpkgs.url = "nixpkgs/nixos-unstable";
-
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
+    
     # declarative disks
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # declarative dots
     home-manager = {
   	  url = "github:nix-community/home-manager";
   	  inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # ricer friendly wayland compositor
     hyprland.url = "github:hyprwm/Hyprland";
     
   };
 
-  outputs = { nixpkgs, nixos-hardware, disko, home-manager, hyprland, ... }: {
+  outputs = { nixpkgs, nixos-hardware, disko, home-manager, ... }: {
     nixosConfigurations = {
       proserpina = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

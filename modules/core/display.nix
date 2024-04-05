@@ -1,10 +1,12 @@
-{ inputs, pkgs, username, ... }:
+{ pkgs, lib, inputs, ... }:
 
 { 
 
   programs.hyprland = {
   	enable = true;
   	xwayland.enable = true;
+  	packages = inputs.hyprland.packages."${pkgs.system}"
+  	
   };
   
   xdg.portal = {
@@ -17,22 +19,22 @@
   	];
   };
   
-  services.xserver = {
-  	enable = true;
-  	layout = "us"; # what is the difference #
-  	xkbVariant = ""; # between
-  	xkb.layout = "us"; # these 2 lolwut #
-  	displayManager.autoLogin = {
-  	  enable = true;
-  	  user = "serenity";
-  	};
-  	libinput = {
-  	  enable = true;
-  	  mouse = {
-  	  	accelProfile = "flat";
-  	  };
-  	};
-  };
+  # services.xserver = {
+  	# enable = true;
+  	# layout = "us"; # what is the difference #
+  	# xkbVariant = ""; # between
+  	# xkb.layout = "us"; # these 2 lolwut #
+  	# displayManager.autoLogin = {
+  	  # enable = true;
+  	  # user = "serenity";
+  	# };
+  	# libinput = {
+  	  # enable = true;
+  	  # mouse = {
+  	  	# accelProfile = "flat";
+  	  # };
+  	# };
+  # };
 
   # apparently prevents getting stuck at shutdown
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
