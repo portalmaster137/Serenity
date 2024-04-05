@@ -12,10 +12,6 @@
   in
 {
 
-  imports = [
-  	inputs.home-manager.nixosModules.home-manager
-  ];
-
   wayland.windowManager.hyprland = {
     enable = true;
 
