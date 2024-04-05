@@ -41,7 +41,7 @@
   	# firefox
 
   	## misc, fonts, libraries, maybe more
-  	(unstable.nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })
+  	(nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })
   	qt5-wayland
   	qt6-wayland
   	glib
