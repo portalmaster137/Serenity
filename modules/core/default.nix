@@ -3,7 +3,6 @@
 
   imports = [
   ./services.nix
-  ./display.nix
   ./user.nix
   ./packages
   ];
@@ -17,7 +16,6 @@
   security = {
     rtkit.enable = true;
     sudo.execWheelOnly = true;
-    pam.services.swaylock = { };
   };
 
   # This value determines the NixOS release from which the default
