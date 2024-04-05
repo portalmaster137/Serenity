@@ -3,7 +3,7 @@
 {
 
   imports = [
-    ../home
+    # ../home
     inputs.home-manager.nixosModules.default
   ];
 
