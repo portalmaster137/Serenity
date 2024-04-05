@@ -1,4 +1,4 @@
-{ pkgs, inputs, osConfig, ... }:
+{ pkgs, inputs, outputs, config, osConfig, ... }:
 
 {
 
@@ -6,10 +6,28 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
+
+  users = {
+
+    defaultUserShell = pkgs.fish;
+
+    users.serenity = {
+  	  description = "Serenity";
+  	  isNormalUser = true;
+  	  shell = pkgs.fish;
+  	  extraGroups = [
+  	    "networkmanager"
+  	    "wheel"
+  	  ];
+    };
+
+  };
+
   home-manager = {
   	useUserPackages = true;
   	useGlobalPackages = true;
   	# extraSpecialArgs = { inherit inputs; };
+
   	users.serenity = {
   	  imports = [ (import ./../home) ];
   	  home = {
@@ -17,6 +35,7 @@
   	  	homeDirectory = "/home/serenity/";
   	  	stateVersion = "23.11";
   	  };
+
   	  programs = {
   	  	home-manager.enable = true;
   	  	direnv = {
@@ -25,19 +44,16 @@
   	  	  config.load_dotenv = false;
   	  	};
   	  };
-  	  # programs.home-manager.enable = true;
-  	};
+
+    };
+
   };
 
-  users.users.serenity = {
-  	isNormalUser = true;
-  	description = "Serenity";
-  	extraGroups = [
-  	  "networkmanager"
-  	  "wheel"
-  	];
-  	shell = pkgs.fish;
-  };
+
+  system.stateVersion = "23.11";
+  
+}
+
   # Copy some files to where they go
   # home.file.scripts = {
     # source = ./scripts;
@@ -61,5 +77,3 @@
     # vscodium
     # gitui
   # ];
-  
-}
