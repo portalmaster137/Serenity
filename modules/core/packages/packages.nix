@@ -42,8 +42,8 @@
 
   	## misc, fonts, libraries, maybe more
   	(nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })
-  	qt5-wayland
-  	qt6-wayland
+  	# qt5-wayland
+  	# qt6-wayland
   	glib
 
   ];
