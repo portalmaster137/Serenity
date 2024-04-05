@@ -2,7 +2,7 @@
 
 {
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; 
 
   	## nixos
   	appimage-run
@@ -16,6 +16,10 @@
   	udiskie
   	ntfs3g
   	xfsprogs
+
+    ## compositor
+  	waybar
+  	swww
   	
   	## terminal
   	kitty
@@ -50,6 +54,7 @@
 
 
   programs = {
+    # hyprland.enable = true;
   	traceroute.enable = true;
   	starship.enable = true;
   	fish.enable = true;
