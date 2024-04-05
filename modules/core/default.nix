@@ -4,7 +4,7 @@
   imports = [
   ./services.nix
   ./display.nix
-  ./home.nix
+  # ./home.nix
   ./packages
   ];
 
