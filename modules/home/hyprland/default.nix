@@ -1,4 +1,4 @@
-{ inputs, ... }: 
+{ inputs, pkgs, ... }: 
 {
   imports = [ (import ./hyprland.nix) ]
     ++ [ (import ./config.nix) ]

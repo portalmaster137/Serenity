@@ -1,6 +1,7 @@
 { ... }:
 
 {
+
   home.sessionVariables = {
 
     TERMINAL = "kitty";
@@ -32,4 +33,5 @@
     CLUTTER_BACKEND = "wayland";
     GTK_THEME = "Catppuccin-Mocha-Compact-Lavender-Dark";
   };
+  
 }
