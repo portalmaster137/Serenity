@@ -4,26 +4,19 @@
 
   environment.systemPackages = with pkgs; [
 
-  	## web browsers
-  	tor-browser-bundle-bin
-  	# lagrange
-  	firefox
-
-  	## filsesystem support
-  	udiskie
-  	ntfs3g
-  	xfsprogs
-  	
-  	## nixos specific
-  	# home-manager
+  	## nixos
   	appimage-run
   	# nix-tree
   	# nix-init
   	# nix-index
   	# nixpkgs-review
   	# nix-output-monitor
-  	
 
+  	## filsesystem
+  	udiskie
+  	ntfs3g
+  	xfsprogs
+  	
   	## terminal
   	kitty
   	micro
@@ -42,32 +35,27 @@
   	libsecret
   	git-crypt
 
-  	## misc/fonts
+  	## web browsers
+  	# tor-browser-bundle-bin
+  	# lagrange
+  	# firefox
+
+  	## misc, fonts, libraries, maybe more
   	(unstable.nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })
+  	qt5-wayland
+  	qt6-wayland
+  	glib
 
-    ## maybe more
-
-    ## libraries
-    glib
-    qt5-wayland
-    qt6-wayland
-  	
   ];
 
 
   programs = {
-    # home-manager.enable = true;
   	traceroute.enable = true;
   	starship.enable = true;
-  	corectrl.enable = true;
-  	firefox.enable = true;
   	fish.enable = true;
-  	# htop.enable = true;
   	git.enable = true;
-  	gnupg.agent = {
-  	  enable = false;
-  	  enableSSHSupport = false;
-  	};
+
+  	# firefox.enable = true;
   	
   };
 
