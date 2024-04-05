@@ -5,7 +5,7 @@
   environment.systemPackages = with pkgs; [
 
   	## web browsers
-  	tor-browser-bundle=bin
+  	tor-browser-bundle-bin
   	# lagrange
   	firefox
 
