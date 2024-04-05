@@ -3,6 +3,7 @@
 {
 
   imports = [
+  ../home
   ];
 
   users = {
