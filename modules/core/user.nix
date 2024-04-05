@@ -3,10 +3,8 @@
 {
 
   imports = [
-    # inputs.home-manager.nixosModules.home-manager
+    ../home
   ];
-
-  users.defaultUserShell = pkgs.fish;
 
   home-manager = {
     useUserPackages = true;
