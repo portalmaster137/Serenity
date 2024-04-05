@@ -62,6 +62,7 @@
           # specialArgs = { inherit hyprland; };
           modules = [
             disko.nixosModules.disko
+            home-manager.nixosModules.home-manager
             ./hosts/proserpina/configuration.nix # Load muir main nix config
             # nixos-hardware.nixosModules.$MODEL
           ] ++ common-modules;
