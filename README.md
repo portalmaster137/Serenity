@@ -33,17 +33,17 @@ Cursory flake structure [Heavily WIP]
 .
 ├── flake.nix
 ├── hosts
-│   ├── hades [MISSING]
+│   ├── hades
 │   └── proserpina
 └── modules
-    └── core
-        ├── audio
-        ├── default
-        ├── display
-        ├── home
-        ├── packages
-        └── services
-
+    ├── core
+    │   ├── audio
+    │   ├── default
+    │   ├── display
+    │   ├── packages
+    │   ├── services
+    │   └── user
+    └── home
 ```
 
 ---
