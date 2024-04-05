@@ -11,7 +11,7 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs; };
+    # extraSpecialArgs = { inherit inputs; };
     users.serenity = {
       programs.home-manager.enable = true;
       # imports = [ (import ../home) ];
