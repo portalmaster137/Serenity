@@ -10,7 +10,7 @@
   
     gvfs.enable = true;
     dbus.enable = true;
-    gnome-keyring.enable = true;
+    # gnome-keyring.enable = true;
 
     openssh.enable = false;
 	
