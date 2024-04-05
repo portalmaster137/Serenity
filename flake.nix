@@ -41,7 +41,6 @@
   }: 
 
   let
-    system = "x86_64-linux";
     # common-modules = [
       # ({ config, pkgs, ... }:)
     # ];
@@ -51,12 +50,11 @@
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
-          users.serenity = toplevel;
-          # users.serenity = {
-        	# imports = [
-        	  # (import ./modules/core/home.nix)
-        	# ];        	  	
-          # };
+          users.serenity = {
+          	imports = [
+          	  (import ./modules/core/home.nix)
+          	];        	  	
+          };
         };
       }
     ];
@@ -65,7 +63,7 @@
   {
       nixosConfigurations = {
         proserpina = nixpkgs.lib.nixosSystem {
-          inherit system; # = "x86_64-linux";
+          system; = "x86_64-linux";
           # specialArgs = { inherit hyprland; };
           modules = [
             # nixos-hardware.nixosModules.$MODEL
