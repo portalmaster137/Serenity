@@ -23,10 +23,7 @@
   	  inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    hyprland.url = "github:hyprwm/Hyprland";
     
   };
 
@@ -38,10 +35,18 @@
           # nixos-hardware.nixosModules.$MODEL
           ./hosts/proserpina/configuration.nix
           disko.nixosModules.disko
-          home-manager.nixosModules.home-manager
         ];
       };
     };
+    homeConfigurations."serenity@proserpina" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [
+          hyprland.homeManagerModules.default
+          {wayland.windowManager.hyprland.enable = true;}
+          # ...
+        ];
+    };
+
   };
 
 }

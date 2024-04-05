@@ -3,36 +3,34 @@
 {
 
   imports = [
-    inputs.home-manager.nixosModules.home-manager
+    # inputs.home-manager.nixosModules.home-manager
   ];
+
+  users.defaultUserShell = pkgs.fish;
 
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs; };
     users.serenity = {
-      imports = [ (import ../home) ];
-      home.username = "serenity";
-      home.homeDirectory = "/home/serenity";
-      home.stateVersion = "23.11";
       programs.home-manager.enable = true;
+      # imports = [ (import ../home) ];
+      home = {
+      	username = "serenity";
+      	homeDirectory = "/home/serenity"
+      	stateVersion = "23.11";
+      };
     };
   };
 
-  users = {
-
-  	defaultUserShell = pkgs.fish;
-
-    users.serenity = {
-      description = "Serenity Amalgam";
-      isNormalUser = true;
-      shell = pkgs.fish;
-      extraGroups = [
-      	"wheel"
-      	"networkmanager"
-      ];
-    };
-
+  users.users.serenity = {
+    description = "Serenity Amalgam";
+    isNormalUser = true;
+    shell = pkgs.fish;
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+    ];
   };
-  
+
 }
