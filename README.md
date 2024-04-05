@@ -11,18 +11,11 @@ To Do:
 > in order of priority
 
 
- - [ ] build ultraminimal general config **branch**
-   - [ ] build ultraminimal hyprland **branch**, following above structure
-   - [ ] build ultraminimal fallback gnome **branch**, following main structure
-   - [ ] create new branch, merge, make default branch if:
-   - [ ] get flake to actually build
-
-  - [X] steal, uh wei mean, uh, look at, other creature's nixos/hyprland setups (FrostPhoenix)
-   - [ ] *fully* convert/swap/cannibalise configs to match needs/wants
- - [X] build ~~minimal~~ *near complete* system-framework/scaffolding for configuration around hyprland 
-   - [ ] build user configuration
-     - [ ] select media for wallpapers, avatars, etc.
-     - [ ] multi-user support
+ - [X] build ultraminimal general config **branch**
+   - [ ] build hyprland **branch**, following above structure
+   - [ ] build minimal fallback gnome **branch**, following main structure
+   - [ ] create new branch, merge, etc, make default branch if:
+     - [X] get flake to actually build
      
  - [ ] per host hardware configurations
    - [ ] Hades
@@ -36,38 +29,19 @@ Cursory flake structure [Heavily WIP]
 
 ```
 .
-├── flake.nix [BROKEN]
+├── flake.nix
 ├── hosts
 │   ├── hades [MISSING]
-│   └── proserpina (incomplete?)
+│   └── proserpina
 └── modules
-    ├── core [INCOMPLETE/BROKEN]
-    │   ├── audio
-    │   ├── default
-    │   ├── display
-    │   ├── home
-    │   ├── packages
-    │   └── services
-    └── home
-        ├── hyprland (stolen configs for now)
-        │   ├── stylix
-        │   ├── waybar
-        │   └── wofi
-        ├── programs (stolen configs for now)
-        │   ├── btop
-        │   ├── discord
-        │   ├── fish
-        │   ├── gaming
-        │   ├── git
-        │   ├── gtk
-        │   ├── kitty
-        │   ├── micro
-        │   ├── starship
-        │   └── vscodium
-        ├── resources
-        │   ├── icons [MISSING]
-        │   └── wallpapers [MISSING]
-        └── scripts (stolen)
+    └── core
+        ├── audio
+        ├── default
+        ├── display
+        ├── home
+        ├── packages
+        └── services
+
 ```
 
 ---
