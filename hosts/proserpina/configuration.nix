@@ -1,13 +1,15 @@
-{ inputs, outputs, config, pkgs, lib, ... }:
+{ inputs, outputs, config, lib, pkgs, ... }:
 
 {
   imports = [
     # Include the results of the hardware scan.
-    "${builtins.fetchTarball ''https://github.com/nix-community/disko/archive/master.tar.gz''}/module.nix"
+    ./hardware-configuration.nix
+    "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
     ./disko-config.nix
     ./network-configuration.nix
-    ./hardware-configuration.nix
-    ./../../modules/core/configuration.nix
+
+    ./../../modules/core
+    
   ];
 
   # Enable swap on luks
