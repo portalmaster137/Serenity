@@ -1,18 +1,22 @@
 { pkgs, inputs, osConfig, ... }:
 
 {
+
   imports = [
     inputs.home-manager.nixosModules.home-manager
   ];
+
   home-manager = {
   	useUserPackages = true;
   	useGlobalPackages = true;
   	# extraSpecialArgs = { inherit inputs; };
   	users.serenity = {
   	  imports = [ (import ./../home) ];
-  	  home.username = "serenity";
-  	  home.homeDirectory = "/home/serenity";
-  	  home.stateVersion = "23.11";
+  	  home = {
+  	  	username = "serenity";
+  	  	homeDirectory = "/home/serenity/";
+  	  	stateVersion = "23.11";
+  	  };
   	  programs = {
   	  	home-manager.enable = true;
   	  	direnv = {
@@ -57,4 +61,5 @@
     # vscodium
     # gitui
   # ];
+  
 }
