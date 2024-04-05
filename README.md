@@ -14,10 +14,10 @@ To Do:
  - [ ] learn home manager (seriously wtf ???)
 
  - [X] build ultraminimal general config **branch**
-   - [ ] build hyprland **branch**, following above structure
+   - [X] build hyprland **branch**, following above structure
    - [ ] build minimal fallback gnome **branch**, following main structure
    - [ ] create new branch, merge, etc, make default branch if:
-     - [ ] get flake to actually build
+     - [X] get flake to actually build
      
  - [ ] per host hardware configurations
    - [ ] Hades
