@@ -21,6 +21,10 @@
 
     # ricer friendly wayland compositor
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyperwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
     
   };
 
