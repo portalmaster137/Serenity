@@ -31,7 +31,7 @@
   };
 
   outputs = { 
-    self,
+    # self,
     nixpkgs,
     nixos-hardware,
     disko,
@@ -41,6 +41,10 @@
   }: 
 
   let
+    system = "x86_64-linux";
+    # common-modules = [
+      # ({ config, pkgs, ... }:)
+    # ];
     home-manager-config = toplevel: [
       home-manager.nixosModules.home-manager
       {
@@ -56,13 +60,12 @@
         };
       }
     ];
-
   in
 
   {
       nixosConfigurations = {
         proserpina = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit system; # = "x86_64-linux";
           # specialArgs = { inherit hyprland; };
           modules = [
             # nixos-hardware.nixosModules.$MODEL
