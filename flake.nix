@@ -24,6 +24,8 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+    inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, nixos-hardware, disko, home-manager, hyprland, ... }: {
@@ -34,6 +36,7 @@
           # nixos-hardware.nixosModules.$MODEL
           ./hosts/proserpina/configuration.nix
           disko.nixosModules.disko
+          home-manager.nixosModules.home-manager
         ];
       };
     };
