@@ -3,6 +3,7 @@
 
   imports = [
   ./services.nix
+  ./display.nix
   ./user.nix
   ./packages
   ];
@@ -17,8 +18,6 @@
     rtkit.enable = true;
     sudo.execWheelOnly = true;
   };
-
-  xdg.portal.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
