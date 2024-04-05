@@ -38,30 +38,46 @@
     home-manager,
     hyprland,
     ...
-  }: {
+  }: 
+
+  let
+
+    system = "x86_64-linux";
+
+    home-manager-config = toplevel: [
+      home-manager.nixosModules.home-manager
+      {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          extraSpecialArgs = { inherit inputs; };
+          users.serenity = toplevel;
+          users.serenity = {
+        	imports = [
+        	  (import ./modules/core/home.nix)
+        	];        	  	
+          };
+        };
+      }
+    ];
+
+  in
+
+  {
       nixosConfigurations = {
         proserpina = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit hyprland; };
+          inherit system;
+          # specialArgs = { inherit hyprland; };
           modules = [
-          
             # nixos-hardware.nixosModules.$MODEL
             ./hosts/proserpina/configuration.nix
             disko.nixosModules.disko
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-              	useGlobalPkgs = true;
-              	useUserPackages = true;
-              	users = {
-              	  serenity = import ./modules/core/home.nix;
-              	};
-              };
-            }
-
-          ];
+          ] ++ home-manager-config;
         };
       };
   };
+
+
+  system.stateVersion = "23.11";
 
 }

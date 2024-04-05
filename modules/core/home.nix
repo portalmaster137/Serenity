@@ -3,7 +3,6 @@
 {
 
   imports = [
-    inputs.home-manager.nixosModules.home-manager
   ];
 
 
@@ -24,10 +23,7 @@
   };
 
   home-manager = {
-  	# extraSpecialArgs = { inherit inputs; };
-
   	users.serenity = {
-  	  imports = [ (import ./../home) ];
   	  home = {
   	  	username = "serenity";
   	  	homeDirectory = "/home/serenity/";
