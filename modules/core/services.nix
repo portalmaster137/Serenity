@@ -13,7 +13,7 @@
 	
     avahi = {
       enable = false;
-      nssmdns = false;
+      nssmdns4 = false;
       openFirewall = false;
     };
 
