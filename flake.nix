@@ -44,11 +44,10 @@
           system = "x86_64-linux";
           specialArgs = { inherit hyprland; };
           modules = [
-
+          
+            # nixos-hardware.nixosModules.$MODEL
             ./hosts/proserpina/configuration.nix
             disko.nixosModules.disko
-            # nixos-hardware.nixosModules.$MODEL
-
             home-manager.nixosModules.home-manager
             {
               home-manager = {
