@@ -4,8 +4,8 @@
   inputs = {
   
     # Nixpkgs and hardware specific configs
-    nixpkgs.url = "nixpkgs/nixos-23.11";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    # nixpkgs.url = "nixpkgs/nixos-23.11";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     
 	# alejandra ?? think its a nix code formatter
@@ -21,7 +21,7 @@
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
-	};	
+	};
     # window manager (ricer friendly)
     hyprland = { 
       url = "github:hyprwm/Hyprland";
@@ -33,41 +33,36 @@
   outputs = { 
     self,
     nixpkgs,
-    nixpkgs-unstable,
     nixos-hardware,
     disko,
     home-manager,
     hyprland,
     ...
-  }:
-  
-    let
-      system = "x86_64-linux";
-      overlay-unstable = final: prev: {
-        unstable = import nixpkgs-unstable {
-          inherit system;
-          config.allowUnfree = true;
-        };
-      };
-      overlay-flake-pkgs = final: prev: {
-      };
-      common-modules = [
-        ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable overlay-flake-pkgs ]; })
-      ];
-    in
-    {
+  }: {
       nixosConfigurations = {
         proserpina = nixpkgs.lib.nixosSystem {
           inherit system;
-          # specialArgs = { inherit hyprland; };
+          specialArgs = { inherit hyprland; };
           modules = [
+
+            ./hosts/proserpina/configuration.nix
             disko.nixosModules.disko
-            home-manager.nixosModules.home-manager
-            ./hosts/proserpina/configuration.nix # Load muir main nix config
             # nixos-hardware.nixosModules.$MODEL
-          ] ++ common-modules;
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+              	useGlobalPkgs = true;
+              	useUserPackages = true;
+              	users = {
+              	  serenity = import ./modules/core/home.nix
+              	};
+              };
+            }
+
+          ];
         };
       };
-    };
+  };
 
 }
