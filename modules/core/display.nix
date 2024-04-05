@@ -5,7 +5,7 @@
   programs.hyprland = {
   	enable = true;
   	xwayland.enable = true;
-  	packages = inputs.hyprland.packages."${pkgs.system}"
+  	packages = inputs.hyprland.packages."${pkgs.system}";
   	
   };
   
