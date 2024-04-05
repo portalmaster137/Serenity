@@ -8,7 +8,7 @@
     ./disko-config.nix
     ./network-configuration.nix
 
-    ../../modules/core/
+    ../../modules/core
     
   ];
 
