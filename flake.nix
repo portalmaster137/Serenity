@@ -55,7 +55,7 @@
               	useGlobalPkgs = true;
               	useUserPackages = true;
               	users = {
-              	  serenity = import ./modules/core/home.nix
+              	  serenity = import ./modules/core/home.nix;
               	};
               };
             }
