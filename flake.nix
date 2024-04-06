@@ -1,5 +1,5 @@
 {
-  description = "SerenityOS v0.2.9";
+  description = "SerenityOS v0.3.2";
 
   inputs = {
   
@@ -21,14 +21,23 @@
 
     # ricer friendly wayland compositor
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # hyprland-plugins = {
+      # url = "github:hyprwm/hyprland-plugins";
+      # inputs.hyprland.follows = "hyprland";
+    # };
     
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, disko, ... }@inputs: {
+  outputs = { 
+    nixpkgs,
+    nixos-hardware,
+    disko,
+    home-manager,
+    hyprland,
+    ...
+  }:
+
+  {
     nixosConfigurations = {
       proserpina = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
