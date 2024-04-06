@@ -11,6 +11,7 @@
     startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
       ${pkgs.waybar}/bin/waybar &
       ${pkgs.swww}/bin/swww init &
+      ${pkgs.kitty}/bin/kitty &
   
       sleep 1
   
