@@ -1,4 +1,4 @@
-{ inputs, outputs, config, lib, pkgs, ... }:
+{ inputs, outputs, lib, config, pkgs, ... }:
 
 {
   imports = [
@@ -6,9 +6,9 @@
     ./hardware-configuration.nix
     # "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
     ./disko-config.nix
-    ./network-configuration.nix
+    # ./network-configuration.nix
 
-    ../../modules/core
+    ../../core/configuration.nix
     
   ];
 
@@ -36,6 +36,14 @@
 	# };
       };
     };
+  };
+
+  networking = {
+    hostName = "proserpina";
+  	wireless.enable = false;
+  	networkmanager = {
+  	  enable = true;
+  	};
   };
 
   services.fstrim.enable = true;
@@ -72,4 +80,6 @@
   	};
   };
 
+
+  system.stateVersion = "23.11";
 }

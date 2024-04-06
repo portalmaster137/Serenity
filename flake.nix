@@ -1,12 +1,12 @@
 {
-  description = "SerenityOS v0.3.2";
+  description = "SerenityOS v0.3.2-1";
 
   inputs = {
   
-    # Nixpkgs and hardware specific configs
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    
+    # Nixpkgs
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    hardware.url = "github:nixos/nixos-hardware";
+
     # declarative disks
     disko = {
       url = "github:nix-community/disko";
@@ -25,31 +25,42 @@
       # url = "github:hyprwm/hyprland-plugins";
       # inputs.hyprland.follows = "hyprland";
     # };
-    
+
   };
 
-  outputs = { 
-    nixpkgs,
-    nixos-hardware,
+  outputs = {
+    self,
+    hardware,
     disko,
+    nixpkgs,
     home-manager,
     hyprland,
     ...
-  }:
-
-  {
+  } @ inputs: let
+    inherit (self) outputs;
+  in {
+    # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      proserpina = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+    
+      proserpina  = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        # > Our main nixos configuration files <
         modules = [
-          ./hosts/proserpina/configuration.nix
-          # nixos-hardware.nixosModules.$MODEL
           disko.nixosModules.disko
-          inputs.home-manager.nixosModules.default
+          ./hosts/proserpina/configuration.nix
         ];
       };
+
+      hades  = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        # > Our main nixos configuration files <
+        modules = [
+          disko.nixosModules.disko
+          ./hosts/proserpina/configuration.nix
+        ];
+      };
+
     };
     
   };
-
 }
