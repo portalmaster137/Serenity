@@ -100,6 +100,22 @@
     # lowLatency.enable = true;
   };
 
+  programs.hyprland = {
+  	enable = true;
+  	xwayland.enable = true;
+  };
+
+  services.xserver = {
+    enable = true;
+    displayManager.sddm = {
+  	  enable = true;
+  	  wayland.enable = true;
+    };
+  };
+
+  # apparently prevents getting stuck at shutdown
+  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
+
   # disable these cuz they cause problems
   # see: https://github.com/NixOS/nixpkgs/issues/180175
   systemd.services = {
