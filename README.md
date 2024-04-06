@@ -12,17 +12,19 @@ To Do:
 
 
  - [ ] learn home manager (seriously wtf ???)
+ - [ ] become more learn-ed in the ways of nix-fu
 
- - [X] build ultraminimal general config **branch**
-   - [X] build hyprland **branch**, following above structure
-   - [ ] build minimal fallback gnome **branch**, following main structure
-   - [ ] create new branch, merge, etc, make default branch if:
-     - [X] get flake to actually build
+  - [X] build hyprland **branch**
+   - [ ] get it working, stable, etc
+   - [ ] build minimal fallback gnome branch
+     - [ ] get flake to actually build
      
  - [ ] per host hardware configurations
    - [ ] Hades
    - [X] Proserpina
    
+ - [ ] (+ per host theming)
+
 ---
 
 Cursory flake structure [Heavily WIP]
@@ -30,20 +32,57 @@ Cursory flake structure [Heavily WIP]
 ---
 
 ```
+
+[CURRENT]
+
 .
-├── flake.nix
+├── flake
+├── core
+│   ├── configuration
+│   ├── packages
+│   └── users
+├── home
+│   ├── home
+│   └── hyprland
 ├── hosts
-│   ├── hades
 │   └── proserpina
-└── modules
-    ├── core
-    │   ├── audio
-    │   ├── default
-    │   ├── display
-    │   ├── packages
-    │   ├── services
-    │   └── user
-    └── home
+│		└── configuration
+└── resources
+
+```
+---
 ```
 
----
+[PLANNED]
+
+.
+├── flake
+├── core
+│   ├── core-config
+│   ├── packages
+│   ├── services
+│   └── users
+├── home
+│   ├── home-config
+│   ├── packages
+│   ├── firefox
+│   ├── gaming
+│   ├── git
+│   ├── fish
+│   ├── micro
+│   ├── kitty
+│   ├── starship
+│   └── hyprland
+│		├── hypr-misc
+│		├── waybar
+│		├── dunst
+│		└── wofi
+└── hosts
+    ├── hades
+	│   ├── configuration
+	│   └── resources
+    └── proserpina
+	    ├── configuration
+		└── resources
+
+```
