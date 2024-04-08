@@ -13,6 +13,7 @@ To Do:
      
  - [ ] per host hardware configurations
    - [ ] Hades
+     - [ ] adjust Hades' configs
    - [X] Proserpina
     
    - [ ] per host themes
@@ -30,6 +31,7 @@ WIP Flake Structure
 │   └── packages
 ├── flake
 ├── home
+│   ├── git
 │   └── users
 └── hosts
 	├── hades
@@ -44,6 +46,7 @@ WIP Flake Structure
 ├── flake.lock
 ├── flake.nix
 ├── home
+│   ├── git.nix
 │   ├── home.nix
 │   └── users
 │       ├── -coffee.nix
