@@ -1,39 +1,4 @@
 {
-  description = "SerenityOS v0.2.9";
-
-  inputs = {
-  
-    # Nixpkgs and hardware specific configs
-
-
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
-    # declarative disks
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-  };
-
-  outputs = { nixpkgs, nixos-hardware, disko, ... }: {
-    nixosConfigurations = {
-      proserpina = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          # nixos-hardware.nixosModules.$MODEL
-          ./hosts/proserpina/configuration.nix
-          disko.nixosModules.disko
-        ];
-      };
-    };
-  };
-
-}
-
-{
   description = "SerenityOS v0.3.61";
 
   inputs = {
