@@ -25,11 +25,6 @@
   	udiskie
   	ntfs3g
   	xfsprogs
-<<<<<<< HEAD
-
-    ## compositor
-  	waybar
-  	swww
   	
   	## terminal
   	kitty
@@ -41,17 +36,6 @@
     peaclock
     
   	## tools
-  	file
-  	fd
-  	bc
-  	gcc
-  	zip
-  	tldr
-  	wget
-  	curl
-=======
-    
-  	## tools
   	fd
   	bc
   	gcc
@@ -60,7 +44,6 @@
   	curl
   	file
   	zip
->>>>>>> origin/core-merge
   	unzip
   	gnupg
   	blueman

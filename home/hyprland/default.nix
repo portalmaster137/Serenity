@@ -38,6 +38,8 @@
     wayland-utils
     wayland-protocols
     meson
+    waybar
+  	swww
   ];
 
 }
