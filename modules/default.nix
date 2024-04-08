@@ -1,9 +1,0 @@
-{
-
-  imports = [
-  	./services
-  	./packages
-  	./network
-  ];
-	
-}

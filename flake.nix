@@ -1,25 +1,27 @@
 {
-  description = "Serenity's NixOS configuration";
+  description = "SerenityOS v0.2.5";
 
   inputs = {
   
     # Nixpkgs and hardware specific configs
-    nixpkgs.url = "nixpkgs/nixos-23.11";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    # nixpkgs.url = "nixpkgs/nixos-23.11";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    
+	# alejandra ?? think its a nix code formatter
+	# alejandra.url = "github:kamadorueda/alejandra/3.0.0";
 
-	# nixos user repository ? :o
-	nur.url "git:nix-community/NUR";
-
-	# nix gaming ?
-	nix-gaming.url = "github:fufexan/nix-gaming";
+    # declaratice disks
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 	
     # declarative dots
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
 	};
-
     # window manager (ricer friendly)
     hyprland = { 
       url = "github:hyprwm/Hyprland";
@@ -29,48 +31,47 @@
   };
 
   outputs = { 
-    self,
+    # self,
     nixpkgs,
-    nixpkgs-unstable,
     nixos-hardware,
+    disko,
     home-manager,
-    hyprland,,
-    ... }:
-    let
-      system = "x86_64-linux";
-      overlay-unstable = final: prev: {
-        unstable = import nixpkgs-unstable {
-          inherit system;
-          config.allowUnfree = true;
+    hyprland,
+    ...
+  }: 
+
+  let
+    # common-modules = [
+      # ({ config, pkgs, ... }:)
+    # ];
+    home-manager-config = toplevel: [
+      home-manager.nixosModules.home-manager
+      {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          users.serenity = {
+          	imports = [
+          	  (import ./modules/core/home.nix)
+          	];        	  	
+          };
         };
-      };
-      home-manager-config = toplevel: [
-        home-manager.nixosModules.home-manager # Home manager go brrrr
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          # ASK AKESI ABOUT EASIER WAY TO LOAD ALL USERS MAYBE?
-          # home-manager.users.serenity = toplevel;
-          # Optionally, use home-manager.extraSpecialArgs to pass
-          # arguments to home.nix
-        }
-      ];
-      overlay-flake-pkgs = final: prev: {
-      };
-      common-modules = [
-        ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable overlay-flake-pkgs ]; })
-      ];
-    in
-    {
+      }
+    ];
+  in
+
+  {
       nixosConfigurations = {
         proserpina = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit hyprland; };
+          system = "x86_64-linux";
+          # specialArgs = { inherit hyprland; };
           modules = [
-            ./hosts/proserpina/configuration.nix # Load muir main nix config
             # nixos-hardware.nixosModules.$MODEL
-          ] ++ home-manager-config (import ./home/home.nix) ++ common-modules;
+            ./hosts/proserpina/configuration.nix
+            disko.nixosModules.disko
+          ] ++ home-manager-config;
         };
       };
-    };
+  };
+
 }
