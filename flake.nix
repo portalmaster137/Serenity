@@ -1,5 +1,5 @@
 {
-  description = "SerenityOS v0.3.6";
+  description = "SerenityOS v0.3.61";
 
   inputs = {
   
