@@ -59,8 +59,14 @@
 
     stateVersion = "23.11";
   };
-  
-  programs.home-manager.enable = true;
+
+  programs = {
+    home-manager.enable = true;
+    starship.enable = true;
+    fish.enable = true;
+    git.enable = true;
+    firefox.enable = true;
+  };
   
   systemd.user.startServices = "sd-switch";
 

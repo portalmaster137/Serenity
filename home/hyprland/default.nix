@@ -21,25 +21,33 @@
   ];
 
   home.packages = with pkgs; [
-    hyprshot
-    hyprpicker
-    # xdg-desktop-portal-hyprland
+    ## desktop environment
+    waybar
+    swww    
+    wlroots
+    wlsunset
     wlr-randr
     wl-clipboard
+    hyprshot
+    hyprpicker
     brightnessctl
-    gnome.gnome-themes-extra
-    wlsunset
+
+    ## lib wayland
     xwayland
-    xdg-desktop-portal-gtk
-    wlroots
-    qt5ct
-    libva
-    dconf
     wayland-utils
     wayland-protocols
+
+    ## lib
+    qt5ct
+    libva
     meson
-    waybar
-  	swww
+
+    ## compat
+    dconf
+    gnome.gnome-themes-extra
+    xdg-desktop-portal-gtk
+    # xdg-desktop-portal-hyprland
+    
   ];
 
 }

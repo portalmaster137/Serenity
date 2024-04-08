@@ -4,11 +4,8 @@
 
   programs = {
   	traceroute.enable = true;
-  	starship.enable = true;
   	fish.enable = true;
   	git.enable = true;
-
-  	firefox.enable = true;
   	
   };
 
@@ -26,15 +23,6 @@
   	ntfs3g
   	xfsprogs
   	
-  	## terminal
-  	kitty
-  	micro
-  	pipes
-    cbonsai
-  	hyfetch
-    cmatrix
-    peaclock
-    
   	## tools
   	fd
   	bc
