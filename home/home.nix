@@ -8,30 +8,41 @@
 }: {
 
   imports = [
-    ./hyprland
-    ./theme
-    ./kitty.nix
     ./git.nix
   ];
 
   home = {
-    username = "serenity";
-    homeDirectory = "/home/serenity";
 
     packages = with pkgs; [
+  	  ## nixos
+  	  appimage-run
+
+	  ## web browsers
 	  firefox
 	  lagrange
 	  tor-browser-bin     
+
+      ## chat & comms
       discord
+      # fractal
+      # schildichat
+
+      ## personal 
       obsidian
+
+      ## terminal & coding
       vscode
-	  kitty
 	  micro
+	  kitty
+	  ## utility
+	  # insert terminal utility here
+      ## novelty
       pipes
       cbonsai
       hyfetch
       cmatrix
       peaclock
+      
     ];
 
     stateVersion = "23.11";

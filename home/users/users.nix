@@ -74,7 +74,6 @@
         # home = {
       	  # username = "TEMPLATE";
       	  # homeDirectory = "/home/TEMPLATE";
-      	  # stateVersion = "23.11";
       	# };
       # };
 
@@ -83,7 +82,6 @@
         home = {
       	  username = "coffee";
       	  homeDirectory = "/home/coffee";
-      	  stateVersion = "23.11";
       	 };
       };
 
@@ -92,7 +90,6 @@
         home = {
       	  username = "serenity";
       	  homeDirectory = "/home/serenity";
-      	  stateVersion = "23.11";
       	};
       };
 

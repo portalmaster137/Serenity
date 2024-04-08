@@ -3,7 +3,6 @@
 {
 
   programs = {
-    # hyprland.enable = true;
   	traceroute.enable = true;
   	starship.enable = true;
   	fish.enable = true;
@@ -15,7 +14,7 @@
 
   environment.systemPackages = with pkgs; [
 
-  	## nixos
+  	# # nixos
   	appimage-run
   	# nix-tree
   	# nix-init
@@ -23,25 +22,12 @@
   	# nixpkgs-review
   	# nix-output-monitor
 
-  	## filsesystem
+  	# # filsesystem
   	udiskie
   	ntfs3g
   	xfsprogs
-
-    ## compositor
-  	waybar
-  	swww
-  	
-  	## terminal
-  	kitty
-  	micro
-  	pipes
-    cbonsai
-  	hyfetch
-    cmatrix
-    peaclock
     
-  	## tools
+  	# # tools
   	file
   	fd
   	bc
@@ -62,16 +48,6 @@
   	moreutils
   	libsecret
   	git-crypt
-
-  	## web browsers
-  	# tor-browser-bundle-bin
-  	# lagrange
-  	# firefox
-
-  	## misc, libraries, maybe more,
-  	# qt5-wayland
-  	# qt6-wayland
-  	glib
 
   ];
 

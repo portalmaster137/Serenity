@@ -16,8 +16,7 @@
     packages = with pkgs; [
 
     ];
-
-    stateVersion = "23.11";
+    
   };
 
 }
