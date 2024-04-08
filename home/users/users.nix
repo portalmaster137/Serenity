@@ -60,7 +60,7 @@
     users = {
 
       # TEMPLATE = {
-        # imports = [ ./-template.nix ];
+        # imports = [ ./u-template.nix ];
         # home = {
       	  # username = "TEMPLATE";
       	  # homeDirectory = "/home/TEMPLATE";
@@ -68,7 +68,7 @@
       # };
 
       coffee = {
-        imports = [ ./-coffee.nix ];
+        imports = [ ./u-coffee.nix ];
         home = {
       	  username = "coffee";
       	  homeDirectory = "/home/coffee";
@@ -76,7 +76,7 @@
       };
 
       serenity = {
-        imports = [ ./-serenity.nix ];
+        imports = [ ./u-serenity.nix ];
         home = {
       	  username = "serenity";
       	  homeDirectory = "/home/serenity";

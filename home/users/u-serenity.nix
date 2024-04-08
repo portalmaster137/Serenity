@@ -8,6 +8,7 @@
 }: {
 
   imports = [
+    inputs.home-manager.nixosModules.default
     ../home.nix
   ];
 
@@ -15,8 +16,7 @@
 
     packages = with pkgs; [
 
-    ];
-    
+    ]; 
   };
 
 }
