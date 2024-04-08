@@ -2,6 +2,17 @@
 
 {
 
+  programs = {
+    # hyprland.enable = true;
+  	traceroute.enable = true;
+  	starship.enable = true;
+  	fish.enable = true;
+  	git.enable = true;
+
+  	firefox.enable = true;
+  	
+  };
+
   environment.systemPackages = with pkgs; [
 
   	## nixos
@@ -24,17 +35,30 @@
   	## terminal
   	kitty
   	micro
-  	
-  	## cli tools
+  	pipes
+    cbonsai
   	hyfetch
+    cmatrix
+    peaclock
+    
+  	## tools
   	file
+  	fd
+  	bc
+  	gcc
   	zip
+  	tldr
+  	wget
+  	curl
   	unzip
   	gnupg
+  	blueman
   	busybox
+  	ripgrep
   	killall
   	usbutils
   	pciutils
+  	xdg_utils
   	moreutils
   	libsecret
   	git-crypt
@@ -44,25 +68,40 @@
   	# lagrange
   	# firefox
 
-  	## misc, fonts, libraries, maybe more
-  	(nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })
+  	## misc, libraries, maybe more,
   	# qt5-wayland
   	# qt6-wayland
   	glib
 
   ];
 
+  fonts = {
 
-  programs = {
-    # hyprland.enable = true;
-  	traceroute.enable = true;
-  	starship.enable = true;
-  	fish.enable = true;
-  	git.enable = true;
+    packages = with pkgs; [
+  	  spleen
+  	  terminus_font
+  	  terminus_font_ttf
+  	  (nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })  	  
+  	];
 
-  	firefox.enable = true;
-  	
+    fontDir.enable = true;
+
+	fontconfig = {
+	  defaultFonts = {
+
+	  	monospace = [
+	  	  "TerminusTTF"
+	  	];
+        serif = [
+          "spleen-32x64"
+        ];
+        sansSerif = [
+          "spleen-32x64"
+        ];        
+
+	  };
+	};
+
   };
-
 
 }

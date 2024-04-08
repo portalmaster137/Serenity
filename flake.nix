@@ -1,5 +1,5 @@
 {
-  description = "SerenityOS v0.3.2-1";
+  description = "SerenityOS v0.3.6";
 
   inputs = {
   
@@ -21,10 +21,14 @@
 
     # ricer friendly wayland compositor
     hyprland.url = "github:hyprwm/Hyprland";
-    # hyprland-plugins = {
-      # url = "github:hyprwm/hyprland-plugins";
-      # inputs.hyprland.follows = "hyprland";
-    # };
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+    # status/task bar
+    # Fix broken waybar on current nixpkgs-unstable    
+    waybar.url = "github:Alexays/Waybar"; 
+    nix-colors.url = "github:misterio77/nix-colors";
 
   };
 
@@ -35,6 +39,8 @@
     nixpkgs,
     home-manager,
     hyprland,
+    waybar,
+    nix-colors,
     ...
   } @ inputs: let
     inherit (self) outputs;
