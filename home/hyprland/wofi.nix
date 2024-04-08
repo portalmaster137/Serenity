@@ -12,7 +12,7 @@
       layer = "top";
       term = "foot";
       height = "305px";
-      orientation = "horizontal";
+      orientation = "vertical";
       halign = "fill";
       line_wrap = "off";
       dynamic_lines = false;
