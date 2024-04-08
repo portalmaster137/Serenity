@@ -27,6 +27,8 @@
       initial_window_height = 600;
 
       background = "#" + config.theme.colors.bg;
+      background_opacity = 0.72;
+      background_blur = 0;
       url_color = "#" + config.theme.colors.primary-fg;
 
       color0 = "#" + config.theme.colors.color0;
