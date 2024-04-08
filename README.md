@@ -13,12 +13,14 @@ To Do:
  - [ ] become more learn-ed in the ways of nix-fu
 
  - [ ] get flake to actually build
-   - [ ] repair config after merge with updated #core branch
+   - [ ] repair #hyprland-merge after merge with updated #core
+    - [ ] merge into #hyprland and rebuild-switch
 
  - [X] build "core" branch for all variant flakes to build upon
    - [ ] finish separating home/ and core/ packages & programs
    - [ ] change one 'branch' & respective git branch at a time
- - [ ] merge updated aspects of core branch into hyprland branch
+
+ - [X] merge updated aspects of core branch into hyprland branch
 
  - [ ] hybrid shared/multi-user home-manager configuration
    - [ ] functional
@@ -33,7 +35,7 @@ To Do:
  - [ ] per host themes
    - [ ] Hades
    - [ ] Proserpina
-   
+
 ---
 
 WIP Flake Structure
