@@ -34,8 +34,6 @@ To Do:
    - [ ] Hades
    - [ ] Proserpina
 
- - [ ] merge old branches back into "trunk" branch 'core'
-  
 ---
 
 WIP Flake Structure
