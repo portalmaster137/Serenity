@@ -7,8 +7,7 @@
     # "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
     ./disko-config.nix
     ./network-configuration.nix
-
-    ./../../modules/core
+    ../../core/configuration.nix
     
   ];
 
