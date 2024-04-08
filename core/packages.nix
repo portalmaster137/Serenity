@@ -14,28 +14,27 @@
 
   environment.systemPackages = with pkgs; [
 
-  	# # nixos
-  	appimage-run
+  	## nixos
   	# nix-tree
   	# nix-init
   	# nix-index
   	# nixpkgs-review
   	# nix-output-monitor
 
-  	# # filsesystem
+  	## filsesystem
   	udiskie
   	ntfs3g
   	xfsprogs
     
-  	# # tools
-  	file
+  	## tools
   	fd
   	bc
   	gcc
-  	zip
   	tldr
   	wget
   	curl
+  	file
+  	zip
   	unzip
   	gnupg
   	blueman
@@ -48,7 +47,6 @@
   	moreutils
   	libsecret
   	git-crypt
-
   ];
 
   fonts = {
