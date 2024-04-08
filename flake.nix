@@ -1,9 +1,12 @@
 {
-  description = "SerenityOS v0.3.61";
+  description = "SerenityOS v0.3.65";
 
   inputs = {
   
     # Nixpkgs
+    # there was a way to have unstable as an overlay,
+    # will set it back up, lazy rn, for now pick one
+    # nixpkgs.url = "nixpkgs/nixos-23.11";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hardware.url = "github:nixos/nixos-hardware";
 
@@ -70,3 +73,4 @@
     
   };
 }
+

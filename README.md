@@ -2,60 +2,98 @@ To Do:
 
 > in order of priority
 
-
  - [ ] learn home manager (seriously wtf ???)
+ 
  - [ ] become more learn-ed in the ways of nix-fu
 
-  - [X] build hyprland **branch**
-   - [ ] get it working, stable, etc
-   - [ ] build minimal fallback gnome branch
-     - [ ] get flake to actually build
+ - [ ] get flake to actually build
+   - [ ] repair config after merge with updated #core branch
+
+ - [X] build "core" branch for all variant flakes to build upon
+   - [ ] finish separating home/ and core/ packages & programs
+   - [ ] change one 'branch' & respective git branch at a time
+ - [ ] merge updated aspects of core branch into hyprland branch
+
+ - [ ] hybrid shared/multi-user home-manager configuration
+   - [ ] functional
+
+ - [ ] build minimal fallback gnome branch
      
  - [ ] per host hardware configurations
    - [ ] Hades
-   - [X] Proserpina
-   
- - [ ] (+ per host theming)
+     - [ ] adjust Hades' configs
+   - [X] Proserpina 
 
+ - [ ] per host themes
+   - [ ] Hades
+   - [ ] Proserpina
+   
 ---
 
-WIP Flake structure
+WIP Flake Structure
 
 ```
 .
-├── README.md
 ├── core
 │   ├── configuration
-│   ├── packages
+│   └── packages
+├── flake
+├── home
+│   ├── git
+│   ├── fish
+│   ├── kitty
+│   ├── hyprland
+│   ├── theme
+│   │   └── resources
 │   └── users
+└── hosts
+	├── hades
+    └── proserpina
+```
+---
+```
+.
+├── core
+│   ├── configuration.nix
+│   └── packages.nix
 ├── flake.lock
 ├── flake.nix
 ├── home
 │   ├── home.nix
+│   ├── git.nix
+│   ├── fish.nix
+│   ├── kitty.nix
 │   ├── hyprland
-│   │   ├── dunst
-│   │   ├── hyprcursor
-│   │   ├── hypridle
-│   │   ├── hyprland
-│   │   ├── hyprlock
-│   │   ├── hyprpaper
-│   │   ├── waybar
-│   │   ├── wlogout
-│   │   └── wofi
-│   ├── git
-│   ├── fish
-│   ├── kitty
-│   └── theme
-│       ├── SerenityOS
-│       ├── config
-│       └── resources
-│           ├── icons
-│           └── wallpapers
+│   │   ├── hyprcursor.nix
+│   │   ├── hyprpaper.nix
+│   │   ├── hypridle.nix
+│   │   ├── hyprland.nix
+│   │   ├── hyprlock.nix
+│   │   ├── wlogout.nix
+│   │   ├── waybar.nix
+│   │   ├── wofi.nix
+│   │   └── dunst.nix
+│   ├── theme
+│   │   ├── SerenityOS.nix
+│   │   ├── config
+│	│	│	└── template.nix
+│   │   └── resources
+│   │       ├── icons
+│   │       └── wallpapers
+│   └── users
+│       ├── users.nix
+│       ├── u-template.nix
+│       ├── u-coffee.nix
+│       └── u-serenity.nix
 └── hosts
+	├── hades
+    │   ├─ configuration.nix
+    │   ├─ disko-config.nix
+    │   ├── hardware-configuration.nix
+    │   └── network-configuration.nix
     └── proserpina
-        ├── configuration
-        ├── disko-config
-        ├── hardware-configuration
-        └── network-configuration
-
+        ├── configuration.nix
+        ├── disko-config.nix
+        ├── hardware-configuration.nix
+        └── network-configuration.nix
 ```

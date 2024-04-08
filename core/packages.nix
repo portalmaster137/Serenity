@@ -3,7 +3,6 @@
 {
 
   programs = {
-    # hyprland.enable = true;
   	traceroute.enable = true;
   	starship.enable = true;
   	fish.enable = true;
@@ -16,7 +15,6 @@
   environment.systemPackages = with pkgs; [
 
   	## nixos
-  	appimage-run
   	# nix-tree
   	# nix-init
   	# nix-index
@@ -27,6 +25,7 @@
   	udiskie
   	ntfs3g
   	xfsprogs
+<<<<<<< HEAD
 
     ## compositor
   	waybar
@@ -50,6 +49,18 @@
   	tldr
   	wget
   	curl
+=======
+    
+  	## tools
+  	fd
+  	bc
+  	gcc
+  	tldr
+  	wget
+  	curl
+  	file
+  	zip
+>>>>>>> origin/core-merge
   	unzip
   	gnupg
   	blueman
@@ -62,16 +73,6 @@
   	moreutils
   	libsecret
   	git-crypt
-
-  	## web browsers
-  	# tor-browser-bundle-bin
-  	# lagrange
-  	# firefox
-
-  	## misc, libraries, maybe more,
-  	# qt5-wayland
-  	# qt6-wayland
-  	glib
 
   ];
 

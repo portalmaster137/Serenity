@@ -14,7 +14,7 @@
     inputs.home-manager.nixosModules.home-manager
 
     # also split up configuration.nix and import pieces:
-    ./users.nix
+    ../home/users
     ./packages.nix
 
   ];
@@ -75,7 +75,7 @@
     ];
   };
 
-  # services.flatpak.enable = true;
+  services.flatpak.enable = true;
 
   boot.binfmt.registrations.appimage = {
   	wrapInterpreterInShell = false;
