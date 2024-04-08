@@ -11,10 +11,7 @@ To Do:
 > in order of priority
 
 
- - [X] build ultraminimal general config **branch**
-   - [ ] build hyprland **branch**, following above structure
-   - [ ] build minimal fallback gnome **branch**, following main structure
-   - [ ] create new branch, merge, etc, make default branch if:
+ - [X] build "core" branch for all variant flakes to build upon
      - [X] get flake to actually build
      
  - [ ] per host hardware configurations
@@ -23,25 +20,21 @@ To Do:
    
 ---
 
-Cursory flake structure [Heavily WIP]
-
----
+WIP Flake Structure
 
 ```
 .
+├── README
+├── core
+│   ├── configuration
+│   ├── packages
+│   └── users
+├── flake.lock
 ├── flake.nix
-├── hosts
-│   ├── hades [MISSING]
-│   └── proserpina
-└── modules
-    └── core
-        ├── audio
-        ├── default
-        ├── display
-        ├── home
-        ├── packages
-        └── services
-
+└── hosts
+    └── proserpina
+        ├── configuration
+        ├── disko-config
+        ├── hardware-configuration
+        └── network-configuration
 ```
-
----
