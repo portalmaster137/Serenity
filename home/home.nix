@@ -20,7 +20,7 @@
 	  ## web browsers
 	  firefox
 	  lagrange
-	  tor-browser-bin     
+	  tor     
 
       ## chat & comms
       discord
