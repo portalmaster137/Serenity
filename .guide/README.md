@@ -25,3 +25,15 @@ all members of the amalgam.
 Please do not add or remove entries outside of these
 mentioned locations,
 thankyou& <3
+
+When you& make any changes, be sure to type 
+`git add --all` and then `git commit -m "$MSG"`
+where `$MSG` is a short description of what you&
+changed. Then you& can type `git push` to sync it.
+
+If you& plan to make any changes to the "core"
+directory or files contained within it, please be
+sure to type `git switch core` & `git pull` 
+before doing so, then merge the changes into the
+hyprland branch from there, this is to ensure muir
+git tree stays clean, please help ensure this :)
