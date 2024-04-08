@@ -1,77 +1,72 @@
 {
-  description = "SerenityOS v0.2.5";
+  description = "SerenityOS v0.3.6";
 
   inputs = {
   
-    # Nixpkgs and hardware specific configs
-    # nixpkgs.url = "nixpkgs/nixos-23.11";
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    
-	# alejandra ?? think its a nix code formatter
-	# alejandra.url = "github:kamadorueda/alejandra/3.0.0";
+    # Nixpkgs
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    hardware.url = "github:nixos/nixos-hardware";
 
-    # declaratice disks
+    # declarative disks
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-	
+
     # declarative dots
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-	};
-    # window manager (ricer friendly)
-    hyprland = { 
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
+  	  url = "github:nix-community/home-manager";
+  	  inputs.nixpkgs.follows = "nixpkgs";
     };
-      
+
+    # ricer friendly wayland compositor
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+    # status/task bar
+    # Fix broken waybar on current nixpkgs-unstable    
+    waybar.url = "github:Alexays/Waybar"; 
+    nix-colors.url = "github:misterio77/nix-colors";
+
   };
 
-  outputs = { 
-    # self,
-    nixpkgs,
-    nixos-hardware,
+  outputs = {
+    self,
+    hardware,
     disko,
+    nixpkgs,
     home-manager,
     hyprland,
+    waybar,
+    nix-colors,
     ...
-  }: 
-
-  let
-    # common-modules = [
-      # ({ config, pkgs, ... }:)
-    # ];
-    home-manager-config = toplevel: [
-      home-manager.nixosModules.home-manager
-      {
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          users.serenity = {
-          	imports = [
-          	  (import ./modules/core/home.nix)
-          	];        	  	
-          };
-        };
-      }
-    ];
-  in
-
-  {
-      nixosConfigurations = {
-        proserpina = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          # specialArgs = { inherit hyprland; };
-          modules = [
-            # nixos-hardware.nixosModules.$MODEL
-            ./hosts/proserpina/configuration.nix
-            disko.nixosModules.disko
-          ] ++ home-manager-config;
-        };
+  } @ inputs: let
+    inherit (self) outputs;
+  in {
+    # Available through 'nixos-rebuild --flake .#your-hostname'
+    nixosConfigurations = {
+    
+      proserpina  = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        # > Our main nixos configuration files <
+        modules = [
+          disko.nixosModules.disko
+          ./hosts/proserpina/configuration.nix
+        ];
       };
-  };
 
+      hades  = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        # > Our main nixos configuration files <
+        modules = [
+          disko.nixosModules.disko
+          ./hosts/proserpina/configuration.nix
+        ];
+      };
+
+    };
+    
+  };
 }
