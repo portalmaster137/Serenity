@@ -11,6 +11,9 @@
 
   environment.systemPackages = with pkgs; [
 
+    ## temporary
+    waybar
+
   	## nixos
   	# nix-tree
   	# nix-init

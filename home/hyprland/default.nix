@@ -28,8 +28,12 @@
     wlsunset
     wlr-randr
     wl-clipboard
+    hypridle
+    hyprlock
     hyprshot
+    hyprpaper
     hyprpicker
+    hyprcursor
     brightnessctl
 
     ## lib wayland
@@ -38,9 +42,10 @@
     wayland-protocols
 
     ## lib
+    meson
     qt5ct
     libva
-    meson
+    libnotify
 
     ## compat
     dconf
