@@ -1,4 +1,5 @@
 {
+
   disko.devices = {
     disk = {
       sda = {
@@ -19,6 +20,7 @@
                 ];
               };
             };
+
             luks = {
               size = "100%";
               content = {
@@ -31,6 +33,7 @@
                   #keyFile = "/tmp/secret.key";
                 };
                 # additionalKeyFiles = [ "/tmp/additionalSecret.key" ];
+
                 content = {
                   type = "btrfs";
                   extraArgs = [ "-f" ];
@@ -49,11 +52,15 @@
                     };
                   };
                 };
+
               };
             };
+
           };
         };
       };
     };
+    
   };
+  
 }

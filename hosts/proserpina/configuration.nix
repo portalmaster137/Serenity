@@ -1,21 +1,23 @@
-{ inputs, outputs, config, pkgs, lib, ... }:
+{ inputs, outputs, config, lib, pkgs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
-      ./disko-config.nix
-      ./hardware-configuration.nix
-      ../../configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    # "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
+    ./disko-config.nix
+    ./network-configuration.nix
+
+    ./../../modules/core
+    
+  ];
 
   # Enable swap on luks
   boot = {
     loader = {
       systemd-boot = {
         enable = true;
-	configurationLimit = 5;
+	    configurationLimit = 5;
       };
       efi = {
         canTouchEfiVariables = true;
@@ -70,34 +72,4 @@
   	};
   };
 
-  networking = {
-    hostName = "proserpina"; # Define your hostname
-  };
-
-  services = {
-
-    syncthing = {
-      enable = true;
-      dataDir = "/home/serenity/";
-      configDir = "/home/serenity/.config/syncthing";
-      user = "serenity";
-      settings = {
-      
-        devices = {
-          # hades.id = "$DEVICE_ID";
-          # hecate.id = "$DEVICE_ID";
-          # proserpina.id = "$DEVICE_ID";
-        };
-        
-        folders = {
-          # "$FOLDER_ID" = {
-            # path = "/home/serenity/Documents/Notes";
-            # devices = [ "hecate" "hades" ];
-          # };
-
-        };
-      };
-    };
-  };
-  
 }
