@@ -14,7 +14,7 @@
     inputs.home-manager.nixosModules.home-manager
 
     # also split up configuration.nix and import pieces:
-    ./users.nix
+    ../home/users/default.nix
     ./packages.nix
 
   ];

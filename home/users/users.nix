@@ -13,11 +13,10 @@
     inputs.home-manager.nixosModules.default
   ];
 
-  # To add a user, copy the template and adjust it to match,
-  # then the same with the home-manager block below, then
-  # add new $user.nix file in home/users/ by copyoing the 
-  # existing template
-  #
+  # To add a user, copy the template in the users.users
+  # block and adjust it to match,then the same with the
+  # home-manager block below, then add new username.nix
+  # file in home/users by copying the existing template
   #  
   # A suite of programs and applications has been provided
   # via a shared home.nix file, as well as a common config
@@ -29,6 +28,7 @@
     # TEMPLATE = {
       # description = "TEMPLATE";
       # isNormalUser = true;
+      # # be sure to change this with 'passwd'
       # initialPassword = "password";
       # shell = pkgs.fish;
       # extraGroups = [
@@ -40,6 +40,7 @@
     coffee = {
       description = "Coffee Beans";
       isNormalUser = true;
+      # be sure to change this with 'passwd'
       initialPassword = "password";
       shell = pkgs.fish;
       extraGroups = [
@@ -51,6 +52,7 @@
     serenity = {
       description = "Serenity Amalgam";
       isNormalUser = true;
+      # be sure to change this with 'passwd'
       initialPassword = "password";
       shell = pkgs.fish;
       extraGroups = [
@@ -67,17 +69,26 @@
     useUserPackages = true;
     users = {
 
-      # coffee = {
-        # imports = [ ../home/users/coffee.nix ];
+      # TEMPLATE = {
+        # imports = [ ./-template.nix ];
         # home = {
-      	  # username = "coffee";
-      	  # homeDirectory = "/home/coffee";
+      	  # username = "TEMPLATE";
+      	  # homeDirectory = "/home/TEMPLATE";
       	  # stateVersion = "23.11";
       	# };
       # };
 
+      coffee = {
+        imports = [ ./-coffee.nix ];
+        home = {
+      	  username = "coffee";
+      	  homeDirectory = "/home/coffee";
+      	  stateVersion = "23.11";
+      	 };
+      };
+
       serenity = {
-        imports = [ ../home/home.nix ];
+        imports = [ ./-serenity.nix ];
         home = {
       	  username = "serenity";
       	  homeDirectory = "/home/serenity";
