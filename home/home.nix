@@ -8,7 +8,6 @@
 }: {
 
   imports = [
-<<<<<<< HEAD
     ./hyprland
     ./theme
     ./kitty.nix
