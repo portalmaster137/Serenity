@@ -19,61 +19,43 @@ To Do:
 
 ---
 
-Cursory flake structure [Heavily WIP]
-
+WIP Flake structure
 
 ```
-
-[CURRENT]
-
 .
-├── flake
+├── README.md
 ├── core
 │   ├── configuration
 │   ├── packages
 │   └── users
+├── flake.lock
+├── flake.nix
 ├── home
-│   ├── home
-│   └── hyprland
-├── hosts
-│   └── proserpina
-│		└── configuration
-└── resources
-
-```
----
-```
-
-[PLANNED]
-
-.
-├── flake
-├── core
-│   ├── core-config
-│   ├── packages
-│   ├── services
-│   └── users
-├── home
-│   ├── home-config
-│   ├── packages
-│   ├── firefox
-│   ├── gaming
+│   ├── home.nix
+│   ├── hyprland
+│   │   ├── dunst
+│   │   ├── hyprcursor
+│   │   ├── hypridle
+│   │   ├── hyprland
+│   │   ├── hyprlock
+│   │   ├── hyprpaper
+│   │   ├── waybar
+│   │   ├── wlogout
+│   │   └── wofi
 │   ├── git
 │   ├── fish
-│   ├── micro
 │   ├── kitty
-│   ├── starship
-│   └── hyprland
-│		├── hypr-misc
-│		├── waybar
-│		├── dunst
-│		└── wofi
+│   └── theme
+│       ├── SerenityOS
+│       ├── config
+│       └── resources
+│           ├── icons
+│           └── wallpapers
 └── hosts
-    ├── hades
-	│   ├── configuration
-	│   └── resources
     └── proserpina
-	    ├── configuration
-		└── resources
+        ├── configuration
+        ├── disko-config
+        ├── hardware-configuration
+        └── network-configuration
 
 ```
