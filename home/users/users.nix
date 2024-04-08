@@ -12,16 +12,6 @@
   imports = [
     inputs.home-manager.nixosModules.default
   ];
-
-  # To add a user, copy the template in the users.users
-  # block and adjust it to match,then the same with the
-  # home-manager block below, then add new username.nix
-  # file in home/users by copying the existing template
-  #  
-  # A suite of programs and applications has been provided
-  # via a shared home.nix file, as well as a common config
-  # across machines and users. Please do not add or remove
-  # entries outside of these mentioned locations, thankyou&
    
   users.users = {
 

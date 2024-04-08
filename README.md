@@ -2,12 +2,22 @@ To Do:
 
 > in order of priority
 
+ - [X] get flake to actually build
+
  - [X] build "core" branch for all variant flakes to build upon
-     - [X] get flake to actually build
+ - [ ] finish separating home/ and core/ packages & programs
+ - [ ] merge updated aspects of core branch into hyprland branch
+
+ - [ ] hybrid shared/multi-user home-manager configuration
+   - [ ] functional
      
  - [ ] per host hardware configurations
    - [ ] Hades
    - [X] Proserpina
+    
+   - [ ] per host themes
+     - [ ] Hades
+     - [ ] Proserpina
    
 ---
 
@@ -15,16 +25,40 @@ WIP Flake Structure
 
 ```
 .
-├── README
 ├── core
 │   ├── configuration
-│   ├── packages
-│   └── users
+│   └── packages
 ├── flake
+├── home
+│   └── users
 └── hosts
+	├── hades
     └── proserpina
-        ├── configuration
-        ├── disko-config
-        ├── hardware-configuration
-        └── network-configuration
+```
+---
+```
+.
+├── core
+│   ├── configuration.nix
+│   └── packages.nix
+├── flake.lock
+├── flake.nix
+├── home
+│   ├── home.nix
+│   └── users
+│       ├── -coffee.nix
+│       ├── -serenity.nix
+│       ├── -template.nix
+│       └── users.nix
+└── hosts
+	├── hades
+    │   ├── configuration.nix
+    │   ├── disko-config.nix
+    │   ├── hardware-configuration.nix
+    │   └── network-configuration.nix
+    └── proserpina
+        ├── configuration.nix
+        ├── disko-config.nix
+        ├── hardware-configuration.nix
+        └── network-configuration.nix
 ```
