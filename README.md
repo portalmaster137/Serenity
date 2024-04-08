@@ -1,3 +1,9 @@
+Hey there,
+if you're not muis or one of muir headmates,
+feel free to do as you wish with these configs :)
+
+if you&'re a headmate, read [this](.guide/README.md)
+
 To Do:
 
 > in order of priority
