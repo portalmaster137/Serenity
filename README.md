@@ -1,6 +1,6 @@
 To Do:
-> in order of priority
 
+> in order of priority
 
  - [X] build "core" branch for all variant flakes to build upon
      - [X] get flake to actually build
@@ -20,8 +20,7 @@ WIP Flake Structure
 │   ├── configuration
 │   ├── packages
 │   └── users
-├── flake.lock
-├── flake.nix
+├── flake
 └── hosts
     └── proserpina
         ├── configuration
