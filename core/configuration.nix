@@ -61,8 +61,6 @@
   	networkManager-wait-online.enable = lib.mkForce false;
   	systemd-networkd-wait-online.enable = lib.mkForce false;
   };
-  ## apparently prevents getting stuck at shutdown
-  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
 
   ## autoupgrades ? disabled for now, need to read into
   # system.autoUpgrade = {
