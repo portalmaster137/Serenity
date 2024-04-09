@@ -60,6 +60,7 @@
         [[ "$player" ]] && prin "\n \n Music Player" "$player"
         # info "\n \n Local IP" local_ip
         prin "\n"
+        prin "\n \n Trans rights !"
 
         # prin "\n \n    ''${cl0}──''${cl1}────''${cl2}────''${cl3}────''${cl4}────''${cl5}────''${cl6}────''${cl7}──"
         # prin "\n \n \n \n \n \n ''${cl0}⬤ \n \n ''${cl1}⬤ \n \n ''${cl2}⬤ \n \n ''${cl3}⬤ \n \n ''${cl4}⬤ \n \n ''${cl5}⬤ \n \n ''${cl6}⬤ \n \n ''${cl7}⬤"
@@ -96,10 +97,10 @@
     shell_path="off"
     shell_version="on"
     speed_type="bios_limit"
-    speed_shorthand="off"
-    cpu_brand="on"
+    speed_shorthand="on"
+    cpu_brand="off"
     cpu_speed="on"
-    cpu_cores="logical"
+    cpu_cores="off"
     cpu_temp="off"
     gpu_brand="on"
     gpu_type="all"
