@@ -53,11 +53,11 @@
         info "\n \n Font" font
         info "\n \n Song" song
         [[ "$player" ]] && prin "\n \n Music Player" "$player"
-        info "\n \n Local IP" local_ip
+        # info "\n \n Local IP" local_ip
         prin "\n"
 
         # prin "\n \n    ''${cl0}──''${cl1}────''${cl2}────''${cl3}────''${cl4}────''${cl5}────''${cl6}────''${cl7}──"
-        prin "\n \n \n \n \n \n ''${cl0}⬤ \n \n ''${cl1}⬤ \n \n ''${cl2}⬤ \n \n ''${cl3}⬤ \n \n ''${cl4}⬤ \n \n ''${cl5}⬤ \n \n ''${cl6}⬤ \n \n ''${cl7}⬤"
+        # prin "\n \n \n \n \n \n ''${cl0}⬤ \n \n ''${cl1}⬤ \n \n ''${cl2}⬤ \n \n ''${cl3}⬤ \n \n ''${cl4}⬤ \n \n ''${cl5}⬤ \n \n ''${cl6}⬤ \n \n ''${cl7}⬤"
     }
 
     reset="\033[0m"
@@ -81,11 +81,11 @@
 
     title_fqdn="off"
     kernel_shorthand="on"
-    distro_shorthand="off"
+    distro_shorthand="on"
     os_arch="off"
     uptime_shorthand="on"
     memory_percent="off"
-    memory_unit="mib"
+    memory_unit="gib"
     package_managers="on"
     shell_path="off"
     shell_version="on"
@@ -98,7 +98,7 @@
     gpu_brand="on"
     gpu_type="all"
     refresh_rate="off"
-    gtk_shorthand="off"
+    gtk_shorthand="on"
     gtk2="on"
     gtk3="on"
     de_version="on"
