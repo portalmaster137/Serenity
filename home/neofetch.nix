@@ -1,8 +1,11 @@
 { pkgs, config, ... }: {
-  home.packages = with pkgs; [ neofetch ];
+
+  home.packages = with pkgs; [
+    neofetch
+  ];
 
   xdg.configFile."neofetch/ascii.txt".text = ''
-    "${c6}
+    ''${c6}
                                         
                                         
            @@                           
@@ -18,7 +21,7 @@
                             @           
                                         
                                         
-  ";
+  '';
 
   xdg.configFile."neofetch/config.conf".text = ''
     # From: https://github.com/Chick2D/neofetch-themes/
