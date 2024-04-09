@@ -19,6 +19,7 @@
   ];
 
   ## locale is common across machines
+  ## crikey !
   time.timeZone = "Australia/Brisbane";
   i18n.defaultLocale = "en_GB.UTF-8";
 
@@ -39,6 +40,19 @@
   security = {
   	rtkit.enable = true;
   	sudo.execWheelOnly = true;
+  };
+
+  ## settings for nix
+  nix.settings = {
+    ## use all cores during build
+    cores = 0;
+    auto-optimise-store = true;
+    allowed-users = [ "@wheel" ];
+    ## enable flakes uwu
+    experimental-features = [
+    "nix-command"
+    "flakes"
+    ];
   };
 
   ## disable these cuz they cause problems (thx sasha)

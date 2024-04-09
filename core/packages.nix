@@ -2,6 +2,8 @@
 
 {
 
+  ## -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
   ## find a better home for these please <3
   fonts = {
     packages = with pkgs; [
@@ -30,16 +32,8 @@
 	};
 
   };
-
-  nix.settings = {
-    cores = 0;
-    auto-optimise-store = true;
-    allowed-users = [ "@wheel" ];
-    experimental-features = [
-    "nix-command"
-    "flakes"
-    ];
-  };
+  
+  ## -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
   nixpkgs = {
 
