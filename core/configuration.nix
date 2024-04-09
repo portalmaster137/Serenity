@@ -13,7 +13,7 @@
 
     ## semi-modularised config
     ./packages
-    ./display
+    # ./display
     ../home/users
 
   ];
