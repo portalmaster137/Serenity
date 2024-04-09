@@ -13,7 +13,7 @@
     xwayland.enable = true;
 
     plugins = [
-      # inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
+      inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
 	  # inputs.hyprland-plugins.packages."${pkgs.system}".hyprbars
     ];
     
@@ -45,6 +45,7 @@
         # Windows control
         "$mod, Q, killactive,"
         "$mod, T, togglefloating,"
+        "$mod, P, pseudo,"
         "$mod, F, fullscreen"
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
@@ -69,7 +70,7 @@
           "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
         ]) 9));
 
-      bindm = [ "$mod, mouse:272, movewindow" "$mod, R, resizewindow" ];
+      bindm = [ "$shiftMod, R, movewindow" "$mod, R, resizewindow" ];
 
       bindl = [
         ",XF86AudioMute, exec, sound-toggle"
