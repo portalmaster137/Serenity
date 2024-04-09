@@ -45,7 +45,7 @@
         # info "\n \n Icons" icons
 		# info "\n \n System Font" font
         info "\n \n Terminal" term
-		prin "\n \n Terminal Font" "Spleen"
+		prin "\n \n Terminal Font" "spleen"
         # info "\n \n Terminal Font" term_font
         # info "\n \n Host" model
         prin "\n \n Device" "Thinkpad T470s"
