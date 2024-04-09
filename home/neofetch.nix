@@ -31,28 +31,33 @@
 
     print_info() {
         prin "\n"
+        prin "\n \n Host" "Proserpina"
         info "\n \n OS" distro
         info "\n \n Kernel" kernel
         info "\n \n Packages" packages
         info "\n \n Shell" shell
+        info "\n \n Editor" editor
         # info "\n \n Resolution" resolution
-        info "\n \n DE" de
+        # info "\n \n DE" de
         info "\n \n WM" wm
         # info "\n \n WM Theme" wm_theme
         # info "\n \n Theme" theme
         # info "\n \n Icons" icons
+		# info "\n \n System Font" font
         info "\n \n Terminal" term
-        info "\n \n Terminal Font" term_font
-        info "\n \n Host" model
-        info "\n \n CPU" cpu
+		prin "\n \n Terminal Font" "Spleen"
+        # info "\n \n Terminal Font" term_font
+        # info "\n \n Host" model
+        prin "\n \n Device" "Thinkpad T470s"
+        info "\n \n Processor" cpu
         # info "\n \n GPU" gpu
         info "\n \n Memory" memory
         # info "\n \n Disk" disk
         # info "\n \n Battery" battery
         info "\n \n Uptime" uptime
-        # info "\n \n Font" font
-        # info "\n \n Song" song
-        # [[ "$player" ]] && prin "\n \n Music Player" "$player"
+        prin "\n"
+        info "\n \n Song" song
+        [[ "$player" ]] && prin "\n \n Music Player" "$player"
         # info "\n \n Local IP" local_ip
         prin "\n"
 
@@ -85,7 +90,8 @@
     os_arch="off"
     uptime_shorthand="on"
     memory_percent="off"
-    memory_unit="gib"
+    memory_unit="mib"
+    mem_precision=0
     package_managers="on"
     shell_path="off"
     shell_version="on"
@@ -127,10 +133,10 @@
     bar_length=15
     bar_color_elapsed="distro"
     bar_color_total="distro"
-    cpu_display="on"
+    cpu_display="off"
     memory_display="on"
-    battery_display="on"
-    disk_display="on"
+    battery_display="off"
+    disk_display="off"
     image_backend="ascii"
     image_source="$HOME/.config/neofetch/ascii.txt"
     ascii_distro="auto"
