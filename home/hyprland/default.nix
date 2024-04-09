@@ -9,6 +9,9 @@
 }: {
 
   imports = [
+
+  ./theme
+
   ./hyprland.nix  
   ./hyprpaper.nix
   ./hyprcursor.nix
@@ -18,6 +21,7 @@
   ./waybar.nix
   ./dunst.nix
   ./wofi.nix
+  
   ];
 
   home.packages = with pkgs; [
