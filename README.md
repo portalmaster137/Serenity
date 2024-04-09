@@ -1,6 +1,6 @@
 Hey there,
-if you're not muis or one of muir headmates,
 feel free to do as you wish with these configs :)
+
 To Do:
 
 > in order of priority
@@ -10,21 +10,18 @@ To Do:
  - [ ] become more learn-ed in the ways of nix-fu
 
  - [ ] get flake to actually build
-   - [ ] repair #hyprland-merge after merge with updated #core
+   - [ ] keep branches synced
 
  - [X] build "core" branch for all variant flakes to build upon
    - [ ] finish separating home/ and core/ packages & programs
-   - [ ] change one 'branch' & respective git branch at a time
- - [X] merge updated aspects of core branch into hyprland branch
 
  - [ ] hybrid shared/multi-user home-manager configuration
-   - [ ] functional
+   - [ ] functional?
 
  - [ ] build minimal fallback gnome branch
      
  - [ ] per host hardware configurations
    - [ ] Hades
-     - [ ] adjust Hades' configs
    - [X] Proserpina 
 
  - [ ] per host themes
