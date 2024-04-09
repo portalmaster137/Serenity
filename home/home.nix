@@ -9,7 +9,6 @@
 
   imports = [
     ./hyprland
-    ./theme
     ./git.nix
     ./kitty.nix
     # ./starship.nix
