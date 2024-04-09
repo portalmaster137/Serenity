@@ -7,7 +7,6 @@
   xdg.configFile."neofetch/ascii.txt".text = ''
     ''${c6}
                                         
-                                        
               @@                        
            @@@                          
          @@@                            
@@ -49,7 +48,7 @@
         info "\n \n Memory" memory
         # info "\n \n GPU" gpu
         # info "\n \n Resolution" resolution
-        info "\n \n Uptime" uptime
+        # info "\n \n Uptime" uptime
         prin "\n"
         # prin "\n \n Hotel?" "trivago"
         # prin "\n \n Trans rights !"
