@@ -10,6 +10,7 @@
           activeBorderColor = [ "blue" "bold" ];
           inactiveBorderColor = [ "black" ];
           selectedLineBgColor = [ "default" ];
+	    };
       };
     };
 	
