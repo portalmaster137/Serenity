@@ -7,6 +7,7 @@
   xdg.configFile."neofetch/ascii.txt".text = ''
     ''${c6}
                                         
+                                        
               @@                        
            @@@                          
          @@@                            
