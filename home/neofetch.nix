@@ -29,35 +29,31 @@
         info "\n \n OS" distro
         info "\n \n Kernel" kernel
         info "\n \n Packages" packages
-        info "\n \n Shell" shell
-        info "\n \n Editor" editor
-        # info "\n \n Resolution" resolution
-        info "\n \n DE" de
-        info "\n \n WM" wm
-        # info "\n \n DE Theme" de_theme
-        # info "\n \n Theme" theme
-        # info "\n \n Icons" icons
-		# info "\n \n System Font" font
-        info "\n \n Terminal" term
-		prin "\n \n Terminal Font" "spleen"
+        # info "\n \n Shell" shell
+        prin "\n \n Shell" "Fish 3.7.1"
+        prin "\n \n Prompt" "Starship 1.18.2"
+        # info "\n \n Editor" editor
+        prin "\n \n Editor" "Micro 2.0.13"
+        # info "\n \n Desktop" de
+        prin "\n \n Desktop" "Hyprland 0.37.1"
+        # info "\n \n Terminal" term
+        prin "\n \n Terminal" "Kitty 0.33.1"
         # info "\n \n Terminal Font" term_font
-        # info "\n \n Host" model
+		prin "\n \n Terminal Font" "spleen 32x64"
+        # info "\n \n Model" model
+        # prin "\n \n System" "MSI Z97-G3"
         prin "\n \n Device" "Thinkpad T470s"
         info "\n \n Processor" cpu
-        # info "\n \n GPU" gpu
         info "\n \n Memory" memory
-        # info "\n \n Disk" disk
-        # info "\n \n Battery" battery
+        info "\n \n GPU" gpu
+        info "\n \n Resolution" resolution
         info "\n \n Uptime" uptime
         prin "\n"
-        info "\n \n Song" song
-        [[ "$player" ]] && prin "\n \n Music Player" "$player"
-        # info "\n \n Local IP" local_ip
-        prin "\n"
+        # prin "\n \n Hotel?" "trivago"
         # prin "\n \n Trans rights !"
 
-        # prin "\n \n    ''${cl0}──''${cl1}────''${cl2}────''${cl3}────''${cl4}────''${cl5}────''${cl6}────''${cl7}──"
-        # prin "\n \n \n \n \n \n ''${cl0}⬤ \n \n ''${cl1}⬤ \n \n ''${cl2}⬤ \n \n ''${cl3}⬤ \n \n ''${cl4}⬤ \n \n ''${cl5}⬤ \n \n ''${cl6}⬤ \n \n ''${cl7}⬤"
+        prin "\n \n    ''${cl0}──''${cl1}────''${cl2}────''${cl3}────''${cl4}────''${cl5}────''${cl6}────''${cl7}──"
+        prin "\n \n \n \n \n \n ''${cl0}⬤ \n \n ''${cl1}⬤ \n \n ''${cl2}⬤ \n \n ''${cl3}⬤ \n \n ''${cl4}⬤ \n \n ''${cl5}⬤ \n \n ''${cl6}⬤ \n \n ''${cl7}⬤"
     }
 
     reset="\033[0m"
