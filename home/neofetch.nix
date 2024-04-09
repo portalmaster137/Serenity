@@ -32,9 +32,9 @@
         info "\n \n Shell" shell
         info "\n \n Editor" editor
         # info "\n \n Resolution" resolution
-        # info "\n \n DE" de
+        info "\n \n DE" de
         info "\n \n WM" wm
-        # info "\n \n WM Theme" wm_theme
+        # info "\n \n DE Theme" de_theme
         # info "\n \n Theme" theme
         # info "\n \n Icons" icons
 		# info "\n \n System Font" font
