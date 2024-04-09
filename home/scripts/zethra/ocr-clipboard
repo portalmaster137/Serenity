@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd "$(mktemp -d)"
+wl-paste > in.png
+tesseract in.png out
+wl-copy < out.txt

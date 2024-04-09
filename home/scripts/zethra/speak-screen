@@ -1,0 +1,24 @@
+#!/bin/sh
+
+PIDFILE='/tmp/speak.pid'
+
+if [ -f "$PIDFILE" ]; then
+    PID=$(cut -f 1 $PIDFILE)
+    DIR=$(cut -f 2 $PIDFILE)
+    kill "$PID"
+    rm -f "$PIDFILE"
+    rm -rf "$DIR"
+else
+    DIR=`mktemp -d`
+    spectacle -rbno "$DIR/in.png"
+    tesseract "$DIR/in.png" - | tr '|' 'I' > "$DIR/text"
+    RHVoice-test -r 140 -i "$DIR/text" -o "$DIR/out.wav"
+    mpv "$DIR/out.wav" &
+    PID="$!"
+    echo "Making pid file, $PID $PIDFILE"
+    printf "$PID\t$DIR" > "$PIDFILE"
+    wait $(jobs -p)
+    echo "Speech done"
+    rm -rf "$DIR"
+    rm -f "$PIDFILE"
+fi
