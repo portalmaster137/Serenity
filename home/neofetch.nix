@@ -37,7 +37,7 @@
         info "\n \n Uptime" uptime
         info "\n \n Packages" packages
         info "\n \n Shell" shell
-        info "\n \n Resolution" resolution
+        # info "\n \n Resolution" resolution
         info "\n \n DE" de
         info "\n \n WM" wm
         info "\n \n WM Theme" wm_theme
@@ -46,13 +46,13 @@
         info "\n \n Terminal" term
         info "\n \n Terminal Font" term_font
         info "\n \n CPU" cpu
-        info "\n \n GPU" gpu
+        # info "\n \n GPU" gpu
         info "\n \n Memory" memory
-        info "\n \n Disk" disk
-        info "\n \n Battery" battery
+        # info "\n \n Disk" disk
+        # info "\n \n Battery" battery
         info "\n \n Font" font
-        info "\n \n Song" song
-        [[ "$player" ]] && prin "\n \n Music Player" "$player"
+        # info "\n \n Song" song
+        # [[ "$player" ]] && prin "\n \n Music Player" "$player"
         # info "\n \n Local IP" local_ip
         prin "\n"
 
