@@ -1,4 +1,4 @@
-{
+sss{
   self,
   inputs,
   outputs,
@@ -13,7 +13,7 @@
     xwayland.enable = true;
 
     plugins = [
-      inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
+      # inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
 	  # inputs.hyprland-plugins.packages."${pkgs.system}".hyprbars
     ];
     
