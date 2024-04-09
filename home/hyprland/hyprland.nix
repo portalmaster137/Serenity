@@ -93,8 +93,8 @@
         "QT_QPA_PLATFORMTHEME=qt6ct"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         "GTK_THEME,Flat-Remix-GTK-White-Darkest-Solid:dark"
-        "HYPRCURSOR_THEME,rose-pine"
-        "HYPRCURSOR_SIZE,16"
+        # "HYPRCURSOR_THEME,rose-pine"
+        # "HYPRCURSOR_SIZE,16"
       ];
 
       general = {
@@ -214,11 +214,11 @@
     };
   };
 
- #  home.pointerCursor = {
- #    gtk.enable = true;
- #    package = pkgs.bibata-cursors;
- #    name = "Bibata-Modern-Classic";
- #    size = 12;
- #  };
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 12;
+  };
 
 }
