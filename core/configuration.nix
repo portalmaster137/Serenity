@@ -12,8 +12,8 @@
     inputs.home-manager.nixosModules.home-manager
 
     ## semi-modularised config
-    ./packages
-    ./display
+    ./packages.nix
+    ./display.nix
     ../home/users
 
   ];
