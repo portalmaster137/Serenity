@@ -34,8 +34,8 @@
 
 
       bind = [
-        "$mod, RETURN, exec, ${pkgs.wofi}/bin/wofi"
-        "$shiftMod, RETURN, exec, ${pkgs.kitty}/bin/kitty"
+        "$shiftMod, RETURN, exec, ${pkgs.wofi}/bin/wofi"
+        "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty"
         "$mod, E, exec, ${pkgs.xfce.thunar}/bin/thunar"
         "$mod, B, exec, ${pkgs.qutebrowser}/bin/qutebrowser"
         "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock"
@@ -45,7 +45,6 @@
         # Windows control
         "$mod, Q, killactive,"
         "$mod, T, togglefloating,"
-        "$mod, P, pseudo,"
         "$mod, F, fullscreen"
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
@@ -70,7 +69,7 @@
           "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
         ]) 9));
 
-      bindm = [ "$shiftMod, R, movewindow" "$mod, R, resizewindow" ];
+      bindm = [ "$mod, R, movewindow" "$shiftMod, R, resizewindow" ];
 
       bindl = [
         ",XF86AudioMute, exec, sound-toggle"
@@ -94,8 +93,8 @@
         "QT_QPA_PLATFORMTHEME=qt6ct"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         "GTK_THEME,Flat-Remix-GTK-White-Darkest-Solid:dark"
-        # "HYPRCURSOR_THEME,rose-pine"
-        # "HYPRCURSOR_SIZE,16"
+        "HYPRCURSOR_THEME,rose-pine"
+        "HYPRCURSOR_SIZE,16"
       ];
 
       general = {
@@ -215,10 +214,10 @@
     };
   };
 
-  home.pointerCursor = {
-    gtk.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 12;
+  # home.pointerCursor = {
+    # gtk.enable = true;
+    # package = pkgs.bibata-cursors;
+    # name = "Bibata-Modern-Classic";
+    # size = 12;
   };
 }
