@@ -2,7 +2,7 @@
   programs.git = {
     enable = true;
     userName = "serenity-F";
-    userEmail = "serenity-amalgam@protonmail.com";
+    userEmail = "serenity-F@noreply.codeberg.org";
     extraConfig = {
       init.defaultBranch = "main";
       # Automatically track remote branch
