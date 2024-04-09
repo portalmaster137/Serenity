@@ -5,7 +5,7 @@
 
     font = {
       name = "spleen 32x64";
-      size = 12;
+      size = 11;
     };
     
     settings = {
@@ -27,7 +27,7 @@
       initial_window_height = 600;
 
       background = "#" + config.theme.colors.bg;
-      background_opacity = "0.72";
+      background_opacity = "0.60";
       background_blur = 0;
       url_color = "#" + config.theme.colors.primary-fg;
 

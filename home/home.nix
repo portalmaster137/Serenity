@@ -10,8 +10,10 @@
   imports = [
     ./hyprland
     ./theme
-    ./kitty.nix
     ./git.nix
+    ./kitty.nix
+    # ./starship.nix
+    ./neofetch.nix
     # ./qutebrowser
   ];
 
