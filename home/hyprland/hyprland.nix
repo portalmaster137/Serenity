@@ -1,4 +1,4 @@
-sss{
+{
   self,
   inputs,
   outputs,
