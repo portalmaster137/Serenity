@@ -17,4 +17,7 @@
 
   qt.style = "adwaita-dark";
 
+  ## apparently prevents getting stuck at shutdown
+  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
+
 }
