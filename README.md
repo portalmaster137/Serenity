@@ -1,84 +1,55 @@
 Hey there,
 feel free to do as you wish with these configs :)
 
-Heavily WIP, and at this point, still mostly stolen code.
 
+Heavily WIP, and at this point, still mostly stolen code.
 
 This is the "core" branch, for building on top of,
 for muir actually "in-use" branch, 
 [click here](https://codeberg.org/serenity-F/nixdots/src/branch/hyprland)
 
-To Do:
+> Checklist:
 
-> in order of priority
+in order of priority
 
- - [ ] learn home manager (seriously wtf ???)
+ - [X] flake builds
+ - [ ] home/ and core/ packages & programs fully separated
+ - [ ] #core changes synced across other branches
  
- - [ ] become more learn-ed in the ways of nix-fu
-
- - [ ] get flake to actually build
-   - [ ] keep branches synced
-
- - [X] build "core" branch for all variant flakes to build upon
-   - [ ] finish separating home/ and core/ packages & programs
-
- - [ ] hybrid shared/multi-user home-manager configuration
-   - [ ] functional?
-
- - [ ] build minimal fallback gnome branch
+ - [X] hybrid multi-user home-manager configuration
+   - [ ] functional
      
  - [ ] per host hardware configurations
    - [ ] Hades
    - [X] Proserpina 
-
- - [ ] per host themes
-   - [ ] Hades
-   - [ ] Proserpina
-
+   
 ---
 
-Cursory flake structure
-
-```
-.
-├── core
-│   ├── configuration
-│   └── packages
-├── flake
-├── home
-│   └── users
-└── hosts
-	├── hades
-    └── proserpina
-```
----
-
-Full flake structure
+All branches in this are supersets of this one,
+but much more subject to change. Feel free to
+clone the repo and use `tree` to explore other
+branches; here is the core structure:
 
 ```
 .
 ├── core
 │   ├── configuration.nix
 │   └── packages.nix
-├── flake.lock
 ├── flake.nix
 ├── home
 │   ├── git.nix
 │   ├── home.nix
 │   └── users
-│       ├── u-coffee.nix
-│       ├── u-serenity.nix
-│       ├── u-template.nix
-│       └── users.nix
 └── hosts
-	├── hades
+    ├── hades
     │   ├── configuration.nix
-    │   ├── disko-config.nix
     │   ├── hardware-configuration.nix
-    │   └── network-configuration.nix
+    │   ├── network-configuration.nix
+	│	└── disko-config.nix
     └── proserpina
         ├── configuration.nix
-        ├── disko-config.nix
         ├── hardware-configuration.nix
-        └── network-configuration.nix
+        ├── network-configuration.nix
+		└── disko-config.nix
+
 ```
