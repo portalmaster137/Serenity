@@ -39,6 +39,10 @@
 
       ## personal 
       obsidian
+
+      ## graphics & art
+      gimp
+      inkscape
       
       ## terminal & coding
       vscode
