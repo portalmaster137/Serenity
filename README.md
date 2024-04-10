@@ -1,7 +1,8 @@
 Hey there,
 feel free to do as you wish with these configs :)
 
-Heavily WIP, and at this point, still mostly stolen code.Heavily WIP, and at this point, still mostly stolen code.
+Heavily WIP, and at this point, still mostly stolen code.
+
 
 This is the "core" branch, for building on top of,
 for muir actually "in-use" branch, 
