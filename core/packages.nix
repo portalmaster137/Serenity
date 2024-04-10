@@ -1,9 +1,7 @@
 { inputs, outputs, lib, config, pkgs, ... }:
 
 {
-
   ## -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-
   ## find a better home for these please <3
   fonts = {
     packages = with pkgs; [
@@ -12,12 +10,9 @@
   	  terminus_font_ttf
   	  (nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })  	  
   	];
-
     fontDir.enable = true;
-
 	fontconfig = {
 	  defaultFonts = {
-
 	  	monospace = [
 	  	  "TerminusTTF"
 	  	];
@@ -27,12 +22,9 @@
         sansSerif = [
           "spleen-32x64"
         ];        
-
 	  };
 	};
-
   };
-  
   ## -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
   nixpkgs = {
@@ -58,12 +50,12 @@
     ];
   };
 
-  # This will add each flake input as a registry
-  # To make nix3 commands consistent with your flake
+  ## This will add each flake input as a registry
+  ## To make nix3 commands consistent with your flake
   nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
 
-  # This will additionally add your inputs to the system's legacy channels
-  # Making legacy nix commands consistent as well, awesome!
+  ## This will additionally add your inputs to the system's legacy channels
+  ## Making legacy nix commands consistent as well, awesome!
   nix.nixPath = ["/etc/nix/path"];
   
   environment.etc =
