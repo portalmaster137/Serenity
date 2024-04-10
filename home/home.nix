@@ -20,47 +20,52 @@
   home = {
 
     packages = with pkgs; [
-  	  ## nixos
+
+  	  ## desktop environment
+      opentabletdriver
+      gnome.nautilus
   	  appimage-run
-
-      ## desktop
-      xfce.thunar
-      # gnome.nautilus ?
-
-	  ## web browsers
-	  firefox
-	  lagrange
-	  tor     
-
-      ## chat & comms
-      discord
-      fractal
-      # schildichat
-
-      ## personal 
-      obsidian
-
-      ## graphics & art
-      gimp
-      inkscape
-      
-      ## terminal & coding
-      vscode
-	  micro
-	  kitty
-	  ## utility
-	  # insert terminal utility here
-      ## novelty
-      pipes
-      cbonsai
-      hyfetch
-      cmatrix
-      peaclock
-
-  	  ## misc, libraries, maybe more,
   	  # qt5-wayland
   	  # qt6-wayland
-  	  glib      
+      peaclock
+      hyfetch
+      cmatrix
+	  kitty
+	  micro
+  	  glib
+
+      ## audiovisual
+      easyeffects
+      obs-studio
+      inkscape
+      helvum
+      ardour
+      gimp
+
+      ## diary & sync
+      syncthing-tray
+      gnome-secrets
+      obsidian
+      vscode
+
+      ## chat & comms
+      schildichat
+      fractal # fix gnome-keyring 
+      discord
+
+	  ## web browsers
+	  lagrange
+	  firefox
+	  tor 
+
+      ## media consumption
+      nicotine-plus
+      spotify
+
+      ## games
+      osu-lazer-bin
+      # steam (needs config)
+
     ];
 
     stateVersion = "23.11";
@@ -76,6 +81,10 @@
       enable = true;
       defaultEditor = true;
     };
+	kdeconnect = {
+	  enable = true;
+	  indicator = true;
+	};
   };
 
   services = {
