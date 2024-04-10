@@ -30,9 +30,9 @@
       peaclock
       hyfetch
       cmatrix
-	  kitty
-	  micro
-  	  glib
+      kitty
+      micro
+      glib
 
       ## audiovisual
       easyeffects
@@ -53,10 +53,10 @@
       fractal # fix gnome-keyring 
       discord
 
-	  ## web browsers
-	  lagrange
-	  firefox
-	  tor 
+	    ## web browsers
+	    lagrange
+	    firefox
+	    tor 
 
       ## media consumption
       nicotine-plus
@@ -81,18 +81,16 @@
       enable = true;
       defaultEditor = true;
     };
-	kdeconnect = {
-	  enable = true;
-	  indicator = true;
-	};
+	  kdeconnect = {
+	    enable = true;
+	    indicator = true;
+	  };
   };
 
   services = {
   	gnome-keyring = {
-  	  enable = true;
+      enable = true;
   	  components = [
-  	  	"secrets"
-  	  	# "ssh"
   	  ];
   	};
   };
