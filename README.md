@@ -1,16 +1,14 @@
 Hey there,
-feel free to do as you wish with these configs :)
+feel free to do as you wish with these configs. :)
 
 
 Heavily WIP, and at this point, still mostly stolen code.
 
 This is the "core" branch, for building on top of,
-for muir actually "in-use" branch, 
-[click here](https://codeberg.org/serenity-F/nixdots/src/branch/hyprland)
+for the actively used branch,
+[click here.](https://codeberg.org/serenity-F/nixdots/src/branch/hyprland)
 
 > Checklist:
-
-in order of priority
 
  - [X] flake builds
  - [ ] home/ and core/ packages & programs fully separated
