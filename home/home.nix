@@ -34,7 +34,7 @@
 
       ## chat & comms
       discord
-      # fractal
+      fractal
       # schildichat
 
       ## personal 
