@@ -41,7 +41,7 @@ To Do:
 
 ---
 
-Cursory flake Structure
+Cursory flake structure
 
 ```
 .
