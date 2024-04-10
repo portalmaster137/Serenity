@@ -1,16 +1,13 @@
-Hey there,
-feel free to do as you wish with these configs. :)
-
-
-Heavily WIP, and at this point, still mostly stolen code.
-
-This is the "core" branch, for building on top of,
-for the actively used branch,
-[click here.](https://codeberg.org/serenity-F/nixdots/src/branch/hyprland)
-
-
+Hey there, feel free to do as you wish with these configs.
+Heavily WIP, and at this point, still mostly stolen code.<br>
+This is the "core" branch, everything is built on top of.
+<br>
+For the actively used branch, click
+[here](https://codeberg.org/serenity-F/nixdots/src/branch/hyprland).
+<br>
+<br>
 Want a quick rundown of what, and why this is?
-
+<br>
 The what:
 > - Shared declarative configuration for system, applications,
 > configs, and themes, shared across multiple machines and users.
@@ -22,8 +19,8 @@ The what:
 > some otherwise system stuff in user-level for ease of config.
 >
 > - Some further modularisation of packages on a user by user basis. 
-
-- The why:
+<br>
+The why:
 > Wei are a plural system so the ability to have discete accounts and
 > configs while still retaining a complete and largely preconfigured
 > desktop environment is *nice*. Also wei break muir install a lot,
