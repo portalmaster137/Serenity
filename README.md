@@ -1,6 +1,12 @@
 Hey there,
 feel free to do as you wish with these configs :)
 
+Heavily WIP, and at this point, still mostly stolen code.
+
+This is muir "in-use" Hyprland compositor branch.
+For a stripped out "core" config, 
+[click here](https://codeberg.org/serenity-F/nixdots/src/branch/core)
+
 To Do:
 
 > in order of priority
@@ -35,65 +41,74 @@ To Do:
 
 ---
 
-WIP Flake Structure
+Cursory flake Structure
 
 ```
 .
 ├── core
 │   ├── configuration
+│   ├── display
 │   └── packages
 ├── flake
 ├── home
-│   ├── git
-│   ├── fish
-│   ├── kitty
+│   ├── scripts
+│   │   ├── anotherhadi
+│   │   └── zethra
 │   ├── hyprland
-│   ├── theme
-│   │   └── resources
 │   └── users
 └── hosts
-	├── hades
+    ├── hades
     └── proserpina
 ```
 ---
+
+Full flake structure
+
 ```
 .
 ├── core
 │   ├── configuration.nix
+│   ├── display.nix
 │   └── packages.nix
 ├── flake.lock
 ├── flake.nix
 ├── home
-│   ├── home.nix
-│   ├── git.nix
 │   ├── fish.nix
+│   ├── git.nix
+│   ├── home.nix
 │   ├── kitty.nix
+│   ├── lazygit.nix
+│   ├── neofetch.nix
+│   ├── scripts
+│   │   ├── anotherhadi
+│   │   └── zethra
 │   ├── hyprland
+│   │   ├── dunst.nix
 │   │   ├── hyprcursor.nix
-│   │   ├── hyprpaper.nix
 │   │   ├── hypridle.nix
 │   │   ├── hyprland.nix
 │   │   ├── hyprlock.nix
-│   │   ├── wlogout.nix
+│   │   ├── hyprpaper.nix
+│   │   ├── theme
+│   │   │   ├── SerenityOS.nix
+│   │   │   ├── config
+│   │   │   ├── default.nix
+│   │   │   └── resources
+│   │   │       ├── icons
+│   │   │       └── wallpapers
 │   │   ├── waybar.nix
-│   │   ├── wofi.nix
-│   │   └── dunst.nix
-│   ├── theme
-│   │   ├── SerenityOS.nix
-│   │   ├── config
-│	│	│	└── template.nix
-│   │   └── resources
-│   │       ├── icons
-│   │       └── wallpapers
+│   │   ├── wlogout.nix
+│   │   └── wofi.nix
 │   └── users
-│       ├── users.nix
-│       ├── u-template.nix
+│       ├── default.nix
 │       ├── u-coffee.nix
-│       └── u-serenity.nix
+│       ├── u-serenity.nix
+│       ├── u-template.nix
+│       └── users.nix
 └── hosts
-	├── hades
-    │   ├─ configuration.nix
-    │   ├─ disko-config.nix
+    ├── hades
+    │   ├── configuration.nix
+    │   ├── disko-config.nix
     │   ├── hardware-configuration.nix
     │   └── network-configuration.nix
     └── proserpina
