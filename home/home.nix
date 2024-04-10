@@ -72,6 +72,10 @@
     fish.enable = true;
     git.enable = true;
     firefox.enable = true;
+    helix = {
+      enable = true;
+      defaultEditor = true;
+    };
   };
 
   services = {
