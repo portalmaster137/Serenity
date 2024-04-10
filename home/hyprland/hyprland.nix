@@ -13,7 +13,7 @@
     xwayland.enable = true;
 
     plugins = [
-      # inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
+    # inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
 	  # inputs.hyprland-plugins.packages."${pkgs.system}".hyprbars
     ];
     
@@ -59,9 +59,9 @@
         "$mod, F2, exec, night-shift-off"
         "$mod, F3, exec, night-shift-on"
         # Sound output
-        "$mod, F5, exec, ${pkgs.kitty}/bin/kitty --class floating zsh -c sound-output"
-        "$mod, F6, exec, ${pkgs.kitty}/bin/kitty --class floating zsh -c sound-output"
-        "$mod, F7, exec, ${pkgs.kitty}/bin/kitty --class floating zsh -c sound-output"
+        "$mod, F5, exec, ${pkgs.kitty}/bin/kitty --class floating fish -c sound-output"
+        "$mod, F6, exec, ${pkgs.kitty}/bin/kitty --class floating fish -c sound-output"
+        "$mod, F7, exec, ${pkgs.kitty}/bin/kitty --class floating fish -c sound-output"
       ] ++ (builtins.concatLists (builtins.genList (i:
         let ws = i + 1;
         in [
@@ -142,7 +142,6 @@
         numlock_by_default = true;
 
         touchpad = {
-          # sensitivity = 0;
           natural_scroll = true;
           clickfinger_behavior = true;
         };

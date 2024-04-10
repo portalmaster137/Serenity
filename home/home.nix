@@ -77,9 +77,14 @@
     fish.enable = true;
     git.enable = true;
     firefox.enable = true;
-    helix = {
+    neovim = {
       enable = true;
       defaultEditor = true;
+      
+    };
+    helix = {
+      enable = true;
+      defaultEditor = false;
     };
 	  kdeconnect = {
 	    enable = true;
