@@ -85,8 +85,9 @@
 
   environment.systemPackages = with pkgs; [
   
-    ## temporary
+    ## temporary/desktop
     waybar
+    gnome.gnome-keyring
     
   	## filsesystem
   	udiskie
