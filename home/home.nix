@@ -69,6 +69,16 @@
     git.enable = true;
     firefox.enable = true;
   };
+
+  services = {
+  	gnome-keyring = {
+  	  enable = true;
+  	  components = [
+  	  	"secrets"
+  	  	"ssh"
+  	  ];
+  	};
+  };
   
   systemd.user.startServices = "sd-switch";
 
