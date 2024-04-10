@@ -1,16 +1,17 @@
+
 Hey there,
-feel free to do as you wish with these configs :)
+feel free to do as you wish with these configs. :)
 
 
 Heavily WIP, and at this point, still mostly stolen code.
 
-This is muir "in-use" Hyprland compositor branch.
-For a stripped out "core" config, 
-[click here](https://codeberg.org/serenity-F/nixdots/src/branch/core)
+This is the actively used Hyprland compositor branch.
+For the core flake configuration,
+[click here.](https://codeberg.org/serenity-F/nixdots/src/branch/core)
 
-Checklist:
+---
 
-> in order of priority
+> Checklist:
 
  - [X] flake builds
  - [ ] home/ and core/ packages & programs fully separated
@@ -25,17 +26,16 @@ Checklist:
    
 ---
 
-Here is the core flake structure, all branches in this are
-supersets of this, but very much subject to change.
-Feel free to clone the repo and use `tree` to explore the
-structure of other branches.
+All branches in this are supersets of this one,
+but much more subject to change. Feel free to
+clone the repo and use `tree` to explore other
+branches; here is the core structure:
 
 ```
 .
 ├── core
 │   ├── configuration.nix
-│   ├── packages.nix
-│   └── misc.nix
+│   └── packages.nix
 ├── flake.nix
 ├── home
 │   ├── git.nix
