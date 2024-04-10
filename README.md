@@ -1,4 +1,4 @@
-Hey there, feel free to do as you wish with these configs.
+Hey there, feel free to do as you wish with these configs.<br>
 Heavily WIP, and at this point, still mostly stolen code.<br>
 This is the "core" branch, everything is built on top of.
 For the actively used branch, click
@@ -18,15 +18,16 @@ Want a quick rundown of what, and why this is?
 <br>
 - The why:
   - Wei are a plural system so the ability to have discete
-  accounts and configs while still <br>retaining a complete
+  accounts and configs while still retaining a complete
   and largely preconfigured desktop environment is *nice*.
   - Also wei break muir install a lot.
-  - Also wei're sick of losing muir dotfiles, and reconfiguring everything
-  all the damn time, and wei're sick of distrohopping, anduhgekwfuhwlf2q9a...
+  - Also wei're sick of losing muir dotfiles, and reconfiguring
+  everything all the dam time, and wei're sick of distrohopping,
+  anduhgekwfuhwlf2q9a...
 
 ---
 
-> Checklist:
+Checklist:
 
  - [X] evaluates successfully
  
@@ -43,10 +44,11 @@ Want a quick rundown of what, and why this is?
    
 ---
 
-All branches in this are supersets of this one,
-but much more subject to change. Feel free to
-clone the repo and use `tree` to explore other
-branches; here is the core structure:
+All branches in this are supersets of this one, but much more subject
+to change. <br>
+Feel free to clone the repo and use `tree` to explore other
+branches.<br>
+Here is the core structure that is common to all branches:
 
 ```
 .
