@@ -8,6 +8,8 @@ This is the "core" branch, for building on top of,
 for the actively used branch,
 [click here.](https://codeberg.org/serenity-F/nixdots/src/branch/hyprland)
 
+---
+
 > Checklist:
 
  - [X] flake builds
