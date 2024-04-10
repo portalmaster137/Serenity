@@ -1,6 +1,10 @@
 Hey there,
 feel free to do as you wish with these configs :)
 
+This is the "core" branch, for building on top of,
+for muir actually "in-use" branch, 
+[click here](https://codeberg.org/serenity-F/nixdots/src/branch/hyprland)
+
 To Do:
 
 > in order of priority
