@@ -1,6 +1,8 @@
 Hey there,
 feel free to do as you wish with these configs :)
 
+Heavily WIP, and at this point, still mostly stolen code.Heavily WIP, and at this point, still mostly stolen code.
+
 This is the "core" branch, for building on top of,
 for muir actually "in-use" branch, 
 [click here](https://codeberg.org/serenity-F/nixdots/src/branch/hyprland)
@@ -34,7 +36,7 @@ To Do:
 
 ---
 
-WIP Flake Structure
+Cursory flake structure
 
 ```
 .
@@ -43,13 +45,15 @@ WIP Flake Structure
 │   └── packages
 ├── flake
 ├── home
-│   ├── git
 │   └── users
 └── hosts
 	├── hades
     └── proserpina
 ```
 ---
+
+Full flake structure
+
 ```
 .
 ├── core
@@ -61,9 +65,9 @@ WIP Flake Structure
 │   ├── git.nix
 │   ├── home.nix
 │   └── users
-│       ├── -coffee.nix
-│       ├── -serenity.nix
-│       ├── -template.nix
+│       ├── u-coffee.nix
+│       ├── u-serenity.nix
+│       ├── u-template.nix
 │       └── users.nix
 └── hosts
 	├── hades
