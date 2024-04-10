@@ -22,16 +22,17 @@
   	  inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # ricer friendly wayland compositor
+    ## themeing
+    nix-colors.url = "github:misterio77/nix-colors";
+    
+    ## ricer friendly wayland compositor
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
-    # status/task bar
-    # Fix broken waybar on current nixpkgs-unstable    
+    ## Fix broken waybar on current nixpkgs-unstable    
     waybar.url = "github:Alexays/Waybar"; 
-    nix-colors.url = "github:misterio77/nix-colors";
 
   };
 
@@ -41,9 +42,10 @@
     disko,
     nixpkgs,
     home-manager,
-    hyprland,
-    waybar,
     nix-colors,
+    hyprland,
+    hyprland-plugins,
+    waybar,
     ...
   } @ inputs: let
     inherit (self) outputs;
