@@ -1,4 +1,4 @@
-Hey there, feel free to do as you wish with these configs.<br>
+Hey there, feel free to do as you wish with these configs.
 Heavily WIP, and at this point, still mostly stolen code.<br>
 This is the "core" branch, everything is built on top of.
 For the actively used branch, click
@@ -32,7 +32,6 @@ Here is the core structure that is common to all branches:
 		└── disko-config.nix
 
 ```
----
 
 Want a quick rundown of what, and why this is?
 <br>
@@ -46,6 +45,7 @@ Want a quick rundown of what, and why this is?
   - Some further modularisation of packages on a user by user basis.
   - Intended to serve as the basis of a shared ecosystem between
   muir desktop, laptop, future NAS, and mobile phone. 
+<br>
 <br>
 - The why:
   - Wei are a plural system so the ability to have discete
