@@ -13,7 +13,7 @@
 
     ## semi-modularised config
     ./packages.nix
-    ./display.nix
+    ./misc.nix
     ../home/users
 
   ];
