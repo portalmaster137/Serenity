@@ -49,7 +49,7 @@
       vscode
 
       ## chat & comms
-      schildichat-web
+      # schildichat-web
       fractal # fix gnome-keyring 
       discord
 
