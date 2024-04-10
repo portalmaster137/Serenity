@@ -26,7 +26,7 @@ For the core flake configuration,
    
 ---
 
-All branches in this are supersets of this one,
+All branches in this are supersets of the core,
 but much more subject to change. Feel free to
 clone the repo and use `tree` to explore other
 branches; here is the core structure:
