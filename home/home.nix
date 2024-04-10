@@ -77,22 +77,23 @@
     fish.enable = true;
     git.enable = true;
     firefox.enable = true;
+
     neovim = {
       enable = true;
-      defaultEditor = true;
-      
+      defaultEditor = true;  
     };
     helix = {
       enable = true;
       defaultEditor = false;
     };
-	  kdeconnect = {
-	    enable = true;
-	    indicator = true;
-	  };
-  };
+
+    };
 
   services = {
+    kdeconnect = {
+      enable = true;
+      indicator = true;
+    };
   	gnome-keyring = {
       enable = true;
   	  components = [
