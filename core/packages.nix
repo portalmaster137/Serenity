@@ -107,6 +107,7 @@
   	moreutils
   	libsecret
   	git-crypt
+	pkg-config
 
   	## nixos
   	# nix-tree
@@ -115,9 +116,11 @@
   	# nixpkgs-review
   	# nix-output-monitor
  	
-	## coding
-	clang
+	## languages and libraries
 	gcc
+	gtk3
+	gtk4
+	clang
 	rustup
 	# rustc
 	# cargo
