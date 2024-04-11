@@ -116,6 +116,8 @@
   	# nix-output-monitor
  	
 	## coding languages
+	clanc
+	gcc
 	rustup
 	rustc
 	cargo
