@@ -114,6 +114,10 @@
   	# nix-index
   	# nixpkgs-review
   	# nix-output-monitor
-  ];
+ 	
+	## coding languages
+	# rustc 
+	python313
+ ];
 
 }
