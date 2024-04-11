@@ -115,12 +115,12 @@
   	# nixpkgs-review
   	# nix-output-monitor
  	
-	## coding languages
-	clanc
+	## coding
+	clang
 	gcc
 	rustup
-	rustc
-	cargo
+	# rustc
+	# cargo
 	python313
  ];
 
