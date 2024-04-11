@@ -117,8 +117,8 @@
  	
 	## coding languages
 	rustup
+	rustc
 	cargo
-	rustc-wrapper
 	python313
  ];
 
