@@ -116,7 +116,9 @@
   	# nix-output-monitor
  	
 	## coding languages
-	# rustc 
+	rustup
+	cargo
+	rustc-wrapper
 	python313
  ];
 
