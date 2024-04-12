@@ -87,7 +87,6 @@
   	## tools
   	fd
   	bc
-  	gcc
   	tldr
   	wget
   	curl
