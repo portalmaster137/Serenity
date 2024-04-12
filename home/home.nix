@@ -14,7 +14,7 @@
     # ./starship.nix
     ./neofetch.nix
     ./scripts/anotherhadi
-    # ./qutebrowser
+    ./qutebrowser
   ];
 
   home = {
@@ -32,39 +32,30 @@
       cmatrix
       kitty
       micro
-      glib
 
-      ## audiovisual
+      ## media & games
+      nicotine-plus
+      osu-lazer-bin
       easyeffects
       obs-studio
       inkscape
+      spotify
       helvum
       ardour
+      steam # (needs config via home.programs.steam)
       gimp
 
       ## diary & sync
       syncthing-tray
       gnome-secrets
       obsidian
-      vscode
 
-      ## chat & comms
-      # schildichat-web
-      fractal # fix gnome-keyring 
+      ## chat & web
+      # schildichat-desktop
+      lagrange
       discord
-
-	    ## web browsers
-	    lagrange
-	    firefox
-	    tor 
-
-      ## media consumption
-      nicotine-plus
-      spotify
-
-      ## games
-      osu-lazer-bin
-      # steam (needs config)
+      fractal # fix gnome-keyring 
+	  tor 
 
     ];
 

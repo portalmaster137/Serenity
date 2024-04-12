@@ -67,8 +67,6 @@
     config.nix.registry;
 
   programs = {
-  	traceroute.enable = true;
-  	fish.enable = true;
   	git.enable = true;
   	
   };
@@ -107,7 +105,6 @@
   	moreutils
   	libsecret
   	git-crypt
-	pkg-config
 
   	## nixos
   	# nix-tree
@@ -117,13 +114,7 @@
   	# nix-output-monitor
  	
 	## languages and libraries
-	gcc
-	gtk3
-	gtk4
-	clang
 	rustup
-	# rustc
-	# cargo
 	python313
  ];
 
