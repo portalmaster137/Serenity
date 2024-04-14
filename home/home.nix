@@ -30,6 +30,8 @@
       appimage-run
       # qt5-wayland
       # qt6-wayland
+      image-roll
+      gnome.eog
       peaclock
       hyfetch
       cmatrix
