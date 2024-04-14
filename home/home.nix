@@ -66,7 +66,6 @@
     fish.enable = true;
     git.enable = true;
     firefox.enable = true;
-    gnome-disks.enable = true;
 
     neovim = {
       enable = true;
