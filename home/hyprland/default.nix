@@ -39,22 +39,22 @@
     hyprpicker
     hyprcursor
     brightnessctl
+    ## gnome stuff
+    gnome.sushi
+    gnome.seahorse
+    gnome.gnome-themes-extra
 
-    ## lib wayland
+    ## lib and compat
     xwayland
     wayland-utils
     wayland-protocols
-
-    ## lib
     meson
     qt5ct
     libva
     libnotify
-
-    ## compat
     dconf
-    gnome.gnome-themes-extra
     xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
     # xdg-desktop-portal-hyprland
     
   ];

@@ -5,25 +5,25 @@
   ## find a better home for these please <3
   fonts = {
     packages = with pkgs; [
-  	  spleen
-  	  terminus_font
-  	  terminus_font_ttf
-  	  (nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })  	  
-  	];
+      spleen
+      terminus_font
+      terminus_font_ttf
+      (nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })  	  
+    ];
     fontDir.enable = true;
-	fontconfig = {
-	  defaultFonts = {
-	  	monospace = [
-	  	  "TerminusTTF"
-	  	];
-        serif = [
+      fontconfig = {
+        defaultFonts = {
+          monospace = [
+          "TerminusTTF"
+          ];
+          serif = [
           "spleen-32x64"
-        ];
-        sansSerif = [
+          ];
+          sansSerif = [
           "spleen-32x64"
-        ];        
-	  };
-	};
+          ];        
+        };
+      };
   };
   ## -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
@@ -67,9 +67,9 @@
     config.nix.registry;
 
   programs = {
-  	git.enable = true;
-  	fish.enable = true;
-  	
+    git.enable = true;
+    fish.enable = true;
+    gnome-disks.enable = true;
   };
 
   services.flatpak.enable = true;
@@ -78,44 +78,44 @@
   
     ## temporary/desktop
     waybar
-    gnome.gnome-keyring
+    # gnome.gnome-keyring
     
-  	## filsesystem
-  	udiskie
-  	ntfs3g
-  	xfsprogs
+    ## filsesystem
+    udiskie
+    ntfs3g
+    xfsprogs
   	
-  	## tools
-  	fd
-  	bc
-  	tldr
-  	wget
-  	curl
-  	file
-  	zip
-  	unzip
-  	gnupg
-  	blueman
-  	busybox
-  	ripgrep
-  	killall
-  	usbutils
-  	pciutils
-  	xdg_utils
-  	moreutils
-  	libsecret
-  	git-crypt
+    ## tools
+    fd
+    bc
+    tldr
+    wget
+    curl
+    file
+    zip
+    unzip
+    gnupg
+    blueman
+    busybox
+    ripgrep
+    killall
+    usbutils
+    pciutils
+    xdg_utils
+    moreutils
+    libsecret
+    git-crypt
 
-  	## nixos
-  	# nix-tree
-  	# nix-init
-  	# nix-index
-  	# nixpkgs-review
-  	# nix-output-monitor
+    ## nixos
+    # nix-tree
+    # nix-init
+    # nix-index
+    # nixpkgs-review
+    # nix-output-monitor
  	
-	## languages and libraries
-	rustup
-	python313
+    ## languages and libraries
+    rustup
+    python313
  ];
 
 }

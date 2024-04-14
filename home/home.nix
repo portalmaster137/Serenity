@@ -21,42 +21,40 @@
 
     packages = with pkgs; [
 
-  	  ## desktop environment
+      ## desktop environment
+      gnome.gnome-keyring
       opentabletdriver
+      syncthing-tray
       gnome.nautilus
-  	  appimage-run
-  	  # qt5-wayland
-  	  # qt6-wayland
+      gnome-secrets
+      appimage-run
+      # qt5-wayland
+      # qt6-wayland
       peaclock
       hyfetch
       cmatrix
       kitty
       micro
 
-      ## media & games
+      ## multimedia & games
       nicotine-plus
       osu-lazer-bin
       easyeffects
       obs-studio
       inkscape
+      obsidian
       spotify
       helvum
       ardour
       steam # (needs config via home.programs.steam)
       gimp
 
-      ## diary & sync
-      syncthing-tray
-      gnome-secrets
-      obsidian
-
       ## chat & web
-      # schildichat-desktop
+      # schildichat
       lagrange
       discord
       fractal # fix gnome-keyring 
-	  tor 
-
+      tor 
     ];
 
     stateVersion = "23.11";
@@ -68,28 +66,28 @@
     fish.enable = true;
     git.enable = true;
     firefox.enable = true;
+    gnome-disks.enable = true;
 
     neovim = {
       enable = true;
       defaultEditor = true;  
     };
-    helix = {
-      enable = true;
-      defaultEditor = false;
-    };
 
-    };
+  };
 
   services = {
+
     kdeconnect = {
       enable = true;
       indicator = true;
     };
-  	gnome-keyring = {
+
+    gnome-keyring = {
       enable = true;
-  	  components = [
-  	  ];
-  	};
+      # components = [
+      # ];
+    };
+
   };
   
   systemd.user.startServices = "sd-switch";
