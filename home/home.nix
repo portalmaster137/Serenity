@@ -76,8 +76,6 @@
 
   services = {
 
-    gvfs.enable = true;
-
     kdeconnect = {
       enable = true;
       indicator = true;

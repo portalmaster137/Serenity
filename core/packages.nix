@@ -72,8 +72,8 @@
     gnome-disks.enable = true;
   };
 
+  services.gvfs.enable = true;
   services.flatpak.enable = true;
-
   environment.systemPackages = with pkgs; [
   
     ## temporary/desktop
