@@ -81,9 +81,10 @@
     # gnome.gnome-keyring
     
     ## filsesystem
-    udiskie
     ntfs3g
     xfsprogs
+    udiskie
+    gparted
   	
     ## tools
     fd
