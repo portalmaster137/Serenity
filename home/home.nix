@@ -39,6 +39,7 @@
       micro
 
       ## multimedia & games
+      transmission-gtk
       nicotine-plus
       osu-lazer-bin
       transmission
