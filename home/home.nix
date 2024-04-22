@@ -42,7 +42,7 @@
       transmission-gtk
       nicotine-plus
       osu-lazer-bin
-      transmission
+      # transmission
       easyeffects
       obs-studio
       inkscape
