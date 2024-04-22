@@ -41,6 +41,7 @@
       ## multimedia & games
       nicotine-plus
       osu-lazer-bin
+      transmission
       easyeffects
       obs-studio
       inkscape

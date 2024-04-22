@@ -7,14 +7,14 @@
 
     # Screenlock
     listener {
-        timeout = 600
+        timeout = 10000
         on-timeout = ${pkgs.hyprlock}/bin/hyprlock
         on-resume = ${pkgs.libnotify}/bin/notify-send "Welcome back ${config.home.username}!"
     }
 
     # Suspend
     listener {
-        timeout = 660
+        timeout = 10000
         on-timeout = systemctl suspend
         # on-resume = ${pkgs.libnotify}/bin/notify-send "Welcome back to your desktop!"
     }
