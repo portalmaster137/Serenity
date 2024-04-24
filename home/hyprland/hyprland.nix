@@ -36,8 +36,8 @@
       bind = [
         "$shiftMod, RETURN, exec, ${pkgs.wofi}/bin/wofi"
         "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty"
-        "$mod, E, exec, ${pkgs.xfce.thunar}/bin/thunar"
-        "$mod, B, exec, ${pkgs.qutebrowser}/bin/qutebrowser"
+        "$mod, E, exec, ${pkgs.xfce.thunar}/bin/nautilus"
+        "$mod, B, exec, ${pkgs.qutebrowser}/bin/firefox"
         "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock"
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock"
         "$mod, X, exec, powermenu"
@@ -88,11 +88,11 @@
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
-        "QT_AUTO_SCREEN_SCALE_FACTOR,0"
+        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
         "QT_QPA_PLATFORM=wayland,xcb"
         "QT_QPA_PLATFORMTHEME=qt6ct"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-        "GTK_THEME,Flat-Remix-GTK-White-Darkest-Solid:dark"
+        "GTK_THEME,adwaita-dark"
         # "HYPRCURSOR_THEME,rose-pine"
         # "HYPRCURSOR_SIZE,16"
       ];
@@ -198,8 +198,8 @@
   gtk = {
     enable = true;
     theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Remix-GTK-White-Darkest-Solid";
+      package = pkgs.adwaita-dark;
+      name = "adwaita-dark";
     };
 
     iconTheme = {
