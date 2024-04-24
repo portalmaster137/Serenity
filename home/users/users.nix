@@ -67,13 +67,13 @@
       #   };
       # };
 
-      # coffee = {
-      #   imports = [ ./u-coffee.nix ];
-      #   home = {
-      #     username = "coffee";
-      #     homeDirectory = "/home/coffee";
-      #   };
-      # };
+      coffee = {
+        imports = [ ./u-coffee.nix ];
+        home = {
+          username = "coffee";
+          homeDirectory = "/home/coffee";
+        };
+      };
 
       serenity = {
         imports = [ ./u-serenity.nix ];

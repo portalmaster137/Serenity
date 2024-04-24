@@ -10,7 +10,6 @@
       "d" = "https://duckduckgo.com/?q={}&ia=web";
       "g" = "https://google.com/search?q={}";
       "y" = "https://youtube.com/results?search_query={}";
-      "ya" = "https://yandex.com/search/?text={}";
       "n" = "https://mynixos.com/search?q={}";
       "nixo" = "https://search.nixos.org/options?channel=unstable&query={}";
       "nixp" = "https://search.nixos.org/packages?channel=unstable&query={}";
@@ -18,18 +17,9 @@
 
     quickmarks = {
       home = "${config.home.homeDirectory}/.config/startpage/index.html";
-      mynixos = "https://mynixos.com";
-      github = "https://github.com";
-      outlook = "https://outlook.office.com/mail/";
-      office = "https://www.office.com/?auth=2";
-      teams = "https://teams.microsoft.com/_";
-      casa = "http://192.168.2.16:8081/#/";
+      codeberg = "https://codeberg.org/serenity-F/"
       proton = "https://mail.proton.me/u/0/inbox";
-      cloudflare-one = "https://one.dash.cloudflare.com/";
-      chatgpt = "https://chat.openai.com/";
-      nixvim = "https://nix-community.github.io/nixvim/";
-      hyprland = "https://wiki.hyprland.org/";
-      nerdfont = "https://www.nerdfonts.com/cheat-sheet";
+      schildichat = "schildichat.the-apothecary.club/"
       youtube = "https://youtube.com/";
     };
 
