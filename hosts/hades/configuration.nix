@@ -16,7 +16,7 @@
     loader = {
       systemd-boot = {
         enable = true;
-	    configurationLimit = 5;
+	    configurationLimit = 7;
       };
       efi = {
         canTouchEfiVariables = true;
@@ -39,13 +39,13 @@
 
   services.fstrim.enable = true;
   
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  # powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   
   hardware = {
   
     cpu.intel.updateMicrocode = true;
-  	enableAllFirmware = false;
-  	bluetooth.enable = true;
+  	enableAllFirmware = true;
+  	bluetooth.enable = false;
   	
   	opengl = {
   	  enable = true;
@@ -66,7 +66,7 @@
   	gc = {
   	  automatic = true;
   	  dates = "daily";
-  	  options = "--delete-older-than 2d";
+  	  options = "--delete-older-than 3d";
   	  persistent = true;
   	};
   };
