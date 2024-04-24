@@ -17,9 +17,9 @@
 
     quickmarks = {
       home = "${config.home.homeDirectory}/.config/startpage/index.html";
-      codeberg = "https://codeberg.org/serenity-F/"
+      codeberg = "https://codeberg.org/serenity-F/";
       proton = "https://mail.proton.me/u/0/inbox";
-      schildichat = "schildichat.the-apothecary.club/"
+      schildichat = "schildichat.the-apothecary.club/";
       youtube = "https://youtube.com/";
     };
 
