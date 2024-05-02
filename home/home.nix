@@ -14,7 +14,6 @@
     # ./starship.nix
     ./neofetch.nix
     ./scripts/anotherhadi
-    ./qutebrowser
   ];
 
   home = {
