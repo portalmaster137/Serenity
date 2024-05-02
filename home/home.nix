@@ -48,6 +48,7 @@
       inkscape
       obsidian
       spotify
+      blender
       helvum
       ardour
       steam # (needs config via home.programs.steam)
