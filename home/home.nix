@@ -46,6 +46,7 @@
       obs-studio
       inkscape
       obsidian
+      audacity
       spotify
       blender
       helvum
