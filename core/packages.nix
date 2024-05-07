@@ -106,6 +106,7 @@
     moreutils
     libsecret
     git-crypt
+    pavucontrol
 
     ## nixos
     # nix-tree
