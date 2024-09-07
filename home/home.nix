@@ -48,13 +48,13 @@
       obsidian
       vcv-rack
       audacity
-      vlc-bin
       spotify
       blender
       helvum
       ardour
       steam # (needs config via home.programs.steam)
       gimp
+      vlc
 
       ## chat & web
       # schildichat
