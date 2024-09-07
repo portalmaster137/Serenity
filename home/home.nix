@@ -39,6 +39,7 @@
       cmatrix
       kitty
       micro
+      btop
 
       ## multimedia & games
       neural-amp-modeler-lv2
