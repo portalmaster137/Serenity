@@ -71,4 +71,12 @@
   	};
   };
 
+  environment.systemPackages = with pkgs; [
+    umr
+    radeontop
+    radeontools
+    radeon-profile
+    amdgpu_top
+  ];
+
 }
