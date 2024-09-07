@@ -41,7 +41,6 @@
       transmission-gtk
       nicotine-plus
       osu-lazer-bin
-      # transmission
       bespokesynth
       easyeffects
       obs-studio
@@ -49,6 +48,7 @@
       obsidian
       vcv-rack
       audacity
+      vlc-bin
       spotify
       blender
       helvum
