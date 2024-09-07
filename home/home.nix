@@ -48,6 +48,7 @@
       bespokesynth
       easyeffects
       obs-studio
+      metronome
       inkscape
       obsidian
       vcv-rack
