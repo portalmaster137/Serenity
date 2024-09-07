@@ -38,6 +38,7 @@
       micro
 
       ## multimedia & games
+      neural-amp-modeler-lv2
       transmission-gtk
       nicotine-plus
       osu-lazer-bin
@@ -48,6 +49,7 @@
       obsidian
       vcv-rack
       audacity
+      jellyfin
       spotify
       blender
       helvum
