@@ -106,6 +106,7 @@
     moreutils
     libsecret
     git-crypt
+    undervolt
     pavucontrol
 
     ## nixos

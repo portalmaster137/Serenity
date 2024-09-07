@@ -1,5 +1,5 @@
 {
-  description = "SerenityOS v0.3.87";
+  description = "SerenityOS v0.3.9";
 
   inputs = {
   
@@ -67,7 +67,7 @@
         # > Our main nixos configuration files <
         modules = [
           disko.nixosModules.disko
-          ./hosts/proserpina/configuration.nix
+          ./hosts/hades/configuration.nix
         ];
       };
 

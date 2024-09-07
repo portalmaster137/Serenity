@@ -42,10 +42,12 @@
       nicotine-plus
       osu-lazer-bin
       # transmission
+      bespokesynth
       easyeffects
       obs-studio
       inkscape
       obsidian
+      vcv-rack
       audacity
       spotify
       blender
@@ -57,6 +59,7 @@
       ## chat & web
       # schildichat
       lagrange
+      vesktop
       discord
       fractal # fix gnome-keyring 
       tor 
