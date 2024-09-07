@@ -53,6 +53,7 @@
       inkscape
       obsidian
       vcv-rack
+      cardinal
       audacity
       jellyfin
       spotify
