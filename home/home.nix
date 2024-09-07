@@ -23,12 +23,15 @@
       ## desktop environment
       gnome.gnome-keyring
       opentabletdriver
+      gnome-calculator
       syncthing-tray
       gnome.nautilus
+      gnome-calendar
       gnome-secrets
       appimage-run
       # qt5-wayland
       # qt6-wayland
+      gnome-clocks
       image-roll
       gnome.eog
       peaclock
