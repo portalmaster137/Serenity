@@ -52,15 +52,15 @@
   in {
     ## Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-    
-      iso = nixpkgs.lib.nixosSystem {
-        modules = [
-          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
-          "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
-          ./hosts/hades/configuration.nix
-        ];
-        specialArgs = {inherit inputs outputs;};
-      };
+
+      #iso = nixpkgs.lib.nixosSystem {
+      #  modules = [
+      #    "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
+      #    "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
+      #    ./hosts/hades/configuration.nix
+      #  ];
+      #  specialArgs = {inherit inputs outputs;};
+      #};
     
       proserpina  = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
