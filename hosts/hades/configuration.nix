@@ -6,7 +6,7 @@
     ./hardware-configuration.nix
     # "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
     # ./disko-config.nix
-    ./network-configuration.nix
+    # ./network-configuration.nix
     ../../core/configuration.nix
     
   ];
@@ -25,15 +25,15 @@
     };
     initrd = {
       systemd.enable = true;
-      secrets = {
+      # secrets = {
 	# "crypto_keyfile.bin" = null;
       };
-      luks = {
-	# devices."luks-DISK_UUID" = {
+    # luks = {
+	  # devices."luks-DISK_UUID" = {
           # device = "/dev/disk/by-uuid/DISK_UUID";
         # keyfile = "/crypto_keyfile.bin";
-	# };
-      };
+	  # };
+    # };
     };
   };
 
