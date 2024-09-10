@@ -57,17 +57,17 @@
       #  modules = [
       #    "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
       #    "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
-      #    ./hosts/hades/configuration.nix
+      #    ./hosts/iso/configuration.nix
       #  ];
       #  specialArgs = {inherit inputs outputs;};
       #};
     
-      proserpina  = nixpkgs.lib.nixosSystem {
+      persephone  = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration files <
         modules = [
           disko.nixosModules.disko
-          ./hosts/proserpina/configuration.nix
+          ./hosts/persephone/configuration.nix
         ];
       };
 
