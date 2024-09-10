@@ -34,10 +34,9 @@
         info "\n \n Packages" packages
         info "\n \n Desktop" de
         # info "\n \n Shell" shell
-        prin "\n \n Shell" "Fish 3.7.1"
-        prin "\n \n Prompt" "Starship"
+        prin "\n \n Shell" "Fish"
         # info "\n \n Editor" editor
-        prin "\n \n Editor" "Micro 2.0.13"
+        prin "\n \n Editor" "Micro"
         # info "\n \n Terminal" term
         prin "\n \n Terminal" "Kitty"
         # info "\n \n Terminal Font" term_font
@@ -47,7 +46,7 @@
         prin "\n \n Device" "Thinkpad T470s"
         info "\n \n Processor" cpu
         info "\n \n Memory" memory
-        # info "\n \n GPU" gpu
+        info "\n \n GPU" gpu
         # info "\n \n Resolution" resolution
         # info "\n \n Uptime" uptime
         prin "\n"
