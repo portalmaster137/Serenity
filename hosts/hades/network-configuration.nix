@@ -7,7 +7,7 @@
   ];
 
   networking = {
-    hostName = "proserpina";
+    hostName = "hades";
   	wireless.enable = false;
   	networkmanager = {
   	  enable = true;
@@ -42,6 +42,7 @@
     dataDir = "/home/serenity/";
     configDir = "/home/serenity/.config/syncthing";
     user = "serenity";
+    
     settings.devices = {
     
       # hades.id = "DEVICE_ID";
@@ -53,17 +54,7 @@
 
         # "FOLDER_ID" = {
       	  # path = "/home/serenity/Documents/Notes";
-      	  # devices = [ "hecate" "hades" "proserpina" ];
-      	# };
-
-        # "FOLDER_ID" = {
-      	  # path = "/home/serenity/Documents/Notes";
-      	  # devices = [ "hecate" "hades" "proserpina" ];
-      	# };
-      	
-        # "FOLDER_ID" = {
-      	  # path = "/home/serenity/Documents/Notes";
-      	  # devices = [ "hecate" "hades" "proserpina" ];
+      	  # devices = [ "hecate" "hades" "persephone" ];
       	# };
       	
     };   	
