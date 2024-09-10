@@ -18,10 +18,10 @@
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot/efi";
     };
-      systemd-boot = {
-        enable = false;
-	    configurationLimit = 10;
-      };
+      #systemd-boot = {
+        #enable = false;
+	    #configurationLimit = 10;
+      #};
       grub = {
        enable = true;
        efiSupport = true;
