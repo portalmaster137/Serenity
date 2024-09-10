@@ -19,11 +19,11 @@
         efiSysMountPoint = "/boot/efi";
     };
       systemd-boot = {
-        enable = true;
+        enable = false;
 	    configurationLimit = 10;
       };
       grub = {
-       enable = false;
+       enable = true;
        efiSupport = true;
        #efiInstallAsRemovable = true;
        device = "/dev/sda1";
