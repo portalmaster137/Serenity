@@ -16,24 +16,24 @@
     loader = {
       systemd-boot = {
         enable = true;
-	    configurationLimit = 7;
+	    configurationLimit = 10;
       };
       efi = {
         canTouchEfiVariables = true;
-        # efiSysMountPoint = "/boot/efi";
+        efiSysMountPoint = "/boot/efi";
       };
     };
     initrd = {
       systemd.enable = true;
-      # secrets = {
-	# "crypto_keyfile.bin" = null;
+      secrets = {
+	    "crypto_keyfile.bin" = null;
       };
-    # luks = {
-	  # devices."luks-DISK_UUID" = {
-          # device = "/dev/disk/by-uuid/DISK_UUID";
-        # keyfile = "/crypto_keyfile.bin";
-	  # };
-    # };
+      luks = {
+	    devices."luks-DISK_UUID" = {
+          device = "/dev/disk/by-uuid/DISK_UUID";
+          keyfile = "/crypto_keyfile.bin";
+	    };
+      };
     };
   };
 
@@ -66,7 +66,7 @@
   	gc = {
   	  automatic = true;
   	  dates = "daily";
-  	  options = "--delete-older-than 3d";
+  	  options = "--delete-older-than 10d";
   	  persistent = true;
   	};
   };
