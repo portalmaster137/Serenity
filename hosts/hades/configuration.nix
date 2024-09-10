@@ -14,13 +14,19 @@
   # Enable swap on luks
   boot = {
     loader = {
-      systemd-boot = {
-        enable = true;
-	    configurationLimit = 10;
-      };
       efi = {
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot/efi";
+    };
+      systemd-boot = {
+        enable = false;
+	    configurationLimit = 10;
+      };
+      grub = {
+       enable = true;
+       efiSupport = true;
+       #efiInstallAsRemovable = true;
+       device = "/dev/sda1";
       };
     };
     initrd = {
