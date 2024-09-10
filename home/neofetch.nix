@@ -30,6 +30,7 @@
         prin "\n"
         prin "\n \n Host" "Proserpina"
         info "\n \n OS" distro
+        prin "\n \n OS" "SerenityOS (NixOS)"
         info "\n \n Kernel" kernel
         info "\n \n Packages" packages
         info "\n \n Desktop" de
