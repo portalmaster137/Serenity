@@ -26,19 +26,19 @@
     initrd = {
       systemd.enable = true;
       secrets = {
-	# "crypto_keyfile.bin" = null;
+	  # "crypto_keyfile.bin" = null;
       };
       luks = {
-	# devices."luks-DISK_UUID" = {
+	    # devices."luks-DISK_UUID" = {
           # device = "/dev/disk/by-uuid/DISK_UUID";
         # keyfile = "/crypto_keyfile.bin";
-	# };
+	    # };
       };
     };
   };
 
   networking = {
-    hostName = "proserpina";
+    hostName = "persephone";
   	wireless.enable = false;
   	networkmanager = {
   	  enable = true;

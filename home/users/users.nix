@@ -14,18 +14,6 @@
   ];
    
   users.users = {
- 
-    # TEMPLATE = {
-    #   description = "TEMPLATE";
-    #   isNormalUser = true;
-    #   ## be sure to change this with 'passwd'
-    #   initialPassword = "password";
-    #   shell = pkgs.fish;
-    #   extraGroups = [
-    #     "wheel"
-    #     "networkmanager"
-    #   ];
-    # };
 
     # coffee = {
       # description = "Coffee Beans";
@@ -58,14 +46,6 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {
-
-      # TEMPLATE = {
-      #   imports = [ ./u-template.nix ];
-      #   home = {
-      #     username = "TEMPLATE";
-      #     homeDirectory = "/home/TEMPLATE";
-      #   };
-      # };
 
       # coffee = {
         # imports = [ ./u-coffee.nix ];

@@ -7,7 +7,7 @@
   ];
 
   networking = {
-    hostName = "proserpina";
+    hostName = "persephone";
   	wireless.enable = false;
   	networkmanager = {
   	  enable = true;
