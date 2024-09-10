@@ -2,6 +2,7 @@
 
   disko.devices = {
     disk = {
+    
       sda = {
         type = "disk";
         device = "/dev/sda";
@@ -27,17 +28,16 @@
                 type = "luks";
                 name = "pomegranate";
                 # disable settings.keyFile if you want to use interactive password entry
-                passwordFile = "/tmp/secret.key"; # Interactive
+                #passwordFile = "/tmp/secret.key"; # Interactive            
                 settings = {
                   allowDiscards = true;
                   #keyFile = "/tmp/secret.key";
                 };
-                # additionalKeyFiles = [ "/tmp/additionalSecret.key" ];
-
+                #additionalKeyFiles = [ "/tmp/additionalSecret.key" ];
                 content = {
                   type = "btrfs";
                   extraArgs = [ "-f" ];
-                  subvolumes = {
+                  subvolumes = { 
                     "/root" = {
                       mountpoint = "/";
                       mountOptions = [ "compress=zstd" "noatime" ];
@@ -49,16 +49,16 @@
                     "/nix" = {
                       mountpoint = "/nix";
                       mountOptions = [ "compress=zstd" "noatime" ];
+                    };
                     "/swap" = {
                       mountpoint = "/.swapvol";
                       swap.swapfile.size = "8192M";
                     };
                   };
+                  
                 };
-
               };
             };
-
           };
         };
       };
