@@ -1,4 +1,0 @@
-#!/bin/sh
-
-git rebase -r --root --exec 'git commit --amend --no-edit --reset-author'
-FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --msg-filter "sed /^Signed-off-by:/d"
