@@ -18,12 +18,12 @@
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot/efi";
     };
-      #systemd-boot = {
-        #enable = false;
-	    #configurationLimit = 10;
-      #};
+      systemd-boot = {
+        enable = true;
+	    configurationLimit = 10;
+      };
       grub = {
-       enable = true;
+       enable = false;
        efiSupport = true;
        #efiInstallAsRemovable = true;
        device = "/dev/sda1";
