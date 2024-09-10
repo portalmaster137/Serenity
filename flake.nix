@@ -53,7 +53,7 @@
     ## Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
     
-      iso = lib.nixosSystem {
+      iso = nixpkgs.lib.nixosSystem {
         modules = [
           "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
           "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
