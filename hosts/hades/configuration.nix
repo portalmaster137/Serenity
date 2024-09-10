@@ -29,10 +29,10 @@
 	    "crypto_keyfile.bin" = null;
       };
       luks = {
-	    devices."luks-DISK_UUID" = {
-          device = "/dev/disk/by-uuid/DISK_UUID";
-          keyfile = "/crypto_keyfile.bin";
-	    };
+	    # devices."luks-DISK_UUID" = {
+          # device = "/dev/disk/by-uuid/DISK_UUID";
+          # keyfile = "/crypto_keyfile.bin";
+	    # };
       };
     };
   };
