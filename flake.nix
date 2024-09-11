@@ -16,6 +16,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sops-nix.url = "github:Mic92/sops-nix";
+    ## optional, not necessary for the module
+    #inputs.sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
     ## declarative dots
     home-manager = {
   	  url = "github:nix-community/home-manager";
@@ -41,6 +45,7 @@
     hardware,
     disko,
     nixpkgs,
+    sops-nix,
     home-manager,
     nix-colors,
     hyprland,
@@ -54,12 +59,14 @@
     nixosConfigurations = {
 
       #iso = nixpkgs.lib.nixosSystem {
-      #  modules = [
-      #    "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
-      #    "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
-      #    ./hosts/iso/configuration.nix
-      #  ];
-      #  specialArgs = {inherit inputs outputs;};
+         #modules = [
+           #"${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
+           #"${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
+           #disko.nixosModules.disko
+           #sops-nix.nixosModules.sops
+           #./hosts/iso/configuration.nix
+         #];
+         #specialArgs = {inherit inputs outputs;};
       #};
     
       persephone  = nixpkgs.lib.nixosSystem {
@@ -67,6 +74,7 @@
         # > Our main nixos configuration files <
         modules = [
           disko.nixosModules.disko
+          sops-nix.nixosModules.sops
           ./hosts/persephone/configuration.nix
         ];
       };
@@ -76,6 +84,7 @@
         # > Our main nixos configuration files <
         modules = [
           disko.nixosModules.disko
+          sops-nix.nixosModules.sops
           ./hosts/hades/configuration.nix
         ];
       };
