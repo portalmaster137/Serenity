@@ -110,7 +110,8 @@
 
     ## temporary/desktop
     waybar
-    # gnome.gnome-keyring
+    gnome.seahorse
+    gnome.gnome-keyring
     
  ];
 
