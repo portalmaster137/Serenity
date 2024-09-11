@@ -48,7 +48,8 @@
         # prin "\n \n Device" "Thinkpad T470s"
         info "\n \n Processor" cpu
         info "\n \n Memory" memory
-        info "\n \n GPU" gpu
+        # info "\n \n GPU" gpu
+        prin "\n \n Processor" "Radeon RX Vega 64"
         # info "\n \n Resolution" resolution
         # info "\n \n Uptime" uptime
         prin "\n"
@@ -95,7 +96,7 @@
     cpu_speed="on"
     cpu_cores="off"
     cpu_temp="off"
-    gpu_brand="on"
+    gpu_brand="off"
     gpu_type="dedicated"
     refresh_rate="off"
     gtk_shorthand="on"
