@@ -13,7 +13,7 @@
 
     ## semi-modularised config
     ./packages.nix
-    ./fonts.nix
+    #./fonts.nix
     ./misc.nix
     ../home/users
 
