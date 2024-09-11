@@ -42,6 +42,7 @@
     ## gnome stuff
     gnome.sushi
     gnome.seahorse
+    gnome-control-center
     gnome.gnome-themes-extra
 
     ## lib and compat
