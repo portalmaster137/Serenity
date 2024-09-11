@@ -22,7 +22,7 @@
        #efiSupport = true;
        #efiInstallAsRemovable = true;
        device = "/dev/sdd";
-       useOSProber = true;
+       #useOSProber = true;
        enableCryptodisk = true;
       };
     };
