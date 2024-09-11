@@ -43,6 +43,7 @@
         "$mod, X, exec, powermenu"
         "$mod, SPACE, exec, menu"
         # Windows control
+        "$mod, TAB, layoutmsg, togglesplit"
         "$mod, Q, killactive,"
         "$mod, T, togglefloating,"
         "$mod, F, fullscreen"
@@ -108,6 +109,10 @@
         layout = "master";
       };
 
+      monitor = [
+      "preferred,auto,2"
+      ];
+
       decoration = {
         rounding = config.theme.rounding;
         drop_shadow = true;
@@ -117,9 +122,15 @@
         blur = { enabled = true; };
       };
 
-      master = {
-        new_is_master = true;
-        new_on_top = true;
+      #master = {
+        #new_is_master = false;
+        #new_on_top = true;
+      #};
+
+      dwindle = {
+      	pseudotile = true;
+      	preserve_split = true;
+      	force_split = 2;
       };
 
       gestures = { workspace_swipe = true; };
