@@ -52,7 +52,9 @@
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
-      pinentryFlavour = "curses";
+      pinentryPackage = {
+        pkgs.pinentry-curses
+      };
     };
   };
 
