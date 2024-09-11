@@ -9,10 +9,10 @@
     ./boot-config.nix
   ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  #boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+  #boot.initrd.kernelModules = [ ];
+  #boot.kernelModules = [ "kvm-intel" ];
+  #boot.extraModulePackages = [ ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/5cbed60c-33e3-4d69-a39e-c1d6d19406ea";
@@ -20,9 +20,41 @@
       options = [ "subvol=@" ];
     };
 
-  boot.initrd.luks.devices."luks-3de671ef-22a3-4f28-9251-a0687ab44f96".device = "/dev/disk/by-uuid/3de671ef-22a3-4f28-9251-a0687ab44f96";
+  #fileSystems."/boot" =
+    #{ device = "/dev/disk/by-uuid/5cbed60c-33e3-4d69-a39e-c1d6d19406ea";
+      #fsType = "btrfs";
+      #options = [ "subvol=@" ];
+    #};
+
+  #boot.initrd.luks.devices."luks-3de671ef-22a3-4f28-9251-a0687ab44f96".device = "/dev/disk/by-uuid/3de671ef-22a3-4f28-9251-a0687ab44f96";
 
   swapDevices = [ ];
+
+  services.fstrim.enable = true;
+
+  hardware = {
+    cpu.intel.updateMicrocode = true;
+  	enableAllFirmware = true;
+  	bluetooth.enable = false;
+  	opengl = {
+  	  enable = true;
+  	  extraPackages = with pkgs; [
+  	    intel-compute-runtime
+  	    intel-media-driver
+  	    vaapiIntel
+  	    vaapiVdpau
+  	    libvdpau-va-gl		
+      ];
+  	};	
+  };
+
+  environment.systemPackages = with pkgs; [
+    umr
+    radeontop
+    amdgpu_top
+    radeontools
+    radeon-profile
+  ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

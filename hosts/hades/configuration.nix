@@ -11,29 +11,8 @@
     
   ];
 
-  services.fstrim.enable = true;
-  
   # powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  
-  hardware = {
-  
-    cpu.intel.updateMicrocode = true;
-  	enableAllFirmware = true;
-  	bluetooth.enable = false;
-  	
-  	opengl = {
-  	  enable = true;
-  	  extraPackages = with pkgs; [
-  	    intel-compute-runtime
-  	    intel-media-driver
-  	    vaapiIntel
-  	    vaapiVdpau
-  	    libvdpau-va-gl		
-      ];
-  	};
-  	
-  };
-  
+
   nix = {
   	# settings = {
   	# };
@@ -44,13 +23,5 @@
   	  persistent = true;
   	};
   };
-
-  environment.systemPackages = with pkgs; [
-    umr
-    radeontop
-    radeontools
-    radeon-profile
-    amdgpu_top
-  ];
 
 }
