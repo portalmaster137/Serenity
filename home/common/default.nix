@@ -1,19 +1,26 @@
-{ 
+{
+  self,
   inputs,
   outputs,
   lib,
   config,
-  pkgs, 
+  pkgs,
   ...
 }: {
 
   imports = [
-    ./hyprland
-    ./git.nix
-    ./kitty.nix
-    # ./starship.nix
-    ./neofetch.nix
-    ./scripts/anotherhadi
+
+  #./themes
+
+  ./git.nix  
+  ./fish.nix
+  ./kitty.nix
+  #./lazygit.nix
+  ./neofetch.nix
+
+  #../sway
+  ../hyprland
+  
   ];
 
   home = {
@@ -42,7 +49,6 @@
       kitty
       micro
       btop
-      
 
       ## multimedia & games
       neural-amp-modeler-lv2
@@ -74,7 +80,7 @@
       steam # (needs config via home.programs.steam)
       gimp
       vlc
-
+      
       ## chat & web
       # schildichat
       lagrange
@@ -86,6 +92,7 @@
     ];
 
     stateVersion = "23.11";
+    
   };
 
   programs = {
@@ -94,27 +101,21 @@
     fish.enable = true;
     git.enable = true;
     firefox.enable = true;
-
     neovim = {
       enable = true;
       defaultEditor = true;  
     };
-
   };
 
   services = {
-
     kdeconnect = {
       enable = true;
       indicator = true;
     };
-
     gnome-keyring = {
       enable = true;
-      # components = [
-      # ];
+      #components = [ ];
     };
-
   };
   
   systemd.user.startServices = "sd-switch";

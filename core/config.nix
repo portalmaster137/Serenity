@@ -10,13 +10,9 @@
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-
     ## semi-modularised config
-    ./packages.nix
-    #./fonts.nix
-    ./misc.nix
+    ./system-packages.nix
     ../home/users
-
   ];
 
   ## locale is common across machines
@@ -56,6 +52,9 @@
     ];
   };
 
+  ## apparently prevents getting stuck at shutdown
+  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
+  
   ## disable these cuz they cause problems (thx sasha)
   ## see: https://github.com/NixOS/nixpkgs/issues/180175
   systemd.services = {

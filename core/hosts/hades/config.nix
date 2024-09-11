@@ -5,13 +5,11 @@
     # Include the results of the hardware scan.
     ./hardware-config.nix
     # "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
-    # ./disko-config.nix
-    # ./network-config.nix
-    ../../core/configuration.nix
+    ../../config.nix
     
   ];
 
-  # powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  services.fstrim.enable = true;
 
   nix = {
   	# settings = {

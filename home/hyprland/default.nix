@@ -10,7 +10,7 @@
 
   imports = [
 
-  ./theme
+  ../common/themes
 
   ./hyprland.nix  
   ./hyprpaper.nix

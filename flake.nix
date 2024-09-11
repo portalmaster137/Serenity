@@ -1,5 +1,5 @@
 {
-  description = "SerenityOS v0.3.9";
+  description = "SerenityOS v0.6.0";
 
   inputs = {
   
@@ -64,7 +64,7 @@
            #"${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
            #disko.nixosModules.disko
            #sops-nix.nixosModules.sops
-           #./hosts/iso/configuration.nix
+           #./hosts/iso/config.nix
          #];
          #specialArgs = {inherit inputs outputs;};
       #};
@@ -75,7 +75,7 @@
         modules = [
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
-          ./hosts/persephone/configuration.nix
+          ./hosts/persephone/config.nix
         ];
       };
 
@@ -85,7 +85,7 @@
         modules = [
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
-          ./hosts/hades/configuration.nix
+          ./hosts/hades/config.nix
         ];
       };
 

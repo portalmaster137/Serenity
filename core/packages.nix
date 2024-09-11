@@ -3,7 +3,7 @@
 {
 
   imports = [
-   ./fonts.nix
+   #./file.nix
   ];
 
   nixpkgs = {
@@ -45,19 +45,55 @@
     })
     config.nix.registry;
 
+  fonts = {
+    packages = with pkgs; [
+      spleen
+      terminus_font
+      terminus_font_ttf
+      (nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })  	  
+    ];
+
+    fontDir.enable = true;
+      fontconfig = {
+        defaultFonts = {
+          serif = [ "spleen-32x64" ];
+          sansSerif = [ "spleen-32x64" ];        
+          monospace = [ "TerminusTTF" ];
+        };
+      };
+  };
+
   programs = {
+  
     git.enable = true;
     fish.enable = true;
     gnome-disks.enable = true;
+    
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
       #pinentryPackage = [ ];
     };
+    
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+    
   };
 
   services.gvfs.enable = true;
+  
+  services.xserver = {
+    enable = true;
+    displayManager.sddm = {
+  	  enable = true;
+  	  wayland.enable = true;
+    };
+  };
+  
   services.flatpak.enable = true;
+  
   environment.systemPackages = with pkgs; [
   
     ## filsesystems
@@ -67,8 +103,6 @@
     exfatprogs
     btrfs-progs
     ntfs2btrfs
-    udiskie
-    gparted
     
     ## tools
     fd
@@ -95,7 +129,6 @@
     libsecret
     git-crypt
     undervolt
-    pavucontrol
 
     ## nixos
     nix-tree
@@ -110,6 +143,9 @@
 
     ## temporary/desktop
     waybar
+    udiskie
+    gparted
+    pavucontrol
     #polkit-gnome
     gnome.seahorse
     polkit-kde-agent
