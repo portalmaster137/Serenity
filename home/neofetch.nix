@@ -19,6 +19,7 @@
                                   @@@   
                                 @@@     
                               @@        
+
                                         
   '';
 
@@ -28,8 +29,8 @@
 
     print_info() {
         prin "\n"
-        prin "\n \n Host" "Proserpina"
-        info "\n \n OS" distro
+        prin "\n \n Host" "Hades"
+        # info "\n \n OS" distro
         prin "\n \n OS" "SerenityOS (NixOS)"
         info "\n \n Kernel" kernel
         info "\n \n Packages" packages
@@ -44,7 +45,7 @@
 		prin "\n \n Terminal Font" "Spleen"
         # info "\n \n Model" model
         # prin "\n \n System" "MSI Z97-G3"
-        prin "\n \n Device" "Thinkpad T470s"
+        # prin "\n \n Device" "Thinkpad T470s"
         info "\n \n Processor" cpu
         info "\n \n Memory" memory
         info "\n \n GPU" gpu
@@ -95,7 +96,7 @@
     cpu_cores="off"
     cpu_temp="off"
     gpu_brand="on"
-    gpu_type="all"
+    gpu_type="dedicated"
     refresh_rate="off"
     gtk_shorthand="on"
     gtk2="on"
