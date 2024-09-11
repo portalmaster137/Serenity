@@ -33,7 +33,9 @@
   services.fstrim.enable = true;
 
   hardware = {
-    cpu.intel.updateMicrocode = true;
+    #cpu.intel.updateMicrocode = true;
+    ## Pick either "true" OR "lib.mkDefault -"
+    cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   	enableAllFirmware = true;
   	bluetooth.enable = false;
   	opengl = {
@@ -65,5 +67,4 @@
   # networking.interfaces.wlp58s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
