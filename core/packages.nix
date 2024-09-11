@@ -1,31 +1,10 @@
 { inputs, outputs, lib, config, pkgs, ... }:
 
 {
-  ## -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-  ## find a better home for these please <3
-  fonts = {
-    packages = with pkgs; [
-      spleen
-      terminus_font
-      terminus_font_ttf
-      (nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })  	  
-    ];
-    fontDir.enable = true;
-      fontconfig = {
-        defaultFonts = {
-          monospace = [
-          "TerminusTTF"
-          ];
-          serif = [
-          "spleen-32x64"
-          ];
-          sansSerif = [
-          "spleen-32x64"
-          ];        
-        };
-      };
-  };
-  ## -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+  imports = [
+   #file.nix
+  ];
 
   nixpkgs = {
 
@@ -76,26 +55,30 @@
   services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
   
-    ## temporary/desktop
-    waybar
-    # gnome.gnome-keyring
-    
-    ## filsesystem
+    ## filsesystems
+    zfs
     ntfs3g
     xfsprogs
+    exfatprogs
+    btrfs-progs
+    ntfs2btrfs
     udiskie
     gparted
-  	
+    
     ## tools
     fd
     bc
+    zip
     tldr
     wget
     curl
     file
-    zip
+    tree
+    btop
+    micro
     unzip
     gnupg
+    s-tui
     blueman
     busybox
     ripgrep
@@ -110,15 +93,20 @@
     pavucontrol
 
     ## nixos
-    # nix-tree
-    # nix-init
-    # nix-index
-    # nixpkgs-review
-    # nix-output-monitor
+    nix-tree
+    #nix-init
+    #nix-index
+    #nixpkgs-review
+    #nix-output-monitor
  	
     ## languages and libraries
-    rustup
-    python313
+    #rustup
+    #python313
+
+    ## temporary/desktop
+    waybar
+    # gnome.gnome-keyring
+    
  ];
 
 }

@@ -13,6 +13,7 @@
 
     ## semi-modularised config
     ./packages.nix
+    ./fonts.nix
     ./misc.nix
     ../home/users
 
@@ -28,11 +29,11 @@
   hardware.pulseaudio.enable = false;
   services.pipewire = {  
   	enable = true;
-  	jack.enable = true;
+  	#jack.enable = false;
   	pulse.enable = true;
   	alsa.enable = true;
-  	alsa.support32Bit = true;
-    # lowLatency.enable = true;
+  	#alsa.support32Bit = false;
+    #lowLatency.enable = true;
   };
 
   ## genuinely dunno what these do hey, like isnt sudo

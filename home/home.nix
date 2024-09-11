@@ -32,14 +32,16 @@
       # qt5-wayland
       # qt6-wayland
       # gnome-clocks
+      pavucontrol
       image-roll
       gnome.eog
       peaclock
-      hyfetch
       cmatrix
+      hyfetch
       kitty
       micro
       btop
+      
 
       ## multimedia & games
       neural-amp-modeler-lv2
