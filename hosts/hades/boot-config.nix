@@ -19,10 +19,10 @@
       #};
       grub = {
        enable = true;
-       #efiSupport = true;
+       efiSupport = true;
        #efiInstallAsRemovable = true;
-       device = "/dev/sdd";
-       #useOSProber = true;
+       device = "/dev/sda";
+       useOSProber = true;
        enableCryptodisk = true;
       };
     };
