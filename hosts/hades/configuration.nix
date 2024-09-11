@@ -23,12 +23,12 @@
 	    #configurationLimit = 10;
       #};
       grub = {
-       enable = true;
-       efiSupport = true;
+       #enable = true;
+       #efiSupport = true;
        #efiInstallAsRemovable = true;
-       device = "/dev/sdd";
+       #device = "/dev/sdd";
        #useOSProber = true;
-       enableCryptodisk = true;
+       #enableCryptodisk = true;
       };
     };
     initrd = {
@@ -37,7 +37,7 @@
 	    "/boot/crypto_keyfile.bin" = null;
       };
       luks = {
-	    devices."luks-3de671ef-22a3-4f28-9251-a0687ab44f96".keyFile = "/boot/crypto_keyfile.bin";
+	    #devices."luks-3de671ef-22a3-4f28-9251-a0687ab44f96".keyFile = "/boot/crypto_keyfile.bin";
           # device = "/dev/disk/by-uuid/DISK_UUID";
           # keyfile = "/crypto_keyfile.bin";
 	    };
