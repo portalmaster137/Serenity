@@ -1,3 +1,6 @@
 To do list:
 
-- uhhhhhh
+- sops
+- gitsync
+- syncthing
+- directory creation
