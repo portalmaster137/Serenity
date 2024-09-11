@@ -43,7 +43,10 @@
         "$mod, X, exec, powermenu"
         "$mod, SPACE, exec, menu"
         # Windows control
-        "$mod, TAB, layoutmsg, togglesplit"
+        #"$mod, TAB, layoutmsg, togglesplit"
+        "$mod, A, layoutmsg, swapwithmaster master"
+        "$mod, Z, layoutmsg, cyclenext"
+        "$shiftMod, Z, layoutmsg, rollnext"
         "$mod, Q, killactive,"
         "$mod, T, togglefloating,"
         "$mod, F, fullscreen"
@@ -122,16 +125,19 @@
         blur = { enabled = true; };
       };
 
-      #master = {
-        #new_is_master = false;
-        #new_on_top = true;
-      #};
-
-      dwindle = {
-      	pseudotile = true;
-      	preserve_split = true;
-      	force_split = 2;
+      master = {
+        mfact = 0.4;
+        orientation = "center";
+        always_center_master = true;
+        new_is_master = true;
+        new_on_top = false;
       };
+
+      #dwindle = {
+      	#pseudotile = true;
+      	#preserve_split = true;
+      	#force_split = 2;
+      #};
 
       gestures = { workspace_swipe = true; };
 
