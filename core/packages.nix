@@ -49,6 +49,11 @@
     git.enable = true;
     fish.enable = true;
     gnome-disks.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+      pinentryFlavour = "curses";
+    };
   };
 
   services.gvfs.enable = true;
