@@ -110,7 +110,9 @@
 
     ## temporary/desktop
     waybar
+    #polkit-gnome
     gnome.seahorse
+    polkit-kde-agent
     gnome.gnome-keyring
     
  ];
