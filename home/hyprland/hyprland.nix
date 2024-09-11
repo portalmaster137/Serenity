@@ -109,9 +109,9 @@
         layout = "master";
       };
 
-      monitor = [
-      "preferred,auto,2"
-      ];
+      #monitor = [
+      #"preferred,auto,2"
+      #];
 
       decoration = {
         rounding = config.theme.rounding;
