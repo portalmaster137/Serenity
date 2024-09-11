@@ -1,71 +1,91 @@
-Hey there, feel free to do as you wish with these configs.
-Heavily WIP, and at this point, still mostly stolen code.<br>
-This is the actively used Hyprland compositor branch.
-For the core flake configuration, click
-[here](https://codeberg.org/serenity-F/nixdots/src/branch/core).
-<br>
-All branches in this repo are supersets of this one, but much
-more subject to change. Feel free to clone the repo and use `tree`
-to explore other branches.<br>
-Here is the core structure that is common to all branches:
+# SerenityOS
+**Configuration for system, applications, themes, and more; shared between multiple machines and users.**
+ 
+## Project Goals:
+ - Packages separated into system-level and user-level.
+ 
+ - Further modularisation of packages on a per user basis.
+ 
+ - Serve as a portable ecosystem for desktop, laptop,
+ home server, and VPS, with smartphone integration.
+ 
+*Very much WIP, still non-functional, and still mostly stolen code at this point.*
+ 
+## Checklist:
+ - **General**
+	- [ ] Sort data (sisyphean)
+	- [ ] Fix Syncthing
+	- [ ] Make an install ISO
+	- [ ] Fully comment all code
+	- [ ] Tidy up repo presentation
+  
+ - **System**
+	- [X] Per host configs
+		- [ ] ISO
+		- [X] Hades
+		- [X] Persephone
+		- [ ] Home server
+		- [ ] Cloud server 
+	- [X] Multi-user home-manager config
+		- [ ] Functional?
+	- [ ] Devshells
+		- [ ] direnv
+		- [ ] Standard C#
+		- [ ] Standard Rust
+		- [ ] Standard Python  
+ 
+ - **Desktop**
+	- [ ] Application suite (GTK/GNOME, probably)
+	- [ ] move to sway
+		- [ ] Decide if system-level or home-manager config
+		- [ ] Login management
+			- [ ] regreet or gtkgreet
+			- [ ] swayidle
+			- [ ] waylogout
+			- [ ] swaylock-effects
+		- [ ] Panel, launcher, widgets, bg, etc
+			- [ ] eww
+			- [X] wofi
+			- [ ] swaync
+			- [ ] swayfx
+			- [ ] swaywsr
+			- [ ] waypaper
+			- [ ] waypaper-engine
+			- [ ] swaybar
+		- [ ] wl-clipboard
+		- [ ] Screen capture
+			- [ ] wlrobs
+			- [ ] OBS Studio
+			- [ ] hyprpicker
+			- [ ] sway-screenshot [X]
+		- [ ] Screen control
+			- [ ] wdisplays
+			- [ ] waydisplay
+			- [ ] wl-gammactl
+			- [ ] brightnessctl
+			- [ ] wl-gammarelay-rs
+	- [ ] Themes
+		- [ ] Per user configs
+		- [ ] Fonts
+		- [ ] Icons
+		- [ ] GTK theme
+		- [ ] QT Themes
+		- [ ] Wallpapers
+		- [ ] nix-colors/stylix
 
-```
-.
-├── core
-│   ├── configuration.nix
-│   └── packages.nix
-├── flake.nix
-├── home
-│   ├── git.nix
-│   ├── home.nix
-│   └── users
-└── hosts
-    ├── hades
-    │   ├── configuration.nix
-    │   ├── hardware-configuration.nix
-    │   ├── network-configuration.nix
-	│	└── disko-config.nix
-    └── proserpina
-        ├── configuration.nix
-        ├── hardware-configuration.nix
-        ├── network-configuration.nix
-		└── disko-config.nix
+## Attributions:
+ - **Art**
+	- [Helvetica Blanc](https://helveticablanc.com/)
 
-```
-
-Want a quick rundown of what, and why this is?
-<br>
-- The what:
-  - Shared declarative configuration for system, applications,
- configs, and themes, shared across multiple machines and users.
-  - The core of the flake is separated into its own branch, to keep
- it kinda clean while wei mess around with other desktops and stuff.
-  - Packages are separated into system-level and user-level, with
- some otherwise system stuff in user-level for ease of config.
-  - Some further modularisation of packages on a user by user basis.
-  - Intended to serve as the basis of a shared ecosystem between
-  muir desktop, laptop, future NAS, and mobile phone. 
-<br>
-<br>
-- The why:
-  - Wei are a plural system so the ability to have discete
-  accounts and configs while still retaining a complete
-  and largely preconfigured desktop environment is *nice*.
-  ecosystem/configuration across muir devices.
-  - Also wei break muir install a lot.
-  - Also wei're sick of losing muir dotfiles, and reconfiguring
-  everything all the dam time, and wei're sick of distrohopping,
-  anduhgekwfuhwlf2q9a...
-
----
-
-Checklist:
-
- - [X] evaluates successfully
- - [ ] #core changes synced across other branches
- - [X] hybrid multi-user home-manager configuration
-   - [ ] functional (needs testing)
- - [ ] per host hardware configurations
-   - [ ] Hades (waiting on new boot drive)
-   - [X] Proserpina 
- - [ ] find a way to install Arcticons "the nix way"
+ - **Code**
+	- Sashanoraa
+	- Hive/Bits
+	- Queer Syndicate
+	- Wonder Collective
+	- anotherhadi
+	- fufexan
+	- FrostPhoenix
+	- HeinzDev
+	- LibrePhoenix
+	- vimjoyer
+	
