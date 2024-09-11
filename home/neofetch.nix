@@ -56,8 +56,6 @@
         # prin "\n \n Hotel?" "trivago"
         # prin "\n \n Trans rights !"
 
-        # prin "\n \n    ''${cl0}──''${cl1}────''${cl2}────''${cl3}────''${cl4}────''${cl5}────''${cl6}────''${cl7}──"
-        prin "\n \n \n \n \n \n ''${cl0}⬤ \n \n ''${cl1}⬤ \n \n ''${cl2}⬤ \n \n ''${cl3}⬤ \n \n ''${cl4}⬤ \n \n ''${cl5}⬤ \n \n ''${cl6}⬤ \n \n ''${cl7}⬤"
     }
 
     reset="\033[0m"
