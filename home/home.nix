@@ -38,6 +38,7 @@
       peaclock
       cmatrix
       hyfetch
+      zathura
       kitty
       micro
       btop
@@ -45,6 +46,8 @@
 
       ## multimedia & games
       neural-amp-modeler-lv2
+      #evolutionWithPlugins # or
+      thunderbird
       transmission-gtk
       nicotine-plus
       osu-lazer-bin
@@ -58,6 +61,12 @@
       cardinal
       audacity
       jellyfin
+      swayimg # or
+      #nomacs
+      #imv
+      clapper
+      ydotool # or
+      #wtypeswayim
       spotify
       blender
       helvum
@@ -70,7 +79,8 @@
       # schildichat
       lagrange
       vesktop
-      discord
+      #dissent
+      #discord
       fractal # fix gnome-keyring 
       tor 
     ];
