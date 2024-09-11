@@ -49,7 +49,7 @@
         info "\n \n Processor" cpu
         info "\n \n Memory" memory
         # info "\n \n GPU" gpu
-        prin "\n \n Processor" "Radeon RX Vega 64"
+        prin "\n \n GPU" "Radeon RX Vega 64"
         # info "\n \n Resolution" resolution
         # info "\n \n Uptime" uptime
         prin "\n"
