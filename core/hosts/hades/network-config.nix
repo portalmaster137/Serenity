@@ -8,7 +8,7 @@
 
   networking = {
     hostName = "hades";
-  	wireless.enable = false;
+  	wireless.enable = true;
   	networkmanager = {
   	  enable = true;
   	};
