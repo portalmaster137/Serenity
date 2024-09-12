@@ -129,7 +129,7 @@
     libsecret
     git-crypt
     undervolt
-    gitwatch
+    #gitwatch
 
     ## nixos
     nix-tree
