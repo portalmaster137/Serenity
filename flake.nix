@@ -64,7 +64,7 @@
            #"${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
            #disko.nixosModules.disko
            #sops-nix.nixosModules.sops
-           #./hosts/iso/config.nix
+           #./core/hosts/iso/config.nix
          #];
          #specialArgs = {inherit inputs outputs;};
       #};
@@ -75,7 +75,7 @@
         modules = [
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
-          ./hosts/persephone/config.nix
+          ./core/hosts/persephone/config.nix
         ];
       };
 
@@ -85,7 +85,7 @@
         modules = [
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
-          ./hosts/hades/config.nix
+          ./core/hosts/hades/config.nix
         ];
       };
 
