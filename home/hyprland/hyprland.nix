@@ -37,7 +37,7 @@
         "$shiftMod, RETURN, exec, ${pkgs.wofi}/bin/wofi"
         "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty"
         "$mod, E, exec, ${pkgs.xfce.thunar}/bin/nautilus"
-        "$mod, B, exec, ${pkgs.qutebrowser}/bin/firefox"
+        "$mod, B, exec, ${pkgs.firefox}/bin/firefox"
         "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock"
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock"
         "$mod, X, exec, powermenu"

@@ -59,7 +59,7 @@
         show_indicators = "yes";
         shrink = "no";
         word_wrap = "yes";
-        browser = "${pkgs.qutebrowser}/bin/qutebrowser";
+        browser = "${pkgs.firefox}/bin/firefox";
       };
 
       fullscreen_delay_everything = { fullscreen = "delay"; };
