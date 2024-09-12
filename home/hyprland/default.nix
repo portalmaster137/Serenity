@@ -28,7 +28,8 @@
   home.packages = with pkgs; [
     ## desktop environment
     waybar
-    swww    
+    swww
+    nm-applet
     wlroots
     wlsunset
     wlr-randr
@@ -43,6 +44,7 @@
     ## gnome stuff
     gnome.sushi
     gnome.seahorse
+    networkmanagerapplet
     gnome.gnome-themes-extra
     gnome.gnome-control-center
 

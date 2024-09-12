@@ -1,6 +1,6 @@
 { pkgs, config, lib, waybar, ... }: {
   services = {
-    blueman-applet.enable = true;
+    blueman-applet.enable = false;
     network-manager-applet.enable = true;
   };
 
