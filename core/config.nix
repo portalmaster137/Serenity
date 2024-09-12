@@ -11,8 +11,8 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ## semi-modularised config
-    ./system-packages.nix
-    ../home/users
+    ./packages.nix # system-level packages here
+    ../home/users # user defined configs and packages here
   ];
 
   ## locale is common across machines
