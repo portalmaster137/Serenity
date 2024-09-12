@@ -1,6 +1,32 @@
-To do list:
-
-- sops
-- gitsync
-- syncthing
-- directory creation
+Primary short term to do list:
+  - fix wifi on hades
+  - secrets & sync
+    - sops-nix
+    - keyring/polkit
+    - password manager
+    - log in everywhere
+    - syncthing
+    - gitsync
+    - directory creation w/ flake
+    - kde-connect
+  - media
+    - audio
+      - pavucontrol
+      - helvum
+    - sharing
+      - nicotine-plus
+      - local media share
+      - scrobbling
+      - jellyfin
+      - transmission
+    - gaming
+      - osu
+      - steam
+      - proton
+  - music production
+    - midi control
+    - audacity
+    - ardour
+    - bespoke
+    - vcv-rack/cardinal
+    - neural-amp-modeler
