@@ -29,7 +29,6 @@
     ## desktop environment
     waybar
     swww
-    nm-applet
     wlroots
     wlsunset
     wlr-randr
