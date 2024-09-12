@@ -19,7 +19,7 @@
   ./neofetch.nix
 
   #../sway
-  ../hyprland
+  ../hypr
   
   ];
 

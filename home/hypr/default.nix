@@ -11,7 +11,7 @@
   imports = [
 
   ../common/themes
-  ./scripts
+  ../common/scripts
 
   ./hyprland.nix  
   ./hyprpaper.nix
