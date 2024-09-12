@@ -13,7 +13,7 @@
   #./themes
 
   ./git.nix  
-  ./fish.nix
+  #./fish.nix
   ./kitty.nix
   #./lazygit.nix
   ./neofetch.nix
