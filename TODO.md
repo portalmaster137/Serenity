@@ -1,5 +1,5 @@
 Primary short term to do list:
-  - fix wifi on hades
+  - fix wifi on hades [DONE]
   - secrets & sync
     - sops-nix
     - keyring/polkit
