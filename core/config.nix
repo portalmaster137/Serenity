@@ -58,8 +58,8 @@
   ## disable these cuz they cause problems (thx sasha)
   ## see: https://github.com/NixOS/nixpkgs/issues/180175
   systemd.services = {
-  	#networkManager-wait-online.enable = lib.mkForce false;
-  	#systemd-networkd-wait-online.enable = lib.mkForce false;
+  	networkManager-wait-online.enable = lib.mkForce false;
+  	systemd-networkd-wait-online.enable = lib.mkForce false;
   };
 
   ## autoupgrades ? disabled for now, need to read into

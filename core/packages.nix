@@ -150,6 +150,7 @@
     gnome.seahorse
     polkit-kde-agent
     gnome.gnome-keyring
+    networkmanager
     
  ];
 
