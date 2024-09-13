@@ -21,7 +21,7 @@
   i18n.defaultLocale = "en_GB.UTF-8";
 
   ## gotta have sound, this too is common 
-  sound.enable = false;
+  #sound.enable = false;
   hardware.pulseaudio.enable = false;
   services.pipewire = {  
   	enable = true;
