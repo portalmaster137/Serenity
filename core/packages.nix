@@ -65,9 +65,17 @@
 
   programs = {
   
-    git.enable = true;
-    fish.enable = true;
-    gnome-disks.enable = true;
+    git = {
+      enable = true;
+    };
+    
+    fish = {
+      enable = true;
+    };
+
+    gnome-disks = {
+      enable = true;
+    };
     
     gnupg.agent = {
       enable = true;
@@ -132,7 +140,7 @@
     #gitwatch
 
     ## nixos
-    nix-tree
+    #nix-tree
     #nix-init
     #nix-index
     #nixpkgs-review
@@ -143,7 +151,7 @@
     #python313
 
     ## temporary/desktop
-    waybar
+    #waybar
     udiskie
     gparted
     pavucontrol
