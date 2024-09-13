@@ -31,7 +31,8 @@
         prin "\n \n OS" "SerenityOS (NixOS)"
         info "\n \n Kernel" kernel
         info "\n \n Packages" packages
-        info "\n \n Desktop" de
+        # info "\n \n Desktop" de
+        prin "\n \n Desktop" "Hyprland (wayland)"
         # info "\n \n Shell" shell
         prin "\n \n Shell" "Fish"
         # info "\n \n Editor" editor
@@ -46,7 +47,7 @@
         info "\n \n Processor" cpu
         info "\n \n Memory" memory
         # info "\n \n GPU" gpu
-        prin "\n \n GPU" "Radeon RX Vega 64"
+        prin "\n \n Graphics" "Radeon RX Vega 64"
         # info "\n \n Resolution" resolution
         # info "\n \n Uptime" uptime
         prin "\n"
