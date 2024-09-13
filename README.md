@@ -1,14 +1,5 @@
 # SerenityOS
 **Configuration for system, applications, themes, and more; shared between multiple machines and users.**
- 
-## Project Goals:
- - Packages separated into system-level and user-level.
- 
- - Further modularisation of packages on a per user basis.
- 
- - Serve as a portable ecosystem for desktop, laptop,
- home server, and VPS, with smartphone integration.
- 
 *Very much WIP, still non-functional, and still mostly stolen code at this point.*
  
 ## Checklist:
