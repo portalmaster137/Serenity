@@ -14,43 +14,41 @@
   ];
    
   users.users = {
- # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+    ## Define users like this
     serenity = {
       description = "Serenity Amalgam";
       isNormalUser = true;
-      ## be sure to change this with 'passwd'
-      initialPassword = "password";
-      shell = pkgs.fish;
       extraGroups = [
         "wheel"
-        "networkmanager"
+	"networkmanager"
       ];
+      ## be sure to change this with 'passwd'
+      initialPassword = "password";
+      ## A catgirl's favourite shell
+      shell = pkgs.fish;
     };
 
-
-
- # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   };
 
   home-manager = {
-  	extraSpecialArgs = { inherit inputs outputs; };
+    ## this line passes in specialArgs from flake.nix
+    extraSpecialArgs = { inherit inputs outputs; };
+    ## this line ensures all packages declared follow the
+    ## same nix-channel we declared in the flake.nix
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {
- # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+      ## Also make sure to include a user definition here
       serenity = {
-        imports = [ ./u-serenity.nix ];
+        ## This is where the user configs/packages are imported
+        imports = [ ./u-serenity.nix];
         home = {
-      	  username = "serenity";
-      	  homeDirectory = "/home/serenity";
-      	};
+          username = "serenity";
+	  homeDirectory = "/home/serenity"
+	};
       };
 
-
-
- # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     };
   };
 
