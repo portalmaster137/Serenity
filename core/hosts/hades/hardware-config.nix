@@ -72,7 +72,7 @@
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   	enableAllFirmware = true;
   	bluetooth.enable = false;
-  	opengl = {
+  	graphics = {
   	  enable = true;
   	  extraPackages = with pkgs; [
   	    intel-compute-runtime
