@@ -18,7 +18,6 @@
            @@@                          
               @@                        
                                         
-                                        
   '';
 
   xdg.configFile."neofetch/config.conf".text = ''
