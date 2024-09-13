@@ -27,7 +27,7 @@
               content = {
                 type = "luks";
                 name = "pomegranate";
-                # disable settings.keyFile if you want to use interactive password entry
+                ## disable settings.keyFile if you want to use interactive password entry
                 #passwordFile = "/tmp/secret.key"; # Interactive            
                 settings = {
                   allowDiscards = true;
