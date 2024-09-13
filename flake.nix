@@ -1,13 +1,13 @@
 {
-  description = "SerenityOS v0.6.0";
+  description = "SerenityOS v0.6.2";
 
   inputs = {
   
     ## Nixpkgs
     ## there was a way to have unstable as an overlay,
     ## will set it back up, lazy rn, for now pick one
-    nixpkgs.url = "nixpkgs/nixos-24.05";
-    #nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    #nixpkgs.url = "nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hardware.url = "github:nixos/nixos-hardware";
 
     ## declarative disk management
