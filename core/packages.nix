@@ -96,8 +96,14 @@
   	enable = true;
   	wayland.enable = true;
   };
+
+  environment.variables = {
+    EDITOR = "micro";
+    SYSTEMD_EDITOR = "micro";
+    VISUAL = "micro";
+  };
+
   services.flatpak.enable = true;
-  
   environment.systemPackages = with pkgs; [
   
     ## filsesystems
