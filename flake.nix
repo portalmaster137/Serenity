@@ -6,21 +6,24 @@
     ## Nixpkgs
     ## there was a way to have unstable as an overlay,
     ## will set it back up, lazy rn, for now pick one
-    # nixpkgs.url = "nixpkgs/nixos-23.11";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-24.05";
+    #nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hardware.url = "github:nixos/nixos-hardware";
 
-    ## declarative disks
+    ## declarative disk management
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sops-nix.url = "github:Mic92/sops-nix";
-    ## optional, not necessary for the module
-    #inputs.sops-nix.inputs.nixpkgs.follows = "nixpkgs";
-
-    ## declarative dots
+    ## secrets management
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      ## optional, not necessary for the module
+      #inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
+    ## dots management
     home-manager = {
   	  url = "github:nix-community/home-manager";
   	  inputs.nixpkgs.follows = "nixpkgs";
@@ -36,7 +39,7 @@
       inputs.hyprland.follows = "hyprland";
     };
     ## Fix broken waybar on current nixpkgs-unstable    
-    waybar.url = "github:Alexays/Waybar"; 
+    #waybar.url = "github:Alexays/Waybar"; 
 
   };
 
@@ -50,7 +53,7 @@
     nix-colors,
     hyprland,
     hyprland-plugins,
-    waybar,
+    #waybar,
     ...
   } @ inputs: let
     inherit (self) outputs;
