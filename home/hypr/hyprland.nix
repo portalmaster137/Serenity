@@ -215,7 +215,7 @@
   gtk = {
     enable = true;
     theme = {
-      package = pkgs.adwaita-dark;
+      package = adwaita-dark;
       name = "adwaita-dark";
     };
 
