@@ -71,6 +71,7 @@
       swayimg # or
       #nomacs
       #imv
+      shotcut
       clapper
       ydotool # or
       #wtypeswayim
