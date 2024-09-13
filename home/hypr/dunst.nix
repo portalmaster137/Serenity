@@ -4,7 +4,7 @@
     enable = true;
     iconTheme = {
       name = "Adwaita-Dark";
-      package = pkgs.gnome.adwaita-icon-theme;
+      package = pkgs.adwaita-icon-theme;
     };
     settings = {
       global = {

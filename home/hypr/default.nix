@@ -41,11 +41,11 @@
     hyprcursor
     brightnessctl
     ## gnome stuff
-    gnome.sushi
-    gnome.seahorse
+    sushi
+    seahorse
     networkmanagerapplet
-    gnome.gnome-themes-extra
-    gnome.gnome-control-center
+    gnome-themes-extra
+    gnome-control-center
 
     ## lib and compat
     xwayland
@@ -58,7 +58,7 @@
     dconf
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
-    # xdg-desktop-portal-hyprland
+    xdg-desktop-portal-hyprland
     
   ];
 

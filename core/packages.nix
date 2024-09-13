@@ -156,9 +156,9 @@
     gparted
     pavucontrol
     #polkit-gnome
-    gnome.seahorse
+    seahorse
     polkit-kde-agent
-    gnome.gnome-keyring
+    gnome-keyring
     networkmanager
     
  ];

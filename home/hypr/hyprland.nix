@@ -13,8 +13,8 @@
     xwayland.enable = true;
 
     plugins = [
-    # inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
-	# inputs.hyprland-plugins.packages."${pkgs.system}".hyprbars
+      #inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
+	    #inputs.hyprland-plugins.packages."${pkgs.system}".hyprbars
     ];
     
 
@@ -36,7 +36,7 @@
       bind = [
         "$shiftMod, RETURN, exec, ${pkgs.wofi}/bin/wofi"
         "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty"
-        "$mod, E, exec, ${pkgs.xfce.thunar}/bin/nautilus"
+        "$mod, E, exec, ${pkgs.xfce.nautilus}/bin/nautilus"
         "$mod, B, exec, ${pkgs.firefox}/bin/firefox"
         "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock"
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock"
@@ -208,16 +208,16 @@
 
   qt = {
     enable = true;
-    platformTheme = "gnome";
+    platformTheme = "adwaita";
     style.name = "adwaita-dark";
   };
 
   gtk = {
     enable = true;
-    # theme = {
-      # package = pkgs.adwaita-dark;
-      # name = "adwaita-dark";
-    # };
+    theme = {
+      package = pkgs.adwaita-dark;
+      name = "adwaita-dark";
+    };
 
     iconTheme = {
       package = pkgs.flat-remix-icon-theme;

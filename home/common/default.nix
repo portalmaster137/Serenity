@@ -28,11 +28,11 @@
     packages = with pkgs; [
 
       ## desktop environment
-      gnome.gnome-keyring
+      gnome-keyring
       opentabletdriver
       # gnome-calculator
       syncthing-tray
-      gnome.nautilus
+      nautilus
       # gnome-calendar
       gnome-secrets
       appimage-run
@@ -41,7 +41,7 @@
       # gnome-clocks
       pavucontrol
       image-roll
-      gnome.eog
+      eog
       peaclock
       cmatrix
       hyfetch
