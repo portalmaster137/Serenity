@@ -214,10 +214,10 @@
 
   gtk = {
     enable = true;
-    theme = {
-      package = adwaita-dark;
-      name = "adwaita-dark";
-    };
+    #theme = {
+      #package = adwaita-dark;
+      #name = "adwaita-dark";
+    #};
 
     iconTheme = {
       package = pkgs.flat-remix-icon-theme;
