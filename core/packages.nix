@@ -65,9 +65,9 @@
 
   programs = {
   
-    git = {
-      enable = true;
-    };
+    #git = {
+      #enable = true;
+    #};
     
     fish = {
       enable = true;
