@@ -10,13 +10,9 @@
 
   imports = [
 
-  #./themes
-
   ./git.nix  
-  #./fish.nix
-  ./kitty.nix
   ./yazi.nix
-  #./lazygit.nix
+  ./kitty.nix
   ./neofetch.nix
 
   #../sway
@@ -31,18 +27,17 @@
       ## desktop environment
       gnome-keyring
       opentabletdriver
-      # gnome-calculator
+      #gnome-calculator
       syncthing-tray
-      nautilus
-      # gnome-calendar
+      #gnome-calendar
       gnome-secrets
       appimage-run
-      # qt5-wayland
-      # qt6-wayland
-      # gnome-clocks
+      #qt5-wayland
+      #qt6-wayland
+      #gnome-clocks
       pavucontrol
       image-roll
-      eog
+      nautilus
       peaclock
       cmatrix
       hyfetch
@@ -50,10 +45,10 @@
       kitty
       micro
       btop
+      eog
 
       ## multimedia & games
       neural-amp-modeler-lv2
-      #evolutionWithPlugins # or
       thunderbird
       transmission-gtk
       nicotine-plus
@@ -68,27 +63,21 @@
       cardinal
       audacity
       jellyfin
-      swayimg # or
-      #nomacs
-      #imv
+      swayimg
       shotcut
       clapper
-      ydotool # or
-      #wtypeswayim
+      ydotool
       spotify
       blender
       helvum
       ardour
-      steam # (needs config via home.programs.steam)
+      steam # needs config via home.programs.steam
       gimp
       vlc
       
       ## chat & web
-      # schildichat
       lagrange
       vesktop
-      #dissent
-      #discord
       fractal # fix gnome-keyring 
       tor 
     ];

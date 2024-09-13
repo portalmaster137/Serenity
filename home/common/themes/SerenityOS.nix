@@ -1,6 +1,6 @@
 {
   imports = [
-    ./template.nix
+    #./template.nix
   ];
 
   theme = {

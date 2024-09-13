@@ -9,6 +9,7 @@
 
   imports = [
     ../common
+    ../common/themes/SerenityOS.nix
   ];
 
   home = {

@@ -20,7 +20,7 @@
       isNormalUser = true;
       extraGroups = [
         "wheel"
-	"networkmanager"
+        "networkmanager"
       ];
       ## be sure to change this with 'passwd'
       initialPassword = "password";
@@ -45,8 +45,8 @@
         imports = [ ./u-serenity.nix];
         home = {
           username = "serenity";
-	  homeDirectory = "/home/serenity"
-	};
+          homeDirectory = "/home/serenity"
+        };
       };
 
     };

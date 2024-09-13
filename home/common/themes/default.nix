@@ -1,8 +1,9 @@
 { config, ... }: {
+
   imports = [ 
-    ./SerenityOS.nix
-    # ./resources
+    ./template.nix
   ];
+
   config.theme.colors.primary-ansi-16-number =
     if config.theme.colors.primary-ansi-16 == "black" then
       0
