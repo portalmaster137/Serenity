@@ -1,5 +1,6 @@
 # SerenityOS
-**Configuration for system, applications, themes, and more; shared between multiple machines and users.**
+**Configuration for system, applications, themes, and more; shared between multiple machines and users.**<br>
+<br>
 *Very much WIP, still non-functional, and still mostly stolen code at this point.*
  
 ## Checklist:
