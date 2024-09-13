@@ -36,7 +36,7 @@
       bind = [
         "$shiftMod, RETURN, exec, ${pkgs.wofi}/bin/wofi"
         "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty"
-        "$mod, E, exec, ${pkgs.xfce.nautilus}/bin/nautilus"
+        "$mod, E, exec, ${pkgs.nautilus}/bin/nautilus"
         "$mod, B, exec, ${pkgs.firefox}/bin/firefox"
         "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock"
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock"
