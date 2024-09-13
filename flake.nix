@@ -1,5 +1,7 @@
 {
-  description = "SerenityOS v0.6.2";
+  description = "SerenityOS v0.6.3";
+  #this is a commented-out line of nix code
+  ## This is a real comment
 
   inputs = {
   
@@ -25,8 +27,8 @@
     
     ## dots management
     home-manager = {
-  	  url = "github:nix-community/home-manager";
-  	  inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     ## themeing
@@ -62,6 +64,8 @@
     nixosConfigurations = {
 
       #iso = nixpkgs.lib.nixosSystem {
+        #specialArgs = {inherit inputs outputs;};
+	 ## > Main nixos config files go here <
          #modules = [
            #"${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
            #"${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
@@ -69,12 +73,11 @@
            #sops-nix.nixosModules.sops
            #./core/hosts/iso/config.nix
          #];
-         #specialArgs = {inherit inputs outputs;};
       #};
     
       persephone  = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        # > Our main nixos configuration files <
+        ## > Main nixos config files go here<
         modules = [
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
@@ -84,7 +87,7 @@
 
       hades  = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        # > Our main nixos configuration files <
+        # > Main nixos config files go here <
         modules = [
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
