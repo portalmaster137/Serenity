@@ -15,6 +15,7 @@
   ./git.nix  
   #./fish.nix
   ./kitty.nix
+  ./yazi.nix
   #./lazygit.nix
   ./neofetch.nix
 
