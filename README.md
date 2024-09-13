@@ -1,15 +1,15 @@
 # SerenityOS
 **Configuration for system, applications, themes, and more; shared between multiple machines and users.**<br>
 <br>
-*Very much WIP, still non-functional, and still mostly stolen code at this point.*
+*Very much WIP and mostly stolen code at this point.*
  
 ## Checklist:
  - **General**
-	- [ ] Sort data (sisyphean)
-	- [ ] Fix Syncthing
-	- [ ] Make an install ISO
-	- [ ] Fully comment all code
-	- [ ] Tidy up repo presentation
+    - [ ] Set up Syncthing
+    - [ ] Sort data (sisyphean)
+    - [ ] Make an install ISO
+    - [ ] Fully comment all code (half done)
+    - [ ] Tidy up repo presentation
   
  - **System**
 	- [X] Per host configs
@@ -19,16 +19,14 @@
 		- [ ] Home server
 		- [ ] Cloud server 
 	- [X] Multi-user home-manager config
-		- [ ] Functional?
+		- [X] Functional
 	- [ ] Devshells
-		- [ ] direnv
-		- [ ] Standard C#
 		- [ ] Standard Rust
 		- [ ] Standard Python  
  
  - **Desktop**
 	- [ ] Application suite (GTK/GNOME, probably)
-	- [ ] move to sway
+	- [ ] Move to sway
 	- [ ] Themes
 		- [ ] Per user configs
 		- [ ] Fonts
