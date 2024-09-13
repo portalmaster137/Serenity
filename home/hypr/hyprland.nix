@@ -109,7 +109,7 @@
         "col.active_border" = "rgba(${config.theme.colors.primary-bg}ff)";
         "col.inactive_border" = "rgba(00000055)";
         border_part_of_window = true;
-        layout = "master";
+        layout = "dwindle";
       };
 
       #monitor = [
@@ -125,19 +125,19 @@
         blur = { enabled = true; };
       };
 
-      master = {
-        mfact = 0.4;
-        orientation = "center";
-        always_center_master = true;
-        new_is_master = true;
-        new_on_top = false;
-      };
-
-      #dwindle = {
-      	#pseudotile = true;
-      	#preserve_split = true;
-      	#force_split = 2;
+      #master = {
+        #mfact = 0.4;
+        #orientation = "center";
+        #always_center_master = true;
+        #new_is_master = true;
+        #new_on_top = false;
       #};
+
+      dwindle = {
+      	pseudotile = true;
+      	preserve_split = true;
+      	force_split = 2;
+      };
 
       gestures = { workspace_swipe = true; };
 
