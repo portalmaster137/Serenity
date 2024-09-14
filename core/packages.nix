@@ -136,11 +136,13 @@
 
     ## filsesystem utilities
     zfs
-    ntfs3g
     xfsprogs
+    ddrutility
     exfatprogs
     btrfs-progs
+    ntfs3g
     ntfs2btrfs
+    scrounge-ntfs
     
     ## cli tools & utilities
     fd
