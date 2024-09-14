@@ -45,7 +45,7 @@
         imports = [ ./u-serenity.nix];
         home = {
           username = "serenity";
-          homeDirectory = "/home/serenity"
+          homeDirectory = "/home/serenity";
         };
       };
 
