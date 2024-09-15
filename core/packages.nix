@@ -126,6 +126,7 @@
     #polkit-gnome
     gnome-keyring
     polkit-kde-agent
+    xorg.xhost
 
     ## nix specific tools
     #nix-tree
