@@ -36,23 +36,23 @@
         # info "\n \n Shell" shell
         prin "\n \n Shell" "Fish"
         # info "\n \n Editor" editor
-        prin "\n \n Editor" "Micro"
+        prin "\n \n Editor" "neovim"
         # info "\n \n Terminal" term
         prin "\n \n Terminal" "Kitty"
         # info "\n \n Terminal Font" term_font
-		prin "\n \n Terminal Font" "Spleen"
+        # prin "\n \n Terminal Font" "Spleen"
         # info "\n \n Model" model
-        # prin "\n \n System" "MSI Z97-G3"
+        prin "\n \n Motherboard" "MSI Z97 G3"
         # prin "\n \n Device" "Thinkpad T470s"
         info "\n \n Processor" cpu
         info "\n \n Memory" memory
-        # info "\n \n GPU" gpu
-        prin "\n \n Graphics" "Radeon RX Vega 64"
+        info "\n \n GPU" gpu
+        # prin "\n \n Graphics" "Radeon RX Vega 64"
         # info "\n \n Resolution" resolution
         # info "\n \n Uptime" uptime
         prin "\n"
-        # prin "\n \n Hotel?" "trivago"
-        # prin "\n \n Trans rights !"
+        prin "\n \n Hotel?" "trivago"
+        prin "\n \n Trans rights !"
 
     }
 
