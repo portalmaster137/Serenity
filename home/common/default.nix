@@ -63,6 +63,7 @@
       cardinal
       audacity
       jellyfin
+      syncplay
       swayimg
       shotcut
       clapper
