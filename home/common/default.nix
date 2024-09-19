@@ -72,6 +72,7 @@
       blender
       helvum
       ardour
+      steam # what
       gimp
       vlc
       
