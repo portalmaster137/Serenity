@@ -163,6 +163,7 @@
     unzip
     gnupg
     s-tui
+    steam
     blueman
     busybox
     ripgrep
