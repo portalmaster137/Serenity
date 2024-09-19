@@ -89,7 +89,7 @@
   programs = {
     home-manager.enable = true;
     starship.enable = true;
-    steam.enable = true;
+     #steam.enable = true; # apparently steam doesn't exist in home-manager :thonk:
     fish.enable = true;
     git.enable = true;
     firefox.enable = true;

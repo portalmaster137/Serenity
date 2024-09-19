@@ -81,6 +81,10 @@
       enableSSHSupport = true;
       #pinentryPackage = [ ];
     };
+    ## i wanted this in the user-level area, but w/e i guess
+    steam = {
+      enable = true;
+    };
     
     ## temporary, fuck vax-bingus or w/e his name is
     hyprland = {
