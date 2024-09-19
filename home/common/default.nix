@@ -72,7 +72,6 @@
       blender
       helvum
       ardour
-      steam # needs config via home.programs.steam
       gimp
       vlc
       
@@ -90,6 +89,7 @@
   programs = {
     home-manager.enable = true;
     starship.enable = true;
+    steam.enable = true;
     fish.enable = true;
     git.enable = true;
     firefox.enable = true;
