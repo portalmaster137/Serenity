@@ -72,7 +72,7 @@
       blender
       helvum
       ardour
-      steam # what
+      # steam # what
       gimp
       vlc
       
@@ -90,7 +90,7 @@
   programs = {
     home-manager.enable = true;
     starship.enable = true;
-     #steam.enable = true; # apparently steam doesn't exist in home-manager :thonk:
+     #steam.enable = true; # apparently steam doesnt exist in home-manager :thonk:
     fish.enable = true;
     git.enable = true;
     firefox.enable = true;
