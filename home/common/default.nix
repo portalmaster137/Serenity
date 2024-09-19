@@ -68,7 +68,7 @@
       shotcut
       clapper
       ydotool
-      spotify
+      # spotify
       blender
       helvum
       ardour
