@@ -30,10 +30,22 @@
 
   };
 
+  systemd.tmpfiles.settings = {
+    "notes" = {
+      "/home/serenity/sync/organisation" = {
+        d = {
+          group = "users";
+          mode = "0777";
+          user = "serenity";
+        };
+      };
+    };
+  };
+
   home-manager = {
-    ## this line passes in specialArgs from flake.nix
+    ## This line passes in specialArgs from flake.nix
     extraSpecialArgs = { inherit inputs outputs; };
-    ## this line ensures all packages declared follow the
+    ## This line ensures all packages declared follow the
     ## same nix-channel we declared in the flake.nix
     useGlobalPkgs = true;
     useUserPackages = true;

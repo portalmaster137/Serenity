@@ -10,28 +10,28 @@
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    ## semi-modularised config
+    ## Semi-modularised config
     ./packages.nix # system-level packages here
     ../home/users # user-level packages here
   ];
 
-  ## crikey !
+  ## Crikey !
   time.timeZone = "Australia/Brisbane";
   i18n.defaultLocale = "en_GB.UTF-8";
 
-  ## gotta have sound, this too is common 
-  #sound.enable = false;
+  ## Gotta have sound, this too is common 
+   #sound.enable = false;
   hardware.pulseaudio.enable = false;
   services.pipewire = {  
     enable = true;
-    #jack.enable = false;
+     #jack.enable = false;
     pulse.enable = true;
     alsa.enable = true;
-    #alsa.support32Bit = false;
-    #lowLatency.enable = true;
+     #alsa.support32Bit = false;
+     #lowLatency.enable = true;
   };
 
-  ## genuinely dunno what these do hey, like isnt sudo
+  ## Genuinely dunno what these do hey, like isnt sudo
   ## already restricted to @wheel only? & wut is rtkit
   security = {
     rtkit.enable = true;
@@ -39,21 +39,21 @@
   };
 
   nix.settings = {
-    ## use all cores during build
+    ## Use all cores during build
     cores = 0;
     auto-optimise-store = true;
     allowed-users = [ "@wheel" ];
-    ## enable flakes uwu
+    ## Enable flakes uwu
     experimental-features = [
     "nix-command"
     "flakes"
     ];
   };
 
-  ## apparently prevents getting stuck at shutdown
+  ## Apparently prevents getting stuck at shutdown
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
   
-  ## disable these cuz they cause problems (thx sasha)
+  ## Disable these cuz they cause problems (thx sasha)
   ## see: https://github.com/NixOS/nixpkgs/issues/180175
   systemd.services = {
     networkManager-wait-online.enable = lib.mkForce false;
