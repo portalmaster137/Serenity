@@ -10,72 +10,88 @@
     
   ];
 
-  # Enable swap on luks
+  ## Enable swap on luks
   boot = {
+
     loader = {
       systemd-boot = {
         enable = true;
-	    configurationLimit = 5;
+	configurationLimit = 5;
       };
       efi = {
         canTouchEfiVariables = true;
         # efiSysMountPoint = "/boot/efi";
       };
     };
+
     initrd = {
       systemd.enable = true;
       secrets = {
-	  # "crypto_keyfile.bin" = null;
+         #"crypto_keyfile.bin" = null;
       };
-      luks = {
-	    # devices."luks-DISK_UUID" = {
-          # device = "/dev/disk/by-uuid/DISK_UUID";
-        # keyfile = "/crypto_keyfile.bin";
-	    # };
-      };
+       #luks = {
+         #devices."luks-DISK_UUID" = {
+           #device = "/dev/disk/by-uuid/DISK_UUID";
+           #keyfile = "/crypto_keyfile.bin";
+         #};
+       #};
     };
+
   };
 
   networking = {
     hostName = "persephone";
-  	wireless.enable = false;
-  	networkmanager = {
-  	  enable = true;
-  	};
+      wireless.enable = false;
+      networkmanager = {
+        enable = true;
+      };
   };
 
   services.fstrim.enable = true;
-  
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+
+  powerManagement = {
+    enable = true;
+
+    powertop.enable = true;
+
+    cpuFreqGovernor = Lib.mkDefault "powersave";
+
+     #cpufreq = {
+       #min = 80000;
+       #max = 2000000;
+     #};
+  };
   
   hardware = {
   
     cpu.intel.updateMicrocode = true;
-  	enableAllFirmware = false;
-  	bluetooth.enable = true;
-  	
-  	opengl = {
-  	  enable = true;
-  	  extraPackages = with pkgs; [
-  	    intel-compute-runtime
-  	    intel-media-driver
-  	    vaapiIntel
-  	    vaapiVdpau
-  	    libvdpau-va-gl		
+
+    enableAllFirmware = false;
+
+    bluetooth.enable = true;	
+
+    opengl = {
+      enable = true;
+      extraPackages = with pkgs; [
+        intel-compute-runtime
+        intel-media-driver
+        vaapiIntel
+        vaapiVdpau
+        libvdpau-va-gl		
       ];
-  	};
+    };
   	
   };
   
   nix = {
-  	# settings = {
-  	# };
-  	gc = {
-  	  automatic = true;
-  	  dates = "daily";
-  	  options = "--delete-older-than 2d";
-  	  persistent = true;
-  	};
+     #settings = {
+     #};
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 2d";
+      persistent = true;
+    };
   };
 
   system.stateVersion = "23.11";
