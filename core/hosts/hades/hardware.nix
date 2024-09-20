@@ -3,8 +3,8 @@
 {
   imports = [ 
     (modulesPath + "/installer/scan/not-detected.nix")
-    ## commented out disko for now as I have broken it :D
-    #./disko.nix
+    ## Commented out disko for now as I have broken it :c
+     #./disko.nix
   ];
 
   fileSystems."/" =
@@ -20,24 +20,24 @@
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
     initrd = {
-	  availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-	  kernelModules = [ ];
+      availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+      kernelModules = [ ];
       systemd.enable = true;
       secrets = {
-	    "/boot/crypto_keyfile.bin" = null;
+        "/boot/crypto_keyfile.bin" = null;
       };
       luks = {
         devices."luks-3de671ef-22a3-4f28-9251-a0687ab44f96" = {
           device = "/dev/disk/by-uuid/3de671ef-22a3-4f28-9251-a0687ab44f96";
-	      #keyFile = "/boot/crypto_keyfile.bin";
-	    };
-	  };
+           #keyFile = "/boot/crypto_keyfile.bin";
+        };
+      };
     };
     loader = {
       efi = {
         canTouchEfiVariables = true;
       };
-      ## for some reason GPT/UEFI didn't work, so neither does systemd-boot
+      ## For some reason GPT/UEFI didn't work, so neither does systemd-boot
       ## stuck using MBR/DOS and GRUB instead
       grub = {
         enable = true;
@@ -48,18 +48,34 @@
 
   };
 
-  ## trim to keep SSDs healthy-ish
+  ## Trim to keep SSDs healthy-ish
   services.fstrim.enable = true;
+
+   #powerManagement = {
+     #enable = true;
+
+     #powertop.enable = true;
+
+     #cpuFreqGovernor = Lib.mkDefault "performance";
+
+     #cpufreq = {
+       #min = 1500000;
+       #max = 4400000;
+     #};
+   #};
 
   hardware = {
     ## Pick either "true" OR "lib.mkDefault -"
-    #cpu.intel.updateMicrocode = true;
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+     #cpu.intel.updateMicrocode = true;
+
     enableAllFirmware = true;
+
     bluetooth.enable = false;
+
     graphics = {
       enable = true;
-      ## packages for integrated graphics inside Hades
+      ## Packages for integrated graphics inside Hades
       extraPackages = with pkgs; [
         intel-compute-runtime
   	intel-media-driver
@@ -70,7 +86,7 @@
     };	
   };
 
-  ## some packages for managing the radeon GPU inside Hades
+  ## Some packages for managing the radeon GPU inside Hades
   environment.systemPackages = with pkgs; [
     umr
     radeontop
@@ -84,8 +100,8 @@
   ## still possible to use this option, but it's recommended to use it in conjunction
   ## with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  #networking.interfaces.enp0s31f6.useDHCP = lib.mkDefault true;
-  #networking.interfaces.wlp58s0.useDHCP = lib.mkDefault true;
+   #networking.interfaces.enp0s31f6.useDHCP = lib.mkDefault true;
+   #networking.interfaces.wlp58s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }
