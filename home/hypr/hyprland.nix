@@ -27,7 +27,8 @@
         "${pkgs.hypridle}/bin/hypridle"
         "${pkgs.hyprpaper}/bin/hyprpaper"
         "${pkgs.kitty}/bin/kitty"
-        "${pkgs.wofi}/bin/wofi"
+        "${pkgs.steam}/bin/steam"
+        "${pkgs.swww}/bin/swww swww-init"
         
       ];
 
