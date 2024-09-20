@@ -32,7 +32,7 @@
 
   systemd.tmpfiles.settings = {
     "notes" = {
-      "/home/serenity/sync/organisation" = {
+      "/home/serenity/sync/organisation/notes" = {
         d = {
           group = "users";
           mode = "0777";
