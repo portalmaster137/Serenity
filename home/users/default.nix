@@ -11,6 +11,7 @@
 
   imports = [
     inputs.home-manager.nixosModules.default
+    ./sync.nix
   ];
    
   users.users = {
@@ -28,18 +29,6 @@
       shell = pkgs.fish;
     };
 
-  };
-
-  systemd.tmpfiles.settings = {
-    "notes" = {
-      "/home/serenity/sync/organisation/notes" = {
-        d = {
-          group = "users";
-          mode = "0777";
-          user = "serenity";
-        };
-      };
-    };
   };
 
   home-manager = {
