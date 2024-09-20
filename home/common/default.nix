@@ -66,7 +66,7 @@
       pragha # Music player
       tauon # Music player
 
-      transmission-gtk-4 # Torrent client
+      transmission-gtk # Torrent client
       nicotine-plus # P2P Media sharing
       jellyfin # Self-Hosted media streaming
       syncplay # Synchronise local playback with friends
