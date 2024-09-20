@@ -61,10 +61,10 @@
       tor # The Onion Router
 
       ## Media
-      unstable.tauon # Music player
       lollypop # GTK music player
        #spotify # Corpo music streaming
       pragha # Music player
+      tauon # Music player
 
       transmission-gtk4 # Torrent client
       nicotine-plus # P2P Media sharing
