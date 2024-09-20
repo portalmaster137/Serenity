@@ -98,17 +98,19 @@
 
   programs = {
 
-    home-manager.enable = true;
+    home-manager.enable = true; # Declarative dots
+
+    starship.enable = true; # Shell prompt
 
      #steam.enable = true; # Apparently steam doesnt exist in home-manager? :thonk:
 
-    fish.enable = true;
+    fish.enable = true; # Shell
 
-    git.enable = true;
+    git.enable = true; # Version control
 
-    firefox.enable = true;
+    firefox.enable = true; # Browser of choice
 
-    neovim = {
+    neovim = { # Zoomer text editor
       enable = true;
       defaultEditor = true;  
     };
@@ -116,12 +118,12 @@
 
   services = {
 
-    kdeconnect = {
+    kdeconnect = { # Mobile <-> Desktop interaction
       enable = true;
       indicator = true;
     };
 
-    gnome-keyring = {
+    gnome-keyring = { # GTK keyring for login/sudo/ssh/gpg prompts
       enable = true;
        #components = [ ];
     };
