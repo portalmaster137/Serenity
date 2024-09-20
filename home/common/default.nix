@@ -25,12 +25,12 @@
     packages = with pkgs; [
 
       ## Desktop Environment
-      gnome-keyring # GTK keyring for login/sudo/ssh/gpg prompts
       opentabletdriver # Driver for art tablets
       gnome-calculator # Quick maths
       syncthing-tray # File synchronisation
       gnome-calendar # GTK Calendar
-      gnome-secrets # GTK application for interaction with password vault
+      gnome-secrets # GTK password vault manager
+      gnome-keyring # GTK login keyring
       appimage-run # Runs appimages
       thunderbird # Email client
        #qt5-wayland # Unsure
@@ -67,7 +67,7 @@
       pragha # Music player
       tauon # Music player
 
-      transmission-gtk # Torrent client
+      transmission_4-gtk # Torrent client
       nicotine-plus # P2P Media sharing
       jellyfin # Self-Hosted media streaming
       syncplay # Synchronise local playback with friends
@@ -112,7 +112,7 @@
 
     neovim = { # Zoomer text editor
       enable = true;
-      defaultEditor = true;  
+      defaultEditor = true; # Default but keeping micro around
     };
   };
 
