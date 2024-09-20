@@ -85,7 +85,7 @@
     steam = {
       enable = true;
     };
-    
+
     ## temporary, fuck vax-bingus or w/e his name is
     hyprland = {
       enable = true;
@@ -119,6 +119,12 @@
 
   ## all system-level packages declared here
   environment.systemPackages = with pkgs; [
+
+    ## Needed for that graphical config manager, suspect that the
+    ## whole inputs.nix- yaddah yaddah is unnecessary
+    inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
+     #nixos-conf-editor
+
 
     ## temporary desktop/user-level
     #waybar

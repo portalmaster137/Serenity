@@ -43,6 +43,9 @@
     ## Fix broken waybar on current nixpkgs-unstable    
     #waybar.url = "github:Alexays/Waybar"; 
 
+    ## graphical config editor? seeing what's up w/ it
+    nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
+
   };
 
   outputs = {
