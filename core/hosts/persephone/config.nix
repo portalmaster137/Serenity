@@ -61,7 +61,9 @@
        #max = 2000000;
      #};
   };
-  
+
+  environment.memoryAllocator.provider = "graphene-hardened-light";
+
   hardware = {
   
     cpu.intel.updateMicrocode = true;
