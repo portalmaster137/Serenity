@@ -12,6 +12,7 @@
   imports = [
     inputs.home-manager.nixosModules.default
     ./sync.nix
+    ./sync-hecate.nix
   ];
    
   users.users = {

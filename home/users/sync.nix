@@ -59,34 +59,6 @@
         };
       };
     };
-    "hecate/misc" = {
-      "/home/serenity/sync/devices/hecate/misc" = {
-        d = {
-          group = "users";
-          mode = "0777";
-          user = "serenity";
-        };
-      };
-    };
-    "hecate/pictures" = {
-      "/home/serenity/sync/devices/hecate/pictures" = {
-        d = {
-          group = "users";
-          mode = "0777";
-          user = "serenity";
-        };
-      };
-    };
-    "hecate/backups" = {
-      "/home/serenity/sync/devices/hecate/backups" = {
-        d = {
-          group = "users";
-          mode = "0777";
-          user = "serenity";
-        };
-      };
-    };
-
   };
 
 }
