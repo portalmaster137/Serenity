@@ -78,7 +78,7 @@
       bespokesynth # Modular synthesiser and sequencer
       easyeffects # EQ and audio effects
       metronome # A metronome
-       #vcv-rack # Analogue-Synth emulator
+      vcv-rack # Analogue-Synth emulator
       cardinal # VCV Rack but open source and as a plugin
       audacity # Audio editing
       helvum # GTK patchbay
