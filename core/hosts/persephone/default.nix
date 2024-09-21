@@ -43,11 +43,8 @@
 
   powerManagement = {
     enable = true;
-
     powertop.enable = true;
-
-    cpuFreqGovernor = Lib.mkDefault "powersave";
-
+     #cpuFreqGovernor = Lib.mkDefault "powersave";
      #cpufreq = {
        #min = 80000;
        #max = 2000000;
