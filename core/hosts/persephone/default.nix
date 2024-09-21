@@ -2,10 +2,10 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
-    ./hardware-config.nix
+    ## Include the results of the hardware scan.
+    ./hardware.nix
      #${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
-     #./network-configuration.nix
+    ./network.nix
     ../../config.nix
     
   ];
@@ -16,11 +16,11 @@
     loader = {
       systemd-boot = {
         enable = true;
-	configurationLimit = 5;
+	    configurationLimit = 5;
       };
       efi = {
         canTouchEfiVariables = true;
-        # efiSysMountPoint = "/boot/efi";
+         #efiSysMountPoint = "/boot/efi";
       };
     };
 
@@ -37,14 +37,6 @@
        #};
     };
 
-  };
-
-  networking = {
-    hostName = "persephone";
-      wireless.enable = false;
-      networkmanager = {
-        enable = true;
-      };
   };
 
   services.fstrim.enable = true;
