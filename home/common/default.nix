@@ -63,7 +63,7 @@
 
       ## Media
       lollypop # GTK music player
-       #spotify # Corpo music streaming
+      spotify # Corpo music streaming
       pragha # Music player
       tauon # Music player
 
