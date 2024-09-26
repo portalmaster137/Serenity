@@ -1,24 +1,15 @@
 { config, lib, pkgs, modulesPath, ... }:
 
-let
-  latestZfsCompatibleLinuxPackages = lib.pipe pkgs.linuxKernel.packages [
-    builtins.attrValues
-    (builtins.filter (
-      kPkgs:
-      (builtins.tryEval kPkgs).success
-      && kPkgs ? kernel
-      && kPkgs.kernel.pname == "linux"
-      && !kPkgs.zfs.meta.broken
-    ))
-    (builtins.sort (a: b: (lib.versionOlder a.kernel.version b.kernel.version)))
-    lib.last
-  ];
-in
-
 {
   imports = [ 
+
+    ## Import necessary flake modules
+     #"${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
+
+    ## Include results from the (non-existent) hardware scan
+    ## as well as the host-specific hardware config options
     (modulesPath + "/installer/scan/not-detected.nix")
-    ## Commented out disko for now as I have broken it :c
+    ## Disko commented out for now as we have "broken" it
      #./disko.nix
   ];
 
@@ -32,9 +23,9 @@ in
 
   ## Enable swap on luks
   boot = {
-    kernelPackages = latestZfsCompatibleLinuxPackages;
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
+    supportedFilesystems = [ "btrfs" "xfs" "ntfs" ];
     initrd = {
       availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
       kernelModules = [ ];
@@ -64,8 +55,12 @@ in
 
   };
 
-  ## Trim to keep SSDs healthy-ish
-  services.fstrim.enable = true;
+  ## Hardware-related services
+  services = {
+    ## TRIM to keep SSDs healthy-ish
+    fstrim.enable = true;
+
+  };
 
    #powerManagement = {
      #enable = true;
