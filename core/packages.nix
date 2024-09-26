@@ -156,6 +156,11 @@
     polkit-kde-agent
     xorg.xhost
 
+    ## Jellyfin for home media share
+    jellyfin
+    jellyfin-web
+    jellyfin-ffmpeg
+
     ## Nix specific tools
     #nix-tree
     #nix-init
