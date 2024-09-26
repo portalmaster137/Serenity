@@ -30,17 +30,17 @@
 
   ## Enable swap on luks
   boot = {
-    kernelModules = [
-      "kvm-intel"
-    ];
-    extraModulePackages = [
-    ];
+    kernelModules = [ "kvm-intel" ];
+    extraModulePackages = [ ];
     supportedFilesystems = [
       "btrfs"
       "xfs"
       "ntfs"
     ];
+
     initrd = {
+      systemd.enable = true;
+      kernelModules = [ ];
       availableKernelModules = [
         "xhci_pci"
         "ehci_pci"
@@ -49,20 +49,18 @@
         "usb_storage"
         "sd_mod"
       ];
-      kernelModules = [
-      ];
-
-      systemd.enable = true;
 
       secrets = {
         "/boot/crypto_keyfile.bin" = null;
       };
+
       luks = {
         devices."luks-3de671ef-22a3-4f28-9251-a0687ab44f96" = {
           device = "/dev/disk/by-uuid/3de671ef-22a3-4f28-9251-a0687ab44f96";
            #keyFile = "/boot/crypto_keyfile.bin";
         };
       };
+
     };
 
     loader = {
