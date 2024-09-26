@@ -59,8 +59,8 @@
   services.syncthing = {
     enable = false;
     user = "serenity";
-    dataDir = "/home/serenity/";
-    configDir = "/home/serenity/flakes/nixdots/home/config/syncthing";
+    dataDir = "/home/serenity/sync/";
+    configDir = "/home/serenity/flakes/nixdots/home/config/syncthing/";
     overrideDevices = true;
     overrideFolder = true;
    
