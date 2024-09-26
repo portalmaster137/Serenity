@@ -46,6 +46,7 @@
 
 
   ## I put fonts here because i didn't know where tf else to put them lol
+  ## CURRENTLY BROKEN - PLEASE FIX
   fonts = {
     packages = with pkgs; [
       spleen
@@ -65,28 +66,41 @@
 
   programs = {
    
-    ## a catgirl's favourite shell
+    ## A catgirl's favourite shell
     fish = {
       enable = true;
     };
 
-    ## for when bimbo needs to manage platters
+    ## For when bimbo needs to play with platters
     gnome-disks = {
       enable = true;
     };
     
-    ## for handling encryption keys
+    ## For handling encryption keys
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
       #pinentryPackage = [ ];
     };
-    ## i wanted this in the user-level area, but w/e i guess
+    ## I wanted this in the user-level area, but w/e i guess
     steam = {
       enable = true;
     };
 
-    ## temporary, fuck vax-bingus or w/e his name is
+    ## Temporary, fuck vaxery or whatever his name is
+    ## punk-ass motherfucker, swayfx looks neat
+    ## and is probably more stable anyway so yeah
+    ## whatever, im not mad, why would you think im mad
+    ## its not like the prettiest wayland "wm" has
+    ## a complete shithead as a lead dev, it's not
+    ## like i got sold on it and nearly set it up
+    ## completely before finding out about vaxo-bingus'
+    ## chuddery and deciding i had to jump ship to sway
+    ## a "wm" with comparatively little by ways of 
+    ## "eye-candy". Oh boy am i glad swayfx exists
+    ## 
+    ## Authors note: this is excessive, overly dramatic,
+    ## and played entirely (mostly) for laughs.
     hyprland = {
       enable = true;
       xwayland.enable = true;
@@ -107,26 +121,30 @@
   	wayland.enable = true;
   };
 
-  ## i use micro btw (neovim scares me)
+  ## We switched to neovim -mostly- full-time
   environment.variables = {
-    EDITOR = "micro";
-    SYSTEMD_EDITOR = "micro";
-    VISUAL = "micro";
+    EDITOR = "neovim";
+    SYSTEMD_EDITOR = "neovim";
+    VISUAL = "neovim";
   };
 
-  ## enabling flatpak in case i need it
+  ## Enabling flatpak in case i need it
   services.flatpak.enable = true;
 
-  ## all system-level packages declared here
+  ## All* system-level packages declared here
   environment.systemPackages = with pkgs; [
 
     ## Needed for that graphical config manager, suspect that the
-    ## whole inputs.nix- yaddah yaddah is unnecessary
+    ## whole inputs.nix- yaddah yaddah is unnecessary.
+    ## and look, -we- don't need a graphical config editor, but
+    ## the end goal here is to make a system environment that could
+    ## theoretically pass off as a complete linux distribution.
+    ## So there needs to be -some- way for users who are unwilling
+    ## to use a terminal and are more comfortable with a GUI.
     inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
      #nixos-conf-editor
 
-
-    ## temporary desktop/user-level
+    ## Temporary desktop/user-level
     #waybar
     udiskie
     gparted
@@ -138,15 +156,14 @@
     polkit-kde-agent
     xorg.xhost
 
-    ## nix specific tools
+    ## Nix specific tools
     #nix-tree
     #nix-init
     #nix-index
     #nixpkgs-review
     #nix-output-monitor
 
-    ## filsesystem utilities
-    zfs
+    ## Filsesystem utilities
     xfsprogs
     ddrutility
     exfatprogs
@@ -155,7 +172,7 @@
     ntfs2btrfs
     scrounge-ntfs
     
-    ## cli tools & utilities
+    ## CLI tools & utilities
     fd
     bc
     zip
