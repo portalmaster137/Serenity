@@ -15,7 +15,7 @@ pkgs.mkShell
 
   shellHook = ''
     echo "Welcome !"
-    echo "To SerenityOS-dev." | ${pkgs.fish}/bin/fish
+    echo "To SerenityOS-dev."
   '';
 
 }
