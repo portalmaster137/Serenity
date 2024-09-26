@@ -10,11 +10,7 @@
 
   imports = [
 
-  ./git.nix  
-  ./yazi.nix
-  ./kitty.nix
-  ./neofetch.nix
-
+  ./programs
    #../sway
   ../hypr
   
