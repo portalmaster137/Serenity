@@ -26,28 +26,43 @@
   };
 
   ## i knooooowwwwwww i need a firewall but im laaaazzyyyyyyyyyy
-  networking.firewall = {
+  networking.firewall = rec {
     enable = false;
-      #checkReversePath = "loose";
-      #allowedTCPPorts = [ 22000 21027 25565 ];
-      #allowedUDPPorts = [ 22000 21027 41641 51820 ];
-      #allowedTCPPortRanges = [
-        #{ from = 9999; to = 9999; } # KDE Connect
-        #{ from = 9999; to = 9999; } # Nicotine+
-      #];
-      #allowedUDPPortRanges = [
-        #{ from = 9999; to = 9999; } # KDE Connect
-      #];
-      #interfaces."DEVICENAME".allowedTCPPorts = [ 22999 ]
+       #checkReversePath = "loose";
+       #allowedTCPPortRanges = [ { from = 1720; to = 1770; } ];
+       #allowedUDPPortRanges = allowedTCPPortRanges;
+       #interfaces."DEVICENAME".allowedTCPPorts = [
+         #22999
+       #]
+       #allowedTCPPorts = [
+         #22000
+         #21027
+         #25565
+       #];
+       #allowedUDPPorts = [
+         #22000
+         #21027
+         #41641
+         #51820
+       #];
+  };
+
+  openFirewall = true;
+
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
   };
 
   ## syncthing for device <-> device filesharing and,,, syncing
   ## still not set up, grrrr
   services.syncthing = {
     enable = false;
-    dataDir = "/home/serenity/";
-    configDir = "/home/serenity/.config/syncthing";
     user = "serenity";
+    dataDir = "/home/serenity/";
+    configDir = "/home/serenity/flakes/nixdots/home/config/syncthing";
+    overrideDevices = true;
+    overrideFolder = true;
    
     ## these 3 devices are pretty much my entire ecosystem for now
     settings.devices = {
