@@ -1,8 +1,20 @@
 { pkgs ? import <nixpkgs> { } }:
 
-pkgs.mkShell {
-  packages = with pkgs; [
+pkgs.mkShell
+{
+
+  nativeBuildInputs = with pkgs; [
     python3
     pipx
-  ];
+
+   #packages = with pkgs; [
+     #python3
+     #pipx
+   #];
+
+  shellHook = ''
+    echo "Welcome !"
+    echo "To SerenityOS-dev." | ${pkgs.fish}/bin/fish
+  '';
+
 }
