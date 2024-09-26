@@ -1,5 +1,20 @@
 { config, lib, pkgs, modulesPath, ... }:
 
+let
+  latestZfsCompatibleLinuxPackages = lib.pipe pkgs.linuxKernel.packages [
+    builtins.attrValues
+    (builtins.filter (
+      kPkgs:
+      (builtins.tryEval kPkgs).success
+      && kPkgs ? kernel
+      && kPkgs.kernel.pname == "linux"
+      && !kPkgs.zfs.meta.broken
+    ))
+    (builtins.sort (a: b: (lib.versionOlder a.kernel.version b.kernel.version)))
+    lib.last
+  ];
+in
+
 {
   imports = [ 
     (modulesPath + "/installer/scan/not-detected.nix")
@@ -17,6 +32,7 @@
 
   ## Enable swap on luks
   boot = {
+    kernelPackages = latestZfsCompatibleLinuxPackages;
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
     initrd = {
