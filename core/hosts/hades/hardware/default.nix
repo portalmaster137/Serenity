@@ -9,8 +9,15 @@
     ## Include results from the (non-existent) hardware scan
     ## as well as the host-specific hardware config options
     (modulesPath + "/installer/scan/not-detected.nix")
-    ## Disko commented out for now as we have "broken" it
+
+    ## Disko config, should eventually let us nuke our boot drive and reinstall
+    ## with zero worries.
+    ## commented out for now as we have "broken" it
      #./disko.nix
+
+    ## ZFS module, separated to help keep us sane while we set it up lol
+    ./zfs.nix
+
   ];
 
   fileSystems."/" =
@@ -23,13 +30,30 @@
 
   ## Enable swap on luks
   boot = {
-    kernelModules = [ "kvm-intel" ];
-    extraModulePackages = [ ];
-    supportedFilesystems = [ "btrfs" "xfs" "ntfs" ];
+    kernelModules = [
+      "kvm-intel"
+    ];
+    extraModulePackages = [
+    ];
+    supportedFilesystems = [
+      "btrfs"
+      "xfs"
+      "ntfs"
+    ];
     initrd = {
-      availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-      kernelModules = [ ];
+      availableKernelModules = [
+        "xhci_pci"
+        "ehci_pci"
+        "ahci"
+        "usbhid"
+        "usb_storage"
+        "sd_mod"
+      ];
+      kernelModules = [
+      ];
+
       systemd.enable = true;
+
       secrets = {
         "/boot/crypto_keyfile.bin" = null;
       };
@@ -40,6 +64,7 @@
         };
       };
     };
+
     loader = {
       efi = {
         canTouchEfiVariables = true;
@@ -50,7 +75,7 @@
         enable = true;
         device = "/dev/sda";
         enableCryptodisk = true;
-      };  
+      };
     };
 
   };
@@ -81,7 +106,6 @@
      #cpu.intel.updateMicrocode = true;
 
     enableAllFirmware = true;
-
     bluetooth.enable = false;
 
     graphics = {

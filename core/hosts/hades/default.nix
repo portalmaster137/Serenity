@@ -7,8 +7,8 @@
      #"${builtins.fetchTarball "<flake module url>"}/module.nix"
 
     ## Include host specific options
-    ./hardware.nix
-    ./network.nix
+    ./hardware
+    ./network
 
     ## Include core config options
     ../../config.nix
