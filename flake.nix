@@ -27,7 +27,7 @@
 ##  };
 
 {
-  description = "SerenityOS v0.6.45";
+  description = "SerenityOS v0.6.46";
   ## Latest features:
   ## - A more defined roadmap for future flake development is now in place.
   ## - Work on ZFS support continues, expect complete functionality soon.
