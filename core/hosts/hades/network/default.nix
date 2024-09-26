@@ -60,7 +60,7 @@
     enable = false;
     user = "serenity";
     dataDir = "/home/serenity/sync/";
-    configDir = "/home/serenity/flakes/nixdots/home/config/syncthing/";
+    configDir = "/home/serenity/flakes/nixdots/home/common/dotconfig/syncthing/";
     overrideDevices = true;
     overrideFolder = true;
    

@@ -38,7 +38,7 @@
   services.syncthing = {
     enable = false;
     dataDir = "/home/serenity/sync/";
-    configDir = "/home/serenity/flakes/nixdots/home/config/syncthing/";
+    configDir = "/home/serenity/flakes/nixdots/home/common/dotconfig/syncthing/";
     user = "serenity";
     settings = {
       devices = {
