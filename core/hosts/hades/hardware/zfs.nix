@@ -55,4 +55,8 @@ in
     };
   };
 
+  networking = {
+    hostId = "603b0c8b";
+  };
+
 }
