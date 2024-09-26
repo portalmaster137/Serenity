@@ -1,5 +1,8 @@
 {
-  description = "SerenityOS v0.6.3";
+  description = "SerenityOS v0.6.4";
+  ## Latest features:
+  ## - Work on ZFS support continues 
+
   #this is a commented-out line of nix code
   ## This is a real comment
 
