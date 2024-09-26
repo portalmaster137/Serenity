@@ -38,6 +38,10 @@ in
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    zfs
+  ];
+
   ## Enable trim for ZFS SSDs
   services = {
     zfs = {
