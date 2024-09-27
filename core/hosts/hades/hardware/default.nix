@@ -26,7 +26,7 @@
     options = [ "subvol=@" ];
   };
 
-  fileSystems."/home/serenity/Disks/Tartarus/" = {
+  fileSystems."/home/serenity/Disks/Tartarus" = {
     device = "/dev/disk/by-uuid/26d8d9d1-67d2-4d61-a092-10ed7368b9f6";
     fsType = "ext4";
     options = [ "users" ];
