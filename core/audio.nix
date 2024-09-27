@@ -1,4 +1,6 @@
 ## https://nixos.wiki/PipeWire
+## https://github.com/musnix/musnix 
+
 {
   inputs,
   outputs,

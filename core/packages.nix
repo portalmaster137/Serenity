@@ -65,7 +65,13 @@
   };
 
   programs = {
-   
+
+    ## NixOS CLI helper
+    nh = {
+      enable = true;
+      flake = "/home/serenity/flakes/nixdots";
+    };
+
     ## A catgirl's favourite shell
     fish = {
       enable = true;
