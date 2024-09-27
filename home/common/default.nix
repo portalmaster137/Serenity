@@ -28,7 +28,7 @@
       gnome-secrets # GTK password vault manager
       gnome-keyring # GTK login keyring
       appimage-run # Runs appimages
-      thunderbird # Email client
+       #thunderbird # Email client - commented out due to network issues trying to build it ?
        #qt5-wayland # Unsure
        #qt6-wayland # Unsure
       pavucontrol # Pulse audio volume contrl
