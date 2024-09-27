@@ -24,12 +24,20 @@
 
       exec-once = [
         "startup"
+	"${pkgs.udiskie}/bin/udiskie"
         "${pkgs.hypridle}/bin/hypridle"
         "${pkgs.hyprpaper}/bin/hyprpaper"
+        "${pkgs.swww}/bin/swww swww-daemon"
+	"${pkgs.otd}/bin/otd otd-daemon"
+	"${pkgs.otd}/bin/otd otd"
         "${pkgs.kitty}/bin/kitty"
+        "${pkgs.kitty}/bin/kitty --class btop btop"
+        "${pkgs.kitty}/bin/kitty --class yazi yazi"
         "${pkgs.steam}/bin/steam"
-        "${pkgs.swww}/bin/swww swww-init"
-        
+        "${pkgs.helvum}/bin/helvum"
+        "${pkgs.spotify}/bin/spotify"
+        "${pkgs.vesktop}/bin/vesktop"
+        "${pkgs.easyeffects}/bin/easyeffects"
       ];
 
 
