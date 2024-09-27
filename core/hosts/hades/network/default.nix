@@ -59,8 +59,8 @@
     user = "serenity";
     dataDir = "/home/serenity/sync/";
     configDir = "/home/serenity/flakes/nixdots/home/common/dotconfig/syncthing/";
-    overrideDevices = true;
-    overrideFolder = true;
+     #overrideDevices = true;
+     #overrideFolder = true;
    
     ## these 3 devices are pretty much my entire ecosystem for now
     settings.devices = {
