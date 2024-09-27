@@ -5,7 +5,7 @@
     
       sda = {
         type = "disk";
-        device = "/dev/sda";
+        device = "/dev/disk/by-id/ata-SAMSUNG_MZNLN128HAHQ-000H1_S3T8NF0K724651";
         content = {
           type = "gpt";
           partitions = {

@@ -20,11 +20,23 @@
 
   ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/5cbed60c-33e3-4d69-a39e-c1d6d19406ea";
-      fsType = "btrfs";
-      options = [ "subvol=@" ];
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/5cbed60c-33e3-4d69-a39e-c1d6d19406ea";
+    fsType = "btrfs";
+    options = [ "subvol=@" ];
+  };
+
+  fileSystems."/home/serenity/Disks/Tartarus/" = {
+    device = "/dev/disk/by-uuid/26d8d9d1-67d2-4d61-a092-10ed7368b9f6";
+    fsType = "ext4";
+    options = [ "users" ];
+  };
+
+   #fileSystems."/home/serenity/Disks/Orcus" = {
+     #device = "/dev/disk/???";
+     #fsType = "zfs";
+     #options = [ ];
+   #};
 
   swapDevices = [ ];
 
