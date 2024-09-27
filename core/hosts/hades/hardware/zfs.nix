@@ -46,7 +46,7 @@ in
   services = {
     zfs = {
       ## Trim for SSSds with ZFS
-      trim.enable = true;
+       #trim.enable = true;
       ## Autoscrub data integrity ZFS service,
       ## more to be added soon
       autoScrub = {
