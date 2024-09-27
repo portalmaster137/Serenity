@@ -33,10 +33,16 @@ in
     kernelPackages = latestZfsLinux;
     supportedFilesystems = [ "zfs" ];
     zfs = {
-       #extraPools = [ "diska" "diskb" ];
+      extraPools = [ "orcus" ];
       forceImportRoot = false;
     };
   };
+
+   #fileSystems."/home/serenity/Disks/Orcus" = {
+     #device = "orcus";
+     #fsType = "zfs";
+     #options = [ "users" ];
+   #};
 
   environment.systemPackages = with pkgs; [
     zfs
