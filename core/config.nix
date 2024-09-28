@@ -19,18 +19,6 @@
   time.timeZone = "Australia/Brisbane";
   i18n.defaultLocale = "en_GB.UTF-8";
 
-  ## Gotta have sound, this too is common 
-   #sound.enable = false;
-  hardware.pulseaudio.enable = false;
-  services.pipewire = {  
-    enable = true;
-     #jack.enable = false;
-    pulse.enable = true;
-    alsa.enable = true;
-     #alsa.support32Bit = false;
-     #lowLatency.enable = true;
-  };
-
   ## Genuinely dunno what these do hey, like isnt sudo
   ## already restricted to @wheel only? & wut is rtkit
   security = {
