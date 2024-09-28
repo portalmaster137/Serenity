@@ -1,4 +1,4 @@
-# SerenityOS
+# Serenity OS
 **Configuration for system, applications, themes, and more; shared between multiple machines and users.**<br>
 <br>
 *Very much WIP and mostly stolen code at this point.*
