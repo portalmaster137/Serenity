@@ -29,7 +29,7 @@
         "${pkgs.hyprpaper}/bin/hyprpaper"
         "${pkgs.swww}/bin/swww swww-daemon"
 	 #"${pkgs.opentabletdriver}/bin/opentabletdriver otd-daemon"
-	"${pkgs.opentbletdriver}/bin/opentabletdriver otd"
+	"${pkgs.opentabletdriver}/bin/opentabletdriver otd"
         "${pkgs.kitty}/bin/kitty"
         "${pkgs.kitty}/bin/kitty --class btop btop"
         "${pkgs.kitty}/bin/kitty --class yazi yazi"
