@@ -10,6 +10,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    systemdIntegration = true;
     xwayland.enable = true;
 
     plugins = [
@@ -17,6 +18,13 @@
 	    #inputs.hyprland-plugins.packages."${pkgs.system}".hyprbars
     ];
     
+    extraConfig = ''
+
+      monitor = desc:Acer Technologies Acer XR341CK 0x5457BEF2, preferred, 0x0, 1
+      monitor = desc:BNQ BenQ G2400W 83805696SL0, preferred, 3440x180, 1
+      monitor = , preferred, auto, auto
+
+    '';
 
     settings = {
       "$mod" = "SUPER";
@@ -39,8 +47,6 @@
         "${pkgs.vesktop}/bin/vesktop"
          #"${pkgs.easyeffects}/bin/easyeffects"
       ];
-
-
 
       bind = [
         "$shiftMod, RETURN, exec, ${pkgs.wofi}/bin/wofi"
@@ -120,10 +126,6 @@
         border_part_of_window = true;
         layout = "dwindle";
       };
-
-      #monitor = [
-      #"preferred,auto,2"
-      #];
 
       decoration = {
         rounding = config.theme.rounding;
