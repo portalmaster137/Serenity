@@ -28,16 +28,16 @@
         "${pkgs.hypridle}/bin/hypridle"
         "${pkgs.hyprpaper}/bin/hyprpaper"
         "${pkgs.swww}/bin/swww swww-daemon"
-	 #"${pkgs.otd}/bin/otd otd-daemon"
-	 #"${pkgs.otd}/bin/otd otd"
+	 #"${pkgs.opentabletdriver}/bin/opentabletdriver otd-daemon"
+	"${pkgs.opentbletdriver}/bin/opentabletdriver otd"
         "${pkgs.kitty}/bin/kitty"
         "${pkgs.kitty}/bin/kitty --class btop btop"
         "${pkgs.kitty}/bin/kitty --class yazi yazi"
         "${pkgs.steam}/bin/steam"
-        "${pkgs.helvum}/bin/helvum"
+         #"${pkgs.helvum}/bin/helvum"
         "${pkgs.spotify}/bin/spotify"
         "${pkgs.vesktop}/bin/vesktop"
-        "${pkgs.easyeffects}/bin/easyeffects"
+         #"${pkgs.easyeffects}/bin/easyeffects"
       ];
 
 

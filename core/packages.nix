@@ -64,6 +64,13 @@
       };
   };
 
+  hardware.opentabletdriver = {
+    enable = true;
+     #package = [ ];
+     #daemon.enable = true;
+     #blacklistedKernelModules = [ ];
+  };
+
   programs = {
 
     ## NixOS CLI helper
