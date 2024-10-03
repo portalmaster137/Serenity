@@ -100,6 +100,11 @@
       enable = true;
     };
 
+    appimage = { # to run "normal" linux applications seamlessly
+      enable = true;
+      binfmt = true;
+    };
+
     ## Temporary, fuck vaxery or whatever his name is
     ## punk-ass motherfucker, swayfx looks neat
     ## and is probably more stable anyway so yeah

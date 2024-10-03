@@ -106,11 +106,6 @@
       enable = true;
     };
 
-    appimage = { # to run "normal" linux applications seamlessly
-      enable = true;
-      binfmt = true;
-    };
-
     firefox.enable = true; # Browser of choice
 
     neovim = { # Zoomer text editor
