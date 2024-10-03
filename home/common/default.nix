@@ -102,7 +102,14 @@
 
     fish.enable = true; # Shell
 
-    git.enable = true; # Version control
+    git = { # version control and repo management
+      enable = true;
+    };
+
+    appimage = { # to run "normal" linux applications seamlessly
+      enable = true;
+      binfmt = true;
+    };
 
     firefox.enable = true; # Browser of choice
 
