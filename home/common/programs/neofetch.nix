@@ -30,7 +30,7 @@
         # info "\n \n OS" distro
         prin "\n \n OS" "SerenityOS (NixOS)"
         info "\n \n Kernel" kernel
-        info "\n \n Packages" packages
+        # info "\n \n Packages" packages
         # info "\n \n Desktop" de
         prin "\n \n Desktop" "Hyprland (wayland)"
         # info "\n \n Shell" shell
