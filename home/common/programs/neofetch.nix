@@ -28,7 +28,7 @@
         prin "\n"
         prin "\n \n Host" "Hades"
         # info "\n \n OS" distro
-        prin "\n \n OS" "SerenityOS (NixOS)"
+        prin "\n \n OS" "Serenity OS (NixOS)"
         info "\n \n Kernel" kernel
         # info "\n \n Packages" packages
         # info "\n \n Desktop" de
