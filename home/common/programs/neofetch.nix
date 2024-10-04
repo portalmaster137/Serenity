@@ -26,6 +26,7 @@
 
     print_info() {
         prin "\n"
+        prin "\n"
         prin "\n \n Host" "Hades"
         # info "\n \n OS" distro
         prin "\n \n OS" "SerenityOS (NixOS)"
@@ -48,7 +49,7 @@
         info "\n \n Memory" memory
         # info "\n \n GPU" gpu
         prin "\n \n Graphics" "Radeon RX 5700XT"
-        info "\n \n Resolution" resolution
+        # info "\n \n Resolution" resolution
         # info "\n \n Uptime" uptime
         prin "\n"
 
