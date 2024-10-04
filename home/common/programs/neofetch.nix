@@ -36,11 +36,11 @@
         # info "\n \n Shell" shell
         prin "\n \n Shell" "Fish"
         # info "\n \n Editor" editor
-        prin "\n \n Editor" "neovim"
+        prin "\n \n Editor" "Neovim"
         # info "\n \n Terminal" term
         prin "\n \n Terminal" "Kitty"
-        info "\n \n Terminal Font" term_font
-        # prin "\n \n Terminal Font" "Spleen"
+        # info "\n \n Terminal Font" term_font
+        prin "\n \n Terminal Font" "Spleen"
         # info "\n \n Model" model
         prin "\n \n Motherboard" "MSI Z97 G3"
         # prin "\n \n Device" "Thinkpad T470s"
