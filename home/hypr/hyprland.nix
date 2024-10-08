@@ -17,11 +17,12 @@
       #inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
 	    #inputs.hyprland-plugins.packages."${pkgs.system}".hyprbars
     ];
-    
+
+       #monitor = desc:Acer Technologies Acer XR341CK 0x5457BEF2, preferred, 0x0, 1
+       #monitor = desc:BNQ BenQ G2400W 83805696SL0, preferred, 3440x180, 1
+
     extraConfig = ''
 
-      monitor = desc:Acer Technologies Acer XR341CK 0x5457BEF2, preferred, 0x0, 1
-      monitor = desc:BNQ BenQ G2400W 83805696SL0, preferred, 3440x180, 1
       monitor = , preferred, auto, auto
 
     '';
