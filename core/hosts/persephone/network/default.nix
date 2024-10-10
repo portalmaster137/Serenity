@@ -3,7 +3,7 @@
 {
 
   imports = [
-     ./file.nix
+      #./file.nix
   ];
 
   networking = {
