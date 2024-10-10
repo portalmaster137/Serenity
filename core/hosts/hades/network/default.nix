@@ -27,7 +27,7 @@
 
   ## i knooooowwwwwww i need a firewall but im laaaazzyyyyyyyyyy
   networking.firewall = rec {
-    enable = false;
+    enable = true;
        #checkReversePath = "loose";
        #allowedTCPPortRanges = [ { from = 1720; to = 1770; } ];
        #allowedUDPPortRanges = allowedTCPPortRanges;
