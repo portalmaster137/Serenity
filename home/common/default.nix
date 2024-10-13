@@ -83,7 +83,7 @@
       obs-studio # Screen sharing
       inkscape # Vector image editing
       shotcut # Video editing
-      blender # 3D modelling
+       #blender # 3D modelling
       gimp # Digital image editing
 
     ];
