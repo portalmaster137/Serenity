@@ -117,11 +117,6 @@
 
   services = {
 
-    ratbagd = {
-      enable = true;
-       #package = [ ];
-    };
-
     kdeconnect = { # Mobile <-> Desktop interaction
       enable = true;
       indicator = true;

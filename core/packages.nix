@@ -149,6 +149,9 @@
   ## Enabling flatpak in case i need it
   services.flatpak.enable = true;
 
+  ## ratbagd for gaming mouse config
+  services.ratbagd.enable = true;
+
   ## All* system-level packages declared here
   environment.systemPackages = with pkgs; [
 
