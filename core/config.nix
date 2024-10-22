@@ -30,12 +30,17 @@
   nix.settings = {
     ## Use all cores during build
     cores = 0;
+    max-jobs = auto;
+    min-free = 0;
+    allow-dirty = false;
     auto-optimise-store = true;
+    download-buffer-size = [ "268435456" ];
     allowed-users = [ "@wheel" ];
     ## Enable flakes uwu
     experimental-features = [
-    "nix-command"
-    "flakes"
+      "recursive-nix"
+      "nix-command"
+      "flakes"
     ];
   };
 

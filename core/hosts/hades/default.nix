@@ -16,10 +16,8 @@
   ];
 
   nix = {
-
      #settings = {
      #};
-
     gc = {
       ## Automatically run 'nix-collect-garbage',
       automatic = true;
