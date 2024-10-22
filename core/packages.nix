@@ -127,8 +127,12 @@
 
   };
 
-  ## GNOME virtual file system, needed this for something i think ?
-  services.gvfs.enable = true;
+  ## GNOME stuff
+  services.gvfs.enable = true; # Virtual filesystem, needed this for something i think ?
+  services.gnome.gnome-keyring.enable = true; # maybe this fixey keyring OwO ?
+  services.gnome.gnome-settings-daemon.enable = true; # GUI settings ?
+  security.pam.services.serenity.enableGnomeKeyring = true; # dunno if i did this right, but possible needed for keyring/polkit stuff ?
+
 
   ## xserver still needed for xwayland stuff
   services.xserver.enable = true;
