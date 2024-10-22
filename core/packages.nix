@@ -73,34 +73,21 @@
 
   programs = {
 
-    ## NixOS CLI helper
-    nh = {
-      enable = true;
-      flake = "/home/serenity/flakes/nixdots";
-    };
+    ## For when bimbo needs to play with platters and cbf to deal with cli
+    gnome-disks.enable = true;
 
-    ## A catgirl's favourite shell
+    ## A catgirl's favourite shell - NEEDS OWN NIX MODULE
     fish = {
       enable = true;
     };
 
-    ## For when bimbo needs to play with platters
-    gnome-disks = {
-      enable = true;
-    };
-    
-    ## For handling encryption keys
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-      #pinentryPackage = [ ];
-    };
-    ## I wanted this in the user-level area, but w/e i guess
+    ## I wanted this in the user-level area, but w/e i guess - NEEDS OWN NIX MODULE
     steam = {
       enable = true;
     };
 
-    appimage = { # to run "normal" linux applications seamlessly
+    ## To run "normal" linux applications seamlessly - OWN NIX MODULE ?
+    appimage = {
       enable = true;
       binfmt = true;
     };
@@ -123,7 +110,31 @@
       enable = true;
       xwayland.enable = true;
     };
-    
+
+
+    ## NixOS CLI helper
+    nh = {
+      enable = true;
+      flake = "/home/serenity/flakes/nixdots";
+    };
+
+    ## For handling encryption keys
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+      #pinentryPackage = [ ];
+    };
+
+    ## For tweaking Radeon GPUs
+    corectrl = {
+      enable = true;
+      gpuOverclock = {
+        enable = true;
+        ## Allows changing clocks and volts
+        ppfeaturemask = "0xfffd7fff";
+      };
+    };
+
   };
 
   ## GNOME virtual file system, needed this for something i think ?
