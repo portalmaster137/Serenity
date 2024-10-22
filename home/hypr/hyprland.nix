@@ -228,7 +228,7 @@
     enable = true;
     theme = {
       name = "Adwaita";
-      package = pkgs.gnome.gnome-themes-extra;
+      package = pkgs.gnome-themes-extra;
     };
 
     iconTheme = {
