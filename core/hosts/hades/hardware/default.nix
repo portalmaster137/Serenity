@@ -169,10 +169,10 @@
   environment.systemPackages = with pkgs; [
     umr
     radeontop
-    nvtop-amd
     amdgpu_top
     radeontools
     radeon-profile
+    nvtopPackages.amd
   ];
 
   ## Enables DHCP on each ethernet and wireless interface. In case of scripted networking
