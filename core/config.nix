@@ -23,6 +23,7 @@
   ## already restricted to @wheel only? & wut is rtkit
   security = {
     rtkit.enable = true;
+    polkit.enable = true;
     sudo.execWheelOnly = true;
   };
 
