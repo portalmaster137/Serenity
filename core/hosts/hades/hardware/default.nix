@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ lib, config, pkgs, modulesPath, ... }:
 
 {
   imports = [ 
@@ -128,13 +128,48 @@
   	vaapiVdpau
   	libvdpau-va-gl		
       ];
-    };	
+    };
+
+    amdgpu = {
+      initrd.enable = true;
+      opencl.enable = true;
+
+      amdvlk = {
+        enable = true;
+         #package = [ ];
+        support32Bit.enable = true;
+        supportExperimental.enable = true;
+         #settings = {
+         #};
+      };
+
+    };
+  };
+
+  programs = {
+    ## For tweaking Radeon GPUs
+    corectrl = {
+      enable = true;
+      gpuOverclock = {
+        enable = true;
+        ## Allows changing clocks and volts
+        ppfeaturemask = "0xfffd7fff";
+      };
+    };
+
+    tuxclocker = {
+      enable = true;
+      enableAMD = true;
+      useUnfree = true;
+    };
+
   };
 
   ## Some packages for managing the radeon GPU inside Hades
   environment.systemPackages = with pkgs; [
     umr
     radeontop
+    nvtop-amd
     amdgpu_top
     radeontools
     radeon-profile
