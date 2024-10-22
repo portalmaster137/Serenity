@@ -125,16 +125,6 @@
       #pinentryPackage = [ ];
     };
 
-    ## For tweaking Radeon GPUs
-    corectrl = {
-      enable = true;
-      gpuOverclock = {
-        enable = true;
-        ## Allows changing clocks and volts
-        ppfeaturemask = "0xfffd7fff";
-      };
-    };
-
   };
 
   ## GNOME virtual file system, needed this for something i think ?
