@@ -50,6 +50,7 @@
 
       ## Games
       osu-lazer-bin # Rhythm is just a click away!
+      cockatrice # Magical the gathering but free
        #steam # What ???
 
       ## Chat & Web
