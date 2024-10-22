@@ -9,11 +9,10 @@
 }: {
 
   imports = [
-
-  ./programs
-   #../sway
-  ../hypr
-  
+    ./systemd-services
+    ./programs
+     #../sway
+    ../hypr
   ];
 
   home = {
