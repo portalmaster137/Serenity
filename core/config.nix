@@ -30,8 +30,7 @@
   nix.settings = {
     ## Use all cores during build
     cores = 0;
-    max-jobs = auto;
-    min-free = 0;
+    max-jobs = [ "auto" ];
     allow-dirty = false;
     auto-optimise-store = true;
     download-buffer-size = [ "268435456" ];
