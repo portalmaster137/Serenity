@@ -220,16 +220,16 @@
 
   qt = {
     enable = true;
-    platformTheme = "adwaita";
+    platformTheme.name = "adwaita";
     style.name = "adwaita-dark";
   };
 
   gtk = {
     enable = true;
-    #theme = {
-      #package = adwaita-dark;
-      #name = "adwaita-dark";
-    #};
+    theme = {
+      name = "Adwaita";
+      package = pkgs.gnome.gnome-themes-extra;
+    };
 
     iconTheme = {
       package = pkgs.flat-remix-icon-theme;
