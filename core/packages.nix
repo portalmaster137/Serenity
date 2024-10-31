@@ -243,6 +243,7 @@
     git-crypt
     undervolt
     #gitwatch
+    android-tools
     magic-wormhole
 
  ];
