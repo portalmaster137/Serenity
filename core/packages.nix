@@ -223,6 +223,7 @@
     tldr
     wget
     curl
+    bash
     file
     tree
     btop
