@@ -89,7 +89,7 @@
       gimp # Digital image editing
 
       ## Misc.
-      realm-studio
+       #realm-studio
 
     ];
 
