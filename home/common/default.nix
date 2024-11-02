@@ -88,6 +88,9 @@
        #blender # 3D modelling
       gimp # Digital image editing
 
+      ## Misc.
+      realm-studio
+
     ];
 
     stateVersion = "23.11";
