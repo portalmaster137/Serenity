@@ -12,6 +12,7 @@
       allowUnfree = true;
       permittedInsecurePackages = [
       ];
+      allowUnsupportedSystem = true;
     };
 
   ## [START - Stolen code, no clue how it works]
