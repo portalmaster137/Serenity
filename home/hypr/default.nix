@@ -52,7 +52,7 @@
     wayland-utils
     wayland-protocols
     meson
-    qt5ct
+    libsForQt5.qt5ct
     libva
     libnotify
     dconf
