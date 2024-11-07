@@ -12,6 +12,8 @@
     inputs.home-manager.nixosModules.home-manager
     ## Semi-modularised config
     ./packages.nix # system-level packages here
+    ./audio.nix # sound go bwuuuaaaahhhhhhhh
+    ./fonts.nix # wei didn't know where else to put this lol
     ../home/users # user-level packages here
   ];
 
