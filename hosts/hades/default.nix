@@ -6,7 +6,7 @@
     ./network-configuration.nix
     ../../core/config.nix
 
-    ./modules/syncthing.nix
+     #./modules/syncthing.nix
     ./modules/disko.nix
     ./modules/zfs.nix
   ];
