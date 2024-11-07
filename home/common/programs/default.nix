@@ -12,11 +12,12 @@
 
   imports = [
 
+  ./programs
   ./git.nix  
   ./yazi.nix
   ./kitty.nix
-  ./neofetch.nix
-
+  ./neofetch
+  
   ];
 
 }

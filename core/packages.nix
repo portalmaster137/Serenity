@@ -185,6 +185,7 @@
      #nixos-conf-editor
 
     ## Temporary desktop/user-level
+    steam
     #waybar
     udiskie
     gparted
@@ -197,16 +198,16 @@
     xorg.xhost
 
     ## Jellyfin for home media share
-    jellyfin
-    jellyfin-web
-    jellyfin-ffmpeg
+     #jellyfin
+     #jellyfin-web
+     #jellyfin-ffmpeg
 
     ## Nix specific tools
-    #nix-tree
-    #nix-init
-    #nix-index
-    #nixpkgs-review
-    #nix-output-monitor
+    nix-tree
+     #nix-init
+     #nix-index
+     #nixpkgs-review
+    nix-output-monitor
 
     ## Filsesystem utilities
     xfsprogs
@@ -214,7 +215,7 @@
     exfatprogs
     btrfs-progs
     ntfs3g
-    ntfs2btrfs
+     #ntfs2btrfs
     scrounge-ntfs
     
     ## CLI tools & utilities
@@ -232,7 +233,6 @@
     unzip
     gnupg
     s-tui
-    steam
     blueman
     busybox
     ripgrep

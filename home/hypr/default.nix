@@ -26,6 +26,7 @@
   ];
 
   home.packages = with pkgs; [
+
     ## desktop environment
     waybar
     swww
@@ -36,16 +37,16 @@
     hypridle
     hyprlock
     hyprshot
-    hyprpaper
+     #hyprpaper
     hyprpicker
     hyprcursor
     brightnessctl
+
     ## gnome stuff
-    sushi
+     #sushi
     seahorse
     networkmanagerapplet
     gnome-themes-extra
-    gnome-control-center
 
     ## lib and compat
     xwayland
