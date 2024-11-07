@@ -117,7 +117,7 @@
         modules = [
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
-          ./core/hosts/persephone
+          ./hosts/persephone
         ];
       };
 
@@ -127,7 +127,7 @@
         modules = [
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
-          ./core/hosts/hades
+          ./hosts/hades
         ];
       };
 
@@ -137,7 +137,7 @@
         modules = [
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
-          ./core/hosts/orcus
+          ./hosts/orcus
         ];
       };
 
