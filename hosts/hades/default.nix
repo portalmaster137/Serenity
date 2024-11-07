@@ -4,7 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ./network-configuration.nix
-    ../../config.nix
+    ./core/config.nix
 
     ./modules/syncthing.nix
     ./modules/disko.nix
