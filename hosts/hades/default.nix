@@ -6,8 +6,8 @@
     ./network-configuration.nix
     ../../core/config.nix
 
-     #./modules/syncthing.nix
-    ./modules/disko.nix
+     #./modules/syncthing.nix # got nuked, wasn't functional anyway :shrug:
+     #./modules/disko.nix # BROKEN
     ./modules/zfs.nix
   ];
 
