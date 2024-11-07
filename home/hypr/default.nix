@@ -28,8 +28,8 @@
   home.packages = with pkgs; [
 
     ## desktop environment
-    waybar
     swww
+    waybar
     wlroots
     wlsunset
     wlr-randr
@@ -44,6 +44,7 @@
 
     ## gnome stuff
      #sushi
+    dconf
     seahorse
     networkmanagerapplet
     gnome-themes-extra
@@ -53,10 +54,9 @@
     wayland-utils
     wayland-protocols
     meson
-    libsForQt5.qt5ct
     libva
     libnotify
-    dconf
+    libsForQt5.qt5ct
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
     xdg-desktop-portal-hyprland

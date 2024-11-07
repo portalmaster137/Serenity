@@ -14,8 +14,8 @@
     xwayland.enable = true;
 
     plugins = [
-      #inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
-	    #inputs.hyprland-plugins.packages."${pkgs.system}".hyprbars
+       #inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
+       #inputs.hyprland-plugins.packages."${pkgs.system}".hyprbars
     ];
 
        #monitor = desc:Acer Technologies Acer XR341CK 0x5457BEF2, preferred, 0x0, 1
@@ -33,19 +33,21 @@
 
       exec-once = [
         "startup"
+        "swww-daemon & sleep 0.1"
+        "otd-gui"
 	 #"${pkgs.udiskie}/bin/udiskie"
          #"${pkgs.hypridle}/bin/hypridle"
-        "${pkgs.swww}/bin/swww swww init"
+         #"${pkgs.swww}/bin/swww swww init"
 	 #"${pkgs.opentabletdriver}/bin/opentabletdriver otd-daemon"
          #"${pkgs.opentabletdriver}/bin/opentabletdriver otd-gui"
-        "${pkgs.kitty}/bin/kitty"
+         #"${pkgs.kitty}/bin/kitty"
         "${pkgs.kitty}/bin/kitty --class btop btop"
          #"${pkgs.kitty}/bin/kitty --class yazi yazi"
         "${pkgs.steam}/bin/steam"
          #"${pkgs.helvum}/bin/helvum"
          #"${pkgs.spotify}/bin/spotify"
-        "${pkgs.vesktop}/bin/vesktop"
-         #"${pkgs.easyeffects}/bin/easyeffects"
+         #"${pkgs.vesktop}/bin/vesktop"
+        "${pkgs.easyeffects}/bin/easyeffects"
       ];
 
       bind = [
