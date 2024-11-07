@@ -12,7 +12,7 @@
 
   imports = [
 
-  ./programs
+   #./programs
   ./git.nix  
   ./yazi.nix
   ./kitty.nix
