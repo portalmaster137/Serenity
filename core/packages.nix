@@ -3,7 +3,8 @@
 {
 
   imports = [
-   #./file.nix
+     #./file.nix
+    ./fonts.nix
   ];
 
   nixpkgs = {
@@ -12,10 +13,10 @@
       allowUnfree = true;
       permittedInsecurePackages = [
       ];
-      allowUnsupportedSystem = true;
+       #allowUnsupportedSystem = true;
     };
 
-  ## [START - Stolen code, no clue how it works]
+  ## [START - Stolen code, no clue how it works :3 ]
     overlays = [
       ## to use overlays exported from other flakes:
       #neovim-nightly-overlay.overlays.default
@@ -44,26 +45,6 @@
     })
     config.nix.registry;
   ## [END - Stolen code, mostly understand from here again]
-
-
-  ## I put fonts here because i didn't know where tf else to put them lol
-  ## CURRENTLY BROKEN - PLEASE FIX
-  fonts = {
-    packages = with pkgs; [
-      spleen
-      terminus_font
-      terminus_font_ttf
-      (nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })  	  
-    ];
-    fontDir.enable = true;
-      fontconfig = {
-        defaultFonts = {
-          serif = [ "spleen-32x64" ];
-          sansSerif = [ "spleen-32x64" ];        
-          monospace = [ "TerminusTTF" ];
-        };
-      };
-  };
 
   hardware.opentabletdriver = {
     enable = true;
@@ -158,7 +139,8 @@
   	wayland.enable = true;
   };
 
-  ## We switched to neovim -mostly- full-time
+  ## Wei have switched to neovim
+  ## full-time, sorry Micro. <3
   environment.variables = {
     EDITOR = "neovim";
     SYSTEMD_EDITOR = "neovim";
@@ -171,9 +153,10 @@
   ## ratbagd for gaming mouse config
   services.ratbagd.enable = true;
 
-  ## All* system-level packages declared here
+  ## All COMMON system-level packages declared here
   environment.systemPackages = with pkgs; [
 
+    ########
     ## Needed for that graphical config manager, suspect that the
     ## whole inputs.nix- yaddah yaddah is unnecessary.
     ## and look, -we- don't need a graphical config editor, but
@@ -181,26 +164,42 @@
     ## theoretically pass off as a complete linux distribution.
     ## So there needs to be -some- way for users who are unwilling
     ## to use a terminal and are more comfortable with a GUI.
-    inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
+
+     #inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
      #nixos-conf-editor
 
+    ## Disabling this for now. Eats disk space, and it's useless until
+    ## wei make a single "control" module using 'let bindings' anyway.
+    ########
+
+
+
+    ########
     ## Temporary desktop/user-level
     steam
-    #waybar
+     #gitwatch
+     #waybar
     udiskie
     gparted
     pavucontrol
     networkmanager
     seahorse
-    #polkit-gnome
+     #polkit-gnome
     gnome-keyring
     polkit-kde-agent
     xorg.xhost
+    android-tools
+    ########
 
+
+    ########
     ## Jellyfin for home media share
+    ## Need to move this to its own module and call that to
+    ## save the 'core' from being bloated.
      #jellyfin
      #jellyfin-web
      #jellyfin-ffmpeg
+    ########
 
     ## Nix specific tools
     nix-tree
@@ -229,7 +228,7 @@
     file
     tree
     btop
-    micro
+     #micro
     unzip
     gnupg
     s-tui
@@ -244,8 +243,6 @@
     libsecret
     git-crypt
     undervolt
-    #gitwatch
-    android-tools
     magic-wormhole
 
  ];
