@@ -1,36 +1,38 @@
 ## SerenityOS
-
+##
 ## - A study in linux, packaging, user experience,
 ##   system and desktop environments, themeing,
 ##   system administration, and functional programming.
-
+##
 ## - We do not expect this to become a full-fledged linux
 ##   distribution. Or be adopted by anymany but ourselves,
 ##   but NixOS and its 'flakes' architecture allows for us
 ##   to experiment and learn about the required subjects
 ##   in a mock environment of sorts.
-
+##
 ## - Basically, we are playing linux distro simulator. /pos
-
-
+##
 ## - Oh also, code-commenting is done like this:
 ##   Place a hash directly before the code
 ##   then indent the code by 1 extra space.
-
+##
 ## - A hash AFTER but on the same line
 ##   as the code lets you add any thoughts.
-
+##
+##  - - - - - - - - - - - - - - - - - - - - - - - -
 ##  example.nix = {
-##     #option1 = true;
-##     #option2 = true; # disabled for x reason
-##    option3 = false;
+##    option1 = true;
+##     #option2 = [ "$string" ];
+##     #option3 = false; # disabled for x reason
+##    option4 = false;
 ##  };
+##  - - - - - - - - - - - - - - - - - - - - - - - -
+##
 
 {
-  description = "SerenityOS v0.6.46";
+  description = "SerenityOS v0.6.50";
   ## Latest features:
-  ## - A more defined roadmap for future flake development is now in place.
-  ## - Work on ZFS support continues, expect complete functionality soon.
+  ## - ZFS Support fully implemented.
   ## - Work on commenting, reformating, and refactoring flake clode is progressing steadily.
 
   inputs = {
@@ -52,7 +54,7 @@
     sops-nix = {
       url = "github:Mic92/sops-nix";
       ## optional, not necessary for the module
-      #inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     
     ## Dots management
@@ -61,20 +63,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ## Themeing
+    ## Graphical config editor? seeing what's up w/ it - removed ForNow:tm:
+     #nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
+
+    ## Easy themeing <3
     nix-colors.url = "github:misterio77/nix-colors";
     
-    ## Ricer friendly wayland compositor
+    ## Wayland compositor with eye-candy (for edgelords)
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
-    ## Fix broken waybar on current nixpkgs-unstable    
-    #waybar.url = "github:Alexays/Waybar"; 
 
-    ## Graphical config editor? seeing what's up w/ it
-    nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
+    ## Fix broken waybar on current nixpkgs-unstable    
+     #waybar.url = "github:Alexays/Waybar"; 
 
   };
 
@@ -96,18 +99,20 @@
     ## Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
 
-      #iso = nixpkgs.lib.nixosSystem {
-        #specialArgs = {inherit inputs outputs;};
-         #modules = [
-           #"${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
-           #"${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
-           #disko.nixosModules.disko
-           #sops-nix.nixosModules.sops
-           #./core/hosts/iso
-         #];
-      #};
-    
-      persephone  = nixpkgs.lib.nixosSystem {
+      ## Installer for easy nuke-n-paves
+       #iso = nixpkgs.lib.nixosSystem {
+         #specialArgs = {inherit inputs outputs;};
+          #modules = [
+            #"${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
+            #"${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
+            #disko.nixosModules.disko
+            #sops-nix.nixosModules.sops
+            #./core/hosts/iso
+          #];
+       #};
+
+      ## Laptop
+      persephone = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           disko.nixosModules.disko
@@ -116,12 +121,23 @@
         ];
       };
 
-      hades  = nixpkgs.lib.nixosSystem {
+      ## Desktop
+      hades = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
           ./core/hosts/hades
+        ];
+      };
+
+      ## Home server
+      orcus = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          disko.nixosModules.disko
+          sops-nix.nixosModules.sops
+          ./core/hosts/orcus
         ];
       };
 
