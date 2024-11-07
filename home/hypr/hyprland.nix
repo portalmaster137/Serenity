@@ -43,7 +43,7 @@
          #"${pkgs.kitty}/bin/kitty"
         "${pkgs.kitty}/bin/kitty --class btop btop"
          #"${pkgs.kitty}/bin/kitty --class yazi yazi"
-        "${pkgs.steam}/bin/steam"
+         #"${pkgs.steam}/bin/steam"
          #"${pkgs.helvum}/bin/helvum"
          #"${pkgs.spotify}/bin/spotify"
          #"${pkgs.vesktop}/bin/vesktop"
