@@ -47,10 +47,6 @@
        #];
   };
 
-  services.jellyfin = {
-    enable = true;
-    openFirewall = true;
-  };
 
   ## syncthing for device <-> device filesharing and,,, syncing
   ## still not set up, grrrr

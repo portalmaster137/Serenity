@@ -2,9 +2,13 @@
 
 {
   imports = [
-    ./hardware
-    ./network
+    ./hardware-configuration.nix
+    ./network-configuration.nix
     ../../config.nix
+
+    ./modules/syncthing.nix
+    ./modules/disko.nix
+    ./modules/zfs.nix
   ];
 
   nix = {
