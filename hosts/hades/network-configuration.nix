@@ -53,7 +53,7 @@
     enable = true;
     settings = {
       ipv6_servers = true;
-      require_dnssec = true;
+      require_dnssec = true;https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
 
       sources.public-resolvers = {
         urls = [
@@ -65,7 +65,14 @@
       };
 
       # You can choose a specific set of servers from https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
-      # server_names = [ ... ];
+      server_names = [
+        "adfilter-syd"
+        "adfilter-syd-ipv6"
+        "cs-sydney"
+        "cs-singapore"
+        "userspace-australia"
+        "userspace-australia-ipv6"
+      ];
     };
   };
 
