@@ -11,7 +11,8 @@
 {
 
   imports = [
-  ./git.nix  
+  ./git.nix
+  ./btop.nix
   ./yazi.nix
   ./kitty.nix
    #./nixvim

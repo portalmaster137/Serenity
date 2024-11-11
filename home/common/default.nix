@@ -44,7 +44,7 @@
        #micro # Text editor
       piper # mouse configuration
       fish # Apparently I broke it lol ?
-      btop # System resources
+       #btop # System resources
        #eog # Image viewer
 
       ## Games
