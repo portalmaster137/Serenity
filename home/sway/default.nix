@@ -13,6 +13,8 @@
   ../common/themes
   ../common/scripts
 
+  ./sway.nix
+
   ./hyprcursor.nix
   ./wlogout.nix
   ./hyprlock.nix
@@ -36,11 +38,6 @@
     hyprcursor
     brightnessctl
     ## gnome stuff
-    gnome.sushi
-    gnome.seahorse
-    networkmanagerapplet
-    gnome.gnome-themes-extra
-    gnome.gnome-control-center
 
     ## lib and compat
 
