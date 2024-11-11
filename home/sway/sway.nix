@@ -34,6 +34,9 @@
       terminal = "kitty";
       startup = [
         {command = "firefox";}
+        {command = "kitty";}
+
+
       ];
     };
      #extraConfig = {
