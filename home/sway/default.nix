@@ -15,12 +15,12 @@
 
   ./sway.nix
 
-  ./hyprcursor.nix
-  ./wlogout.nix
-  ./hyprlock.nix
-  ./waybar.nix
-  ./dunst.nix
-  ./wofi.nix
+   #./hyprcursor.nix
+   #./wlogout.nix
+   #./hyprlock.nix
+   #./waybar.nix
+   #./dunst.nix
+   #./wofi.nix
   
   ];
 
