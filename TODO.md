@@ -17,6 +17,8 @@ Primary short term to do list:
  - crackling  @ 96/48kHz [2ms]
  - testing out 144/48khZ [3ms]
 
+- [ ] reformat persephones host configs
+
 - [ ] fix wifi on hades
  - [ ] get a wireless card [hw upgrade]
  - must connect with PCIe, include bluetooth,
