@@ -42,7 +42,7 @@
     ## lib and compat
 
     meson
-    qt5ct
+     #qt5ct
     libva
     libnotify
     dconf
