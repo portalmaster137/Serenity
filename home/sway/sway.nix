@@ -31,7 +31,7 @@
     config = rec {
       modifier = "Mod4";
       ## Use kitty as default terminal
-      terminal; = "kitty";
+      terminal = "kitty";
       startup = [
         {command = "firefox";}
       ];
