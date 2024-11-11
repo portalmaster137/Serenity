@@ -5,13 +5,17 @@ Primary short term to do list:
 ## ## ## ## ## ## ## ## ## ## ## ##
 
 - [ ] restructure flake
- - primarily to fix hardware-configs
- - secondarily to improve granularity over host-configs
+ - primarily to fix hardware-configs, 
+   secondarily to improve granularity over host-configs
  - [ ] /home tidy up
   - [ ] programs
   - [ ] services
   - [ ] credit wallpapers
   - [ ] dedup hypr/sway files
+
+- [ ] fix low-latency audio crackles over speakers
+ - crackling  @ 96/48kHz [2ms]
+ - testing out 144/48khZ [3ms]
 
 - [ ] fix wifi on hades
  - [ ] get a wireless card [hw upgrade]
@@ -45,11 +49,10 @@ Primary short term to do list:
 
 - audio and music
  - config
-  - [X] latency
-   - [ ] no crackles
   - [X] helvum
   - [X] pavucontrol
   - [X] easy-effects
+  - [X] low latency config
  - playback
   - [X] spotify
   - [ ] local player
