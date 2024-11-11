@@ -63,6 +63,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      ## If you are not running an unstable channel of nixpkgs,
+      ## select the corresponding branch of nixvim.
+      # url = "github:nix-community/nixvim/nixos-24.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ## Graphical config editor? seeing what's up w/ it - removed ForNow:tm:
      #nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
 
@@ -83,11 +91,12 @@
 
   outputs = {
     self,
+    nixpkgs,
     hardware,
     disko,
-    nixpkgs,
     sops-nix,
     home-manager,
+    nixvim,
     nix-colors,
     hyprland,
     hyprland-plugins,
