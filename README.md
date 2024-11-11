@@ -5,30 +5,29 @@
 
 ## Checklist:
  - **General**
-    - [X] Set up ZFS pool (media storage)
-    - [ ] Set up Jellyfin (media sharing)
-    - [ ] Set up Nicotine+ (music source)
-    - [ ] Set up Syncthing (devices sync)
-    - [ ] Sort data (sisyphean)
-    - [ ] Make an install ISO
-    - [ ] Fully comment all code (half done)
     - [ ] Tidy up repo presentation
+    - [ ] Make an install ISO
+    - [ ] Sort data (sisyphean)
+    - [ ] Set up Syncthing (devices sync)
+    - [ ] Fully comment all code (half done)
 
  - **System**
 	- [X] Per host configs
+        - [ ] Further specialise host configs
 		- [ ] ISO
 		- [X] Hades
 		- [X] Persephone
-		- [ ] Home server
+		- [ ] Orcus
+          - [X] Set up ZFS pool (media storage)
+          - [ ] Set up Jellyfin (media sharing)
+          - [ ] Set up Nicotine+ (music source)
 		- [ ] Cloud server
-	- [X] Multi-user home-manager config
-		- [X] Functional
+ 
+ - **Desktop**
 	- [ ] Devshells
 		- [ ] Standard Rust
 		- [ ] Standard Python
         - [ ] Standard Haskell
- 
- - **Desktop**
 	- [ ] Application suite
         - As wayland native as possible
         - As GTK as possible
@@ -39,15 +38,17 @@
 		- [ ] Icons
 		- [ ] GTK theme
 		- [ ] QT Themes
-		- [ ] Wallpapers
+		- [X] Wallpapers
 		- [ ] nix-colors/stylix
 
+ - *A shorter term, more active to do list can be found [here.](https://link.is.missing/soon_tm)*
+
 ## Attributions:
- - **Art**
+ - **Artwork & Media**
 	- [Helvetica Blanc](https://helveticablanc.com/)
     - Others yet to be named
 
- - **Code**
+ - **Code & Inspiration** *( to be linked Soon [TM] )*
 	- Sashanoraa
 	- Hive/Bits
 	- Queer Syndicate
