@@ -18,7 +18,7 @@
 
     xwayland = true;
     enable = true;
-    package = pkgs.swayfx-unwrapped;
+    package = pkgs.swayfx;
     systemd = {
       enable = true;
        #xdgAutostart = true;

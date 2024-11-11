@@ -51,7 +51,7 @@
     ## enable sway window manager
     sway = {
       enable = true;
-      package = null;
+      package = pkgs.swayfx;
       wrapperFeatures.gtk = true;
     };
   };
