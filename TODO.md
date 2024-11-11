@@ -45,7 +45,8 @@ Primary short term to do list:
 
 - audio and music
  - config
-  - [ ] latency
+  - [X] latency
+   - [ ] no crackles
   - [X] helvum
   - [X] pavucontrol
   - [X] easy-effects
