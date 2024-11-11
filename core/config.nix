@@ -11,9 +11,9 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ## Semi-modularised config
-    ./packages.nix # system-level packages here
+    ./packages.nix # system-level packages here - needs tidying
+    ./display.nix # declarations for display management
     ./audio.nix # sound go bwuuuaaaahhhhhhhh
-    ./fonts.nix # wei didn't know where else to put this lol
     ../home/users # user-level packages here
   ];
 
@@ -24,7 +24,6 @@
   ## Genuinely dunno what these do hey, like isnt sudo
   ## already restricted to @wheel only? & wut is rtkit
   security = {
-    rtkit.enable = true;
     polkit.enable = true;
     sudo.execWheelOnly = true;
   };
