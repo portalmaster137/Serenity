@@ -53,7 +53,7 @@
     enable = true;
     settings = {
       ipv6_servers = true;
-      require_dnssec = true;https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
+      require_dnssec = true;
 
       sources.public-resolvers = {
         urls = [
