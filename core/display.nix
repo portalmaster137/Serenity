@@ -9,8 +9,8 @@
 
 {
   imports = [
-    ./regreet.nix
-     #./sddm.nix
+     #./regreet.nix
+    ./sddm.nix
   ];
 
   ## xserver still needed for xwayland stuff
