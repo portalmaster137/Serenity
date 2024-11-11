@@ -11,7 +11,7 @@
   imports = [
     ./systemd-services
     ./programs
-     #../sway
+    ../sway
     ../hypr
   ];
 
