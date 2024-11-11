@@ -227,7 +227,7 @@
     bash
     file
     tree
-    btop
+     #btop
      #micro
     unzip
     gnupg
