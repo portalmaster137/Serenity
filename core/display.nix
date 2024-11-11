@@ -9,29 +9,40 @@
 
 {
   imports = [
-     #./regreet.nix
-    ./sddm.nix
+    ## planning to have a discrete config file for
+    ## the greeter(s) to keep this file tidy.
+     #./regreet-config.nix
+     #./sddm-config.nix
   ];
 
   ## xserver still needed for xwayland stuff
   services.xserver.enable = true;
 
+  ## Current login greeter/display manager,
+  ## set to run wayland.
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
+
+
+  ## Eventual login greeter/display manager,
+  ## wayland native.
+   #services.greetd = {
+       #enable = true;
+       #settings.default_session = {
+         #command = "${pkgs.greetd.regreet}/bin/regreet";
+       #};
+   #};
+
   programs = {
+
+    ## Eventual login greeter/display manager,
+    ## wayland native.
+     #regreet.enable = true;
 
     ## Temporary, fuck vaxery or whatever his name is
     ## punk-ass motherfucker, swayfx looks neat
-    ## and is probably more stable anyway so yeah
-    ## whatever, im not mad, why would you think im mad
-    ## its not like the prettiest wayland "wm" has
-    ## a complete shithead as a lead dev, it's not
-    ## like i got sold on it and nearly set it up
-    ## completely before finding out about vaxo-bingus'
-    ## chuddery and deciding i had to jump ship to sway
-    ## a "wm" with comparatively little by ways of 
-    ## "eye-candy". Oh boy am i glad swayfx exists
-    ## 
-    ## Authors note: this is excessive, overly dramatic,
-    ## and played entirely (mostly) for laughs.
     hyprland = {
       enable = true;
       xwayland.enable = true;

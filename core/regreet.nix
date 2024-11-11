@@ -9,8 +9,6 @@
 
 {
   imports = [
-     #./regreet.nix
-     #./sddm.nix
   ];
 
   services = {
