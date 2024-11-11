@@ -47,7 +47,13 @@
       enable = true;
       xwayland.enable = true;
     };
-
+    
+    ## enable sway window manager
+    programs.sway = {
+      enable = true;
+      package = null;
+      wrapperFeatures.gtk = true;
+    };
   };
 
 }

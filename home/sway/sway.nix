@@ -28,9 +28,14 @@
        #];
     };
 
-     #config = {
-       #blah.bleh = [ ];
-     #};
+    config = rec {
+      modifier = "Mod4";
+      ## Use kitty as default terminal
+      terminal; = "kitty";
+      startup = [
+        {command = "firefox";}
+      ];
+    };
      #extraConfig = {
      #};
     
