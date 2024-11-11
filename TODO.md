@@ -4,6 +4,8 @@ Primary short term to do list:
 ## ## ## ##    URGENT   ## ## ## ##
 ## ## ## ## ## ## ## ## ## ## ## ##
 
+- [ ] set up nixvim
+
 - [ ] restructure flake
  - primarily to fix hardware-configs, 
    secondarily to improve granularity over host-configs
