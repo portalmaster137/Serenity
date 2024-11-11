@@ -13,6 +13,9 @@
   ];
 
   wayland.windowManager.sway = {
+
+    checkConfig = false;
+
     xwayland = true;
     enable = true;
     package = pkgs.swayfx-unwrapped;
