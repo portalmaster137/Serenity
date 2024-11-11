@@ -14,7 +14,7 @@
   ./git.nix  
   ./yazi.nix
   ./kitty.nix
-  ./nixvim.nix
+  ./nixvim
   ./neofetch.nix
   
   ];
