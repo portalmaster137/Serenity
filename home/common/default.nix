@@ -117,6 +117,15 @@
       enable = true;
       defaultEditor = true; # Default but keeping micro around
     };
+
+    btop = {
+      enable = true;
+      settings = {
+        color_theme = "kyli0x";
+        theme_background = false;
+      };
+    };
+
   };
 
   services = {

@@ -12,7 +12,7 @@
 
   imports = [
   ./git.nix
-  ./btop.nix
+   #./btop.nix
   ./yazi.nix
   ./kitty.nix
    #./nixvim
