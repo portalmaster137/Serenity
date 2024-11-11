@@ -49,7 +49,7 @@
     };
     
     ## enable sway window manager
-    programs.sway = {
+    sway = {
       enable = true;
       package = null;
       wrapperFeatures.gtk = true;
