@@ -14,6 +14,8 @@ Primary short term to do list:
   - [ ] services
   - [ ] credit wallpapers
   - [ ] dedup hypr/sway files
+   - [X] get sway workable
+   - [ ] fully switch over
 
 - [ ] fix low-latency audio crackles over speakers
  - crackling  @ 96/48kHz [2ms]
@@ -41,7 +43,7 @@ Primary short term to do list:
  - [ ] log in to everything
 
 - gaming
- - [X] osu
+ - [ ] osu
  - [ ] steam
   - [ ] proton
 
