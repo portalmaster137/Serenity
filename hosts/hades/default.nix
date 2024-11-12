@@ -1,24 +1,27 @@
-{ lib, config, pkgs, modulesPath, ... }:
+{ inputs, outputs, modulesPath, lib, config, pkgs, ... }:
 
 {
   imports = [
-    ./hardware-configuration.nix
-    ./network-configuration.nix
-    ../../core/config.nix
 
-     #./modules/syncthing.nix # got nuked, wasn't functional anyway :shrug:
-     #./modules/disko.nix # BROKEN
-    ./modules/zfs.nix
+    ## Host specific files
+    ./hardware-configuration.nix # hardware config
+    ./network-configuration.nix # network config
+    ./modules # more host specific configs
+
+    ## Shared 'core' config options
+    ../../config.nix
+
   ];
 
   hardware = {
 
-    enableAllFirmware = true;
+    ## No bluetooth inside Hades (yet)
     bluetooth.enable = false;
 
     graphics = {
       enable = true;
-      ## Packages for integrated graphics inside Hades
+
+      ## Packages for the iGPU inside Hades
       extraPackages = with pkgs; [
          #intel-compute-runtime
   	 #intel-media-driver
@@ -26,12 +29,14 @@
   	 #vaapiVdpau
   	 #libvdpau-va-gl		
       ];
+
     };
 
+    ## Packages for the dGPU inside Hades
     amdgpu = {
       initrd.enable = true;
       opencl.enable = true;
-
+      ## Vulkan packages for the dGPU inside Hades
       amdvlk = {
         enable = true;
          #package = [ ];
@@ -40,21 +45,23 @@
          #settings = {
          #};
       };
-
     };
+
   };
 
   programs = {
-    ## For tweaking Radeon GPUs
+
+    ## For tweaking system performance
     corectrl = {
       enable = true;
+      ## Allows tweaking GPU performance
       gpuOverclock = {
         enable = true;
-        ## Allows changing clocks and volts
+        ## Needed for radeon GPU overclocking
         ppfeaturemask = "0xfffd7fff";
       };
     };
-
+    ## Performance tweaking continued
     tuxclocker = {
       enable = true;
       enableAMD = true;
@@ -63,7 +70,7 @@
 
   };
 
-  ## Some packages for managing the radeon GPU inside Hades
+  ## Some packages for managing the hardware inside Hades
   environment.systemPackages = with pkgs; [
     umr
     radeontop

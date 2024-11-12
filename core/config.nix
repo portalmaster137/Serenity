@@ -45,6 +45,7 @@
         "flakes"
       ];
     };
+
     gc = {
       ## Automatically run 'nix-collect-garbage'
       automatic = true;
@@ -55,6 +56,12 @@
       ## No clue what this does lol.
        #persistent = true;
     };
+
+  };
+
+  hardware = {
+
+    enableAllFirmware = true;
 
   };
 

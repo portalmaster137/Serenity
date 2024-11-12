@@ -1,36 +1,56 @@
-{ inputs, outputs, lib, config, pkgs, ... }:
+{ inputs, outputs, modulesPath, lib, config, pkgs, ... }:
 
 {
   imports = [
 
-    ## Import necessary flake modules
-     #"${builtins.fetchTarball "<flake module url>"}/module.nix"
+    ## Host specific files
+    ./hardware-configuration.nix # hardware config
+    ./network-configuration.nix # network config
+    ./modules # more host specific configs
 
-    ## Include host specific options
-    ./hardware
-    ./network
-
-    ## Include core config options
+    ## Shared 'core' config options
     ../../config.nix
 
   ];
 
-  nix = {
+  hardware = {
 
-     #settings = {
-     #};
+    ## Enable bluetooth inside Persephone
+    bluetooth.enable = true;
 
-    gc = {
-      ## Automatically run 'nix-collect-garbage',
-      automatic = true;
-      ## every day,
-      dates = "daily";
-      ## and clear junk older than 1 day
-      options = "--delete-older-than 1d";
+    graphics = {
+      enable = true;
 
-      ## No clue what this does lol.
-      persistent = true;
+      ## Packages for the iGPU inside Persephone
+      extraPackages = with pkgs; [
+        intel-compute-runtime
+  	intel-media-driver
+  	vaapiIntel
+  	vaapiVdpau
+  	libvdpau-va-gl		
+      ];
+
     };
+
   };
+
+  programs = {
+
+    ## For tweaking system performance
+    corectrl = {
+      enable = true;
+    };
+    ## Performance tweaking continued
+    tuxclocker = {
+      enable = true;
+      useUnfree = true;
+    };
+
+  };
+
+  ## Some packages for managing the hardware inside Persephone
+  environment.systemPackages = with pkgs; [
+    nvtopPackages.intel
+  ];
 
 }
