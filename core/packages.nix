@@ -188,7 +188,6 @@
     killall
     usbutils
     pciutils
-    xdg-utils
     moreutils
     libsecret
     git-crypt

@@ -56,4 +56,13 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    xdg-utils
+    xdg-desktop-portal
+     #xdg-desktop-portal-wlr
+    xdg-desktop-portal-gtk
+     #xdg-desktop-portal-gnome
+    xdg-desktop-portal-hyprland
+  ];
+
 }
