@@ -157,6 +157,26 @@
       name = "Adwaita-dark";
       package = pkgs.gnome.gnome-themes-extra;
     };
+    font = {
+      name = config.theme.font;
+      size = 10;
+    };
+    iconTheme = {
+      package = pkgs.flat-remix-icon-theme;
+      name = "Flat-Remix-Grey-Darkest";
+    };
+
+    gtk3.extraConfig = {
+      settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
+    gtk4.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
+
   };
 
   dconf = {
@@ -166,6 +186,15 @@
 	color-scheme = "prefer-dark";
       };
     };
+  };
+
+  sessionVariables.GTK_THEME = "Adwaita-dark";
+
+  pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 12;
   };
 
   xdg.portal = {

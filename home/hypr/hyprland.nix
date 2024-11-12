@@ -229,49 +229,4 @@
     };
   };
 
-  qt = {
-    enable = true;
-    platformTheme.name = "adwaita";
-    style.name = "adwaita-dark";
-  };
-
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
-
-    gtk3.extraConfig = {
-      settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-
-    gtk4.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-
-    iconTheme = {
-      package = pkgs.flat-remix-icon-theme;
-      name = "Flat-Remix-Grey-Darkest";
-    };
-
-    font = {
-      name = config.theme.font;
-      size = 10;
-    };
-  };
-
-  home.sessionVariables.GTK_THEME = "Adwaita-dark";
-
-  home.pointerCursor = {
-    gtk.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 12;
-  };
-
 }
