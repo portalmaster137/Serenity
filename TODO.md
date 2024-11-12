@@ -12,16 +12,23 @@ Primary short term to do list:
  - [ ] /home tidy up
   - [ ] programs
   - [ ] services
-  - [ ] credit wallpapers
-  - [ ] dedup hypr/sway files
+  - [ ] scripts
+   - [ ] figure them all out
+   - [ ] delete the unneeded stuff
+  - [ ] themes & resources
+   - [ ] figure out themes imports
+   - [ ] credit wallpapers
+  - [ ] home/desktop
+   - [X] dedup hypr/sway files
    - [X] get sway workable
    - [ ] fully switch over
 
-- [ ] fix low-latency audio crackles over speakers
- - crackling  @ 96/48kHz [2ms]
- - testing out 144/48khZ [3ms]
+- [X] fix low-latency audio crackles over speakers
+ - crackling @  96/48kHz [2ms]
+ - testing   @ 144/48kHz [3ms]
+ - [X] works @ 144/48kHz [3ms]
 
-- [ ] reformat persephones host configs
+- [X] reformat persephones host configs
 
 - [ ] fix wifi on hades
  - [ ] get a wireless card [hw upgrade]
