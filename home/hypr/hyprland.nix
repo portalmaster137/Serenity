@@ -10,7 +10,12 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.enable = true;
+    systemd = {
+      enable = true;
+      variables = [
+        "--all"
+      ];
+    };
     xwayland.enable = true;
 
     plugins = [
@@ -34,26 +39,24 @@
       exec-once = [
         "startup"
         "swww-daemon & sleep 0.1"
-        "otd-gui"
+         #"otd-gui"
 	 #"${pkgs.udiskie}/bin/udiskie"
          #"${pkgs.hypridle}/bin/hypridle"
          #"${pkgs.swww}/bin/swww swww init"
-	 #"${pkgs.opentabletdriver}/bin/opentabletdriver otd-daemon"
-         #"${pkgs.opentabletdriver}/bin/opentabletdriver otd-gui"
-         #"${pkgs.kitty}/bin/kitty"
-        "${pkgs.kitty}/bin/kitty --class btop btop"
+        "${pkgs.kitty}/bin/kitty --class floating"
+        "${pkgs.kitty}/bin/kitty btop"
          #"${pkgs.kitty}/bin/kitty --class yazi yazi"
          #"${pkgs.steam}/bin/steam"
          #"${pkgs.helvum}/bin/helvum"
          #"${pkgs.spotify}/bin/spotify"
          #"${pkgs.vesktop}/bin/vesktop"
-        "${pkgs.easyeffects}/bin/easyeffects"
+         #"${pkgs.easyeffects}/bin/easyeffects --class floating"
       ];
 
       bind = [
         "$shiftMod, RETURN, exec, ${pkgs.wofi}/bin/wofi"
         "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty"
-        "$mod, E, exec, ${pkgs.kitty}/bin/kitty --class yazi yazi"
+        "$mod, E, exec, ${pkgs.kitty}/bin/kitty yazi"
         "$mod, B, exec, ${pkgs.firefox}/bin/firefox"
         "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock"
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock"
@@ -72,9 +75,9 @@
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
         # Screenshots
-        "$mod, PRINT, exec, screenshot window"
+        "$shiftMod, PRINT, exec, screenshot window"
         ", PRINT, exec, screenshot monitor"
-        "$shiftMod, PRINT, exec, screenshot region"
+        "$mod, PRINT, exec, screenshot region"
         "ALT, PRINT, exec, screenshot region swappy"
         # Night Shift
         "$mod, F2, exec, night-shift-off"
@@ -105,17 +108,24 @@
       ];
 
       env = [
-        "XDG_SESSION_TYPE,wayland"
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
+        "GDK_BACKEND,wayland,x11,*"
+	"NIXOS_OZONE_WL,1" # disable if you(g.)'re having issues w/ firefox
+	"OZONE_PLATFORM,wayland"
+        "SDL_VIDEODRIVER,wayland"
+	"WLR_RENDERER_ALLOW_SOFTWARE,1"
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
-        "QT_QPA_PLATFORM,wayland"
-        "QT_QPA_PLATFORMTHEME,qt6ct"
+        "QT_QPA_PLATFORM,wayland;xcb"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        "QT_QPA_PLATFORMTHEME,qt6ct"
         "GTK_THEME,adwaita-dark"
-        # "HYPRCURSOR_THEME,rose-pine"
-        # "HYPRCURSOR_SIZE,16"
+         #"HYPRCURSOR_THEME,rose-pine"
+         #"HYPRCURSOR_SIZE,16"
+         #"XCURSOR_THEME,rose-pine"
+         #"XCURSOR_SIZE,16"
+	"NIXPKGS_ALLOW_UNFREE,1"
       ];
 
       general = {
