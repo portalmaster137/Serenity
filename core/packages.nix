@@ -75,17 +75,6 @@
       enable = true;
     };
 
-    ## I wanted this in the user-level area, but w/e i guess - NEEDS OWN NIX MODULE
-    steam = {
-      enable = true;
-    };
-
-    ## To run "normal" linux applications seamlessly - OWN NIX MODULE ?
-    appimage = {
-      enable = true;
-      binfmt = true;
-    };
-
     ## NixOS CLI helper
     nh = {
       enable = true;
@@ -115,12 +104,6 @@
     SYSTEMD_EDITOR = "neovim";
   };
 
-  ## Enabling flatpak in case i need it
-   #services.flatpak.enable = true;
-
-  ## ratbagd for gaming mouse config
-  services.ratbagd.enable = true;
-
   ## All COMMON system-level packages declared here
   environment.systemPackages = with pkgs; [
 
@@ -144,7 +127,6 @@
 
     ########
     ## Temporary desktop/user-level
-    steam
      #gitwatch
      #waybar
     udiskie

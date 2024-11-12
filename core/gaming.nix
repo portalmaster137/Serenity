@@ -1,0 +1,57 @@
+{ inputs, outputs, lib, config, pkgs, ... }:
+
+{
+
+  imports = [
+  ];
+
+  nixpkgs = {
+  };
+
+  hardware.opentabletdriver = {
+    enable = true;
+     #package = [ ];
+     #daemon.enable = true;
+     #blacklistedKernelModules = [ ];
+  };
+
+  environment.sessionVariables = rec {
+	  XDG_CACHE_HOME  = "$HOME/.cache";
+	  XDG_CONFIG_HOME = "$HOME/.config";
+	  XDG_BIN_HOME    = "$HOME/.local/bin";
+	  XDG_DATA_HOME   = "$HOME/.local/share";
+	  # Steam needs this to find Proton-GE
+	  STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+	  # note: this doesn't replace PATH, it just adds this to it
+	  PATH = [ 
+	    "\${XDG_BIN_HOME}"
+	  ];
+  };
+
+  programs = {
+
+    ## I wanted this in the user-level area, but w/e i guess - NEEDS OWN NIX MODULE
+    steam = {
+      enable = true;
+    };
+
+    ## To run "normal" linux applications seamlessly - OWN NIX MODULE ?
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
+
+  };
+
+  ## Enabling flatpak in case i need it
+   #services.flatpak.enable = true;
+
+  ## ratbagd for gaming mouse config
+  services.ratbagd.enable = true;
+
+  ## All common gaming packages declared here
+  environment.systemPackages = with pkgs; [
+    steam
+ ];
+
+}
