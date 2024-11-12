@@ -42,21 +42,8 @@
         font_family = ${config.theme.font}
         position = 0, 16
         halign = center
-        valign = top
-    }
-
-    # User label
-    label {
-        monitor =
-        text = Hey <span text_transform="capitalize" size="larger">$USER</span>
-        color = rgb(${config.theme.colors.fg})
-        font_size = 20
-        font_family = ${config.theme.font}
-        position = 0, 0
-        halign = center
         valign = center
     }
-
 
     # Type to unlock
     label {
