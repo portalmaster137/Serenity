@@ -6,6 +6,8 @@ Primary short term to do list:
 
 - [ ] set up nixvim
 
+- [ ] Sort data (sisyphean)
+
 - [ ] restructure flake
  - primarily to fix hardware-configs, 
    secondarily to improve granularity over host-configs
@@ -30,6 +32,12 @@ Primary short term to do list:
 
 - [X] reformat persephones host configs
 
+- [ ] Set up Syncthing (devices sync)
+
+- [ ] Tidy up repo presentation
+
+- [ ] Fully comment all code (half done)
+
 - [ ] fix wifi on hades
  - [ ] get a wireless card [hw upgrade]
  - must connect with PCIe, include bluetooth,
@@ -37,6 +45,8 @@ Primary short term to do list:
  - seems to be a hardware issue when using a USB dongle.
    current workaround is using a spare mobile connected
    to wifi with USB tethering enabled, a dongle
+
+- [ ] Make an install ISO
 
 ## ## ## ## ## ## ## ## ## ## ## ##
 ## ## ##    IN PROGRESS    ## ## ##
@@ -54,11 +64,34 @@ Primary short term to do list:
  - [ ] steam
   - [ ] proton
 
- - sharing
-  - [ ] jellyfin
-  - [ ] transmission
-  - [ ] nicotine-plus
-  - [ ] local network share
+- system
+ - [X] Per host configs
+  - [ ] Cloud server
+  - [ ] ISO
+  - [X] Hades
+  - [X] Persephone
+  - [ ] Orcus
+   - [X] Set up ZFS pool
+   - [ ] Set up Jellyfin
+   - [ ] Set up Nicotine+
+   - [ ] Set up local network share
+ - [ ] Further specialise host configs
+ - [ ] Desktop application suite
+ - [ ] Themes
+  - [ ] Per user configs
+  - [ ] Fonts
+  - [ ] Icons
+  - [ ] GTK theme
+  - [ ] QT Themes
+  - [X] Wallpapers
+  - [ ] nix-colors/stylix
+
+- coding
+ - [ ] Devshells
+  - [ ] C#
+  - [ ] Rust
+  - [ ] Python
+  - [ ] Haskell
 
 - audio and music
  - config
