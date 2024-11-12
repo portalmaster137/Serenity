@@ -188,9 +188,9 @@
     };
   };
 
-  sessionVariables.GTK_THEME = "Adwaita-dark";
+  home.sessionVariables.GTK_THEME = "Adwaita-dark";
 
-  pointerCursor = {
+  home.pointerCursor = {
     gtk.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
