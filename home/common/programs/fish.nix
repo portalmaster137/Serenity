@@ -4,6 +4,10 @@
 
   programs = {
 
+    starship = {
+      enable = true;
+    };
+
     fish = {
 
       enable = true;

@@ -95,16 +95,6 @@
 
     home-manager.enable = true; # Declarative dots
 
-    starship.enable = true; # Shell prompt
-
-     #steam.enable = true; # Apparently steam doesnt exist in home-manager? :thonk:
-
-    fish.enable = true; # Shell
-
-    git = { # version control and repo management
-      enable = true;
-    };
-
     firefox.enable = true; # Browser of choice
 
     neovim = { # Zoomer text editor
