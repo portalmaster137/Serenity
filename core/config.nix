@@ -23,21 +23,28 @@
   i18n.defaultLocale = "en_GB.UTF-8";
 
   ## Genuinely dunno what these do hey, like isnt sudo
-  ## already restricted to @wheel only? & wut is rtkit
+  ## already restricted to @wheel only?
   security = {
     polkit.enable = true;
     sudo.execWheelOnly = true;
   };
 
-  nix.settings = {
-    ## Use all cores during build
-    cores = 0;
-    max-jobs = "auto";
-    allow-dirty = false;
-    auto-optimise-store = true;
-    download-buffer-size = [ "268435456" ];
-    allowed-users = [ "@wheel" ];
-    ## Enable flakes uwu
+  nix = {
+    settings = {
+      ## Use all cores during build
+      cores = 0;
+      max-jobs = "auto";
+      allow-dirty = false;
+      auto-optimise-store = true;
+      download-buffer-size = [ "268435456" ];
+      allowed-users = [ "@wheel" ];
+      ## Enable flakes uwu
+      experimental-features = [
+        "recursive-nix"
+        "nix-command"
+        "flakes"
+      ];
+    };
     gc = {
       ## Automatically run 'nix-collect-garbage'
       automatic = true;
@@ -48,11 +55,7 @@
       ## No clue what this does lol.
        #persistent = true;
     };
-    experimental-features = [
-      "recursive-nix"
-      "nix-command"
-      "flakes"
-    ];
+
   };
 
   ## Apparently prevents getting stuck at shutdown
