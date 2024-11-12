@@ -111,7 +111,7 @@
 
   xdg.configFile."icons" = {
     recursive = true;
-    source = .../../resources/icons;
+    source = ../../resources/icons;
   };
 
 }
