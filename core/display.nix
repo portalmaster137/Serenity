@@ -35,6 +35,32 @@
        #};
    #};
 
+  qt = {
+    enable = true;
+    platformTheme.name = "Adwaita-dark";
+    style = {
+      name = "Adwaita-dark";
+      package = pkgs.adwaita-qt;
+    };
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome.gnome-themes-extra;
+    };
+  };
+
+  dconf = {
+    settings = {
+      "org/gnome/desktop/interface" = {
+        gtk-theme = "Adwaita-dark";
+	color-scheme = "prefer-dark";
+      };
+    };
+  };
+
   programs = {
 
     ## Eventual login greeter/display manager,
@@ -59,10 +85,26 @@
   environment.systemPackages = with pkgs; [
     xdg-utils
     xdg-desktop-portal
-     #xdg-desktop-portal-wlr
     xdg-desktop-portal-gtk
+     #xdg-desktop-portal-wlr
      #xdg-desktop-portal-gnome
     xdg-desktop-portal-hyprland
   ];
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+       #xdg-desktop-portal-wlr
+       #xdg-desktop-portal-gnome
+      xdg-desktop-portal-hyprland
+    ];
+    configPackages = with pkgs; [
+      xdg-desktop-portal-gtk
+       #xdg-desktop-portal-wlr
+       #xdg-desktop-portal-gnome
+      xdg-desktop-portal-hyprland
+    ];
+  };
 
 }
