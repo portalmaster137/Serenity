@@ -4,7 +4,11 @@
 
   imports = [
     ./systemd-services
-    ./programs
+     #./nixvim
+    ./kitty.nix
+    ./fish.nix
+    ./git.nix
+    ./btop.nix
     ../sway
     ../hypr
   ];
@@ -102,13 +106,13 @@
       defaultEditor = true; # Default but keeping micro around
     };
 
-    btop = {
-      enable = true;
-      settings = {
-        color_theme = "kyli0x";
-        theme_background = false;
-      };
-    };
+     #btop = {
+       #enable = true;
+       #settings = {
+         #color_theme = "kyli0x";
+         #theme_background = false;
+       #};
+     #};
     
     dconf = {
       enable = true;
