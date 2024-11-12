@@ -33,10 +33,10 @@
     ## I wanted this in the user-level area
     steam = {
       enable = true;
-      extraPackages = [
+      extraPackages = with pkgs; [
         gamescope
       ];
-      extraCompatPackages = [
+      extraCompatPackages = with pkgs; [
         proton-ge-bin
       ];
     };
