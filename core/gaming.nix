@@ -42,10 +42,10 @@
     };
 
     ## To run "normal" linux applications seamlessly
-    appimage = {
-      enable = true;
-      binfmt = true;
-    };
+     #appimage = {
+       #enable = true;
+       #binfmt = true;
+     #};
 
   };
 
@@ -57,7 +57,8 @@
 
   ## All common gaming packages declared here
   environment.systemPackages = with pkgs; [
-    steam
+    steam # games storefront/launcher
+    piper # mouse configuration
  ];
 
 }
