@@ -24,7 +24,6 @@
        #gnome-calendar # GTK Calendar
       gnome-secrets # GTK password vault manager
       gnome-keyring # GTK login keyring
-      dconf-editor # For editing dconf settings graphically
       appimage-run # Runs appimages
        #thunderbird # Email client - commented out due to network issues trying to build it ?
        #qt5-wayland # Unsure
@@ -114,10 +113,6 @@
        #};
      #};
     
-    dconf = {
-      enable = true;
-    };
-
   };
 
   services = {
@@ -172,6 +167,7 @@
   };
 
   dconf = {
+    enable = true;
     settings = {
       "org/gnome/desktop/interface" = {
         gtk-theme = "Adwaita-dark";
