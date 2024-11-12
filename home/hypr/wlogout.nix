@@ -84,34 +84,34 @@
       }
 
       #lock {
-              background-image: image(url("../common/themes/resources/icons/lock.png"));
+              background-image: image(url("../../../resources/icons/lock.png"));
       }
 
       #logout {
-              background-image: image(url("../common/themes/resources/icons/logout.png"));
+              background-image: image(url("../../../resources/icons/logout.png"));
       }
 
       #suspend {
-              background-image: image(url("../common/themes/resources/icons/suspend.png"));
+              background-image: image(url("../../../resources/icons/suspend.png"));
       }
 
       #hibernate {
-              background-image: image(url("../common/themes/resources/icons/hibernate.png"));
+              background-image: image(url("../../../resources/icons/hibernate.png"));
       }
 
       #shutdown {
-              background-image: image(url("../common/themes/resources/icons/shutdown.png"));
+              background-image: image(url("../../../resources/icons/shutdown.png"));
       }
 
       #reboot {
-              background-image: image(url("../common/themes/resources/icons/reboot.png"));
+              background-image: image(url("../../../resources/icons/reboot.png"));
       }
     '';
   };
 
   xdg.configFile."icons" = {
     recursive = true;
-    source = ../common/themes/resources/icons;
+    source = ../../../resources/icons;
   };
 
 }
