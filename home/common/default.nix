@@ -1,12 +1,6 @@
+{ self, inputs, outputs, lib, config, pkgs, ... }: 
+
 {
-  self,
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
 
   imports = [
     ./systemd-services
@@ -90,7 +84,6 @@
       gimp # Digital image editing
 
       ## Misc.
-       #realm-studio
 
     ];
 
