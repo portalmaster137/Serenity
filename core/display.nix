@@ -40,6 +40,10 @@
     ## Eventual login greeter/display manager,
     ## wayland native.
      #regreet.enable = true;
+    
+    dconf = {
+      enable = true;
+    };
 
     ## Temporary, fuck vaxery or whatever his name is
     ## punk-ass motherfucker, swayfx looks neat
@@ -57,6 +61,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    dconf-editor # For editing dconf settings graphically 
     xdg-utils
     xdg-desktop-portal
     xdg-desktop-portal-gtk
