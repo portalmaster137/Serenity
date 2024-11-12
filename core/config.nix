@@ -38,6 +38,16 @@
     download-buffer-size = [ "268435456" ];
     allowed-users = [ "@wheel" ];
     ## Enable flakes uwu
+    gc = {
+      ## Automatically run 'nix-collect-garbage'
+      automatic = true;
+      ## Ever day.
+      dates = "daily";
+      ## and clear junk older than x days
+      options = "--delete-older-than 2d";
+      ## No clue what this does lol.
+       #persistent = true;
+    };
     experimental-features = [
       "recursive-nix"
       "nix-command"

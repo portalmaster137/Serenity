@@ -11,25 +11,6 @@
     ./modules/zfs.nix
   ];
 
-  nix = {
-
-    settings = {
-
-    };
-
-    gc = {
-      ## Automatically run 'nix-collect-garbage'
-      automatic = true;
-      ## Ever day.
-      dates = "daily";
-      ## and clear junk older than x days
-      options = "--delete-older-than 3d";
-      ## No clue what this does lol.
-       #persistent = true;
-    };
-
-  };
-
   hardware = {
 
     enableAllFirmware = true;
@@ -39,11 +20,11 @@
       enable = true;
       ## Packages for integrated graphics inside Hades
       extraPackages = with pkgs; [
-        intel-compute-runtime
-  	intel-media-driver
-  	vaapiIntel
-  	vaapiVdpau
-  	libvdpau-va-gl		
+         #intel-compute-runtime
+  	 #intel-media-driver
+  	 #vaapiIntel
+  	 #vaapiVdpau
+  	 #libvdpau-va-gl		
       ];
     };
 
@@ -54,8 +35,8 @@
       amdvlk = {
         enable = true;
          #package = [ ];
-        support32Bit.enable = true;
-        supportExperimental.enable = true;
+         #support32Bit.enable = true;
+         #supportExperimental.enable = true;
          #settings = {
          #};
       };
