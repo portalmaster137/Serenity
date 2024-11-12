@@ -25,13 +25,15 @@
  
  - **Desktop**
 	- [ ] Devshells
-		- [ ] Standard Rust
-		- [ ] Standard Python
-        - [ ] Standard Haskell
+        - [ ] C#
+		- [ ] Rust
+		- [ ] Python
+        - [ ] Haskell
 	- [ ] Application suite
         - As wayland native as possible
         - As GTK as possible
 	- [ ] Move to sway
+        - [X] Workable sway
 	- [ ] Themes
 		- [ ] Per user configs
 		- [ ] Fonts
