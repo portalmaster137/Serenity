@@ -12,7 +12,7 @@ Primary short term to do list:
  - primarily to fix hardware-configs, 
    secondarily to improve granularity over host-configs
  - [ ] /home tidy up
-  - [ ] programs
+  - [X] programs
   - [ ] services
   - [ ] scripts
    - [ ] figure them all out
