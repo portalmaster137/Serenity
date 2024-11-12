@@ -35,23 +35,6 @@
        #};
    #};
 
-  qt = {
-    enable = true;
-    platformTheme.name = "Adwaita-dark";
-    style = {
-      name = "Adwaita-dark";
-      package = pkgs.adwaita-qt;
-    };
-  };
-
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome.gnome-themes-extra;
-    };
-  };
-
   programs = {
 
     ## Eventual login greeter/display manager,
