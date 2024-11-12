@@ -42,7 +42,7 @@
         font_family = ${config.theme.font}
         position = 0, 16
         halign = center
-        valign = center
+        valign = top
     }
 
     # User label
