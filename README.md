@@ -10,10 +10,10 @@
     - Others yet to be named
 
  - **Code & Inspiration** *( to be linked Soon [TM] )*
-	- Sashanoraa
-	- Hive/Bits
 	- Queer Syndicate
+	- Sashanoraa
 	- Wonder Collective
+	- Hive/Bits
 	- anotherhadi
 	- fufexan
 	- FrostPhoenix
