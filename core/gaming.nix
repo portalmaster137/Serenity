@@ -30,12 +30,18 @@
 
   programs = {
 
-    ## I wanted this in the user-level area, but w/e i guess - NEEDS OWN NIX MODULE
+    ## I wanted this in the user-level area
     steam = {
       enable = true;
+      extraPackages = [
+        gamescope
+      ];
+      extraCompatPackages = [
+        proton-ge-bin
+      ];
     };
 
-    ## To run "normal" linux applications seamlessly - OWN NIX MODULE ?
+    ## To run "normal" linux applications seamlessly
     appimage = {
       enable = true;
       binfmt = true;
