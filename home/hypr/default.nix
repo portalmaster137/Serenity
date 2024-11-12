@@ -40,6 +40,7 @@
      #hyprpaper
     hyprpicker
     hyprcursor
+    hyprpolkitagent
     brightnessctl
 
     ## gnome stuff
@@ -57,10 +58,6 @@
     libva
     libnotify
     libsForQt5.qt5ct
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-gnome
-    xdg-desktop-portal-hyprland
-    
   ];
 
 }

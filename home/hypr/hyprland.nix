@@ -38,6 +38,7 @@
 
       exec-once = [
         "startup"
+	"systemctl --user start hyprpolkitagent"
         "swww-daemon & sleep 0.1"
          #"otd-gui"
 	 #"${pkgs.udiskie}/bin/udiskie"
