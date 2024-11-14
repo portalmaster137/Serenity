@@ -42,10 +42,10 @@
     };
 
     ## To run "normal" linux applications seamlessly
-     #appimage = {
-       #enable = true;
-       #binfmt = true;
-     #};
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
 
   };
 

@@ -24,11 +24,7 @@
   ];
 
   programs = {
-    ## To run "normal" linux applications seamlessly
-    appimage = {
-      enable = true;
-      binfmt = true;
-    };
+
   };
 
   home.packages = with pkgs; [
