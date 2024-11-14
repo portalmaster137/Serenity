@@ -4,17 +4,19 @@ Primary short term to do list:
 ## ## ## ##    URGENT   ## ## ## ##
 ## ## ## ## ## ## ## ## ## ## ## ##
 
+- [ ] fix steam
+
 - [ ] set up nixvim
 
-- [ ] Sort data (sisyphean)
+- [ ] sort data (sisyphean)
 
 - [ ] restructure flake
  - primarily to fix hardware-configs, 
    secondarily to improve granularity over host-configs
  - [ ] /home tidy up
   - [X] programs
-  - [ ] services
-  - [ ] scripts
+  - [X] services
+  - [X] scripts
    - [ ] figure them all out
    - [ ] delete the unneeded stuff
   - [ ] themes & resources
@@ -32,11 +34,12 @@ Primary short term to do list:
 
 - [X] reformat persephones host configs
 
-- [ ] Set up Syncthing (devices sync)
+- [ ] set up Syncthing (devices sync)
 
-- [ ] Tidy up repo presentation
+- [ ] tidy up repo presentation
 
-- [ ] Fully comment all code (half done)
+- [ ] fully comment all code (half done)
+- [ ] fully format all code (unknown)
 
 - [ ] fix wifi on hades
  - [ ] get a wireless card [hw upgrade]
