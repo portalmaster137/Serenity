@@ -15,6 +15,8 @@
      #blacklistedKernelModules = [ ];
   };
 
+  hardware.opengl.driSupport32Bit = true;
+
   environment.sessionVariables = rec {
     XDG_CACHE_HOME  = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";
@@ -77,7 +79,7 @@
 
   ## All common gaming packages declared here
   environment.systemPackages = with pkgs; [
-    steam # games storefront/launcher
+     #steam # games storefront/launcher
     piper # mouse configuration
  ];
 
