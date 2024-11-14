@@ -30,11 +30,10 @@
 ##
 
 {
-  description = "SerenityOS v0.6.55";
+  description = "SerenityOS v0.6.7";
   ## Latest features:
-  ## - SwayWM implemented, currently incomplete.
-  ## - ZFS Support fully implemented.
   ## - Work on commenting, reformating, and refactoring flake clode is progressing steadily.
+  ## - SwayWM implemented, currently incomplete.
 
   inputs = {
   
