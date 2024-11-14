@@ -5,7 +5,6 @@
 
     ## Host specific files
     ./hardware-configuration.nix # hardware config
-    ./network-configuration.nix # network config
     ./modules # more host specific configs
 
     ## Shared 'core' config options
