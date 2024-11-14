@@ -3,7 +3,8 @@
 {
 
   imports = [
-    ./hyprland.nix  
+    ./hyprland.nix # Hyprland config file
+    ./scripts # Hyprland specific scripts
   ];
 
   home.packages = with pkgs; [

@@ -6,7 +6,6 @@
 
   ## Import themes and scripts
   ../common/themes
-  ../common/scripts
 
   ## Import common desktop configs
   ./hyprcursor.nix
