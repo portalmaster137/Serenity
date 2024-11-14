@@ -99,9 +99,9 @@
         fish_greeting = ''
           if type -q kitty-img
               printf '💖 hiya serenity '
-              echo ' 'welcome to (gethost) "~" 🏳️‍⚧️
+              echo ' 'welcome to $hostname "~" 🏳️‍⚧️
           else
-              echo 💖 hiya serenity welcome to (gethost) "~" 🏳️‍⚧️
+              echo 💖 hiya serenity welcome to $hostname "~" 🏳️‍⚧️
           end
         '';
 
