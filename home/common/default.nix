@@ -5,7 +5,7 @@
   imports = [
 
     ## Import desktop configs
-    ../desktop/common/
+    ../desktop/common
 
     ## Import service configs
     ./systemd-services
