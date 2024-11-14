@@ -17,36 +17,11 @@ let
     done
   '';
 
-  nextcloud-watch = pkgs.writeShellScriptBin "nextcloud-watch" ''
-    # Start nextcloud if I'm on my networks
-    while true;do
-      ssid=$(nmcli -t -f name connection show --active | head -n1)
-      status=$(pgrep -n nextcloud)
-      if [[ -z $status ]]; then
-        service_status="inactive"
-      else
-        service_status="active"
-      fi
-
-      if [[ $ssid == "inthecloud" || $ssid == "Wired connection 2" ]]; then
-        if [[ $service_status == "inactive" ]]; then
-            ${pkgs.nextcloud-client}/bin/nextcloud --background
-        fi
-      else
-        if [[ $service_status == "active" ]]; then
-            pkill nextcloud
-        fi
-      fi
-      sleep 120
-    done
-  '';
-
   startup = pkgs.writeShellScriptBin "startup" ''
     # Because HM enabling services suck.
 
     systemctl --user start sops-nix
 
-    nextcloud-watch &
     battery-notif &
   '';
 
@@ -54,7 +29,5 @@ in {
   home.packages = with pkgs; [
     startup
     battery-notif
-    nextcloud-watch
-    nextcloud-client
   ];
 }
