@@ -13,7 +13,7 @@
     ## Semi-modularised config
     ./packages.nix # system-level packages here - needs tidying
     ./display.nix # declarations for display management
-     #./gaming.nix # for gaming stuff, ideally would be in home/
+    ./gaming.nix # for gaming stuff, ideally would be in home/
     ./audio.nix # sound go bwuuuaaaahhhhhhhh
     ../home/users # user-level packages here
   ];
