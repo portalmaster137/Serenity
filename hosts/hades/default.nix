@@ -38,16 +38,16 @@
     ## Packages for the dGPU inside Hades
     amdgpu = {
       initrd.enable = true;
-      opencl.enable = true;
+       #opencl.enable = true;
       ## Vulkan packages for the dGPU inside Hades
-      amdvlk = {
-        enable = false;
+       #amdvlk = {
+         #enable = false;
          #package = [ ];
          #support32Bit.enable = true;
          #supportExperimental.enable = true;
          #settings = {
          #};
-      };
+       #};
     };
 
   };
@@ -56,31 +56,39 @@
 
     ## For tweaking system performance
     corectrl = {
-      enable = true;
+      enable = false;
       ## Allows tweaking GPU performance
       gpuOverclock = {
-        enable = true;
+        enable = false;
         ## Needed for radeon GPU overclocking
-        ppfeaturemask = "0xfffd7fff";
+         #ppfeaturemask = "0xfffd7fff";
       };
     };
     ## Performance tweaking continued
     tuxclocker = {
-      enable = true;
-      enableAMD = true;
-      useUnfree = true;
+      enable = false;
+       #enableAMD = true;
+       #useUnfree = true;
     };
 
   };
 
   ## Some packages for managing the hardware inside Hades
   environment.systemPackages = with pkgs; [
-    umr
-    radeontop
-    amdgpu_top
-    radeontools
-    radeon-profile
-    nvtopPackages.amd
+     #umr
+    lact
+     #radeontop
+     #amdgpu_top
+     #radeontools
+     #radeon-profile
+     #nvtopPackages.amd
   ];
+
+  systemd = {
+    packages = with pkgs; [
+      lacy
+    ];
+    services.lactd.wantedBy = [ "multi-user.target" ];
+  };
 
 }
