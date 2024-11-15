@@ -1,9 +1,5 @@
 { pkgs, config, ... }:
 
-let
-    hostname = ${config.networking.hostName};
-in
-
 {
 
   home.packages = with pkgs; [
@@ -44,7 +40,7 @@ in
          #prin "\n \n Terminal" "Kitty"
         info "\n \n Terminal Font" term_font
          #prin "\n \n Terminal Font" "Spleen"
-	prin "Device" "${hostname}"
+	prin "Device" "${config.networking.hostName}"
          #info "\n \n Model" model
          #prin "\n \n Motherboard" "MSI Z97 G3"
          #prin "\n \n Device" "Thinkpad T470s"
