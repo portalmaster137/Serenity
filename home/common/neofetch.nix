@@ -40,10 +40,10 @@
          #prin "\n \n Terminal" "Kitty"
         info "\n \n Terminal Font" term_font
          #prin "\n \n Terminal Font" "Spleen"
-	prin "Device" "${config.networking.hostName}"
+	 #prin "Device" "${config.networking.hostName}"
          #info "\n \n Model" model
          #prin "\n \n Motherboard" "MSI Z97 G3"
-         #prin "\n \n Device" "Thinkpad T470s"
+        prin "\n \n Device" "Hades"
         info "\n \n Processor" cpu
         info "\n \n Memory" memory
         info "\n \n GPU" gpu
