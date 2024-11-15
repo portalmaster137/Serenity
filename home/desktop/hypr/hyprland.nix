@@ -115,7 +115,7 @@
         "GDK_BACKEND,wayland,x11,*"
 	"NIXOS_OZONE_WL,1" # disable if you(g.)'re having issues w/ firefox
 	"OZONE_PLATFORM,wayland"
-        "SDL_VIDEODRIVER,wayland"
+        "SDL_VIDEODRIVER,wayland,x11"
 	"WLR_RENDERER_ALLOW_SOFTWARE,1"
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
         "QT_QPA_PLATFORM,wayland;xcb"
