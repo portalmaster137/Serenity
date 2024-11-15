@@ -15,7 +15,7 @@
      #blacklistedKernelModules = [ ];
   };
 
-  hardware.opengl.driSupport32Bit = true;
+  hardware.graphics.enable32Bit = true;
 
   environment.sessionVariables = rec {
     XDG_CACHE_HOME  = "$HOME/.cache";
