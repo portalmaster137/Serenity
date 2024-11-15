@@ -38,7 +38,8 @@
          #prin "\n \n Terminal" "Kitty"
         info "\n \n Terminal Font" term_font
          #prin "\n \n Terminal Font" "Spleen"
-        info "\n \n Model" model
+	info "Device" hostname
+         #info "\n \n Model" model
          #prin "\n \n Motherboard" "MSI Z97 G3"
          #prin "\n \n Device" "Thinkpad T470s"
         info "\n \n Processor" cpu
