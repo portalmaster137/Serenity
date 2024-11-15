@@ -1,26 +1,27 @@
 { pkgs, config, ... }:
 
 let
+
   homedir = config.home.homeDirectory;
 
-  hostname = config.networking.hostName;
+   #hostname = config.system.nixos.distroId;
 
   nixsyu = pkgs.writeShellScriptBin "nixsyu" ''
-    cd ${homedir}/flakes/nixdots/ && sudo nix flake update &&
-    sudo nixos-rebuild switch --upgrade-all --flake ${homedir}/flakes/nixdots#${hostname} --show-trace
+    cd {$homedir}/flakes/nixdots/ && sudo nix flake update &&
+    sudo nixos-rebuild switch --upgrade-all --flake {$homedir}/flakes/nixdots#{$hostname} --show-trace
     && sudo nix-collect-garbage -d && sudo nix-store --optimise
   '';
 
   nixrb = pkgs.writeShellScriptBin "nixrb" ''
-    sudo nixos-rebuild switch --flake ${homedir}/flakes/nixdots#${hostname}
+    sudo nixos-rebuild switch --flake {$homedir}/flakes/nixdots#{$hostname}
   '';
 
   nixrbt = pkgs.writeShellScriptBin "nixrbt" ''
-    sudo nixos-rebuild switch --flake ${homedir}/flakes/nixdots#${hostname} --show-trace
+    sudo nixos-rebuild switch --flake {$homedir}/flakes/nixdots#{$hostname} --show-trace
   '';
 
   nixupg = pkgs.writeShellScriptBin "nixupg" ''
-    sudo nixos-rebuild switch --upgrade-all --flake ${homedir}/flakes/nixdots#${hostname} --show-trace
+    sudo nixos-rebuild switch --upgrade-all --flake {$homedir}/flakes/nixdots#{$hostname} --show-trace
   '';
 
   nixcb = pkgs.writeShellScriptBin "nixcb" ''
@@ -28,15 +29,15 @@ let
   '';
 
   nixgc = pkgs.writeShellScriptBin "nixgc" ''
-    cd ${homedir}/flakes/nixdots/nixos && sudo nix-collect-garbage -d
+    cd {$homedir}/flakes/nixdots/nixos && sudo nix-collect-garbage -d
   '';
 
   nixu = pkgs.writeShellScriptBin "nixu" ''
-    cd ${homedir}/flakes/nixdots && sudo nix flake update
+    cd {$homedir}/flakes/nixdots && sudo nix flake update
   '';
 
   nixe = pkgs.writeShellScriptBin "nixe" ''
-    $EDITOR ${homedir}/flakes/nixdots/
+    $EDITOR {$homedir}/flakes/nixdots/
   '';
 
 in {
