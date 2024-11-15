@@ -1,8 +1,11 @@
+{ pkgs, config, ... }:
+
 {
   imports = [
-    ./misc.nix
+    ./startup.nix
     ./brightness.nix
     ./screenshot.nix
-    ./startup.nix
+    ./nix-utils
+    ./misc.nix
   ];
 }
