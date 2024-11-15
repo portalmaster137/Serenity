@@ -72,31 +72,31 @@
 
   environment.systemPackages = with pkgs; [
     dconf-editor # For editing dconf settings graphically 
-    xdg-utils
-    xdg-desktop-portal
-    xdg-desktop-portal-gtk
+     #xdg-utils
+     #xdg-desktop-portal
+     #xdg-desktop-portal-gtk
      #xdg-desktop-portal-wlr
      #xdg-desktop-portal-gnome
-    xdg-desktop-portal-hyprland
+     #xdg-desktop-portal-hyprland
   ];
 
   xdg.portal = {
-    enable = true;
+    enable = false;
     xdgOpenUsePortal = true;
     config = {
-      common.default = [ "gtk" "gnome" ];
+       #common.default = [ "gtk" "gnome" ];
        #hyprland.default = [ "gtk" "hyprland" "gnome" ];
     };
     extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
+       #xdg-desktop-portal-gtk
        #xdg-desktop-portal-wlr
-      xdg-desktop-portal-gnome
+       #xdg-desktop-portal-gnome
        #xdg-desktop-portal-hyprland
     ];
     configPackages = with pkgs; [
-      xdg-desktop-portal-gtk
+       #xdg-desktop-portal-gtk
        #xdg-desktop-portal-wlr
-      xdg-desktop-portal-gnome
+       #xdg-desktop-portal-gnome
        #xdg-desktop-portal-hyprland
     ];
   };
