@@ -3,16 +3,16 @@
 {
 
   imports = [
-    ./fonts.nix
+     #./file.nix
   ];
 
   nixpkgs = {
 
     config = {
       allowUnfree = true;
+      ## Place insecure packages here
       permittedInsecurePackages = [
       ];
-       #allowUnsupportedSystem = true;
     };
 
   ## [START - Stolen code, no clue how it works :3 ]
@@ -44,13 +44,6 @@
     })
     config.nix.registry;
   ## [END - Stolen code, mostly understand from here again]
-
-  hardware.opentabletdriver = {
-    enable = true;
-     #package = [ ];
-     #daemon.enable = true;
-     #blacklistedKernelModules = [ ];
-  };
 
   environment.sessionVariables = rec {
 	  XDG_CACHE_HOME  = "$HOME/.cache";
