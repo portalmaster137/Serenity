@@ -7,9 +7,7 @@ let
    #hostname = config.system.nixos.distroId;
 
   nixsyu = pkgs.writeShellScriptBin "nixsyu" ''
-    cd {$homedir}/flakes/nixdots/ && sudo nix flake update &&
-    sudo nixos-rebuild switch --upgrade-all --flake {$homedir}/flakes/nixdots#{$hostname} --show-trace
-    && sudo nix-collect-garbage -d && sudo nix-store --optimise
+    cd {$homedir}/flakes/nixdots && sudo nix flake update && sudo nixos-rebuild switch --upgrade-all --flake {$homedir}/flakes/nixdots#{$hostname} --show-trace && sudo nix-collect-garbage -d && sudo nix-store --optimise
   '';
 
   nixrb = pkgs.writeShellScriptBin "nixrb" ''
@@ -37,7 +35,7 @@ let
   '';
 
   nixe = pkgs.writeShellScriptBin "nixe" ''
-    $EDITOR {$homedir}/flakes/nixdots/
+    $EDITOR {$homedir}/flakes/nixdots
   '';
 
 in {
