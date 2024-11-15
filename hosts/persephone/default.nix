@@ -13,6 +13,9 @@
 
   ];
 
+  ## ooh, hostname - this one's important!
+  networking.hostName = "persephone";
+
   hardware = {
 
     ## Enable bluetooth inside Persephone

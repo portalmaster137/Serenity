@@ -7,8 +7,6 @@
   ];
 
   networking = {
-    ## ooh, hostname - that one's important!
-    hostName = "hades";
     wireless.enable = false;
     nameservers = [ "127.0.0.1" "::1" ];
     networkmanager = {

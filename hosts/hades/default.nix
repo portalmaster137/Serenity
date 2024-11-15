@@ -12,6 +12,9 @@
 
   ];
 
+  ## ooh, hostname - this one's important!
+  networking.hostName = "hades";
+
   hardware = {
 
     ## No bluetooth inside Hades (yet)
