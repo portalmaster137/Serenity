@@ -7,8 +7,8 @@ let
     if pgrep wofi; then
     	pkill wofi
     else
-    	wofi --show drun
-    end
+    	${pkgs.wofi}/bin/wofi --show drun
+    fi
   '';
 
   powermenu = pkgs.writeShellScriptBin "powermenu" ''
@@ -16,7 +16,7 @@ let
     	pkill wlogout
     else
       ${pkgs.wlogout}/bin/wlogout
-    end
+    fi
   '';
 
   vault = pkgs.writeShellScriptBin "vault" ''
