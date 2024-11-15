@@ -5,7 +5,7 @@
     ./startup.nix
     ./brightness.nix
     ./screenshot.nix
-    ./nix-utils
+    ./nix-utils.nix
     ./misc.nix
   ];
 }
