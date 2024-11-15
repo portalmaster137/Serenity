@@ -8,6 +8,10 @@
   ...
 }: {
 
+  imports = [
+    ./scripts
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     systemd = {
@@ -56,13 +60,13 @@
 
       bind = [
         "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty"
-        "$shiftMod, RETURN, exec, ${pkgs.wofi}/bin/kitty --class floating kitty"
+        "$shiftMod, RETURN, exec, ${pkgs.kitty}/bin/kitty --class floating kitty"
         "$mod, E, exec, ${pkgs.kitty}/bin/kitty yazi"
         "$mod, B, exec, ${pkgs.firefox}/bin/firefox"
         "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock"
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock"
-        "$mod, X, exec, ${pkgs.powermenu}/bin/powermenu"
-        "$mod, SPACE, exec, ${pkgs.menu}/bin/menu"
+        "$mod, X, exec, powermenu"
+        "$mod, SPACE, exec, menu"
         # Windows control
         #"$mod, TAB, layoutmsg, togglesplit"
         "$mod, A, layoutmsg, swapwithmaster master"
