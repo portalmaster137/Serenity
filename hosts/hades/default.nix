@@ -41,7 +41,7 @@
       opencl.enable = true;
       ## Vulkan packages for the dGPU inside Hades
       amdvlk = {
-        enable = true;
+        enable = false;
          #package = [ ];
          #support32Bit.enable = true;
          #supportExperimental.enable = true;
