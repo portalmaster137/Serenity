@@ -32,6 +32,16 @@
 
   programs = {
     ## I wanted this in the user-level area
+
+    gamescope = {
+      enable = true;
+      capSysNice = true;
+      args = [
+        "--rt"
+	"--expose-wayland"
+      ];
+    };
+
     steam = {
       enable = true;
       gamescopeSession = {
