@@ -45,16 +45,26 @@
       enable = true;
     };
 
+    ## Standard(?) xwayland implementation
+    xwayland = {
+      enable = true;
+       #package = [ ];
+       #defaultFontPath = "/run/current-system/sw/share/X11/fonts";
+    };
+
     ## Temporary, fuck vaxery or whatever his name is
     ## punk-ass motherfucker, swayfx looks neat
     hyprland = {
       enable = true;
-      xwayland.enable = true;
+      ## Hyprland's implementation of xwayland
+       #xwayland.enable = true;
     };
     
     ## enable sway window manager
     sway = {
       enable = true;
+      ## Sways implementation of xwayland
+       #xwayland.enable = true;
       package = pkgs.swayfx;
       wrapperFeatures.gtk = true;
     };
