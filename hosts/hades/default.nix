@@ -19,6 +19,7 @@
 
     graphics = {
       enable = true;
+      enable32Bit = true;
 
       ## Packages for the iGPU inside Hades
       extraPackages = with pkgs; [
