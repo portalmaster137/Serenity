@@ -21,37 +21,34 @@
   '';
 
   xdg.configFile."neofetch/config.conf".text = ''
-    # From: https://github.com/Chick2D/neofetch-themes/
-    # Made by https://github.com/Dan1jel 
 
     print_info() {
         prin "\n"
-        prin "\n \n Host" "Hades"
-        # info "\n \n OS" distro
-        prin "\n \n OS" "Serenity OS (NixOS)"
+	prin "\n \n OS" "SerenityOS"
+        info "\n \n Distro" distro
         info "\n \n Kernel" kernel
-        # info "\n \n Packages" packages
-        # info "\n \n Desktop" de
-        prin "\n \n Desktop" "Hyprland (wayland)"
-        # info "\n \n Shell" shell
-        prin "\n \n Shell" "Fish"
-        # info "\n \n Editor" editor
-        prin "\n \n Editor" "Neovim"
-        # info "\n \n Terminal" term
-        prin "\n \n Terminal" "Kitty"
-        # info "\n \n Terminal Font" term_font
-        prin "\n \n Terminal Font" "Spleen"
-        # info "\n \n Model" model
-        prin "\n \n Motherboard" "MSI Z97 G3"
-        # prin "\n \n Device" "Thinkpad T470s"
+        info "\n \n Packages" packages
+        info "\n \n Desktop" de
+         #prin "\n \n Desktop" "Hyprland (wayland)"
+        info "\n \n Shell" shell
+         #prin "\n \n Shell" "Fish"
+        info "\n \n Editor" editor
+         #prin "\n \n Editor" "Neovim"
+        info "\n \n Terminal" term
+         #prin "\n \n Terminal" "Kitty"
+        info "\n \n Terminal Font" term_font
+         #prin "\n \n Terminal Font" "Spleen"
+        info "\n \n Model" model
+         #prin "\n \n Motherboard" "MSI Z97 G3"
+         #prin "\n \n Device" "Thinkpad T470s"
         info "\n \n Processor" cpu
         info "\n \n Memory" memory
-        # info "\n \n GPU" gpu
-        prin "\n \n Graphics" "Radeon RX 5700XT"
-        # info "\n \n Resolution" resolution
-        # info "\n \n Uptime" uptime
+        info "\n \n GPU" gpu
+         #prin "\n \n Graphics" "Radeon RX 5700XT"
+         #info "\n \n Resolution" resolution
+         #info "\n \n Uptime" uptime
         prin "\n"
-        prin "\n"
+         #prin "\n"
 
     }
 

@@ -12,6 +12,7 @@
 
     ## Import program configs
      #./nixvim
+    ./neofetch.nix
     ./kitty.nix
     ./fish.nix
     ./git.nix
