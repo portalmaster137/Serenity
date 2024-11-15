@@ -2,7 +2,7 @@
 **Configuration for system, applications, themes, and more; shared between multiple machines and users.**<br>
 <br>
 *Very much WIP and mostly stolen code at this point.*<br>
-*A to do list can be found [here.](https://link.is.missing/soon_tm)*
+*A to do list can be found [here.](./README.md)*
 
 ## Attributions:
  - **Artwork & Media**
