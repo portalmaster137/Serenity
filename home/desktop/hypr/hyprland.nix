@@ -142,10 +142,12 @@
 
       decoration = {
         rounding = config.theme.rounding;
-        drop_shadow = true;
-        shadow_range = 25;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(00000055)";
+	shadow = {
+          enabled = true;
+          range = 25;
+          render_power = 3;
+          color = "rgba(00000055)";
+	};
         blur = { enabled = true; };
       };
 
