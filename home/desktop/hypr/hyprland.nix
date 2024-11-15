@@ -61,8 +61,8 @@
         "$mod, B, exec, ${pkgs.firefox}/bin/firefox"
         "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock"
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock"
-        "$mod, X, exec, powermenu"
-        "$mod, SPACE, exec, menu"
+        "$mod, X, exec, ${pkgs.powermenu}/bin/powermenu"
+        "$mod, SPACE, exec, ${pkgs.menu}/bin/menu"
         # Windows control
         #"$mod, TAB, layoutmsg, togglesplit"
         "$mod, A, layoutmsg, swapwithmaster master"
