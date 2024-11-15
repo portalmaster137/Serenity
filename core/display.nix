@@ -57,14 +57,14 @@
     hyprland = {
       enable = true;
       ## Hyprland's implementation of xwayland
-       #xwayland.enable = true;
+      xwayland.enable = true;
     };
     
     ## enable sway window manager
     sway = {
       enable = true;
       ## Sways implementation of xwayland
-       #xwayland.enable = true;
+      xwayland.enable = true;
       package = pkgs.swayfx;
       wrapperFeatures.gtk = true;
     };
@@ -85,13 +85,13 @@
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
        #xdg-desktop-portal-wlr
-       #xdg-desktop-portal-gnome
+      xdg-desktop-portal-gnome
       xdg-desktop-portal-hyprland
     ];
     configPackages = with pkgs; [
       xdg-desktop-portal-gtk
        #xdg-desktop-portal-wlr
-       #xdg-desktop-portal-gnome
+      xdg-desktop-portal-gnome
       xdg-desktop-portal-hyprland
     ];
   };
