@@ -86,7 +86,7 @@
 
   systemd = {
     packages = with pkgs; [
-      lacy
+      lact
     ];
     services.lactd.wantedBy = [ "multi-user.target" ];
   };
