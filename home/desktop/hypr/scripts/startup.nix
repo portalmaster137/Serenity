@@ -22,7 +22,10 @@ let
 
     systemctl --user start sops-nix
 
-    battery-notif &
+    systemctl --user start hyprpolkitagent
+
+    swww-daemon & sleep 0.1
+
   '';
 
 in {

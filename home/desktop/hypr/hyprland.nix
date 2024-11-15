@@ -55,8 +55,8 @@
       ];
 
       bind = [
-        "$shiftMod, RETURN, exec, ${pkgs.wofi}/bin/wofi"
         "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty"
+        "$shiftMod, RETURN, exec, ${pkgs.wofi}/bin/kitty --class floating kitty"
         "$mod, E, exec, ${pkgs.kitty}/bin/kitty yazi"
         "$mod, B, exec, ${pkgs.firefox}/bin/firefox"
         "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock"
