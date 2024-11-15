@@ -8,7 +8,7 @@ let
     	pkill wofi
     else
     	wofi --show drun
-    fi
+    end
   '';
 
   powermenu = pkgs.writeShellScriptBin "powermenu" ''
@@ -16,15 +16,11 @@ let
     	pkill wlogout
     else
       ${pkgs.wlogout}/bin/wlogout
-    fi
-  '';
-
-  wireguard-import = pkgs.writeShellScriptBin "wireguard-import" ''
-    nmcli connection import type wireguard file "$1"
+    end
   '';
 
   vault = pkgs.writeShellScriptBin "vault" ''
     nvim $HOME/Nextcloud/obsidian
   '';
 
-in { home.packages = with pkgs; [ menu wireguard-import powermenu vault ]; }
+in { home.packages = with pkgs; [ menu powermenu vault ]; }
