@@ -80,25 +80,25 @@
      #xdg-desktop-portal-hyprland
   ];
 
-  xdg.portal = {
-    enable = false;
-    xdgOpenUsePortal = true;
-    config = {
+   #xdg.portal = {
+     #enable = true;
+     #xdgOpenUsePortal = true;
+     #config = {
        #common.default = [ "gtk" "gnome" ];
        #hyprland.default = [ "gtk" "hyprland" "gnome" ];
-    };
-    extraPortals = with pkgs; [
+     #};
+     #extraPortals = with pkgs; [
        #xdg-desktop-portal-gtk
        #xdg-desktop-portal-wlr
        #xdg-desktop-portal-gnome
        #xdg-desktop-portal-hyprland
-    ];
-    configPackages = with pkgs; [
+     #];
+     #configPackages = with pkgs; [
        #xdg-desktop-portal-gtk
        #xdg-desktop-portal-wlr
        #xdg-desktop-portal-gnome
        #xdg-desktop-portal-hyprland
-    ];
-  };
+     #];
+   #};
 
 }

@@ -26,11 +26,13 @@ let
 
     swww-daemon & sleep 0.1
 
+    swww img ~/flakes/nixdots/resources/wallpapers/sphericaEssentia-uncredited.png
+
   '';
 
 in {
   home.packages = with pkgs; [
     startup
-    battery-notif
+     #battery-notif
   ];
 }

@@ -42,8 +42,6 @@
 
       exec-once = [
         "startup"
-	"systemctl --user start hyprpolkitagent"
-        "swww-daemon & sleep 0.1"
          #"otd-gui"
 	 #"${pkgs.udiskie}/bin/udiskie"
          #"${pkgs.hypridle}/bin/hypridle"
@@ -60,7 +58,7 @@
 
       bind = [
         "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty"
-        "$shiftMod, RETURN, exec, ${pkgs.kitty}/bin/kitty --class floating kitty"
+        "$shiftMod, RETURN, exec, ${pkgs.kitty}/bin/kitty --class floating"
         "$mod, E, exec, ${pkgs.kitty}/bin/kitty yazi"
         "$mod, B, exec, ${pkgs.firefox}/bin/firefox"
         "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock"
