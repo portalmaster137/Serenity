@@ -30,6 +30,8 @@
 
   programs = {
 
+  java.enable = true;
+
     ## "GameMode"
     gamemode = {
       enable = true;
@@ -48,6 +50,7 @@
     ## Steam itself
     steam = {
       enable = true;
+       #remotePlay.openFirewall = true;
       gamescopeSession = {
         enable = true;
       };
