@@ -21,6 +21,7 @@
       extraGroups = [
         "wheel"
         "networkmanager"
+	"gamemode"
       ];
       ## be sure to change this with 'passwd'
       initialPassword = "password";

@@ -29,8 +29,13 @@
   };
 
   programs = {
-    ## I wanted this in the user-level area
 
+    ## "GameMode"
+    gamemode = {
+      enable = true;
+    };
+
+    ## Gamescope compositor for steam
     gamescope = {
       enable = true;
       capSysNice = true;
@@ -40,6 +45,7 @@
       ];
     };
 
+    ## Steam itself
     steam = {
       enable = true;
       gamescopeSession = {
@@ -66,6 +72,7 @@
       extraPackages = with pkgs; [
         gamescope
       ];
+      ## Gotta have the glorious eggroll
       extraCompatPackages = with pkgs; [
         proton-ge-bin
       ];
