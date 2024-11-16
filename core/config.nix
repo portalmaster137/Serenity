@@ -11,9 +11,10 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ## Semi-modularised config
+    ./desktop-misc.nix # stuff that doesn't work in home-manager :(
     ./packages.nix # system-level packages here - needs tidying
     ./display.nix # declarations for display management
-     #./gaming.nix # for gaming stuff, ideally would be in home/
+    ./gaming.nix # for gaming stuff, ideally would be in home/
     ./audio.nix # sound go bwuuuaaaahhhhhhhh
     ../home/users # user-level packages here
   ];
