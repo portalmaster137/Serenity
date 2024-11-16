@@ -5,7 +5,8 @@
   imports = [
 
   ## Import themes and scripts
-  ../../common/themes
+  ./themes
+   #./scripts
 
   ## Import common desktop configs
   ./hyprcursor.nix
