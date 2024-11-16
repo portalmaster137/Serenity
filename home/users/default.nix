@@ -1,16 +1,10 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}:
+{ self, inputs, outputs, lib, config, pkgs, ... }:
 
 {
 
   imports = [
     inputs.home-manager.nixosModules.default
+    ../desktop/resources/themes/default.nix
   ];
    
   users.users = {

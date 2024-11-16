@@ -5,7 +5,7 @@
   imports = [
 
   ## Import themes and scripts
-  ./themes
+   #./themes
    #./scripts
 
   ## Import common desktop configs

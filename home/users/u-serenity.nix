@@ -1,19 +1,14 @@
-{ 
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs, 
-  ...
-}: {
+{ self, inputs, outputs, lib, config, pkgs, ... }:
+
+{
 
   imports = [
-    ../common
-    ../common/themes/SerenityOS.nix
+    ## Import user theme
+    ../desktop/resources/themes/SerenityOS.nix
   ];
 
   home = {
-
+    ## Declare user specific packages
     packages = with pkgs; [
 
     ]; 
