@@ -15,8 +15,9 @@
     ./kitty.nix
     ./fish.nix
     ./btop.nix
+    ./yazi.nix
     ./git.nix
-     #./nvim
+    ./nvim
 
   ];
 
@@ -32,7 +33,7 @@
       ## Chat & Web
        #lagrange # Browser for the gemini protocol
       vesktop # Modded discord wrapper
-       #fractal # GTK matrix client - need to fix gnome-keyring
+      fractal # GTK matrix client - need to fix gnome-keyring
        #tor # The Onion Router
 
       ## Media
