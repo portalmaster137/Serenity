@@ -12,6 +12,7 @@
       allowUnfree = true;
       ## Place insecure packages here
       permittedInsecurePackages = [
+        "olm-3.2.16" 
       ];
     };
 
