@@ -15,7 +15,7 @@
         - [X] programs
         - [X] services
         - [X] scripts
-            - [ ] figure them all out
+            - [X] figure them all out
             - [X] delete the unneeded stuff
         - [ ] themes & resources
             - [ ] figure out themes imports
