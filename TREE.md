@@ -1,3 +1,4 @@
+```
 .
 │
 ├── README.md
@@ -62,4 +63,4 @@
         ├── default.nix
         ├── hardware-configuration.nix
         └── modules
-
+```
