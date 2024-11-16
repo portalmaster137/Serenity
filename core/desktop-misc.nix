@@ -5,6 +5,9 @@
   imports = [
   ];
 
+  ## Dunno if i did this right, but possible needed for keyring/polkit stuff ? 
+  security.pam.services.serenity.enableGnomeKeyring = true;
+
   programs = {
     ## For when bimbo needs to play with platters and cbf to deal with cli
     gnome-disks.enable = true;

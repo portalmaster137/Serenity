@@ -13,6 +13,8 @@
 
   services = {
 
+    ## Eventual login greeter/display manager,
+    ## wayland native.
     greetd = {
       enable = true;
       settings.default_session = {
@@ -22,6 +24,8 @@
 
   };
 
+  ## Eventual login greeter/display manager,
+  ## wayland native.
   programs.regreet = {
     enable = true;
   };

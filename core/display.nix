@@ -4,7 +4,7 @@
   imports = [
     ## planning to have a discrete config file for
     ## the greeter(s) to keep this file tidy.
-     #./regreet-config.nix
+    ./regreet-config.nix
      #./sddm-config.nix
   ];
 
@@ -23,26 +23,11 @@
         wayland.enable = true;
       };
     };
-    ## Eventual login greeter/display manager,
-    ## wayland native.
-     #greetd = {
-        #enable = true;
-        #settings.default_session = {
-          #command = "${pkgs.greetd.regreet}/bin/regreet";
-        #};
-     #};
 
   };
 
-  ## Dunno if i did this right, but possible needed for keyring/polkit stuff ? 
-  security.pam.services.serenity.enableGnomeKeyring = true;
-
   programs = {
 
-    ## Eventual login greeter/display manager,
-    ## wayland native.
-     #regreet.enable = true;
-    
     dconf = {
       enable = true;
     };
