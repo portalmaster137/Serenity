@@ -13,43 +13,31 @@
   ];
 
   ## ooh, hostname - this one's important!
-  networking.hostName = "hades";
+  networking.hostName = "orcus";
 
   hardware = {
 
-    ## No bluetooth inside Hades (yet)
+    ## No bluetooth inside Orcus
     bluetooth.enable = false;
 
+    ## Packages for the iGPU inside Orcus
     graphics = {
       enable = true;
-       #enable32Bit = false;
-
-      ## Packages for the iGPU inside Hades
+      enable32Bit = true;
       extraPackages = with pkgs; [
-         #intel-compute-runtime
-  	 #intel-media-driver
-  	 #vaapiIntel
-  	 #vaapiVdpau
-  	 #libvdpau-va-gl		
+        intel-compute-runtime
+        intel-media-driver
+  	libvdpau-va-gl
+  	vaapiIntel
+  	vaapiVdpau
       ];
-
     };
 
-    ## Packages for the dGPU inside Hades
-    amdgpu = {
-      initrd.enable = true;
-      opencl.enable = true;
-      ## Vulkan packages for the dGPU inside Hades
-      amdvlk = {
-         #enable = false;
-         #package = [ ];
-         #support32Bit.enable = false;
-         #supportExperimental.enable = false;
-         #settings = {
-         #};
-      };
-    };
 
+
+  };
+
+  services = {
   };
 
   programs = {
@@ -57,38 +45,14 @@
     ## For tweaking system performance
     corectrl = {
       enable = true;
-      ## Allows tweaking GPU performance
-      gpuOverclock = {
-        enable = true;
-        ## Needed for radeon GPU overclocking
-        ppfeaturemask = "0xfffd7fff";
-      };
     };
-    ## Performance tweaking continued
-    tuxclocker = {
-      enable = false;
-      enableAMD = true;
-      useUnfree = true;
-    };
+
+
 
   };
 
   ## Some packages for managing the hardware inside Hades
   environment.systemPackages = with pkgs; [
-     #umr
-    lact
-    radeontop
-     #amdgpu_top
-     #radeontools
-     #radeon-profile
-    nvtopPackages.amd
   ];
-
-  systemd = {
-    packages = with pkgs; [
-      lact
-    ];
-    services.lactd.wantedBy = [ "multi-user.target" ];
-  };
 
 }

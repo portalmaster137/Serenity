@@ -20,21 +20,19 @@
     ## No bluetooth inside Hades (yet)
     bluetooth.enable = false;
 
+    ## GPU and graphics
     graphics = {
       enable = true;
        #enable32Bit = false;
-
       ## Packages for the iGPU inside Hades
       extraPackages = with pkgs; [
          #intel-compute-runtime
   	 #intel-media-driver
+  	 #libvdpau-va-gl
   	 #vaapiIntel
   	 #vaapiVdpau
-  	 #libvdpau-va-gl		
       ];
-
     };
-
     ## Packages for the dGPU inside Hades
     amdgpu = {
       initrd.enable = true;
@@ -49,11 +47,9 @@
          #};
       };
     };
-
   };
 
   programs = {
-
     ## For tweaking system performance
     corectrl = {
       enable = true;
@@ -66,11 +62,10 @@
     };
     ## Performance tweaking continued
     tuxclocker = {
-      enable = false;
+      enable = true;
       enableAMD = true;
       useUnfree = true;
     };
-
   };
 
   ## Some packages for managing the hardware inside Hades
@@ -84,6 +79,7 @@
     nvtopPackages.amd
   ];
 
+  ## Systemd services for lact
   systemd = {
     packages = with pkgs; [
       lact
