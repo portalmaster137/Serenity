@@ -30,8 +30,9 @@
 ##
 
 {
-  description = "SerenityOS v0.6.9"; # Nice!
+  description = "SerenityOS v0.6.95"; # Nice!
   ## Latest features:
+  ## - ReGreet implemented, yet to be tested
   ## - Huge progress on getting Steam working, not 100% yet
   ## - Repo makeover completed! codeberg.org/serenity-F/nixdots
   ## - Credited wallpaper artwork, and linked to code inspo
