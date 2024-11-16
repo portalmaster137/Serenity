@@ -33,7 +33,7 @@
       ];
     };
 
-    dconf.enable = false;
+    dconf.enable = true;
   };
 
   services = {
