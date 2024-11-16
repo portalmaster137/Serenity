@@ -4,6 +4,7 @@
 
   imports = [
     ## Import user theme
+    ../desktop/resources/themes
     ../desktop/resources/themes/SerenityOS.nix
     ## Import shared home config
     ../common
