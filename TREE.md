@@ -1,6 +1,7 @@
 .
 │
 ├── README.md
+├── TREE.md
 │
 ├── flake.nix
 │
@@ -15,16 +16,17 @@
 ├── home
 │   ├── common
 │   │   ├── default.nix
-│   │   ├── nixvim
+│   │   ├── nvim
 │   │   │   └── plugins
 │   │   ├── opentabletdriver
 │   │   │   └── profiles
 │   │   └── systemd-services
-│   │       └── default.nix
 │   │
 │   │ 
 │   ├── desktop
 │   │   ├── default.nix
+│   │   ├── xdg-mime.nix
+│   │   ├── gtk-qt.nix
 │   │   ├── resources
 │   │   │   ├── icons
 │   │   │   ├── themes
@@ -35,6 +37,7 @@
 │   │   │   └── scripts
 │   │   └── sway
 │   │       ├── default.nix
+│   │       ├── config.nix
 │   │       └── sway.nix
 │   │ 
 │   │ 

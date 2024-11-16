@@ -6,19 +6,19 @@
 
 ## Attributions:
  - **Artwork & Media**
+    - [Vincent Van Gogh](https://en.wikipedia.org/wiki/Almond_Blossoms)
 	- [Helvetica Blanc](https://helveticablanc.com/)
+    - [dpcdpc11](https://dpcdpc11.gumroad.com/l/BLQpp)
     - Others yet to be named
 
  - **Code & Inspiration** *( to be linked Soon [TM] )*
-	- Queer Syndicate
 	- Sashanoraa
-	- Wonder Collective
-	- Hive/Bits
+    - Syndicate
+	- Wonder
+	- Hive
     - [Quantenzitrone](https://codeberg.org/quantenzitrone/nixos-config/src/branch/main)
+	- [LibrePhoenix](https://github.com/librephoenix/nixos-config)
 	- [anotherhadi](https://github.com/anotherhadi/nixy)
-	- fufexan
-	- FrostPhoenix
-	- HeinzDev
-	- LibrePhoenix
-	- vimjoyer
-
+	- [HeinzDev](https://github.com/HeinzDev/Hyprland-dotfiles)
+	- [vimjoyer](https://github.com/vimjoyer)
+	- [fufexan](https://github.com/fufexan/dotfiles)
