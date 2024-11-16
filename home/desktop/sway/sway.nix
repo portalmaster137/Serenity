@@ -9,15 +9,14 @@
 }: {
 
   imports = [
-
+    #./sway-style.nix
+    ../hypr/scripts
   ];
 
   wayland.windowManager.sway = {
-
-    checkConfig = false;
-
-    xwayland = true;
     enable = true;
+    xwayland = true;
+    checkConfig = false;
     package = pkgs.swayfx;
     systemd = {
       enable = true;
@@ -30,14 +29,25 @@
 
     config = rec {
       modifier = "Mod4";
+      ## Use Wofi as menu
+      menu = "wofi";
       ## Use kitty as default terminal
       terminal = "kitty";
       startup = [
-        {command = "firefox";}
+        {command = "startup";}
         {command = "kitty";}
 
-
       ];
+
+      focus = {
+        followMouse = "true";
+	mouseWarping = "false";
+	newWindow = "smart";
+      };
+
+      
+
+
     };
      #extraConfig = {
      #};
