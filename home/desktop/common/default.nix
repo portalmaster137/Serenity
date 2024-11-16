@@ -63,10 +63,10 @@
     ## GTK secrets management
     seahorse.enable = true;
     ## Apparently nm-applet has a programs option
-    nm-applet = {
-      enable = true;
+     #nm-applet = {
+       #enable = true;
        #indicator = false;
-    };
+     #};
     ## idk something for nautilus
      #nautilus-open-any-terminal = {
        #enable = true;
