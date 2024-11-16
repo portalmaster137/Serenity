@@ -16,7 +16,7 @@
     ./fish.nix
     ./btop.nix
     ./git.nix
-    ./nvim
+     #./nvim
 
   ];
 
