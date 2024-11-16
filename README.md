@@ -15,7 +15,7 @@
 	- Wonder Collective
 	- Hive/Bits
     - [Quantenzitrone](https://codeberg.org/quantenzitrone/nixos-config/src/branch/main)
-	- anotherhadi
+	- [anotherhadi](https://github.com/anotherhadi/nixy)
 	- fufexan
 	- FrostPhoenix
 	- HeinzDev
