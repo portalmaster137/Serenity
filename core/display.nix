@@ -32,21 +32,6 @@
         #};
      #};
 
-    ## Virtual filesystem, needed this for something i think ?
-    gvfs.enable = true;
-    gnome = {
-      ## File previewer for nautilus
-      sushi.enable = true;
-      ## "core utilities"
-      core-utilities.enable = true;
-      ## GNOME keyring
-      gnome-keyring.enable = true;
-      ## Makes all of /Public available over network
-      gnome-user-share.enable = true;
-      ## GUI system settings ?
-      gnome-settings-daemon.enable = true;
-    };
-
   };
 
   ## Dunno if i did this right, but possible needed for keyring/polkit stuff ? 
@@ -88,6 +73,14 @@
     };
   };
 
+  ## To start sway related services
+  systemd.user.targets.sway = {
+    description = "to start sway related services";
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+  };
+  
+
   environment.systemPackages = with pkgs; [
     xorg.xhost
      #dconf # redundant, adding for completeness
@@ -99,6 +92,25 @@
      #xdg-desktop-portal-gnome
      #xdg-desktop-portal-hyprland
   ];
+
+  ## I put fonts here because i didn't know where tf else to put them lol
+  ## CURRENTLY BROKEN, PLEASE FIX - Out of date ?
+  fonts = {
+    packages = with pkgs; [
+      spleen
+      terminus_font
+      terminus_font_ttf
+      (nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })  	  
+    ];
+    fontDir.enable = true;
+      fontconfig = {
+        defaultFonts = {
+          serif = [ "spleen-32x64" ];
+          sansSerif = [ "spleen-32x64" ];        
+          monospace = [ "TerminusTTF" ];
+        };
+      };
+  };
 
    #xdg.portal = {
      #enable = true;
@@ -122,24 +134,5 @@
        #xdg-desktop-portal-hyprland
      #];
    #};
-
-  ## I put fonts here because i didn't know where tf else to put them lol
-  ## CURRENTLY BROKEN, PLEASE FIX - Out of date ?
-  fonts = {
-    packages = with pkgs; [
-      spleen
-      terminus_font
-      terminus_font_ttf
-      (nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })  	  
-    ];
-    fontDir.enable = true;
-      fontconfig = {
-        defaultFonts = {
-          serif = [ "spleen-32x64" ];
-          sansSerif = [ "spleen-32x64" ];        
-          monospace = [ "TerminusTTF" ];
-        };
-      };
-  };
 
 }

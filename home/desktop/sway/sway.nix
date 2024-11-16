@@ -18,6 +18,10 @@
     xwayland = true;
     checkConfig = false;
     package = pkgs.swayfx;
+    wrapperFeatures = {
+      base = true;
+      gtk = true;
+    };
     systemd = {
       enable = true;
        #xdgAutostart = true;
