@@ -10,7 +10,6 @@
 
   ## Import common desktop configs
   ./hyprcursor.nix
-  ./hyprpaper.nix
   ./hyprlock.nix
   ./hypridle.nix
   ./udiskie.nix
