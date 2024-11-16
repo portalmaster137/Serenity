@@ -19,10 +19,10 @@
       indicator = false;
     };
     ## idk something for nautilus
-    nautilus-open-any-terminal = {
-      enable = true;
-      terminal = "kitty";
-    };
+     #nautilus-open-any-terminal = {
+       #enable = true;
+       #terminal = "kitty";
+     #};
 
     obs-studio = {
       enable = true;
