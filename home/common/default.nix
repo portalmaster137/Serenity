@@ -11,12 +11,12 @@
     ./systemd-services
 
     ## Import program configs
-     #./nixvim
-    ./neofetch.nix
+    ./fetch.nix
     ./kitty.nix
     ./fish.nix
     ./btop.nix
     ./git.nix
+    ./nvim
 
   ];
 
