@@ -12,7 +12,7 @@
 
     ## Import program configs
      #./nixvim
-    ./obs-studio.nix
+     #./obs-studio.nix
     ./neofetch.nix
     ./kitty.nix
     ./fish.nix
