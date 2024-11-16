@@ -30,11 +30,16 @@
 ##
 
 {
-  description = "SerenityOS v0.6.8";
+  description = "SerenityOS v0.6.9"; # Nice!
   ## Latest features:
-  ## - Attempting to implement proper XDG configuration.
-  ## - Work on commenting, reformating, and refactoring flake clode is progressing steadily.
-  ## - SwayWM implemented, currently incomplete.
+  ## - Huge progress on getting Steam working, not 100% yet
+  ## - Repo makeover completed! codeberg.org/serenity-F/nixdots
+  ## - Credited wallpaper artwork, and linked to code inspo
+  ## - Attempting to ensure XDG was properly configured
+  ## - Added Lix to flake inputs, yet to configure
+  ## - Added flake parts and utils, yet to configure
+  ## - Minor updates to SwayFX config
+  ## - Work on commenting and reformating flake is ongoing
 
   inputs = {
   
