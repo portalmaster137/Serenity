@@ -23,15 +23,6 @@
 
   home = {
 
-    pointerCursor = {
-      gtk.enable = true;
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
-      size = 12;
-    };
-
-    sessionVariables.GTK_THEME = "Adwaita-dark";
-
     packages = with pkgs; [
 
       ## Games
@@ -89,20 +80,12 @@
     nheko.enable = true; # Matrix client for qt kitties
     neovim = { # Zoomer text editor
       enable = true;
-      defaultEditor = true; # Default but keeping micro around
+      defaultEditor = true;
     };
 
   };
 
   services = {
-    kdeconnect = { # Mobile <-> Desktop interaction
-      enable = true;
-      indicator = true;
-    };
-    gnome-keyring = { # GTK keyring for login/sudo/ssh/gpg prompts
-      enable = true;
-       #components = [ ];
-    };
   };
 
   home = {
