@@ -2,16 +2,17 @@
 **Configuration for system, applications, themes, and more; shared between multiple machines and users.**<br>
 <br>
 *Very much WIP and mostly stolen code at this point.*<br>
-*A to do list can be found [here.](./TODO.md)*
+*A to do list can be found [here.](https://codeberg.org/serenity-F/nixdots/issues)*<br>
+*A "prettified" structure can be found [here.](./TREE.md)*
 
 ## Attributions:
- - **Artwork & Media**
+ - **Artwork**
     - [Vincent Van Gogh](https://en.wikipedia.org/wiki/Almond_Blossoms)
 	- [Helvetica Blanc](https://helveticablanc.com/)
     - [dpcdpc11](https://dpcdpc11.gumroad.com/l/BLQpp)
     - Others yet to be named
 
- - **Code & Inspiration** *( to be linked Soon [TM] )*
+ - **Code & Inspiration**
 	- Sashanoraa
     - Syndicate
 	- Wonder
