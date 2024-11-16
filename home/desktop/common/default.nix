@@ -101,11 +101,12 @@
 
     packages = with pkgs; [
       ## auth/security
-      polkit-kde-agent
-      hyprpolkitagent
-      gnome-keyring
-      gnome-secrets
-      seahorse
+      polkit-kde-agent # KDE native polkit agent
+      hyprpolkitagent # Hyprland native polkit agent
+      gnome-keyring # Keyring for login prompts
+      gnome-secrets # GTK password manager
+      seahorse # GTK secrets managment
+      soteria # GTK/rust desktop-agnostic polkit agent
 
       ## desktop
       swww # Wallpaper daemon

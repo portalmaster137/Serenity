@@ -25,8 +25,11 @@
   ## Genuinely dunno what these do hey, like isnt sudo
   ## already restricted to @wheel only?
   security = {
-    polkit.enable = true;
     sudo.execWheelOnly = true;
+    polkit = {
+      enable = true;
+      extraConfig = '' '';
+    };
   };
 
   nix = {
