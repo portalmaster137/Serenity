@@ -45,23 +45,7 @@
     config.nix.registry;
   ## [END - Stolen code, mostly understand from here again]
 
-  environment.sessionVariables = rec {
-	  XDG_CACHE_HOME  = "$HOME/.cache";
-	  XDG_CONFIG_HOME = "$HOME/.config";
-	  XDG_BIN_HOME    = "$HOME/.local/bin";
-	  XDG_DATA_HOME   = "$HOME/.local/share";
-	  # Steam needs this to find Proton-GE
-	  STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
-	  # note: this doesn't replace PATH, it just adds this to it
-	  PATH = [ 
-	    "\${XDG_BIN_HOME}"
-	  ];
-  };
-
   programs = {
-
-    ## For when bimbo needs to play with platters and cbf to deal with cli
-    gnome-disks.enable = true;
 
     ## A catgirl's favourite shell - NEEDS OWN NIX MODULE
     fish = {
@@ -83,12 +67,6 @@
 
   };
 
-  ## GNOME stuff
-  services.gvfs.enable = true; # Virtual filesystem, needed this for something i think ?
-  services.gnome.gnome-keyring.enable = true; # maybe this fixey keyring OwO ?
-  services.gnome.gnome-settings-daemon.enable = true; # GUI settings ?
-  security.pam.services.serenity.enableGnomeKeyring = true; # dunno if i did this right, but possible needed for keyring/polkit stuff ?
-
   ## Wei have switched to neovim
   ## full-time, sorry Micro. <3
   environment.variables = {
@@ -96,6 +74,11 @@
     VISUAL = "neovim";
     SYSTEMD_EDITOR = "neovim";
   };
+
+  ## Install a stub ELF loader to print an informative
+  ## error message in the event that a user attempts
+  ## to run an ELF binary not compiled for NixOS.
+  environment.stub-ld.enable = true;
 
   ## All COMMON system-level packages declared here
   environment.systemPackages = with pkgs; [
@@ -116,76 +99,48 @@
     ## wei make a single "control" module using 'let bindings' anyway.
     ########
 
-
-
-    ########
-    ## Temporary desktop/user-level
-     #gitwatch
-     #waybar
-    udiskie
-    gparted
-    pavucontrol
-    networkmanager
-    seahorse
-     #polkit-gnome
-    gnome-keyring
-    polkit-kde-agent
-    xorg.xhost
-    android-tools
-    ########
-
-
-    ########
-    ## Jellyfin for home media share
-    ## Need to move this to its own module and call that to
-    ## save the 'core' from being bloated.
-     #jellyfin
-     #jellyfin-web
-     #jellyfin-ffmpeg
-    ########
-
     ## Nix specific tools
-    nix-tree
-     #nix-init
-     #nix-index
-     #nixpkgs-review
-    nix-output-monitor
+    nix-tree # Dependency tree viewer for nix store
+     #nix-init # Generate nix packages from URLs
+     #nix-index # Database for nixpkgs
+     #nixpkgs-review # Review nixpkgs PRs
+    nix-output-monitor # Shows extra information on nix commands
 
     ## Filsesystem utilities
-    xfsprogs
-    ddrutility
-    exfatprogs
-    btrfs-progs
-    ntfs3g
-     #ntfs2btrfs
-    scrounge-ntfs
+    xfsprogs # XFS filesystem
+    ddrutility #Set of tools for HDD rescure
+    exfatprogs # ExFAT filesystem
+    btrfs-progs # BTRFS filesystem
+    ntfs3g # NTFS filesystem
+     #ntfs2btrfs # Converts NTFS to BTRFS
+    scrounge-ntfs # NTFS data recovery
     
     ## CLI tools & utilities
-    fd
-    bc
-    zip
-    tldr
-    wget
-    curl
-    bash
-    file
-    tree
-     #btop
-     #micro
-    unzip
-    gnupg
-    s-tui
-    blueman
-    busybox
-    ripgrep
-    killall
-    usbutils
-    pciutils
-    moreutils
-    libsecret
-    git-crypt
-    undervolt
-    magic-wormhole
+    fd # Find, but faster
+    bc # Calculator
+    zip # What it says on the tin
+    btop # System metrics and process viewer
+    tldr # Simpler manual pages
+    wget # Retrieves files over HTTP, HTTPS, and FTP
+    curl # Pulls data from a URL
+    bash # Terminal shell
+    file # Shows type of files
+    tree # Tree view of directory structure
+    unzip # What it says on the tin
+    gnupg # Create encryption keys
+    s-tui # Metrics and stress testing
+    udiskie # Disk automount
+    busybox # Utilities
+    ripgrep # Searches files for a given input
+    killall # Kills all
+    usbutils # USB utils
+    pciutils # PCI utils
+    moreutils # Woah, even more utils
+    libsecret # Library for storing and retrieving secrets
+    git-crypt # Transparent file encryption in git
+    undervolt # Utility to change CPU settings
+    android-tools # Commands for interfacing with android devices
+    magic-wormhole # Direct file sharing
 
  ];
 

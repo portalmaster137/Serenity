@@ -24,55 +24,67 @@
   ];
 
   programs = {
-
+    ## For when bimbo needs to play with platters and cbf to deal with cli
+    gnome-disks.enable = true;
   };
 
   home.packages = with pkgs; [
 
-    ## desktop environment
-    swww
-     #fish # maybe broken?
-    kitty # Terminal emulator
-    waybar
-    ydotool # Click/Keypress emulator
-    zathura # PDF viewer
-    swayimg # Image viewer
-    cmatrix # For r/unixporn
-    hyfetch # Fetch, but queer
-     #peaclock # Clock but terminal
-    wlroots
-    wlsunset
-    wlr-randr
-    wl-clipboard
-    appimage-run # Runs appimages
-    brightnessctl
-    syncthing-tray # File synchronisation
-    networkmanagerapplet
+    ## auth/security
+    polkit-kde-agent
     hyprpolkitagent
-    hyprpicker
-    hyprcursor
-    hypridle
-    hyprlock
-    hyprshot
-
-    ## gnome stuff
-    dconf
+    gnome-keyring
+    gnome-secrets
     seahorse
-    nautilus # GTK file manager
-    gnome-keyring # GTK login keyring
-    gnome-secrets # GTK password vault manager
-    gnome-calendar # GTK Calendar
-    gnome-calculator # Quick maths
-    gnome-themes-extra
 
-    ## lib and compat
+    ## desktop
+    swww # Wallpaper daemon
+    dconf # GTK settings tweaker
+    waybar # Desktop status bar
+    blueman # GTK bluetooth manager
+    ydotool # Click/Keypress emulator
+    wlsunset # Blue light filter
+    wlr-randr # Display modesetting
+    wl-clipboard # Clipboard service
+    appimage-run # Runs appimages
+    brightnessctl # Control display brightness
+    syncthing-tray # File synchronisation
+    networkmanager # Network manager ...
+    networkmanagerapplet # Tray applet for networkmanager
+    gnome-control-center # GUI system settings
+    gnome-power-manager # GUI power and battery stats
+    gnome-calculator # GTK calculator
+    gnome-calendar # GTK calendar
+    pavucontrol # Volume control centre
+    hyprpicker # Colour picker
+    hyprcursor # Cursor, duh
+    hypridle # Sleep/idle service
+    hyprlock # Screen lock
+    hyprshot # Screenshot
+    nautilus # GTK File manager
+    swayimg # Terminal based image viewer
+    zathura # PDF viewer
+    gparted # GUI partition editor
+    kitty # Terminal emulator
+    sushi # Previewer for nautilus
+
+    ## fun
+    peaclock # Clock, but terminal
+    cmatrix # Terminal, but hacker
+    hyfetch # Fetch, but queer
+
+
+    ## misc, lib, compat
+    gnome-themes-extra
+    meson
+    wlroots
     xwayland
     wayland-utils
     wayland-protocols
-    meson
-    libva
-    libnotify
     libsForQt5.qt5ct
+    libnotify
+    libva
+     #gitwatch
   ];
 
 }

@@ -8,17 +8,21 @@
      #./sddm-config.nix
   ];
 
-  ## xserver still needed for xwayland stuff
-  services.xserver.enable = true;
+  services = {
 
-  ## Current login greeter/display manager,
-  ## set to run wayland.
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
+    ## xserver still needed for xwayland stuff
+    xserver.enable = true;
 
-
+    ## Current login greeter/display manager,
+    ## set to run wayland.
+    displayManager = {
+      enable = true;
+       #defaultSession = "sway";
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
+    };
   ## Eventual login greeter/display manager,
   ## wayland native.
    #services.greetd = {
@@ -27,6 +31,26 @@
          #command = "${pkgs.greetd.regreet}/bin/regreet";
        #};
    #};
+
+    ## Virtual filesystem, needed this for something i think ?
+    gvfs.enable = true;
+    gnome = {
+      ## File previewer for nautilus
+      sushi.enable = true
+      ## "core utilities"
+      core-utilities.enable = true;
+      ## GNOME keyring
+      gnome-keyring.enable = true;
+      ## Makes all of /Public available over network
+      gnome-user-share.enable = true;
+      ## GUI system settings ?
+      gnome-settings-daemon.enable = true;
+    };
+
+  };
+
+  ## Dunno if i did this right, but possible needed for keyring/polkit stuff ? 
+  security.pam.services.serenity.enableGnomeKeyring = true;
 
   programs = {
 
@@ -64,6 +88,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    xorg.xhost
+     #dconf # redundant, adding for completeness
     dconf-editor # For editing dconf settings graphically 
      #xdg-utils
      #xdg-desktop-portal

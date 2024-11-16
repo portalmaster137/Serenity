@@ -30,7 +30,8 @@
 
   programs = {
 
-  java.enable = true;
+    ## Java for some reason
+    java.enable = true;
 
     ## "GameMode"
     gamemode = {
