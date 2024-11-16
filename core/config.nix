@@ -28,7 +28,7 @@
     sudo.execWheelOnly = true;
     polkit = {
       enable = true;
-      extraConfig = '' '';
+       #extraConfig = '' '';
     };
   };
 
@@ -65,7 +65,10 @@
   hardware = {
     ## Enable all firmware modules
     enableAllFirmware = true;
-    sensor.hddtemp.enable = true;
+    sensor.hddtemp = {
+      enable = true;
+      drives = [ "/dev/disk/by-uuid/*" ];
+    };
     usbStorage.manageStartStop = true;
 
   };
