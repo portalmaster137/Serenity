@@ -3,9 +3,7 @@
 {
   imports = [
     ./startup.nix
-    ./brightness.nix
-    ./screenshot.nix
+    ./desktop.nix
     ./nix-utils.nix
-    ./misc.nix
   ];
 }
