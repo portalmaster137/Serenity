@@ -14,6 +14,7 @@
 	- Sashanoraa
 	- Wonder Collective
 	- Hive/Bits
+    - [Quantenzitrone](https://codeberg.org/quantenzitrone/nixos-config/src/branch/main)
 	- anotherhadi
 	- fufexan
 	- FrostPhoenix
