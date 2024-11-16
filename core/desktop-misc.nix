@@ -29,11 +29,18 @@
         droidcam-obs
       ];
     };
+
+    dconf.enable = false;
   };
 
   services = {
+    libinput.enable = true;
     ## Virtual filesystem, needed this for something i think ?
     gvfs.enable = true;
+    dbus.enable = true;
+    upower.enable = true;
+    udisks2.enable = true;
+    power-profiles-daemon.enable = true;
     gnome = {
       ## File previewer for nautilus
       sushi.enable = true;
@@ -45,6 +52,8 @@
       gnome-user-share.enable = true;
       ## GUI system settings ?
       gnome-settings-daemon.enable = true;
+
+
     };
   };
 
