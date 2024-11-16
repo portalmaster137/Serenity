@@ -23,8 +23,8 @@
     xwayland.enable = true;
 
     plugins = [
-       #inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
-       #inputs.hyprland-plugins.packages."${pkgs.system}".hyprbars
+      inputs.hyprland-plugins.packages."${pkgs.system}".borders-plus-plus
+      inputs.hyprland-plugins.packages."${pkgs.system}".hyprbars
     ];
 
        #monitor = desc:Acer Technologies Acer XR341CK 0x5457BEF2, preferred, 0x0, 1

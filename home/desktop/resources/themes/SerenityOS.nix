@@ -8,9 +8,9 @@
     waybar-transparent = true;
     font-mono = "spleen 32x64";
     font = "spleen 32x64";
-    rounding = 10;
-    gaps-in = 10;
-    gaps-out = 10;
+    rounding = 18;
+    gaps-in = 4;
+    gaps-out = 8;
     border-size = 1;
 
     colors = {
