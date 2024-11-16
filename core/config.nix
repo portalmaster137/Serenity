@@ -60,8 +60,10 @@
   };
 
   hardware = {
-
+    ## Enable all firmware modules
     enableAllFirmware = true;
+    sensor.hddtemp.enable = true;
+    usbStorage.manageStartStop = true;
 
   };
 

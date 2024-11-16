@@ -91,10 +91,8 @@
     ## theoretically pass off as a complete linux distribution.
     ## So there needs to be -some- way for users who are unwilling
     ## to use a terminal and are more comfortable with a GUI.
-
      #inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
      #nixos-conf-editor
-
     ## Disabling this for now. Eats disk space, and it's useless until
     ## wei make a single "control" module using 'let bindings' anyway.
     ########
@@ -140,6 +138,7 @@
     git-crypt # Transparent file encryption in git
     undervolt # Utility to change CPU settings
     android-tools # Commands for interfacing with android devices
+    smartmontools # Tools for monitoring HDD health
     magic-wormhole # Direct file sharing
 
  ];

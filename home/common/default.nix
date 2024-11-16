@@ -12,6 +12,7 @@
 
     ## Import program configs
      #./nixvim
+    ./obs-studio.nix
     ./neofetch.nix
     ./kitty.nix
     ./fish.nix
@@ -21,6 +22,16 @@
   ];
 
   home = {
+
+    pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 12;
+    };
+
+    sessionVariables.GTK_THEME = "Adwaita-dark";
+
     packages = with pkgs; [
 
       ## Games
@@ -61,7 +72,7 @@
       ardour # Digital Audio Workstation
 
       ## Image and Video playback and production
-      obs-studio # Screen sharing
+       #obs-studio # Screen sharing
        #inkscape # Vector image editing
        #shotcut # Video editing
        #blender # 3D modelling
@@ -73,9 +84,9 @@
 
   programs = {
     home-manager.enable = true; # Declarative dots
-
+    droidcam.enable = true; # Use smartphone as webcam
     firefox.enable = true; # Browser of choice
-
+    nheko.enable = true; # Matrix client for qt kitties
     neovim = { # Zoomer text editor
       enable = true;
       defaultEditor = true; # Default but keeping micro around
@@ -84,27 +95,19 @@
   };
 
   services = {
-
     kdeconnect = { # Mobile <-> Desktop interaction
       enable = true;
       indicator = true;
     };
-
     gnome-keyring = { # GTK keyring for login/sudo/ssh/gpg prompts
       enable = true;
        #components = [ ];
     };
-
   };
 
-  home.pointerCursor = {
-    gtk.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 12;
-  };
+  home = {
 
-  home.sessionVariables.GTK_THEME = "Adwaita-dark";
+  };
 
   qt = {
     enable = true;
@@ -140,7 +143,6 @@
         gtk-application-prefer-dark-theme=1
       '';
     };
-
   };
 
   dconf = {

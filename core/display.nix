@@ -23,14 +23,14 @@
         wayland.enable = true;
       };
     };
-  ## Eventual login greeter/display manager,
-  ## wayland native.
-   #services.greetd = {
-       #enable = true;
-       #settings.default_session = {
-         #command = "${pkgs.greetd.regreet}/bin/regreet";
-       #};
-   #};
+    ## Eventual login greeter/display manager,
+    ## wayland native.
+     #greetd = {
+        #enable = true;
+        #settings.default_session = {
+          #command = "${pkgs.greetd.regreet}/bin/regreet";
+        #};
+     #};
 
     ## Virtual filesystem, needed this for something i think ?
     gvfs.enable = true;

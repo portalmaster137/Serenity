@@ -22,7 +22,7 @@
 
     graphics = {
       enable = true;
-      enable32Bit = true;
+      enable32Bit = false;
 
       ## Packages for the iGPU inside Hades
       extraPackages = with pkgs; [
@@ -38,16 +38,16 @@
     ## Packages for the dGPU inside Hades
     amdgpu = {
       initrd.enable = true;
-       #opencl.enable = true;
+      opencl.enable = true;
       ## Vulkan packages for the dGPU inside Hades
-       #amdvlk = {
-         #enable = false;
+      amdvlk = {
+        enable = false;
          #package = [ ];
-         #support32Bit.enable = true;
-         #supportExperimental.enable = true;
+        support32Bit.enable = false;
+        supportExperimental.enable = false;
          #settings = {
          #};
-       #};
+      };
     };
 
   };
@@ -56,19 +56,19 @@
 
     ## For tweaking system performance
     corectrl = {
-      enable = false;
+      enable = true;
       ## Allows tweaking GPU performance
       gpuOverclock = {
-        enable = false;
+        enable = true;
         ## Needed for radeon GPU overclocking
-         #ppfeaturemask = "0xfffd7fff";
+        ppfeaturemask = "0xfffd7fff";
       };
     };
     ## Performance tweaking continued
     tuxclocker = {
       enable = false;
-       #enableAMD = true;
-       #useUnfree = true;
+      enableAMD = true;
+      useUnfree = true;
     };
 
   };
@@ -77,11 +77,11 @@
   environment.systemPackages = with pkgs; [
      #umr
     lact
-     #radeontop
+    radeontop
      #amdgpu_top
      #radeontools
      #radeon-profile
-     #nvtopPackages.amd
+    nvtopPackages.amd
   ];
 
   systemd = {

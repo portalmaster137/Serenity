@@ -24,8 +24,28 @@
   ];
 
   programs = {
+
     ## For when bimbo needs to play with platters and cbf to deal with cli
     gnome-disks.enable = true;
+    seahorse.enable = true;
+
+    ## Apparently nm-applet has a programs option
+    nm-applet = {
+      enable = true;
+       #indicator = false;
+    };
+
+    ## idk something for nautilus
+    nautilus-open-any-terminal = {
+      enable = true;
+      terminal = "kitty";
+    };
+
+  };
+
+  services = {
+    easyeffects.enable = true;
+    network-manager-applet.enable = true;
   };
 
   home.packages = with pkgs; [
@@ -55,6 +75,7 @@
     gnome-power-manager # GUI power and battery stats
     gnome-calculator # GTK calculator
     gnome-calendar # GTK calendar
+    gsmartcontrol # GUI for smartctl (smartmontools)
     pavucontrol # Volume control centre
     hyprpicker # Colour picker
     hyprcursor # Cursor, duh
