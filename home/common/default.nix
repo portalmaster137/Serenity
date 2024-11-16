@@ -12,12 +12,11 @@
 
     ## Import program configs
      #./nixvim
-     #./obs-studio.nix
     ./neofetch.nix
     ./kitty.nix
     ./fish.nix
-    ./git.nix
     ./btop.nix
+    ./git.nix
 
   ];
 
@@ -41,8 +40,8 @@
       spotify # Corpo music streaming
        #pragha # Music player
        #tauon # Music player
-      transmission_4-gtk # Torrent client
-      nicotine-plus # P2P Media sharing
+       #transmission_4-gtk # Torrent client
+       #nicotine-plus # P2P Media sharing
        #jellyfin # Self-Hosted media streaming
        #syncplay # Synchronise local playback with friends
       vlc # Multimedia player
@@ -55,12 +54,12 @@
        #neural-amp-modeler-lv2 # Guitar amp emulator
       bespokesynth # Modular synthesiser and sequencer
       easyeffects # EQ and audio effects
-      metronome # A metronome
+       #metronome # A metronome
        #vcv-rack # Analogue-Synth emulator
        #cardinal # VCV Rack but open source and as a plugin
       audacity # Audio editing
       helvum # GTK patchbay
-      ardour # Digital Audio Workstation
+       #ardour # Digital Audio Workstation
 
       ## Image and Video playback and production
        #obs-studio # Screen sharing
