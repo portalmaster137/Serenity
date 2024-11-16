@@ -12,6 +12,7 @@
   ./hyprpaper.nix
   ./hyprlock.nix
   ./hypridle.nix
+  ./udiskie.nix
   ./wlogout.nix
   ./waybar.nix
   ./dunst.nix
