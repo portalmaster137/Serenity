@@ -75,7 +75,7 @@
 
   programs = {
     home-manager.enable = true; # Declarative dots
-    droidcam.enable = true; # Use smartphone as webcam
+     #droidcam.enable = true; # Use smartphone as webcam
     firefox.enable = true; # Browser of choice
     nheko.enable = true; # Matrix client for qt kitties
     neovim = { # Zoomer text editor
