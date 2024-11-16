@@ -30,8 +30,9 @@
 ##
 
 {
-  description = "SerenityOS v0.6.7";
+  description = "SerenityOS v0.6.8";
   ## Latest features:
+  ## - Attempting to implement proper XDG configuration.
   ## - Work on commenting, reformating, and refactoring flake clode is progressing steadily.
   ## - SwayWM implemented, currently incomplete.
 
@@ -105,7 +106,7 @@
   } @ inputs: let
     inherit (self) outputs;
   in {
-    ## Available through 'nixos-rebuild --flake .#your-hostname'
+    ## Available through 'nixos-rebuild <switch> --flake /path/to/flake/directory#yourhostname'
     nixosConfigurations = {
 
       ## Installer for easy nuke-n-paves
