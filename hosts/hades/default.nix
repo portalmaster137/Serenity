@@ -22,7 +22,7 @@
 
     graphics = {
       enable = true;
-      enable32Bit = false;
+       #enable32Bit = false;
 
       ## Packages for the iGPU inside Hades
       extraPackages = with pkgs; [
@@ -41,10 +41,10 @@
       opencl.enable = true;
       ## Vulkan packages for the dGPU inside Hades
       amdvlk = {
-        enable = false;
+         #enable = false;
          #package = [ ];
-        support32Bit.enable = false;
-        supportExperimental.enable = false;
+         #support32Bit.enable = false;
+         #supportExperimental.enable = false;
          #settings = {
          #};
       };
