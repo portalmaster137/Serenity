@@ -40,8 +40,8 @@
       ];
 
       focus = {
-        followMouse = "true";
-	mouseWarping = "false";
+        followMouse = true;
+	mouseWarping = false;
 	newWindow = "smart";
       };
 
