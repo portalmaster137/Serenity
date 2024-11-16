@@ -69,7 +69,7 @@
       enable = true;
       drives = [ "/dev/disk/by-uuid/*" ];
     };
-    usbStorage.manageStartStop = true;
+    usbStorage.manageShutdown = true;
 
   };
 
