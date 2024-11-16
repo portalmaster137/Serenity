@@ -86,52 +86,6 @@
   services = {
   };
 
-  qt = {
-    enable = true;
-    platformTheme.name = "Adwaita-dark";
-    style = {
-      name = "Adwaita-dark";
-      package = pkgs.adwaita-qt;
-    };
-  };
-
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
-    font = {
-      name = config.theme.font;
-      size = 10;
-    };
-    iconTheme = {
-      package = pkgs.flat-remix-icon-theme;
-      name = "Flat-Remix-Grey-Darkest";
-    };
-
-    gtk3.extraConfig = {
-      settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-    gtk4.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-  };
-
-  dconf = {
-    enable = true;
-    settings = {
-      "org/gnome/desktop/interface" = {
-        gtk-theme = "Adwaita-dark";
-	color-scheme = "prefer-dark";
-      };
-    };
-  };
-
   systemd.user.startServices = "sd-switch";
 
 }
