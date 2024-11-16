@@ -1,9 +1,11 @@
-{ config, ... }:
+{ inputs, outputs, lib, config, pkgs, ... }:
+
 let
-  accent = "#${config.lib.stylix.colors.base0D}";
-  muted = "#${config.lib.stylix.colors.base03}";
-  foreground = "#${config.lib.stylix.colors.base05}";
-  configDir = config.var.configDirectory;
+
+  accent = "#${config.theme.colors.color14}";
+  muted = "#${config.theme.colors.secondary-bg}";
+  foreground = "#${config.theme.colors.primary-fg}";
+
 in {
 
   programs.nixvim.highlight = {
@@ -76,7 +78,7 @@ in {
           {
             type = "button";
             val = "  NixOs Config";
-            on_press.__raw = "function() vim.cmd[[Neotree ${configDir}]] end";
+            on_press.__raw = "function() vim.cmd[[Neotree /home/serenity/flakes/nixdots/home/common/dotconfig/nvim]] end";
             opts = {
               shortcut = "nc";
               position = "center";
@@ -91,7 +93,7 @@ in {
             type = "button";
             val = "  Keybindings";
             on_press.__raw =
-              "function() vim.cmd[[e ${configDir}/docs/KEYBINDINGS.md]] end";
+              "function() vim.cmd[[e /home/serenity/flakes/nixdots/home/common/dotconfig/nvim/docs/KEYBINDINGS.md]] end";
             opts = {
               shortcut = "nc";
               position = "center";
