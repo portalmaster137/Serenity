@@ -51,6 +51,24 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    ## Flake parts
+    flake.utils.url = "github:numtide/flake-utils";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
+    ## Lix, alternative nix implementation
+    lix = {
+      url = "git+https://git.lix.systems/lix-project/lix";
+      flake = false;
+    };
+    lix-module = {
+      url = "git+https://git.lix.systems/lix-project/nixos-module";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.lix.follows = "lix";
+    };
+
     ## Secrets management
     sops-nix = {
       url = "github:Mic92/sops-nix";
