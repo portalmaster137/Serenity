@@ -36,7 +36,7 @@
     gvfs.enable = true;
     gnome = {
       ## File previewer for nautilus
-      sushi.enable = true
+      sushi.enable = true;
       ## "core utilities"
       core-utilities.enable = true;
       ## GNOME keyring
