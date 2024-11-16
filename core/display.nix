@@ -28,10 +28,6 @@
 
   programs = {
 
-    dconf = {
-      enable = true;
-    };
-
     ## Standard(?) xwayland implementation
     xwayland = {
       enable = true;
