@@ -47,8 +47,19 @@
 
   programs = {
 
+    ## Neovim declared here too, just in case
+    neovim = {
+      enable = true;
+    };
+
     ## A catgirl's favourite shell - NEEDS OWN NIX MODULE
     fish = {
+      enable = true;
+    };
+
+    ## Added here in case the user level declaration
+    ## is wonky with nvim editor?
+    git = {
       enable = true;
     };
 
