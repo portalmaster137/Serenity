@@ -47,10 +47,17 @@
 │
 │
 └── hosts
+    │
     ├── hades
     │   ├── default.nix
     │   ├── hardware-configuration.nix
     │   └── modules
+    │
+    ├── orcus
+    │   ├── default.nix
+    │   ├── hardware-configuration.nix
+    │   └── modules
+    │
     └── persephone
         ├── default.nix
         ├── hardware-configuration.nix
