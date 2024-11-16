@@ -80,7 +80,7 @@
     
     ## Wayland compositor with eye-candy (for edgelords)
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprland.inputs.nixpkgs.follows = "nixpkgs";
+     #hyprland.inputs.nixpkgs.follows = "nixpkgs";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
