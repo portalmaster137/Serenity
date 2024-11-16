@@ -58,20 +58,6 @@
   };
 
   programs = {
-    ## For when bimbo needs to play with platters and cbf to deal with cli
-     #gnome-disks.enable = true;
-    ## GTK secrets management
-     #seahorse.enable = true;
-    ## Apparently nm-applet has a programs option
-     #nm-applet = {
-       #enable = true;
-       #indicator = false;
-     #};
-    ## idk something for nautilus
-     #nautilus-open-any-terminal = {
-       #enable = true;
-       #terminal = "kitty";
-     #};
   };
 
   services = {
