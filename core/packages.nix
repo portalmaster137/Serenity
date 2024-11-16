@@ -3,7 +3,7 @@
 {
 
   imports = [
-     #./file.nix
+    ./desktop-misc.nix
   ];
 
   nixpkgs = {
