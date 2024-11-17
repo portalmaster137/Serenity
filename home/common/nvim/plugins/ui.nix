@@ -2,8 +2,9 @@
   home.packages = with pkgs; [ ctags ];
 
   programs.nixvim = {
-    colorscheme = "tokyonight";
-    colorschemes.tokyonight = {
+    extraPlugins = with pkgs.vimPlugins; [ night-owl-nvim ];
+    colorscheme = "night-owl";
+    colorschemes.night-owl = {
       enable = true;
       settings.transparent = true;
     };
