@@ -2,7 +2,6 @@
   home.packages = with pkgs; [ ctags ];
 
   programs.nixvim = {
-     #colorscheme = "modus";
     colorschemes.palette = {
       enable = true;
       settings.transparent_background = true;
