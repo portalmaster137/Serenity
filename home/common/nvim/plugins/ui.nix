@@ -2,10 +2,10 @@
   home.packages = with pkgs; [ ctags ];
 
   programs.nixvim = {
-    colorscheme = "catppuccin";
-    colorschemes.catppuccin = {
+    colorscheme = "tokyonight";
+    colorschemes.tokyonight = {
       enable = true;
-      settings.transparent_background = true;
+      settings.transparent = true;
     };
     plugins = {
       lualine = {
