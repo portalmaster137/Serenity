@@ -3,7 +3,7 @@
 
   programs.nixvim = {
     colorscheme = "tokyonight";
-    colorschemes.tokynight = {
+    colorschemes.tokyonight = {
       enable = true;
       settings.options.transparent = true;
     };
