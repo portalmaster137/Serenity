@@ -1,8 +1,8 @@
 { config, ... }:
 let
-  accent = "#${config.lib.stylix.colors.base0D}";
-  background = "#${config.lib.stylix.colors.base00}";
-  background-alt = "#${config.lib.stylix.colors.base01}";
+  accent = "#${config.theme.colors.color15}";
+  background = "#${config.theme.colors.primary-bg}";
+  background-alt = "#${config.theme.colors.secondary-bg}";
 in {
   programs.nixvim = {
     highlight = {
