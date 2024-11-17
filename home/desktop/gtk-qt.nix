@@ -1,28 +1,27 @@
 # GTK & QT theme configuration
 { config, pkgs, lib, ... }:
 let
-  accent = "#${config.lib.stylix.colors.base0D}";
-  foreground = "#${config.lib.stylix.colors.base05}";
-  background = "#${config.lib.stylix.colors.base00}";
-  background-alt = "#${config.lib.stylix.colors.base01}";
+  accent = "#${config.theme.colors.color15}";
+  foreground = "#${config.theme.colors.primary-fg}";
+  background = "#${config.theme.colors.primary-bg}";
+  background-alt = "#${config.theme.colors.alt-bg}";
 
-  c0 = "#${config.lib.stylix.colors.base00}";
-  c1 = "#${config.lib.stylix.colors.base08}";
-  c2 = "#${config.lib.stylix.colors.base0B}";
-  c3 = "#${config.lib.stylix.colors.base0A}";
-  c4 = "#${config.lib.stylix.colors.base0D}";
-  c5 = "#${config.lib.stylix.colors.base0E}";
-  c6 = "#${config.lib.stylix.colors.base0C}";
-  c7 = "#${config.lib.stylix.colors.base05}";
-  c8 = "#${config.lib.stylix.colors.base03}";
-  c9 = "#${config.lib.stylix.colors.base08}";
-  c10 = "#${config.lib.stylix.colors.base0B}";
-  c11 = "#${config.lib.stylix.colors.base0A}";
-  c12 = "#${config.lib.stylix.colors.base0D}";
-  c13 = "#${config.lib.stylix.colors.base0E}";
-  c14 = "#${config.lib.stylix.colors.base0C}";
-  c15 = "#${config.lib.stylix.colors.base07}";
-
+  c0 = "#${config.theme.colors.color0}";
+  c1 = "#${config.theme.colors.color1}";
+  c2 = "#${config.theme.colors.color2}";
+  c3 = "#${config.theme.colors.color3}";
+  c4 = "#${config.theme.colors.color4}";
+  c5 = "#${config.theme.colors.color5}";
+  c6 = "#${config.theme.colors.color6}";
+  c7 = "#${config.theme.colors.color7}";
+  c8 = "#${config.theme.colors.color8}";
+  c9 = "#${config.theme.colors.color9}";
+  c10 = "#${config.theme.colors.color10}";
+  c11 = "#${config.theme.colors.color11}";
+  c12 = "#${config.theme.colors.color12}";
+  c13 = "#${config.theme.colors.color13}";
+  c14 = "#${config.theme.colors.color14}";
+  c15 = "#${config.theme.colors.color15}";
 in {
 
   qt = {
@@ -41,7 +40,9 @@ in {
       name = "Kora";
     };
 
-    font = { name = config.stylix.fonts.serif.name; };
+    font = { 
+      name = "${config.theme.font}";
+    };
 
     gtk3.extraConfig = { gtk-application-prefer-dark-theme = 1; };
 
