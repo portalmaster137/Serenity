@@ -111,27 +111,15 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    ## Fix broken waybar on current nixpkgs-unstable    
-     #waybar.url = "github:Alexays/Waybar"; 
-
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    hardware,
-    disko,
-    sops-nix,
-    home-manager,
-    nixvim,
-    nix-colors,
-    hyprland,
-    #hyprland-plugins,
-    #waybar,
-    ...
-  } @ inputs: let
+  outputs = { self, nixpkgs, disko, sops-nix, home-manager,
+    nixvim, nix-colors, hyprland, hyprland-plugins, ... }
+
+  @ inputs: let
     inherit (self) outputs;
   in {
+
     ## Available through 'nixos-rebuild <switch> --flake /path/to/flake/directory#yourhostname'
     nixosConfigurations = {
 
