@@ -4,7 +4,7 @@
   programs.nixvim = {
     colorschemes.palette = {
       enable = true;
-      settings.transparent_background = true;
+      settings = { transparent_background = true; };
     };
     plugins = {
       transparent.enable = true;
