@@ -2,6 +2,10 @@
   home.packages = with pkgs; [ ctags ];
 
   programs.nixvim = {
+    colorscheme = "cyberdream";
+    colorschemes.cyberdream = {
+      enable = true;
+    };
     plugins = {
       lualine = {
         enable = true;
