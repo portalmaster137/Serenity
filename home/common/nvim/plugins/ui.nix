@@ -5,7 +5,7 @@
     colorscheme = "catppuccin";
     colorschemes.catppuccin = {
       enable = true;
-      settings.options.transparent = true;
+      settings.options.transparent_background = true;
     };
     plugins = {
       lualine = {
