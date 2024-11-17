@@ -2,8 +2,8 @@
   home.packages = with pkgs; [ ctags ];
 
   programs.nixvim = {
-    colorscheme = "modus";
-    colorschemes.modus = {
+    colorscheme = "tokyonight";
+    colorschemes.tokynight = {
       enable = true;
       settings.options.transparent = true;
     };
