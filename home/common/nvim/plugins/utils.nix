@@ -1,7 +1,7 @@
 { config, ... }: {
   programs.nixvim = {
     highlightOverride = {
-      FloatBorder.fg = "#${config.lib.stylix.colors.base0D}";
+      FloatBorder.fg = "#${config.theme.colors.color15}";
     };
     plugins = {
       copilot-vim.enable = true;
