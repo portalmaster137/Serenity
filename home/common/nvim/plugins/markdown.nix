@@ -1,10 +1,10 @@
 # The render-markdown.nvim plugin is a plugin that renders markdown files in a neovim in a more readable way.
 { config, ... }:
 let
-  accent = "#${config.lib.stylix.colors.base0D}";
-  accent-alt = "#${config.lib.stylix.colors.base08}";
-  muted = "#${config.lib.stylix.colors.base03}";
-  background = "#${config.lib.stylix.colors.base00}";
+  accent = "#${config.theme.colors.color15}";
+  accent-alt = "#${config.theme.colors.color6}";
+  muted = "#${config.theme.colors.secondary-bg}";
+  background = "#${config.theme.colors.primary-bg}";
 in {
 
   programs.nixvim = {
