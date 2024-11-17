@@ -2,8 +2,8 @@
   home.packages = with pkgs; [ ctags ];
 
   programs.nixvim = {
-    colorscheme = "flow";
-    colorschemes.flow = {
+    colorscheme = "modus";
+    colorschemes.modus = {
       enable = true;
       settings.options.transparent = true;
     };
