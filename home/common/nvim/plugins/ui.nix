@@ -4,10 +4,10 @@
   programs.nixvim = {
     extraPlugins = with pkgs.vimPlugins; [ night-owl-nvim ];
     colorscheme = "night-owl";
-     #colorschemes.night-owl = {
-       #enable = true;
-       #settings.transparent = true;
-     #};
+    colorschemes.palette = {
+      enable = true;
+      settings.transparent_background = true;
+    };
     plugins = {
       transparent.enable = true;
       lualine = {
