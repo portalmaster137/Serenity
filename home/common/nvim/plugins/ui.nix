@@ -2,8 +2,8 @@
   home.packages = with pkgs; [ ctags ];
 
   programs.nixvim = {
-    colorscheme = "tokyonight";
-    colorschemes.tokyonight = {
+    colorscheme = "catppuccin";
+    colorschemes.catppuccin = {
       enable = true;
       settings.options.transparent = true;
     };
