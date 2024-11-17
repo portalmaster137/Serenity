@@ -77,10 +77,7 @@
     home-manager.enable = true; # Declarative dots
     firefox.enable = true; # Browser of choice
     nheko.enable = true; # Matrix client for qt kitties
-     #neovim = { # Zoomer text editor
-       #enable = true;
-       #defaultEditor = true;
-    #};
+
 
   };
 
