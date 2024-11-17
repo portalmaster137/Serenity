@@ -2,9 +2,10 @@
   home.packages = with pkgs; [ ctags ];
 
   programs.nixvim = {
-    colorscheme = "nightfox";
-    colorschemes.nightfox = {
+    colorscheme = "flow";
+    colorschemes.flow = {
       enable = true;
+      settings.options.transparent = true;
     };
     plugins = {
       lualine = {
