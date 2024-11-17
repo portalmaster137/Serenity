@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ ... }:
 
 {
 
@@ -26,7 +26,7 @@
   };
 
   ## i knooooowwwwwww i need a proper firewall config but im laaaazzyyyyyyyyyy
-  networking.firewall = rec {
+  networking.firewall = {
     enable = true;
        #checkReversePath = "loose";
        #allowedTCPPortRanges = [ { from = 1720; to = 1770; } ];

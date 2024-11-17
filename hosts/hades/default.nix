@@ -1,4 +1,4 @@
-{ inputs, outputs, modulesPath, lib, config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -26,11 +26,11 @@
        #enable32Bit = false;
       ## Packages for the iGPU inside Hades
       extraPackages = with pkgs; [
-         #intel-compute-runtime
-  	 #intel-media-driver
-  	 #libvdpau-va-gl
-  	 #vaapiIntel
-  	 #vaapiVdpau
+        intel-compute-runtime
+  	     #intel-media-driver
+  	     #libvdpau-va-gl
+  	     #vaapiIntel
+  	     #vaapiVdpau
       ];
     };
     ## Packages for the dGPU inside Hades

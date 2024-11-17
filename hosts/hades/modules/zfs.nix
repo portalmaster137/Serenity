@@ -3,7 +3,7 @@
 ## temporary location while we figure out how ZFS works,
 ## eventually this will be embedded into the flake in a better way
 
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 let
   ## This 'let' binding creates an attribute set
