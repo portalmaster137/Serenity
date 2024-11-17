@@ -2,8 +2,8 @@
   home.packages = with pkgs; [ ctags ];
 
   programs.nixvim = {
-    colorscheme = "cyberdream";
-    colorschemes.cyberdream = {
+    colorscheme = "nightfox";
+    colorschemes.nightfox = {
       enable = true;
     };
     plugins = {
