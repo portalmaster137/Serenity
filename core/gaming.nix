@@ -1,4 +1,4 @@
-{ self, inputs, outputs, lib, config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 
@@ -38,7 +38,7 @@
       piper # mouse configuration
     ];
     ## These are important apparently :uh:
-    sessionVariables = rec {
+    sessionVariables = {
       XDG_CACHE_HOME  = "$HOME/.cache";
       XDG_CONFIG_HOME = "$HOME/.config";
       XDG_BIN_HOME    = "$HOME/.local/bin";

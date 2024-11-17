@@ -1,21 +1,20 @@
 ## https://nixos.wiki/PipeWire
 ## https://github.com/musnix/musnix 
 
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}:
+{ ... }:
 
 {
   imports = [
   ];
 
+  ## Can't remember what this does,
+  ## recommended to be enabled though
   security.rtkit.enable = true;
+
+  ## Not using pulse directly
   hardware.pulseaudio.enable = false;
+
+  ## Using pipewire baybee
   services.pipewire = {  
     enable = true;
     ## Uncomment if ypu(g.) want to use JACK applications
@@ -25,6 +24,8 @@
       enable = true;
       support32Bit = true;
     };
+
+    ## Low latency config
     extraConfig = {
 
       pipewire."92-low-latency" = {
@@ -41,16 +42,20 @@
           node.latency = "144/48000";
           resample.quality = 1;
         };
+
         context.modules = [ {
-            name = "libpipewire-module-protocol-pulse";
-            args = {
-              pulse.min.req = "144/48000";
-              pulse.default.req = "144/48000";
-              pulse.max.req = "144/48000";
-              pulse.min.quantum = "144/48000";
-              pulse.max.quantum = "144/48000";
+          name = "libpipewire-module-protocol-pulse";
+          args = {
+            pulse = {
+              default.req = "144/48000";
+              min.req = "144/48000";
+              max.req = "144/48000";
+              min.quantum = "144/48000";
+              max.quantum = "144/48000";
+              };
             };
         } ];
+
       };
 
     };
