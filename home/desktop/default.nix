@@ -9,7 +9,7 @@
    #./scripts
 
   ## Import misc desktop files
-  ./xdg-mime.nix
+   #./xdg-mime.nix
    #./gtk-qt.nix
 
   ## Import common desktop configs
