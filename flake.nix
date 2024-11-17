@@ -30,8 +30,9 @@
 ##
 
 {
-  description = "SerenityOS v0.6.95"; # Nice!
+  description = "SerenityOS v0.6.99"; # Nice!
   ## Latest features:
+  ## - Neovim installed, set up with stolen config and plugins
   ## - ReGreet implemented, yet to be tested
   ## - Huge progress on getting Steam working, not 100% yet
   ## - Repo makeover completed! codeberg.org/serenity-F/nixdots
@@ -125,7 +126,7 @@
     nixvim,
     nix-colors,
     hyprland,
-    hyprland-plugins,
+    #hyprland-plugins,
     #waybar,
     ...
   } @ inputs: let
