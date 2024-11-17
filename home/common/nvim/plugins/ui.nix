@@ -2,11 +2,9 @@
   home.packages = with pkgs; [ ctags ];
 
   programs.nixvim = {
-    extraPlugins = with pkgs.vimPlugins; [ night-owl-nvim ];
-    colorscheme = "night-owl";
-    colorschemes.palette = {
-      enable = true;
-      settings.transparent_background = true;
+    colorscheme = "modus";
+    colorschemes.modus = {
+      settings.transparent = true;
     };
     plugins = {
       transparent.enable = true;
