@@ -11,7 +11,7 @@
 
     ## Disko config, should eventually let us nuke our boot drive and reinstall
     ## with zero worries.
-    ./disko.nix
+    #./disko.nix
 
     ];
 
