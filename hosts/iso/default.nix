@@ -34,7 +34,6 @@
     calamares-nixos
     calamares-nixos-extensions
     nix-deploy
-    nix-simple-deploy
     nixos-install-tools
     installation-cd-minimal
     installer
