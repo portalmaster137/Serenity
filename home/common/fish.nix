@@ -38,7 +38,7 @@
     c = "cd";
     cg = "cargo";
     reload = "exec fish";
-    nv = "lvim";
+    nv = "nvim";
     sshfix = "kitty +kitten ssh";
     tree = "eza -TR --git-ignore";
     up = "topgrade";
