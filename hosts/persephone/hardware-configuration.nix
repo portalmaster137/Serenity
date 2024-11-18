@@ -80,10 +80,7 @@
     ## Pick either "true" OR "lib.mkDefault -"
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
      #cpu.intel.updateMicrocode = true;
-
     enableAllFirmware = true;
-    bluetooth.enable = false;
-
     graphics = {
       enable = true;
       ## Packages for integrated graphics inside Persephone
