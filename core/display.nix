@@ -4,7 +4,7 @@
   imports = [
     ## planning to have a discrete config file for
     ## the greeter(s) to keep this file tidy.
-    ./regreet-config.nix
+     #./regreet-config.nix
      #./sddm-config.nix
   ];
 
