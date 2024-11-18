@@ -30,7 +30,7 @@
 ##
 
 {
-  description = "SerenityOS v0.6.99"; # Nice!
+  description = "SerenityOS v0.7.0";
   ## Latest features:
   ## - Neovim installed, set up with stolen config and plugins
   ## - ReGreet implemented, yet to be tested
@@ -59,21 +59,28 @@
     };
 
     ## Flake parts
-    flake-utils.url = "github:numtide/flake-utils";
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+    };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     ## Lix, alternative nix implementation
-    lix = {
+    lix = { # lix language
       url = "git+https://git.lix.systems/lix-project/lix";
       flake = false;
     };
-    lix-module = {
+    lix-module = { # lix nixos module
       url = "git+https://git.lix.systems/lix-project/nixos-module";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.lix.follows = "lix";
+    };
+
+    ## Musnix - https://github.com/musnix/musnix
+    musnix = {
+      url = "github:musnix/musnix";
     };
 
     ## Secrets management
@@ -88,7 +95,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    
+    ## Zoomer text editor
     nixvim = {
       url = "github:nix-community/nixvim";
       ## If you are not running an unstable channel of nixpkgs,
@@ -111,10 +119,17 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+
+    ## nixos generators
+    nixos-generators = {
+      url = "github:nix-ccommunity/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = { self, nixpkgs, disko, sops-nix, home-manager,
-    nixvim, nix-colors, hyprland, hyprland-plugins, ... }
+    nixvim, nix-colors, hyprland, hyprland-plugins, nixos-generators, ... }
 
   @ inputs: let
     inherit (self) outputs;
@@ -124,24 +139,10 @@
     nixosConfigurations = {
 
       ## Installer for easy nuke-n-paves
-       #iso = nixpkgs.lib.nixosSystem {
-         #specialArgs = {inherit inputs outputs;};
-          #modules = [
-            #"${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-gnome.nix"
-            #"${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
-            #disko.nixosModules.disko
-            #sops-nix.nixosModules.sops
-            #./core/hosts/iso
-          #];
-       #};
-
-      ## Laptop
-      persephone = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+      iso = nixos-generators.nixosGenerate {
+        system = "x86_64-linux";
         modules = [
-          disko.nixosModules.disko
-          sops-nix.nixosModules.sops
-          ./hosts/persephone
+          ./hosts/iso
         ];
       };
 
@@ -162,6 +163,16 @@
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
           ./hosts/orcus
+        ];
+      };
+
+      ## Laptop
+      persephone = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          disko.nixosModules.disko
+          sops-nix.nixosModules.sops
+          ./hosts/persephone
         ];
       };
 
