@@ -30,8 +30,9 @@
 ##
 
 {
-  description = "SerenityOS v0.7.0";
+  description = "SerenityOS v0.7.1";
   ## Latest features:
+  ## - Custom NixOS install iso semi-functional - `nix build .#install-iso`
   ## - Neovim installed, set up with stolen config and plugins
   ## - ReGreet implemented, yet to be tested
   ## - Huge progress on getting Steam working, not 100% yet
