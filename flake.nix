@@ -135,16 +135,20 @@
     inherit (self) outputs;
   in {
 
-    ## Available through 'nixos-rebuild <switch> --flake /path/to/flake/directory#yourhostname'
-    nixosConfigurations = {
-
-      ## Installer for easy nuke-n-paves
+    ## Installer for easy nuke-n-paves
+    packages.x86_64-linux = {
       iso = nixos-generators.nixosGenerate {
         system = "x86_64-linux";
         modules = [
-          ./hosts/iso
+         ./host/iso
         ];
+        format = "iso";
+        specialArgs = {inherit inputs outputs;};
       };
+    };
+
+    ## Available through 'nixos-rebuild <switch> --flake /path/to/flake/directory#yourhostname'
+    nixosConfigurations = {
 
       ## Desktop
       hades = nixpkgs.lib.nixosSystem {
