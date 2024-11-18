@@ -140,7 +140,7 @@
       iso = nixos-generators.nixosGenerate {
         system = "x86_64-linux";
         modules = [
-         ./host/iso
+         ./hosts/iso
         ];
         format = "iso";
         specialArgs = {inherit inputs outputs;};
