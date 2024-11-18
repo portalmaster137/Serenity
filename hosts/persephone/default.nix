@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports = [
@@ -55,5 +55,7 @@
   environment.systemPackages = with pkgs; [
     nvtopPackages.intel
   ];
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
 }
