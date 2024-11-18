@@ -4,9 +4,9 @@
   imports = [
 
     ## Host specific files
-    ./hardware-configuration.nix # hardware config
-    ./network-configuration.nix # network config
-    ./modules # more host specific configs
+    #./hardware-configuration.nix # hardware config
+    #./network-configuration.nix # network config
+    ./modules/network.nix # more host specific configs
 
     ## Shared 'core' config options
     ../../config.nix
@@ -27,10 +27,10 @@
       enable32Bit = true;
       extraPackages = with pkgs; [
         intel-compute-runtime
-  	intel-media-driver
-  	libvdpau-va-gl
-  	vaapiIntel
-  	vaapiVdpau
+  	    intel-media-driver
+  	    libvdpau-va-gl
+  	    vaapiIntel
+  	    vaapiVdpau
       ];
 
     };
