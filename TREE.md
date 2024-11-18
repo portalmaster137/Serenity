@@ -10,6 +10,7 @@
 │   ├── config.nix
 │   ├── packages.nix
 │   ├── display.nix
+│   ├── regreet-config.nix
 │   ├── gaming.nix
 │   └── audio.nix
 │
@@ -48,6 +49,10 @@
 │
 │
 └── hosts
+    │
+    ├── iso
+    │   ├── default.nix
+    │   └── modules
     │
     ├── hades
     │   ├── default.nix
