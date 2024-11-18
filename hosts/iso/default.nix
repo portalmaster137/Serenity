@@ -42,7 +42,7 @@
 
   ];
 
-  home-manager.users.nixos = import ../../home/common;
+  home-manager.users.nixos = import ../../home/users;
   users.extraUsers.root.password = "nixos";
 
 }

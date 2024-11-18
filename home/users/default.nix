@@ -1,22 +1,18 @@
-{ self, inputs, outputs, lib, config, pkgs, ... }:
+{ inputs, outputs, pkgs, ... }:
 
 {
 
   imports = [
     inputs.home-manager.nixosModules.default
-     #../desktop/resources/themes/default.nix
+    #../desktop/resources/themes/default.nix
   ];
-   
+
   users.users = {
     ## Define users like this
     serenity = {
       description = "Serenity Amalgam";
       isNormalUser = true;
-      extraGroups = [
-        "wheel"
-        "networkmanager"
-	"gamemode"
-      ];
+      extraGroups = [ "wheel" "networkmanager" "gamemode" ];
       ## be sure to change this with 'passwd'
       initialPassword = "password";
       ## A catgirl's favourite shell
@@ -37,7 +33,7 @@
       ## Also make sure to include a user definition here
       serenity = {
         ## This is where the user configs/packages are imported
-        imports = [ ./u-serenity.nix];
+        imports = [ ./u-serenity.nix ];
         home = {
           username = "serenity";
           homeDirectory = "/home/serenity";
