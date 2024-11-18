@@ -122,7 +122,7 @@
 
     ## nixos generators
     nixos-generators = {
-      url = "github:nix-ccommunity/nixos-generators";
+      url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
