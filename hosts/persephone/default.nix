@@ -1,16 +1,13 @@
-{ lib, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
   imports = [
 
     ## Host specific files
-    ./hardware-configuration.nix # hardware config
-    #./network-configuration.nix # network config
-    ./modules/network.nix # more host specific configs
+    ./modules
 
     ## Shared 'core' config options
     ../../core/config.nix
-
   ];
 
   ## ooh, hostname - this one's important!
@@ -21,28 +18,74 @@
     ## Enable bluetooth inside Persephone
     bluetooth.enable = true;
 
-    ## Packages for the iGPU inside Persephone
+    ## Pick either "true" OR "lib.mkDefault -"
+    cpu.intel.updateMicrocode =
+      lib.mkDefault config.hardware.enableRedistributableFirmware;
+      #cpu.intel.updateMicrocode = true;
+    enableAllFirmware = true;
     graphics = {
       enable = true;
-      enable32Bit = true;
+      ## Packages for integrated graphics inside Persephone
       extraPackages = with pkgs; [
         intel-compute-runtime
-  	    intel-media-driver
-  	    libvdpau-va-gl
-  	    vaapiIntel
-  	    vaapiVdpau
+        intel-media-driver
+        vaapiIntel
+        vaapiVdpau
+        libvdpau-va-gl
       ];
+    };
+  };
 
+  ## Trying out an alternate memory allocator
+  environment.memoryAllocator.provider = "graphene-hardened-light";
+
+  ## Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+  ## (the default) this is the recommended approach. When using systemd-networkd it's
+  ## still possible to use this option, but it's recommended to use it in conjunction
+  ## with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  networking.useDHCP = lib.mkDefault true;
+  #networking.interfaces.enp0s31f6.useDHCP = lib.mkDefault true;
+  #networking.interfaces.wlp58s0.useDHCP = lib.mkDefault true;
+
+  boot = {
+    supportedFilesystems = [ "btrfs" "xfs" "ntfs" ];
+    initrd = {
+      systemd.enable = true;
+    };
+    loader = {
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 5;
+      };
+      efi = {
+        canTouchEfiVariables = true;
+        #efiSysMountPoint = "/boot/efi";
+      };
     };
 
+  };
+
+  ## Hardware-related services
+  services = {
+    ## TRIM to keep SSDs healthy-ish
+    fstrim.enable = true;
+
+  };
+
+  powerManagement = {
+    enable = true;
+    powertop.enable = true;
+    #cpuFreqGovernor = Lib.mkDefault "performance";
+    #cpufreq = {
+    #min = 1500000;
+    #max = 4400000;
+    #};
   };
 
   programs = {
 
     ## For tweaking system performance
-    corectrl = {
-      enable = true;
-    };
+    corectrl = { enable = true; };
     ## Performance tweaking continued
     tuxclocker = {
       enable = true;
@@ -52,9 +95,7 @@
   };
 
   ## Some packages for managing the hardware inside Persephone
-  environment.systemPackages = with pkgs; [
-    nvtopPackages.intel
-  ];
+  environment.systemPackages = with pkgs; [ nvtopPackages.intel ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
