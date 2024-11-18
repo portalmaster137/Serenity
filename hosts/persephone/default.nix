@@ -21,7 +21,7 @@
     ## Pick either "true" OR "lib.mkDefault -"
     cpu.intel.updateMicrocode =
       lib.mkDefault config.hardware.enableRedistributableFirmware;
-      #cpu.intel.updateMicrocode = true;
+    #cpu.intel.updateMicrocode = true;
     enableAllFirmware = true;
     graphics = {
       enable = true;
@@ -37,7 +37,7 @@
   };
 
   ## Trying out an alternate memory allocator
-  environment.memoryAllocator.provider = "graphene-hardened-light";
+  #environment.memoryAllocator.provider = "graphene-hardened-light";
 
   ## Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   ## (the default) this is the recommended approach. When using systemd-networkd it's
@@ -52,7 +52,8 @@
     initrd = {
       systemd.enable = true;
       luks.devices = {
-        "luks-6aecd578-c05b-425c-a86e-0a5153b896a1".device = "/dev/disk/by-uuid/6aecd578-c05b-425c-a86e-0a5153b896a1";
+        "luks-6aecd578-c05b-425c-a86e-0a5153b896a1".device =
+          "/dev/disk/by-uuid/6aecd578-c05b-425c-a86e-0a5153b896a1";
       };
     };
     loader = {
