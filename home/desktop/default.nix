@@ -1,4 +1,4 @@
-{ self, inputs, outputs, lib, config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 
@@ -33,7 +33,7 @@
       enable = false;
       xdgOpenUsePortal = false;
       config = {
-	common."org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
+	      common."org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
         common.default = [ "gtk" "gnome" ];
         sway.default = [ "gtk" "gnome" ];
         hyprland.default = [ "hyprland" "gtk" "gnome" ];
@@ -113,15 +113,15 @@
   #};
   #};
 
-  dconf = {
-    enable = true;
+  #dconf = {
+    #enable = true;
     #settings = {
     #  "org/gnome/desktop/interface" = {
     #    gtk-theme = "Adwaita-dark";
     #  	color-scheme = "prefer-dark";
     #  };
     #};
-  };
+  #};
 
   home = {
 
