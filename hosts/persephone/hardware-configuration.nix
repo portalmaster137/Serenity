@@ -21,7 +21,7 @@
     supportedFilesystems = [
       "btrfs"
       "xfs"
-      "ntfs"
+       #"ntfs"
     ];
     initrd = {
       systemd.enable = true;
@@ -89,16 +89,16 @@
       ## Packages for integrated graphics inside Persephone
       extraPackages = with pkgs; [
         intel-compute-runtime
-  	intel-media-driver
-  	vaapiIntel
-  	vaapiVdpau
-  	libvdpau-va-gl		
+  	    intel-media-driver
+  	    vaapiIntel
+  	    vaapiVdpau
+  	    libvdpau-va-gl		
       ];
     };	
   };
 
   ## Trying out an alternate memory allocator
-  environment.memoryAllocator.provider = "graphene-hardened-light";
+   #environment.memoryAllocator.provider = "graphene-hardened-light";
 
   ## Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   ## (the default) this is the recommended approach. When using systemd-networkd it's

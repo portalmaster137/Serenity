@@ -4,7 +4,7 @@
   imports = [
 
     ## Host specific files
-    #./hardware-configuration.nix # hardware config
+    ./hardware-configuration.nix # hardware config
     #./network-configuration.nix # network config
     ./modules/network.nix # more host specific configs
 
