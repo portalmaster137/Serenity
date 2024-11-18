@@ -25,15 +25,11 @@
   programs = {
     git.enable = true;
     fish.enable = true;
-    kitty.enable = true;
-    starship.enable = true;
   };
 
   ## Some packages for managing the hardware inside Hades
   environment.systemPackages = with pkgs; [
-    git
     wofi
-    fish
     kitty
     calamares
     calamares-nixos
