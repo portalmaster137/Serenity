@@ -23,10 +23,27 @@
   };
 
   programs = {
+    git.enable = true;
+    fish.enable = true;
+    kitty.enable = true;
+    starship.enable = true;
   };
 
   ## Some packages for managing the hardware inside Hades
   environment.systemPackages = with pkgs; [
+    git
+    wofi
+    fish
+    kitty
+    calamares
+    calamares-nixos
+    calamares-nixos-extensions
+    nix-deploy
+    nix-simple-deploy
+    nixos-install-tools
+    installation-cd-minimal
+    installer
+
   ];
 
   home-manager.users.nixos = import ../../home;
