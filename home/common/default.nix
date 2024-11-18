@@ -1,4 +1,4 @@
-{ self, inputs, outputs, lib, config, pkgs, ... }: 
+{ pkgs, ... }: 
 
 {
 
@@ -11,12 +11,12 @@
     ./systemd-services
 
     ## Import program configs
-    ./fetch.nix
-    ./kitty.nix
-    ./fish.nix
-    ./btop.nix
-    ./yazi.nix
+    ./fetch
+    ./kitty
+    ./btop
+    ./yazi
     ./nvim
+    ./fish
     ./git 
 
   ];

@@ -7,7 +7,7 @@
       name = "spleen 32x64";
       size = 11;
     };
-    
+
     settings = {
 
       scrollback_lines = 10000;
