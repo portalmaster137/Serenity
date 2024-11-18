@@ -51,6 +51,9 @@
     supportedFilesystems = [ "btrfs" "xfs" "ntfs" ];
     initrd = {
       systemd.enable = true;
+      luks.devices = {
+        "luks-6aecd578-c05b-425c-a86e-0a5153b896a1".device = "/dev/disk/by-uuid/6aecd578-c05b-425c-a86e-0a5153b896a1";
+      };
     };
     loader = {
       systemd-boot = {
