@@ -9,7 +9,7 @@
     ./modules/network.nix # more host specific configs
 
     ## Shared 'core' config options
-    ../../config.nix
+    ../../core/config.nix
 
   ];
 
