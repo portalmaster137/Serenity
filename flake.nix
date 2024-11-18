@@ -137,12 +137,12 @@
 
     ## Installer for easy nuke-n-paves
     packages.x86_64-linux = {
-      iso = nixos-generators.nixosGenerate {
+      install-iso = nixos-generators.nixosGenerate {
         system = "x86_64-linux";
         modules = [
          ./hosts/iso
         ];
-        format = "iso";
+        format = "install-iso";
         specialArgs = {inherit inputs outputs;};
       };
     };
