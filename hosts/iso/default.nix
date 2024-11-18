@@ -7,7 +7,6 @@
      #<nixpkgs/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix>
      #<nixpkgs/nixos/modules/installer/cd-dvd/channel.nix>
     ./modules # more host specific configs
-
     ## Shared 'core' config options
     ../../core/config.nix
 
@@ -42,7 +41,7 @@
 
   ];
 
-  home-manager.users.nixos = import ../../home/users;
-  users.extraUsers.root.password = "nixos";
+   #home-manager.users.nixos = import ../../home/users;
+   #users.extraUsers.root.password = "nixos";
 
 }
