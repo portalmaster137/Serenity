@@ -64,7 +64,7 @@
     };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs.follows = "nixpkgs";
+       #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     ## Lix, alternative nix implementation
