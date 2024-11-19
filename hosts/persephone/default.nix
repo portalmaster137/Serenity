@@ -82,7 +82,7 @@
      #cpuFreqGovernor = Lib.mkDefault "performance";
     cpufreq = {
      min = 1500000;
-     max = 3500000;
+     max = 4400000;
     };
   };
 
