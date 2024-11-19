@@ -17,13 +17,13 @@ boot.kernelPackages = pkgs.linuxPackages_latest;
   nixpkgs.config.allowUnfree = true;
 
   # Use the systemd-boot EFI boot loader.
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
     enable = true;
     # version = 2;
-    device = "/dev/disk/by-uuid/552D-851F";
-    # efiSupport = true;
+    device = "/dev/nvme0n1";
+    efiSupport = true;
     enableCryptodisk = true;
   };
   boot.initrd.luks.devices = {
