@@ -6,7 +6,7 @@
 
   ## Import themes and scripts
    #./themes
-   #./scripts
+  ./scripts
 
   ## Import misc desktop files
    #./xdg-mime.nix
