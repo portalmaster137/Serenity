@@ -9,7 +9,6 @@
 }: {
 
   imports = [
-    #./scripts
   ];
 
   wayland.windowManager.hyprland = {

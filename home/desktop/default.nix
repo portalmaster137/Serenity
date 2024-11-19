@@ -7,6 +7,7 @@
   ## Import misc desktop files
    #./xdg-mime.nix
   ./gtk-qt.nix
+  ../scripts
 
   ## Import common desktop configs
   ./hyprcursor.nix

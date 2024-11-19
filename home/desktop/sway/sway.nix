@@ -10,7 +10,6 @@
 
   imports = [
     #./sway-style.nix
-    ../hypr/scripts
   ];
 
   wayland.windowManager.sway = {
