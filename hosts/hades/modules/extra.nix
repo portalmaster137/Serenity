@@ -1,47 +1,29 @@
-{ lib, config, modulesPath, pkgs, ... }:
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
+
+{ config, pkgs, ... }:
 
 {
-  ## Enable swap on luks
-  boot = {
-    initrd = {
-      systemd.enable = true;
-      secrets = { "/boot/crypto_keyfile.bin" = null; };
-      luks = {
-        devices = {
-          "luks-b964f685-be70-4f87-9bd2-00cb7ba0e756" = {
-            device = "/dev/disk/by-uuid/b964f685-be70-4f87-9bd2-00cb7ba0e756";
-            keyFile = "/boot/crypto_keyfile.bin";
-          };
-          "luks-6779ede9-16e6-42f4-a13e-6da0627f8d45" = {
-            device = "/dev/disk/by-uuid/6779ede9-16e6-42f4-a13e-6da0627f8d45";
-            keyFile = "/boot/crypto_keyfile.bin";
-          };
-        };
-      };
-    };
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware.nix
+    ];
 
-    loader = {
-      efi = { canTouchEfiVariables = true; };
-      ## For some reason GPT/UEFI didn't work, so neither does systemd-boot
-      ## stuck using MBR/DOS and GRUB instead
-      grub = {
-        enable = true;
-        device = "/dev/nvme0n1";
-        useOSProber = true;
-        enableCryptodisk = true;
-      };
-    };
+  # Bootloader.
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/nvme0n1";
+  boot.loader.grub.useOSProber = true;
 
+  # Setup keyfile
+  boot.initrd.secrets = {
+    "/boot/crypto_keyfile.bin" = null;
   };
-  ## Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  ## (the default) this is the recommended approach. When using systemd-networkd it's
-  ## still possible to use this option, but it's recommended to use it in conjunction
-  ## with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  #networking.interfaces.enp0s31f6.useDHCP = lib.mkDefault true;
-  #networking.interfaces.wlp58s0.useDHCP = lib.mkDefault true;
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode =
-    lib.mkDefault config.hardware.enableRedistributableFirmware;
+  boot.loader.grub.enableCryptodisk = true;
+
+  boot.initrd.luks.devices."luks-34a5d7fd-7f3a-4778-8d3a-c7bdec52e96c".keyFile = "/boot/crypto_keyfile.bin";
+  
+  system.stateVersion = "24.05"; # Did you read the comment?
+
 }
