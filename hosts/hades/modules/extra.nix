@@ -24,6 +24,6 @@
 
   boot.initrd.luks.devices."luks-34a5d7fd-7f3a-4778-8d3a-c7bdec52e96c".keyFile = "/boot/crypto_keyfile.bin";
   
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 
 }
