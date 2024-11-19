@@ -16,13 +16,13 @@
 │
 │
 ├── home
-│   ├── common
+│   ├── programs
 │   │   ├── default.nix
 │   │   ├── nvim
 │   │   │   └── plugins
 │   │   ├── opentabletdriver
 │   │   │   └── profiles
-│   │   └── systemd-services
+│   │   └── systemd
 │   │
 │   │ 
 │   ├── desktop
@@ -42,7 +42,7 @@
 │   │       ├── config.nix
 │   │       └── sway.nix
 │   │ 
-│   │ 
+│   ├── systemd
 │   └── users
 │       ├── default.nix
 │       └── u-serenity.nix
@@ -56,16 +56,13 @@
     │
     ├── hades
     │   ├── default.nix
-    │   ├── hardware-configuration.nix
     │   └── modules
     │
     ├── orcus
     │   ├── default.nix
-    │   ├── hardware-configuration.nix
     │   └── modules
     │
     └── persephone
         ├── default.nix
-        ├── hardware-configuration.nix
         └── modules
 ```
