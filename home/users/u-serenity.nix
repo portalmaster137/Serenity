@@ -7,7 +7,7 @@
     ../resources/themes
     ../resources/themes/SerenityOS.nix
     ## Import programs
-    ../programs
+    ../../home
   ];
 
 }
