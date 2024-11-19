@@ -4,7 +4,10 @@
   programs.nixvim = {
     colorschemes.modus = {
       enable = true;
-      settings = { transparent = true; };
+      settings = { 
+        transparent = true;
+        style = "modus_vivendi";
+      };
     };
     plugins = {
       #transparent.enable = true;
