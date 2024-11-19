@@ -3,9 +3,8 @@
 {
   imports = [
 
-    ## Host specific files
-    ./hardware-configuration.nix # hardware config
-    ./modules # more host specific configs
+    ## Host specific config files
+    ./modules 
 
     ## Shared 'core' config options
     ../../core/config.nix
@@ -17,20 +16,20 @@
 
   hardware = {
 
-    ## No bluetooth inside Hades (yet)
-    bluetooth.enable = false;
+    ## Enable bluetooth inside Hades
+    bluetooth.enable = true;
 
     ## GPU and graphics
     graphics = {
       enable = true;
-       #enable32Bit = false;
+      enable32Bit = false;
       ## Packages for the iGPU inside Hades
       extraPackages = with pkgs; [
         intel-compute-runtime
-  	     #intel-media-driver
-  	     #libvdpau-va-gl
-  	     #vaapiIntel
-  	     #vaapiVdpau
+  	    intel-media-driver
+  	    libvdpau-va-gl
+  	    vaapiIntel
+  	    vaapiVdpau
       ];
     };
     ## Packages for the dGPU inside Hades
