@@ -9,9 +9,8 @@
   ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/5cbed60c-33e3-4d69-a39e-c1d6d19406ea";
-    fsType = "btrfs";
-    options = [ "subvol=@" ];
+    device = "/dev/disk/by-uuid/43e2b389-8f8f-48fd-86d6-ee5fed25e307";
+    fsType = "ext4";
   };
 
   fileSystems."/home/serenity/Disks/Tartarus" = {
@@ -20,20 +19,16 @@
     options = [ "users" ];
   };
 
-   #fileSystems."/home/serenity/Disks/Orcus" = {
-     #device = "/dev/disk/???";
-     #fsType = "zfs";
-     #options = [ ];
-   #};
 
-  swapDevices = [ ];
+  swapDevices = [ {
+    device = "/dev/disk/by-uuid/bcf74383-30e6-4132-bd49-29ba285751e4";
+  } ];
 
   ## Enable swap on luks
   boot = {
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
     supportedFilesystems = [
-      "btrfs"
       "xfs"
       "ntfs"
     ];
@@ -71,8 +66,9 @@
       ## stuck using MBR/DOS and GRUB instead
       grub = {
         enable = true;
-        device = "/dev/sda";
-        enableCryptodisk = true;
+        device = "/dev/nvme0n1";
+        useOSProber = true;
+         #enableCryptodisk = true;
       };
     };
 
