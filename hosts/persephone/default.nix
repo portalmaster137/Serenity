@@ -79,11 +79,11 @@
   powerManagement = {
     enable = true;
     powertop.enable = true;
-    #cpuFreqGovernor = Lib.mkDefault "performance";
-    #cpufreq = {
-    #min = 1500000;
-    #max = 4400000;
-    #};
+     #cpuFreqGovernor = Lib.mkDefault "performance";
+    cpufreq = {
+     min = 1500000;
+     max = 3000000;
+    };
   };
 
   programs = {
