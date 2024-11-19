@@ -22,7 +22,7 @@
     ## GPU and graphics
     graphics = {
       enable = true;
-      enable32Bit = false;
+      enable32Bit = true;
       ## Packages for the iGPU inside Hades
       extraPackages = with pkgs; [
         intel-compute-runtime
