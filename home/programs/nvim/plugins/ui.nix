@@ -11,20 +11,20 @@
           comments = {
             italic = true;
             #bg = "";
-            fg = "${config.theme.colors.alt-fg}";
+            fg = "#cdcdcd";
           };
           variables = {
             #bg = "";
-            fg = "{config.theme.colors.primary-bg}";
+            fg = "#00cdff";
           };
           functions = {
             #bg = "";
-            fg = "{config.theme.colors.fg}";
+            fg = "ddeeff";
           };
           keywords = {
             bold = true;
             #bg = "";
-            fg = "{config.theme.colors.secondary-bg}";
+            fg = "00cdff";
           };
         };
       };
