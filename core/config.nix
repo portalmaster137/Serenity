@@ -1,20 +1,22 @@
 { inputs, lib, ... }:
 
 {
+
   imports = [
+
+    ## Not sure wei need the home-manager import here
     inputs.home-manager.nixosModules.home-manager
+
     ## Semi-modularised config
-    ./desktop-misc.nix # stuff that doesn't work in home-manager :(
     ./packages.nix # system-level packages here - needs tidying
-    ./display.nix # declarations for display management
-    ./gaming.nix # for gaming stuff, ideally would be in home/
     ./audio.nix # sound go bwuuuaaaahhhhhhhh
     ../home/users # user-level packages here
+
   ];
 
   ## Crikey !
   time.timeZone = "Australia/Brisbane";
-  i18n.defaultLocale = "en_GB.UTF-8";
+  i18n.defaultLocale = "en_AU.UTF-8";
 
   ## Genuinely dunno what these do hey, like isnt sudo
   ## already restricted to @wheel only?

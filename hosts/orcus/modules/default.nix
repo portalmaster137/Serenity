@@ -1,10 +1,17 @@
 { ... }:
 
 {
+
   imports = [
+
     ## Selected modules for import
-    ./zfs.nix # zfs storage config
-    ./network.nix # network/internet config
+     #./hardware.nix # hardware configuration
+    ./network.nix # network configuration
+    ./zfs.nix # zfs configuration
+
+    ## Selected core modules for import
+    ../../../core/modules/jellyfin.nix
+
   ];
 
 }
