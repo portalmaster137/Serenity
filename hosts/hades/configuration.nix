@@ -22,7 +22,7 @@ boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.grub = {
     enable = true;
     version = 2;
-    device = "nvme0n1p1";
+    device = "/dev/nvme0n1p1";
     efiSupport = true;
     enableCryptodisk = true;
   };
