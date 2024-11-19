@@ -9,7 +9,7 @@
   ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/43e2b389-8f8f-48fd-86d6-ee5fed25e307";
+    device = "/dev/disk/by-uuid/11de1abe-9a4b-47be-8d1f-034ea9c357df";
     fsType = "ext4";
   };
 
@@ -21,7 +21,7 @@
 
 
   swapDevices = [ {
-    device = "/dev/disk/by-uuid/bcf74383-30e6-4132-bd49-29ba285751e4";
+    device = "/dev/disk/by-uuid/2321fc38-ebae-464e-b19b-f929bf18f0f1";
   } ];
 
   ## Enable swap on luks
@@ -50,9 +50,16 @@
       };
 
       luks = {
-        devices."luks-3de671ef-22a3-4f28-9251-a0687ab44f96" = {
-          device = "/dev/disk/by-uuid/3de671ef-22a3-4f28-9251-a0687ab44f96";
-           #keyFile = "/boot/crypto_keyfile.bin";
+        devices."luks-b964f685-be70-4f87-9bd2-00cb7ba0e756" = {
+          device = "/dev/disk/by-uuid/b964f685-be70-4f87-9bd2-00cb7ba0e756";
+          keyFile = "/boot/crypto_keyfile.bin";
+        };
+      };
+
+      luks = {
+        devices."luks-6779ede9-16e6-42f4-a13e-6da0627f8d45" = {
+          device = "/dev/disk/by-uuid/6779ede9-16e6-42f4-a13e-6da0627f8d45";
+          keyFile = "/boot/crypto_keyfile.bin";
         };
       };
 
@@ -68,7 +75,7 @@
         enable = true;
         device = "/dev/nvme0n1";
         useOSProber = true;
-         #enableCryptodisk = true;
+        enableCryptodisk = true;
       };
     };
 
