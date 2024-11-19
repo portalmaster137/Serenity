@@ -18,11 +18,11 @@ boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Use the systemd-boot EFI boot loader.
   # boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
     enable = true;
     version = 2;
-    device = "nodev";
+    device = "nvme0n1p1";
     efiSupport = true;
     enableCryptodisk = true;
   };
