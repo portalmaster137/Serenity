@@ -1,12 +1,32 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   home.packages = with pkgs; [ ctags ];
 
   programs.nixvim = {
     colorschemes.modus = {
       enable = true;
-      settings = { 
+      settings = {
         transparent = true;
         style = "modus_vivendi";
+        styles = {
+          comments = {
+            italic = true;
+            #bg = "";
+            fg = "${config.theme.colors.alt-fg}";
+          };
+          variables = {
+            #bg = "";
+            fg = "{config.theme.colors.primary-bg}";
+          };
+          functions = {
+            #bg = "";
+            fg = "{config.theme.colors.fg}";
+          };
+          keywords = {
+            bold = true;
+            #bg = "";
+            fg = "{config.theme.colors.secondary-bg}";
+          };
+        };
       };
     };
     plugins = {
