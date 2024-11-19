@@ -19,12 +19,12 @@
           };
           functions = {
             #bg = "";
-            fg = "ddeeff";
+            fg = "#ddeeff";
           };
           keywords = {
             bold = true;
             #bg = "";
-            fg = "00cdff";
+            fg = "#00cdff";
           };
         };
       };
