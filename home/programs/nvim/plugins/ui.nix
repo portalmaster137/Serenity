@@ -2,12 +2,12 @@
   home.packages = with pkgs; [ ctags ];
 
   programs.nixvim = {
-    colorschemes.palette = {
+    colorschemes.modus = {
       enable = true;
-      settings = { transparent_background = true; };
+      settings = { transparent = true; };
     };
     plugins = {
-      transparent.enable = true;
+      #transparent.enable = true;
       lualine = {
         enable = true;
         settings = {
