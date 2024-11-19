@@ -4,10 +4,6 @@
 
   imports = [
 
-  ## Import themes and scripts
-   #./themes
-  ./scripts
-
   ## Import misc desktop files
    #./xdg-mime.nix
   ./gtk-qt.nix

@@ -4,7 +4,6 @@
 
   imports = [
     inputs.home-manager.nixosModules.default
-    #../desktop/resources/themes/default.nix
   ];
 
   users.users = {
