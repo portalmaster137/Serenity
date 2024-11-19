@@ -11,6 +11,7 @@
     ../../../core/modules/display.nix # display stuff
     ../../../core/modules/regreet.nix # regreet customisation
     ../../../core/modules/desktop.nix # didnt work in home-manager :(
+    ../../../core/modules/audio.nix # sound configuration
 
   ];
 

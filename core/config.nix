@@ -9,8 +9,7 @@
 
     ## Semi-modularised config
     ./packages.nix # system-level packages here - needs tidying
-    ./audio.nix # sound go bwuuuaaaahhhhhhhh
-    ../home/users # user-level packages here
+    ../home/users # user-level packages in ../home/programs/
 
   ];
 
