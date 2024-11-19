@@ -32,7 +32,6 @@
       "xfs"
       "ntfs"
     ];
-
     initrd = {
       systemd.enable = true;
       kernelModules = [ ];
@@ -48,21 +47,18 @@
       secrets = {
         "/boot/crypto_keyfile.bin" = null;
       };
-
       luks = {
-        devices."luks-b964f685-be70-4f87-9bd2-00cb7ba0e756" = {
-          device = "/dev/disk/by-uuid/b964f685-be70-4f87-9bd2-00cb7ba0e756";
-          keyFile = "/boot/crypto_keyfile.bin";
+        devices = {
+	  "luks-b964f685-be70-4f87-9bd2-00cb7ba0e756" = {
+            device = "/dev/disk/by-uuid/b964f685-be70-4f87-9bd2-00cb7ba0e756";
+            keyFile = "/boot/crypto_keyfile.bin";
+          };
+          "luks-6779ede9-16e6-42f4-a13e-6da0627f8d45" = {
+            device = "/dev/disk/by-uuid/6779ede9-16e6-42f4-a13e-6da0627f8d45";
+            keyFile = "/boot/crypto_keyfile.bin";
+          };
         };
-      };
-
-      luks = {
-        devices."luks-6779ede9-16e6-42f4-a13e-6da0627f8d45" = {
-          device = "/dev/disk/by-uuid/6779ede9-16e6-42f4-a13e-6da0627f8d45";
-          keyFile = "/boot/crypto_keyfile.bin";
-        };
-      };
-
+       };
     };
 
     loader = {
