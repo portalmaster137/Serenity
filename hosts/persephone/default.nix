@@ -79,11 +79,11 @@
   powerManagement = {
     enable = true;
     powertop.enable = true;
-    #cpuFreqGovernor = Lib.mkDefault "performance";
-    #cpufreq = {
-    #min = 1500000;
-    #max = 4400000;
-    #};
+     #cpuFreqGovernor = Lib.mkDefault "performance";
+    cpufreq = {
+     min = 1500000;
+     max = 4400000;
+    };
   };
 
   programs = {
@@ -100,7 +100,7 @@
 
   ## Some packages for managing the hardware inside Persephone
   environment.systemPackages = with pkgs; [ nvtopPackages.intel ];
-
+  system.stateVersion = "24.11";
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
 }
