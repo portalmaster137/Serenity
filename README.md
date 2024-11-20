@@ -16,7 +16,7 @@
   - Others yet to be named
  - ### **Code & Inspiration**
   - Sashanoraa
-  -Syndicate 
+  - Syndicate 
   - Wonder
   - Hive
   - [Quantenzitrone](https://codeberg.org/quantenzitrone/nixos-config/src/branch/main)

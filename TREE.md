@@ -19,18 +19,6 @@
 │
 ├── home
 │   ├── default.nix
-│   ├── programs
-│   │   ├── default.nix
-│   │   ├── git
-│   │   ├── yazi
-│   │   ├── btop
-│   │   ├── fish
-│   │   ├── fetch
-│   │   ├── kitty
-│   │   ├── nvim
-│   │   │   └── plugins
-│   │   └── opentabletdriver
-│   │       └── profiles
 │   │
 │   ├── desktop
 │   │   ├── default.nix
@@ -44,18 +32,33 @@
 │   │       ├── config.nix
 │   │       └── sway.nix
 │   │
+│   ├── programs
+│   │   ├── default.nix
+│   │   ├── git
+│   │   ├── yazi
+│   │   ├── btop
+│   │   ├── fish
+│   │   ├── fetch
+│   │   ├── kitty
+│   │   ├── nvim
+│   │   │   └── plugins
+│   │   └── opentabletdriver
+│   │       └── profiles
+│   │
+│   ├── resources
+│   │   ├── wallpapers
+│   │   ├── themes
+│   │   └── icons
+│   │
 │   ├── scripts
 │   │   └── default.nix
+│   │
 │   ├── systemd
 │   │   └── default.nix
-│   ├── users
-│   │   ├── default.nix
-│   │   └── u-serenity.nix
-│   └── resources
-│       ├── icons
-│       ├── themes
-│       └── wallpapers
-│ 
+│   │
+│   └── users
+│       ├── default.nix
+│       └── u-serenity.nix
 │
 └── hosts
     │
