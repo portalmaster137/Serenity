@@ -9,44 +9,53 @@
 ├── core
 │   ├── config.nix
 │   ├── packages.nix
-│   ├── display.nix
-│   ├── regreet-config.nix
-│   ├── gaming.nix
-│   └── audio.nix
-│
+│   └── modules
+│       ├── audio.nix
+│       ├── display.nix
+│       ├── desktop.nix
+│       ├── regreet.nix
+│       ├── jellyfin.nix
+│       └── gaming.nix│
 │
 ├── home
+│   ├── default.nix
 │   ├── programs
 │   │   ├── default.nix
+│   │   ├── git
+│   │   ├── yazi
+│   │   ├── btop
+│   │   ├── fish
+│   │   ├── fetch
+│   │   ├── kitty
 │   │   ├── nvim
 │   │   │   └── plugins
-│   │   ├── opentabletdriver
-│   │   │   └── profiles
-│   │   └── systemd
+│   │   └── opentabletdriver
+│   │       └── profiles
 │   │
-│   │ 
 │   ├── desktop
 │   │   ├── default.nix
 │   │   ├── xdg-mime.nix
 │   │   ├── gtk-qt.nix
-│   │   ├── resources
-│   │   │   ├── icons
-│   │   │   ├── themes
-│   │   │   └── wallpapers
 │   │   ├── hypr
 │   │   │   ├── default.nix
-│   │   │   ├── hyprland.nix
-│   │   │   └── scripts
+│   │   │   └── hyprland.nix
 │   │   └── sway
 │   │       ├── default.nix
 │   │       ├── config.nix
 │   │       └── sway.nix
-│   │ 
+│   │
+│   ├── scripts
+│   │   └── default.nix
 │   ├── systemd
-│   └── users
-│       ├── default.nix
-│       └── u-serenity.nix
-│
+│   │   └── default.nix
+│   ├── users
+│   │   ├── default.nix
+│   │   └── u-serenity.nix
+│   └── resources
+│       ├── icons
+│       ├── themes
+│       └── wallpapers
+│ 
 │
 └── hosts
     │
