@@ -157,7 +157,7 @@
         modules = [
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
-          ./hosts/hades
+          ./hosts/hades/configuration.nix
         ];
       };
 
