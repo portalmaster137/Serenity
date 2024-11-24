@@ -3,6 +3,8 @@
 │
 ├── README.md
 ├── TREE.md
+├── screenshotDesktop.png
+├── screenshotTerminal.png
 │
 ├── flake.nix
 │
