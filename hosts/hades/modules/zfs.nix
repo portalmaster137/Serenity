@@ -30,7 +30,7 @@ in
 
   ## Enable zfs in kernel and boot
   boot = {
-    kernelPackages = latestZfsLinux;
+    kernelPackages = lib.mkForce latestZfsLinux;
     supportedFilesystems = [ "zfs" ];
     zfs = {
       extraPools = [ "orcus" ];
