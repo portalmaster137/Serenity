@@ -19,6 +19,11 @@ with lib;
       description = "Name of the wallpaper (from the wallpapers directory)";
     };
 
+    lockscreenWallpaper = mkOption {
+      type = types.str;
+      description = "Name of the lockscreen wallpaper (from the wallpapers directory)";
+    };
+
     font = mkOption {
       type = types.str;
       description = "Default font";
