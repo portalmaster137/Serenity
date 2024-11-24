@@ -1,8 +1,8 @@
 # Serenity OS
 **Configuration for system, applications, themes, and more; shared between multiple machines and users.**<br>
 
-![desktopScreenshot](https://codeberg.org/serenity-F/nixdots/raw/branch/hyprsway/desktopScreenshot.png)
-![desktopScreenshot2](https://codeberg.org/serenity-F/nixdots/raw/branch/hyprsway/desktopScreenshot2.png)
+![desktopScreenshot](https://codeberg.org/serenity-F/nixdots/raw/branch/hyprsway/screenshotDesktop.png)
+![desktopScreenshot2](https://codeberg.org/serenity-F/nixdots/raw/branch/hyprsway/screenshotTerminal.png)
 <br>
 *Very much WIP and mostly stolen code at this point.*<br>
 *A "prettified" structure can be found [here.](./TREE.md)*<br>
