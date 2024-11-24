@@ -16,15 +16,11 @@
               "Value": 4.0
             }
           ],
-          "Enable": false
+          "Enable": true
         },
         {
           "Path": "Pressure_Debounce.Pressure_Debounce",
           "Settings": [
-            {
-              "Property": "Pressure_threshold",
-              "Value": 1.0
-            },
             {
               "Property": "Disable_timer",
               "Value": null
@@ -35,7 +31,11 @@
             },
             {
               "Property": "Debounce_timer",
-              "Value": 7.5
+              "Value": 6.5
+            },
+            {
+              "Property": "Pressure_threshold",
+              "Value": 0.0
             }
           ],
           "Enable": true
@@ -45,7 +45,7 @@
           "Settings": [
             {
               "Property": "Chatter_Extermination_Strength",
-              "Value": 8.0
+              "Value": 10.0
             }
           ],
           "Enable": true
@@ -108,48 +108,40 @@
               "Value": true
             }
           ],
-          "Enable": false
+          "Enable": true
         },
         {
           "Path": "RadialFollow.RadialFollowSmoothingScreenSpace",
           "Settings": [
             {
               "Property": "InnerRadius",
-              "Value": 1.0
-            },
-            {
-              "Property": "SmoothingCoefficient",
-              "Value": 0.15
+              "Value": 0.0
             },
             {
               "Property": "SoftKneeScale",
-              "Value": 100.0
+              "Value": 50.0
             },
             {
               "Property": "SmoothingLeakCoefficient",
-              "Value": 1.0
+              "Value": 0.35
             },
             {
               "Property": "OuterRadius",
-              "Value": 2.0
+              "Value": 8.5
+            },
+            {
+              "Property": "SmoothingCoefficient",
+              "Value": 0.4
             }
           ],
-          "Enable": false
+          "Enable": true
         },
         {
           "Path": "RadialFollow.RadialFollowSmoothingTabletSpace",
           "Settings": [
             {
-              "Property": "SmoothingCoefficient",
-              "Value": 0.15
-            },
-            {
-              "Property": "OuterRadius",
-              "Value": 1.0
-            },
-            {
               "Property": "InnerRadius",
-              "Value": 0.1
+              "Value": 0.025
             },
             {
               "Property": "SoftKneeScale",
@@ -157,10 +149,18 @@
             },
             {
               "Property": "SmoothingLeakCoefficient",
+              "Value": 0.75
+            },
+            {
+              "Property": "OuterRadius",
               "Value": 0.5
+            },
+            {
+              "Property": "SmoothingCoefficient",
+              "Value": 0.3
             }
           ],
-          "Enable": false
+          "Enable": true
         },
         {
           "Path": "tablet_calibration.tablet_calibration_stretch_tablet",
@@ -262,24 +262,24 @@
               "Value": 1.0
             },
             {
-              "Property": "MaxPressure",
-              "Value": 8191.0
-            },
-            {
-              "Property": "MinWeight",
-              "Value": 1.0
-            },
-            {
-              "Property": "MaxWeight",
-              "Value": 0.5
+              "Property": "ReverseSmoothing",
+              "Value": true
             },
             {
               "Property": "BaseSmoothing",
-              "Value": null
+              "Value": true
             },
             {
-              "Property": "ReverseSmoothing",
-              "Value": null
+              "Property": "MaxWeight",
+              "Value": 0.1
+            },
+            {
+              "Property": "MinWeight",
+              "Value": 0.5
+            },
+            {
+              "Property": "MaxPressure",
+              "Value": 1023.0
             }
           ],
           "Enable": false
@@ -390,18 +390,6 @@
           "Path": "TabletDriverFilters.Devocub.Antichatter",
           "Settings": [
             {
-              "Property": "Latency",
-              "Value": 2.0
-            },
-            {
-              "Property": "AntichatterStrength",
-              "Value": 3.0
-            },
-            {
-              "Property": "AntichatterMultiplier",
-              "Value": 1.0
-            },
-            {
               "Property": "AntichatterOffsetX",
               "Value": null
             },
@@ -432,6 +420,18 @@
             {
               "Property": "Frequency",
               "Value": 1000.0
+            },
+            {
+              "Property": "Latency",
+              "Value": 4.0
+            },
+            {
+              "Property": "AntichatterStrength",
+              "Value": 5.0
+            },
+            {
+              "Property": "AntichatterMultiplier",
+              "Value": 250.0
             }
           ],
           "Enable": false
@@ -445,16 +445,8 @@
           "Path": "ScuffedInterpolator.ScuffedInterp",
           "Settings": [
             {
-              "Property": "_getScuffedAlwaysExtrap",
-              "Value": true
-            },
-            {
               "Property": "_getScuffedHalfStepReports",
               "Value": true
-            },
-            {
-              "Property": "Frequency",
-              "Value": 1000.0
             },
             {
               "Property": "_getScuffedTabletHz",
@@ -462,11 +454,19 @@
             },
             {
               "Property": "_getScuffedLiftResetDelay",
-              "Value": 3.0
+              "Value": 2.0
+            },
+            {
+              "Property": "_getScuffedAlwaysExtrap",
+              "Value": false
+            },
+            {
+              "Property": "Frequency",
+              "Value": 1600.0
             },
             {
               "Property": "_getSetScuffedInterpAmount",
-              "Value": 1.2
+              "Value": 0.65
             }
           ],
           "Enable": true
@@ -479,12 +479,12 @@
               "Value": 1.0
             },
             {
-              "Property": "Frequency",
-              "Value": 1000.0
-            },
-            {
               "Property": "SmoothingFactor",
               "Value": 0.5
+            },
+            {
+              "Property": "Frequency",
+              "Value": 1500.0
             }
           ],
           "Enable": false
@@ -507,12 +507,12 @@
           "Path": "OpenTabletDriver.Plugin.NoiseReduction",
           "Settings": [
             {
-              "Property": "DistanceThreshold",
-              "Value": 0.2
-            },
-            {
               "Property": "Samples",
               "Value": 5
+            },
+            {
+              "Property": "DistanceThreshold",
+              "Value": 0.25
             }
           ],
           "Enable": false
@@ -522,7 +522,7 @@
           "Settings": [
             {
               "Property": "Scale",
-              "Value": 1.75
+              "Value": 1.5
             }
           ],
           "Enable": true
@@ -545,14 +545,6 @@
           "Path": "TemporalResampler",
           "Settings": [
             {
-              "Property": "frameShift",
-              "Value": 0.5
-            },
-            {
-              "Property": "followRadius",
-              "Value": 0.0
-            },
-            {
               "Property": "latency",
               "Value": 0.0
             },
@@ -570,9 +562,118 @@
             },
             {
               "Property": "Frequency",
-              "Value": 1000.0
+              "Value": 1500.0
+            },
+            {
+              "Property": "frameShift",
+              "Value": 1.0
+            },
+            {
+              "Property": "followRadius",
+              "Value": 0.15
             }
           ],
+          "Enable": false
+        },
+        {
+          "Path": "VoiDPlugins.Filter.MeL.MeLAsync",
+          "Settings": [
+            {
+              "Property": "Samples",
+              "Value": 30
+            },
+            {
+              "Property": "Complexity",
+              "Value": 3
+            },
+            {
+              "Property": "Weight",
+              "Value": 1.5
+            },
+            {
+              "Property": "Frequency",
+              "Value": 1500.0
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "VoiDPlugins.Filter.MeL.MeLFilter",
+          "Settings": [
+            {
+              "Property": "Complexity",
+              "Value": 3
+            },
+            {
+              "Property": "Samples",
+              "Value": 30
+            },
+            {
+              "Property": "Weight",
+              "Value": 1.5
+            },
+            {
+              "Property": "Offset",
+              "Value": -2.5
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "CustomFilter.CustomFilter",
+          "Settings": [
+            {
+              "Property": "XFunc",
+              "Value": "x"
+            },
+            {
+              "Property": "YFunc",
+              "Value": "y"
+            },
+            {
+              "Property": "PFunc",
+              "Value": "p"
+            },
+            {
+              "Property": "TXFunc",
+              "Value": "tx"
+            },
+            {
+              "Property": "TYFunc",
+              "Value": "ty"
+            },
+            {
+              "Property": "ResetTime",
+              "Value": 0
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "SpringInterpolator.SpringInterpolator",
+          "Settings": [
+            {
+              "Property": "Frequency",
+              "Value": 1500.0
+            },
+            {
+              "Property": "StepSize",
+              "Value": 1000.0
+            },
+            {
+              "Property": "Damping",
+              "Value": 5.0
+            },
+            {
+              "Property": "Stiffness",
+              "Value": 0.1
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "TouchGestures.GesturesHandler",
+          "Settings": [],
           "Enable": false
         }
       ],
@@ -585,10 +686,10 @@
           "Rotation": 0.0
         },
         "Tablet": {
-          "Width": 70.0,
-          "Height": 29.302,
+          "Width": 76.0,
+          "Height": 31.814,
           "X": 76.0,
-          "Y": 67.0,
+          "Y": 47.5,
           "Rotation": 0.0
         },
         "EnableClipping": true,
@@ -726,6 +827,16 @@
     {
       "Path": "OTD.UX.Remote.UXRemote",
       "Settings": [],
+      "Enable": true
+    },
+    {
+      "Path": "TouchGestures.Installer.TouchGesturesInstaller",
+      "Settings": [
+        {
+          "Property": "ForceInstall",
+          "Value": true
+        }
+      ],
       "Enable": true
     }
   ]
