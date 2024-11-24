@@ -3,8 +3,6 @@
 │
 ├── README.md
 ├── TREE.md
-├── screenshotDesktop.png
-├── screenshotTerminal.png
 │
 ├── flake.nix
 │
@@ -48,6 +46,9 @@
 │   │       └── profiles
 │   │
 │   ├── resources
+│   │   ├── screenshots
+│   │   │   ├── screenshotDesktop.png
+│   │   │   └── screenshotTerminal.png
 │   │   ├── wallpapers
 │   │   ├── themes
 │   │   └── icons
