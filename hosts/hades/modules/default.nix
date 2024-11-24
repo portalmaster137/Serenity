@@ -7,7 +7,7 @@
     ## Selected host modules for import
     ./network.nix # network configuration
     #./extra.nix # configuration.nix substitute
-    #./zfs.nix # zfs configuration
+    ./zfs.nix # zfs configuration
 
     ## Selected core modules for import
     ../../../core/modules/display.nix # display stuff
