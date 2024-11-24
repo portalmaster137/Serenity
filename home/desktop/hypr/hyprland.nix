@@ -43,7 +43,7 @@
       exec-once = [
         "startup"
          #"otd-gui"
-	 #"${pkgs.udiskie}/bin/udiskie"
+	       #"${pkgs.udiskie}/bin/udiskie"
          #"${pkgs.hypridle}/bin/hypridle"
          #"${pkgs.swww}/bin/swww swww init"
         "${pkgs.kitty}/bin/kitty --class floating"

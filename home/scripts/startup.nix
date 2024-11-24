@@ -26,7 +26,9 @@ let
 
     swww-daemon & sleep 0.1
 
-    swww img ~/flakes/nixdots/home/desktop/resources/wallpapers/sphericaEssentia-uncredited.png
+    swww img ${config.theme.wallpaper}
+
+    swww img ${config.theme.wallpaper}
 
   '';
 

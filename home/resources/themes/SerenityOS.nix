@@ -4,7 +4,8 @@
   ];
 
   theme = {
-    wallpaper = "../wallpapers/sphericaEssentia.png";
+    wallpaper = "../wallpapers/almondBlossoms-VanGogh.jpg";
+    lockscreenWallpaper = "../wallpapers/attunement-HelveticaBlanc.png";
     waybar-transparent = true;
     font-mono = "spleen 32x64";
     font = "spleen 32x64";

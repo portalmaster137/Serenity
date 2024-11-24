@@ -3,7 +3,7 @@
   xdg.configFile."hypr/hyprlock.conf".text = ''
     background {
         monitor =
-        path = $HOME/.config/wallpapers/${config.theme.wallpaper}
+        path = ${config.theme.lockscreenWallpaper}
         color = rgb(${config.theme.colors.bg})
 
         blur_size = 4
