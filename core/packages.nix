@@ -110,13 +110,13 @@
 
     ## Nix specific tools
     nix-tree # Dependency tree viewer for nix store
-     #nix-init # Generate nix packages from URLs
+    nix-init # Generate nix packages from URLs
      #nix-index # Database for nixpkgs
      #nixpkgs-review # Review nixpkgs PRs
     nix-output-monitor # Shows extra information on nix commands
 
     ## Filsesystem utilities
-    xfsprogs # XFS filesystem
+     #xfsprogs # XFS filesystem
     ddrutility #Set of tools for HDD rescure
     exfatprogs # ExFAT filesystem
     btrfs-progs # BTRFS filesystem
