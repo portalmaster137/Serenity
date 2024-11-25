@@ -22,20 +22,20 @@
           "Path": "Pressure_Debounce.Pressure_Debounce",
           "Settings": [
             {
-              "Property": "Disable_timer",
-              "Value": null
-            },
-            {
               "Property": "Drop_excess",
               "Value": true
             },
             {
+              "Property": "Disable_timer",
+              "Value": true
+            },
+            {
               "Property": "Debounce_timer",
-              "Value": 6.5
+              "Value": 10.0
             },
             {
               "Property": "Pressure_threshold",
-              "Value": 0.0
+              "Value": 1.0
             }
           ],
           "Enable": true
@@ -48,7 +48,7 @@
               "Value": 10.0
             }
           ],
-          "Enable": false
+          "Enable": true
         },
         {
           "Path": "Hover_Distance_Limiter.Hover_Distance_Limiter",
@@ -79,7 +79,7 @@
             },
             {
               "Property": "Hover_min",
-              "Value": 38
+              "Value": 35
             }
           ],
           "Enable": true
@@ -119,19 +119,19 @@
             },
             {
               "Property": "OuterRadius",
-              "Value": 7.5
+              "Value": 5.0
             },
             {
-              "Property": "SmoothingCoefficient",
-              "Value": 0.35
+              "Property": "SmoothingLeakCoefficient",
+              "Value": 0.75
             },
             {
               "Property": "SoftKneeScale",
               "Value": 100.0
             },
             {
-              "Property": "SmoothingLeakCoefficient",
-              "Value": 0.35
+              "Property": "SmoothingCoefficient",
+              "Value": 0.75
             }
           ],
           "Enable": false
@@ -160,7 +160,7 @@
               "Value": 0.025
             }
           ],
-          "Enable": true
+          "Enable": false
         },
         {
           "Path": "tablet_calibration.tablet_calibration_stretch_tablet",
@@ -445,31 +445,31 @@
           "Path": "ScuffedInterpolator.ScuffedInterp",
           "Settings": [
             {
-              "Property": "_getScuffedHalfStepReports",
-              "Value": true
+              "Property": "_getScuffedLiftResetDelay",
+              "Value": 2.0
             },
             {
               "Property": "_getScuffedTabletHz",
-              "Value": 160.0
+              "Value": 133.0
             },
             {
-              "Property": "_getScuffedLiftResetDelay",
-              "Value": 2.0
+              "Property": "Frequency",
+              "Value": 2660.0
             },
             {
               "Property": "_getScuffedAlwaysExtrap",
               "Value": false
             },
             {
-              "Property": "Frequency",
-              "Value": 1600.0
+              "Property": "_getScuffedHalfStepReports",
+              "Value": false
             },
             {
               "Property": "_getSetScuffedInterpAmount",
-              "Value": 0.55
+              "Value": 0.5
             }
           ],
-          "Enable": false
+          "Enable": true
         },
         {
           "Path": "BezierInterpolator.BezierInterp",
@@ -494,25 +494,25 @@
           "Settings": [
             {
               "Property": "Frequency",
-              "Value": 1600.0
+              "Value": 2660.0
             },
             {
               "Property": "Latency",
-              "Value": 8.0
+              "Value": 15.0
             }
           ],
-          "Enable": false
+          "Enable": true
         },
         {
           "Path": "OpenTabletDriver.Plugin.NoiseReduction",
           "Settings": [
             {
-              "Property": "Samples",
-              "Value": 8
+              "Property": "DistanceThreshold",
+              "Value": 0.35
             },
             {
-              "Property": "DistanceThreshold",
-              "Value": 0.2
+              "Property": "Samples",
+              "Value": 5
             }
           ],
           "Enable": true
@@ -525,7 +525,7 @@
               "Value": 1.5
             }
           ],
-          "Enable": true
+          "Enable": false
         },
         {
           "Path": "Flip_Axes.Flip_Tablet_Axes",
@@ -674,12 +674,44 @@
         {
           "Path": "TouchGestures.GesturesHandler",
           "Settings": [],
-          "Enable": true
+          "Enable": false
         },
         {
           "Path": "monitor_toggle.monitor_toggle",
           "Settings": [],
-          "Enable": true
+          "Enable": false
+        },
+        {
+          "Path": "MouseUtils.Abs2Rel.Abs2RelFilter",
+          "Settings": [
+            {
+              "Property": "ResetTime",
+              "Value": 100
+            },
+            {
+              "Property": "bIgnoreOobTabletInput",
+              "Value": true
+            },
+            {
+              "Property": "bNormalizeAspectRatio",
+              "Value": true
+            },
+            {
+              "Property": "SpeedMultiplier",
+              "Value": 1.0
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "MouseUtils.WindowsAcceleration.WindowsMouseAccelerationFilter",
+          "Settings": [
+            {
+              "Property": "AccelerationIntensity",
+              "Value": 1.0
+            }
+          ],
+          "Enable": false
         }
       ],
       "AbsoluteModeSettings": {
@@ -773,32 +805,7 @@
             ],
             "Enable": true
           },
-          {
-            "Path": "monitor_toggle.monitor_toggle_binding",
-            "Settings": [
-              {
-                "Property": "offset_x",
-                "Value": "0"
-              },
-              {
-                "Property": "offset_y",
-                "Value": "0"
-              },
-              {
-                "Property": "mode",
-                "Value": "Cycle"
-              },
-              {
-                "Property": "width_multiplier",
-                "Value": "0.558139535"
-              },
-              {
-                "Property": "height_multiplier",
-                "Value": "0.833333333"
-              }
-            ],
-            "Enable": true
-          },
+          null,
           {
             "Path": "VoiDPlugins.Filter.PrecisionControlBinding",
             "Settings": [
