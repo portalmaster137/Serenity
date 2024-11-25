@@ -47,7 +47,7 @@ in {
     gtk4.extraConfig = { gtk-application-prefer-dark-theme = 1; };
   };
 
-  sessionVariables.GTK_THEME = "FlatColor";
+  home.sessionVariables.GTK_THEME = "FlatColor";
 
   home.pointerCursor = {
     gtk.enable = true;
