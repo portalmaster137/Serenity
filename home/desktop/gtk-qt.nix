@@ -1,27 +1,27 @@
 # GTK & QT theme configuration
 { config, pkgs, lib, ... }:
 let
-  accent = "#${config.theme.colors.color15}";
-  foreground = "#${config.theme.colors.primary-fg}";
-  background = "#${config.theme.colors.primary-bg}";
-  background-alt = "#${config.theme.colors.alt-bg}";
+  accent = "${config.theme.colors.color15}";
+  foreground = "${config.theme.colors.primary-fg}";
+  background = "${config.theme.colors.primary-bg}";
+  background-alt = "${config.theme.colors.alt-bg}";
 
-  c0 = "#${config.theme.colors.color0}";
-  c1 = "#${config.theme.colors.color1}";
-  c2 = "#${config.theme.colors.color2}";
-  c3 = "#${config.theme.colors.color3}";
-  c4 = "#${config.theme.colors.color4}";
-  c5 = "#${config.theme.colors.color5}";
-  c6 = "#${config.theme.colors.color6}";
-  c7 = "#${config.theme.colors.color7}";
-  c8 = "#${config.theme.colors.color8}";
-  c9 = "#${config.theme.colors.color9}";
-  c10 = "#${config.theme.colors.color10}";
-  c11 = "#${config.theme.colors.color11}";
-  c12 = "#${config.theme.colors.color12}";
-  c13 = "#${config.theme.colors.color13}";
-  c14 = "#${config.theme.colors.color14}";
-  c15 = "#${config.theme.colors.color15}";
+  c0 = "${config.theme.colors.color0}";
+  c1 = "${config.theme.colors.color1}";
+  c2 = "${config.theme.colors.color2}";
+  c3 = "${config.theme.colors.color3}";
+  c4 = "${config.theme.colors.color4}";
+  c5 = "${config.theme.colors.color5}";
+  c6 = "${config.theme.colors.color6}";
+  c7 = "${config.theme.colors.color7}";
+  c8 = "${config.theme.colors.color8}";
+  c9 = "${config.theme.colors.color9}";
+  c10 = "${config.theme.colors.color10}";
+  c11 = "${config.theme.colors.color11}";
+  c12 = "${config.theme.colors.color12}";
+  c13 = "${config.theme.colors.color13}";
+  c14 = "${config.theme.colors.color14}";
+  c15 = "${config.theme.colors.color15}";
 in {
 
   qt = {
@@ -36,17 +36,24 @@ in {
     theme = lib.mkForce { name = "FlatColor"; };
 
     iconTheme = {
-      package = pkgs.kora-icon-theme;
-      name = "Kora";
+      package = pkgs.flat-remix-icon-theme;
+      name = "Flat-Remix-Grey-Darkest";
     };
 
-    font = { 
-      name = "${config.theme.font}";
-    };
+    font = { name = "${config.theme.font}"; };
 
     gtk3.extraConfig = { gtk-application-prefer-dark-theme = 1; };
 
     gtk4.extraConfig = { gtk-application-prefer-dark-theme = 1; };
+  };
+
+  sessionVariables.GTK_THEME = "FlatColor";
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 12;
   };
 
   home.file = {

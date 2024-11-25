@@ -32,7 +32,7 @@
       config = {
 	      common."org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
         common.default = [ "gtk" "gnome" ];
-        sway.default = [ "gtk" "gnome" ];
+         #sway.default = [ "gtk" "gnome" ];
         hyprland.default = [ "hyprland" "gtk" "gnome" ];
       };
       configPackages = with pkgs; [
@@ -122,14 +122,14 @@
 
   home = {
 
-    pointerCursor = {
-      gtk.enable = true;
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
-      size = 12;
-    };
+     #pointerCursor = {
+       #gtk.enable = true;
+       #package = pkgs.bibata-cursors;
+       #name = "Bibata-Modern-Classic";
+       #size = 12;
+     #};
 
-    sessionVariables.GTK_THEME = "Adwaita-dark";
+     #sessionVariables.GTK_THEME = "Adwaita-dark";
 
     packages = with pkgs; [
       ## auth/security
