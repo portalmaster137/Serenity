@@ -20,7 +20,7 @@
   ./wofi.nix
   
   ## Import individual desktop configs
-  ./sway
+   #./sway
   ./hypr
 
   ];
