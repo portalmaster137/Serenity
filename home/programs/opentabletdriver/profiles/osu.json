@@ -16,7 +16,7 @@
               "Value": 4.0
             }
           ],
-          "Enable": true
+          "Enable": false
         },
         {
           "Path": "Pressure_Debounce.Pressure_Debounce",
@@ -48,7 +48,7 @@
               "Value": 10.0
             }
           ],
-          "Enable": true
+          "Enable": false
         },
         {
           "Path": "Hover_Distance_Limiter.Hover_Distance_Limiter",
@@ -79,7 +79,7 @@
             },
             {
               "Property": "Hover_min",
-              "Value": 33
+              "Value": 38
             }
           ],
           "Enable": true
@@ -108,7 +108,7 @@
               "Value": true
             }
           ],
-          "Enable": true
+          "Enable": false
         },
         {
           "Path": "RadialFollow.RadialFollowSmoothingScreenSpace",
@@ -118,30 +118,12 @@
               "Value": 0.0
             },
             {
-              "Property": "SoftKneeScale",
-              "Value": 50.0
-            },
-            {
-              "Property": "SmoothingLeakCoefficient",
-              "Value": 0.35
-            },
-            {
               "Property": "OuterRadius",
-              "Value": 8.5
+              "Value": 7.5
             },
             {
               "Property": "SmoothingCoefficient",
-              "Value": 0.4
-            }
-          ],
-          "Enable": true
-        },
-        {
-          "Path": "RadialFollow.RadialFollowSmoothingTabletSpace",
-          "Settings": [
-            {
-              "Property": "InnerRadius",
-              "Value": 0.025
+              "Value": 0.35
             },
             {
               "Property": "SoftKneeScale",
@@ -149,15 +131,33 @@
             },
             {
               "Property": "SmoothingLeakCoefficient",
-              "Value": 0.75
+              "Value": 0.35
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "RadialFollow.RadialFollowSmoothingTabletSpace",
+          "Settings": [
+            {
+              "Property": "SoftKneeScale",
+              "Value": 100.0
             },
             {
-              "Property": "OuterRadius",
-              "Value": 0.5
+              "Property": "SmoothingLeakCoefficient",
+              "Value": 0.65
             },
             {
               "Property": "SmoothingCoefficient",
-              "Value": 0.3
+              "Value": 0.25
+            },
+            {
+              "Property": "OuterRadius",
+              "Value": 0.25
+            },
+            {
+              "Property": "InnerRadius",
+              "Value": 0.025
             }
           ],
           "Enable": true
@@ -466,10 +466,10 @@
             },
             {
               "Property": "_getSetScuffedInterpAmount",
-              "Value": 0.65
+              "Value": 0.55
             }
           ],
-          "Enable": true
+          "Enable": false
         },
         {
           "Path": "BezierInterpolator.BezierInterp",
@@ -494,11 +494,11 @@
           "Settings": [
             {
               "Property": "Frequency",
-              "Value": 1000.0
+              "Value": 1600.0
             },
             {
               "Property": "Latency",
-              "Value": 10.0
+              "Value": 8.0
             }
           ],
           "Enable": false
@@ -508,14 +508,14 @@
           "Settings": [
             {
               "Property": "Samples",
-              "Value": 5
+              "Value": 8
             },
             {
               "Property": "DistanceThreshold",
-              "Value": 0.25
+              "Value": 0.2
             }
           ],
-          "Enable": false
+          "Enable": true
         },
         {
           "Path": "VoiDPlugins.Filter.PrecisionControl",
@@ -674,7 +674,12 @@
         {
           "Path": "TouchGestures.GesturesHandler",
           "Settings": [],
-          "Enable": false
+          "Enable": true
+        },
+        {
+          "Path": "monitor_toggle.monitor_toggle",
+          "Settings": [],
+          "Enable": true
         }
       ],
       "AbsoluteModeSettings": {
@@ -753,7 +758,7 @@
             "Settings": [
               {
                 "Property": "Keys",
-                "Value": "Control+B"
+                "Value": "Control+O"
               }
             ],
             "Enable": true
@@ -763,27 +768,43 @@
             "Settings": [
               {
                 "Property": "Keys",
-                "Value": "Control+O"
+                "Value": "Control+B"
               }
             ],
             "Enable": true
           },
           {
-            "Path": "ScrollBinding.BulletproofScrollBinding",
+            "Path": "monitor_toggle.monitor_toggle_binding",
             "Settings": [
               {
-                "Property": "Property",
-                "Value": "Scroll Forward"
+                "Property": "offset_x",
+                "Value": "0"
+              },
+              {
+                "Property": "offset_y",
+                "Value": "0"
+              },
+              {
+                "Property": "mode",
+                "Value": "Cycle"
+              },
+              {
+                "Property": "width_multiplier",
+                "Value": "0.558139535"
+              },
+              {
+                "Property": "height_multiplier",
+                "Value": "0.833333333"
               }
             ],
             "Enable": true
           },
           {
-            "Path": "ScrollBinding.BulletproofScrollBinding",
+            "Path": "VoiDPlugins.Filter.PrecisionControlBinding",
             "Settings": [
               {
-                "Property": "Property",
-                "Value": "Scroll Backward"
+                "Property": "Mode",
+                "Value": "Toggle"
               }
             ],
             "Enable": true
@@ -838,6 +859,11 @@
         }
       ],
       "Enable": true
+    },
+    {
+      "Path": "TouchGestures.GesturesDaemon",
+      "Settings": [],
+      "Enable": false
     }
   ]
 }
