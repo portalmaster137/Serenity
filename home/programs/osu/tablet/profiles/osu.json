@@ -45,7 +45,7 @@
           "Settings": [
             {
               "Property": "Chatter_Extermination_Strength",
-              "Value": 10.0
+              "Value": 8.0
             }
           ],
           "Enable": true
@@ -79,7 +79,7 @@
             },
             {
               "Property": "Hover_min",
-              "Value": 35
+              "Value": 37
             }
           ],
           "Enable": true
@@ -449,27 +449,27 @@
               "Value": 2.0
             },
             {
-              "Property": "_getScuffedTabletHz",
-              "Value": 133.0
-            },
-            {
-              "Property": "Frequency",
-              "Value": 2660.0
-            },
-            {
               "Property": "_getScuffedAlwaysExtrap",
               "Value": false
+            },
+            {
+              "Property": "_getSetScuffedInterpAmount",
+              "Value": 0.5
             },
             {
               "Property": "_getScuffedHalfStepReports",
               "Value": false
             },
             {
-              "Property": "_getSetScuffedInterpAmount",
-              "Value": 0.5
+              "Property": "Frequency",
+              "Value": 1330.0
+            },
+            {
+              "Property": "_getScuffedTabletHz",
+              "Value": 160.0
             }
           ],
-          "Enable": true
+          "Enable": false
         },
         {
           "Path": "BezierInterpolator.BezierInterp",
@@ -494,11 +494,11 @@
           "Settings": [
             {
               "Property": "Frequency",
-              "Value": 2660.0
+              "Value": 2500.0
             },
             {
               "Property": "Latency",
-              "Value": 15.0
+              "Value": 7.5
             }
           ],
           "Enable": true
@@ -507,12 +507,12 @@
           "Path": "OpenTabletDriver.Plugin.NoiseReduction",
           "Settings": [
             {
-              "Property": "DistanceThreshold",
-              "Value": 0.35
+              "Property": "Samples",
+              "Value": 8
             },
             {
-              "Property": "Samples",
-              "Value": 5
+              "Property": "DistanceThreshold",
+              "Value": 0.2
             }
           ],
           "Enable": true
@@ -724,7 +724,7 @@
         },
         "Tablet": {
           "Width": 76.0,
-          "Height": 31.814,
+          "Height": 31.813805,
           "X": 76.0,
           "Y": 47.5,
           "Rotation": 0.0
@@ -806,16 +806,7 @@
             "Enable": true
           },
           null,
-          {
-            "Path": "VoiDPlugins.Filter.PrecisionControlBinding",
-            "Settings": [
-              {
-                "Property": "Mode",
-                "Value": "Toggle"
-              }
-            ],
-            "Enable": true
-          }
+          null
         ],
         "MouseButtons": [],
         "MouseScrollUp": null,
