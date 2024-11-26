@@ -48,7 +48,7 @@
   };
 
   services.dnscrypt-proxy2 = {
-    enable = false;
+    enable = true;
     settings = {
       ipv6_servers = true;
       require_dnssec = true;
@@ -64,12 +64,12 @@
 
       # You can choose a specific set of servers from https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
       server_names = [
-        "adfilter-syd"
-        "adfilter-syd-ipv6"
-        "cs-sydney"
-        "cs-singapore"
-        "userspace-australia"
-        "userspace-australia-ipv6"
+        #"adfilter-syd"
+        #"adfilter-syd-ipv6"
+        #"cs-sydney"
+        #"cs-singapore"
+        #"userspace-australia"
+        #"userspace-australia-ipv6"
       ];
     };
   };
