@@ -113,12 +113,12 @@
 
   home = {
 
-    #pointerCursor = {
-    #gtk.enable = true;
-    #package = pkgs.bibata-cursors;
-    #name = "Bibata-Modern-Classic";
-    #size = 12;
-    #};
+    pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 12;
+    };
 
     sessionVariables.GTK_THEME = "Adwaita-dark";
 
