@@ -115,10 +115,10 @@
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
         "GDK_BACKEND,wayland,x11,*"
-	"NIXOS_OZONE_WL,1" # disable if you(g.)'re having issues w/ firefox
-	"OZONE_PLATFORM,wayland"
+	      "NIXOS_OZONE_WL,1" # disable if you(g.)'re having issues w/ firefox
+	      "OZONE_PLATFORM,wayland"
         "SDL_VIDEODRIVER,wayland,x11"
-	"WLR_RENDERER_ALLOW_SOFTWARE,1"
+	      "WLR_RENDERER_ALLOW_SOFTWARE,1"
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
         "QT_QPA_PLATFORM,wayland;xcb"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
@@ -128,7 +128,7 @@
          #"HYPRCURSOR_SIZE,16"
          #"XCURSOR_THEME,rose-pine"
          #"XCURSOR_SIZE,16"
-	"NIXPKGS_ALLOW_UNFREE,1"
+	      "NIXPKGS_ALLOW_UNFREE,1"
       ];
 
       general = {
@@ -144,22 +144,14 @@
 
       decoration = {
         rounding = config.theme.rounding;
-	shadow = {
+	      shadow = {
           enabled = true;
           range = 25;
           render_power = 3;
           color = "rgba(00000055)";
-	};
+	      };
         blur = { enabled = true; };
       };
-
-      #master = {
-        #mfact = 0.4;
-        #orientation = "center";
-        #always_center_master = true;
-        #new_is_master = true;
-        #new_on_top = false;
-      #};
 
       dwindle = {
       	pseudotile = true;
