@@ -67,7 +67,7 @@
       capSysNice = true;
       args = [
         "--rt"
-	"--expose-wayland"
+	      "--expose-wayland"
       ];
     };
 
