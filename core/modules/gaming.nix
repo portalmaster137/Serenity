@@ -47,12 +47,14 @@
       STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
       ## Note: this doesn't replace PATH, it just adds this to it
       PATH = [ "\${XDG_BIN_HOME}" ];
+      SDL_VIDEODRIVER = "wayland";
+
     };
   };
 
   programs = {
     ## Java for some reason
-    java.enable = true;
+    #java.enable = true;
 
     ## To run "normal" linux applications seamlessly
     appimage = {
@@ -62,14 +64,14 @@
 
     ## Gamescope compositor for steam
     ## (config copy-pasted from nixos wiki)
-    gamescope = {
-      enable = true;
-      capSysNice = true;
-      args = [
-        "--rt"
-	      "--expose-wayland"
-      ];
-    };
+    #gamescope = {
+    #enable = true;
+    #capSysNice = true;
+    #args = [
+    #"--rt"
+    #"--expose-wayland"
+    #];
+    #};
 
     ## "GameMode" - https://nixos.wiki/wiki/Gamemode
     ## (config copy-pasted from mynixos)
@@ -96,16 +98,16 @@
     steam = {
       enable = true;
       ## This should help games run more betterer
-      gamescopeSession = {
-        enable = true;
-      };
+      #gamescopeSession = {
+      #enable = true;
+      #};
       ## No clue what this is doing
       package = pkgs.steam.override {
         extraLibraries = pkgs: [
           pkgs.xorg.libxcb
-	];
-	## No clue what this shit does
-	extraPkgs = pkgs: with pkgs; [
+	      ];
+	    ## No clue what this shit does
+	    extraPkgs = pkgs: with pkgs; [
           xorg.libXcursor
           xorg.libXi
           xorg.libXinerama
@@ -117,7 +119,7 @@
           libkrb5
           keyutils
           gamemode
-	];
+	    ];
       };
       ## Not sure we need gamescope here
       ## as it's defined elsewhere but o well
