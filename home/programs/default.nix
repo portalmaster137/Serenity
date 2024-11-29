@@ -1,24 +1,22 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 
 {
 
   imports = [
 
     ## Import program configs
+    ./firefox
+    ./nheko
     ./fetch
     ./kitty
     ./btop
     ./yazi
     ./nvim
     ./fish
-    ./git 
+    ./obs
+    ./git
 
   ];
-
-  programs = {
-    nheko.enable = true;
-    firefox.enable = true;
-  };
 
   home.packages = with pkgs; [
 
@@ -34,19 +32,19 @@
     tor # The Onion Router
 
     ## Media
-     #lollypop # GTK music player
+    #lollypop # GTK music player
     spotify # Corpo music streaming
-     #pragha # Music player
-     #tauon # Music player
+    #pragha # Music player
+    #tauon # Music player
     transmission_4-gtk # Torrent client
     nicotine-plus # P2P Media sharing
-     #jellyfin # Self-Hosted media streaming
+    #jellyfin # Self-Hosted media streaming
     syncplay # Synchronise local playback with friends
     vlc # Multimedia player
 
     ## Productivity
-     #thunderbird # Email client - commented out due to network issues trying to build it ?
-    obsidian # Note-taking 
+    #thunderbird # Email client - commented out due to network issues trying to build it ?
+    obsidian # Note-taking
 
     ## Audio playback and production
     neural-amp-modeler-lv2 # Guitar amp emulator
@@ -54,16 +52,16 @@
     easyeffects # EQ and audio effects
     metronome # A metronome
     vcv-rack # Analogue-Synth emulator
-     #cardinal # VCV Rack but open source and as a plugin
+    #cardinal # VCV Rack but open source and as a plugin
     audacity # Audio editing
     helvum # GTK patchbay
     ardour # Digital Audio Workstation
 
     ## Image and Video playback and production
-     #obs-studio # Screen sharing
+    #obs-studio # Screen sharing
     inkscape # Vector image editing
     shotcut # Video editing
-     #blender # 3D modelling
+    #blender # 3D modelling
     gimp # Digital image editing
   ];
 

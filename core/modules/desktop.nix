@@ -15,16 +15,6 @@
     seahorse.enable = true;
     ## Use android device as a webcam
     droidcam.enable = true;
-    ## Apparently nm-applet has a programs option
-     #nm-applet = {
-       #enable = true;
-       #indicator = false;
-     #};
-    ## idk something for nautilus
-     #nautilus-open-any-terminal = {
-       #enable = true;
-       #terminal = "kitty";
-     #};
     obs-studio = {
       enable = true;
       enableVirtualCamera = true;
@@ -33,17 +23,25 @@
       ];
     };
 
-    dconf.enable = true;
+    #dconf.enable = true;
+
   };
 
   services = {
+    ## dont think i NEED this tbh
     libinput.enable = true;
     ## Virtual filesystem, needed this for something i think ?
     gvfs.enable = true;
+    ## Dbus is for ... 
     dbus.enable = true;
+    ## no clue
     upower.enable = true;
+    ## for managing disks
     udisks2.enable = true;
+    ## dont think this works
     power-profiles-daemon.enable = true;
+    ## ideally we're getting rid of most of this
+    ## half of it doesn't even work lol
     gnome = {
       ## File previewer for nautilus
       sushi.enable = true;
