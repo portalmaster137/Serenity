@@ -11,6 +11,8 @@
   ## recommended to be enabled though
   security.rtkit.enable = true;
 
+  musnix.enable = true;
+
   ## Not using pulse directly
   hardware.pulseaudio.enable = false;
 
