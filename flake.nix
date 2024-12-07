@@ -130,7 +130,7 @@
   };
 
   outputs = { self, nixpkgs, disko, sops-nix, home-manager,
-    nixvim, nix-colors, hyprland, hyprland-plugins, nixos-generators, ... }
+    nixvim, musnix, nix-colors, hyprland, hyprland-plugins, nixos-generators, ... }
 
   @ inputs: let
     inherit (self) outputs;
@@ -155,6 +155,7 @@
       hades = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
+          musnix.nixosModules.musnix
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
           ./hosts/hades/configuration.nix
