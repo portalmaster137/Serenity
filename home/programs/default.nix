@@ -54,6 +54,7 @@
     vcv-rack # Analogue-Synth emulator
     #cardinal # VCV Rack but open source and as a plugin
     audacity # Audio editing
+    reaper # DAW
     helvum # GTK patchbay
     ardour # Digital Audio Workstation
 
