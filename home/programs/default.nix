@@ -57,6 +57,8 @@
     reaper # DAW
     helvum # GTK patchbay
     ardour # Digital Audio Workstation
+    vital # synth
+    helm # synth :)
 
     ## Image and Video playback and production
     #obs-studio # Screen sharing
