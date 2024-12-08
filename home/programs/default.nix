@@ -50,6 +50,7 @@
     neural-amp-modeler-lv2 # Guitar amp emulator
     bespokesynth # Modular synthesiser and sequencer
     easyeffects # EQ and audio effects
+    strawberry # Music playback
     metronome # A metronome
     vcv-rack # Analogue-Synth emulator
     #cardinal # VCV Rack but open source and as a plugin
