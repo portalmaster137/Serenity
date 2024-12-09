@@ -11,7 +11,7 @@
     serenity = {
       description = "Serenity Amalgam";
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "gamemode" ];
+      extraGroups = [ "wheel" "networkmanager" "gamemode" "audio" ];
       ## be sure to change this with 'passwd'
       initialPassword = "password";
       ## A catgirl's favourite shell

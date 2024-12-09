@@ -1,26 +1,23 @@
-## https://nixos.wiki/PipeWire
+# # https://nixos.wiki/PipeWire
 ## https://github.com/musnix/musnix 
 
 { ... }:
 
 {
-  imports = [
-  ];
+  imports = [ ];
 
   ## Can't remember what this does,
   ## recommended to be enabled though
   security.rtkit.enable = true;
 
-  musnix.enable = true;
-
   ## Not using pulse directly
   hardware.pulseaudio.enable = false;
 
   ## Using pipewire baybee
-  services.pipewire = {  
+  services.pipewire = {
     enable = true;
     ## Uncomment if ypu(g.) want to use JACK applications
-     #jack.enable = true;
+    #jack.enable = true;
     pulse.enable = true;
     alsa = {
       enable = true;
@@ -45,7 +42,7 @@
           resample.quality = 1;
         };
 
-        context.modules = [ {
+        context.modules = [{
           name = "libpipewire-module-protocol-pulse";
           args = {
             pulse = {
@@ -54,11 +51,17 @@
               max.req = "144/48000";
               min.quantum = "144/48000";
               max.quantum = "144/48000";
-              };
             };
-        } ];
+          };
+        }];
 
       };
+
+    };
+
+    musnix = {
+
+      enable = true;
 
     };
 
