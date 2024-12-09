@@ -59,11 +59,11 @@
 
     };
 
-    musnix = {
+  };
 
-      enable = true;
+  musnix = {
 
-    };
+    enable = true;
 
   };
 
