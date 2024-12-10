@@ -75,22 +75,22 @@
   ];
 
   ## I put fonts here because i didn't know where tf else to put them lol
-  ## CURRENTLY BROKEN, PLEASE FIX - Out of date ?
+  ## duplicate to home-manager config
   fonts = {
     packages = with pkgs; [
       spleen
       terminus_font
       terminus_font_ttf
-      (nerdfonts.override { fonts = ["NerdFontsSymbolsOnly"]; })  	  
+      nerdfonts.symbols-only
     ];
     fontDir.enable = true;
-      fontconfig = {
-        defaultFonts = {
-          serif = [ "spleen-32x64" ];
-          sansSerif = [ "spleen-32x64" ];        
-          monospace = [ "TerminusTTF" ];
-        };
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "spleen-32x64" ];
+        sansSerif = [ "spleen-32x64" ];        
+        monospace = [ "TerminusTTF" ];
       };
+    };
   };
 
    #xdg.portal = {
