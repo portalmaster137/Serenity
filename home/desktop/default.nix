@@ -28,8 +28,8 @@
   xdg = {
     mimeApps = {
       enable = true;
-      associations.added = associations;
-      defaultApplications = associations;
+      #associations.added = associations;
+      #defaultApplications = associations;
     };
     portal = {
       enable = false;
@@ -42,14 +42,14 @@
       };
       configPackages = with pkgs; [
         #xdg-desktop-portal
-        #xdg-desktop-portal-wlr
+        xdg-desktop-portal-wlr
         xdg-desktop-portal-gtk
         xdg-desktop-portal-gnome
         xdg-desktop-portal-hyprland
       ];
       extraPortals = with pkgs; [
         #xdg-desktop-portal
-        #xdg-desktop-portal-wlr
+        xdg-desktop-portal-wlr
         xdg-desktop-portal-gtk
         xdg-desktop-portal-gnome
         xdg-desktop-portal-hyprland
@@ -63,11 +63,7 @@
     #};
   };
 
-  fonts = {
-    fontconfig = {
-      enable = true;
-    };
-  };
+  fonts = { fontconfig = { enable = true; }; };
 
   qt = {
     enable = true;
@@ -134,7 +130,6 @@
       ## desktop
       swww # Wallpaper daemon
       dconf # GTK settings tweaker
-      waybar # Desktop status bar
       blueman # GTK bluetooth manager
       ydotool # Click/Keypress emulator
       wlsunset # Blue light filter

@@ -1,4 +1,10 @@
 { pkgs, config, lib, waybar, ... }: {
+
+  home = {
+
+    packages = with pkgs; [ waybar ];
+  };
+
   services = {
     blueman-applet.enable = false;
     network-manager-applet.enable = true;

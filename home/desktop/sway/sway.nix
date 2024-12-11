@@ -82,14 +82,27 @@ in {
     };
 
     config = rec {
+
+      output = {
+        eDP-1 = {
+          ## Set HIDP scale (pixel integer scaling)
+          scale = "1";
+        };
+      };
+
       ## Use Wofi as menu
-      menu = "wofi";
+      menu = "wofi --show run";
       ## Use kitty as default terminal
       terminal = "kitty";
-      ## Startup applications and scripts
+      ## Startup scripts and programs
       startup = [ { command = "startup"; } { command = "kitty"; } ];
 
-      bars = [{ "command" = "${waybar}/bin/waybar"; }];
+      ## Use waybar as desktop statusbar
+      bars = [{
+        command = "${waybar}/bin/waybar";
+        position = "top";
+        fonts = { size = 15.0; };
+      }];
 
       focus = {
         followMouse = true;
