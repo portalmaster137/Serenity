@@ -7,7 +7,7 @@
     ## Import common desktop configs
     ./hyprcursor.nix
     ./hyprlock.nix
-    ./keybinds.nix
+    #./keybinds.nix
     ./wlogout.nix
     ./waybar.nix
     ./dunst.nix
