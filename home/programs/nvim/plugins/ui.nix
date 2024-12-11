@@ -72,7 +72,7 @@
       };
       trouble.enable = true;
       indent-blankline.enable = true;
-      nvim-colorizer.enable = true;
+      colorizer.enable = true;
       tagbar = {
         enable = true;
         tagsPackage = pkgs.universal-ctags;
