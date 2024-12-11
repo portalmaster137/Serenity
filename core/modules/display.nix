@@ -8,29 +8,31 @@
   ];
 
   boot = {
-
+    
+    bootspec.enable = true;
     consoleLogLevel = 0;
     initrd.verbose = false;
     kernelParams = [
       "quiet"
       "splash"
-      "boot.shell_on_fail"
-      "loglevel=3"
+      "vga=current"
+      #"loglevel=3"
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
+      "boot.shell_on_fail"
     ];
 
     loader = {
-      timeout = 0;
+      timeout = 30;
 
-      grub = {
-        theme = "${pkgs.minimal-grub-theme}";
-        backgroundColor = "#000000";
+      #grub = {
+        #theme = "${pkgs.minimal-grub-theme}";
+        #backgroundColor = "#000000";
         #splashImage = "path/to/image";
         #font = "${pkgs.spleen}/share/fonts/spleen-32x64";
         #fontSize = 16;
-      };
+      #};
 
     };
 
@@ -43,13 +45,12 @@
       #};
       #font = "${pkgs.spleen}/share/fonts/spleen-32x64";
 
-      theme = "circle";
+      theme = "circuit";
       themePackages = with pkgs; [
         (adi1090x-plymouth-themes.override {
           selected_themes = [
             "circle"
             "circuit"
-
           ];
         })
       ];
