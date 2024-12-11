@@ -50,7 +50,18 @@
       ## Sways implementation of xwayland
        #xwayland.enable = true;
       package = pkgs.swayfx;
-      wrapperFeatures.gtk = true;
+      extraPackages = [ ];
+      wrapperFeatures = {
+        gtk = true;
+        base = true;
+      };
+      extraSessionCommands = ''
+        export SDL_VIDEODRIVER=wayland
+        export QT_QPA_PLATFORM=wayland
+        export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+        export XDG_CURRENT_DESKTOP=sway
+        export XDG_SESSION_TYPE=wayland
+      '';
     };
   };
 
@@ -62,17 +73,23 @@
   };
   
 
-  environment.systemPackages = with pkgs; [
-    xorg.xhost
-     #dconf # redundant, adding for completeness
-    dconf-editor # For editing dconf settings graphically 
-     #xdg-utils
-     #xdg-desktop-portal
-     #xdg-desktop-portal-gtk
-     #xdg-desktop-portal-wlr
-     #xdg-desktop-portal-gnome
-     #xdg-desktop-portal-hyprland
-  ];
+  environment = {
+    variables = {
+      XDG_SESSION_TYPE = "wayland";
+      XDG_CURRENT_DESKTOP = "sway";
+    };
+    systemPackages = with pkgs; [
+      xorg.xhost
+      #dconf # redundant, adding for completeness
+      dconf-editor # For editing dconf settings graphically 
+      #xdg-utils
+      #xdg-desktop-portal
+      #xdg-desktop-portal-gtk
+      #xdg-desktop-portal-wlr
+      #xdg-desktop-portal-gnome
+      #xdg-desktop-portal-hyprland
+    ];
+  };
 
   ## I put fonts here because i didn't know where tf else to put them lol
   ## duplicate to home-manager config

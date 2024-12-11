@@ -39,19 +39,16 @@
       startup = [
         {command = "startup";}
         {command = "kitty";}
-
       ];
 
       focus = {
         followMouse = true;
-	mouseWarping = false;
-	newWindow = "smart";
+	      mouseWarping = false;
+        newWindow = "smart";
       };
 
-      
-
-
     };
+
      #extraConfig = {
      #};
     
