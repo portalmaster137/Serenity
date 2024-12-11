@@ -81,8 +81,8 @@
       spleen
       terminus_font
       terminus_font_ttf
-      nerdfonts.symbols-only
-    ];
+      nerd-fonts.symbols-only
+    ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
     fontDir.enable = true;
     fontconfig = {
       defaultFonts = {
