@@ -26,6 +26,11 @@
   ];
 
   xdg = {
+    mimeApps = {
+      enable = true;
+      associations.added = associations;
+      defaultApplications = associations;
+    };
     portal = {
       enable = false;
       xdgOpenUsePortal = false;
@@ -58,19 +63,9 @@
     #};
   };
 
-  programs = { };
-
-  services = {
-    ## Daemon for easyeffects
-    easyeffects.enable = true;
-    ## GTK keyring for password prompts
-    gnome-keyring.enable = true;
-    ## Another method to enable nm-applet
-    network-manager-applet.enable = true;
-    ## Mobile <-> desktop interaction
-    kdeconnect = {
+  fonts = {
+    fontconfig = {
       enable = true;
-      indicator = true;
     };
   };
 
@@ -120,7 +115,12 @@
       size = 12;
     };
 
-    sessionVariables.GTK_THEME = "Adwaita-dark";
+    sessionVariables = {
+      GTK_THEME = "Adwaita-dark";
+      BROWSER = "firefox";
+      TERMINAL = "kitty";
+      NIXPKGS_ALLOW_UNFREE = 1;
+    };
 
     packages = with pkgs; [
       ## auth/security
@@ -180,6 +180,22 @@
       libva
       #gitwatch
     ];
+  };
+
+  programs = { };
+
+  services = {
+    ## Daemon for easyeffects
+    easyeffects.enable = true;
+    ## GTK keyring for password prompts
+    gnome-keyring.enable = true;
+    ## Another method to enable nm-applet
+    network-manager-applet.enable = true;
+    ## Mobile <-> desktop interaction
+    kdeconnect = {
+      enable = true;
+      indicator = true;
+    };
   };
 
   nix.gc = {
