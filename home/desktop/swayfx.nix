@@ -70,7 +70,7 @@ in {
       blur enable
       blur_xray disable
       blur_passes 1
-      blur_radius 3
+      blur_radius 5
       ";
 
     config = rec {
