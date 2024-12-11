@@ -42,7 +42,7 @@ in
   "${modifier}+Shift+Space" = "focus mode_toggle";
   "${modifier}+c" = "split h";
   "${modifier}+v" = "split v";
-  "${modifier}+t" = "floating toggle";
+  "${modifier}+T" = "floating toggle";
   "${modifier}+f" = "fullscreen toggle";
   "${modifier}+s" = "layout stacking";
   #"${modifier}+t" = "layout tabbed";
