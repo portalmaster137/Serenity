@@ -7,13 +7,13 @@
     ## Import misc desktop files
     #./xdg-mime.nix
     #./gtk-qt.nix
+    ./automount
     ../scripts
 
     ## Import common desktop configs
     ./hyprcursor.nix
     ./hyprlock.nix
     ./hypridle.nix
-    ./udiskie.nix
     ./wlogout.nix
     ./waybar.nix
     ./dunst.nix
