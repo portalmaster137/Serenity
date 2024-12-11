@@ -1,5 +1,6 @@
-{ pkgs }:
+{ lib, config, pkgs, ... }:
 
+with lib;
 with pkgs;
 
 let
@@ -37,7 +38,6 @@ in
   XF86AudioPause = "exec ${playerctl}/bin/playerctl pause";
   XF86AudioNext = "exec ${playerctl}/bin/playerctl next";
   XF86AudioPrev = "exec ${playerctl}/bin/playerctl prev";
-
 
   ## Window controls
   "${modifier}+c" = "split h";
