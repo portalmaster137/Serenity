@@ -66,9 +66,9 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "Colloid-Dracula-Dark";
+    platformTheme.name = "Colloid-Teal-Dark-Dracula";
     style = {
-      name = "Colloid-Dracula-Dark";
+      name = "Colloid-Teal-Dark-Dracula";
       package = pkgs.colloid-kde;
     };
   };
@@ -76,7 +76,7 @@
   gtk = {
     enable = true;
     theme = lib.mkForce {
-      name = "Colloid-Dracula-Dark";
+      name = "Colloid-Teal-Dark-Dracula";
       package = pkgs.colloid-gtk-theme;
     };
     font = {
@@ -111,7 +111,7 @@
     };
 
     sessionVariables = {
-      GTK_THEME = "Colloid-Dracula-Dark";
+      GTK_THEME = "Colloid-Teal-Dark-Dracula";
       BROWSER = "firefox";
       TERMINAL = "kitty";
       NIXPKGS_ALLOW_UNFREE = 1;
