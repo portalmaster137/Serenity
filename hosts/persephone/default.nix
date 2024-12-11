@@ -100,7 +100,6 @@
 
   ## Some packages for managing the hardware inside Persephone
   environment.systemPackages = with pkgs; [ nvtopPackages.intel ];
-  system.stateVersion = "24.11";
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
 }
