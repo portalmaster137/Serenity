@@ -61,7 +61,7 @@ in {
   wayland.windowManager.sway = {
     extraSessionCommands = "";
     extraConfig = "
-      default_border pixel 2
+      default_border pixel 3
       smart_corner_radius enable
       corner_radius 15
       shadows enable
@@ -69,8 +69,8 @@ in {
       shadow_blur_radius 10
       blur enable
       blur_xray disable
-      blur_passes 3
-      blur_radius 3
+      blur_passes 4
+      blur_radius 2
       ";
 
     config = rec {
@@ -92,8 +92,8 @@ in {
 
       ## Gaps
       gaps = {
-        inner = 8;
-        outer = 8;
+        inner = 5;
+        outer = 5;
         smartGaps = false;
       };
 
