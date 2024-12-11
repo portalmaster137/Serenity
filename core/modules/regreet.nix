@@ -57,24 +57,24 @@ in
     font = {
       name = "Spleen-32x64";
       size = 10.0;
-      package = with pkgs; [ spleen ];
+      package = pkgs.spleen;
     };
 
     theme = {
       name = "adwaita-dark";
-      package = with pkgs; [ adw-gtk3 ];
+      package = pkgs.adw-gtk3;
     };
 
     #extraCss = "";
 
     iconTheme = {
       name = "Flat-Remix-Grey-Darkest";
-      package = with pkgs; [ flat-remix-icon-theme];
+      package = pkgs.flat-remix-icon-theme;
     };
 
     cursorTheme = {
       name = "Bibata-Modern-Classic";
-      package = with pkgs; [ bibata-cursors ];
+      package = pkgs.bibata-cursors;
     };
   };
 
