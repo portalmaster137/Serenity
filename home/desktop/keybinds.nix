@@ -14,7 +14,7 @@ in
 {
 
   ## Application binds
-  "${modifier}+Shift+Space" = "exec ${wofi}/bin/wofi";
+  "${modifier}+Shift+Space+Return" = "exec ${wofi}/bin/wofi";
   "${modifier}+q" = "kill";
   #"${modifier}+Space" = "exec ${cfg.config.menu}";
   "${modifier}+Return" = "exec ${kitty}/bin/kitty";
