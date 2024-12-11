@@ -70,7 +70,7 @@ in {
       blur enable
       blur_xray disable
       blur_passes 3
-      blur_radius 2
+      blur_radius 3
       ";
 
     config = rec {
@@ -92,8 +92,8 @@ in {
 
       ## Gaps
       gaps = {
-        inner = 10;
-        outer = 10;
+        inner = 8;
+        outer = 8;
         smartGaps = false;
       };
 
