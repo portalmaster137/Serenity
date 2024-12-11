@@ -73,7 +73,7 @@ in {
 
       ## Borders
       window = {
-        titlebar = "false";
+        titlebar = false;
         border = 2;
       };
       floating = { border = 2; };
