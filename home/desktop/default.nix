@@ -176,7 +176,15 @@
     ];
   };
 
-  programs = { };
+  programs = {
+
+    ## CLI fuzzy find
+    fzf = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
+  };
 
   services = {
     ## Daemon for easyeffects

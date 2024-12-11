@@ -4,6 +4,14 @@
 
   imports = [ ];
 
+  system.activationScripts.diff = {
+    supportsDryActivation = true;
+    text = ''
+      ${pkgs.nvd}/bin/nvd --nix-bin-dir=${pkgs.nix}/bin diff \
+          /run/current-system "$systemConfig"
+    '';
+  }; 
+
   nixpkgs = {
 
     config = {
@@ -101,6 +109,7 @@
       ## CLI tools & utilities
       fd # Find, but faster
       bc # Calculator
+      nvd # For nixos-rebuild summary
       zip # What it says on the tin
       btop # System metrics and process viewer
       tldr # Simpler manual pages
