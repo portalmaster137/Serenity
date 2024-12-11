@@ -72,8 +72,19 @@ in {
       }];
 
       ## Borders
-      window = { border = 2; };
+      window = {
+        titlebar = false;
+        border = 2;
+      };
       floating = { border = 2; };
+      gaps.smartBorders = true;
+
+      ## Gaps
+      gaps = {
+        inner = 8;
+        outer = 8;
+        smartGaps = false;
+      };
 
       ## Fonts
       fonts = {

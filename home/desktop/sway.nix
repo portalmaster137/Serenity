@@ -31,6 +31,11 @@ in {
       #];
     };
 
+    swaynag = {
+      enable = true;
+      settings = { };
+    };
+
     config = rec {
 
       output = {
@@ -39,6 +44,8 @@ in {
           scale = "1";
         };
       };
+
+      defaultWorkspace = "workspace number 1";
 
       ## Use Wofi as menu
       menu = "wofi";
@@ -59,7 +66,7 @@ in {
 
       keybindings = mkOptionDefault (import ./keybinds.nix { inherit pkgs; });
 
-      modes = {
+        #modes = {
           #resize = {
           #Escape = "mode default";
           #Return = "mode default";
@@ -68,7 +75,7 @@ in {
           #"${right}" = "resize grow width 10 px or 10 ppt";
           #"${up}" = "resize shrink height 10 px or 10 ppt";
          #};
-      };
+        #};
 
     };
   };
