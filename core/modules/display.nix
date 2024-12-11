@@ -10,7 +10,7 @@
   boot = {
     loader = {
       grub = {
-        theme = "${pkgs.minimal-grub-theme}/grub/themes/minimal-grub-theme";
+        theme = "${pkgs.minimal-grub-theme}";
         backgroundColor = "#000000";
         #splashImage = "path/to/image";
         #font = "${pkgs.spleen}/share/fonts/spleen-32x64";
