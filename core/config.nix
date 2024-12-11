@@ -53,6 +53,7 @@
       allowed-users = [ "@wheel" ];
       ## Enable flakes uwu
       experimental-features = [
+        "pipe-operators"
         "recursive-nix"
         "nix-command"
         "flakes"
