@@ -69,7 +69,7 @@ in {
       shadow_blur_radius 10
       blur enable
       blur_xray disable
-      blur_passes 4
+      blur_passes 2
       blur_radius 2
       ";
 
