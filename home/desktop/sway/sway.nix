@@ -133,7 +133,7 @@ in {
       };
 
       fonts = {
-        names = [ "Spleen" ];
+        names = [ "Spleen-32x64" ];
         size = 9.0;
       };
 

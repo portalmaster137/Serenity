@@ -82,7 +82,7 @@
       xorg.xhost
       #dconf # redundant, adding for completeness
       dconf-editor # For editing dconf settings graphically
-      qt5.wayland
+      #qt5.wayland
       #xdg-utils
       #xdg-desktop-portal
       #xdg-desktop-portal-gtk
