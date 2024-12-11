@@ -4,7 +4,7 @@
 
   home.file.disks = {
     enable = true;
-    source = "./Disks";
+    source = "./Disks/";
     target = "/Disks";
     recursive = true;
   };
