@@ -4,7 +4,6 @@
   imports = [
 
     ## Host specific config files
-    ./hardware-configuration.nix
     ./modules
 
     ## Shared 'core' config options

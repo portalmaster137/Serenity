@@ -5,6 +5,7 @@
   imports = [
 
     ## Selected host modules for import
+    ./hardware.nix # hardware configuration
     ./network.nix # network configuration
     #./extra.nix # configuration.nix substitute
     ./zfs.nix # zfs configuration
