@@ -5,8 +5,6 @@
   imports = [
 
     ## Import misc desktop files
-    #./xdg-mime.nix
-    #./gtk-qt.nix
     ./automount
     ../scripts
 
@@ -20,7 +18,7 @@
     ./wofi.nix
 
     ## Import individual desktop configs
-    #./sway
+    ./sway
     ./hypr
 
   ];
