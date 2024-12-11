@@ -61,16 +61,16 @@ in {
   wayland.windowManager.sway = {
     extraSessionCommands = "";
     extraConfig = "
-      default_border pixel 5
+      default_border pixel 2
       smart_corner_radius enable
       corner_radius 15
       shadows enable
       shadows_on_csd enable
-      shadow_blur_radius 20
+      shadow_blur_radius 10
       blur enable
       blur_xray disable
-      blur_passes 4
-      blur_radius 4
+      blur_passes 3
+      blur_radius 2
       ";
 
     config = rec {
@@ -85,22 +85,22 @@ in {
       ## Borders
       window = {
         titlebar = false;
-        border = 2;
+        border = 1;
       };
-      floating = { border = 2; };
+      floating = { border = 1; };
       gaps.smartBorders = "on";
 
       ## Gaps
       gaps = {
-        inner = 20;
-        outer = 20;
+        inner = 10;
+        outer = 10;
         smartGaps = false;
       };
 
       ## Fonts
       fonts = {
         names = [ "Spleen-32x64" ];
-        size = 9.0;
+        size = 10.0;
       };
 
       ## Colours
