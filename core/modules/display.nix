@@ -143,6 +143,14 @@
       #xdg-desktop-portal-gtk
       #xdg-desktop-portal-wlr
       #xdg-desktop-portal-gnome
+
+      ## Themes
+      colloid-kde
+      colloid-gtk-theme
+      adapta-gtk-theme
+      adapta-kde-theme
+      materia-theme
+      materia-theme-transparent
     ];
 
   };

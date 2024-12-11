@@ -66,18 +66,18 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "Adwaita-dark";
+    platformTheme.name = "Colloid-Dracula-Dark";
     style = {
-      name = "Adwaita-dark";
-      package = pkgs.adwaita-qt;
+      name = "Colloid-Dracula-Dark";
+      package = pkgs.colloid-kde;
     };
   };
 
   gtk = {
     enable = true;
     theme = lib.mkForce {
-      name = "adwaita-dark";
-      package = pkgs.adw-gtk3;
+      name = "Colloid-Dracula-Dark";
+      package = pkgs.colloid-gtk-theme;
     };
     font = {
       name = "${config.theme.font}";
@@ -111,7 +111,7 @@
     };
 
     sessionVariables = {
-      GTK_THEME = "Adwaita-dark";
+      GTK_THEME = "Colloid-Dracula-Dark";
       BROWSER = "firefox";
       TERMINAL = "kitty";
       NIXPKGS_ALLOW_UNFREE = 1;
@@ -173,6 +173,15 @@
       libnotify
       libva
       #gitwatch
+
+      ## Themes
+      colloid-kde
+      colloid-gtk-theme
+      adapta-gtk-theme
+      adapta-kde-theme
+      materia-theme
+      materia-theme-transparent
+
     ];
   };
 
