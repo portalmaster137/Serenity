@@ -30,13 +30,10 @@
 ##
 
 {
-  description = "SerenityOS v0.7.2";
+  description = "SerenityOS v0.8.5";
   ## Latest features:
+  ## - Big code and flake clean-up
   ## - Switched to SwayFX full-time
-  ## - Huge code-cleanup
-  ## - ReGreet implemented, yet to be tested
-  ## - Huge progress on getting Steam working, not 100% yet
-  ## - Repo makeover completed! codeberg.org/serenity-F/nixdots
   ## - Work on commenting and reformating flake is ongoing
 
   inputs = {
