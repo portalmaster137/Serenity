@@ -1,5 +1,7 @@
-# # https://nixos.wiki/PipeWire
-## https://github.com/musnix/musnix 
+## https://nixos.wiki/wiki/Category:Audio
+## https://nixos.wiki/PipeWire
+## https://github.com/musnix/musnix
+## https://nixos.wiki/wiki/Audio_production
 
 { ... }:
 
