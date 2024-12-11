@@ -8,6 +8,7 @@
     ./hyprcursor.nix
     ./hyprlock.nix
     #./keybinds.nix
+    ./xdg-mime.nix
     ./wlogout.nix
     ./waybar.nix
     ./dunst.nix
@@ -21,6 +22,9 @@
   ];
 
   xdg = {
+    mime = {
+      enable = true;
+    };
     mimeApps = {
       enable = true;
       #associations.added = associations;

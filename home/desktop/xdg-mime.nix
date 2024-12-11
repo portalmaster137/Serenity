@@ -1,7 +1,6 @@
 # Mime allows us to configure the default applications for each file type
 {
-  xdg.mimeApps = {
-    enable = true;
+  xdg.mime = {
     defaultApplications = {
       "text/markdown" = "nvim.desktop";
       "text/plain" = "nvim.desktop";
