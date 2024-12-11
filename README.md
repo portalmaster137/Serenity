@@ -6,7 +6,9 @@
 <br>
 *Very much WIP and mostly stolen code at this point.*<br>
 *A "prettified" structure can be found [here.](./TREE.md)*<br>
-*A to do list can be found [here.](https://codeberg.org/serenity-F/nixdots/issues)*<br>
+*A to do list can be found [here](https://codeberg.org/serenity-F/nixdots/issues),
+and longer term goals can be seen [here](https://codeberg.org/serenity-F/nixdots/milestones)*<br>
+
 
 ## Attributions:
  - ### **Artwork**
