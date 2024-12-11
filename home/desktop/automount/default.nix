@@ -3,7 +3,7 @@
 {
 
   home.file."Disks" = {
-    source = "../automount/Disks";
+    source = ../automount/Disks;
     recursive = true;
   };
 
