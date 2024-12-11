@@ -6,7 +6,7 @@
     ## Import desktop configs
     ./desktop
     ## Import service configs
-    ./systemd
+    ./scripts/systemd
     ## Import program configs
     ./programs 
   ];
