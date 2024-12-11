@@ -1,10 +1,10 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
     ## planning to have a discrete config file for
     ## the greeter(s) to keep this file tidy.
-     #./regreet-config.nix
+    ./regreet.nix
   ];
 
   services = {
@@ -14,14 +14,14 @@
 
     ## Current login greeter/display manager,
     ## set to run wayland.
-    displayManager = {
-      enable = true;
-       #defaultSession = "sway";
-      sddm = {
-        enable = true;
-        wayland.enable = true;
-      };
-    };
+    #displayManager = {
+      #enable = true;
+      #defaultSession = "sway";
+      #sddm = {
+        #enable = true;
+        #wayland.enable = true;
+      #};
+    #};
 
   };
 
@@ -76,7 +76,6 @@
       #xdg-desktop-portal-gtk
       #xdg-desktop-portal-wlr
       #xdg-desktop-portal-gnome
-      #xdg-desktop-portal-hyprland
     ];
   };
 
@@ -106,19 +105,16 @@
        #common."org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
        #common.default = [ "gtk" "gnome" ];
        #sway.default = [ "gtk" "gnome" ];
-       #hyprland.default = [ "hyprland" "gtk" "gnome" ];
      #};
      #configPackages = with pkgs; [
        #xdg-desktop-portal-gtk
        #xdg-desktop-portal-wlr
        #xdg-desktop-portal-gnome
-       #xdg-desktop-portal-hyprland
      #];
      #extraPortals = with pkgs; [
        #xdg-desktop-portal-gtk
        #xdg-desktop-portal-wlr
        #xdg-desktop-portal-gnome
-       #xdg-desktop-portal-hyprland
      #];
    #};
 
