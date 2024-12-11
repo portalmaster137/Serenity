@@ -7,6 +7,29 @@
     ./regreet.nix
   ];
 
+  boot = {
+    loader = {
+      grub = {
+        theme = "${pkgs.minimal-grub-theme}/grub/themes/minimal-grub-theme";
+        backgroundColor = "#000000";
+        #splashImage = "path/to/image";
+        font = "${pkgs.spleen}/share/fonts/spleen-32x64";
+        fontSize = 16;
+      };
+    };
+    plymouth = {
+      enable = true;
+      logo = pkgs.fetchurl {
+        url = "https://nixos.org/logo/nixos-hires.png";
+        hash = "1ivzgd7iz0i06y36p8m5w48fd8pjqwxhdaavc0pxs7w1g7mcy5si";
+      };
+      font = "${pkgs.spleen}/share/fonts/spleen-32x64";
+      #theme = "";
+      #themePackages = [ ];
+      #extraConfig = '''';
+    };
+  };
+
   services = {
 
     ## xserver still needed for xwayland stuff
@@ -20,7 +43,7 @@
     xwayland = {
       enable = true;
        #package = [ ];
-      defaultFontPath = "/run/current-system/sw/share/X11/fonts";
+       #defaultFontPath = "/run/current-system/sw/share/X11/fonts";
     };
 
     ## enable sway window manager
@@ -81,6 +104,7 @@
     };
 
     systemPackages = with pkgs; [
+      minimal-grub-theme
       xorg.xhost
       #qt5.wayland
       #xdg-utils
