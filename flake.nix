@@ -153,7 +153,7 @@
           musnix.nixosModules.musnix
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
-          ./hosts/hades/configuration.nix
+          ./hosts/hades/default.nix
         ];
       };
 

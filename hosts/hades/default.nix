@@ -4,12 +4,39 @@
   imports = [
 
     ## Host specific config files
-    ./modules 
+    ./hardware-configuration.nix
+    ./modules
 
     ## Shared 'core' config options
     ../../core/config.nix
 
   ];
+
+  ## ## ## ## ##
+
+  boot = {
+
+    kernelPackages = pkgs.linuxPackages_latest;
+
+    supportedFilesystems = [ "vfat" "ext4" ];
+
+    loader.grub = {
+      enable = true;
+      device = "/dev/nvme0n1";
+      enableCryptodisk = true;
+    };
+
+    initrd.luks.devices = {
+      root = {
+        # Use https://nixos.wiki/wiki/Full_Disk_Encryption
+        device = "/dev/disk/by-uuid/5526aab7-b779-4fc8-95bd-9452bc3a9232";
+        preLVM = true;
+      };
+    };
+
+  };
+
+  ## ## ## ## ##
 
   ## ooh, hostname - this one's important!
   networking.hostName = "hades";
