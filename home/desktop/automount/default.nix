@@ -2,10 +2,8 @@
 
 {
 
-  home.file.disks = {
-    enable = true;
+  home.file."Disks" = {
     source = "./Disks/";
-    target = "/Disks";
     recursive = true;
   };
 
