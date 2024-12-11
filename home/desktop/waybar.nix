@@ -22,10 +22,9 @@
         "margin-left" = config.theme.gaps-out;
         "margin-right" = config.theme.gaps-out;
         height = 44;
-        modules-left = [ "custom/logo" "hyprland/window" ];
-        modules-center = [ "hyprland/workspaces" ];
-        modules-right =
-          [ "tray" "backlight" "pulseaudio" "battery" "clock" "custom/power" ];
+        modules-left = [ "custom/logo" "sway/window" ];
+        modules-center = [ "sway/workspaces" ];
+        modules-right = [ "tray" "backlight" "pulseaudio" "battery" "clock" "custom/power" ];
 
         "wlr/taskbar" = {
           format = "{icon}";
@@ -35,12 +34,13 @@
           "icon-size" = 25;
           "tooltip-format" = "{title}";
         };
-        "hyprland/window" = {
+        "sway/window" = {
           "format" = "{title:30}";
           "max-length" = 32;
         };
 
-        "hyprland/workspaces" = {
+        "sway/workspaces" = {
+          all-outputs = true;
           "on-click" = "activate";
           format = "{icon}";
           "format-icons" = {
