@@ -2,12 +2,6 @@
 
 {
 
-  imports = [
-  ];
-
-  nixpkgs = {
-  };
-
   hardware = {
 
     opentabletdriver = {
@@ -32,11 +26,8 @@
   };
 
   environment = {
-    ## All common gaming packages declared here
-    systemPackages = with pkgs; [
-       #steam # games storefront/launcher
-      piper # mouse configuration
-    ];
+    ## Mouse config
+    systemPackages = with pkgs; [ piper ];
     ## These are important apparently :uh:
     sessionVariables = {
       XDG_CACHE_HOME  = "$HOME/.cache";
@@ -50,28 +41,16 @@
       SDL_VIDEODRIVER = "wayland";
 
     };
+
   };
 
   programs = {
-    ## Java for some reason
-    #java.enable = true;
 
     ## To run "normal" linux applications seamlessly
     appimage = {
       enable = true;
       binfmt = true;
     };
-
-    ## Gamescope compositor for steam
-    ## (config copy-pasted from nixos wiki)
-    #gamescope = {
-    #enable = true;
-    #capSysNice = true;
-    #args = [
-    #"--rt"
-    #"--expose-wayland"
-    #];
-    #};
 
     ## "GameMode" - https://nixos.wiki/wiki/Gamemode
     ## (config copy-pasted from mynixos)

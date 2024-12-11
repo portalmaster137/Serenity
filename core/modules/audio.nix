@@ -3,10 +3,7 @@
 ## https://github.com/musnix/musnix
 ## https://nixos.wiki/wiki/Audio_production
 
-{ ... }:
-
 {
-  imports = [ ];
 
   ## Can't remember what this does,
   ## recommended to be enabled though
@@ -15,10 +12,13 @@
   ## Not using pulse directly
   hardware.pulseaudio.enable = false;
 
+  ## Musnix for audio production
+  musnix.enable = true;
+
   ## Using pipewire baybee
   services.pipewire = {
     enable = true;
-    ## Uncomment if ypu(g.) want to use JACK applications
+    ## Uncomment if you(g.) want to use JACK applications
     #jack.enable = true;
     pulse.enable = true;
     alsa = {
@@ -60,12 +60,6 @@
       };
 
     };
-
-  };
-
-  musnix = {
-
-    enable = true;
 
   };
 

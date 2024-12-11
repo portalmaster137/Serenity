@@ -70,8 +70,6 @@
     };
     systemPackages = with pkgs; [
       xorg.xhost
-      #dconf # redundant, adding for completeness
-      dconf-editor # For editing dconf settings graphically
       #qt5.wayland
       #xdg-utils
       #xdg-desktop-portal

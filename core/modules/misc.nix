@@ -2,9 +2,6 @@
 
 {
 
-  imports = [
-  ];
-
   ## Dunno if i did this right, but possible needed for keyring/polkit stuff ? 
   security.pam.services.serenity.enableGnomeKeyring = true;
 
@@ -23,8 +20,6 @@
       ];
     };
 
-    #dconf.enable = true;
-
   };
 
   services = {
@@ -38,13 +33,9 @@
     upower.enable = true;
     ## for managing disks
     udisks2.enable = true;
-    gnome = {
-      ## GNOME keyring
-      gnome-keyring.enable = true;
-    };
-  };
+    ## GNOME keyring
+    gnome.gnome-keyring.enable = true;
 
-  environment.systemPackages = with pkgs; [
-  ];
+  };
 
 }

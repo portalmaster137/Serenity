@@ -101,21 +101,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ## Graphical config editor? seeing what's up w/ it - removed ForNow:tm:
-     #nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
-
     ## Easy themeing <3
     nix-colors.url = "github:misterio77/nix-colors";
     
-    ## Wayland compositor with eye-candy (for edgelords)
-    hyprland.url = "github:hyprwm/Hyprland";
-     #hyprland.inputs.nixpkgs.follows = "nixpkgs";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-
-
     ## nixos generators
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
@@ -124,8 +112,7 @@
 
   };
 
-  outputs = { self, nixpkgs, disko, sops-nix, home-manager,
-    nixvim, musnix, nix-colors, hyprland, hyprland-plugins, nixos-generators, ... }
+  outputs = { self, nixpkgs, disko, sops-nix, musnix, nixos-generators, ... }
 
   @ inputs: let
     inherit (self) outputs;

@@ -1,8 +1,6 @@
-{ inputs, outputs, lib, config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  imports = [
-  ];
 
   services = {
 
@@ -11,7 +9,7 @@
     greetd = {
       enable = true;
       settings.default_session = {
-        command = "${pkgs.greetd.regreet}/bin/regreet --cmd hyprland";
+        command = "${pkgs.greetd.regreet}/bin/regreet --cmd sway";
       };
     };
 
