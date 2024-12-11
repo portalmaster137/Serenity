@@ -30,18 +30,13 @@
 ##
 
 {
-  description = "SerenityOS v0.7.1";
+  description = "SerenityOS v0.7.2";
   ## Latest features:
-  ## - Custom NixOS install iso semi-functional - `nix build .#install-iso`
-  ## - Neovim installed, set up with stolen config and plugins
+  ## - Switched to SwayFX full-time
+  ## - Huge code-cleanup
   ## - ReGreet implemented, yet to be tested
   ## - Huge progress on getting Steam working, not 100% yet
   ## - Repo makeover completed! codeberg.org/serenity-F/nixdots
-  ## - Credited wallpaper artwork, and linked to code inspo
-  ## - Attempting to ensure XDG was properly configured
-  ## - Added Lix to flake inputs, yet to configure
-  ## - Added flake parts and utils, yet to configure
-  ## - Minor updates to SwayFX config
   ## - Work on commenting and reformating flake is ongoing
 
   inputs = {
