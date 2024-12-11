@@ -14,11 +14,11 @@ in
 {
 
   ## Application binds
-  "${modifier}+Shift+Space+Return" = "exec ${wofi}/bin/wofi";
+  "${modifier}+Tab" = "exec ${wofi}/bin/wofi";
   "${modifier}+q" = "kill";
   #"${modifier}+Space" = "exec ${cfg.config.menu}";
   "${modifier}+Return" = "exec ${kitty}/bin/kitty";
-  "${modifier}+Return+shift" = "exec ${kitty}/bin/kitty --floating";
+  "${modifier}+Shift+Return" = "exec ${kitty}/bin/kitty --floating";
   "${modifier}+Shift+r" = "reload";
   "${modifier}+Alt+Shift+r" = "restart";
 
@@ -39,7 +39,7 @@ in
   XF86AudioPrev = "exec ${playerctl}/bin/playerctl prev";
 
   ## Window controls
-  "${modifier}+Shift+Space" = "focus mode_toggle";
+  "${modifier}+Shift+Alt+Space" = "focus mode_toggle";
   "${modifier}+c" = "split h";
   "${modifier}+v" = "split v";
   "${modifier}+T" = "floating toggle";
