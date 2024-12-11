@@ -14,7 +14,7 @@
     ./sway.nix
 
     ## Import misc. desktop configs
-    ./automount
+    ../automount
     ../scripts
 
   ];
