@@ -5,8 +5,6 @@
   imports = [
     ## Import desktop configs
     ./desktop
-    ## Import service configs
-    ./scripts/systemd
     ## Import program configs
     ./programs 
   ];
