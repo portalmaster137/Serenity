@@ -77,7 +77,7 @@ in {
         border = 2;
       };
       floating = { border = 2; };
-      gaps.smartBorders = true;
+      gaps.smartBorders = on;
 
       ## Gaps
       gaps = {
