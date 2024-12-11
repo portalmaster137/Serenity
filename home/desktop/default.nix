@@ -4,22 +4,18 @@
 
   imports = [
 
-    ## Import misc desktop files
-    ./automount
-    ../scripts
-
     ## Import common desktop configs
     ./hyprcursor.nix
     ./hyprlock.nix
-    ./hypridle.nix
     ./wlogout.nix
     ./waybar.nix
     ./dunst.nix
     ./wofi.nix
-
-    ## Import individual desktop configs
     ./sway
-    ./hypr
+
+    ## Import misc. desktop configs
+    ./automount
+    ../scripts
 
   ];
 
