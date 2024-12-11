@@ -1,9 +1,6 @@
 ```
 .
 │
-├── README.md
-├── TREE.md
-│
 ├── flake.nix
 │
 ├── core
@@ -19,65 +16,68 @@
 │
 ├── home
 │   ├── default.nix
-│   │
 │   ├── desktop
 │   │   ├── default.nix
-│   │   ├── xdg-mime.nix
-│   │   ├── gtk-qt.nix
-│   │   ├── hypr
-│   │   │   ├── default.nix
-│   │   │   └── hyprland.nix
-│   │   └── sway
-│   │       ├── default.nix
-│   │       ├── config.nix
-│   │       └── sway.nix
-│   │
+│   │   ├── dunst.nix
+│   │   ├── hyprcursor.nix
+│   │   ├── hyprlock.nix
+│   │   ├── keybinds.nix
+│   │   ├── swayfx.nix
+│   │   ├── sway.nix
+│   │   ├── waybar.nix
+│   │   ├── wlogout.nix
+│   │   ├── wofi.nix
+│   │   └── xdg-mime.nix
+│   │ 
 │   ├── programs
 │   │   ├── default.nix
-│   │   ├── git
-│   │   ├── yazi
 │   │   ├── btop
-│   │   ├── fish
 │   │   ├── fetch
+│   │   ├── firefox
+│   │   ├── fish
+│   │   ├── git
 │   │   ├── kitty
+│   │   ├── nheko
 │   │   ├── nvim
-│   │   │   └── plugins
-│   │   └── opentabletdriver
-│   │       └── profiles
-│   │
+│   │   ├── obs
+│   │   └── yazi
+│   │ 
 │   ├── resources
+│   │   ├── icons
 │   │   ├── screenshots
-│   │   │   ├── screenshotDesktop.png
-│   │   │   └── screenshotTerminal.png
-│   │   ├── wallpapers
-│   │   ├── themes
-│   │   └── icons
-│   │
+│   │   ├── themes
+│   │   └── wallpapers
+│   │ 
+│   ├── automount
+│   │   ├── default.nix
+│   │   └── Disks
 │   ├── scripts
-│   │   └── default.nix
-│   │
+│   │   ├── desktop.nix
+│   │   ├── nix-utils.nix
+│   │   └── startup.nix
 │   ├── systemd
-│   │   └── default.nix
-│   │
+│   │   ├── polkit.nix
+│   │   ├── sync-hecate.nix
+│   │   └── sync.nix
+│   │ 
 │   └── users
-│       ├── default.nix
-│       └── u-serenity.nix
-│
+│       ├── default.nix
+│       └── u-serenity.nix
+│ 
 └── hosts
-    │
+    ├── hades
+    │   ├── configuration.nix
+    │   ├── default.nix
+    │   ├── hardware-configuration.nix
+    │   └── modules
     ├── iso
     │   ├── default.nix
     │   └── modules
-    │
-    ├── hades
-    │   ├── default.nix
-    │   └── modules
-    │
     ├── orcus
     │   ├── default.nix
     │   └── modules
-    │
     └── persephone
         ├── default.nix
         └── modules
+
 ```
