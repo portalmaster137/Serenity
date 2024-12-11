@@ -86,8 +86,8 @@
   gtk = {
     enable = true;
     theme = lib.mkForce {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
+      name = "adwaita-dark";
+      package = pkgs.adw-gtk3;
     };
     font = {
       name = "${config.theme.font}";
