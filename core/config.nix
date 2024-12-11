@@ -1,4 +1,4 @@
-{ inputs, lib, ... }:
+{ inputs, lib, pkgs, ... }:
 
 {
 
@@ -82,6 +82,14 @@
     };
     usbStorage.manageShutdown = true;
 
+  };
+
+  environment.systemPackages = with pkgs; [ man-pages ];
+
+  documentation = {
+    dev.enable = true;
+    man.generateCaches = true;
+    nixos.includeAllModules = true;
   };
 
   ## Apparently prevents getting stuck at shutdown
