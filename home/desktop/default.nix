@@ -11,7 +11,7 @@
     ./waybar.nix
     ./dunst.nix
     ./wofi.nix
-    ./sway
+    ./sway.nix
 
     ## Import misc. desktop configs
     ./automount
