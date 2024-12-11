@@ -38,23 +38,9 @@
     upower.enable = true;
     ## for managing disks
     udisks2.enable = true;
-    ## dont think this works
-    power-profiles-daemon.enable = true;
-    ## ideally we're getting rid of most of this
-    ## half of it doesn't even work lol
     gnome = {
-      ## File previewer for nautilus
-      sushi.enable = true;
-      ## "core utilities"
-      core-utilities.enable = true;
       ## GNOME keyring
       gnome-keyring.enable = true;
-      ## Makes all of /Public available over network
-      gnome-user-share.enable = true;
-      ## GUI system settings ?
-      gnome-settings-daemon.enable = true;
-
-
     };
   };
 
