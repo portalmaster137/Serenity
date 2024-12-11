@@ -13,7 +13,13 @@ in {
 
   wayland.windowManager.sway = {
     enable = true;
-    extraSessionCommands = "";
+    extraSessionCommands = ''
+        export SDL_VIDEODRIVER=wayland
+        export QT_QPA_PLATFORM=wayland
+        export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+        export XDG_CURRENT_DESKTOP=sway
+        export XDG_SESSION_TYPE=wayland
+    '';
     extraConfig = "";
     xwayland = true;
     checkConfig = false;

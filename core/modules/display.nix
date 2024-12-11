@@ -35,15 +35,6 @@
        #defaultFontPath = "/run/current-system/sw/share/X11/fonts";
     };
 
-    ## Temporary, fuck vaxery or whatever his name is
-    ## punk-ass motherfucker, swayfx looks neat
-    hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-      ## Hyprland's implementation of xwayland
-       #xwayland.enable = true;
-    };
-    
     ## enable sway window manager
     sway = {
       enable = true;
