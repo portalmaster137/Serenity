@@ -8,7 +8,22 @@
   ];
 
   boot = {
+
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+    kernelParams = [
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "loglevel=3"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+    ];
+
     loader = {
+      timeout = 0;
+
       grub = {
         theme = "${pkgs.minimal-grub-theme}";
         backgroundColor = "#000000";
@@ -16,18 +31,33 @@
         #font = "${pkgs.spleen}/share/fonts/spleen-32x64";
         #fontSize = 16;
       };
+
     };
+
     plymouth = {
       enable = true;
+
       #logo = pkgs.fetchurl {
         #url = "https://nixos.org/logo/nixos-hires.png";
         #hash = "1ivzgd7iz0i06y36p8m5w48fd8pjqwxhdaavc0pxs7w1g7mcy5si";
       #};
       #font = "${pkgs.spleen}/share/fonts/spleen-32x64";
-      #theme = "";
-      #themePackages = [ ];
+
+      theme = "circle";
+      themePackages = with pkgs; [
+        (adi1090x-plymouth-themes.override {
+          selected_themes = [
+            "circle"
+            "circuit"
+
+          ];
+        })
+      ];
+
       #extraConfig = '''';
+
     };
+
   };
 
   services = {
