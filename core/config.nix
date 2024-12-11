@@ -13,6 +13,9 @@
 
   ];
 
+  ## Make sure this is set !
+  system.stateVersion = "24.11";
+
   ## Crikey !
   time.timeZone = "Australia/Brisbane";
   i18n = {
