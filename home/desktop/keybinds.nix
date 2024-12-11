@@ -14,7 +14,7 @@ in
 {
 
   ## Application binds
-  "${modifier}+Space" = "menu";
+  "${modifier}+Space" = "exec ${wofi}/bin/wofi";
   "${modifier}+q" = "kill";
   #"${modifier}+Space" = "exec ${cfg.config.menu}";
   "${modifier}+Return" = "exec ${kitty}/bin/kitty";
@@ -50,8 +50,6 @@ in
   "${modifier}+Shift+${down}" = "move down";
   "${modifier}+Shift+${up}" = "move up";
   "${modifier}+Shift+${right}" = "move right";
-  #"${modifier}+a" = "focus parent";
-  "${modifier}+Shift+f" = "focus mode_toggle";
   "${modifier}+${left}" = "focus left; exec $movemouse";
   "${modifier}+${down}" = "focus down; exec $movemouse";
   "${modifier}+${up}" = "focus up; exec $movemouse";
