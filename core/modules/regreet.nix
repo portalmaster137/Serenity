@@ -1,24 +1,81 @@
 { pkgs, ... }:
 
+let
+
+  swayConfig = pkgs.writeText "greetd-sway-config" ''
+  # `-l` activates layer-shell mode. Notice that `swaymsg exit` will run after gtkgreet.
+  exec "${pkgs.greetd.gtkgreet}/bin/gtkgreet -l; swaymsg exit"
+  bindsym Mod4+shift+e exec swaynag \
+    -t warning \
+    -m 'What do you want to do?' \
+    -b 'Poweroff' 'systemctl poweroff' \
+    -b 'Reboot' 'systemctl reboot'
+  '';
+
+in
+
 {
 
   services = {
 
     ## Eventual login greeter/display manager,
-    ## wayland native.
+    ## wayland native. ReGreet on top of greetd.
     greetd = {
       enable = true;
-      settings.default_session = {
-        command = "${pkgs.greetd.regreet}/bin/regreet --cmd sway";
+      #package = [ ];
+      restart = true;
+
+      settings = {
+        default_session = {
+          command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
+        };
       };
+
     };
 
   };
 
-  ## Eventual login greeter/display manager,
-  ## wayland native.
+  environment = {
+
+    etc."greetd/environments".text = ''
+      sway
+      fish
+      bash
+    '';
+
+  };
+
+  ## ReGreet specific configuration and theme
   programs.regreet = {
     enable = true;
+    #package = [ ];
+
+    #cageArgs = [ "-s" "-m" "last" ];
+
+    #settings = { };
+
+    font = {
+      name = "Spleen-32x64";
+      size = 10.0;
+      package = with pkgs; [ spleen ];
+    };
+
+    theme = {
+      name = "adwaita-dark";
+      package = with pkgs; [ adw-gtk3 ];
+    };
+
+    #extraCss = "";
+
+    iconTheme = {
+      name = "Flat-Remix-Grey-Darkest";
+      package = with pkgs; [ flat-remix-icon-theme];
+    };
+
+    cursorTheme = {
+      name = "Bibata-Modern-Classic";
+      package = with pkgs; [ bibata-cursors ];
+    };
   };
 
 }
