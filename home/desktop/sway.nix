@@ -110,7 +110,7 @@ in {
         newWindow = "smart";
       };
 
-      keybindings = { };
+      keybindings = mkOptionDefault (import ./keybinds.nix { inherit pkgs; });
 
       modes = {
         resize = {
