@@ -39,7 +39,7 @@ in
   XF86AudioPrev = "exec ${playerctl}/bin/playerctl prev";
 
   ## Window controls
-  "${modifier}+Shift+Alt+Space" = "focus mode_toggle";
+  "${modifier}+Shift+Space" = "focus mode_toggle";
   "${modifier}+c" = "split h";
   "${modifier}+v" = "split v";
   "${modifier}+t" = "floating toggle";

@@ -41,7 +41,7 @@ in {
       };
 
       ## Use Wofi as menu
-      menu = "wofi --show run";
+      menu = "wofi";
       ## Use kitty as default terminal
       terminal = "kitty";
       ## Startup scripts and programs
@@ -60,14 +60,14 @@ in {
       keybindings = mkOptionDefault (import ./keybinds.nix { inherit pkgs; });
 
       modes = {
-        resize = {
-          Escape = "mode default";
-          Return = "mode default";
-          "${down}" = "resize grow height 10 px or 10 ppt";
-          "${left}" = "resize shrink width 10 px or 10 ppt";
-          "${right}" = "resize grow width 10 px or 10 ppt";
-          "${up}" = "resize shrink height 10 px or 10 ppt";
-        };
+          #resize = {
+          #Escape = "mode default";
+          #Return = "mode default";
+          #"${down}" = "resize grow height 10 px or 10 ppt";
+          #"${left}" = "resize shrink width 10 px or 10 ppt";
+          #"${right}" = "resize grow width 10 px or 10 ppt";
+          #"${up}" = "resize shrink height 10 px or 10 ppt";
+         #};
       };
 
     };
