@@ -8,7 +8,7 @@
     ./hyprcursor.nix
     ./hyprlock.nix
     #./keybinds.nix
-    ./xdg-mime.nix
+    #./xdg-mime.nix
     ./wlogout.nix
     ./waybar.nix
     ./dunst.nix
