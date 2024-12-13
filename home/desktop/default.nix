@@ -111,7 +111,7 @@
     };
 
     sessionVariables = {
-      GTK_THEME = "Colloid-Teal-Dark-Dracula";
+      GTK_THEME = "Colloid-Teal-Dark-Dracula"; # i haev no idea what im doing
       BROWSER = "firefox";
       TERMINAL = "kitty";
       NIXPKGS_ALLOW_UNFREE = 1;
@@ -145,6 +145,7 @@
       gnome-calendar # GTK calendar
       gsmartcontrol # GUI for smartctl (smartmontools)
       pavucontrol # Volume control centre
+      file-roller # archive manager
       hyprpicker # Colour picker
       hyprcursor # Cursor, duh
       hypridle # Sleep/idle service
