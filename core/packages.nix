@@ -135,6 +135,9 @@
       smartmontools # Tools for monitoring HDD health
       magic-wormhole # Direct file sharing
 
+      gay # dw abt it 
+      blahaj # dw abt this either 
+
     ];
 
   };
