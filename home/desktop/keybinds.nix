@@ -21,7 +21,7 @@ in
   "${modifier}+Shift+Return" = "exec ${kitty}/bin/kitty --floating";
   "${modifier}+Shift+r" = "reload";
   "${modifier}+Alt+Shift+r" = "restart";
-  "${modifier}+Alt+Shift+r" = "exec ${hyprlock}/bin/hyprlock";
+  "${modifier}+L" = "exec ${hyprlock}/bin/hyprlock";
 
   ## Screenshot binds
   "Print" = "exec screenshot window";
