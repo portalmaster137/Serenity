@@ -43,7 +43,7 @@
     vlc # Multimedia player
 
     ## Productivity
-    #thunderbird # Email client - commented out due to network issues trying to build it ?
+    virtualbox # emulator - for wimdose
     obsidian # Note-taking
 
     ## Audio playback and production
