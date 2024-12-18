@@ -34,17 +34,17 @@
        #interfaces."DEVICENAME".allowedTCPPorts = [
          #22999
        #]
-       #allowedTCPPorts = [
-         #22000
+       allowedTCPPorts = [
+         2234
          #21027
          #25565
-       #];
-       #allowedUDPPorts = [
+       ];
+       allowedUDPPorts = [
          #22000
          #21027
          #41641
          #51820
-       #];
+       ];
   };
 
   services.dnscrypt-proxy2 = {
