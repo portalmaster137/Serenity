@@ -66,9 +66,9 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "Colloid-Teal-Dark-Dracula";
+    platformTheme.name = "Colloid-dark";
     style = {
-      name = "Colloid-Teal-Dark-Dracula";
+      name = "Colloid-dark";
       package = pkgs.colloid-kde;
     };
   };
@@ -76,7 +76,7 @@
   gtk = {
     enable = true;
     theme = lib.mkForce {
-      name = "Colloid-Teal-Dark-Dracula";
+      name = "Colloid-Dark";
       package = pkgs.colloid-gtk-theme;
     };
     font = {
