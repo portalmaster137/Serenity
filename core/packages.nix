@@ -97,6 +97,7 @@
       nix-tree # Dependency tree viewer for nix store
       nix-init # Generate nix packages from URLs
       nix-index # Database for nixpkgs
+      nix-prefetch # provides info on a url
       nix-output-monitor # Shows extra information on nix commands
 
       ## Filsesystem utilities
