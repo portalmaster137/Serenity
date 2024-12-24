@@ -3,8 +3,8 @@
 ## Base desktop theme
 let
 
-  serenityos-base = import ./serenityos-base.nix { inherit pkgs; };
-  line-icons = import ./line-icons.nix { inherit pkgs; };
+  #serenityos-base = import ./serenityos-base.nix { inherit pkgs; };
+  #line-icons = import ./line-icons.nix { inherit pkgs; };
 
 in {
 
@@ -91,7 +91,7 @@ in {
     };
     iconTheme = {
       name = "Flat-Remix-Grey-Darkest";
-      package = pkgs.flat-remiox-icon-theme;
+      package = pkgs.flat-remix-icon-theme;
       #name = "line-icons";
       #package = pkgs.line-icons;
     };
