@@ -1,6 +1,12 @@
 { config, pkgs, lib, ... }:
 
-{
+## Base desktop theme
+let
+
+  serenityos-base = import ./serenityos-base.nix { inherit pkgs; };
+  line-icons = import ./line-icons.nix { inherit pkgs; };
+
+in {
 
   imports = [
 
@@ -22,9 +28,7 @@
   ];
 
   xdg = {
-    mime = {
-      enable = true;
-    };
+    mime = { enable = true; };
     mimeApps = {
       enable = true;
       #associations.added = associations;
@@ -78,14 +82,18 @@
     theme = lib.mkForce {
       name = "Colloid-Dark";
       package = pkgs.colloid-gtk-theme;
+      #name = "serenityos-base";
+      #package = pkgs.serenityos-base;
     };
     font = {
       name = "${config.theme.font}";
       size = 10;
     };
     iconTheme = {
-      package = pkgs.flat-remix-icon-theme;
       name = "Flat-Remix-Grey-Darkest";
+      package = pkgs.flat-remiox-icon-theme;
+      #name = "line-icons";
+      #package = pkgs.line-icons;
     };
     gtk3.extraConfig = { gtk-application-prefer-dark-theme = 1; };
     gtk4.extraConfig = { gtk-application-prefer-dark-theme = 1; };
@@ -102,6 +110,11 @@
   #};
 
   home = {
+
+    file = {
+      ".icons/bibata".source =
+        "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Classic";
+    };
 
     pointerCursor = {
       gtk.enable = true;
