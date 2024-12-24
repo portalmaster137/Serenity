@@ -20,6 +20,9 @@
 
   home.packages = with pkgs; [
 
+    ## Temp.
+    themix-gui
+
     ## Games
     osu-lazer-bin # Rhythm is just a click away!
     cockatrice # Magical the gathering but free
