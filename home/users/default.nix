@@ -27,6 +27,7 @@
     ## same nix-channel we declared in the flake.nix
     useGlobalPkgs = true;
     useUserPackages = true;
+    backupFileExtension = "backup";
     users = {
 
       ## Also make sure to include a user definition here
