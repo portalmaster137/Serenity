@@ -21,6 +21,8 @@
   };
 
   home-manager = {
+    ## Enables verbose output on activation
+    verbose = true;
     ## This line passes in specialArgs from flake.nix
     extraSpecialArgs = { inherit inputs outputs; };
     ## This line ensures all packages declared follow the
