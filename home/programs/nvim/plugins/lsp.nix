@@ -11,7 +11,7 @@
       enable = true;
       servers = {
         html.enable = true;
-        cssls.enale = true;
+        cssls.enable = true;
         marksman.enable = true;
         bashls.enable = true;
         nixd = {
