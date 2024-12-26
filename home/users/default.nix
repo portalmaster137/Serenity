@@ -2,10 +2,29 @@
 
 {
 
-  imports = [ inputs.home-manager.nixosModules.default ];
+  imports = [
 
+    ## Modules
+    inputs.home-manager.nixosModules.default # home-manager module
+    ../../home # home-manager configuration
+
+    ## misc.
+    ../resources
+
+    ## Users
+    #./u-username
+
+  ];
+
+  ## Primary user configuration -
+  ## to create additional users, copy all options
+  ## below to a new file akin to `u-username.nix`,
+  ## or `u-username/default.nix` with more modules,
+  ## making sure to replace all instances of
+  ## `${primaryUser}` with the new username.
+
+  ## System-level user declarations
   users.users = {
-    ## Define users like this
     ${primaryUser} = {
       description = "Serenity Amalgam";
       isNormalUser = true;
@@ -15,36 +34,51 @@
       ## A catgirl's favourite shell
       shell = pkgs.fish;
     };
-
   };
 
+  ## home-manager configuration
   home-manager = {
-    ## Enables verbose output on activation
-    verbose = true;
-    ## This line passes in specialArgs from flake.nix
-    extraSpecialArgs = {
+    verbose = true; # enables verbose output on activation
+    extraSpecialArgs = { # passes in specialArgs from flake.nix
       inherit inputs outputs;
       inherit primaryUser;
       inherit flakePath disksPath;
     };
-    ## This line ensures all packages declared follow the
-    ## same nix-channel we declared in the flake.nix
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    backupFileExtension = "backup";
     users = {
-
-      ## Also make sure to include a user definition here
       ${primaryUser} = {
-        ## This is where the user configs/packages are imported
-        imports = [ ./u-${primaryUser}.nix ];
+
+        imports = [
+
+          ## Home configuration -
+          ## currently all users share the same home
+          ## configuration, though each has separate
+          ## home directories. Additional modules 
+          ## can be declared alongside `u-username/default.nix`
+          ## and then imported in this section.
+          ../../home
+
+          ## Themes -
+          ## to set a different theme for a user,
+          ## create a theme by copying `SerenityOS.nix`
+          ## as a template and import it in this section
+          ## of the users individual configuration.
+          ../resources/themes # imports base theme options
+          ../resources/themes/SerenityOS.nix # user theme
+
+        ];
+
         home = {
           username = "${primaryUser}";
           homeDirectory = "/home/${primaryUser}";
         };
-      };
 
+      };
     };
+
+    backupFileExtension = "backup"; # prevents errors on activation
+    useGlobalPkgs = true; # ensures all packages declared follow -
+    useUserPackages = true; # the same nix-channel as in the flake.nix
+
   };
 
 }
