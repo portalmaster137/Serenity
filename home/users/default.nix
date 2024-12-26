@@ -6,7 +6,7 @@
 
     ## Modules
     inputs.home-manager.nixosModules.default # home-manager module
-    ../../home # home-manager configuration
+    #../../home # home-manager configuration
 
     ## Users
     #./u-serenity.nix
