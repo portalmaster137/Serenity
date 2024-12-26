@@ -35,7 +35,8 @@
          #22999
        #]
        allowedTCPPorts = [
-         2234
+         2234 # soulseek/nicotine-plus
+         8384 # syncthing
          #21027
          #25565
        ];

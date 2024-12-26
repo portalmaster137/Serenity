@@ -24,6 +24,8 @@ let
 
     systemctl --user start hyprpolkitagent
 
+    syncthing-tray
+
     swww-daemon & sleep 0.1
 
     swww img ${config.theme.wallpaper}
