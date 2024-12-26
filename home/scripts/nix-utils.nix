@@ -1,9 +1,6 @@
-{ pkgs, config, flakePath, ... }:
+{ pkgs, hostname, flakePath, ... }:
 
 let
-
-  hostname = "${config.networking.hostName}";
-
   nixsyu = pkgs.writeShellScriptBin "nixsyu" ''
     cd ${flakePath} && sudo nix flake update && sudo nixos-rebuild switch --upgrade-all --flake .#${hostname} --show-trace && sudo nix-collect-garbage -d && sudo nix-store --optimise
   '';

@@ -1,5 +1,9 @@
 { inputs, outputs, pkgs, flakePath, disksPath, primaryUser, ... }:
 
+let
+  hostname = "${config.networking.hostName}";
+in 
+
 {
 
   imports = [
@@ -48,6 +52,7 @@
     extraSpecialArgs = { # passes in specialArgs from flake.nix
       inherit inputs outputs;
       inherit primaryUser;
+      inherit hostname;
       inherit flakePath disksPath;
     };
     users = {
