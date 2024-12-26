@@ -10,6 +10,7 @@
 
     syncthing = {
       enable = true;
+      openDefaultPorts = true;
       #configDir = path;
       #dataDir = "/home/${primaryUser}/sync";
       #overrideDevices = true;
