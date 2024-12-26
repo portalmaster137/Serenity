@@ -1,21 +1,57 @@
-# Nixvim is a NixOS module that installs and configures Neovim
 { inputs, ... }: {
+
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
-    ./plugins/cmp.nix
-    ./plugins/dashboard.nix
+
+    inputs.nixvim.homeManagerModules.nixvim # uses the module channel from `flake.nix`
+    ./keymaps.nix # keybinds
+
+    ## Neovim plugins
+    ./plugins/utils.nix
+    ./plugins/ui.nix
     ./plugins/lsp.nix
     ./plugins/markdown.nix
-    ./plugins/tree.nix
-    ./plugins/ui.nix
-    ./plugins/utils.nix
-    ./plugins/dap.nix
     ./plugins/telescope.nix
-    ./plugins/zenmode.nix
-
-    ./options.nix
-    ./keymaps.nix
   ];
 
-  programs.nixvim.enable = true;
+  ## Enables nixvim
+  programs = {
+
+    nixvim = {
+      enable = true;
+      globals = { mapleader = " "; };
+
+      opts = {
+        updatetime = 50; # Faster completion
+        number = true;
+        relativenumber = true;
+        autoindent = true;
+        clipboard = "unnamed,unnamedplus";
+        expandtab = true;
+        tabstop = 2;
+        softtabstop = 2;
+        shiftwidth = 2;
+        smartindent = true;
+        breakindent = true;
+        ignorecase = true;
+        incsearch = true;
+        hlsearch = true;
+        smartcase = true;
+        wildmode = "list:longest";
+        completeopt = [ "menuone" "noselect" "noinsert" ];
+        signcolumn = "yes";
+        cursorline = false;
+        scrolloff = 8;
+        mouse = "a";
+        termguicolors = true;
+        showmode = false;
+        wrap = false;
+        swapfile = false;
+        undofile = true;
+        conceallevel = 3;
+
+      };
+    };
+
+  };
+
 }

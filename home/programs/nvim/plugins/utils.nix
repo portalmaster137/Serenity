@@ -1,10 +1,8 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
   programs.nixvim = {
-    highlightOverride = {
-      FloatBorder.fg = "#${config.theme.colors.color15}";
-    };
+    highlightOverride = { FloatBorder.fg = "#${config.theme.colors.color15}"; };
     plugins = {
-      copilot-vim.enable = true;
+
       flash.enable = true;
       image = {
         enable = true;
@@ -13,11 +11,13 @@
           onlyRenderImageAtCursor = true;
         };
       };
+
       tmux-navigator.enable = true;
       comment.enable = true;
       nvim-autopairs.enable = true;
       friendly-snippets.enable = true;
       todo-comments.enable = true;
+
       treesitter = {
         enable = true;
         nixGrammars = true;
@@ -26,6 +26,7 @@
           highlight.enable = true;
         };
       };
+
       harpoon = {
         enable = true;
         enableTelescope = true;
@@ -43,7 +44,34 @@
           };
         };
       };
-      # treesitter-context.enable = true;
+
+      dap = {
+        enable = true;
+        adapters = { };
+        signs = {
+          dapBreakpoint = {
+            text = "●";
+            texthl = "DapBreakpoint";
+          };
+          dapBreakpointCondition = {
+            text = "●";
+            texthl = "DapBreakpointCondition";
+          };
+          dapLogPoint = {
+            text = "◆";
+            texthl = "DapLogPoint";
+          };
+        };
+        extensions = {
+          dap-go = {
+            enable = true;
+            delve.path = "${pkgs.delve}/bin/dlv";
+          };
+          dap-ui = { enable = true; };
+          dap-virtual-text = { enable = true; };
+        };
+      };
+
     };
   };
 }
