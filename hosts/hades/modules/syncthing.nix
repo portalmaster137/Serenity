@@ -3,7 +3,7 @@
 {
 
   environment = {
-    systemPackages = with pkgs; [ syncthing syncthing-cli syncthing-tray ];
+    systemPackages = with pkgs; [ syncthing syncthing-tray ];
   };
 
   services = {
