@@ -7,7 +7,7 @@
     ## Selected host modules for import
     ./hardware.nix # hardware configuration
     ./network.nix # network configuration
-    #./extra.nix # configuration.nix substitute
+    ./syncthing.nix # syncthing configuration
     ./zfs.nix # zfs configuration
 
     ## Selected core modules for import
