@@ -78,31 +78,4 @@
     StateDirectory = "dnscrypt-proxy";
   };
 
-  ## syncthing for device <-> device filesharing and,,, syncing
-  ## still not set up, grrrr
-  services.syncthing = {
-    enable = false;
-    user = "serenity";
-    dataDir = "/home/serenity/sync/";
-    configDir = "/home/serenity/flakes/nixdots/home/common/dotconfig/syncthing/";
-     #overrideDevices = true;
-     #overrideFolder = true;
-   
-    ## these 3 devices are pretty much my entire ecosystem for now
-    settings.devices = {
-      #hades.id = "DEVICE_ID";
-      #proserpina.id = "DEVICE_ID";
-      #hecate.id = "DEVICE_ID";
-    };
-
-    ## plan to have this dir automatically committed and pushed to a git repo daily
-    settings.folders = {
-      #"FOLDER_ID" = {
-        #path = "/home/serenity/Documents/Notes";
-      	#devices = [ "hecate" "hades" "persephone" ];
-      #};
-      	
-    };   	
-  };
-	
 }
