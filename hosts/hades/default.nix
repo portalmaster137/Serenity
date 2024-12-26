@@ -7,7 +7,7 @@
     ./modules
 
     ## Shared 'core' config options
-    ../../core/config.nix
+    ../../core
 
   ];
 
