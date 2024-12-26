@@ -9,17 +9,17 @@
 - A Wiki and install guide can be found [here](https://codeberg.org/serenity-F/nixdots/wiki) and [here](https://codeberg.org/serenity-F/nixdots/wiki/Install-Guide).<br>
 <br>
 <br>
-- Breakdown of structure 
-Loose evaluation path is `flake.nix` -> `hosts/` -> `core/` -> `home/users/` -> `home/` (view the `tree` [here](https://codeberg.org/serenity-F/nixdots/src/branch/swaywm/TREE.md)).<br>
+- Breakdown of structure<br>
+  - Loose evaluation path is `flake.nix` -> `hosts/` -> `core/` -> `home/users/` -> `home/` (view the `tree` [here](https://codeberg.org/serenity-F/nixdots/src/branch/swaywm/TREE.md)).<br>
 <br>
-- `flake.nix` is the top-level of config, and also where universal variables are defined
-- `/hosts` is where all host-specific configs are kept
-- `/core` is where nixos system-level packages and options are declared
-- `/home/users` is where all users and relevant options are specified
-- `/home/scripts` is exactly what it says on the tin
-- `/home/desktop` is where all desktop environment related options are specified
-- `/home/programs` is where all user-level options and packages are declared
-- `/home/resouces` is where themes, icons, etc. are kept<br>
+  - `flake.nix` is the top-level of config, and also where universal variables are defined
+  - `/hosts` is where all host-specific configs are kept
+  - `/core` is where nixos system-level packages and options are declared
+  - `/home/users` is where all users and relevant options are specified
+  - `/home/scripts` is exactly what it says on the tin
+  - `/home/desktop` is where all desktop environment related options are specified
+  - `/home/programs` is where all user-level options and packages are declared
+  - `/home/resouces` is where themes, icons, etc. are kept<br>
 <br>
 <br>
 ## Attributions:
