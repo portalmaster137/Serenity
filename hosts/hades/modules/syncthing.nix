@@ -11,7 +11,7 @@
     syncthing = {
       enable = true;
       #configDir = path;
-      dataDir = "/home/${primaryUser}/sync";
+      #dataDir = "/home/${primaryUser}/sync";
       #overrideDevices = true;
       #overrideFolder = true;
 
