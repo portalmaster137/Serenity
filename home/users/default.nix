@@ -8,11 +8,17 @@
     inputs.home-manager.nixosModules.default # home-manager module
     ../../home # home-manager configuration
 
-    ## misc.
-    #../resources
-
     ## Users
     #./u-username
+
+    ## User themes - 
+    ## to set a different theme for a user,
+    ## create a theme by copying an existing
+    ## one as a template and import it here,
+    ## then - I haven't figured it out yet :D
+    #../resources # eventually have all theme imports automated
+    ../resources/themes # base theme options
+    ../resources/themes/SerenityOS.nix # default theme
 
   ];
 
@@ -46,39 +52,24 @@
     };
     users = {
       ${primaryUser} = {
-
         imports = [
-
           ## Home configuration -
           ## currently all users share the same home
           ## configuration, though each has separate
-          ## home directories. Additional modules 
+          ## home directories. Additional modules
           ## can be declared alongside `u-username/default.nix`
           ## and then imported in this section.
           ../../home
-
-          ## Themes -
-          ## to set a different theme for a user,
-          ## create a theme by copying `SerenityOS.nix`
-          ## as a template and import it in this section
-          ## of the users individual configuration.
-          ../resources/themes # imports base theme options
-          ../resources/themes/SerenityOS.nix # user theme
-
         ];
-
         home = {
           username = "${primaryUser}";
           homeDirectory = "/home/${primaryUser}";
         };
-
       };
     };
-
     backupFileExtension = "backup"; # prevents errors on activation
     useGlobalPkgs = true; # ensures all packages declared follow -
     useUserPackages = true; # the same nix-channel as in the flake.nix
-
   };
 
 }
