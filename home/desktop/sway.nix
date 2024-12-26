@@ -54,7 +54,7 @@ in {
       defaultWorkspace = "workspace number 1";
 
       ## Use Wofi as menu
-      menu = "${pkgs.menu}";
+      menu = "menu";
       ## Use kitty as default terminal
       terminal = "kitty";
       ## Startup scripts and programs
