@@ -6,22 +6,46 @@
 
 {
 
-  ## need option for `zfs set mountpoint=/myspecialfolder mypool`
+  # need option for `zfs set mountpoint=/myspecialfolder mypool`
 
-  home.file."Disks" = {
-    source = ../automount/Disks;
-    recursive = true;
+  home = {
+
+    ## Directories to copy to /home/${username/}
+    file = {
+
+      ## Path to automount disks to
+      "Disks" = {
+        source = ../automount/Disks;
+        recursive = true;
+      };
+      ## (current) Flake path
+      "flakes/nixdots" = {
+        source = ../../../../nixdots;
+        recursive = true;
+      };
+      ## (future) Flake path
+      "SerenityOS" = {
+        source = ../../../../nixdots;
+        recursive = true;
+      };
+
+    };
+
   };
 
+  ## Related services
   services = {
+
+    ## Udiskie
     udiskie = {
       enable = true;
-      automount = true;
+      automount = true; # automounts new disks
       tray = "always";
-      notify = true;
+      notify = true; # enables the tray applet
       #settings = {
       #};
     };
+
   };
 
 }

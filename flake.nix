@@ -113,6 +113,7 @@
   };
 
   outputs = { self, nixpkgs, disko, sops-nix, musnix, nixos-generators,
+    ## Disabled outputs - part of 'flakeification': enable and use correctly.
     #lix, lix-module, flake-utils, flake-parts, 
     #nix-colors, home-manager, nixvim,
     ... }
@@ -122,7 +123,10 @@
 
       inherit (self) outputs;
 
-      username = "serenity";
+      primaryUser = "serenity"; # used for admin purposes
+      #flakePath = "/home/${primaryUser}/SerenityOS/"; # for v1.0.0 release
+      flakePath = "/home/${primaryUser}/flakes/nixdots/"; # current path
+      disksPath = "/home/${primaryUser}/Disks/";
 
     in {
 
@@ -143,7 +147,7 @@
         hades = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
-            inherit username;
+            inherit primaryUser flakePath disksPath;
           };
           modules = [
             musnix.nixosModules.musnix
