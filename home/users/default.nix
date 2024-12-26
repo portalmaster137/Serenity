@@ -9,7 +9,7 @@
     ../../home # home-manager configuration
 
     ## Users
-    #./u-username
+    #./u-serenity.nix
 
     ## User themes - 
     ## to set a different theme for a user,
@@ -17,8 +17,8 @@
     ## one as a template and import it here,
     ## then - I haven't figured it out yet :D
     #../resources # eventually have all theme imports automated
-    ../resources/themes # base theme options
-    ../resources/themes/SerenityOS.nix # default theme
+    #../resources/themes # base theme options
+    #../resources/themes/SerenityOS.nix # default theme
 
   ];
 
@@ -59,7 +59,8 @@
           ## home directories. Additional modules
           ## can be declared alongside `u-username/default.nix`
           ## and then imported in this section.
-          ../../home
+          #../../home
+          ./u-serenity.nix
         ];
         home = {
           username = "${primaryUser}";
