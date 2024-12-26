@@ -123,10 +123,13 @@
 
       inherit (self) outputs;
 
+
+      ## Universal variable declarations
       primaryUser = "serenity"; # used for admin purposes
       #flakePath = "/home/${primaryUser}/SerenityOS/"; # for v1.0.0 release
       flakePath = "/home/${primaryUser}/flakes/nixdots/"; # current path
       disksPath = "/home/${primaryUser}/Disks/";
+
 
     in {
 
