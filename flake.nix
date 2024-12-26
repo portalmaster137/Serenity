@@ -125,8 +125,8 @@
 
       primaryUser = "serenity"; # used for admin purposes
       #flakePath = "/home/${primaryUser}/SerenityOS/"; # for v1.0.0 release
-      flakePath = "~/flakes/nixdots/"; # current path
-      disksPath = "~/Disks/";
+      #flakePath = "~/flakes/nixdots/"; # current path
+      #disksPath = "~/Disks/";
 
     in {
 
@@ -147,7 +147,7 @@
         hades = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
-            inherit primaryUser flakePath disksPath;
+            inherit primaryUser;
           };
           modules = [
             musnix.nixosModules.musnix
