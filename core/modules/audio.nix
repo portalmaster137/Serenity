@@ -1,4 +1,4 @@
-## https://nixos.wiki/wiki/Category:Audio
+# # https://nixos.wiki/wiki/Category:Audio
 ## https://nixos.wiki/PipeWire
 ## https://github.com/musnix/musnix
 ## https://nixos.wiki/wiki/Audio_production
@@ -53,15 +53,9 @@
   ## Musnix for audio production
   musnix = {
     enable = true;
-    rtcqs = {
-      enable = true;
-    };
-    rtirq = {
-      enable = true;
-    };
-    kernel = {
-      realtime = true;
-    };
+    rtcqs = { enable = true; };
+    rtirq = { enable = true; };
+    kernel = { realtime = true; };
   };
 
   ## Using pipewire baybee

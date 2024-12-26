@@ -6,36 +6,26 @@
   security.pam.services.serenity.enableGnomeKeyring = true;
 
   programs = {
-    ## For when bimbo needs to play with platters and cbf to deal with cli
-    gnome-disks.enable = true;
-    ## GTK secrets management
-    seahorse.enable = true;
-    ## Use android device as a webcam
-    droidcam.enable = true;
-    obs-studio = {
+    gnome-disks.enable = true; # For when bimbo needs to manage disks
+    seahorse.enable = true; # GTK secrets management
+    droidcam.enable = true; # Use android device as a webcam
+    obs-studio = { # screen capture, recording, and sharing
       enable = true;
-      enableVirtualCamera = true;
+      enableVirtualCamera = true; # virtual webcam
       plugins = with pkgs.obs-studio-plugins; [
-        droidcam-obs
+          droidcam-obs # enables droidcam integration
       ];
     };
 
   };
 
   services = {
-    ## dont think i NEED this tbh
-    libinput.enable = true;
-    ## Virtual filesystem, needed this for something i think ?
-    gvfs.enable = true;
-    ## Dbus is for ... 
-    dbus.enable = true;
-    ## no clue
-    upower.enable = true;
-    ## for managing disks
-    udisks2.enable = true;
-    ## GNOME keyring
-    gnome.gnome-keyring.enable = true;
-
+    libinput.enable = true; # don't think we NEED this tbh - unsure
+    gvfs.enable = true; # virtual filesystem, needed this for ... something
+    dbus.enable = true; # dbus is for ... unsure
+    upower.enable = true; # no clue
+    udisks2.enable = true; # disk management service
+    gnome.gnome-keyring.enable = true; # for sudo prompts and stuff
   };
 
 }

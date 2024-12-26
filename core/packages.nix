@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 
@@ -10,7 +10,7 @@
       ${pkgs.nvd}/bin/nvd --nix-bin-dir=${pkgs.nix}/bin diff \
           /run/current-system "$systemConfig"
     '';
-  }; 
+  };
 
   nixpkgs = {
 
@@ -136,8 +136,8 @@
       smartmontools # Tools for monitoring HDD health
       magic-wormhole # Direct file sharing
 
-      gay # dw abt it 
-      blahaj # dw abt this either 
+      gay # dw abt it
+      blahaj # dw abt this either
 
     ];
 

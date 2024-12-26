@@ -2,17 +2,15 @@
 
 {
 
-  imports = [
-  ];
+  imports = [ ];
 
-  programs = {
-  };
+  programs = { };
 
   environment.systemPackages = with pkgs; [
     ## Jellyfin for home media share
     jellyfin
     jellyfin-web
     jellyfin-ffmpeg
- ];
+  ];
 
 }

@@ -8,7 +8,8 @@
     inputs.home-manager.nixosModules.home-manager
 
     ## Semi-modularised config
-    ./packages.nix # system-level packages here - needs tidying
+    ./packages.nix # system-level packages - needs tidying
+    ./modules # additional modules to import
     ../home/users # user-level packages in ../home/programs/
 
   ];
@@ -38,7 +39,7 @@
     sudo.execWheelOnly = true;
     polkit = {
       enable = true;
-       #extraConfig = '' '';
+      #extraConfig = '' '';
     };
   };
 
@@ -52,12 +53,8 @@
       download-buffer-size = [ "268435456" ];
       allowed-users = [ "@wheel" ];
       ## Enable flakes uwu
-      experimental-features = [
-        "pipe-operators"
-        "recursive-nix"
-        "nix-command"
-        "flakes"
-      ];
+      experimental-features =
+        [ "pipe-operators" "recursive-nix" "nix-command" "flakes" ];
     };
 
     gc = {
@@ -68,7 +65,7 @@
       ## and clear junk older than x days
       options = "--delete-older-than 2d";
       ## No clue what this does lol.
-       #persistent = true;
+      #persistent = true;
     };
 
   };
@@ -94,7 +91,7 @@
 
   ## Apparently prevents getting stuck at shutdown
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
-  
+
   ## Disable these cuz they cause problems (thx sasha)
   ## see: https://github.com/NixOS/nixpkgs/issues/180175
   systemd.services = {

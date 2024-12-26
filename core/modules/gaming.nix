@@ -8,10 +8,7 @@
       ## Open tablet driver, for Osu!, mainly.
       enable = true;
       ## Disable conflicting drivers
-      blacklistedKernelModules = [
-        "hid-uclogic"
-        "wacom"
-      ];
+      blacklistedKernelModules = [ "hid-uclogic" "wacom" ];
       ## Enables the daemon via systemd
       daemon.enable = true;
     };
@@ -20,7 +17,7 @@
 
   services = {
     ## Enabling flatpak in case i need it
-     #flatpak.enable = true;
+    #flatpak.enable = true;
     ## ratbagd for gaming mouse config
     ratbagd.enable = true;
   };
@@ -30,12 +27,13 @@
     systemPackages = with pkgs; [ piper ];
     ## These are important apparently :uh:
     sessionVariables = {
-      XDG_CACHE_HOME  = "$HOME/.cache";
+      XDG_CACHE_HOME = "$HOME/.cache";
       XDG_CONFIG_HOME = "$HOME/.config";
-      XDG_BIN_HOME    = "$HOME/.local/bin";
-      XDG_DATA_HOME   = "$HOME/.local/share";
+      XDG_BIN_HOME = "$HOME/.local/bin";
+      XDG_DATA_HOME = "$HOME/.local/share";
       ## Steam needs this to find Proton-GE
-      STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+      STEAM_EXTRA_COMPAT_TOOLS_PATHS =
+        "\${HOME}/.steam/root/compatibilitytools.d";
       ## Note: this doesn't replace PATH, it just adds this to it
       PATH = [ "\${XDG_BIN_HOME}" ];
       SDL_VIDEODRIVER = "wayland";
@@ -57,9 +55,7 @@
     gamemode = {
       enable = true;
       settings = {
-        general = {
-          renice = 10;
-        };
+        general = { renice = 10; };
         ## Warning: GPU optimisations have the potential to damage hardware
         gpu = {
           apply_gpu_optimisations = "accept-responsibility";
@@ -67,8 +63,8 @@
           amd_performance_level = "high";
         };
         custom = {
-           #start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
-           #end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
+          #start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
+          #end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
         };
       };
     };
@@ -82,33 +78,28 @@
       #};
       ## No clue what this is doing
       package = pkgs.steam.override {
-        extraLibraries = pkgs: [
-          pkgs.xorg.libxcb
-	      ];
-	    ## No clue what this shit does
-	    extraPkgs = pkgs: with pkgs; [
-          xorg.libXcursor
-          xorg.libXi
-          xorg.libXinerama
-          xorg.libXScrnSaver
-          libpng
-          libpulseaudio
-          libvorbis
-          stdenv.cc.cc.lib
-          libkrb5
-          keyutils
-          gamemode
-	    ];
+        extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
+        ## No clue what this shit does
+        extraPkgs = pkgs:
+          with pkgs; [
+            xorg.libXcursor
+            xorg.libXi
+            xorg.libXinerama
+            xorg.libXScrnSaver
+            libpng
+            libpulseaudio
+            libvorbis
+            stdenv.cc.cc.lib
+            libkrb5
+            keyutils
+            gamemode
+          ];
       };
       ## Not sure we need gamescope here
       ## as it's defined elsewhere but o well
-      extraPackages = with pkgs; [
-        gamescope
-      ];
+      extraPackages = with pkgs; [ gamescope ];
       ## Gotta have the glorious eggroll
-      extraCompatPackages = with pkgs; [
-        proton-ge-bin
-      ];
+      extraCompatPackages = with pkgs; [ proton-ge-bin ];
     };
 
   };
