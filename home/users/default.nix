@@ -1,14 +1,12 @@
-{ inputs, outputs, pkgs, ... }:
+{ inputs, outputs, pkgs, flakePath, disksPath, primaryUser, ... }:
 
 {
 
-  imports = [
-    inputs.home-manager.nixosModules.default
-  ];
+  imports = [ inputs.home-manager.nixosModules.default ];
 
   users.users = {
     ## Define users like this
-    serenity = {
+    ${primaryUser} = {
       description = "Serenity Amalgam";
       isNormalUser = true;
       extraGroups = [ "wheel" "networkmanager" "gamemode" "audio" ];
@@ -24,7 +22,11 @@
     ## Enables verbose output on activation
     verbose = true;
     ## This line passes in specialArgs from flake.nix
-    extraSpecialArgs = { inherit inputs outputs; };
+    extraSpecialArgs = {
+      inherit inputs outputs;
+      inherit primaryUser;
+      inherit flakePath disksPath;
+    };
     ## This line ensures all packages declared follow the
     ## same nix-channel we declared in the flake.nix
     useGlobalPkgs = true;
@@ -33,12 +35,12 @@
     users = {
 
       ## Also make sure to include a user definition here
-      serenity = {
+      ${primaryUser} = {
         ## This is where the user configs/packages are imported
-        imports = [ ./u-serenity.nix ];
+        imports = [ ./u-${primaryUser}.nix ];
         home = {
-          username = "serenity";
-          homeDirectory = "/home/serenity";
+          username = "${primaryUser}";
+          homeDirectory = "/home/${primaryUser}";
         };
       };
 

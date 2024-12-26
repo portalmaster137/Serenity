@@ -125,54 +125,73 @@
 
       primaryUser = "serenity"; # used for admin purposes
       #flakePath = "/home/${primaryUser}/SerenityOS/"; # for v1.0.0 release
-      #flakePath = "~/flakes/nixdots/"; # current path
-      #disksPath = "~/Disks/";
+      flakePath = "/home/${primaryUser}/flakes/nixdots/"; # current path
+      disksPath = "/home/${primaryUser}/Disks/";
 
     in {
 
       ## Installer for easy nuke-n-paves
       packages.x86_64-linux = {
-        install-iso = nixos-generators.nixosGenerate {
+        iso = nixos-generators.nixosGenerate {
           system = "x86_64-linux";
-          modules = [ ./hosts/iso ];
           format = "install-iso";
-          specialArgs = { inherit inputs outputs; };
+          specialArgs = {
+            inherit inputs outputs;
+            inherit flakePath disksPath;
+            inherit primaryUser;
+          };
+          modules = [
+            sops-nix.nixosModules.sops
+            musnix.nixosModules.musnix
+            disko.nixosModules.disko
+            ./hosts/iso
+          ];
         };
       };
 
       ## Available through 'nixos-rebuild <switch> --flake /path/to/flake/directory#yourhostname'
       nixosConfigurations = {
 
-        ## Desktop
+        ## Desktop - primary config
         hades = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
+            inherit flakePath disksPath;
             inherit primaryUser;
           };
           modules = [
+            sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
             disko.nixosModules.disko
-            sops-nix.nixosModules.sops
             ./hosts/hades
           ];
         };
 
         ## Home server
         orcus = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
+          specialArgs = {
+            inherit inputs outputs;
+            inherit flakePath disksPath;
+            inherit primaryUser;
+          };
           modules = [
-            disko.nixosModules.disko
             sops-nix.nixosModules.sops
+            disko.nixosModules.disko
             ./hosts/orcus
           ];
         };
 
         ## Laptop
         persephone = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
+          specialArgs = {
+            inherit inputs outputs;
+            inherit flakePath disksPath;
+            inherit primaryUser;
+          };
           modules = [
-            disko.nixosModules.disko
             sops-nix.nixosModules.sops
+            musnix.nixosModules.musnix
+            disko.nixosModules.disko
             ./hosts/persephone
           ];
         };

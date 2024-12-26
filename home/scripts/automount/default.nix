@@ -2,7 +2,7 @@
 ## https://nix-community.github.io/home-manager/options.xhtml#opt-home.file
 ## https://nix-community.github.io/home-manager/options.xhtml#opt-home.activation
 
-{ ... }:
+{ disksPath, ... }:
 
 {
 
@@ -15,7 +15,8 @@
 
       ## Path to automount disks to
       "Disks" = {
-        source = ../automount/Disks;
+        source = ./Disks;
+        target = "${disksPath}";
         recursive = true;
       };
       ## (current) Flake path
