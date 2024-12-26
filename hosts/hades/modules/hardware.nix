@@ -34,6 +34,11 @@
     options = [ "fmask=0022" "dmask=0022" ];
   };
 
+  fileSystems."/run/media/${username}/Tartarus" = {
+    device = "/dev/disk/by-uuid/26d8d9d1-67d2-4d61-a092-10ed7368b9f6";
+    fsType = "ext4";
+  };
+
   swapDevices =
     [{ device = "/dev/disk/by-uuid/b7ccf8c3-3641-4035-b91f-f7e54c6dd380"; }];
 

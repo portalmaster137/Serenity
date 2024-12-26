@@ -1,4 +1,4 @@
-## SerenityOS
+# # SerenityOS
 ##
 ## - A study in linux, packaging, user experience,
 ##   system and desktop environments, themeing,
@@ -37,7 +37,7 @@
   ## - Work on commenting and reformating flake is ongoing
 
   inputs = {
-  
+
     ## Nixpkgs version
     ## there was a way to have unstable as an overlay,
     ## will set it back up, lazy rn, for now pick one
@@ -52,12 +52,10 @@
     };
 
     ## Flake parts
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-    };
+    flake-utils = { url = "github:numtide/flake-utils"; };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
-       #inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     ## Lix, alternative nix implementation
@@ -72,9 +70,7 @@
     };
 
     ## Musnix - https://github.com/musnix/musnix
-    musnix = {
-      url = "github:musnix/musnix";
-    };
+    musnix = { url = "github:musnix/musnix"; };
 
     ## Secrets management
     sops-nix = {
@@ -82,13 +78,13 @@
       ## optional, not necessary for the module
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     ## Dots management
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     ## Zoomer text editor
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -100,7 +96,7 @@
 
     ## Easy themeing <3
     nix-colors.url = "github:misterio77/nix-colors";
-    
+
     ## nixos generators
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
@@ -111,58 +107,63 @@
 
   outputs = { self, nixpkgs, disko, sops-nix, musnix, nixos-generators, ... }
 
-  @ inputs: let
-    inherit (self) outputs;
-  in {
+    @inputs:
+    let
 
-    ## Installer for easy nuke-n-paves
-    packages.x86_64-linux = {
-      install-iso = nixos-generators.nixosGenerate {
-        system = "x86_64-linux";
-        modules = [
-         ./hosts/iso
-        ];
-        format = "install-iso";
-        specialArgs = {inherit inputs outputs;};
+      inherit (self) outputs;
+
+      username = "Serenity";
+
+    in {
+
+      ## Installer for easy nuke-n-paves
+      packages.x86_64-linux = {
+        install-iso = nixos-generators.nixosGenerate {
+          system = "x86_64-linux";
+          modules = [ ./hosts/iso ];
+          format = "install-iso";
+          specialArgs = { inherit inputs outputs; };
+        };
       };
+
+      ## Available through 'nixos-rebuild <switch> --flake /path/to/flake/directory#yourhostname'
+      nixosConfigurations = {
+
+        ## Desktop
+        hades = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+            inherit username;
+          };
+          modules = [
+            musnix.nixosModules.musnix
+            disko.nixosModules.disko
+            sops-nix.nixosModules.sops
+            ./hosts/hades
+          ];
+        };
+
+        ## Home server
+        orcus = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            disko.nixosModules.disko
+            sops-nix.nixosModules.sops
+            ./hosts/orcus
+          ];
+        };
+
+        ## Laptop
+        persephone = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            disko.nixosModules.disko
+            sops-nix.nixosModules.sops
+            ./hosts/persephone
+          ];
+        };
+
+      };
+
     };
-
-    ## Available through 'nixos-rebuild <switch> --flake /path/to/flake/directory#yourhostname'
-    nixosConfigurations = {
-
-      ## Desktop
-      hades = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          musnix.nixosModules.musnix
-          disko.nixosModules.disko
-          sops-nix.nixosModules.sops
-          ./hosts/hades/default.nix
-        ];
-      };
-
-      ## Home server
-      orcus = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          disko.nixosModules.disko
-          sops-nix.nixosModules.sops
-          ./hosts/orcus
-        ];
-      };
-
-      ## Laptop
-      persephone = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          disko.nixosModules.disko
-          sops-nix.nixosModules.sops
-          ./hosts/persephone
-        ];
-      };
-
-    };
-    
-  };
 }
-
