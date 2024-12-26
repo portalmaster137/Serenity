@@ -9,8 +9,8 @@
 - A Wiki and install guide can be found [here](https://codeberg.org/serenity-F/nixdots/wiki) and [here](https://codeberg.org/serenity-F/nixdots/wiki/Install-Guide).<br>
 <br>
 <br>
-Breakdown of structure: (`tree` [here](https://codeberg.org/serenity-F/nixdots/src/branch/swaywm/TREE.md))<br>
-Loose evaluation path is `flake.nix` -> `hosts/` -> `core/` -> `home/users/` -> `home/`.<br>
+- Breakdown of structure 
+Loose evaluation path is `flake.nix` -> `hosts/` -> `core/` -> `home/users/` -> `home/` (view the `tree` [here](https://codeberg.org/serenity-F/nixdots/src/branch/swaywm/TREE.md)).<br>
 <br>
 - `flake.nix` is the top-level of config, and also where universal variables are defined
 - `/hosts` is where all host-specific configs are kept
