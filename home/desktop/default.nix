@@ -13,16 +13,11 @@ in {
     ## Import common desktop configs
     ./hyprcursor.nix
     ./hyprlock.nix
-    #./keybinds.nix
-    #./xdg-mime.nix
     ./wlogout.nix
     ./waybar.nix
     ./dunst.nix
     ./wofi.nix
     ./sway.nix
-
-    ## Import misc. desktop configs
-    ../scripts/automount
     ../scripts
 
   ];

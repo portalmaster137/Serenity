@@ -1,25 +1,15 @@
-{ pkgs, config, ... }:
+{ pkgs, config, flakePath, ... }:
 
 let
 
-  homedir = config.home.homeDirectory;
-
-   #hostname = config.system.nixos.distroId;
+  hostname = config.system.nixos.distroId;
 
   nixsyu = pkgs.writeShellScriptBin "nixsyu" ''
-    cd {$homedir}/flakes/nixdots && sudo nix flake update && sudo nixos-rebuild switch --upgrade-all --flake {$homedir}/flakes/nixdots#{$hostname} --show-trace && sudo nix-collect-garbage -d && sudo nix-store --optimise
+    cd ${flakePath} && sudo nix flake update && sudo nixos-rebuild switch --upgrade-all --flake .#${hostname} --show-trace && sudo nix-collect-garbage -d && sudo nix-store --optimise
   '';
 
   nixrb = pkgs.writeShellScriptBin "nixrb" ''
-    sudo nixos-rebuild switch --flake {$homedir}/flakes/nixdots#{$hostname}
-  '';
-
-  nixrbt = pkgs.writeShellScriptBin "nixrbt" ''
-    sudo nixos-rebuild switch --flake {$homedir}/flakes/nixdots#{$hostname} --show-trace
-  '';
-
-  nixupg = pkgs.writeShellScriptBin "nixupg" ''
-    sudo nixos-rebuild switch --upgrade-all --flake {$homedir}/flakes/nixdots#{$hostname} --show-trace
+    cd ${flakePath} && sudo nixos-rebuild switch --flake .#${hostname} --show-trace
   '';
 
   nixcb = pkgs.writeShellScriptBin "nixcb" ''
@@ -27,29 +17,20 @@ let
   '';
 
   nixgc = pkgs.writeShellScriptBin "nixgc" ''
-    cd {$homedir}/flakes/nixdots/nixos && sudo nix-collect-garbage -d
+    cd ${flakePath} && sudo nix-collect-garbage -d
   '';
 
   nixu = pkgs.writeShellScriptBin "nixu" ''
-    cd {$homedir}/flakes/nixdots && sudo nix flake update
-  '';
-
-  nixe = pkgs.writeShellScriptBin "nixe" ''
-    $EDITOR {$homedir}/flakes/nixdots
+    cd ${flakePath} && sudo nix flake update
   '';
 
 in {
-
-  home.packages = with pkgs; [
+  home.packages = [
     nixsyu
-    nixrbt
     nixrb
-    nixupg
-    nixu
-    nixe
-    nixgc
     nixcb
+    nixgc
+    nixu
   ];
-
 }
 

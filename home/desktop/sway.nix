@@ -1,4 +1,4 @@
-{ self, inputs, outputs, lib, config, pkgs, ... }:
+{ lib, pkgs, ... }:
 with lib;
 with pkgs;
 let
@@ -42,7 +42,7 @@ in {
       settings = { };
     };
 
-    config = rec {
+    config = {
 
       output = {
         eDP-1 = {
