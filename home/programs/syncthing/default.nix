@@ -5,7 +5,7 @@
     syncthing = {
       enable = true;
       tray.enable = true;
-      guiAddress = "home.syncthing";
+      #guiAddress = "home.syncthing";
 
     };
 
