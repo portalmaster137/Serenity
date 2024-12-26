@@ -19,14 +19,14 @@
         recursive = true;
       };
       ## (current) Flake path
-      "flakes/nixdots" = {
-        source = ../../../../nixdots;
-        recursive = true;
-      };
+      #"flakes/nixdots" = {
+        #source = ../../../../nixdots;
+        #recursive = true;
+      #};
       ## (future) Flake path
       #"SerenityOS" = {
-      #source = ../../../../nixdots;
-      #recursive = true;
+        #source = ../../../../nixdots;
+        #recursive = true;
       #};
 
     };
