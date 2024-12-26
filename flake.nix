@@ -112,7 +112,7 @@
 
       inherit (self) outputs;
 
-      username = "Serenity";
+      username = "serenity";
 
     in {
 
