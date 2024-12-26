@@ -1,7 +1,7 @@
 # Serenity OS
 **Configuration for system, applications, themes, and more; shared between multiple machines and users.**<br>
-<br>
 A study in linux, system administration, packaging, user experience, desktop and system environments, themeing, and functional programming.
+<br>
 <br>
 ![desktopScreenshot](https://codeberg.org/serenity-F/nixdots/raw/branch/hyprsway/home/resources/screenshots/screenshotDesktop.png)
 ![desktopScreenshot2](https://codeberg.org/serenity-F/nixdots/raw/branch/hyprsway/home/resources/screenshots/screenshotTerminal.png)
@@ -16,10 +16,11 @@ A study in linux, system administration, packaging, user experience, desktop and
 - `/home/scripts` is exactly what it says on the tin
 - `/home/desktop` is where all desktop environment related options are specified
 - `/home/programs` is where all user-level options and packages are declared
-- `/home/resouces` is where themes, icons, etc. are kept
+- `/home/resouces` is where themes, icons, etc. are kept<br>
 <br>
-Loose evaluation path is `flake.nix` -> `hosts/` -> `core/` -> `home/users/` -> `home/`.
+Loose evaluation path is `flake.nix` -> `hosts/` -> `core/` -> `home/users/` -> `home/`.<br>
 Breakdown of structure: (`tree` [here](https://codeberg.org/serenity-F/nixdots/src/branch/swaywm/TREE.md)) <br>
+<br>
 <br>
 <br>
 ## Attributions:
