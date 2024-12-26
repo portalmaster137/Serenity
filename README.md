@@ -9,6 +9,18 @@ A study in linux, system administration, packaging, user experience, desktop and
 - **Very much WIP and mostly stolen code at this point. A to do list and longer term goals can be found [here](https://codeberg.org/serenity-F/nixdots/issues), and [here](https://codeberg.org/serenity-F/nixdots/milestones) respectively.**<br>
 - A Wiki and install guide can be found [here](https://codeberg.org/serenity-F/nixdots/wiki) and [here](https://codeberg.org/serenity-F/nixdots/wiki/Install-Guide).
 <br>
+- `flake.nix` is the top-level of config, and also where universal variables are defined
+- `/hosts` is where all host-specific configs are kept
+- `/core` is where nixos system-level packages and options are declared
+- `/home/users` is where all users and relevant options are specified
+- `/home/scripts` is exactly what it says on the tin
+- `/home/desktop` is where all desktop environment related options are specified
+- `/home/programs` is where all user-level options and packages are declared
+- `/home/resouces` is where themes, icons, etc. are kept
+<br>
+Loose evaluation path is `flake.nix` -> `hosts/` -> `core/` -> `home/users/` -> `home/`.
+Breakdown of structure: (`tree` [here](https://codeberg.org/serenity-F/nixdots/src/branch/swaywm/TREE.md)) <br>
+<br>
 <br>
 ## Attributions:
  - ### **Artwork**
