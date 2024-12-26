@@ -1,4 +1,4 @@
-{ inputs, outputs, pkgs, flakePath, disksPath, primaryUser, ... }:
+{ inputs, outputs, config, pkgs, flakePath, disksPath, primaryUser, ... }:
 
 let
   hostname = "${config.networking.hostName}";
