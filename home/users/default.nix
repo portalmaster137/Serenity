@@ -9,7 +9,7 @@
     ../../home # home-manager configuration
 
     ## misc.
-    ../resources
+    #../resources
 
     ## Users
     #./u-username
