@@ -24,6 +24,10 @@ let
 
     systemctl --user start hyprpolkitagent
 
+    udiskie
+
+    nicotine-plus
+
     syncthing-tray
 
     swww-daemon & sleep 0.1
@@ -37,6 +41,5 @@ let
 in {
   home.packages = with pkgs; [
     startup
-     #battery-notif
   ];
 }
