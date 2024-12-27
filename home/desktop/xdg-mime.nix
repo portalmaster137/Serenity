@@ -12,8 +12,11 @@
         added = {
           ## General
           "inode/directory" = [ "yazi.desktop" ];
-          "image/*" = [ "swayimg.desktop" ];
+          "image/gif" = [ "swayimg.desktop" ];
           "image/png" = [ "swayimg.desktop" ];
+          "image/jpg" = [ "swayimg.desktop" ];
+          "image/jpeg" = [ "swayimg.desktop" ];
+          "image/webp" = [ "swayimg.desktop" ];
           "audio/*" = [ "strawberry.desktop" ];
           "video/*" = [ "vlc.desktop" ];
           "text/plain" = [ "nvim.desktop" ];
