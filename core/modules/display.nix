@@ -6,7 +6,6 @@
   ];
 
   boot = {
-
     bootspec.enable = true;
     consoleLogLevel = 0;
     initrd.verbose = false;
@@ -20,10 +19,8 @@
       "udev.log_priority=3"
       "boot.shell_on_fail"
     ];
-
     loader = {
       timeout = 30;
-
       #grub = {
       #theme = "${pkgs.minimal-grub-theme}";
       #backgroundColor = "#000000";
@@ -31,53 +28,63 @@
       #font = "${pkgs.spleen}/share/fonts/spleen-32x64";
       #fontSize = 16;
       #};
-
     };
-
     plymouth = {
       enable = true;
-
       #logo = pkgs.fetchurl {
       #url = "https://nixos.org/logo/nixos-hires.png";
       #hash = "1ivzgd7iz0i06y36p8m5w48fd8pjqwxhdaavc0pxs7w1g7mcy5si";
       #};
       #font = "${pkgs.spleen}/share/fonts/spleen-32x64";
-
-      theme = "circuit";
+      theme = "circle";
       themePackages = with pkgs;
         [
           (adi1090x-plymouth-themes.override {
-            selected_themes = [ "circle" "circuit" ];
+            selected_themes = [ "circle" ];
           })
         ];
-
       #extraConfig = '''';
-
     };
-
   };
 
+  xdg.mime.enable = true; # may be unneeded here as already declared in `home/desktop/xdg-mime.nix`
+
   services = {
+    xserver.enable = true; # xserver still needed for xwayland stuff
+  };
 
-    ## xserver still needed for xwayland stuff
-    xserver.enable = true;
+  systemd.user.targets.sway = { # To start sway related services
+    description = "to start sway related services";
+    wants = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
+  };
 
+  environment = {
+    variables = { # environment variables, duh
+      XDG_SESSION_TYPE = "wayland";
+      XDG_CURRENT_DESKTOP = "sway";
+    };
+    systemPackages = with pkgs; [
+      xorg.xhost # i actually dont remember what this does
+      ## Themes
+      minimal-grub-theme
+      colloid-kde
+      colloid-gtk-theme
+      adapta-gtk-theme
+      adapta-kde-theme
+      materia-theme
+      materia-theme-transparent
+    ];
   };
 
   programs = {
-
-    ## Standard(?) xwayland implementation
-    xwayland = {
+    xwayland = { # Standard(?) xwayland implementation
       enable = true;
       #package = [ ];
       #defaultFontPath = "/run/current-system/sw/share/X11/fonts";
     };
-
-    ## enable sway window manager
-    sway = {
+    sway = { # enable sway window manager
       enable = true;
-      ## Sways implementation of xwayland
-      #xwayland.enable = true;
       package = pkgs.swayfx;
       extraPackages = [ ];
       wrapperFeatures = {
@@ -94,66 +101,8 @@
     };
   };
 
-  ## To start sway related services
-  systemd.user.targets.sway = {
-    description = "to start sway related services";
-    wants = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
-  };
-
-  xdg = {
-    mime.enable = true;
-    #portal = {
-      #enable = true;
-      #xdgOpenUsePortal = true;
-      #config = {
-      #common."org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
-      #common.default = [ "gtk" "gnome" ];
-      #sway.default = [ "gtk" "gnome" ];
-      #};
-      #configPackages = with pkgs; [
-      #xdg-desktop-portal-gtk
-      #xdg-desktop-portal-wlr
-      #xdg-desktop-portal-gnome
-      #];
-      #extraPortals = with pkgs; [
-      #xdg-desktop-portal-gtk
-      #xdg-desktop-portal-wlr
-      #xdg-desktop-portal-gnome
-      #];
-    #};
-  };
-
-  environment = {
-
-    variables = {
-      XDG_SESSION_TYPE = "wayland";
-      XDG_CURRENT_DESKTOP = "sway";
-    };
-
-    systemPackages = with pkgs; [
-      minimal-grub-theme
-      xorg.xhost
-      #qt5.wayland
-      #xdg-utils
-      #xdg-desktop-portal
-      #xdg-desktop-portal-gtk
-      #xdg-desktop-portal-wlr
-      #xdg-desktop-portal-gnome
-
-      ## Themes
-      colloid-kde
-      colloid-gtk-theme
-      adapta-gtk-theme
-      adapta-kde-theme
-      materia-theme
-      materia-theme-transparent
-    ];
-
-  };
-
   ## I put fonts here because i didn't know where tf else to put them lol
-  ## duplicate to home-manager config
+  ## duplicate to home-manager config ?
   fonts = {
     packages = with pkgs;
       [ spleen terminus_font terminus_font_ttf nerd-fonts.symbols-only ]

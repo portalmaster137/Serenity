@@ -24,7 +24,6 @@ in {
   ];
 
   xdg = {
-    mime.enable = true;
     portal = {
       enable = true;
       xdgOpenUsePortal = false;
@@ -86,16 +85,6 @@ in {
     gtk3.extraConfig = { gtk-application-prefer-dark-theme = 1; };
     gtk4.extraConfig = { gtk-application-prefer-dark-theme = 1; };
   };
-
-  #dconf = {
-  #enable = true;
-  #settings = {
-  #  "org/gnome/desktop/interface" = {
-  #    gtk-theme = "Adwaita-dark";
-  #  	 color-scheme = "prefer-dark";
-  #  };
-  #};
-  #};
 
   home = {
 
