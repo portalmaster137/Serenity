@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, flakePath, homeDir, ... }:
 
 ## Base desktop theme
 let
@@ -14,7 +14,7 @@ in {
     ./xdg-mime.nix # file associations
     ./hyprcursor.nix # mouse cursor
     ./hyprlock.nix # screen locker
-    ./wlogout.nix # logout prompt 
+    ./wlogout.nix # logout prompt
     ./waybar.nix # statusbar
     ./dunst.nix # notifier
     ./wofi.nix # app menu
@@ -27,31 +27,32 @@ in {
     mime.enable = true;
     portal = {
       enable = true;
+      wlr.enable = true;
       xdgOpenUsePortal = false;
       config = {
         common."org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
-        common.default = [ "gtk" "gnome" ];
-        sway.default = [ "wlr" "gtk" "gnome" ];
+        common.default = [ "gtk" "wlr" "gnome" ];
+        sway.default = [ "gtk" "wlr" "gnome" ];
       };
       configPackages = with pkgs; [
-        #xdg-desktop-portal
-        xdg-desktop-portal-wlr
         xdg-desktop-portal-gtk
+        xdg-desktop-portal-wlr
         xdg-desktop-portal-gnome
       ];
       extraPortals = with pkgs; [
-        #xdg-desktop-portal
-        xdg-desktop-portal-wlr
         xdg-desktop-portal-gtk
+        xdg-desktop-portal-wlr
         xdg-desktop-portal-gnome
       ];
     };
-    #userDirs = {
-    #extraConfig = {
-    #XDG_FLAKE_DIR = "${config.home.homeDirectory}/flakes/nixdots";
-    #XDG_SYNC_DIR = "${config.home.homeDirectory}/Sync";
-    #};
-    #};
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      extraConfig = {
+        XDG_FLAKE_DIR = "${flakePath}";
+        XDG_SYNC_DIR = "${homeDir}/Sync";
+      };
+    };
   };
 
   fonts = { fontconfig = { enable = true; }; };

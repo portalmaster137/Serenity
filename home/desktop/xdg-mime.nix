@@ -1,7 +1,8 @@
 # Mime allows us to configure the default applications for each file type
 {
   xdg = {
-    #desktopEntries = { };
+    configFile."mimeapps.list".force = true; # forces the following declarations
+    #desktopEntries = { }; 
     mimeApps = {
       associations = {
         added = {
