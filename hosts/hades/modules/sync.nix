@@ -60,7 +60,7 @@
               #"Persephone"
             ];
             versioning = { # versioning, for added redundancy
-              type = "none";
+            # disabled for now as we have versioning through git
               #type = "simple"; # nothing fancy, keeps x number of copies
               #params = { keep = "3"; }; # number of copies to keep
             };
@@ -75,7 +75,7 @@
               #"Persephone"
             ];
             versioning = { # versioning, for added redundancy
-              type = "none";
+            # disabled for now as we have versioning through git
               #type = "simple"; # nothing fancy, keeps x number of copies
               #params = { keep = "3"; }; # number of copies to keep
             };
