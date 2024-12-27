@@ -49,7 +49,7 @@
 
           "Notes" = { # folder for organisation/notes vault
             enable = true; # easy toggle
-            id = "c7a4l-3pal7";
+            id = "h0ay3-l8snk";
             path = "${homeDir}/Notes"; # defaults to primaryUser's homedir
             devices = [
               "Hecate"
