@@ -40,4 +40,4 @@
   - [vimjoyer](https://github.com/vimjoyer)
   - [fufexan](https://github.com/\fufexan/dotfiles)
   - Wonder
-  - Hive
+  - [Hive](https://codeberg.org/theotheroracle/neutron)
