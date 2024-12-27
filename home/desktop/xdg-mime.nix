@@ -1,59 +1,42 @@
 # Mime allows us to configure the default applications for each file type
 {
   xdg = {
-
-    desktopEntries = {
-      swayimg = {
-        name = "Swayimg";
-        genericName = "Image Viewer";
-        terminal = true;
-        exec = "swayimg %F";
-        categories = [ "Graphics" "Viewer" ];
-      };
-    };
-
+    mime = { enable = true; };
+    #desktopEntries = { };
     mimeApps = {
-      defaultApplications = {
+      associations = {
+        added = {
 
-        ## Basic Text
-        "text/plain" = "nvim.desktop";
-        "text/markdown" = "nvim.desktop";
-        "application/pdf" = "firefox.desktop";
+          ## General
+          "inode/directory" = "yazi.desktop";
+          "image/*" = "swayimg.desktop";
+          "audio/*" = "strawberry.desktop";
+          "video/*" = "vlc.desktop";
+          "text/plain" = "nvim.desktop";
+          "text/markdown" = "nvim.desktop";
+          "application/pdf" = "zathura.desktop";
+          "application/zip" = "org.gnome.FileRoller.desktop";
 
-        ## Images
-        "image/gif" = "swayimg.desktop";
-        "image/png" = "swayimg.desktop";
-        "image/jpg" = "swayimg.desktop";
-        "image/jpeg" = "swayimg.desktop";
-        "image/webp" = "swayimg.desktop";
+          ## Web
+          "text/css" = "nvim.desktop";
+          "text/html" = "nvim.desktop";
+          "application/json" = "firefox.desktop";
+          "x-scheme-handler/ftp" = "firefox.desktop";
+          "x-scheme-handler/http" = "firefox.desktop";
+          "x-scheme-handler/https" = "firefox.desktop";
 
-        ## Videos
-        "video/mp4" = "vlc.desktop";
-        "video/mpeg" = "vlc.desktop";
-        "video/webm" = "vlc.desktop";
-        "video/quicktime" = "vlc.desktop";
-        "video/x-matroska" = "vlc.desktop";
+          ## Code
+          "text/x-shellscript" = "nvim.desktop";
+          "text/x-xml" = "nvim.desktop";
+          "text/x-yaml" = "nvim.desktop";
+          "text/x-toml" = "nvim.desktop";
+          "text/x-nix" = "nvim.desktop";
+          "text/x-rust" = "nvim.desktop";
+          "text/x-python" = "nvim.desktop";
 
-        ## Music
-
-        ## Gaming
-
-        ## Web
-        "text/css" = "nvim.desktop";
-        "text/html" = "nvim.desktop";
-        "x-scheme-handler/http" = "firefox.desktop";
-        "x-scheme-handler/https" = "firefox.desktop";
-
-        ## Code
-        "text/x-shellscript" = "nvim.desktop";
-        "text/x-xml" = "nvim.desktop";
-        "text/x-yaml" = "nvim.desktop";
-        "text/x-toml" = "nvim.desktop";
-        "text/x-nix" = "nvim.desktop";
-        "text/x-rust" = "nvim.desktop";
-        "text/x-python" = "nvim.desktop";
-
+        };
       };
+      #defaultApplications = { };
     };
   };
 }

@@ -24,34 +24,25 @@ in {
   ];
 
   xdg = {
-    mime = { enable = true; };
-    mimeApps = {
-      enable = true;
-      #associations.added = associations;
-      #defaultApplications = associations;
-    };
     portal = {
-      enable = false;
+      enable = true;
       xdgOpenUsePortal = false;
       config = {
         common."org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
         common.default = [ "gtk" "gnome" ];
-        #sway.default = [ "gtk" "gnome" ];
-        hyprland.default = [ "hyprland" "gtk" "gnome" ];
+        sway.default = [ "wlr" "gtk" "gnome" ];
       };
       configPackages = with pkgs; [
         #xdg-desktop-portal
         xdg-desktop-portal-wlr
         xdg-desktop-portal-gtk
         xdg-desktop-portal-gnome
-        xdg-desktop-portal-hyprland
       ];
       extraPortals = with pkgs; [
         #xdg-desktop-portal
         xdg-desktop-portal-wlr
         xdg-desktop-portal-gtk
         xdg-desktop-portal-gnome
-        xdg-desktop-portal-hyprland
       ];
     };
     #userDirs = {
