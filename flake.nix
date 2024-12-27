@@ -125,10 +125,15 @@
 
 
       ## Universal variable declarations
+
       primaryUser = "serenity"; # used for admin purposes
-      #flakePath = "/home/${primaryUser}/SerenityOS/"; # for v1.0.0 release
-      flakePath = "/home/${primaryUser}/flakes/nixdots/"; # current path
-      disksPath = "/home/${primaryUser}/Disks/";
+      homeDir = "/home/${primaryUser}"; # for easy configuration
+
+      disksPath = "${homeDir}/Disks/";
+      flakePath = "${homeDir}/flakes/nixdots/"; # current path to flake
+      #flakePath = "${homeDir}/SerenityOS/"; # for v1.0.0 release
+
+
 
 
     in {
@@ -141,7 +146,7 @@
           specialArgs = {
             inherit inputs outputs;
             inherit flakePath disksPath;
-            inherit primaryUser;
+            inherit primaryUser homeDir;
           };
           modules = [
             sops-nix.nixosModules.sops
@@ -160,7 +165,7 @@
           specialArgs = {
             inherit inputs outputs;
             inherit flakePath disksPath;
-            inherit primaryUser;
+            inherit primaryUser homeDir;
           };
           modules = [
             sops-nix.nixosModules.sops
@@ -175,7 +180,7 @@
           specialArgs = {
             inherit inputs outputs;
             inherit flakePath disksPath;
-            inherit primaryUser;
+            inherit primaryUser homeDir;
           };
           modules = [
             sops-nix.nixosModules.sops
@@ -189,7 +194,7 @@
           specialArgs = {
             inherit inputs outputs;
             inherit flakePath disksPath;
-            inherit primaryUser;
+            inherit primaryUser homeDir;
           };
           modules = [
             sops-nix.nixosModules.sops

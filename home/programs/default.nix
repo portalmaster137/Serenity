@@ -5,7 +5,7 @@
   imports = [
 
     ## Import program configs
-    ./syncthing
+    #./syncthing
     ./firefox
     ./nheko
     ./fetch
