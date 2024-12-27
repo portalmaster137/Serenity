@@ -149,7 +149,6 @@
           modules = [
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
-            gitwatch.gitwatch.modules
             disko.nixosModules.disko
             ./hosts/iso
           ];
@@ -169,7 +168,6 @@
           modules = [
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
-            gitwatch.gitwatch.modules
             disko.nixosModules.disko
             ./hosts/hades
           ];
@@ -184,7 +182,6 @@
           };
           modules = [
             sops-nix.nixosModules.sops
-            gitwatch.gitwatch.modules
             disko.nixosModules.disko
             ./hosts/orcus
           ];
@@ -200,7 +197,6 @@
           modules = [
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
-            gitwatch.gitwatch.modules
             disko.nixosModules.disko
             ./hosts/persephone
           ];
