@@ -2,11 +2,12 @@
 {
   xdg = {
     configFile."mimeapps.list" = {
-      enable = true; # enables ? following declarations
+      #enable = true; # enables ? following declarations
       force = true; # forces the following declarations
     };
     #desktopEntries = { }; 
     mimeApps = {
+      enable = true;
       associations = {
         added = {
           ## General
