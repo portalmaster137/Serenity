@@ -59,11 +59,11 @@
               "Hecate"
               #"Persephone"
             ];
-            versioning = { # versioning, for added redundancy
+            #versioning = { # versioning, for added redundancy
             # disabled for now as we have versioning through git
               #type = "simple"; # nothing fancy, keeps x number of copies
               #params = { keep = "3"; }; # number of copies to keep
-            };
+            #};
           };
 
           "Notes" = { # folder for organisation/notes vault
@@ -74,11 +74,11 @@
               "Hecate"
               #"Persephone"
             ];
-            versioning = { # versioning, for added redundancy
+            #versioning = { # versioning, for added redundancy
             # disabled for now as we have versioning through git
               #type = "simple"; # nothing fancy, keeps x number of copies
               #params = { keep = "3"; }; # number of copies to keep
-            };
+            #};
           };
 
         };
