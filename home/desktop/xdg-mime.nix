@@ -2,31 +2,46 @@
 {
   xdg.mimeApps = {
     defaultApplications = {
-      "text/markdown" = "nvim.desktop";
+
+      ## Basic Text
       "text/plain" = "nvim.desktop";
-      "text/x-shellscript" = "nvim.desktop";
-      "text/x-python" = "nvim.desktop";
-      "text/x-go" = "nvim.desktop";
-      "text/css" = "nvim.desktop";
-      "text/javascript" = "nvim.desktop";
-      "text/x-c" = "nvim.desktop";
-      "text/x-c++" = "nvim.desktop";
-      "text/x-java" = "nvim.desktop";
-      "text/x-rust" = "nvim.desktop";
-      "text/x-yaml" = "nvim.desktop";
-      "text/x-toml" = "nvim.desktop";
-      "text/x-dockerfile" = "nvim.desktop";
-      "text/x-xml" = "nvim.desktop";
-      "text/x-php" = "nvim.desktop";
-      "image/png" = "swayimg.desktop";
-      "image/jpeg" = "swayimg.desktop";
+      "text/markdown" = "nvim.desktop";
+      "application/pdf" = "firefox.desktop";
+
+      ## Images
+      "image/gif" = "swayimg";
+      "image/png" = "swayimg";
       "image/jpg" = "swayimg.desktop";
+      "image/jpeg" = "swayimg.desktop";
       "image/webp" = "swayimg.desktop";
-      "image/gif" = "swayimg.desktop";
+
+      ## Videos
+      "video/mp4" = "vlc.desktop";
+      "video/mpeg" = "vlc.desktop";
+      "video/webm" = "vlc.desktop";
+      "video/quicktime" = "vlc.desktop";
+      "video/x-matroska" = "vlc.desktop";
+
+
+      ## Music
+
+      ## Gaming
+
+      ## Web
+      "text/css" = "nvim.desktop";
+      "text/html" = "nvim.desktop";
       "x-scheme-handler/http" = "firefox.desktop";
       "x-scheme-handler/https" = "firefox.desktop";
-      "text/html" = "firefox.desktop";
-      "application/pdf" = "firefox.desktop";
+
+      ## Code
+      "text/x-shellscript" = "nvim.desktop";
+      "text/x-xml" = "nvim.desktop";
+      "text/x-yaml" = "nvim.desktop";
+      "text/x-toml" = "nvim.desktop";
+      "text/x-nix" = "nvim.desktop";
+      "text/x-rust" = "nvim.desktop";
+      "text/x-python" = "nvim.desktop";
+
     };
   };
 }

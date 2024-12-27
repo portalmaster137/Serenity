@@ -11,14 +11,15 @@ in {
   imports = [
 
     ## Import common desktop configs
-    ./hyprcursor.nix
-    ./hyprlock.nix
-    ./wlogout.nix
-    ./waybar.nix
-    ./dunst.nix
-    ./wofi.nix
-    ./sway.nix
-    ../scripts
+    ./xdg-mime.nix # file associations
+    ./hyprcursor.nix # mouse cursor
+    ./hyprlock.nix # screen locker
+    ./wlogout.nix # logout prompt 
+    ./waybar.nix # statusbar
+    ./dunst.nix # notifier
+    ./wofi.nix # app menu
+    ./sway.nix # desktop
+    ../scripts # scripts
 
   ];
 
