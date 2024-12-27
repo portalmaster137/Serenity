@@ -24,9 +24,7 @@ let
 
     nicotine-plus
 
-    syncthing-tray
-
-    swww-init & sleep 0.1
+    swww init & sleep 0.1
 
     swww img ${config.theme.wallpaper}
 

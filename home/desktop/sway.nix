@@ -58,7 +58,12 @@ in {
       ## Use kitty as default terminal
       terminal = "kitty";
       ## Startup scripts and programs
-      startup = [ { command = "startup"; } { command = "kitty"; } ];
+      startup = [
+        { command = "startupExtra"; }
+        { command = "startup"; } # defined in `home/scripts/startup.nix`
+        { command = "kitty"; }
+        { command = "kitty btop"; }
+      ];
       modifier = "Mod4";
       floating = { modifier = "Mod4"; };
 
