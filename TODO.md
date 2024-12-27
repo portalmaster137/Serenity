@@ -3,4 +3,5 @@
 - [Formatting](https://codeberg.org/serenity-F/nixdots/issues/14) - Do it as you& see it, then do large swaths of formatting at once.
 - Fix xdg-mime.nix
 - Finalise '[desktop environment](https://codeberg.org/serenity-F/nixdots/issues/25)'
+- Begin work on `Security` goal
 
