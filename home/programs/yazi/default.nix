@@ -7,7 +7,8 @@
       log = { enabled = false; };
       manager = {
         show_hidden = true;
-        sort_by = "modified";
+        #linemode = "none"
+        sort_by = "mtime";
         sort_dir_first = true;
         sort_reverse = false;
       };
