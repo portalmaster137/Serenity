@@ -27,7 +27,6 @@ in {
     mime.enable = true;
     portal = {
       enable = true;
-      wlr.enable = true;
       xdgOpenUsePortal = false;
       config = {
         common."org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
