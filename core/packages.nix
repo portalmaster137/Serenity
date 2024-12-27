@@ -4,23 +4,25 @@
 
   imports = [ ];
 
+  ## Activation Scripts
+  ## - these run after using `sudo nixos-rebuild switch`
   system.activationScripts.diff = {
-    supportsDryActivation = true;
+    supportsDryActivation = true; # prints diff of the store
     text = ''
       ${pkgs.nvd}/bin/nvd --nix-bin-dir=${pkgs.nix}/bin diff \
           /run/current-system "$systemConfig"
-    '';
+      && echo "Rebuild completed successfully <3"
+    ''; # also prints a cute message
   };
 
+  ## Nixpkgs Settings
   nixpkgs = {
-
     config = {
       allowUnfree = true;
       ## Place insecure packages here
       permittedInsecurePackages = [ "olm-3.2.16" ];
     };
-
-    ## [START - Stolen code, no clue how it works :3 ]
+    ## Overlays - BROKEN FOR NOW 
     overlays = [
       ## to use overlays exported from other flakes:
       #neovim-nightly-overlay.overlays.default
@@ -32,65 +34,38 @@
       #});
       #})
     ];
-
   };
 
-  ## This will add each flake input as a registry
-  ## To make nix3 commands consistent with your flake
-  #nix.registry = (lib.mapAttrs (_: flake: { inherit flake; }))
-  #  ((lib.filterAttrs (_: lib.isType "flake")) inputs);
-  ## This will additionally add your inputs to the system's legacy channels
-  ## Making legacy nix commands consistent as well, awesome!
-  #nix.nixPath = [ "/etc/nix/path" ];
-  #environment.etc = lib.mapAttrs' (name: value: {
-  #  name = "nix/path/${name}";
-  #  value.source = value.flake;
-  #}) config.nix.registry;
-  ## [END - Stolen code, mostly understand from here again]
-
+  ## System-level Programs
   programs = {
-
-    ## Neovim declared here too, just in case
-    neovim = { enable = true; };
-
-    ## A catgirl's favourite shell - NEEDS OWN NIX MODULE
-    fish = { enable = true; };
-
-    ## Added here in case the user level declaration
-    ## is wonky with nvim editor?
-    git = { enable = true; };
-
-    ## NixOS CLI helper
-    nh = {
+    neovim = { enable = true; }; # Neovim declared here too, just in case 
+    fish = { enable = true; }; # A catgirl's favourite shell - NEEDS OWN NIX MODULE 
+    git = { enable = true; }; # version control
+    nh = { # NixOS CLI helper 
       enable = true;
       flake = "/home/serenity/flakes/nixdots";
     };
-
-    ## For handling encryption keys
-    gnupg.agent = {
+    gnupg.agent = { # For handling encryption keys 
       enable = true;
       enableSSHSupport = true;
       #pinentryPackage = [ ];
     };
-
   };
 
   environment = {
 
-    ## Install a stub ELF loader to print an informative
-    ## error message in the event that a user attempts
-    ## to run an ELF binary not compiled for NixOS.
+    ## Environment Variables
+    variables = { # sets neovim to default editor in other apps
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+      SYSTEMD_EDITOR = "nvim";
+    };
+    # Install a stub ELF loader to print an informative
+    # error message in the event that a user attempts
+    # to run an ELF binary not compiled for NixOS.
     stub-ld.enable = true;
 
-    variables = {
-      ## Wei have switched to neovim
-      ## full-time, sorry Micro. <3
-      EDITOR = "neovim";
-      VISUAL = "neovim";
-      SYSTEMD_EDITOR = "neovim";
-    };
-
-    ## All COMMON system-level packages declared here
+    ## System-level Packages
     systemPackages = with pkgs; [
 
       ## Nix specific tools
@@ -135,10 +110,6 @@
       android-tools # Commands for interfacing with android devices
       smartmontools # Tools for monitoring HDD health
       magic-wormhole # Direct file sharing
-
-      gay # dw abt it
-      blahaj # dw abt this either
-
     ];
 
   };
