@@ -1,10 +1,8 @@
-{ pkgs, config, ... }:
-
 {
+
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;
-
     settings = {
       log = { enabled = false; };
       manager = {
@@ -14,5 +12,7 @@
         sort_reverse = false;
       };
     };
+    #plugins = { };
   };
+
 }
