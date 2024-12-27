@@ -59,9 +59,10 @@
               "Hecate"
               #"Persephone"
             ];
-            versioning = { # versioning, for redundancy
-              type = "simple"; # nothing fancy, keeps x number of copies
-              params = { keep = "3"; }; # number of copies to keep
+            versioning = { # versioning, for added redundancy
+              type = "none";
+              #type = "simple"; # nothing fancy, keeps x number of copies
+              #params = { keep = "3"; }; # number of copies to keep
             };
           };
 
@@ -73,9 +74,10 @@
               "Hecate"
               #"Persephone"
             ];
-            versioning = { # versioning, for redundancy
-              type = "simple"; # nothing fancy, keeps x number of copies
-              params = { keep = "3"; }; # number of copies to keep
+            versioning = { # versioning, for added redundancy
+              type = "none";
+              #type = "simple"; # nothing fancy, keeps x number of copies
+              #params = { keep = "3"; }; # number of copies to keep
             };
           };
 
