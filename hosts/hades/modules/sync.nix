@@ -24,7 +24,7 @@
         remote = "git@codeberg.org:serenity-F/keyring.git";
       };
 
-      Notes = { # notes backup, not paying for obsidian backup lol
+      Notes = { # notes backup, not paying for obsidian backup (lol)
         enable = true;
         user = "${primaryUser}";
         path = "${homeDir}/Notes/";
