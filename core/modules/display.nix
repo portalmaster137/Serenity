@@ -102,7 +102,8 @@
   };
 
   xdg = {
-    portal = {
+    mime.enable = true;
+    #portal = {
       #enable = true;
       #xdgOpenUsePortal = true;
       #config = {
@@ -120,7 +121,7 @@
       #xdg-desktop-portal-wlr
       #xdg-desktop-portal-gnome
       #];
-    };
+    #};
   };
 
   environment = {
