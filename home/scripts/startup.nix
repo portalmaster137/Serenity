@@ -32,7 +32,7 @@ let
 
   '';
 
-  startupExtra = pkgs.writeShellScriptBin "startup" ''
+  startupExtra = pkgs.writeShellScriptBin "startupExtra" ''
 
     otd-gui
 
