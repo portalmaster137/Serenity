@@ -1,7 +1,5 @@
-# File runned at startup by Hyprland
-{ pkgs, config, ... }:
+{ pkgs, config, homeDir, ... }:
 let
-  homedir = config.home.homeDirectory;
 
   battery-notif = pkgs.writeShellScriptBin "battery-notif" ''
     # Send notifications when low on battery and not in charge
@@ -24,22 +22,30 @@ let
 
     systemctl --user start hyprpolkitagent
 
-    udiskie
-
     nicotine-plus
 
     syncthing-tray
 
-    swww-daemon & sleep 0.1
-
-    swww img ${config.theme.wallpaper}
+    swww-init & sleep 0.1
 
     swww img ${config.theme.wallpaper}
 
   '';
 
+  startupExtra = pkgs.writeShellScriptBin "startup" ''
+
+    otd-gui
+
+    vesktop
+
+    easyeffects
+
+  '';
+
 in {
-  home.packages = with pkgs; [
+  home.packages = [
     startup
+    startupExtra
+    battery-notif
   ];
 }

@@ -129,24 +129,17 @@ in {
       syncthing-tray # File synchronisation
       networkmanager # Network manager ...
       networkmanagerapplet # Tray applet for networkmanager
-      gnome-control-center # GUI system settings
-      gnome-power-manager # GUI power and battery stats
       gnome-calculator # GTK calculator
-      gnome-calendar # GTK calendar
-      gsmartcontrol # GUI for smartctl (smartmontools)
       pavucontrol # Volume control centre
       file-roller # archive manager
       hyprpicker # Colour picker
       hyprcursor # Cursor, duh
-      hypridle # Sleep/idle service
       hyprlock # Screen lock
-      hyprshot # Screenshot
       nautilus # GTK File manager
       swayimg # Terminal based image viewer
       zathura # PDF viewer
       gparted # GUI partition editor
       kitty # Terminal emulator
-      sushi # Previewer for nautilus
 
       ## fun
       peaclock # Clock, but terminal

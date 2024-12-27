@@ -1,7 +1,6 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 
 let
-  homedir = config.home.homeDirectory;
 
   increments = "5";
 
