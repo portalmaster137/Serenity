@@ -25,6 +25,9 @@
       group = "users"; # runs in the users group
       guiAddress = "0.0.0.0:8384"; # default web address for the GUI
       settings = {
+        ## WebApp GUI 
+        user = "serenity";
+        #password = "password";
 
         ## Syncthing Folders
         overrideFolders = true; # force these folder on activation
@@ -33,7 +36,10 @@
           "Keyring" = { # folder for password/secrets vault
             enable = false; # easy toggle - OFF for now
             path = "${homeDir}/Keyring"; # defaults to primaryUser's homedir
-            #devices = [ ]; # left empty for now
+            devices = [
+              "Hecate"
+              #"Persephone"
+            ];
             versioning = { # versioning, for redundancy
               type = "simple"; # nothing fancy, keeps x number of copies
               params = { keep = "3"; }; # number of copies to keep
@@ -43,7 +49,10 @@
           "Notes" = { # folder for organisation/notes vault
             enable = true; # easy toggle
             path = "${homeDir}/Notes"; # defaults to primaryUser's homedir
-            #devices = [ ]; # left empty for now
+            devices = [
+              "Hecate"
+              #"Persephone"
+            ];
             versioning = { # versioning, for redundancy
               type = "simple"; # nothing fancy, keeps x number of copies
               params = { keep = "3"; }; # number of copies to keep
