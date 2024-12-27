@@ -35,6 +35,7 @@
 
           "Keyring" = { # folder for password/secrets vault
             enable = false; # easy toggle - OFF for now
+            id = "";
             path = "${homeDir}/Keyring"; # defaults to primaryUser's homedir
             devices = [
               "Hecate"
@@ -48,6 +49,7 @@
 
           "Notes" = { # folder for organisation/notes vault
             enable = true; # easy toggle
+            id = "c7a4l-3pal7";
             path = "${homeDir}/Notes"; # defaults to primaryUser's homedir
             devices = [
               "Hecate"
