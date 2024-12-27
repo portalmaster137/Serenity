@@ -11,7 +11,8 @@
     text = ''
       ${pkgs.nvd}/bin/nvd --nix-bin-dir=${pkgs.nix}/bin diff \
           /run/current-system "$systemConfig"
-      && echo "Rebuild completed successfully <3"
+
+          echo "Rebuild completed successfully <3"
     ''; # also prints a cute message
   };
 
