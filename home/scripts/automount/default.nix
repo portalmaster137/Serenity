@@ -2,7 +2,7 @@
 ## https://nix-community.github.io/home-manager/options.xhtml#opt-home.file
 ## https://nix-community.github.io/home-manager/options.xhtml#opt-home.activation
 
-{ disksPath, ... }:
+{ flakePath, disksPath, ... }:
 
 {
 

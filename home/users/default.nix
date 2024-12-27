@@ -1,4 +1,4 @@
-{ inputs, outputs, config, pkgs, flakePath, disksPath, primaryUser, ... }:
+{ inputs, outputs, config, pkgs, flakePath, disksPath, primaryUser, homeDir, ... }:
 
 let
   hostname = "${config.networking.hostName}";
@@ -13,7 +13,7 @@ in
     #../../home # home-manager configuration
 
     ## Users
-    #./u-serenity.nix
+    #./u-username.nix
 
     ## User themes - 
     ## to set a different theme for a user,
@@ -51,9 +51,9 @@ in
     verbose = true; # enables verbose output on activation
     extraSpecialArgs = { # passes in specialArgs from flake.nix
       inherit inputs outputs;
-      inherit primaryUser;
-      inherit hostname;
       inherit flakePath disksPath;
+      inherit primaryUser homeDir;
+      inherit hostname;
     };
     users = {
       ${primaryUser} = {
@@ -69,7 +69,7 @@ in
         ];
         home = {
           username = "${primaryUser}";
-          homeDirectory = "/home/${primaryUser}";
+          homeDirectory = "${homeDir}";
         };
       };
     };
