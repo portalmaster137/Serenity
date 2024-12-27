@@ -3,9 +3,8 @@
 {
 
   imports = [
-     #./lazygit.nix
-     #./gitsync.nix
     ./git.nix
+    ./gitwatch.nix
   ];
 
 }

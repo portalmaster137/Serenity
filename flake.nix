@@ -89,6 +89,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    ## Autogittage :3 - https://github.com/gitwatch/gitwatch
+    gitwatch = { url = "github:gitwatch/gitwatch"; };
+
     ## Musnix - https://github.com/musnix/musnix
     musnix = { url = "github:musnix/musnix"; };
 
@@ -107,12 +110,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ## Easy themeing <3
-    nix-colors.url = "github:misterio77/nix-colors";
+    ## Easy themeing <3 - switch theme-engine?
+    nix-colors = { url = "github:misterio77/nix-colors"; };
 
   };
 
-  outputs = { self, nixpkgs, disko, sops-nix, musnix, nixos-generators,
+  outputs = { self, nixpkgs, disko, sops-nix, musnix, gitwatch, nixos-generators
+    ,
     ## Disabled outputs - part of 'flakeification': enable and use correctly.
     #lix, lix-module, flake-utils, flake-parts, 
     #nix-colors, home-manager, nixvim,
@@ -145,6 +149,7 @@
           modules = [
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
+            gitwatch.gitwatch.modules
             disko.nixosModules.disko
             ./hosts/iso
           ];
@@ -164,6 +169,7 @@
           modules = [
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
+            gitwatch.gitwatch.modules
             disko.nixosModules.disko
             ./hosts/hades
           ];
@@ -178,6 +184,7 @@
           };
           modules = [
             sops-nix.nixosModules.sops
+            gitwatch.gitwatch.modules
             disko.nixosModules.disko
             ./hosts/orcus
           ];
@@ -193,6 +200,7 @@
           modules = [
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
+            gitwatch.gitwatch.modules
             disko.nixosModules.disko
             ./hosts/persephone
           ];
