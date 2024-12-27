@@ -61,14 +61,10 @@
 │   │   └── sync.nix
 │   │ 
 │   └── users
-│       ├── default.nix
-│       └── u-serenity.nix
 │ 
 └── hosts
     ├── hades
-    │   ├── configuration.nix
     │   ├── default.nix
-    │   ├── hardware-configuration.nix
     │   └── modules
     ├── iso
     │   ├── default.nix
