@@ -18,14 +18,14 @@
     gitwatch = {
 
       Keyring = { # keyring backup, dont have a nextcloud (yet)
-        enable = false;
+        enable = true;
         user = "${primaryUser}";
         path = "${homeDir}/Keyring/";
         remote = "git@codeberg.org:serenity-F/keyring.git";
       };
 
       Notes = { # notes backup, not paying for obsidian backup lol
-        enable = false;
+        enable = true;
         user = "${primaryUser}";
         path = "${homeDir}/Notes/";
         remote = "git@codeberg.org:serenity-F/notes.git";
