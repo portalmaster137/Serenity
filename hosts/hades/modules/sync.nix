@@ -1,29 +1,47 @@
+# https://github.com/gitwatch/gitwatch
+# https://nixos.wiki/wiki/Syncthing
 { pkgs, primaryUser, homeDir, ... }:
 
 {
 
   environment = {
     systemPackages = with pkgs; [
+      gitwatch # automatic git versioning
       syncthing # standard syncthing package
       syncthing-tray # tray applet for syncthing
     ];
   };
 
-  systemd.services = {
-    syncthing = {
-      environment.STNODEFAULTFOLDER = "true"; # prevents the `Sync` folder from being created on activation
-    };
-  };
-
   services = {
+
+    ## Gitwatch
+    gitwatch = {
+
+      Keyring = { # keyring backup, dont have a nextcloud (yet)
+        enable = false;
+        user = "${primaryUser}";
+        path = "${homeDir}/Keyring/";
+        remote = "git@codeberg.org:serenity-F/keyring.git";
+      };
+
+      Notes = { # notes backup, not paying for obsidian backup lol
+        enable = false;
+        user = "${primaryUser}";
+        path = "${homeDir}/Notes/";
+        remote = "git@codeberg.org:serenity-F/notes.git";
+      };
+    };
+
+    ## Syncthing
     syncthing = {
       enable = true; # easy toggle
       dataDir = "${homeDir}"; # defaults to primaryUser's homedir
       openDefaultPorts = true; # opens the default firewall ports
-      configDir = "${homeDir}/.config/syncthing"; # defaults to primaryUser's homedir
+      configDir =
+        "${homeDir}/.config/syncthing"; # defaults to primaryUser's homedir
       user = "${primaryUser}"; # uses primaryUser to run the service
       group = "users"; # runs in the users group
-      guiAddress = "0.0.0.0:8384"; # default web address for the GUI
+      #guiAddress = "0.0.0.0:8384"; # default web address for the GUI
       settings = {
         ## WebApp GUI 
         user = "serenity";
@@ -65,15 +83,23 @@
 
         ## Syncthing Devices
         overrideDevices = true; # force these devices on activation
-        devices = { # all syncthing devices listed - 'boilerplate' for other hosts
+        devices =
+          { # all syncthing devices listed - 'boilerplate' for other hosts
 
-          #"Orcus".id = "REALLY-LONG-ORCUS-SYNCTHING-KEY-HERE"; # disabled for testing
-          #"Hades".id = "REALLY-LONG-HADES-SYNCTHING-KEY-HERE"; # disabled for testing
-          "Hecate".id = "36WUSM4-HFYOGWP-33JHBPI-WR2TXXE-ZX3PFMB-QH6BMXM-DQ523ZF-FD7M3AI";
-          #"Persephone".id = "REALLY-LONG-PERSEPHONE-SYNCTHING-KEY-HERE"; # disabled for testing
+            #"Orcus".id = "REALLY-LONG-ORCUS-SYNCTHING-KEY-HERE"; # disabled for testing
+            #"Hades".id = "REALLY-LONG-HADES-SYNCTHING-KEY-HERE"; # disabled for testing
+            "Hecate".id = "36WUSM4-HFYOGWP-33JHBPI-WR2TXXE-ZX3PFMB-QH6BMXM-DQ523ZF-FD7M3AI";
+            #"Persephone".id = "REALLY-LONG-PERSEPHONE-SYNCTHING-KEY-HERE"; # disabled for testing
 
-        };
+          };
       };
+    };
+  };
+
+  systemd.services = {
+    syncthing = {
+      environment.STNODEFAULTFOLDER =
+        "true"; # prevents the `Sync` folder from being created on activation
     };
   };
 
