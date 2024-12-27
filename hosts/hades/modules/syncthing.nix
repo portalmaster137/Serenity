@@ -34,8 +34,8 @@
         folders = {
 
           "Keyring" = { # folder for password/secrets vault
-            enable = false; # easy toggle - OFF for now
-            id = "";
+            enable = true; # easy toggle - OFF for now
+            id = "k158k-hvzk3";
             path = "${homeDir}/Keyring"; # defaults to primaryUser's homedir
             devices = [
               "Hecate"
