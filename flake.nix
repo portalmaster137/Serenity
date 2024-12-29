@@ -89,9 +89,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ## Autogittage :3 - https://github.com/gitwatch/gitwatch
-    gitwatch = { url = "github:gitwatch/gitwatch"; };
-
     ## Musnix - https://github.com/musnix/musnix
     musnix = { url = "github:musnix/musnix"; };
 
@@ -115,7 +112,7 @@
 
   };
 
-  outputs = { self, nixpkgs, disko, sops-nix, musnix, gitwatch, nixos-generators
+  outputs = { self, nixpkgs, disko, sops-nix, musnix, nixos-generators
     ,
     ## Disabled outputs - part of 'flakeification': enable and use correctly.
     #lix, lix-module, flake-utils, flake-parts, 
