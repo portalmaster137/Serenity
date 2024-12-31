@@ -30,6 +30,7 @@
     vassal # fossy board-game sim :3
 
     ## Chat & Web
+    telegram-desktop
     lagrange # Browser for the gemini protocol
     vesktop # Modded discord wrapper
     fractal # GTK matrix client - need to fix gnome-keyring
