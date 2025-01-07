@@ -28,7 +28,7 @@
     osu-lazer-bin # Rhythm is just a click away!
     cockatrice # Magical the gathering but free
     vassal # FOSSy board-game sim :3
-    retroarch
+    #retroarch
     retroarchFull
     libretro.citra
     libretro.pcsx2
