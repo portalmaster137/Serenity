@@ -126,7 +126,6 @@ in {
       wl-clipboard # Clipboard service
       appimage-run # Runs appimages
       brightnessctl # Control display brightness
-      syncthing-tray # File synchronisation
       networkmanager # Network manager ...
       networkmanagerapplet # Tray applet for networkmanager
       gnome-calculator # GTK calculator
