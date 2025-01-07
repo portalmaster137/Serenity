@@ -1,4 +1,4 @@
-# # https://nixos.wiki/wiki/Category:Audio
+## https://nixos.wiki/wiki/Category:Audio
 ## https://nixos.wiki/PipeWire
 ## https://github.com/musnix/musnix
 ## https://nixos.wiki/wiki/Audio_production
@@ -53,56 +53,61 @@
   ## Musnix for audio production
   musnix = {
     enable = true;
-    rtcqs = { enable = true; };
-    rtirq = { enable = true; };
-    kernel = { realtime = true; };
+    rtcqs.enable = true;
+    rtirq.enable = true;
+    kernel.realtime = true;
   };
 
   ## Using pipewire baybee
-  services.pipewire = {
-    enable = true;
-    jack.enable = true;
-    pulse.enable = true;
-    alsa = {
+  services = {
+
+    pulseaudio.enable = false;
+
+    pipewire = {
       enable = true;
-      support32Bit = true;
-    };
-
-    ## Low latency config
-    extraConfig = {
-
-      pipewire."92-low-latency" = {
-        "context.properties" = {
-          "default.clock.rate" = 48000;
-          "default.clock.quantum" = 144;
-          "default.clock.min-quantum" = 144;
-          "default.clock.max-quantum" = 144;
-        };
+      jack.enable = true;
+      pulse.enable = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
       };
 
-      pipewire-pulse."92-low-latency" = {
-        stream.properties = {
-          node.latency = "144/48000";
-          resample.quality = 1;
-        };
+      ## Low latency config
+      extraConfig = {
 
-        context.modules = [{
-          name = "libpipewire-module-protocol-pulse";
-          args = {
-            pulse = {
-              default.req = "144/48000";
-              min.req = "144/48000";
-              max.req = "144/48000";
-              min.quantum = "144/48000";
-              max.quantum = "144/48000";
-            };
+        pipewire."92-low-latency" = {
+          "context.properties" = {
+            "default.clock.rate" = 48000;
+            "default.clock.quantum" = 150;
+            "default.clock.min-quantum" = 150;
+            "default.clock.max-quantum" = 150;
           };
-        }];
+        };
+
+        pipewire-pulse."92-low-latency" = {
+          stream.properties = {
+            node.latency = "150/48000";
+            resample.quality = 1;
+          };
+
+          context.modules = [{
+            name = "libpipewire-module-protocol-pulse";
+            args = {
+              pulse = {
+                default.req = "150/48000";
+                min.req = "150/48000";
+                max.req = "150/48000";
+                min.quantum = "150/48000";
+                max.quantum = "150/48000";
+              };
+            };
+          }];
+
+        };
 
       };
 
     };
-
   };
 
 }
