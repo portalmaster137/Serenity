@@ -46,7 +46,7 @@
   nix = {
     settings = {
       ## Use all cores during build
-      cores = 0;
+      cores = 4;
       max-jobs = "auto";
       allow-dirty = false;
       auto-optimise-store = true;
