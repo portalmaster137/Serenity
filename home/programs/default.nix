@@ -27,8 +27,12 @@
     ## Games
     osu-lazer-bin # Rhythm is just a click away!
     cockatrice # Magical the gathering but free
-    retroarch # Emulator 
     vassal # FOSSy board-game sim :3
+    retroarch
+    retroarchFull
+    libretro.citra
+    libretro.pcsx2
+    libretro.swanstation
 
     ## Chat & Web
     telegram-desktop
