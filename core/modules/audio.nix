@@ -47,9 +47,6 @@
     '';
   };
 
-  ## Not using pulse directly
-  hardware.pulseaudio.enable = false;
-
   ## Musnix for audio production
   musnix = {
     enable = true;
@@ -58,10 +55,13 @@
     kernel.realtime = true;
   };
 
-  ## Using pipewire baybee
+  ## Pipewire baybee
   services = {
 
-    pulseaudio.enable = false;
+    ## Not using pulse directly
+    pulseaudio = {
+      enable = false;
+    };
 
     pipewire = {
       enable = true;
