@@ -81,7 +81,7 @@
       exfatprogs # ExFAT filesystem
       btrfs-progs # BTRFS filesystem
       ntfs3g # NTFS filesystem
-      scrounge-ntfs # NTFS data recovery
+      #scrounge-ntfs # NTFS data recovery
 
       ## CLI tools & utilities
       fd # Find, but faster
