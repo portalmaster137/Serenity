@@ -22,21 +22,22 @@
   home.packages = with pkgs; [
 
     ## Temp.
-    themix-gui
+    themix-gui # GTK theme maker
 
     ## Games
     osu-lazer-bin # Rhythm is just a click away!
     cockatrice # Magical the gathering but free
-    vassal # fossy board-game sim :3
+    retroarch # Emulator 
+    vassal # FOSSy board-game sim :3
 
     ## Chat & Web
     telegram-desktop
     lagrange # Browser for the gemini protocol
     vesktop # Modded discord wrapper
-    fractal # GTK matrix client - need to fix gnome-keyring
+    fractal # GTK matrix client | Broken: Fix gnome-keyring
     tor # The Onion Router
 
-    ## Media
+    ## Media | Chore: Pick a music player
     #lollypop # GTK music player
     spotify # Corpo music streaming
     #pragha # Music player
@@ -51,7 +52,7 @@
     virtualbox # emulator - for wimdose
     obsidian # Note-taking
 
-    ## Audio playback and production
+    ## Audio playback and production | Chore: Set up VSTs
     neural-amp-modeler-lv2 # Guitar amp emulator
     bespokesynth # Modular synthesiser and sequencer
     easyeffects # EQ and audio effects
