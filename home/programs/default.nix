@@ -5,6 +5,7 @@
   imports = [
 
     ## Import WM/Desktop config
+    ../scripts
     ./desktop
 
     ## Import program configs

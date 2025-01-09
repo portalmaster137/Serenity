@@ -19,7 +19,6 @@ in {
     ./dunst.nix # notifier
     ./wofi.nix # app menu
     ./sway.nix # desktop
-    ../scripts # scripts
 
   ];
 
