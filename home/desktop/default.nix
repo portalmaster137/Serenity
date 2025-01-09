@@ -108,7 +108,7 @@ in {
     };
 
     packages = with pkgs; [
-      ## auth/security
+      ## Auth/Security
       polkit-kde-agent # KDE native polkit agent
       hyprpolkitagent # Hyprland native polkit agent
       gnome-keyring # Keyring for login prompts
@@ -116,54 +116,62 @@ in {
       seahorse # GTK secrets managment
       soteria # GTK/rust desktop-agnostic polkit agent
 
-      ## desktop
-      swww # Wallpaper daemon
-      dconf # GTK settings tweaker
-      blueman # GTK bluetooth manager
-      ydotool # Click/Keypress emulator
-      wlsunset # Blue light filter
+      ## Desktop
+      brightnessctl # Display brightness control
       wlr-randr # Display modesetting
+      wlsunset # Bluelight filter
+      hyprlock # Screen lock
       wl-clipboard # Clipboard service
-      appimage-run # Runs appimages
-      brightnessctl # Control display brightness
-      networkmanager # Network manager ...
-      networkmanagerapplet # Tray applet for networkmanager
-      gnome-calculator # GTK calculator
-      pavucontrol # Volume control centre
-      file-roller # archive manager
       hyprpicker # Colour picker
       hyprcursor # Cursor, duh
-      hyprlock # Screen lock
+      ydotool # Click/Keypress emulator
+      swww # Wallpaper daemon
+      networkmanagerapplet # Tray applet for networkmanager
+      networkmanager # Network manager ...
+      blueman # GTK bluetooth manager
+      easyeffects # Graphical volume control
+      pavucontrol # Graphical volume control
+      helvum # GTK patchbay
+
+      ## Desktop App Suite
+      gnome-calculator # GTK calculator
+      appimage-run # Runs appimages
+      file-roller # Archive manager
+      virtualbox # Virtual machine
       nautilus # GTK File manager
+      obsidian # Note taking
       swayimg # Terminal based image viewer
       zathura # PDF viewer
       gparted # GUI partition editor
-      kitty # Terminal emulator
+      gimp # Image editor
+      vlc # Multimedia player
+      tor # The Onion Router
 
-      ## fun
+      ## Terminal
       peaclock # Clock, but terminal
       cmatrix # Terminal, but hacker
       hyfetch # Fetch, but queer
+      kitty # Catgirl Terminal
 
-      ## misc, lib, compat
-      gnome-themes-extra
-      meson
-      wlroots
-      xwayland
-      wayland-utils
+      ## Misc./lib/compat
       wayland-protocols
+      wayland-utils
+      xwayland
+      wlroots
       libsForQt5.qt5ct
       libnotify
       libva
-      #gitwatch
+      meson
 
       ## Themes
-      colloid-kde
+      materia-theme-transparent
+      materia-theme
       colloid-gtk-theme
+      colloid-kde
       adapta-gtk-theme
       adapta-kde-theme
+      gnome-themes-extra
       materia-theme
-      materia-theme-transparent
 
     ];
   };
