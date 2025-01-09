@@ -28,7 +28,6 @@
  - ### **Artwork**
   - [Vincent Van Gogh](https://en.wikipedia.org/wiki/Almond_Blossoms)
   - [Helvetica Blanc](https://helveticablanc.com/)
-  - [dpcdpc11](https://dpcdpc11.gumroad.com/l/BLQpp)
 
  - ### **Code & Inspiration**
   - [Quantenzitrone](https://codeberg.org/quantenzitrone/nixos-config/src/branch/main)
