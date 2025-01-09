@@ -21,6 +21,9 @@
   ];
 
   home = {
+
+    programs.home-manager = { enable = true; };
+
     packages = with pkgs; [
 
       ## Temp.
@@ -53,7 +56,11 @@
       gimp # Image editor
       vlc # Multimedia player
     ];
+
     stateVersion = "24.11";
+
   };
+
+  systemd.user.startServices = "sd-switch";
 
 }
