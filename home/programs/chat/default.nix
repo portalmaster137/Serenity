@@ -3,7 +3,9 @@
 
 {
 
-  packages = with pkgs; [ telegram-desktop fractal-next fractal vesktop ];
+  home = {
+    packages = with pkgs; [ telegram-desktop fractal-next fractal vesktop ];
+  };
 
   programs = {
     nheko = {
