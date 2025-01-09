@@ -1,10 +1,9 @@
-{ inputs, outputs, config, pkgs, flakePath, disksPath, primaryUser, homeDir, ... }:
+{ inputs, outputs, config, pkgs, flakePath, disksPath, primaryUser, homeDir, ...
+}:
 
-let
-  hostname = "${config.networking.hostName}";
-in 
+let hostname = "${config.networking.hostName}";
 
-{
+in {
 
   imports = [
 
@@ -64,7 +63,7 @@ in
           ## home directories. Additional modules
           ## can be declared alongside `u-username/default.nix`
           ## and then imported in this section.
-          ../../home
+          ./home.nix
         ];
         home = {
           username = "${primaryUser}";
