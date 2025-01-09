@@ -7,7 +7,6 @@
     ## Selected host modules for import
     ./hardware.nix # hardware configuration
     ./network.nix # network configuration
-    ./sync.nix # syncthing & gitwatch
     ./zfs.nix # zfs configuration
 
     ## Additional core modules to import
