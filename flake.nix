@@ -41,9 +41,10 @@
 #
 #
 {
-  description = "SerenityOS v0.8.6"; # proper versioning system before v1.0.0?
+  description = "SerenityOS v0.8.8"; # proper versioning system before v1.0.0?
   ## Latest features:
-  ## - Syncthing configured, finally!
+  ## - Exposed large portions of `home/` import path
+  ## - Abandoned multi-user support for now
   ## - Work on commenting and reformating flake is ongoing
 
   inputs = {
