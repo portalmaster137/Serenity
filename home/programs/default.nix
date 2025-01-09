@@ -39,7 +39,6 @@
     lagrange # Browser for the gemini protocol
     vesktop # Modded discord wrapper
     fractal # GTK matrix client | Broken: Fix gnome-keyring
-    tor # The Onion Router
 
     ## Media | Chore: Pick a music player
     #lollypop # GTK music player
@@ -50,23 +49,16 @@
     nicotine-plus # P2P Media sharing
     #jellyfin # Self-Hosted media streaming
     syncplay # Synchronise local playback with friends
-    vlc # Multimedia player
-
-    ## Productivity
-    virtualbox # emulator - for wimdose
-    obsidian # Note-taking
 
     ## Audio playback and production | Chore: Set up VSTs
     neural-amp-modeler-lv2 # Guitar amp emulator
     bespokesynth # Modular synthesiser and sequencer
-    easyeffects # EQ and audio effects
     strawberry # Music playback
     metronome # A metronome
     vcv-rack # Analogue-Synth emulator
     #cardinal # VCV Rack but open source and as a plugin
     audacity # Audio editing
     reaper # DAW
-    helvum # GTK patchbay
     ardour # Digital Audio Workstation
     vital # synth
     helm # synth :)
@@ -76,7 +68,6 @@
     inkscape # Vector image editing
     shotcut # Video editing
     #blender # 3D modelling
-    gimp # Digital image editing
   ];
 
 }
