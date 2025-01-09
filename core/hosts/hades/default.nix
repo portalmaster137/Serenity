@@ -5,9 +5,8 @@
 
     ## Host specific config files
     ./modules
-
     ## Shared 'core' config options
-    ../../core
+    ../../../core
 
   ];
 
@@ -52,10 +51,10 @@
       ## Packages for the iGPU inside Hades
       extraPackages = with pkgs; [
         intel-compute-runtime
-  	    intel-media-driver
-  	    libvdpau-va-gl
-  	    vaapiIntel
-  	    vaapiVdpau
+        intel-media-driver
+        libvdpau-va-gl
+        vaapiIntel
+        vaapiVdpau
       ];
     };
     ## Packages for the dGPU inside Hades
@@ -64,12 +63,12 @@
       opencl.enable = true;
       ## Vulkan packages for the dGPU inside Hades
       amdvlk = {
-         #enable = false;
-         #package = [ ];
-         #support32Bit.enable = false;
-         #supportExperimental.enable = false;
-         #settings = {
-         #};
+        #enable = false;
+        #package = [ ];
+        #support32Bit.enable = false;
+        #supportExperimental.enable = false;
+        #settings = {
+        #};
       };
     };
   };
@@ -95,20 +94,18 @@
 
   ## Some packages for managing the hardware inside Hades
   environment.systemPackages = with pkgs; [
-     #umr
+    #umr
     lact
     radeontop
-     #amdgpu_top
-     #radeontools
-     #radeon-profile
+    #amdgpu_top
+    #radeontools
+    #radeon-profile
     nvtopPackages.amd
   ];
 
   ## Systemd services for lact
   systemd = {
-    packages = with pkgs; [
-      lact
-    ];
+    packages = with pkgs; [ lact ];
     services.lactd.wantedBy = [ "multi-user.target" ];
   };
 
