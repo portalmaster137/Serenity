@@ -112,8 +112,7 @@
 
   };
 
-  outputs = { self, nixpkgs, disko, sops-nix, musnix, nixos-generators
-    ,
+  outputs = { self, nixpkgs, disko, sops-nix, musnix, nixos-generators,
     ## Disabled outputs - part of 'flakeification': enable and use correctly.
     #lix, lix-module, flake-utils, flake-parts, 
     #nix-colors, home-manager, nixvim,
@@ -166,7 +165,8 @@
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
             disko.nixosModules.disko
-            ./hosts/hades
+            ./core/hosts/hades
+            ./core/modules/zfs.nix
           ];
         };
 
