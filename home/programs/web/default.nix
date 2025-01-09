@@ -16,11 +16,11 @@
       lagrange # GUI Gemini browser
       tor # The Onion Router
     ];
+  };
 
-    programs = {
-      firefox = { # Web browser of choice
-        enable = true;
-      };
+  programs = {
+    firefox = { # Web browser of choice
+      enable = true;
     };
   };
 
