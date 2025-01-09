@@ -166,7 +166,6 @@
             musnix.nixosModules.musnix
             disko.nixosModules.disko
             ./core/hosts/hades
-            ./core/modules/zfs.nix
           ];
         };
 
