@@ -56,7 +56,4 @@
     stateVersion = "24.11";
   };
 
-  programs.home-manager.enable = true; # Declarative dots
-  system.user.startServices = "sd-switch";
-
 }

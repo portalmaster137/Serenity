@@ -42,6 +42,7 @@ in {
   };
 
   ## home-manager configuration
+  programs.home-manager.enable = true;
   home-manager = {
     verbose = true; # enables verbose output on activation
     extraSpecialArgs = { # passes in specialArgs from flake.nix
@@ -71,5 +72,7 @@ in {
     useGlobalPkgs = true; # ensures all packages declared follow -
     useUserPackages = true; # the same nix-channel as in the flake.nix
   };
+
+  system.user.startServices = "sd-switch";
 
 }
