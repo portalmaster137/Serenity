@@ -2,9 +2,7 @@
 
 {
 
-  imports = [ ./git ./yazi ./btop ./fish ./nvim ./fetch ];
-
-  home = { packages = with pkgs; [ peaclock cmatrix hyfetch kitty ]; };
+  home = { packages = with pkgs; [ kitty ]; };
 
   programs.kitty = {
     enable = true;

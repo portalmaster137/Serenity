@@ -1,0 +1,143 @@
+{ options, lib, pkgs, config, ... }:
+
+{
+
+  home.packages = with pkgs; [ hyfetch neofetch ];
+
+  xdg.configFile."neofetch/ascii.txt".text = ''
+    ''${c6}
+                                        
+                              @@        
+                                @@@     
+                                   @@@  
+       @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+                                        
+                                        
+       @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+        @@@                             
+           @@@                          
+              @@                        
+                                        
+  '';
+
+  xdg.configFile."neofetch/config.conf".text = ''
+
+        print_info() {
+            prin "\n"
+    	      prin "\n \n OS" "SerenityOS"
+            info "\n \n Distro" distro
+            info "\n \n Kernel" kernel
+            info "\n \n Packages" packages
+            info "\n \n Desktop" de
+             #prin "\n \n Desktop" "Hyprland (wayland)"
+            info "\n \n Shell" shell
+             #prin "\n \n Shell" "Fish"
+            info "\n \n Editor" editor
+             #prin "\n \n Editor" "Neovim"
+            info "\n \n Terminal" term
+             #prin "\n \n Terminal" "Kitty"
+            info "\n \n Terminal Font" term_font
+             #prin "\n \n Terminal Font" "Spleen"
+             #info "\n \n Model" model
+             #prin "\n \n Motherboard" "MSI Z97 G3"
+            prin "\n \n Device" "Hades"
+            info "\n \n Processor" cpu
+            info "\n \n Memory" memory
+            info "\n \n GPU" gpu
+             #prin "\n \n Graphics" "Radeon RX 5700XT"
+             #info "\n \n Resolution" resolution
+             #info "\n \n Uptime" uptime
+            prin "\n"
+             #prin "\n"
+
+        }
+
+        reset="\033[0m"
+        gray="\033[1;90m"
+        red="\033[1;31m"
+        green="\033[1;32m"
+        yellow="\033[1;33m"
+        blue="\033[1;34m"
+        magenta="\033[1;35m"
+        cyan="\033[1;36m"
+        white="\033[1;37m"
+
+        cl0="''${gray}"
+        cl1="''${red}"
+        cl2="''${green}"
+        cl3="''${yellow}"
+        cl4="''${blue}"
+        cl5="''${magenta}"
+        cl6="''${cyan}"
+        cl7="''${white}"
+
+        title_fqdn="off"
+        kernel_shorthand="on"
+        distro_shorthand="on"
+        os_arch="off"
+        uptime_shorthand="on"
+        memory_percent="off"
+        memory_unit="mib"
+        mem_precision=0
+        package_managers="on"
+        shell_path="off"
+        shell_version="on"
+        speed_type="bios_limit"
+        speed_shorthand="on"
+        cpu_brand="off"
+        cpu_speed="on"
+        cpu_cores="off"
+        cpu_temp="off"
+        gpu_brand="off"
+        gpu_type="dedicated"
+        refresh_rate="off"
+        gtk_shorthand="on"
+        gtk2="on"
+        gtk3="on"
+        de_version="on"
+        disk_show=('/storage/emulated' '/' '/server')
+        disk_subtitle="none"
+        disk_percent="on"
+        music_player="auto"
+        song_format="%artist% - %album% - %title%"
+        song_shorthand="off"
+        mpc_args=()
+        colors=(${toString config.theme.colors.primary-ansi-16-number} 1 ${
+          toString config.theme.colors.primary-ansi-16-number
+        } ${toString config.theme.colors.primary-ansi-16-number} 7)
+        bold="on"
+        underline_enabled="on"
+        underline_char="-"
+        separator=":"
+        block_range=(0 15)
+        color_blocks="on"
+        block_width=3
+        block_height=1
+        col_offset="auto"
+        bar_char_elapsed="-"
+        bar_char_total="="
+        bar_border="on"
+        bar_length=15
+        bar_color_elapsed="distro"
+        bar_color_total="distro"
+        cpu_display="off"
+        memory_display="on"
+        battery_display="off"
+        disk_display="off"
+        image_backend="ascii"
+        image_source="$HOME/.config/neofetch/ascii.txt"
+        ascii_distro="auto"
+        ascii_colors=(distro)
+        ascii_bold="on"
+        image_loop="off"
+        thumbnail_dir="''${XDG_CACHE_HOME:-''${HOME}/.cache}/thumbnails/neofetch"
+        crop_mode="normal"
+        crop_offset="center"
+        image_size="auto"
+        gap=2
+        yoffset=0
+        xoffset=0
+        background_color=
+        stdout="off"
+  '';
+}
