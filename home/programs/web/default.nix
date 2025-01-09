@@ -2,7 +2,9 @@
 
 {
 
-  imports = [ ./syncthing ];
+  imports = [
+    #./syncthing 
+  ];
 
   packages = with pkgs; [
     transmission_4-gtk # Torrent client

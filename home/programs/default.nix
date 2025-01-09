@@ -5,10 +5,9 @@
   imports = [
 
     ## Import program configs
-    #./syncthing
     ./terminal
-    ./firefox
-    ./nheko
+    ./chat
+    ./web
     ./obs
 
   ];
