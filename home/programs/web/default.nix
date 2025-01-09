@@ -12,7 +12,6 @@
       nicotine-plus # P2P Media sharing
       jellyfin # Self-hosted media streaming
       syncplay # Synchronise media playback
-      lagrange-tui # TUI Gemini browser
       lagrange # GUI Gemini browser
       tor # The Onion Router
     ];
