@@ -8,8 +8,7 @@
     inputs.home-manager.nixosModules.home-manager
 
     ## Semi-modularised config
-    ./packages.nix # system-level packages - needs tidying
-    ./modules # additional modules to import
+    ./modules/shared # additional modules to import
     ../home # user-level packages in ../home/programs/
 
   ];

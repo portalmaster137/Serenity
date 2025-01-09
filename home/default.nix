@@ -9,10 +9,6 @@ in {
 
     ## Modules
     inputs.home-manager.nixosModules.default # home-manager module
-    #../../home # home-manager configuration
-
-    ## Users
-    #./u-username.nix
 
     ## User themes - 
     ## to set a different theme for a user,
@@ -63,7 +59,7 @@ in {
           ## home directories. Additional modules
           ## can be declared alongside `u-username/default.nix`
           ## and then imported in this section.
-          ./home.nix
+          ./programs
         ];
         home = {
           username = "${primaryUser}";
