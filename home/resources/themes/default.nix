@@ -5,6 +5,7 @@ with lib;
 {
 
   imports = [
+    ./themepkgs.nix
   ];
 
   options.theme = {

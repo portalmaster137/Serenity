@@ -23,8 +23,22 @@
   };
 
   environment = {
-    ## Mouse config
-    systemPackages = with pkgs; [ piper ];
+
+    ## Games and misc.
+    systemPackages = with pkgs;
+      [
+        piper # Mouse config
+        vassal # FOSSy board game sim
+        cockatrice # Magical the gathering, but free
+        osu-lazer-bin # Rhythm is just a click away!
+        retroarchFull # Emulator frontend
+      ] ++ (with pkgs.libretro; [
+        citra # Nintendo Switch emu
+        pcsx2 # Sony Playstation 2 emu
+        swanstation # Sony Playstation 1 emu
+
+      ]);
+
     ## These are important apparently :uh:
     sessionVariables = {
       XDG_CACHE_HOME = "$HOME/.cache";
@@ -81,11 +95,8 @@
         extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
         ## No clue what this shit does
         extraPkgs = pkgs:
-          with pkgs; [
-            xorg.libXcursor
-            xorg.libXi
-            xorg.libXinerama
-            xorg.libXScrnSaver
+          with pkgs;
+          [
             libpng
             libpulseaudio
             libvorbis
@@ -93,7 +104,7 @@
             libkrb5
             keyutils
             gamemode
-          ];
+          ] ++ (with pkgs.xorg; [ libXi libXcursor libXinerama libXScrnSaver ]);
       };
       ## Not sure we need gamescope here
       ## as it's defined elsewhere but o well

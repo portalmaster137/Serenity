@@ -1,4 +1,10 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+
+{
+
+  imports = [ ./git ./yazi ./btop ./fish ./nvim ./fetch ];
+
+  packages = with pkgs; [ peaclock cmatrix hyfetch kitty ];
 
   programs.kitty = {
     enable = true;

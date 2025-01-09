@@ -6,16 +6,10 @@
 
     ## Import program configs
     #./syncthing
+    ./terminal
     ./firefox
     ./nheko
-    ./fetch
-    ./kitty
-    ./btop
-    ./yazi
-    ./nvim
-    ./fish
     ./obs
-    ./git
 
   ];
 
@@ -24,31 +18,11 @@
     ## Temp.
     themix-gui # GTK theme maker
 
-    ## Games
-    osu-lazer-bin # Rhythm is just a click away!
-    cockatrice # Magical the gathering but free
-    vassal # FOSSy board-game sim :3
-    #retroarch
-    retroarchFull
-    libretro.citra
-    libretro.pcsx2
-    libretro.swanstation
-
-    ## Chat & Web
-    telegram-desktop
-    lagrange # Browser for the gemini protocol
-    vesktop # Modded discord wrapper
-    fractal # GTK matrix client | Broken: Fix gnome-keyring
-
     ## Media | Chore: Pick a music player
     #lollypop # GTK music player
     spotify # Corpo music streaming
     #pragha # Music player
     #tauon # Music player
-    transmission_4-gtk # Torrent client
-    nicotine-plus # P2P Media sharing
-    #jellyfin # Self-Hosted media streaming
-    syncplay # Synchronise local playback with friends
 
     ## Audio playback and production | Chore: Set up VSTs
     neural-amp-modeler-lv2 # Guitar amp emulator
@@ -68,6 +42,8 @@
     inkscape # Vector image editing
     shotcut # Video editing
     #blender # 3D modelling
+    gimp # Image editor
+    vlc # Multimedia player
   ];
 
 }

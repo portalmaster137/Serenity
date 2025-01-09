@@ -143,15 +143,6 @@ in {
       swayimg # Terminal based image viewer
       zathura # PDF viewer
       gparted # GUI partition editor
-      gimp # Image editor
-      vlc # Multimedia player
-      tor # The Onion Router
-
-      ## Terminal
-      peaclock # Clock, but terminal
-      cmatrix # Terminal, but hacker
-      hyfetch # Fetch, but queer
-      kitty # Catgirl Terminal
 
       ## Misc./lib/compat
       wayland-protocols
@@ -162,16 +153,6 @@ in {
       libnotify
       libva
       meson
-
-      ## Themes
-      materia-theme-transparent
-      materia-theme
-      colloid-gtk-theme
-      colloid-kde
-      adapta-gtk-theme
-      adapta-kde-theme
-      gnome-themes-extra
-      materia-theme
 
     ];
   };
