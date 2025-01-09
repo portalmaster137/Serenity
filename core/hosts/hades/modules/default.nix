@@ -7,12 +7,11 @@
     ## Selected host modules for import
     ./hardware.nix # hardware configuration
     ./network.nix # network configuration
-    ./zfs.nix # zfs configuration
 
     ## Additional core modules to import
-    ../../../core/modules/jellyfin.nix # temporary for config purposes
-    ../../../core/modules/gaming.nix # didnt work in home-manager :(
-
+    ../../../modules/jellyfin.nix # temporary for config purposes
+    ../../../modules/gaming.nix # didnt work in home-manager :(
+    ../../../modules/zfs.nix # ZFS config
   ];
 
 }
