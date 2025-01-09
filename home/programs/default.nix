@@ -22,7 +22,7 @@
 
   home = {
 
-    programs.home-manager = { enable = true; };
+    #programs.home-manager = { enable = true; };
 
     packages = with pkgs; [
 
@@ -61,6 +61,6 @@
 
   };
 
-  systemd.user.startServices = "sd-switch";
+  #systemd.user.startServices = "sd-switch";
 
 }

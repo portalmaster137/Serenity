@@ -59,7 +59,7 @@ in {
           ## home directories. Additional modules
           ## can be declared alongside `u-username/default.nix`
           ## and then imported in this section.
-          ./programs
+          ./home.nix
         ];
         home = {
           username = "${primaryUser}";
@@ -71,7 +71,5 @@ in {
     useGlobalPkgs = true; # ensures all packages declared follow -
     useUserPackages = true; # the same nix-channel as in the flake.nix
   };
-
-  #systemd.user.startServices = "sd-switch";
 
 }
