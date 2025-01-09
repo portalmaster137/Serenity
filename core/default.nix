@@ -10,7 +10,7 @@
     ## Semi-modularised config
     ./packages.nix # system-level packages - needs tidying
     ./modules # additional modules to import
-    ../home/users # user-level packages in ../home/programs/
+    ../home # user-level packages in ../home/programs/
 
   ];
 
