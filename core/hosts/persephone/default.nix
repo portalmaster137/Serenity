@@ -4,10 +4,12 @@
   imports = [
 
     ## Host specific files
-    ./modules
-
+    ./network.nix
+    ./hardware.nix
     ## Shared 'core' config options
     ../../core/config.nix
+    ## Host-specific core modules 
+    #../../../core/modules/optional/gaming.nix
   ];
 
   ## ooh, hostname - this one's important!
@@ -79,10 +81,10 @@
   powerManagement = {
     enable = true;
     powertop.enable = true;
-     #cpuFreqGovernor = Lib.mkDefault "performance";
+    #cpuFreqGovernor = Lib.mkDefault "performance";
     cpufreq = {
-     min = 1500000;
-     max = 4400000;
+      min = 1500000;
+      max = 4400000;
     };
   };
 
