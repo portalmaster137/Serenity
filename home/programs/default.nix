@@ -11,6 +11,9 @@
     ## Import shared program configs
     ./shared
 
+    ## VM GPU stuff ?
+    ./optional/looking-glass.nix
+
     ## Import user themes
     ../resources/themes
     ../resources/themes/SerenityOS.nix
