@@ -87,9 +87,7 @@
     steam = {
       enable = true;
       ## This should help games run more betterer
-      #gamescopeSession = {
-      #enable = true;
-      #};
+      gamescopeSession = { enable = true; };
       ## No clue what this is doing
       package = pkgs.steam.override {
         extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
