@@ -113,6 +113,12 @@
       extraCompatPackages = with pkgs; [ proton-ge-bin ];
     };
 
+    ## This should help games run more betterer
+    gamescope = {
+      enable = true;
+      capSysNice = true;
+    };
+
   };
 
 }
