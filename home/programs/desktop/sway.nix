@@ -14,11 +14,11 @@ in {
   wayland.windowManager.sway = {
     enable = true;
     extraSessionCommands = ''
-        export SDL_VIDEODRIVER=wayland
-        export QT_QPA_PLATFORM=wayland
-        export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
-        export XDG_CURRENT_DESKTOP=sway
-        export XDG_SESSION_TYPE=wayland
+      export SDL_VIDEODRIVER=wayland,windows
+      export QT_QPA_PLATFORM=wayland
+      export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+      export XDG_CURRENT_DESKTOP=sway
+      export XDG_SESSION_TYPE=wayland
     '';
     extraConfig = "";
     xwayland = true;
@@ -77,16 +77,16 @@ in {
 
       keybindings = mkOptionDefault (import ./keybinds.nix { inherit pkgs; });
 
-        #modes = {
-          #resize = {
-          #Escape = "mode default";
-          #Return = "mode default";
-          #"${down}" = "resize grow height 10 px or 10 ppt";
-          #"${left}" = "resize shrink width 10 px or 10 ppt";
-          #"${right}" = "resize grow width 10 px or 10 ppt";
-          #"${up}" = "resize shrink height 10 px or 10 ppt";
-         #};
-        #};
+      #modes = {
+      #resize = {
+      #Escape = "mode default";
+      #Return = "mode default";
+      #"${down}" = "resize grow height 10 px or 10 ppt";
+      #"${left}" = "resize shrink width 10 px or 10 ppt";
+      #"${right}" = "resize grow width 10 px or 10 ppt";
+      #"${up}" = "resize shrink height 10 px or 10 ppt";
+      #};
+      #};
 
     };
   };

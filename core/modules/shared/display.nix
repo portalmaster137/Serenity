@@ -90,7 +90,7 @@
         base = true;
       };
       extraSessionCommands = ''
-        export SDL_VIDEODRIVER=wayland
+        export SDL_VIDEODRIVER=wayland,windows
         export QT_QPA_PLATFORM=wayland
         export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
         export XDG_CURRENT_DESKTOP=sway
