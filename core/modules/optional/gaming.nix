@@ -67,7 +67,7 @@
     ## "GameMode" - https://nixos.wiki/wiki/Gamemode
     ## (config copy-pasted from mynixos)
     gamemode = {
-      enable = true;
+      enable = false;
       settings = {
         general = { renice = 10; };
         ## Warning: GPU optimisations have the potential to damage hardware
@@ -114,7 +114,7 @@
     ## This should help games run more betterer
     gamescope = {
       enable = true;
-      capSysNice = true;
+      capSysNice = false;
     };
 
   };
