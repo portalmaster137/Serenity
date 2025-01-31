@@ -85,25 +85,25 @@
 
     ## Steam itself
     steam = {
-      enable = false;
+      enable = true;
       ## This should help games run more betterer
-      gamescopeSession = { enable = true; };
+      #gamescopeSession = { enable = true; };
       ## No clue what this is doing
-      package = pkgs.steam.override {
-        extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
-        ## No clue what this shit does
-        extraPkgs = pkgs:
-          with pkgs;
-          [
-            libpng
-            libpulseaudio
-            libvorbis
-            stdenv.cc.cc.lib
-            libkrb5
-            keyutils
-            gamemode
-          ] ++ (with pkgs.xorg; [ libXi libXcursor libXinerama libXScrnSaver ]);
-      };
+      #package = pkgs.steam.override {
+      #  extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
+      #  ## No clue what this shit does
+      #  extraPkgs = pkgs:
+      #    with pkgs;
+      #    [
+      #      libpng
+      #      libpulseaudio
+      #      libvorbis
+      #      stdenv.cc.cc.lib
+      #      libkrb5
+      #      keyutils
+      #      #gamemode
+      #    ] ++ (with pkgs.xorg; [ libXi libXcursor libXinerama libXScrnSaver ]);
+      #};
       ## Not sure we need gamescope here
       ## as it's defined elsewhere but o well
       extraPackages = with pkgs; [ gamescope ];
@@ -113,8 +113,8 @@
 
     ## This should help games run more betterer
     gamescope = {
-      enable = false;
-      #capSysNice = false;
+      enable = true;
+      capSysNice = true;
     };
 
   };
