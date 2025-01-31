@@ -67,7 +67,7 @@
     ## "GameMode" - https://nixos.wiki/wiki/Gamemode
     ## (config copy-pasted from mynixos)
     gamemode = {
-      enable = true;
+      enable = false;
       settings = {
         general = { renice = 10; };
         ## Warning: GPU optimisations have the potential to damage hardware
@@ -85,9 +85,9 @@
 
     ## Steam itself
     steam = {
-      enable = true;
+      enable = false;
       ## This should help games run more betterer
-      #gamescopeSession = { enable = true; };
+      gamescopeSession = { enable = true; };
       ## No clue what this is doing
       package = pkgs.steam.override {
         extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
