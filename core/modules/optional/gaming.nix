@@ -113,8 +113,8 @@
 
     ## This should help games run more betterer
     gamescope = {
-      enable = true;
-      capSysNice = false;
+      enable = false;
+      #capSysNice = false;
     };
 
   };
