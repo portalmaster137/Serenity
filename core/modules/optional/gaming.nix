@@ -30,6 +30,7 @@
         piper # Mouse config
         vassal # FOSSy board game sim
         cockatrice # Magical the gathering, but free
+        prismlauncher # Modded Minecraft client
         osu-lazer-bin # Rhythm is just a click away!
         retroarchFull # Emulator frontend
       ] ++ (with pkgs.libretro; [
