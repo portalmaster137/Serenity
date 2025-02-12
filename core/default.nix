@@ -44,14 +44,13 @@
 
   nix = {
     settings = {
-      ## Use all cores during build
-      cores = 4;
+      cores = 0;
       max-jobs = "auto";
       allow-dirty = false;
       auto-optimise-store = true;
       download-buffer-size = [ "268435456" ];
       allowed-users = [ "@wheel" ];
-      ## Enable flakes uwu
+      ## Enable flakes uwu,,, and some other junk idek
       experimental-features =
         [ "pipe-operators" "recursive-nix" "nix-command" "flakes" ];
     };
@@ -62,8 +61,8 @@
       ## Ever day.
       dates = "daily";
       ## and clear junk older than x days
-      options = "--delete-older-than 2d";
-      ## No clue what this does lol.
+      options = "--delete-older-than 7d";
+      ## https://mynixos.com/nixpkgs/option/nix.gc.persistent
       #persistent = true;
     };
 
