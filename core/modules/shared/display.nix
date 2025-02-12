@@ -36,7 +36,6 @@
         splashImage = null;
         timeoutStyle = "hidden";
         #extraConfig = ''
-        #GRUB_FORCE_HIDDEN_MENU=true
         #'';
       };
     };
