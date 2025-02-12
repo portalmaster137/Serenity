@@ -85,7 +85,7 @@ in {
 
       GTK = { # why this shit needs to be declared twice i do not know
         application_prefer_dark_theme = true;
-        cursor_theme_name = "Bibata-Modern-Classica";
+        cursor_theme_name = "Bibata-Modern-Classic";
         font_name = "Spleen-32x64 16";
         icon_theme_name = "Flat-Remix-Grey-Darkest";
         theme_name = "Colloid-Dark";
