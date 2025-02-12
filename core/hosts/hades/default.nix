@@ -24,10 +24,12 @@
 
     supportedFilesystems = [ "vfat" "ext4" ];
 
-    loader.grub = {
-      enable = true;
-      device = "/dev/nvme0n1";
-      enableCryptodisk = true;
+    loader = {
+      grub = {
+        enable = true;
+        device = "/dev/nvme0n1";
+        enableCryptodisk = true;
+      };
     };
 
     initrd.luks.devices = {

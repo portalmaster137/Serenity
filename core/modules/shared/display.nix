@@ -22,7 +22,7 @@
       "rd.udev.log_level=0"
       "udev.log_priority=3"
       "boot.shell_on_fail"
-      "i915.fastboot=1"
+      #"i915.fastboot=1"
       "plymouth.use-simpledrm"
     ];
     loader = {
@@ -35,9 +35,9 @@
         #fontSize = 16;
         splashImage = null;
         timeoutStyle = "hidden";
-        extraConfig = ''
-          GRUB_FORCE_HIDDEN_MENU=true
-        '';
+        #extraConfig = ''
+        #GRUB_FORCE_HIDDEN_MENU=true
+        #'';
       };
     };
     plymouth = {
