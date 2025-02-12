@@ -45,26 +45,26 @@ in {
     #package = [ ];
 
     ## Appearance
-    #font = {
-    #name = "Spleen-32x64";
-    #size = 10;
-    #package = pkgs.spleen;
-    #};
+    font = {
+      name = "Spleen-32x64";
+      size = 10;
+      package = pkgs.spleen;
+    };
 
-    #iconTheme = {
-    #name = "Flat-Remix-Grey-Darkest";
-    #package = pkgs.flat-remix-icon-theme;
-    #};
+    iconTheme = {
+      name = "Flat-Remix-Grey-Darkest";
+      package = pkgs.flat-remix-icon-theme;
+    };
 
-    #cursorTheme = {
-    #name = "Bibata-Modern-Classic";
-    #package = pkgs.bibata-cursors;
-    #};
+    cursorTheme = {
+      name = "Bibata-Modern-Classic";
+      package = pkgs.bibata-cursors;
+    };
 
-    #theme = {
-    #name = "Colloid-Dark";
-    #package = pkgs.colloid-gtk-theme;
-    #};
+    theme = {
+      name = "Colloid-Dark";
+      package = pkgs.colloid-gtk-theme;
+    };
 
     #extraCss = '''';
 
