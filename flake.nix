@@ -41,7 +41,7 @@
 #
 #
 {
-  description = "SerenityOS_v0.8.9";
+  description = "SerenityOS";
   ## Latest features:
   ## - Exposed large portions of `home/` import path
   ## - Abandoned multi-user support for now
@@ -126,7 +126,7 @@
 
       ## Universal variable declarations
       label = "SerenityOS";
-      version = "SerenityOS v0.8.9"; # proper versioning system before v1.0.0?
+      version = "SerenityOS_0.8.9"; # proper versioning system before v1.0.0?
       primaryUser = "serenity"; # used for admin purposes
       homeDir = "/home/${primaryUser}"; # for easy configuration
       disksPath = "${homeDir}/Disks/";
