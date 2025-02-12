@@ -47,7 +47,7 @@ in {
     ## Appearance
     font = {
       name = "Spleen-32x64";
-      size = 10;
+      size = 16;
       package = pkgs.spleen;
     };
 
