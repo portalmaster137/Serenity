@@ -41,7 +41,7 @@
 #
 #
 {
-  description = "SerenityOS v0.8.8"; # proper versioning system before v1.0.0?
+  description = "SerenityOS v0.8.9";
   ## Latest features:
   ## - Exposed large portions of `home/` import path
   ## - Abandoned multi-user support for now
@@ -125,8 +125,10 @@
       inherit (self) outputs;
 
       ## Universal variable declarations
+      label = "SerenityOS";
+      version = "SerenityOS v0.8.9"; # proper versioning system before v1.0.0?
       primaryUser = "serenity"; # used for admin purposes
-      homeDir = "/home/${primaryUser}"; # for easy configuration
+      homeDir = "/home/${primaryUser}/"; # for easy configuration
       disksPath = "${homeDir}/Disks/";
       flakePath = "${homeDir}/flakes/nixdots/"; # current path to flake
       #flakePath = "${homeDir}/SerenityOS/"; # for v1.0.0 release
@@ -140,6 +142,7 @@
           format = "install-iso";
           specialArgs = {
             inherit inputs outputs;
+            inherit label version;
             inherit flakePath disksPath;
             inherit primaryUser homeDir;
           };
@@ -159,6 +162,7 @@
         hades = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
+            inherit label version;
             inherit flakePath disksPath;
             inherit primaryUser homeDir;
           };
@@ -174,6 +178,7 @@
         orcus = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
+            inherit label version;
             inherit flakePath disksPath;
             inherit primaryUser homeDir;
           };
@@ -188,6 +193,7 @@
         persephone = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
+            inherit label version;
             inherit flakePath disksPath;
             inherit primaryUser homeDir;
           };

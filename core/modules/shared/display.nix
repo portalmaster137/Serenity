@@ -1,6 +1,13 @@
-{ pkgs, ... }:
+{ pkgs, label, version, ... }:
 
 {
+
+  system = {
+    nixos = {
+      label = "${version}";
+      variantName = "${label}";
+    };
+  };
 
   boot = {
     bootspec.enable = true;
@@ -21,13 +28,15 @@
     loader = {
       timeout = 5;
       grub = {
+        configurationName = "${version}";
         #theme = "${pkgs.minimal-grub-theme}";
         #backgroundColor = "#000000";
         #font = "${pkgs.spleen}/share/fonts/spleen-32x64";
         #fontSize = 16;
         splashImage = null;
+        timeoutStyle = "hidden";
         extraConfig = ''
-          set timeout_style=hidden
+          GRUB_FORCE_HIDDEN_MENU=true
         '';
       };
     };
