@@ -41,7 +41,7 @@
 #
 #
 {
-  description = "SerenityOS v0.8.9";
+  description = "SerenityOS_v0.8.9";
   ## Latest features:
   ## - Exposed large portions of `home/` import path
   ## - Abandoned multi-user support for now
