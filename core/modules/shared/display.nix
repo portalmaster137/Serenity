@@ -10,21 +10,26 @@
       "quiet"
       "splash"
       "vga=current"
-      #"loglevel=3"
+      "loglevel=3"
       "rd.systemd.show_status=false"
-      "rd.udev.log_level=3"
+      "rd.udev.log_level=0"
       "udev.log_priority=3"
       "boot.shell_on_fail"
+      "i915.fastboot=1"
+      "plymouth.use-simpledrm"
     ];
     loader = {
-      timeout = 30;
-      #grub = {
-      #theme = "${pkgs.minimal-grub-theme}";
-      #backgroundColor = "#000000";
-      #splashImage = "path/to/image";
-      #font = "${pkgs.spleen}/share/fonts/spleen-32x64";
-      #fontSize = 16;
-      #};
+      timeout = 5;
+      grub = {
+        #theme = "${pkgs.minimal-grub-theme}";
+        #backgroundColor = "#000000";
+        #font = "${pkgs.spleen}/share/fonts/spleen-32x64";
+        #fontSize = 16;
+        splashImage = null;
+        extraConfig = ''
+          set timeout_style=hidden
+        '';
+      };
     };
     plymouth = {
       enable = true;
