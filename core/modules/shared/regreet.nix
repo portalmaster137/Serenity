@@ -83,7 +83,7 @@ in {
         fit = "Cover";
       };
 
-      gtk = { # why this shit needs to be declared twice i do not know
+      GTK = { # why this shit needs to be declared twice i do not know
         application_prefer_dark_theme = true;
         cursor_theme_name = "Bibata-Modern-Classica";
         font_name = "Spleen-32x64 16";
