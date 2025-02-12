@@ -4,12 +4,10 @@ let
 
   swayConfig = pkgs.writeText "greetd-sway-config" ''
     # `-l` activates layer-shell mode. Notice that `swaymsg exit` will run after gtkgreet.
-    exec "${pkgs.greetd.regreet}/bin/regreet -l; swaymsg exit"
+    exec "${pkgs.greetd.regreet}/bin/regreet; swaymsg exit"
     bindsym Mod4+shift+e exec swaynag \
       -t warning \
       -m 'What do you want to do?' \
-      -p 'Poweroff' 'systemctl poweroff' \
-      -b 'Reboot' 'systemctl reboot'
   '';
 
 in {
@@ -25,6 +23,7 @@ in {
       settings = {
         default_session = {
           command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
+          user = "greeter";
         };
       };
     };
@@ -103,6 +102,8 @@ in {
         reboot = [ "systemctl" "reboot" ];
         poweroff = [ "systemctl" "poweroff" ];
       };
+
+      env = { GTK_USE_PORTAL = "0"; };
     };
 
     cageArgs =
