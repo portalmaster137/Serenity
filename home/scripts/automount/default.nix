@@ -27,11 +27,11 @@
       #};
 
       ## (future) Flake path
-      "SerenityOS" = {
-        source = ../../../../nixdots;
-        target = "${flakePath}";
-        recursive = true;
-      };
+      #"SerenityOS" = {
+      #source = ../../../../nixdots;
+      #target = "${flakePath}";
+      #recursive = true;
+      #};
 
     };
 
