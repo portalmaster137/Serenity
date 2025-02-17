@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, primaryUser, homeDir, flakePath, ... }:
 
 let
 
@@ -76,7 +76,7 @@ in {
 
       background = {
         path =
-          "../../../home/resources/wallpapers/attunement-HelveticaBlanc.png";
+          "${flakePath}/home/resources/wallpapers/attunement-HelveticaBlanc.png";
         fit = "Cover";
       };
 
