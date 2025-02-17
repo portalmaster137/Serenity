@@ -1,11 +1,11 @@
-## https://nixos.wiki/wiki/Category:Audio
+# # https://nixos.wiki/wiki/Category:Audio
 ## https://nixos.wiki/PipeWire
 ## https://github.com/musnix/musnix
 ## https://nixos.wiki/wiki/Audio_production
 
 {
 
-  #boot.kernelModules = [ "snd-seq" "snd-rawmidi" ];
+  boot.kernelModules = [ "snd-seq" "snd-rawmidi" ];
 
   ## Can't remember what this does,
   ## recommended to be enabled though
@@ -59,9 +59,7 @@
   services = {
 
     ## Not using pulse directly
-    pulseaudio = {
-      enable = false;
-    };
+    pulseaudio = { enable = false; };
 
     pipewire = {
       enable = true;
@@ -78,15 +76,15 @@
         pipewire."92-low-latency" = {
           "context.properties" = {
             "default.clock.rate" = 48000;
-            "default.clock.quantum" = 150;
-            "default.clock.min-quantum" = 150;
-            "default.clock.max-quantum" = 150;
+            "default.clock.quantum" = 192;
+            "default.clock.min-quantum" = 192;
+            "default.clock.max-quantum" = 192;
           };
         };
 
         pipewire-pulse."92-low-latency" = {
           stream.properties = {
-            node.latency = "150/48000";
+            node.latency = "192/48000";
             resample.quality = 1;
           };
 
@@ -94,11 +92,11 @@
             name = "libpipewire-module-protocol-pulse";
             args = {
               pulse = {
-                default.req = "150/48000";
-                min.req = "150/48000";
-                max.req = "150/48000";
-                min.quantum = "150/48000";
-                max.quantum = "150/48000";
+                default.req = "192/48000";
+                min.req = "192/48000";
+                max.req = "192/48000";
+                min.quantum = "192/48000";
+                max.quantum = "192/48000";
               };
             };
           }];
