@@ -5,7 +5,10 @@
 
 {
 
-  boot.kernelModules = [ "snd-seq" "snd-rawmidi" ];
+  boot = {
+    kernelModules = [ "snd-seq" "snd-rawmidi" ];
+    kernelParams = [ "preempt=full" ];
+  };
 
   ## Can't remember what this does,
   ## recommended to be enabled though
@@ -76,6 +79,7 @@
         pipewire."92-low-latency" = {
           "context.properties" = {
             "default.clock.rate" = 48000;
+            #"default.clock.allowed-rates" = [ 48000 96000 ];
             "default.clock.quantum" = 192;
             "default.clock.min-quantum" = 192;
             "default.clock.max-quantum" = 192;
