@@ -12,11 +12,13 @@ in {
 
   programs = {
     nixvim = {
+
       highlight = {
         AlphaHeaderColor.fg = accent;
         AlphaTextColor.fg = foreground;
         AlphaShortcutColor.fg = muted;
       };
+
       colorschemes = {
         modus = {
           enable = true;
@@ -27,27 +29,29 @@ in {
               comments = {
                 italic = true;
                 #bg = "";
-                fg = "#cdcdcd";
+                fg = "#cccccc";
               };
               variables = {
                 #bg = "";
-                fg = "#00cdff";
+                fg = "#00c0ff";
               };
               functions = {
                 #bg = "";
-                fg = "#ddeeff";
+                fg = "#d0fffe";
               };
               keywords = {
                 bold = true;
                 #bg = "";
-                fg = "#00cdff";
+                fg = "#00dfff";
               };
             };
           };
         };
       };
+
       plugins = {
         #transparent.enable = true;
+
         lualine = {
           enable = true;
           settings = {
@@ -77,11 +81,12 @@ in {
             };
           };
         };
+
         web-devicons.enable = true;
         noice.enable = true;
         notify = {
           enable = true;
-          level = "warn";
+          settings = { level = "warn"; };
         };
         gitsigns = {
           enable = true;

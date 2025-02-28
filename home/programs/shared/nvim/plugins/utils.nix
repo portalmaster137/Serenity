@@ -1,7 +1,14 @@
 { config, pkgs, ... }: {
   programs.nixvim = {
     highlightOverride = { FloatBorder.fg = "#${config.theme.colors.color15}"; };
+
     plugins = {
+
+      comment.enable = true;
+      todo-comments.enable = true;
+      tmux-navigator.enable = true;
+      nvim-autopairs.enable = true;
+      friendly-snippets.enable = true;
 
       flash.enable = true;
       image = {
@@ -11,12 +18,6 @@
           onlyRenderImageAtCursor = true;
         };
       };
-
-      tmux-navigator.enable = true;
-      comment.enable = true;
-      nvim-autopairs.enable = true;
-      friendly-snippets.enable = true;
-      todo-comments.enable = true;
 
       treesitter = {
         enable = true;
@@ -62,14 +63,13 @@
             texthl = "DapLogPoint";
           };
         };
-        extensions = {
-          dap-go = {
-            enable = true;
-            delve.path = "${pkgs.delve}/bin/dlv";
-          };
-          dap-ui = { enable = true; };
-          dap-virtual-text = { enable = true; };
-        };
+      };
+
+      dap-ui = { enable = true; };
+      dap-virtual-text = { enable = true; };
+      dap-go = {
+        enable = true;
+        settings = { delve.path = "${pkgs.delve}/bin/dlv"; };
       };
 
     };
