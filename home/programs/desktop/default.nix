@@ -108,7 +108,6 @@ in {
 
     packages = with pkgs; [
       ## Auth/Security
-      polkit-kde-agent # KDE native polkit agent
       hyprpolkitagent # Hyprland native polkit agent
       gnome-keyring # Keyring for login prompts
       gnome-secrets # GTK password manager
