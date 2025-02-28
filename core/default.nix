@@ -1,4 +1,4 @@
-{ inputs, lib, pkgs, ... }:
+{ inputs, lib, pkgs, primaryUser, ... }:
 
 {
 
@@ -50,6 +50,7 @@
       auto-optimise-store = true;
       download-buffer-size = [ "268435456" ];
       allowed-users = [ "@wheel" ];
+      trusted-users = [ "root" "@wheel" "${primaryUser}" ];
       ## Enable flakes uwu,,, and some other junk idek
       experimental-features =
         [ "pipe-operators" "recursive-nix" "nix-command" "flakes" ];
