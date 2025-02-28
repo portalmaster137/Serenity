@@ -81,6 +81,8 @@
     };
   };
 
+  services = { xserver.videoDrivers = [ "amdgpu" ]; };
+
   programs = {
     ## For tweaking system performance
     corectrl = {
