@@ -141,7 +141,7 @@
       enableVirtualCamera = true; # virtual webcam
       plugins = with pkgs.obs-studio-plugins;
         [
-          droidcam-obs # enables droidcam integration
+          #droidcam-obs # enables droidcam integration
         ];
     };
 
