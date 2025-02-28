@@ -111,6 +111,8 @@
     ## Easy themeing <3 - switch theme-engine?
     nix-colors = { url = "github:misterio77/nix-colors"; };
 
+    ## Nice-to-haves for gaming on nixos 
+    nix-gaming = { url = "github:fufexan/nix-gaming"; };
   };
 
   outputs = { self, nixpkgs, disko, sops-nix, musnix, nixos-generators,

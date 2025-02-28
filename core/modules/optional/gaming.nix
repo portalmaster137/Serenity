@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
 
@@ -27,6 +27,8 @@
     ## Games and misc.
     systemPackages = with pkgs;
       [
+        #inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
+        inputs.nix-gaming.packages.${pkgs.system}.osu-mime
         piper # Mouse config
         vassal # FOSSy board game sim
         cockatrice # Magical the gathering, but free
@@ -37,7 +39,6 @@
         citra # Nintendo Switch emu
         pcsx2 # Sony Playstation 2 emu
         swanstation # Sony Playstation 1 emu
-
       ]);
 
     ## These are important apparently :uh:
