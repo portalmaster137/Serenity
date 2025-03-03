@@ -5,18 +5,17 @@
 
 { config, lib, pkgs, ... }:
 
+## Black magic wizardry from https://wiki.nixos.org/wiki/ZFS
 let
-  ## This 'let' binding creates an attribute set
-  ## called "LatestZfsLinux", which we can call as
-  ## a package to specify when building our kernel.
-  latestZfsLinux = lib.pipe pkgs.linuxKernel.packages [
-    builtins.attrValues
-    (builtins.filter (kPkgs:
-      (builtins.tryEval kPkgs).success && kPkgs ? kernel && kPkgs.kernel.pname
-      == "linux" && !kPkgs.zfs.meta.broken))
-    (builtins.sort (a: b: (lib.versionOlder a.kernel.version b.kernel.version)))
-    lib.last
-  ];
+
+  zfsCompatibleKernelPackages = lib.filterAttrs (name: kernelPackages:
+    (builtins.match "linux_[0-9]+_[0-9]+" name) != null
+    && (builtins.tryEval kernelPackages).success
+    && (!kernelPackages.${config.boot.zfs.package.kernelModuleAttribute}.meta.broken))
+    pkgs.linuxKernel.packages;
+  latestKernelPackage = lib.last
+    (lib.sort (a: b: (lib.versionOlder a.kernel.version b.kernel.version))
+      (builtins.attrValues zfsCompatibleKernelPackages));
 
 in {
 
@@ -24,20 +23,24 @@ in {
 
   ## Enable zfs in kernel and boot
   boot = {
-    kernelPackages = lib.mkForce latestZfsLinux;
+    ## Sets system to use the kernel specified in the let binding above
+    kernelPackages = lib.mkForce latestKernelPackage;
     supportedFilesystems = [ "zfs" ];
     zfs = {
+      ## uhhh
       extraPools = [ "orcus" ];
+      ## uhhh
       forceImportRoot = false;
     };
   };
 
-  #fileSystems."/home/serenity/Disks/Orcus" = {
+  #fileSystems."/run/media/serenity/Orcus" = {
   #device = "orcus";
   #fsType = "zfs";
   #options = [ "users" ];
   #};
 
+  ## Adding ZFS package to system just in case
   environment.systemPackages = with pkgs; [ zfs ];
 
   ## Enable trim for ZFS SSDs
@@ -51,6 +54,13 @@ in {
     };
   };
 
+  ## Automount service for the ZFS pools
+  ## Is supposed to be enabled by default
+  #systemd.services.zfs-mount = {
+  #enable = true;
+  #};
+
+  ## Unsure why this is here actually ?
   networking = { hostId = "603b0c8b"; };
 
 }
