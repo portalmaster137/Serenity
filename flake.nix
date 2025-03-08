@@ -27,7 +27,7 @@
 #
 #  Example:
 #
-#  ## Section Heading
+#  ## Section Heading - <relevant link>
 #  nixos.module = { # needed for x thing
 #    option = true;
 #    #otherOption = [ "$string" ]; # disabled for z reason
@@ -49,69 +49,68 @@
 
   inputs = {
 
-    ## Lix, alternative nix implementation
-    lix = { # lix language
+    ## Nixpkgs version - https://github.com/NixOS/nixpkgs
+    nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+
+    ## NixOS hardware - https://github.com/NixOS/nixos-hardware
+    hardware = { url = "github:nixos/nixos-hardware"; };
+
+    ## Lix language  - https://lix.systems/
+    ## https://docs.lix.systems/manual/lix/stable/
+    lix = {
       url = "git+https://git.lix.systems/lix-project/lix";
       flake = false;
     };
-    lix-module = { # lix nixos module
+
+    ## Lix nixos module - https://lix.systems/add-to-config/
+    lix-module = {
       url = "git+https://git.lix.systems/lix-project/nixos-module";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.lix.follows = "lix";
+      inputs = {
+        lix.follows = "lix";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
 
-    ## Nixpkgs version
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    hardware.url = "github:nixos/nixos-hardware";
+    ## Flake utils - https://github.com/numtide/flake-utils
+    flake-utils = { url = "github:numtide/flake-utils"; };
 
-    ## Declarative disk management
+    ## Flake parts - https://github.com/hercules-ci/flake-parts
+    flake-parts = { url = "github:hercules-ci/flake-parts"; };
+
+    ## nixos generators
+    nixos-generators = { # https://github.com/nix-community/nixos-generators
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ## Declarative disks - https://github.com/nix-community/disko 
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ## Flake parts & utils
-    flake-utils = { url = "github:numtide/flake-utils"; };
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      #inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    ## nixos generators
-    nixos-generators = {
-      url = "github:nix-community/nixos-generators";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    ## Secrets management
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      ## optional, not necessary for the module
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    ## Secrets management - https://github.com/Mic92/sops-nix
+    sops-nix = { url = "github:Mic92/sops-nix"; };
 
     ## Musnix - https://github.com/musnix/musnix
     musnix = { url = "github:musnix/musnix"; };
 
-    ## Dotfiles management
+    ## Dotfiles management - https://github.com/nix-community/home-manager
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ## Zoomer text editor
+    ## Easy themeing - https://github.com/Misterio77/nix-colors
+    nix-colors = { url = "github:misterio77/nix-colors"; };
+
+    ## Zoomer text editor - https://github.com/nix-community/nixvim
     nixvim = {
       url = "github:nix-community/nixvim";
-      ## If you are not running an unstable channel of nixpkgs,
-      ## select the corresponding branch of nixvim.
-      # url = "github:nix-community/nixvim/nixos-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ## Easy themeing <3 - switch theme-engine?
-    nix-colors = { url = "github:misterio77/nix-colors"; };
-
-    ## Nice-to-haves for gaming on nixos 
+    ## Nice-to-haves for gaming - https://github.com/fufexan/nix-gaming
     nix-gaming = { url = "github:fufexan/nix-gaming"; };
   };
 
@@ -131,31 +130,11 @@
       version = "SerenityOS_0.8.9"; # proper versioning system before v1.0.0?
       primaryUser = "serenity"; # used for admin purposes
       homeDir = "/home/${primaryUser}"; # for easy configuration
-      disksPath = "${homeDir}/Disks/";
-      flakePath = "${homeDir}/flakes/nixdots/"; # current path to flake
+      disksPath = "${homeDir}/Disks/"; # for easy disk navigation
+      flakePath = "${homeDir}/flakes/nixdots/"; # current path to flake - unused
       #flakePath = "${homeDir}/SerenityOS/"; # for v1.0.0 release
 
     in {
-
-      ## Installer for easy nuke-n-paves
-      packages.x86_64-linux = {
-        iso = nixos-generators.nixosGenerate {
-          system = "x86_64-linux";
-          format = "install-iso";
-          specialArgs = {
-            inherit inputs outputs;
-            inherit label version;
-            inherit flakePath disksPath;
-            inherit primaryUser homeDir;
-          };
-          modules = [
-            sops-nix.nixosModules.sops
-            musnix.nixosModules.musnix
-            disko.nixosModules.disko
-            ./hosts/iso
-          ];
-        };
-      };
 
       ## Available through 'nixos-rebuild <switch> --flake /path/to/flake/directory#yourhostname'
       nixosConfigurations = {
@@ -176,7 +155,7 @@
           ];
         };
 
-        ## Home server
+        ## Home server - work in progress
         orcus = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
@@ -191,7 +170,7 @@
           ];
         };
 
-        ## Laptop
+        ## Laptop - needs work 
         persephone = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
@@ -207,6 +186,26 @@
           ];
         };
 
+      };
+
+      ## Installer for easy nuke-n-paves - work in progress
+      packages.x86_64-linux = {
+        iso = nixos-generators.nixosGenerate {
+          system = "x86_64-linux";
+          format = "install-iso";
+          specialArgs = {
+            inherit inputs outputs;
+            inherit label version;
+            inherit flakePath disksPath;
+            inherit primaryUser homeDir;
+          };
+          modules = [
+            sops-nix.nixosModules.sops
+            musnix.nixosModules.musnix
+            disko.nixosModules.disko
+            ./hosts/iso
+          ];
+        };
       };
 
     };
