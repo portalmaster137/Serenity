@@ -4,7 +4,7 @@
 
   imports = [ inputs.sops-nix.nixosModules.sops ];
 
-  environment = { systemPackages = with pkgs; [ age sops ]; };
+  environment = { systemPackages = with pkgs; [ age age-keygen sops ]; };
 
   ## Sops-nix config
   sops = {
