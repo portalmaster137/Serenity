@@ -15,8 +15,6 @@
   - Loose evaluation path is `flake.nix` -> `core/hosts` -> `core/` -> `home/users/` -> `home/` (view the [`tree`](https://codeberg.org/serenity-F/nixdots/src/branch/swaywm/TREE.md)).
 <br>
 <br>
- 
-<br>
   - `flake.nix` is the top-level of config
 <br>
 <br>
