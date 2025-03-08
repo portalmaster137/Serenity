@@ -35,7 +35,7 @@
         reload = "exec fish";
         nv = "nvim";
         sc = "sudo systemctl";
-        trc = "tree -c";
+        trc = "tree -C";
 
         ## Nix abbreviations
         nd = "cd ${flakePath}";
