@@ -32,14 +32,20 @@
     };
   };
 
-  ## Genuinely dunno what these do hey, like isnt sudo
-  ## already restricted to @wheel only?
   security = {
+
+    ## Sets sudo auth to @wheel only
     sudo.execWheelOnly = true;
+
+    ## Enables soteria polkit
+    ## disabled forNow:tm: - https://github.com/NixOS/nixpkgs/issues/379104
+    #soteria.enable = true;
+
     polkit = {
       enable = true;
       #extraConfig = '' '';
     };
+
   };
 
   nix = {

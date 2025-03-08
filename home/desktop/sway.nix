@@ -33,8 +33,8 @@ in {
       #xdgAutostart = true;
       #extraCommands = [
       #];
-      #variables = [
-      #];
+      ## Needed for soteria - https://github.com/NixOS/nixpkgs/issues/373290
+      variables = [ "--all" ];
     };
 
     swaynag = {
