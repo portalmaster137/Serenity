@@ -10,9 +10,9 @@
     ## Shared 'core' config options
     ../../../core
     ## Host-specific core modules
-    ../../../core/modules/optional/zfs.nix
-    ../../../core/modules/optional/gaming.nix
-    ../../../core/modules/optional/jellyfin.nix
+    ../../../core/modules/zfs.nix
+    ../../../core/modules/gaming.nix
+    ../../../core/modules/jellyfin.nix
 
   ];
 
