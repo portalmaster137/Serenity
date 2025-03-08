@@ -16,7 +16,6 @@
 - **[!]** contains lots of stolen code :3 **[!]**
 <br>
 
----
 
 ## **Breakdown of structure:**
   - Loose evaluation path is `flake.nix` -> `core/hosts` -> `core/` -> `home/users/` -> `home/` (view the [`tree`](https://codeberg.org/serenity-F/nixdots/src/branch/swaywm/TREE.md)).
@@ -39,20 +38,19 @@
 <br>
 <br>
 
---- 
 
-### Attributions:
- - #### **Artwork**
-  - [Vincent Van Gogh](https://en.wikipedia.org/wiki/Almond_Blossoms)
-  - [Helvetica Blanc](https://helveticablanc.com/)
+ ## **Attributions:**
+ - #### **Artwork:**
+    - [Vincent Van Gogh](https://en.wikipedia.org/wiki/Almond_Blossoms)
+    - [Helvetica Blanc](https://helveticablanc.com/)
 
-- #### **Inspiration**
-- [Quantenzitrone](https://codeberg.org/quantenzitrone/nixos-config/src/branch/main)
-- [LibrePhoenix](https://github.com/librephoenix/nixos-config)
-- [anotherhadi](https://github.com/anotherhadi/nixy)
-- [Sashanoraa](https://git.sr.ht/~zethra/nixcfg)
-- [Syndicate](https://codeberg.org/hexedsilicon/nix-config)
-- [HeinzDev](https://github.com/HeinzDev/Hyprland-dotfiles)
-- [vimjoyer](https://github.com/vimjoyer)
-- [fufexan](https://github.com/\fufexan/dotfiles)
-- [Hive](https://codeberg.org/theotheroracle/neutron)
+- #### **Inspiration:**
+    - [Quantenzitrone](https://codeberg.org/quantenzitrone/nixos-config/src/branch/main)
+    - [LibrePhoenix](https://github.com/librephoenix/nixos-config)
+    - [anotherhadi](https://github.com/anotherhadi/nixy)
+    - [Sashanoraa](https://git.sr.ht/~zethra/nixcfg)
+    - [Syndicate](https://codeberg.org/hexedsilicon/nix-config)
+    - [HeinzDev](https://github.com/HeinzDev/Hyprland-dotfiles)
+    - [vimjoyer](https://github.com/vimjoyer)
+    - [fufexan](https://github.com/\fufexan/dotfiles)
+    - [Hive](https://codeberg.org/theotheroracle/neutron)
