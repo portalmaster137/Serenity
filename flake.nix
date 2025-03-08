@@ -129,6 +129,7 @@
       label = "SerenityOS";
       version = "SerenityOS_0.8.9"; # proper versioning system before v1.0.0?
       primaryUser = "serenity"; # used for admin purposes
+      userDesc = "Serenity Amalgam";
       homeDir = "/home/${primaryUser}"; # for easy configuration
       disksPath = "${homeDir}/Disks/"; # for easy disk navigation
       flakePath = "${homeDir}/flakes/nixdots/"; # current path to flake - unused
@@ -147,7 +148,7 @@
             inherit inputs outputs;
             inherit label version;
             inherit flakePath disksPath;
-            inherit primaryUser homeDir;
+            inherit primaryUser userDesc homeDir;
             inherit wallpaper;
           };
           modules = [
@@ -164,7 +165,7 @@
             inherit inputs outputs;
             inherit label version;
             inherit flakePath disksPath;
-            inherit primaryUser homeDir;
+            inherit primaryUser userDesc homeDir;
             inherit wallpaper;
           };
           modules = [
@@ -180,7 +181,7 @@
             inherit inputs outputs;
             inherit label version;
             inherit flakePath disksPath;
-            inherit primaryUser homeDir;
+            inherit primaryUser userDesc homeDir;
             inherit wallpaper;
           };
           modules = [
@@ -202,7 +203,7 @@
             inherit inputs outputs;
             inherit label version;
             inherit flakePath disksPath;
-            inherit primaryUser homeDir;
+            inherit primaryUser userDesc homeDir;
             inherit wallpaper;
           };
           modules = [

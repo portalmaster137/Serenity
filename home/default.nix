@@ -1,5 +1,5 @@
 { inputs, outputs, config, pkgs, label, version, flakePath, disksPath
-, primaryUser, homeDir, wallpaper, ... }:
+, primaryUser, userDesc, homeDir, wallpaper, ... }:
 
 let hostname = "${config.networking.hostName}";
 
@@ -9,6 +9,7 @@ in {
 
     ## Modules
     inputs.home-manager.nixosModules.default # home-manager module
+    inputs.sops-nix.nixosModules.sops # sops-nix module
 
     ## User themes - 
     ## to set a different theme for a user,
@@ -28,14 +29,17 @@ in {
   ## making sure to replace all instances of
   ## `${primaryUser}` with the new username.
 
+  ## Needed for sops-nix to handle loginPassword
+  sops.secrets.loginPassword.neededForUsers = true;
+  users.mutableUsers = false;
+
   ## System-level user declarations
   users.users = {
     ${primaryUser} = {
-      description = "Serenity Amalgam";
+      description = "${userDesc}";
       isNormalUser = true;
       extraGroups = [ "wheel" "networkmanager" "gamemode" "audio" ];
-      ## be sure to change this with 'passwd'
-      initialPassword = "password";
+      hashedPasswordFile = config.sops.secrets.loginPassword.path;
       ## A catgirl's favourite shell
       shell = pkgs.fish;
     };

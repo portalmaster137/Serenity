@@ -10,15 +10,12 @@
   sops = {
     defaultSopsFile = ./secrets.yaml; # default sops file
     defaultSopsFormat = "yaml"; # yaml for ease of use
-
     age.keyFile = "${homeDir}/.config/sops/age/keys.txt"; # keyfile location
-    # move this to a separate private repo directory
+    generateKey = true; # generate a new key if the one above is missing
 
     secrets = {
 
-      example_key = { };
-
-      "example_service/example_subdir/example_secret" = { };
+      loginPassword = { };
 
     };
   };
