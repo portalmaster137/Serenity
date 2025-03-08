@@ -1,12 +1,13 @@
-# Serenity OS
+# Serenity OS - WIP
 **Configuration for system, applications, themes, and more; shared between multiple machines and users.**<br>
 **A study in linux, system administration, packaging, user experience, desktop and system environments, themeing, and functional programming.**<br>
 <br>
 ![desktopScreenshot](https://codeberg.org/serenity-F/nixdots/raw/branch/hyprsway/home/resources/screenshots/screenshotDesktop.png)
 ![desktopScreenshot2](https://codeberg.org/serenity-F/nixdots/raw/branch/hyprsway/home/resources/screenshots/screenshotTerminal.png)
 <br>
-- **Very much WIP and mostly stolen code at this point. A to do list and longer term goals can be found [here](https://codeberg.org/serenity-F/nixdots/issues), and [here](https://codeberg.org/serenity-F/nixdots/milestones) respectively.**<br>
+- **A to do list and longer term goals can be found [here](https://codeberg.org/serenity-F/nixdots/issues), and [here](https://codeberg.org/serenity-F/nixdots/milestones) respectively.**<br>
 - A [Wiki](https://codeberg.org/serenity-F/nixdots/wiki) and [install guide](https://codeberg.org/serenity-F/nixdots/wiki/Install-Guide) are works in progress.<br>
+- **[!]** contains lots of stolen code :3 **[!]**
 <br>
 <br>
 - Breakdown of structure<br>
