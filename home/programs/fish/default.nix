@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, flakePath, ... }:
 
 {
 
@@ -36,6 +36,10 @@
         nv = "nvim";
         sc = "sudo systemctl";
         trc = "tree -c";
+
+        ## Nix abbreviations
+        nd = "cd ${flakePath}";
+        nxp = "nix-shell --command fish -p";
 
         ## Git abbreviations
         g = "git";
