@@ -11,17 +11,20 @@
 <br>
 - Breakdown of structure<br>
 <br>
-  - Loose evaluation path is `flake.nix` -> `hosts/` -> `core/` -> `home/users/` -> `home/` (view the [`tree`](https://codeberg.org/serenity-F/nixdots/src/branch/swaywm/TREE.md)).<br>
+  - Loose evaluation path is `flake.nix` -> `core/hosts` -> `core/` -> `home/users/` -> `home/` (view the [`tree`](https://codeberg.org/serenity-F/nixdots/src/branch/swaywm/TREE.md)).<br>
 <br>
-  - `flake.nix` is the top-level of config, and also where universal variables are defined
-  - `/hosts` is where all host-specific configs are kept
-  - `/core` is where system-level packages and options are declared
+  - `flake.nix` is the top-level of config
+<br>
+  - `/core` all system-level options contained here
+    - `core/hosts` all host-specific configs here
+    - `core/modules` most shared and optional configurations here
+<br>
   - `/home` is where all user-level packages and options are declared
     - `/home/users` is where all users and relevant options are specified
-    - `/home/scripts` is exactly what it says on the tin
+    - `/home/scripts` this is exactly what it says on the tin
     - `/home/desktop` is where all desktop environment related options are specified
-    - `/home/programs` is where all user-level options and packages are declared
-    - `/home/resouces` is where themes, icons, etc. are kept<br>
+    - `/home/programs` is where all user-level packages and programs are declared
+    - `/home/resouces` is where wallpapers, themes, icons, etc. are kept<br>
 <br>
 <br>
 ## Attributions:
@@ -38,5 +41,4 @@
   - [HeinzDev](https://github.com/HeinzDev/Hyprland-dotfiles)
   - [vimjoyer](https://github.com/vimjoyer)
   - [fufexan](https://github.com/\fufexan/dotfiles)
-  - Wonder
   - [Hive](https://codeberg.org/theotheroracle/neutron)
