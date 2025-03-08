@@ -1,5 +1,5 @@
-{ inputs, outputs, config, pkgs, flakePath, disksPath, primaryUser, homeDir, ...
-}:
+{ inputs, outputs, config, pkgs, label, version, flakePath, disksPath
+, primaryUser, homeDir, wallpaper, ... }:
 
 let hostname = "${config.networking.hostName}";
 
@@ -46,8 +46,10 @@ in {
     verbose = true; # enables verbose output on activation
     extraSpecialArgs = { # passes in specialArgs from flake.nix
       inherit inputs outputs;
+      inherit label version;
       inherit flakePath disksPath;
       inherit primaryUser homeDir;
+      inherit wallpaper;
       inherit hostname;
     };
     users = {
