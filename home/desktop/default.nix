@@ -111,6 +111,8 @@ in {
       hyprpolkitagent # Hyprland native polkit agent
       gnome-keyring # Keyring for login prompts
       gnome-secrets # GTK password manager
+      keepass-diff # CLI-tool to diff kbdx files
+      keepassxc # Feature rich password manager
       seahorse # GTK secrets managment
       soteria # GTK/rust desktop-agnostic polkit agent
 
