@@ -9,7 +9,7 @@
     ../resources/themes/SerenityOS.nix
 
     ## VM GPU stuff ?
-    ./looking-glass
+    ./lookingGlass
 
     ## Import shared program configs
     ./web
