@@ -2,9 +2,7 @@
 
 {
 
-  imports = [
-    #./syncthing 
-  ];
+  imports = [ ];
 
   home = {
     packages = with pkgs; [

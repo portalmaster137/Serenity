@@ -23,6 +23,7 @@
     ./music
     ./fetch
     ./kitty
+    ./syncthing
     ./multimedia
     ./music/production.nix
   ];
