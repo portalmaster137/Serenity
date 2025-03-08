@@ -5,8 +5,8 @@
 **A study in linux, system administration, packaging, user experience, desktop and system environments, themeing, and functional programming.**
 <br>
 <br>
-![desktopScreenshot](https://codeberg.org/serenity-F/nixdots/raw/branch/sway/home/resources/screenshots/screenshotDesktop.png)
-![desktopScreenshot2](https://codeberg.org/serenity-F/nixdots/raw/branch/sway/home/resources/screenshots/screenshotTerminal.png)
+![desktopScreenshot](https://codeberg.org/serenity-F/nixdots/raw/branch/swaywm/home/resources/screenshots/screenshotDesktop.png)
+![desktopScreenshot2](https://codeberg.org/serenity-F/nixdots/raw/branch/swaywm/home/resources/screenshots/screenshotTerminal.png)
 <br>
 
 - **A to do list and longer term goals can be found [here](https://codeberg.org/serenity-F/nixdots/issues), and [here](https://codeberg.org/serenity-F/nixdots/milestones) respectively.**
@@ -16,7 +16,6 @@
 - **[!]** contains lots of stolen code :3 **[!]**
 <br>
 
-
 ## **Breakdown of structure:**
   - Loose evaluation path is `flake.nix` -> `core/hosts` -> `core/` -> `home/users/` -> `home/` (view the [`tree`](https://codeberg.org/serenity-F/nixdots/src/branch/swaywm/TREE.md)).
 <br>
@@ -24,20 +23,19 @@
   - `flake.nix` is the top-level of config
 <br>
 <br>
-  - `/core` all system-level options contained here
-    - `core/hosts` all host-specific configs here
-    - `core/modules` most shared and optional configurations here
+  - `/core` all system-level options
+    - `core/hosts` all host-specific configurations
+    - `core/modules` most shared and optional configurations
 <br>
 <br>
-  - `/home` is where all user-level packages and options are declared
-    - `/home/users` is where all users and relevant options are specified
-    - `/home/scripts` this is exactly what it says on the tin
-    - `/home/desktop` is where all desktop environment related options are specified
-    - `/home/programs` is where all user-level packages and programs are declared
-    - `/home/resouces` is where wallpapers, themes, icons, etc. are kept<br>
+  - `/home` all user-level options
+    - `/home/users` users and related options
+    - `/home/scripts` what it says on the tin
+    - `/home/desktop` all desktop/wm and related options
+    - `/home/programs` all user-level packages and programs
+    - `/home/resouces` wallpapers, themes, icons, etc.
 <br>
 <br>
-
 
  ## **Attributions:**
  - #### **Artwork:**
