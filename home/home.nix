@@ -6,7 +6,7 @@
 
     ## Desktop
     ./desktop
-    ../scripts
+    ./scripts
 
     ## Programs
     ./programs
