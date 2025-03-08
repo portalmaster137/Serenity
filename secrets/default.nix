@@ -5,7 +5,7 @@
   imports = [ inputs.sops-nix.nixosModules.sops ];
 
   ## Packages used in sops-nix setup
-  environment = { systemPackages = with pkgs; [ age age-keygen sops ]; };
+  environment = { systemPackages = with pkgs; [ age ssh-to-age sops ]; };
 
   ## Sops-nix config
   sops = {
