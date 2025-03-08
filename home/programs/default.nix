@@ -4,10 +4,6 @@
 
   imports = [
 
-    ## Import WM/Desktop config
-    ../scripts
-    ./desktop
-
     ## Import user themes
     ../resources/themes
     ../resources/themes/SerenityOS.nix
