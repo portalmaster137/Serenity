@@ -9,7 +9,7 @@
     ../resources/themes/SerenityOS.nix
 
     ## VM GPU stuff ?
-    ./looking-glass.nix
+    ./looking-glass
 
     ## Import shared program configs
     ./web
@@ -20,9 +20,11 @@
     ./btop
     ./fish
     ./nvim
+    ./music
     ./fetch
     ./kitty
-    ./multimedia.nix
+    ./multimedia
+    ./music/production.nix
   ];
 
   home = {
