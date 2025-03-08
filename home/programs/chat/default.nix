@@ -10,7 +10,7 @@
   programs = {
     nheko = {
       enable = true;
-      settings = { };
+      #settings = { };
     };
   };
 

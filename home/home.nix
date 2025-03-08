@@ -2,12 +2,9 @@
 
 {
 
-  imports = [
-    ./programs
-    ./programs/optional/obs
-    ./programs/optional/chat
-    ./programs/optional/multimedia.nix
-  ];
+  imports =
+    [ ./programs ./programs/obs ./programs/chat ./programs/multimedia.nix ];
+
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
 
