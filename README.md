@@ -12,13 +12,18 @@
 <br>
 - Breakdown of structure<br>
 <br>
-  - Loose evaluation path is `flake.nix` -> `core/hosts` -> `core/` -> `home/users/` -> `home/` (view the [`tree`](https://codeberg.org/serenity-F/nixdots/src/branch/swaywm/TREE.md)).<br>
+  - Loose evaluation path is `flake.nix` -> `core/hosts` -> `core/` -> `home/users/` -> `home/` (view the [`tree`](https://codeberg.org/serenity-F/nixdots/src/branch/swaywm/TREE.md)).
+<br>
+<br>
+ 
 <br>
   - `flake.nix` is the top-level of config
+<br>
 <br>
   - `/core` all system-level options contained here
     - `core/hosts` all host-specific configs here
     - `core/modules` most shared and optional configurations here
+<br>
 <br>
   - `/home` is where all user-level packages and options are declared
     - `/home/users` is where all users and relevant options are specified
