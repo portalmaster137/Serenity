@@ -1,10 +1,6 @@
-{ pkgs, config, ... }:
+{ ... }:
 
 {
-  imports = [
-    ./automount
-    ./startup.nix
-    ./desktop.nix
-    ./nix-utils.nix
-  ];
+  imports =
+    [ ./automount ./startup.nix ./desktop.nix ./battery.nix ./nix-utils.nix ];
 }

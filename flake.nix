@@ -133,6 +133,8 @@
       disksPath = "${homeDir}/Disks/"; # for easy disk navigation
       flakePath = "${homeDir}/flakes/nixdots/"; # current path to flake - unused
       #flakePath = "${homeDir}/SerenityOS/"; # for v1.0.0 release
+      wallpaper =
+        "${flakePath}/home/resources/wallpapers/almondBlossoms-VanGogh.jpg";
 
     in {
 
@@ -146,6 +148,7 @@
             inherit label version;
             inherit flakePath disksPath;
             inherit primaryUser homeDir;
+            inherit wallpaper;
           };
           modules = [
             sops-nix.nixosModules.sops
@@ -162,6 +165,7 @@
             inherit label version;
             inherit flakePath disksPath;
             inherit primaryUser homeDir;
+            inherit wallpaper;
           };
           modules = [
             sops-nix.nixosModules.sops
@@ -177,6 +181,7 @@
             inherit label version;
             inherit flakePath disksPath;
             inherit primaryUser homeDir;
+            inherit wallpaper;
           };
           modules = [
             sops-nix.nixosModules.sops
@@ -198,6 +203,7 @@
             inherit label version;
             inherit flakePath disksPath;
             inherit primaryUser homeDir;
+            inherit wallpaper;
           };
           modules = [
             sops-nix.nixosModules.sops
