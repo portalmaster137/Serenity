@@ -1,3 +1,4 @@
+## Sway eyecandy options - https://github.com/WillPower3309/swayfx
 { self, inputs, outputs, lib, config, pkgs, ... }:
 
 with lib;
