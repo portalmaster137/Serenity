@@ -10,7 +10,8 @@
 - **[!]** contains lots of stolen code :3 **[!]**
 <br>
 <br>
-- Breakdown of structure<br>
+## Breakdown of structure
+<br>
 <br>
   - Loose evaluation path is `flake.nix` -> `core/hosts` -> `core/` -> `home/users/` -> `home/` (view the [`tree`](https://codeberg.org/serenity-F/nixdots/src/branch/swaywm/TREE.md)).
 <br>
