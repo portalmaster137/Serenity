@@ -10,6 +10,7 @@
     ## Semi-modularised config
     ./modules # additional modules to import
     ../home # user-level packages in ../home/programs/
+    ../secrets # secrets :shh:
 
   ];
 
