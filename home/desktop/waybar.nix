@@ -1,11 +1,15 @@
-{ pkgs, config, lib, ... }: {
+{ pkgs, config, ... }:
 
-  home = {
-    packages = with pkgs; [ waybar ];
-  };
+{
+
+  home = { packages = with pkgs; [ waybar ]; };
 
   services = {
-    blueman-applet.enable = false;
+    ## Enables bluetooth tray applet 
+    ## See core/hosts/${hostname}/default.nix for bluetooth config
+    blueman-applet.enable = true;
+    ## Enables networking tray applet
+    ## See core/hosts/${hostname}/network.nix for network config
     network-manager-applet.enable = true;
   };
 
@@ -24,7 +28,7 @@
         height = 44;
         modules-left = [ "custom/logo" "sway/window" ];
         modules-center = [ "sway/workspaces" ];
-        modules-right = [ "tray" "backlight" "pulseaudio" "battery" "clock" "custom/power" ];
+        modules-right = [ "tray" "backlight" "clock" "battery" "custom/power" ];
 
         "wlr/taskbar" = {
           format = "{icon}";
@@ -58,6 +62,7 @@
             "urgent" = "󱓻";
           };
           "persistent-workspaces" = {
+            "0" = [ ];
             "1" = [ ];
             "2" = [ ];
             "3" = [ ];

@@ -49,8 +49,22 @@
 
   hardware = {
 
-    ## Enable bluetooth inside Hades
-    bluetooth.enable = true;
+    ## Bluetooth settings for Hades
+    ## Also see line 100 for blueman service,
+    ## and home/desktop/waybar.nix for tray applet.
+    bluetooth = {
+      enable = true;
+      ## Turns the bluetooth adapter on at boot
+      powerOnBoot = true;
+      settings.General = {
+        ## Displays battery charge of connected devices
+        Experimental = true;
+        ## Uses more power, but hades is a desktop
+        FastConnectable = true;
+      };
+      ## To fix bluetooth keyboard input
+      input.General = { UserspaceHID = true; };
+    };
 
     ## GPU and graphics
     graphics = {
@@ -81,7 +95,12 @@
     };
   };
 
-  services = { xserver.videoDrivers = [ "amdgpu" ]; };
+  services = {
+    ## Enables bluetooth service
+    blueman.enable = true;
+    ## Sets X to use amdgpy drivers
+    xserver.videoDrivers = [ "amdgpu" ];
+  };
 
   programs = {
     ## For tweaking system performance
