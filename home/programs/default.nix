@@ -26,6 +26,9 @@
     ./syncthing
     ./multimedia
     ./music/production.nix
+
+    ## Temporary
+    ./homestuck.nix
   ];
 
   home = {
