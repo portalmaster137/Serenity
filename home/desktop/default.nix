@@ -128,7 +128,6 @@ in {
       swww # Wallpaper daemon
       networkmanagerapplet # Tray applet for networkmanager
       networkmanager # Network manager ...
-      blueman # GTK bluetooth manager
       easyeffects # Graphical volume control
       pavucontrol # Graphical volume control
       helvum # GTK patchbay
