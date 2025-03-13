@@ -63,7 +63,7 @@
         FastConnectable = true;
       };
       ## To fix bluetooth keyboard input
-      #input.General = { UserspaceHID = true; };
+      input.General = { UserspaceHID = true; };
     };
 
     ## GPU and graphics
