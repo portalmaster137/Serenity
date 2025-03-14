@@ -62,7 +62,6 @@ in {
       modifier = "Mod4";
       floating = {
         modifier = "Mod4";
-        border = 0;
         titlebar = false;
       };
 
