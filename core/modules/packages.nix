@@ -1,4 +1,4 @@
-{ pkgs, flakeDir, ... }:
+{ pkgs, flakePath, ... }:
 
 {
 
@@ -50,7 +50,7 @@
     ## NixOS CLI helper
     nh = {
       enable = true;
-      flake = "${flakeDir}";
+      flake = "${flakePath}";
     };
 
     ## For handling encryption keys
