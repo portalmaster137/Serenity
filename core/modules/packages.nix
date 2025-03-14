@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, flakeDir, ... }:
 
 {
 
@@ -7,22 +7,25 @@
   ## Activation Scripts
   ## - these run after using `sudo nixos-rebuild switch`
   system.activationScripts.diff = {
-    supportsDryActivation = true; # prints diff of the store
+    supportsDryActivation = true;
+    ## Prints diff of the nix store and a cute message if rebuild successful
     text = ''
       ${pkgs.nvd}/bin/nvd --nix-bin-dir=${pkgs.nix}/bin diff \
           /run/current-system "$systemConfig"
 
           echo "Rebuild completed successfully <3"
-    ''; # also prints a cute message
+    '';
   };
 
   ## Nixpkgs Settings
   nixpkgs = {
     config = {
       allowUnfree = true;
+
       ## Place insecure packages here
       permittedInsecurePackages = [ "olm-3.2.16" ];
     };
+
     ## Overlays - BROKEN FOR NOW 
     overlays = [
       ## to use overlays exported from other flakes:
@@ -39,19 +42,33 @@
 
   ## System-level Programs
   programs = {
-    neovim = { enable = true; }; # Neovim declared here too, just in case 
-    fish = { enable = true; }; # A catgirl's favourite shell - NEEDS OWN NIX MODULE 
-    git = { enable = true; }; # version control
-    nh = { # NixOS CLI helper 
+
+    git = { enable = true; }; # Mandatory version control
+    fish = { enable = true; }; # A catgirls favourite shell
+    neovim = { enable = true; }; # Neovim declared here too, just in case
+
+    ## NixOS CLI helper
+    nh = {
       enable = true;
-      flake = "/home/serenity/flakes/nixdots";
+      flake = "${flakeDir}";
     };
-    gnupg.agent = { # For handling encryption keys 
+
+    ## For handling encryption keys
+    gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
       #pinentryPackage = [ ];
     };
+
+    ## For running unpackaged binaries
+    nix-ld = {
+      enable = true;
+      #libraries = with pkgs; [ ];
+    };
   };
+
+  ## Flatpak, just in case
+  services = { flatpak.enable = true; };
 
   environment = {
 
@@ -61,9 +78,10 @@
       VISUAL = "nvim";
       SYSTEMD_EDITOR = "nvim";
     };
-    # Install a stub ELF loader to print an informative
-    # error message in the event that a user attempts
-    # to run an ELF binary not compiled for NixOS.
+
+    ## Install a stub ELF loader to print an informative
+    ## error message in the event that a user attempts
+    ## to run an ELF binary not compiled for NixOS.
     stub-ld.enable = true;
 
     ## System-level Packages
@@ -81,7 +99,6 @@
       exfatprogs # ExFAT filesystem
       btrfs-progs # BTRFS filesystem
       ntfs3g # NTFS filesystem
-      #scrounge-ntfs # NTFS data recovery
 
       ## CLI tools & utilities
       fd # Find, but faster

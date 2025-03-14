@@ -16,8 +16,7 @@
   };
 
   services = {
-    ## Enabling flatpak in case i need it
-    #flatpak.enable = true;
+
     ## ratbagd for gaming mouse config
     ratbagd.enable = true;
   };
