@@ -73,7 +73,8 @@ in {
         newWindow = "smart";
       };
 
-      keybindings = mkOptionDefault (import ./keybinds.nix { inherit pkgs; });
+      keybindings =
+        mkOptionDefault (import ./keybinds.nix { inherit pkgs config; });
 
     };
   };
