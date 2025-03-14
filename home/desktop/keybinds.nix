@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, config, ... }:
 
 with pkgs;
 
@@ -10,18 +10,17 @@ let
   up = "k";
   right = "l";
 
-in
-{
+in {
 
   ## Application binds
   "${modifier}+Tab" = "exec ${wofi}/bin/wofi";
   "${modifier}+q" = "kill";
-  #"${modifier}+Space" = "exec ${cfg.config.menu}";
+  "${modifier}+Space" = "exec ${wofi}/bin/wofi";
   "${modifier}+Return" = "exec ${kitty}/bin/kitty";
   "${modifier}+Shift+Return" = "exec ${kitty}/bin/kitty --floating";
   "${modifier}+Shift+r" = "reload";
   "${modifier}+Alt+Shift+r" = "restart";
-  "${modifier}+L" = "exec ${hyprlock}/bin/hyprlock";
+  "${modifier}+Escape" = "exec ${hyprlock}/bin/hyprlock";
 
   ## Screenshot binds
   "Print" = "exec screenshot window";
@@ -31,9 +30,12 @@ in
   ## Brightness, volume, and media controls
   XF86MonBrightnessUp = "exec ${xorg.xbacklight} -inc 20";
   XF86MonBrightnessDown = "exec ${xorg.xbacklight} -dec 20";
-  XF86AudioRaiseVolume = "exec ${pulseaudio}/bin/pactl  set-sink-volume @DEFAULT_SINK@ +5%";
-  XF86AudioLowerVolume = "exec ${pulseaudio}/bin/pactl  set-sink-volume @DEFAULT_SINK@ -5%";
-  XF86AudioMute = "exec ${pulseaudio}/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle";
+  XF86AudioRaiseVolume =
+    "exec ${pulseaudio}/bin/pactl  set-sink-volume @DEFAULT_SINK@ +5%";
+  XF86AudioLowerVolume =
+    "exec ${pulseaudio}/bin/pactl  set-sink-volume @DEFAULT_SINK@ -5%";
+  XF86AudioMute =
+    "exec ${pulseaudio}/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle";
   XF86AudioPlay = "exec ${playerctl}/bin/playerctl play";
   XF86AudioPause = "exec ${playerctl}/bin/playerctl pause";
   XF86AudioNext = "exec ${playerctl}/bin/playerctl next";
@@ -67,7 +69,7 @@ in
   "${modifier}+7" = "workspace number 7";
   "${modifier}+8" = "workspace number 8";
   "${modifier}+9" = "workspace number 9";
-  "${modifier}+0" = "workspace number 10";
+  "${modifier}+0" = "workspace number 0";
   "${modifier}+Shift+1" = "move container to workspace number 1";
   "${modifier}+Shift+2" = "move container to workspace number 2";
   "${modifier}+Shift+3" = "move container to workspace number 3";
@@ -77,7 +79,7 @@ in
   "${modifier}+Shift+7" = "move container to workspace number 7";
   "${modifier}+Shift+8" = "move container to workspace number 8";
   "${modifier}+Shift+9" = "move container to workspace number 9";
-  "${modifier}+Shift+0" = "move container to workspace number 10";
+  "${modifier}+Shift+0" = "move container to workspace number 0";
   "${modifier}+Alt+${up}" = "move workspace to output up";
   "${modifier}+Alt+${down}" = "move workspace to output down";
   "${modifier}+Alt+${left}" = "move workspace to output left";
