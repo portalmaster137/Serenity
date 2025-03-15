@@ -51,6 +51,11 @@
       PATH = [ "\${XDG_BIN_HOME}" ];
       SDL_VIDEODRIVER = "wayland,windows";
 
+      ## Steam crashes when launched through wofi but not terminal
+      ## MAYBE this will fix it?
+      ## See: https://github.com/ValveSoftware/steam-for-linux/issues/9940
+      DRI_PRIME = "0,steam";
+
     };
 
   };
