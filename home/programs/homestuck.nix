@@ -6,7 +6,7 @@
     [Desktop Entry]
     Name=Homestuck
     Comment=Unofficial Homestuck Collection.
-    Exec=appimage-run ~/Disks/Tartarus/homosuck/Homestuck-2.5.7.AppImage
+    Exec=appimage-run /home/serenity/Disks/Tartarus/homosuck/Homestuck-2.5.7.AppImage
     Icon=
     Terminal=false
     Type=Application
@@ -15,9 +15,9 @@
 
   home.file."${homeDir}/.local/share/applications/Steam.desktop".text = ''
     [Desktop Entry]
-    Name=Steam
+    Name=Steam OwO
     Comment=Steam !
-    Exec=steam
+    Exec=steam %U
     Icon=steam
     Terminal=false
     Type=Application
