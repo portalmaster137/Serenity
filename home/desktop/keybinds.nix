@@ -15,7 +15,6 @@ in {
   ## Application binds
   "${modifier}+Tab" = "exec ${wofi}/bin/wofi";
   "${modifier}+q" = "kill";
-  "${modifier}+Space" = "exec ${wofi}/bin/wofi";
   "${modifier}+Return" = "exec ${kitty}/bin/kitty";
   "${modifier}+Shift+Return" = "exec ${kitty}/bin/kitty --floating";
   "${modifier}+Shift+r" = "reload";
