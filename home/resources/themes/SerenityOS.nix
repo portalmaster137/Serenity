@@ -9,8 +9,8 @@
     wallpaper = "${wallpaper}";
     lockscreenWallpaper = "${wallpapersPath}/attunement-HelveticaBlanc.png";
     waybar-transparent = true;
-    font-mono = "Spleen-32x64";
-    font = "Spleen-32x64";
+    font-mono = "spleen 32x64";
+    font = "spleen 32x64";
     rounding = 18;
     gaps-in = 4;
     gaps-out = 8;
