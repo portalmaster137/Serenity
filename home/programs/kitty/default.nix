@@ -31,12 +31,12 @@
       confirm_os_window_close = "0";
 
       ## Cursor
-      cursor_shape = "underline";
+      cursor_shape = "Underline";
       cursor_underline_thickness = 1;
       cursor_shape_unfocused = "unchanged";
 
       ## Window
-      window_padding_width = 0;
+      window_padding_width = 5;
       initial_window_width = 1200;
       initial_window_height = 600;
       remember_window_size = "no";
