@@ -13,8 +13,12 @@
     ../../../core/modules/zfs.nix
     ../../../core/modules/gaming.nix
     ../../../core/modules/jellyfin.nix
+    #../../../core/modules/bluetooth.nix
 
   ];
+
+  ## ooh, hostname - this one's important!
+  networking.hostName = "hades";
 
   ## ## ## ## ##
 
@@ -44,14 +48,12 @@
 
   ## ## ## ## ##
 
-  ## ooh, hostname - this one's important!
-  networking.hostName = "hades";
-
   hardware = {
 
     ## Bluetooth settings for Hades
-    ## Also see line 100 for blueman service,
+    ## Also see line 99 for blueman service,
     ## and home/desktop/waybar.nix for tray applet.
+    ## To do: Move bluetooth options to own module
     bluetooth = {
       enable = true;
       ## Turns the bluetooth adapter on at boot
@@ -79,18 +81,15 @@
         vaapiVdpau
       ];
     };
-    ## Packages for the dGPU inside Hades
+    ## Driver packages for the dGPU inside Hades
     amdgpu = {
       initrd.enable = true;
       opencl.enable = true;
       ## Vulkan packages for the dGPU inside Hades
       amdvlk = {
-        #enable = false;
-        #package = [ ];
-        #support32Bit.enable = false;
-        #supportExperimental.enable = false;
-        #settings = {
-        #};
+        enable = true;
+        support32Bit.enable = true;
+        supportExperimental.enable = true;
       };
     };
   };
