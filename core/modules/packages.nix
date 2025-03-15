@@ -20,17 +20,15 @@
   ## Nixpkgs Settings
   nixpkgs = {
     config = {
+      ## Not doing full-FOSS lol
       allowUnfree = true;
-
       ## Place insecure packages here
       permittedInsecurePackages = [ "olm-3.2.16" ];
     };
-
     ## Overlays - BROKEN FOR NOW 
     overlays = [
       ## to use overlays exported from other flakes:
       #neovim-nightly-overlay.overlays.default
-
       ## or define it inline, for example:
       #(final: prev: {
       #hi = final.hello.overrideAttrs (oldAttrs: {
@@ -42,64 +40,59 @@
 
   ## System-level Programs
   programs = {
-
     git = { enable = true; }; # Mandatory version control
     fish = { enable = true; }; # A catgirls favourite shell
     neovim = { enable = true; }; # Neovim declared here too, just in case
-
     ## NixOS CLI helper
     nh = {
       enable = true;
-      flake = "${flakePath}";
+      flake = "${flakePath}"; # Declared in flake.nix
     };
-
     ## For handling encryption keys
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
       #pinentryPackage = [ ];
     };
-
     ## For running unpackaged binaries
     nix-ld = {
       enable = true;
       #libraries = with pkgs; [ ];
     };
+    ## To run "normal" linux applications seamlessly
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
   };
 
   ## Flatpak, just in case
-  services = { flatpak.enable = true; };
+  services.flatpak.enable = true;
 
   environment = {
-
     ## Environment Variables
     variables = { # sets neovim to default editor in other apps
       EDITOR = "nvim";
       VISUAL = "nvim";
       SYSTEMD_EDITOR = "nvim";
     };
-
     ## Install a stub ELF loader to print an informative
     ## error message in the event that a user attempts
     ## to run an ELF binary not compiled for NixOS.
     stub-ld.enable = true;
-
     ## System-level Packages
     systemPackages = with pkgs; [
-
       ## Nix specific tools
       nix-tree # Dependency tree viewer for nix store
       nix-init # Generate nix packages from URLs
       nix-index # Database for nixpkgs
       nix-prefetch # provides info on a url
       nix-output-monitor # Shows extra information on nix commands
-
       ## Filsesystem utilities
       ddrutility # Set of tools for HDD rescure
       exfatprogs # ExFAT filesystem
       btrfs-progs # BTRFS filesystem
       ntfs3g # NTFS filesystem
-
       ## CLI tools & utilities
       fd # Find, but faster
       bc # Calculator
@@ -129,7 +122,6 @@
       smartmontools # Tools for monitoring HDD health
       magic-wormhole # Direct file sharing
     ];
-
   };
 
 }
