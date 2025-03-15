@@ -2,7 +2,6 @@
 let
 
   startup = pkgs.writeShellScriptBin "startup" ''
-    # Because HM enabling services suck.
 
     systemctl --user start sops-nix
 
@@ -20,8 +19,6 @@ let
     easyeffects
 
     nicotine-plus
-
-    vesktop
   '';
 
 in { home.packages = [ startup startupExtra ]; }

@@ -1,5 +1,5 @@
 { inputs, outputs, config, pkgs, label, version, flakePath, disksPath
-, primaryUser, userDesc, homeDir, wallpaper, ... }:
+, primaryUser, userDesc, homeDir, wallpapersPath, wallpaper, ... }:
 
 let hostname = "${config.networking.hostName}";
 
@@ -53,7 +53,7 @@ in {
       inherit label version;
       inherit flakePath disksPath;
       inherit primaryUser homeDir;
-      inherit wallpaper;
+      inherit wallpapersPath wallpaper;
       inherit hostname;
     };
     users = {
@@ -74,7 +74,7 @@ in {
           ## Copies wallpapers from flake to ${homeDir}
           file."Wallpapers" = {
             source = ./resources/wallpapers;
-            target = "${homeDir}/Wallpapers";
+            target = "${wallpapersPath}";
             recursive = true;
           };
         };
