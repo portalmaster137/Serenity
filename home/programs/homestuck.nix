@@ -2,26 +2,26 @@
 
 {
 
-  home.file."${homeDir}/Desktop/Homestuck.desktop".text = ''
+  home.file."${homeDir}/.local/share/applications/Homestuck.desktop".text = ''
     [Desktop Entry]
-    Categories=Games
-    Comment=Unofficial Homestuck Collection.
-    Exec=appimage-run Homestuck-2.5.7.AppImage
-    GenericName=homestuck
-    Icon=
-    Keywords=homestuck
-    MimeType=
     Name=Homestuck
-    NoDisplay=false
-    Path=${homeDir}/Disks/Tartarus/homosuck/Homestuck-2.5.7.AppImage
-    StartupNotify=
-    StartupWMClass=
+    Comment=Unofficial Homestuck Collection.
+    Exec=appimage-run ~/Disks/Tartarus/homosuck/Homestuck-2.5.7.AppImage
+    Icon=
     Terminal=false
-    TerminalOptions=
     Type=Application
-    Version=
-    X-KDE-SubstituteUID=false
-    X-KDE-Username=  
+    Categories=Game;
+  '';
+
+  home.file."${homeDir}/.local/share/applications/Steam.desktop".text = ''
+    [Desktop Entry]
+    Name=Steam
+    Comment=Steam !
+    Exec=steam
+    Icon=steam
+    Terminal=false
+    Type=Application
+    Categories=Game;
   '';
 
 }
