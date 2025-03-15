@@ -6,10 +6,10 @@
     opentabletdriver = {
       ## Open tablet driver, for Osu!, mainly.
       enable = true;
-      ## Disable conflicting drivers
-      blacklistedKernelModules = [ "hid-uclogic" "wacom" ];
       ## Enables the daemon via systemd
       daemon.enable = true;
+      ## Disable conflicting drivers
+      blacklistedKernelModules = [ "hid-uclogic" "wacom" ];
     };
   };
 
@@ -23,13 +23,14 @@
     ## Games and misc.
     systemPackages = with pkgs;
       [
-        #inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
-        inputs.nix-gaming.packages.${pkgs.system}.osu-mime
         piper # Mouse config
         vassal # FOSSy board game sim
         cockatrice # Magical the gathering, but free
         prismlauncher # Modded Minecraft client
         osu-lazer-bin # Rhythm is just a click away!
+        inputs.nix-gaming.packages.${pkgs.system}.osu-mime
+        #inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
+        ## Emulation
         retroarchFull # Emulator frontend
       ] ++ (with pkgs.libretro; [
         citra # Nintendo Switch emu
@@ -75,11 +76,20 @@
       };
     };
 
+    ## Java, just in case i guess ?
+    java.enable = true;
+
+    ## This should help games run more betterer
+    gamescope = {
+      enable = true;
+      capSysNice = true;
+    };
+
     ## Steam itself
     steam = {
       enable = true;
       ## This should help games run more betterer
-      #gamescopeSession = { enable = true; };
+      gamescopeSession.enable = true;
       ## No clue what this is doing
       #package = pkgs.steam.override {
       #  extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
@@ -98,15 +108,9 @@
       #};
       ## Not sure we need gamescope here
       ## as it's defined elsewhere but o well
-      extraPackages = with pkgs; [ gamescope ];
+      #extraPackages = with pkgs; [ ];
       ## Gotta have the glorious eggroll
       extraCompatPackages = with pkgs; [ proton-ge-bin ];
-    };
-
-    ## This should help games run more betterer
-    gamescope = {
-      enable = true;
-      capSysNice = true;
     };
 
   };
