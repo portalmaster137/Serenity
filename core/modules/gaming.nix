@@ -3,7 +3,6 @@
 {
 
   hardware = {
-
     opentabletdriver = {
       ## Open tablet driver, for Osu!, mainly.
       enable = true;
@@ -12,11 +11,9 @@
       ## Enables the daemon via systemd
       daemon.enable = true;
     };
-
   };
 
   services = {
-
     ## ratbagd for gaming mouse config
     ratbagd.enable = true;
   };
@@ -58,12 +55,6 @@
   };
 
   programs = {
-
-    ## To run "normal" linux applications seamlessly
-    appimage = {
-      enable = true;
-      binfmt = true;
-    };
 
     ## "GameMode" - https://nixos.wiki/wiki/Gamemode
     ## (config copy-pasted from mynixos)
