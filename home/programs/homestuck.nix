@@ -16,22 +16,11 @@
     steam = {
       name = "Steam";
       genericName = "Steam";
-      exec = "steam %U";
+      exec = "DRI_PRIME=0 steam %U";
       terminal = false;
       categories = [ "Game" ];
       mimeType = [ ];
     };
   };
-
-  home.file."${homeDir}/.local/share/applications/Homestuck.desktop".text = ''
-    [Desktop Entry]
-    Name=Homestuck
-    Comment=Unofficial Homestuck Collection.
-    Exec=appimage-run /home/serenity/Disks/Tartarus/homosuck/Homestuck-2.5.7.AppImage
-    Icon=
-    Terminal=false
-    Type=Application
-    Categories=Game;
-  '';
 
 }
