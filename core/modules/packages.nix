@@ -118,6 +118,7 @@
       libsecret # Library for storing and retrieving secrets
       git-crypt # Transparent file encryption in git
       undervolt # Utility to change CPU settings
+      steam-run # Used for running funky binaries and executables
       android-tools # Commands for interfacing with android devices
       smartmontools # Tools for monitoring HDD health
       magic-wormhole # Direct file sharing
