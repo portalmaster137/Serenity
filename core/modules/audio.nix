@@ -1,4 +1,4 @@
-# # https://nixos.wiki/wiki/Category:Audio
+## https://nixos.wiki/wiki/Category:Audio
 ## https://nixos.wiki/PipeWire
 ## https://github.com/musnix/musnix
 ## https://nixos.wiki/wiki/Audio_production
@@ -75,33 +75,31 @@
 
       ## Low latency config
       extraConfig = {
-
         pipewire."92-low-latency" = {
           "context.properties" = {
             "default.clock.rate" = 48000;
-            #"default.clock.allowed-rates" = [ 48000 96000 ];
-            "default.clock.quantum" = 192;
-            "default.clock.min-quantum" = 192;
-            "default.clock.max-quantum" = 192;
+            "default.clock.allowed-rates" = [ 44100 48000 96000 192000 ];
+            "default.clock.quantum" = 256;
+            "default.clock.min-quantum" = 256;
+            "default.clock.max-quantum" = 384;
           };
         };
-
         pipewire-pulse."92-low-latency" = {
           stream.properties = {
-            node.latency = "192/48000";
+            node.latency = "256/48000";
             resample.quality = 1;
           };
-
           context.modules = [{
             name = "libpipewire-module-protocol-pulse";
+            ## Apparently I need to have the full key 'pulse.foo.bar = "foobar/foo";' declared,
+            ## rather than declaring 'foo.bar = "foorbar/foo";' inside a nested 'pulse = { };' set.
+            ## See: https://discourse.nixos.org/t/setting-up-pipewire-to-get-rid-of-cracks-noises
             args = {
-              pulse = {
-                default.req = "192/48000";
-                min.req = "192/48000";
-                max.req = "192/48000";
-                min.quantum = "192/48000";
-                max.quantum = "192/48000";
-              };
+              pulse.min.req = "256/48000";
+              pulse.max.req = "256/48000";
+              pulse.default.req = "256/48000";
+              pulse.min.quantum = "256/48000";
+              pulse.max.quantum = "384/48000";
             };
           }];
 
