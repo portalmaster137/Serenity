@@ -1,22 +1,20 @@
+# # Steam crashes when launched through wofi but not terminal
+## See: https://github.com/ValveSoftware/steam-for-linux/issues/9940
 { pkgs, inputs, ... }:
 
 {
-
-  hardware = {
-    opentabletdriver = {
-      ## Open tablet driver, for Osu!, mainly.
-      enable = true;
-      ## Enables the daemon via systemd
-      daemon.enable = true;
-      ## Disable conflicting drivers
-      blacklistedKernelModules = [ "hid-uclogic" "wacom" ];
-    };
+  ## Open tablet driver, for Osu!, mainly.
+  hardware.opentabletdriver = {
+    enable = true; # Enables the driver lol
+    daemon.enable = true; # Enables the daemon via systemd
+    blacklistedKernelModules = [ # Disable conflicting drivers
+      "hid-uclogic"
+      "wacom"
+    ];
   };
 
-  services = {
-    ## ratbagd for gaming mouse config
-    ratbagd.enable = true;
-  };
+  ## ratbagd for gaming mouse config
+  services.ratbagd.enable = true;
 
   environment = {
 
@@ -29,7 +27,7 @@
         prismlauncher # Modded Minecraft client
         osu-lazer-bin # Rhythm is just a click away!
         inputs.nix-gaming.packages.${pkgs.system}.osu-mime
-        #inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
+        #inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin # Not using this one but still want it here lol
         ## Emulation
         retroarchFull # Emulator frontend
       ] ++ (with pkgs.libretro; [
@@ -50,17 +48,20 @@
       ## Note: this doesn't replace PATH, it just adds this to it
       PATH = [ "\${XDG_BIN_HOME}" ];
       SDL_VIDEODRIVER = "wayland,windows";
-
-      ## Steam crashes when launched through wofi but not terminal
-      ## MAYBE this will fix it?
-      ## See: https://github.com/ValveSoftware/steam-for-linux/issues/9940
-      DRI_PRIME = "0,steam";
-
     };
 
   };
 
   programs = {
+
+    ## Java, just in case i guess ?
+    java.enable = true;
+
+    ## This should help games run more betterer
+    gamescope = {
+      enable = true;
+      capSysNice = true;
+    };
 
     ## "GameMode" - https://nixos.wiki/wiki/Gamemode
     ## (config copy-pasted from mynixos)
@@ -79,15 +80,6 @@
           end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
         };
       };
-    };
-
-    ## Java, just in case i guess ?
-    java.enable = true;
-
-    ## This should help games run more betterer
-    gamescope = {
-      enable = true;
-      capSysNice = true;
     };
 
     ## Steam itself
@@ -111,8 +103,6 @@
       #      #gamemode
       #    ] ++ (with pkgs.xorg; [ libXi libXcursor libXinerama libXScrnSaver ]);
       #};
-      ## Not sure we need gamescope here
-      ## as it's defined elsewhere but o well
       #extraPackages = with pkgs; [ ];
       ## Gotta have the glorious eggroll
       extraCompatPackages = with pkgs; [ proton-ge-bin ];
