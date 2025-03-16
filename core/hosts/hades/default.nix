@@ -128,7 +128,6 @@
     #amdgpu_top
     #radeontools
     #radeon-profile
-    nvtop-amd
     nvtopPackages.amd
   ];
 
