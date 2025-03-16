@@ -45,7 +45,7 @@
         "\${HOME}/.steam/root/compatibilitytools.d";
       ## Note: this doesn't replace PATH, it just adds this to it
       PATH = [ "\${XDG_BIN_HOME}" ];
-      SDL_VIDEODRIVER = "wayland,windows";
+      SDL_VIDEODRIVER = "x11,wayland,windows";
     };
 
   };
