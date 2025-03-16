@@ -1,5 +1,3 @@
-# # Steam crashes when launched through wofi but not terminal
-## See: https://github.com/ValveSoftware/steam-for-linux/issues/9940
 { pkgs, inputs, ... }:
 
 {
@@ -107,6 +105,9 @@
       ## Gotta have the glorious eggroll
       extraCompatPackages = with pkgs; [ proton-ge-bin ];
     };
+    ## Steam crashes when launched through wofi but not terminal
+    ## See: home/desktop/wofi.nix 
+    ## https://github.com/ValveSoftware/steam-for-linux/issues/9940
 
   };
 
