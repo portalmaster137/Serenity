@@ -74,11 +74,11 @@
       enable32Bit = true;
       ## Packages for the iGPU inside Hades
       extraPackages = with pkgs; [
-        intel-compute-runtime
-        intel-media-driver
-        libvdpau-va-gl
-        vaapiIntel
-        vaapiVdpau
+        #intel-compute-runtime
+        #intel-media-driver
+        #libvdpau-va-gl
+        #vaapiIntel
+        #vaapiVdpau
       ];
     };
     ## Driver packages for the dGPU inside Hades
@@ -86,11 +86,11 @@
       initrd.enable = true;
       opencl.enable = true;
       ## Vulkan packages for the dGPU inside Hades
-      amdvlk = {
-        enable = true;
-        support32Bit.enable = true;
-        supportExperimental.enable = true;
-      };
+      #amdvlk = {
+        #enable = true;
+        #support32Bit.enable = true;
+        #supportExperimental.enable = true;
+      #};
     };
   };
 
