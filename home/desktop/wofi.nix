@@ -22,7 +22,7 @@
       allow_images = false;
       image_size = 24;
       hide_scroll = true;
-      hide_search = false;
+      hide_search = true;
       exec_search = false;
       parse_search = false;
       insensitive = true;
