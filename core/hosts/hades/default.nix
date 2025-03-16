@@ -51,7 +51,7 @@
   hardware = {
 
     ## Bluetooth settings for Hades
-    ## Also see line 99 for blueman service,
+    ## Also see line 94 for blueman service,
     ## and home/desktop/waybar.nix for tray applet.
     ## To do: Move bluetooth options to own module
     bluetooth = {
