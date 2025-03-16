@@ -86,12 +86,6 @@
     amdgpu = {
       initrd.enable = true;
       opencl.enable = true;
-      ## Vulkan packages for the dGPU inside Hades
-      amdvlk = {
-        enable = true;
-        support32Bit.enable = true;
-        supportExperimental.enable = true;
-      };
     };
   };
 
