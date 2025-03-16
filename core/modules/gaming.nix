@@ -46,7 +46,7 @@
       ## Note: this doesn't replace PATH, it just adds this to it
       PATH = [ "\${XDG_BIN_HOME}" ];
       NIXOS_OZONE_WL = "1";
-      SDL_VIDEODRIVER = "wayland,windows";
+      SDL_VIDEODRIVER = "x11,wayland,windows";
     };
 
   };
