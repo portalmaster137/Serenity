@@ -4,31 +4,31 @@
     enable = true;
 
     settings = {
-      allow_markup = true;
-      width = 500;
+      term = "kitty";
       show = "drun";
-      prompt = "Apps";
+      width = 500;
+      height = 300;
+      prompt = "Programs";
       normal_window = true;
+      key_exit = "Escape";
+      key_expand = "Tab";
       layer = "top";
-      term = "foot";
-      height = "305px";
+      gtk_dark = true;
       orientation = "vertical";
       halign = "fill";
       line_wrap = "off";
       dynamic_lines = false;
-      allow_images = true;
+      allow_markup = true;
+      allow_images = false;
       image_size = 24;
-      exec_search = false;
+      hide_scroll = true;
       hide_search = false;
+      exec_search = false;
       parse_search = false;
       insensitive = true;
-      hide_scroll = true;
       no_actions = true;
       sort_order = "default";
-      gtk_dark = true;
       filter_rate = 100;
-      key_expand = "Tab";
-      key_exit = "Escape";
     };
 
     style = ''
