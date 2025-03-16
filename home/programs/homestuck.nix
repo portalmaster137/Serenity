@@ -6,7 +6,7 @@ let
     url = ''
       https://static.wikia.nocookie.net/mspaintadventures/images/2/2d/Sburb_Logo.svg
     '';
-    hash = "sha256-ZWPIN9CICTB+r4eJdllCm9V7em1UvVQ/SoOIxbbxIew=";
+    hash = "sha256-AYt3Yln3xXGQW+QRJtn1vQfP7G5UYLOqAT+3BVnEVWo=";
   };
 
   ## ${homestuckPath} requires you to complete the regular setup requirements
