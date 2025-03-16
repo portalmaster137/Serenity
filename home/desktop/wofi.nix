@@ -19,7 +19,7 @@
       line_wrap = "off";
       dynamic_lines = false;
       allow_markup = true;
-      allow_images = false;
+      allow_images = true;
       image_size = 24;
       hide_scroll = true;
       hide_search = false;
