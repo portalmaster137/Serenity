@@ -9,14 +9,13 @@ in {
   wayland.windowManager.sway = {
     enable = true;
     extraSessionCommands = ''
-
+      export NIXOS_OZONE_WL=1
       export SDL_VIDEODRIVER=wayland,windows
       export QT_QPA_PLATFORM=wayland
       export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
       export XDG_CURRENT_DESKTOP=sway
       export XDG_SESSION_TYPE=wayland
     '';
-    #      export NIXOS_OZONE_WL=1
     extraConfig = "";
     xwayland = true;
     checkConfig = false;
