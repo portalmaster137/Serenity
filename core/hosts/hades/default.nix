@@ -73,13 +73,14 @@
       enable = true;
       enable32Bit = true;
       ## Packages for the iGPU inside Hades
-      extraPackages = with pkgs; [
-        #intel-compute-runtime
-        #intel-media-driver
-        #libvdpau-va-gl
-        #vaapiIntel
-        #vaapiVdpau
-      ];
+      extraPackages = with pkgs;
+        [
+          #intel-compute-runtime
+          #intel-media-driver
+          #libvdpau-va-gl
+          #vaapiIntel
+          #vaapiVdpau
+        ];
     };
     ## Driver packages for the dGPU inside Hades
     amdgpu = {
@@ -87,9 +88,9 @@
       opencl.enable = true;
       ## Vulkan packages for the dGPU inside Hades
       #amdvlk = {
-        #enable = true;
-        #support32Bit.enable = true;
-        #supportExperimental.enable = true;
+      #enable = true;
+      #support32Bit.enable = true;
+      #supportExperimental.enable = true;
       #};
     };
   };
@@ -97,27 +98,27 @@
   services = {
     ## Enables bluetooth service
     blueman.enable = true;
-    ## Sets X to use amdgpy drivers
+    ## Sets X to use amdgpu drivers
     xserver.videoDrivers = [ "amdgpu" ];
   };
 
   programs = {
     ## For tweaking system performance
-    corectrl = {
-      enable = true;
-      ## Allows tweaking GPU performance
-      gpuOverclock = {
-        enable = true;
-        ## Needed for radeon GPU overclocking
-        ppfeaturemask = "0xfffd7fff";
-      };
-    };
+    #corectrl = {
+    #enable = true;
+    ## Allows tweaking GPU performance
+    #gpuOverclock = {
+    #enable = true;
+    ## Needed for radeon GPU overclocking
+    #ppfeaturemask = "0xfffd7fff";
+    #};
+    #};
     ## Performance tweaking continued
-    tuxclocker = {
-      enable = true;
-      enableAMD = true;
-      useUnfree = true;
-    };
+    #tuxclocker = {
+    #enable = true;
+    #enableAMD = true;
+    #useUnfree = true;
+    #};
   };
 
   ## Some packages for managing the hardware inside Hades

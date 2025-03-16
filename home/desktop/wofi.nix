@@ -32,7 +32,7 @@
       ## Steam not launching from wofi, but will launch in terminal
       ## See: core/modules/gaming.nix
       ## https://github.com/ValveSoftware/steam-for-linux/issues/9940
-      disable_prime = true;
+      disable_prime = false;
     };
 
     style = ''
