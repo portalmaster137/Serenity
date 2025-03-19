@@ -30,7 +30,7 @@ in {
       };
 
       ## Tree
-      #treesitter-context.enable = true;
+      treesitter-context.enable = true;
       neo-tree.enable = true;
       oil = {
         enable = true;
