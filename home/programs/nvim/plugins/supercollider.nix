@@ -2,7 +2,10 @@
 
   imports = [ ];
 
-  home.packages = with pkgs; [ supercollider-with-plugins ];
+  home.packages = with pkgs; [
+    supercollider-with-plugins
+    puredata-with-plugins
+  ];
 
   ## Supercollider config
   programs = {
