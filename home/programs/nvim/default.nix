@@ -11,6 +11,7 @@
     ./plugins/lsp.nix
     ./plugins/markdown.nix
     ./plugins/telescope.nix
+    ./plugins/supercollider.nix
   ];
 
   ## Enables nixvim
