@@ -17,4 +17,14 @@
     '';
   };
 
+  system.activationScripts.flakeLink = {
+    supportsDryActivation = false;
+    ## Prints diff of the nix store and a cute message if rebuild successful
+    text = ''
+      cd ~ && cp -r ~/flakes/nixdots/* SerenityOS/
+
+        echo "flakePath linked successfully <3"
+    '';
+  };
+
 }
