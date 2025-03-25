@@ -37,8 +37,7 @@
       enable = true; # easy toggle
       dataDir = "${homeDir}"; # defaults to primaryUser's homedir
       openDefaultPorts = true; # opens the default firewall ports
-      configDir =
-        "${homeDir}/.config/syncthing"; # defaults to primaryUser's homedir
+      #configDir = "${homeDir}/.config/syncthing"; # defaults to primaryUser's homedir
       user = "${primaryUser}"; # uses primaryUser to run the service
       group = "users"; # runs in the users group
       ## For some reason is using `localhost:8384`
