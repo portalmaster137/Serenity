@@ -2,9 +2,11 @@
 ## https://nix-community.github.io/home-manager/options.xhtml#opt-home.file
 ## https://nix-community.github.io/home-manager/options.xhtml#opt-home.activation
 
-{ config, flakePath, disksPath, primaryUser, ... }:
+{ inputs, outputs, pkgs, config, flakePath, disksPath, primaryUser, ... }:
 
 {
+
+  imports = [ inputs.sops-nix.nixosModules.sops ];
 
   # need option for `zfs set mountpoint=/myspecialfolder mypool`
   # need to set up auto luks unlock with sops-nix
