@@ -9,73 +9,57 @@
     };
   };
 
+  ## Boot/GRUB options
   boot = {
     bootspec.enable = true;
     consoleLogLevel = 0;
     initrd.verbose = false;
-    kernelParams = [
-      "quiet"
-      "splash"
-      "vga=current"
-      "loglevel=3"
-      "rd.systemd.show_status=false"
-      "rd.udev.log_level=0"
-      "udev.log_priority=3"
-      "boot.shell_on_fail"
+    kernelParams = [ # grub kernel parameters, set to prevent excessive output on boot
+      "quiet" # quiet log level
+      "splash" # uhhh
+      "vga=current" # use current video adapater
+      "loglevel=3" # minimal output on boot
+      "rd.systemd.show_status=false" # uhh
+      "rd.udev.log_level=0" # more minimising of output on boot
+      "udev.log_priority=3" # more minimising of output on boot
+      "boot.shell_on_fail" # reboots to basic uefi shell on boot failure
       #"i915.fastboot=1"
-      "plymouth.use-simpledrm"
+      "plymouth.use-simpledrm" # tweak to allow plymouth animations to run smoother
     ];
     loader = {
-      timeout = 5;
+      timeout = 5; # 5 second timeout to default selection
       grub = {
-        configurationName = "${version}";
-        #theme = "${pkgs.minimal-grub-theme}";
-        #backgroundColor = "#000000";
-        #font = "${pkgs.spleen}/share/fonts/spleen-32x64";
-        #fontSize = 16;
-        splashImage = null;
-        timeoutStyle = "hidden";
-        #extraConfig = ''
-        #'';
+        configurationName = "${version}"; # prints SerenitOS version instead of NixOS version
+        splashImage = null; # hides splashimage
+        timeoutStyle = "hidden"; # hides timeout
       };
     };
-    plymouth = {
+    plymouth = { # enables plymouth boot animations
       enable = true;
-      #logo = pkgs.fetchurl {
-      #url = "https://nixos.org/logo/nixos-hires.png";
-      #hash = "1ivzgd7iz0i06y36p8m5w48fd8pjqwxhdaavc0pxs7w1g7mcy5si";
-      #};
-      #font = "${pkgs.spleen}/share/fonts/spleen-32x64";
-      theme = "circle";
-      themePackages = with pkgs;
+      theme = "circle"; # uses a funky anim wei found
+      themePackages = with pkgs; # uhhh
         [
           (adi1090x-plymouth-themes.override {
             selected_themes = [ "circle" ];
           })
         ];
-      #extraConfig = '''';
     };
   };
 
-  xdg.mime.enable =
-    true; # may be unneeded here as already declared in `home/desktop/xdg-mime.nix`
-
-  services = {
-    xserver.enable = true; # xserver still needed for xwayland stuff
-  };
-
+  ## Display related options
+  xdg.mime.enable = true; # may be unneeded here as already declared in `home/desktop/xdg-mime.nix`
+  services.xserver.enable = true; # xserver still needed for xwayland stuff
   systemd.user.targets.sway = { # To start sway related services
     description = "to start sway related services";
     wants = [ "graphical-session.target" ];
     after = [ "graphical-session.target" ];
   };
-
   environment = {
     variables = { # environment variables, duh
       XDG_SESSION_TYPE = "wayland";
       XDG_CURRENT_DESKTOP = "sway";
     };
-    systemPackages = with pkgs; [
+    systemPackages = with pkgs; [ # theme packages
       xorg.xhost # i actually dont remember what this does
       ## Themes
       minimal-grub-theme
@@ -87,8 +71,7 @@
       materia-theme-transparent
     ];
   };
-
-  programs = {
+  programs = { # xwayland and sway variables
     xwayland = { # Standard(?) xwayland implementation
       enable = true;
       #package = [ ];
@@ -112,6 +95,9 @@
     };
   };
 
+  ## Utter junk from here on out, pls fix
+  ## - - - - - - - - - - - - - - - - - - -
+
   ## I put fonts here because i didn't know where tf else to put them lol
   ## duplicate to home-manager config ?
   fonts = {
@@ -131,7 +117,7 @@
 
   ## Dunno if i did this right, but possible needed for keyring/polkit stuff ? 
   security.pam.services.serenity.enableGnomeKeyring = true;
-
+  
   programs = {
     gnome-disks.enable = true; # For when bimbo needs to manage disks
     seahorse.enable = true; # GTK secrets management
