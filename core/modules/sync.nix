@@ -41,11 +41,11 @@
         "${homeDir}/.config/syncthing"; # defaults to primaryUser's homedir
       user = "${primaryUser}"; # uses primaryUser to run the service
       group = "users"; # runs in the users group
-      guiAddress = "0.0.0.0:8384"; # default web address for the GUI
+      #guiAddress = "0.0.0.0:8384"; # default web address for the GUI
       settings = {
         ## WebApp GUI 
         user = "serenity";
-        password = "password";
+        #password = "password";
 
         ## Syncthing Folders
         overrideFolders = true; # force these folder on activation
