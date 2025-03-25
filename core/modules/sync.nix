@@ -48,7 +48,7 @@
         password = "password";
 
         ## Syncthing Folders
-        overrideFolders = true; # force these folder on activation
+        #overrideFolders = true; # force these folder on activation
         folders = {
 
           "Keyring" = { # folder for password/secrets vault
