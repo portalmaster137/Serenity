@@ -14,11 +14,11 @@
     file = {
 
       ## Path to automount disks to
-      "Disks" = {
-        source = ./Disks;
-        target = "${disksPath}";
-        #recursive = true;
-      };
+      #"Disks" = {
+      #source = ./Disks;
+      #target = "${disksPath}";
+      #recursive = true;
+      #};
 
       ## (current) Flake path
       #"flakes/nixdots" = {
