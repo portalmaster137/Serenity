@@ -15,7 +15,7 @@
 
       ## Path to automount disks to
       "Disks" = {
-        source = ./Disks;
+        source = ./shell/Disks;
         target = "${disksPath}";
         recursive = false;
       };
