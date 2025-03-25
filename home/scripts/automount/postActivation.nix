@@ -11,19 +11,14 @@
     supportsDryActivation = false;
     ## Prints diff of the nix store and a cute message if rebuild successful
     text = ''
-      cd ~ && ln -s /run/media/${primaryUser}/ Disks
-
-        echo "disksPaths linked successfully <3"
-    '';
-  };
-
-  system.activationScripts.flakeLink = {
-    supportsDryActivation = false;
-    ## Prints diff of the nix store and a cute message if rebuild successful
-    text = ''
-      cd ~ && runuser -u ${primaryUser} -- cp -r /home/${primaryUser}/flakes/nixdots/* ${flakePath}/
-
-        echo "flakePath linked successfully <3"
+      {
+          cd ~ && ln -s /run/media/${primaryUser}/ Disks &&
+          echo "disksPaths linked successfully <3"
+      } || {
+          echo "diskPaths linking failed </3"
+          echo "Disable this module if paths have already been linked."
+          echo "(run `cd ~/Disks` to see if paths are linked)"
+      }
     '';
   };
 
