@@ -11,7 +11,7 @@
 
   ## Provides LUKS key for Asphodel
   #environment.etc."crypttab".text = ''
-  #data /dev/disk/by-uuid/45f5f6ad-a676-4bc1-ad4b-e3e26b5697f4 ${config.sops.secrets.Asphodel-key.path}
+  #data /dev/disk/by-uuid/45f5f6ad-a676-4bc1-ad4b-e3e26b5697f4 ${config.sops.secrets.asphodelLuksPassword}
   #'';
 
   ## Mounts Asphodel to typical media location
