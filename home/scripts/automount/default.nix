@@ -15,9 +15,9 @@
 
       ## Path to automount disks to
       "Disks" = {
-        source = ./Disks-Test;
+        source = ./Disks;
         target = "${disksPath}";
-        recursive = true;
+        #recursive = true;
       };
 
       ## (current) Flake path
