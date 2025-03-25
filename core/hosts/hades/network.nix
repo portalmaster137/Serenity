@@ -44,7 +44,6 @@
     settings = {
       ipv6_servers = true;
       require_dnssec = true;
-
       sources.public-resolvers = {
         ## Where to get list of server addresses
         urls = [
