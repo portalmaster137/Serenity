@@ -3,7 +3,7 @@
   services = {
 
     syncthing = {
-      enable = true;
+      enable = false;
       #tray.enable = true;
       #guiAddress = "home.syncthing";
 
