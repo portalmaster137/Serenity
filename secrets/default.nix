@@ -25,9 +25,7 @@
 
       asphodelLuksPassword = { };
 
-      privatKey = { };
-
-
+      privateKey = { };
 
     };
   };
