@@ -28,9 +28,9 @@
 
       ## (future) Flake path
       "SerenityOS" = {
-        source = "./SerenityOS/";
+        source = ./SerenityOS;
         target = "${flakePath}";
-        recursive = true;
+        #recursive = true;
       };
 
     };
