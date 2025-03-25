@@ -10,11 +10,11 @@
     ## Shared 'core' config options
     ../../../core
     ## Host-specific core modules
-    ../../../core/modules/zfs.nix
-    ../../../core/modules/sync.nix
-    ../../../core/modules/gaming.nix
-    ../../../core/modules/jellyfin.nix
-    #../../../core/modules/bluetooth.nix
+    ../../../core/zfs.nix
+    ../../../core/sync.nix
+    ../../../core/gaming.nix
+    ../../../core/jellyfin.nix
+    #../../../core/bluetooth.nix
 
   ];
 

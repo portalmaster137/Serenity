@@ -8,9 +8,14 @@
     inputs.home-manager.nixosModules.home-manager
 
     ## Semi-modularised config
-    ./modules # additional modules to import
     ../home # user-level packages in ../home/programs/
     ../secrets # secrets :shh:
+
+    ## Shared modules to import
+    ./audio.nix
+    ./display.nix
+    ./regreet.nix
+    ./packages.nix
 
   ];
 
