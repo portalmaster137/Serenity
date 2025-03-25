@@ -12,7 +12,7 @@
     ## Prints diff of the nix store and a cute message if rebuild successful
     text = ''
       {
-          cd ~ && ln -s Disks /run/media/${primaryUser}/
+          cd ~ && ln -s Disks /run/media/${primaryUser}/*
           echo "disksPaths linked successfully <3"
       } || {
           echo "diskPaths linking failed </3"
