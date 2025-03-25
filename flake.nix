@@ -131,7 +131,7 @@
       primaryUser = "serenity"; # used for admin purposes
       userDesc = "Serenity Amalgam";
       homeDir = "/home/${primaryUser}"; # for easy configuration
-      disksPath = "${homeDir}/Disks/"; # for easy disk navigation
+      disksPath = "${homeDir}"; # for easy disk navigation
       flakePath = "${homeDir}/flakes/nixdots/"; # current path to flake - unused
       #flakePath = "${homeDir}/SerenityOS/"; # for v1.0.0 release
       wallpapersPath = "${homeDir}/Pictures/Wallpapers";
