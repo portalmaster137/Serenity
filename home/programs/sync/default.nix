@@ -46,6 +46,10 @@
       enable = true;
       tray.enable = true;
       #guiAddress = "home.syncthing:8384";
+      settings = {
+        username = "serenity";
+        password = "password";
+      };
     };
 
   };
