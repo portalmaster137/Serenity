@@ -45,7 +45,7 @@
     syncthing = {
       enable = true;
       tray.enable = true;
-      guiAddress = "home.syncthing:8384";
+      #guiAddress = "home.syncthing:8384";
     };
 
   };
