@@ -11,7 +11,7 @@
     supportsDryActivation = false;
     ## Prints diff of the nix store and a cute message if rebuild successful
     text = ''
-      cp home/scripts/automount/Disks /home/${primaryUser}/
+      cd ${disksPath} \ ln -s /run/media/${primaryUser} Disks
 
       echo "disksPaths linked successfully <3"
     '';
