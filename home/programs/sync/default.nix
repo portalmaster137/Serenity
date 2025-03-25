@@ -42,11 +42,11 @@
     };
 
     ## Syncthing program service
-    syncthing = {
-      enable = false;
-      tray.enable = true;
-      #guiAddress = "home.syncthing";
-    };
+    #syncthing = {
+    #enable = false;
+    #tray.enable = true;
+    #guiAddress = "home.syncthing";
+    #};
 
   };
 
