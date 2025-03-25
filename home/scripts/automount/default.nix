@@ -17,7 +17,7 @@
       "Disks" = {
         source = ./Disks;
         target = "${disksPath}";
-        recursive = true;
+        recursive = false;
       };
 
       ## (current) Flake path
