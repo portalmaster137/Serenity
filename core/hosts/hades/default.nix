@@ -25,24 +25,26 @@
 
   boot = {
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages =
+      pkgs.linuxPackages_latest; # use the latest compatible linux kernel
+    supportedFilesystems =
+      [ "vfat" "ext4" ]; # adds fat32 and ext3 filesystems to defaults
 
-    supportedFilesystems = [ "vfat" "ext4" ];
-
+    ## Specifies where GRUB is installed
     loader = {
       grub = {
         enable = true;
         device = "/dev/nvme0n1";
-        enableCryptodisk = true;
+        enableCryptodisk = true; # allows decrypting luks drive
       };
     };
-
-    initrd.luks.devices = {
+    initrd.luks.devices = { # luks options
       root = { # Use https://nixos.wiki/wiki/Full_Disk_Encryption
         device = "/dev/disk/by-uuid/5526aab7-b779-4fc8-95bd-9452bc3a9232";
         preLVM = true;
       };
 
+      ## Uhhhhhhh
       #Asphodel = { # secondary partition on Tartarus drive
       #device = "/dev/disk/by-uuid/45f5f6ad-a676-4bc1-ad4b-e3e26b5697f4";
       #preLVM =false;
@@ -56,7 +58,7 @@
   hardware = {
 
     ## Bluetooth settings for Hades
-    ## Also see line 94 for blueman service,
+    ## Also see line 103 for blueman service,
     ## and home/desktop/waybar.nix for tray applet.
     ## To do: Move bluetooth options to own module
     bluetooth = {
@@ -69,8 +71,10 @@
         ## Uses more power, but hades is a desktop
         FastConnectable = true;
       };
+
       ## To fix bluetooth keyboard input
       #input.General = { UserspaceHID = true; };
+
     };
 
     ## GPU and graphics
@@ -78,6 +82,7 @@
       enable = true;
       enable32Bit = true;
       ## Packages for the iGPU inside Hades
+      ## - disabled for now:tm:
       extraPackages = with pkgs;
         [
           #intel-compute-runtime
@@ -95,10 +100,8 @@
   };
 
   services = {
-    ## Enables bluetooth service
-    blueman.enable = true;
-    ## Sets X to use amdgpu drivers
-    xserver.videoDrivers = [ "amdgpu" ];
+    blueman.enable = true; # enables bluetooth service
+    xserver.videoDrivers = [ "amdgpu" ]; # sets X to use amdgpu drivers
   };
 
   programs = {
