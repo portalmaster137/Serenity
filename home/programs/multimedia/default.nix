@@ -2,6 +2,8 @@
 
 {
 
+  imports = [ ./homestuck.nix ./lookingGlass.nix ];
+
   home = {
     packages = with pkgs; [
 

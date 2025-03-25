@@ -8,9 +8,6 @@
     ../resources/themes
     ../resources/themes/SerenityOS.nix
 
-    ## VM GPU stuff ?
-    ./lookingGlass
-
     ## Import shared program configs
     ./web
     ./git
@@ -27,8 +24,6 @@
     ./multimedia
     ./music/production.nix
 
-    ## Temporary
-    ./homestuck.nix
   ];
 
   home = {
