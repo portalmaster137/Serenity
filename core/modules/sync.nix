@@ -89,7 +89,8 @@
           { # all syncthing devices listed - 'boilerplate' for other hosts
 
             #"Orcus".id = "REALLY-LONG-ORCUS-SYNCTHING-KEY-HERE"; # disabled for testing
-            #"Hades".id = "REALLY-LONG-HADES-SYNCTHING-KEY-HERE"; # disabled for testing
+            "Hades".id =
+              "L2XWTY6-ATLIQM4-WVRA5JO-Y7RREI5-FBYSOQM-XB3WA4I-F2VHDKG-B2YPJAY";
             "Hecate".id =
               "36WUSM4-HFYOGWP-33JHBPI-WR2TXXE-ZX3PFMB-QH6BMXM-DQ523ZF-FD7M3AI";
             #"Persephone".id = "REALLY-LONG-PERSEPHONE-SYNCTHING-KEY-HERE"; # disabled for testing
