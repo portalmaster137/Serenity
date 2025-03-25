@@ -19,13 +19,13 @@
     ## List of secrets retrieved from secrets.yaml by sops-nix
     secrets = {
 
-      rootLuksPassword = { };
+      "rootLuksPassword" = { };
 
-      loginPassword = { };
+      "loginPassword" = { };
 
-      asphodelLuksPassword = { };
+      "asphodelLuksPassword" = { };
 
-      privateKey = { };
+      "privateKey" = { };
 
     };
   };
