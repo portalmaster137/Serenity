@@ -41,6 +41,7 @@
         "${homeDir}/.config/syncthing"; # defaults to primaryUser's homedir
       user = "${primaryUser}"; # uses primaryUser to run the service
       group = "users"; # runs in the users group
+      ## For some reason is using `localhost:8384`
       #guiAddress = "home.syncthing:8384"; # default web address for the GUI
       settings = {
         ## WebApp GUI 
@@ -48,7 +49,7 @@
         #password = "password";
 
         ## Syncthing Folders
-        #overrideFolders = true; # force these folder on activation
+        overrideFolders = true; # force these folder on activation
         folders = {
 
           "Keyring" = { # folder for password/secrets vault
