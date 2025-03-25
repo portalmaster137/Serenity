@@ -99,11 +99,11 @@
     };
   };
 
-  systemd.services = {
-    syncthing = {
-      environment.STNODEFAULTFOLDER =
-        "true"; # prevents the `Sync` folder from being created on activation
-    };
-  };
+  #systemd.services = {
+  #syncthing = {
+  #environment.STNODEFAULTFOLDER =
+  #"true"; # prevents the `Sync` folder from being created on activation
+  #};
+  #};
 
 }
