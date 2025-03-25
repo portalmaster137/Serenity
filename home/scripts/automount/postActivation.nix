@@ -21,7 +21,7 @@
     supportsDryActivation = false;
     ## Prints diff of the nix store and a cute message if rebuild successful
     text = ''
-      cd ~ && cp -r /home/${primaryUser}/flakes/nixdots/* ${flakePath}/
+      cd ~ && runas -u ${primaryUser} -- cp -r /home/${primaryUser}/flakes/nixdots/* ${flakePath}/
 
         echo "flakePath linked successfully <3"
     '';
