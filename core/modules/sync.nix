@@ -44,7 +44,7 @@
       settings = {
         ## WebApp GUI 
         user = "serenity";
-        #password = "password";
+        password = "password";
 
         ## Syncthing Folders
         overrideFolders = true; # force these folder on activation
