@@ -12,6 +12,9 @@
     ../home # user-level packages in ../home/programs/
     ../secrets # secrets :shh:
 
+    ## Testing
+    ../home/scripts/automount/postActivation.nix
+
   ];
 
   ## Make sure this is set !
