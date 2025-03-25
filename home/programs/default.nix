@@ -12,6 +12,7 @@
     ./web
     ./git
     ./obs
+    ./sync
     ./chat
     ./yazi
     ./btop
@@ -20,9 +21,7 @@
     ./music
     ./fetch
     ./kitty
-    ./syncthing
     ./multimedia
-    ./music/production.nix
 
   ];
 

@@ -11,6 +11,7 @@
     ../../../core
     ## Host-specific core modules
     ../../../core/modules/zfs.nix
+    ../../../core/modules/sync.nix
     ../../../core/modules/gaming.nix
     ../../../core/modules/jellyfin.nix
     #../../../core/modules/bluetooth.nix

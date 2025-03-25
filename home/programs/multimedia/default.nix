@@ -2,7 +2,10 @@
 
 {
 
-  imports = [ ./homestuck.nix ./lookingGlass.nix ];
+  imports = [
+    ./lookingGlass.nix # for GPU passthrough on virtual machines
+    ./homestuck.nix # a small module to add a .desktop entry for The unofficial Homestuck Collection
+  ];
 
   home = {
     packages = with pkgs; [

@@ -2,50 +2,41 @@
 
 {
 
-  imports = [
-    # ./file.nix
-  ];
-
   networking = {
     wireless.enable = false;
     nameservers = [ "127.0.0.1" "::1" ];
     networkmanager = {
       enable = true;
-      dns = "none";
+      dns = "none"; # handled by dnscrypt
     };
-
-    #nameservers = [ 
-    #"1.1.1.1" 
-    #];
-
-    #proxy = {
-    #default = "https://user:password@proxy:port/";
-    #noProxy = "127.0.0.1, localhost, internal.domain";
-    #};
-
   };
 
-  ## i knooooowwwwwww i need a proper firewall config but im laaaazzyyyyyyyyyy
+  ## Rudimentary firewall config
   networking.firewall = {
     enable = true;
-    #checkReversePath = "loose";
-    #allowedTCPPortRanges = [ { from = 1720; to = 1770; } ];
-    #allowedUDPPortRanges = allowedTCPPortRanges;
-    #interfaces."DEVICENAME".allowedTCPPorts = [
-    #22999
-    #]
+
+    ## Specific TCP ports to be opened
     allowedTCPPorts = [
       2234 # soulseek/nicotine-plus
       8384 # syncthing
-      #21027
-      #25565
     ];
+
+    ## Specific UDP ports to be opened
     allowedUDPPorts = [
-      #22000
-      #21027
-      #41641
-      #51820
+      2234 # soulseek/nicotine-plus
+      8834 # syncthing
     ];
+
+    ## Ranges for TCP and UDP ports to be opened
+    ## - disabled for now as network infrastructure is minimal
+    #allowedTCPPortRanges = [ { from = 1720; to = 1770; } ];
+    #allowedUDPPortRanges = allowedTCPPortRanges;
+
+  };
+
+  ## Systemd service for the dnscrypt config declared below
+  systemd.services.dnscrypt-proxy2.serviceConfig = {
+    StateDirectory = "dnscrypt-proxy";
   };
 
   services.dnscrypt-proxy2 = {
@@ -55,16 +46,19 @@
       require_dnssec = true;
 
       sources.public-resolvers = {
+        ## Where to get list of server addresses
         urls = [
           "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md"
           "https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md"
         ];
-        cache_file = "/var/lib/dnscrypt-proxy2/public-resolvers.md";
+        ## key and cachefile to verify servers and authenticity
         minisign_key =
           "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
+        cache_file = "/var/lib/dnscrypt-proxy2/public-resolvers.md";
       };
 
-      # You can choose a specific set of servers from https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
+      ## Select a specific server, or a set of servers from the link below
+      ## - https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
       server_names = [
         "mullvad-doh"
         "mullvad-adblock-doh"
@@ -76,10 +70,6 @@
         "userspace-australia-ipv6"
       ];
     };
-  };
-
-  systemd.services.dnscrypt-proxy2.serviceConfig = {
-    StateDirectory = "dnscrypt-proxy";
   };
 
 }
