@@ -37,11 +37,15 @@
     };
 
     initrd.luks.devices = {
-      root = {
-        # Use https://nixos.wiki/wiki/Full_Disk_Encryption
+      root = { # Use https://nixos.wiki/wiki/Full_Disk_Encryption
         device = "/dev/disk/by-uuid/5526aab7-b779-4fc8-95bd-9452bc3a9232";
         preLVM = true;
       };
+
+      #Asphodel = { # secondary partition on Tartarus drive
+      #device = "/dev/disk/by-uuid/45f5f6ad-a676-4bc1-ad4b-e3e26b5697f4";
+      #preLVM =false;
+      #};
     };
 
   };
