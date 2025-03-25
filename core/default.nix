@@ -19,10 +19,8 @@
 
   ];
 
-  ## Make sure this is set !
-  system = { stateVersion = "24.11"; };
-
   ## Crikey !
+  ## Don't forget to set your& locale settings !
   time.timeZone = "Australia/Brisbane";
   i18n = {
     defaultLocale = "en_AU.UTF-8";
@@ -38,76 +36,83 @@
     };
   };
 
+  ## Core security options
   security = {
-
-    ## Sets sudo auth to @wheel only
-    sudo.execWheelOnly = true;
-
-    ## Enables soteria polkit
-    ## disabled forNow:tm: - https://github.com/NixOS/nixpkgs/issues/379104
-    #soteria.enable = true;
-
-    polkit = {
+    sudo.execWheelOnly = true; # sets sudo auth to @wheel only
+    #soteria.enable = true; # enables soteria polkit
+    # - disabled forNow:tm: - https://github.com/NixOS/nixpkgs/issues/379104
+    polkit = { # enables system polkit ???
       enable = true;
       #extraConfig = '' '';
     };
-
   };
 
+  ## Settings for the nix package manager and daemon
   nix = {
     settings = {
-      cores = 0;
-      max-jobs = "auto";
-      allow-dirty = false;
-      auto-optimise-store = true;
-      download-buffer-size = [ "268435456" ];
-      allowed-users = [ "@wheel" ];
-      trusted-users = [ "root" "@wheel" "${primaryUser}" ];
-      ## Enable flakes uwu,,, and some other junk idek
-      experimental-features =
-        [ "pipe-operators" "recursive-nix" "nix-command" "flakes" ];
+      cores = 0; # sets nix to use all available cores during rebuild
+      max-jobs = "auto"; # automatically determines max job count
+      allow-dirty = false; # refuses to allow rebuilds when git tree is dirty
+      auto-optimise-store = true; # automatically optimised nix store on rebuild
+      download-buffer-size = [
+        "268435456"
+      ]; # increased download buffer as it caused issues previously
+      allowed-users = [ "@wheel" ]; # restricts `nix` command to @wheel
+      trusted-users = [
+        "root"
+        "@wheel"
+        "${primaryUser}"
+      ]; # adds root, @wheel, and ${primaryUser} to trusted users
+      experimental-features = [ # Enable flakes uwu,,, and some other junk idek
+        "pipe-operators" # who tf knows
+        "recursive-nix" # honestly I cannot rember
+        "nix-command" # useful nya
+        "flakes" # flakes are vv important nya
+      ];
     };
 
+    ## Nix garbage collection
     gc = {
-      ## Automatically run 'nix-collect-garbage'
-      automatic = true;
-      ## Ever day.
-      dates = "daily";
-      ## and clear junk older than x days
-      options = "--delete-older-than 7d";
-      ## https://mynixos.com/nixpkgs/option/nix.gc.persistent
-      #persistent = true;
+      automatic = true; # do garbage collection automagically
+      dates = "daily"; # every day
+      options = "--delete-older-than 7d"; # and clear junk older than x days
+      #persistent = true; # https://mynixos.com/nixpkgs/option/nix.gc.persistent
     };
-
   };
 
+  ## Hardware settings
   hardware = {
-    ## Enable all firmware modules
-    enableAllFirmware = true;
-    sensor.hddtemp = {
+    enableAllFirmware = true; # enables all firmware modules
+    sensor.hddtemp = { # enables temperature readings for mechanical drives
       enable = true;
-      drives = [ "/dev/disk/by-uuid/*" ];
+      drives =
+        [ "/dev/disk/by-uuid/*" ]; # tries to find drives with sensors by uuid
     };
-    usbStorage.manageShutdown = true;
-
+    usbStorage.manageShutdown = true; # shrugge
   };
 
-  environment.systemPackages = with pkgs; [ man-pages ];
-
+  ## Manual pages and caching
+  environment.systemPackages = with pkgs;
+    [ man-pages ]; # adds manual pages to system packages for ease of access
   documentation = {
-    dev.enable = true;
-    man.generateCaches = true;
+    dev.enable = true; # enables development documentation
+    man.generateCaches =
+      true; # generates caches for manuals to save rebuild time
     #nixos.includeAllModules = true;
   };
 
-  ## Apparently prevents getting stuck at shutdown
-  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
-
-  ## Disable these cuz they cause problems (thx sasha)
-  ## see: https://github.com/NixOS/nixpkgs/issues/180175
-  systemd.services = {
-    networkManager-wait-online.enable = lib.mkForce false;
-    systemd-networkd-wait-online.enable = lib.mkForce false;
+  ## SystemD tweaks
+  systemd = {
+    extraConfig =
+      "DefaultTimeoutStopSec=10s"; # apparently prevents getting stuck at shutdown
+    services = { # Disable these cuz they cause problems (thx sasha)
+      # see: https://github.com/NixOS/nixpkgs/issues/180175
+      networkManager-wait-online.enable = lib.mkForce false;
+      systemd-networkd-wait-online.enable = lib.mkForce false;
+    };
   };
+
+  ## Make sure this is set !
+  system = { stateVersion = "24.11"; };
 
 }
