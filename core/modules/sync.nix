@@ -41,11 +41,11 @@
         "${homeDir}/.config/syncthing"; # defaults to primaryUser's homedir
       user = "${primaryUser}"; # uses primaryUser to run the service
       group = "users"; # runs in the users group
-      #guiAddress = "0.0.0.0:8384"; # default web address for the GUI
+      guiAddress = "0.0.0.0:8384"; # default web address for the GUI
       settings = {
         ## WebApp GUI 
         user = "serenity";
-        #password = "password";
+        password = "password";
 
         ## Syncthing Folders
         overrideFolders = true; # force these folder on activation
@@ -61,8 +61,8 @@
             ];
             #versioning = { # versioning, for added redundancy
             # disabled for now as we have versioning through git
-              #type = "simple"; # nothing fancy, keeps x number of copies
-              #params = { keep = "3"; }; # number of copies to keep
+            #type = "simple"; # nothing fancy, keeps x number of copies
+            #params = { keep = "3"; }; # number of copies to keep
             #};
           };
 
@@ -76,8 +76,8 @@
             ];
             #versioning = { # versioning, for added redundancy
             # disabled for now as we have versioning through git
-              #type = "simple"; # nothing fancy, keeps x number of copies
-              #params = { keep = "3"; }; # number of copies to keep
+            #type = "simple"; # nothing fancy, keeps x number of copies
+            #params = { keep = "3"; }; # number of copies to keep
             #};
           };
 
@@ -90,7 +90,8 @@
 
             #"Orcus".id = "REALLY-LONG-ORCUS-SYNCTHING-KEY-HERE"; # disabled for testing
             #"Hades".id = "REALLY-LONG-HADES-SYNCTHING-KEY-HERE"; # disabled for testing
-            "Hecate".id = "36WUSM4-HFYOGWP-33JHBPI-WR2TXXE-ZX3PFMB-QH6BMXM-DQ523ZF-FD7M3AI";
+            "Hecate".id =
+              "36WUSM4-HFYOGWP-33JHBPI-WR2TXXE-ZX3PFMB-QH6BMXM-DQ523ZF-FD7M3AI";
             #"Persephone".id = "REALLY-LONG-PERSEPHONE-SYNCTHING-KEY-HERE"; # disabled for testing
 
           };
