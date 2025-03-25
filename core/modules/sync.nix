@@ -44,8 +44,8 @@
       #guiAddress = "home.syncthing:8384"; # default web address for the GUI
       settings = {
         ## WebApp GUI 
-        user = "serenity";
-        password = "password";
+        #user = "serenity";
+        #password = "password";
 
         ## Syncthing Folders
         #overrideFolders = true; # force these folder on activation
