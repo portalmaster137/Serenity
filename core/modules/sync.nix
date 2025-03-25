@@ -37,7 +37,8 @@
       enable = true; # easy toggle
       dataDir = "${homeDir}"; # defaults to primaryUser's homedir
       openDefaultPorts = true; # opens the default firewall ports
-      #configDir = "${homeDir}/.config/syncthing"; # defaults to primaryUser's homedir
+      configDir =
+        "${homeDir}/.config/syncthing"; # defaults to primaryUser's homedir
       user = "${primaryUser}"; # uses primaryUser to run the service
       group = "users"; # runs in the users group
       #guiAddress = "0.0.0.0:8384"; # default web address for the GUI
@@ -98,11 +99,9 @@
     };
   };
 
-  #systemd.services = {
-  #syncthing = {
-  #environment.STNODEFAULTFOLDER =
-  #"true"; # prevents the `Sync` folder from being created on activation
-  #};
-  #};
+  systemd.services.syncthing = {
+    environment.STNODEFAULTFOLDER = "true";
+    # - prevents the `Sync` folder from being created
+  };
 
 }
