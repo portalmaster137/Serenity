@@ -132,8 +132,8 @@
       userDesc = "Serenity Amalgam";
       homeDir = "/home/${primaryUser}"; # for easy configuration
       disksPath = "${homeDir}/"; # for easy disk navigation
-      flakePath = "${homeDir}/flakes/nixdots/"; # current path to flake - unused
-      #flakePath = "${homeDir}/SerenityOS/"; # for v1.0.0 release
+      #flakePath = "${homeDir}/flakes/nixdots/"; # current path to flake - unused
+      flakePath = "${homeDir}/SerenityOS/"; # for v1.0.0 release
       wallpapersPath = "${homeDir}/Pictures/Wallpapers";
       wallpaper = "${wallpapersPath}/almondBlossoms-VanGogh.jpg";
 
