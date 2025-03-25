@@ -8,7 +8,7 @@
     systemPackages = with pkgs; [
       gitwatch # automatic git versioning
       syncthing # standard syncthing package
-      syncthing-tray # tray applet for syncthing
+      #syncthing-tray # tray applet for syncthing
     ];
   };
 
