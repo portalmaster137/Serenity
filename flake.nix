@@ -127,7 +127,7 @@
 
       ## Universal variable declarations
       label = "SerenityOS";
-      version = "SerenityOS_0.8.9"; # proper versioning system before v1.0.0?
+      version = "SerenityOS_0.9.0"; # proper versioning system before v1.0.0?
       primaryUser = "serenity"; # used for admin purposes
       userDesc = "Serenity Amalgam";
       homeDir = "/home/${primaryUser}"; # for easy configuration
