@@ -43,9 +43,9 @@
 
     ## Syncthing program service
     syncthing = {
-      enable = false;
+      enable = true;
       tray.enable = true;
-      #guiAddress = "home.syncthing";
+      guiAddress = "home.syncthing:8384";
     };
 
   };
