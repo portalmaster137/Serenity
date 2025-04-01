@@ -112,6 +112,11 @@
 
     ## Nice-to-haves for gaming - https://github.com/fufexan/nix-gaming
     nix-gaming = { url = "github:fufexan/nix-gaming"; };
+
+    ## Niri window manager - 
+    ## https://github.com/YaLTeR/niri
+    ## https://github.com/sodiboo/niri-flake/
+    niri = { url = "github:githib/sodiboo/niri-flake"; };
   };
 
   outputs = { self, nixpkgs, disko, sops-nix, musnix, nixos-generators,
