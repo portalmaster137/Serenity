@@ -1,4 +1,4 @@
-{ pkgs, flakePath, ... }:
+{ niri, pkgs, flakePath, ... }:
 
 {
 
@@ -27,6 +27,7 @@
     };
     ## Overlays - BROKEN FOR NOW 
     overlays = [
+      niri.overlays.niri
       ## to use overlays exported from other flakes:
       #neovim-nightly-overlay.overlays.default
       ## or define it inline, for example:
