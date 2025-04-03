@@ -34,7 +34,7 @@
 
     ## Syncthing
     syncthing = {
-      enable = true; # easy toggle
+      enable = false; # easy toggle
       dataDir = "${homeDir}"; # defaults to primaryUser's homedir
       openDefaultPorts = true; # opens the default firewall ports
       #configDir = "${homeDir}/.config/syncthing"; # defaults to primaryUser's homedir
@@ -56,7 +56,7 @@
             id = "k158k-hvzk3";
             path = "${homeDir}/Keyring"; # defaults to primaryUser's homedir
             devices = [
-              "Hecate"
+              #"Hecate"
               #"Persephone"
             ];
             #versioning = { # versioning, for added redundancy
@@ -71,7 +71,7 @@
             id = "h0ay3-l8snk";
             path = "${homeDir}/Notes"; # defaults to primaryUser's homedir
             devices = [
-              "Hecate"
+              #"Hecate"
               #"Persephone"
             ];
             #versioning = { # versioning, for added redundancy
@@ -85,17 +85,14 @@
 
         ## Syncthing Devices
         #overrideDevices = true; # force these devices on activation
-        devices =
-          { # all syncthing devices listed - 'boilerplate' for other hosts
-
-            #"Orcus".id = "REALLY-LONG-ORCUS-SYNCTHING-KEY-HERE"; # disabled for testing
-            "Hades".id =
-              "L2XWTY6-ATLIQM4-WVRA5JO-Y7RREI5-FBYSOQM-XB3WA4I-F2VHDKG-B2YPJAY";
-            "Hecate".id =
-              "36WUSM4-HFYOGWP-33JHBPI-WR2TXXE-ZX3PFMB-QH6BMXM-DQ523ZF-FD7M3AI";
-            #"Persephone".id = "REALLY-LONG-PERSEPHONE-SYNCTHING-KEY-HERE"; # disabled for testing
-
-          };
+        #devices = #{ # all syncthing devices listed - 'boilerplate' for other hosts
+        #"Orcus".id = "REALLY-LONG-ORCUS-SYNCTHING-KEY-HERE"; # disabled for testing
+        #"Hades".id =
+        #"L2XWTY6-ATLIQM4-WVRA5JO-Y7RREI5-FBYSOQM-XB3WA4I-F2VHDKG-B2YPJAY";
+        #"Hecate".id =
+        #"36WUSM4-HFYOGWP-33JHBPI-WR2TXXE-ZX3PFMB-QH6BMXM-DQ523ZF-FD7M3AI";
+        #"Persephone".id = "REALLY-LONG-PERSEPHONE-SYNCTHING-KEY-HERE"; # disabled for testing
+        #};
       };
     };
   };

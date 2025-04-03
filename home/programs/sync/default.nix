@@ -21,16 +21,16 @@
   #fileSystems."/run/media/${primaryUser}/Asphodel".device =
   #"/dev/mapper/Asphodel";
 
-  home.file = { # Files and directories to copy to ${homeDir}
+  #home.file = { # Files and directories to copy to ${homeDir}
 
-    ## Example format for home.file
-    #"Foo" = { # Name for the copied file
-    #source = ./Foo; # Source is relative to this file
-    #target = "Desired/Path/To/Foo"; # Target path for Foo within ${homeDir}
-    #recursive = true; # Unsure if necessary for most things
-    #};
+  ## Example format for home.file
+  #"Foo" = { # Name for the copied file
+  #source = ./Foo; # Source is relative to this file
+  #target = "Desired/Path/To/Foo"; # Target path for Foo within ${homeDir}
+  #recursive = true; # Unsure if necessary for most things
+  #};
 
-  };
+  #};
 
   ## Related services
   services = {
@@ -46,11 +46,11 @@
     };
 
     ## Syncthing program service
-    syncthing = {
-      enable = false;
-      #tray.enable = true;
-      #guiAddress = "home.syncthing:8384";
-    };
+    #syncthing = {
+    #enable = false;
+    #tray.enable = true;
+    #guiAddress = "home.syncthing:8384";
+    #};
 
   };
 
