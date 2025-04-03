@@ -19,23 +19,6 @@
 
   ];
 
-  ## Crikey !
-  ## Don't forget to set your& locale settings !
-  time.timeZone = "Australia/Brisbane";
-  i18n = {
-    defaultLocale = "en_AU.UTF-8";
-    extraLocaleSettings = {
-      LC_NAME = "en_AU.UTF-8";
-      LC_TIME = "en_AU.UTF-8";
-      LC_PAPER = "en_AU.UTF-8";
-      LC_ADDRESS = "en_AU.UTF-8";
-      LC_MONETARY = "en_AU.UTF-8";
-      LC_TELEPHONE = "en_AU.UTF-8";
-      LC_MEASUREMENT = "en_AU.UTF-8";
-      LC_IDENTIFICATION = "en_AU.UTF-8";
-    };
-  };
-
   ## Core security options
   security = {
     sudo.execWheelOnly = true; # sets sudo auth to @wheel only
@@ -69,6 +52,10 @@
         "nix-command" # useful nya
         "flakes" # flakes are vv important nya
       ];
+
+      ## Substiters for packages either not in or out of date in nixpkgs
+      substituters = [ ];
+      trusted-public-keys = [ ];
     };
 
     ## Nix garbage collection
@@ -109,6 +96,23 @@
       # see: https://github.com/NixOS/nixpkgs/issues/180175
       networkManager-wait-online.enable = lib.mkForce false;
       systemd-networkd-wait-online.enable = lib.mkForce false;
+    };
+  };
+
+  ## Crikey !
+  ## Don't forget to set your& locale settings !
+  time.timeZone = "Australia/Brisbane";
+  i18n = {
+    defaultLocale = "en_AU.UTF-8";
+    extraLocaleSettings = {
+      LC_NAME = "en_AU.UTF-8";
+      LC_TIME = "en_AU.UTF-8";
+      LC_PAPER = "en_AU.UTF-8";
+      LC_ADDRESS = "en_AU.UTF-8";
+      LC_MONETARY = "en_AU.UTF-8";
+      LC_TELEPHONE = "en_AU.UTF-8";
+      LC_MEASUREMENT = "en_AU.UTF-8";
+      LC_IDENTIFICATION = "en_AU.UTF-8";
     };
   };
 

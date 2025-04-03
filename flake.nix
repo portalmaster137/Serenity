@@ -116,7 +116,10 @@
     ## Niri window manager - 
     ## https://github.com/YaLTeR/niri
     ## https://github.com/sodiboo/niri-flake/
-    niri = { url = "github:githib/sodiboo/niri-flake"; };
+    niri = {
+      url = "github:github/sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, disko, sops-nix, musnix, nixos-generators,
