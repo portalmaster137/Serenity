@@ -39,7 +39,7 @@ in {
       description = "${userDesc}";
       isNormalUser = true;
       extraGroups = [ "wheel" "networkmanager" "gamemode" "audio" ];
-      hashedPasswordFile = config.sops.secrets.loginPassword.path;
+      #hashedPasswordFile = config.sops.secrets.loginPassword.path;
       ## A catgirl's favourite shell
       shell = pkgs.fish;
     };
