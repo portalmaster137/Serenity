@@ -43,7 +43,7 @@ in {
       output = {
         eDP-1 = {
           ## Set HIDP scale (pixel integer scaling)
-          scale = "1";
+          scale = "2";
         };
       };
 
