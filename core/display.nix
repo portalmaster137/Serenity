@@ -14,22 +14,24 @@
     bootspec.enable = true;
     consoleLogLevel = 0;
     initrd.verbose = false;
-    kernelParams = [ # grub kernel parameters, set to prevent excessive output on boot
-      "quiet" # quiet log level
-      "splash" # uhhh
-      "vga=current" # use current video adapater
-      "loglevel=3" # minimal output on boot
-      "rd.systemd.show_status=false" # uhh
-      "rd.udev.log_level=0" # more minimising of output on boot
-      "udev.log_priority=3" # more minimising of output on boot
-      "boot.shell_on_fail" # reboots to basic uefi shell on boot failure
-      #"i915.fastboot=1"
-      "plymouth.use-simpledrm" # tweak to allow plymouth animations to run smoother
-    ];
+    kernelParams =
+      [ # grub kernel parameters, set to prevent excessive output on boot
+        "quiet" # quiet log level
+        "splash" # uhhh
+        "vga=current" # use current video adapater
+        "loglevel=3" # minimal output on boot
+        "rd.systemd.show_status=false" # uhh
+        "rd.udev.log_level=0" # more minimising of output on boot
+        "udev.log_priority=3" # more minimising of output on boot
+        "boot.shell_on_fail" # reboots to basic uefi shell on boot failure
+        #"i915.fastboot=1"
+        "plymouth.use-simpledrm" # tweak to allow plymouth animations to run smoother
+      ];
     loader = {
       timeout = 5; # 5 second timeout to default selection
       grub = {
-        configurationName = "${version}"; # prints SerenitOS version instead of NixOS version
+        configurationName =
+          "${version}"; # prints SerenitOS version instead of NixOS version
         splashImage = null; # hides splashimage
         timeoutStyle = "hidden"; # hides timeout
       };
@@ -47,7 +49,8 @@
   };
 
   ## Display related options
-  xdg.mime.enable = true; # may be unneeded here as already declared in `home/desktop/xdg-mime.nix`
+  xdg.mime.enable =
+    true; # may be unneeded here as already declared in `home/desktop/xdg-mime.nix`
   services.xserver.enable = true; # xserver still needed for xwayland stuff
   systemd.user.targets.sway = { # To start sway related services
     description = "to start sway related services";
@@ -117,8 +120,14 @@
 
   ## Dunno if i did this right, but possible needed for keyring/polkit stuff ? 
   security.pam.services.serenity.enableGnomeKeyring = true;
-  
+
   programs = {
+
+    niri = {
+      enable = true;
+      package = with pkgs; niri-unstable;
+    };
+
     gnome-disks.enable = true; # For when bimbo needs to manage disks
     seahorse.enable = true; # GTK secrets management
     droidcam.enable = true; # Use android device as a webcam
