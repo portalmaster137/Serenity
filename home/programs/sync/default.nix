@@ -6,7 +6,8 @@
 
 {
 
-  imports = [ inputs.sops-nix.nixosModules.sops ];
+  imports = [ # inputs.sops-nix.nixosModules.sops
+  ];
 
   # need option for `zfs set mountpoint=/myspecialfolder mypool`
   # need to set up auto luks unlock with sops-nix
