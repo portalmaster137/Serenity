@@ -30,8 +30,8 @@ in {
   ## `${primaryUser}` with the new username.
 
   ## Needed for sops-nix to handle loginPassword
-  sops.secrets.loginPassword.neededForUsers = true;
-  users.mutableUsers = false;
+  #sops.secrets.loginPassword.neededForUsers = true;
+  #users.mutableUsers = false;
 
   ## System-level user declarations
   users.users = {
