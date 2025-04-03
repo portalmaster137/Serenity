@@ -9,7 +9,7 @@ in {
 
     ## Modules
     inputs.home-manager.nixosModules.default # home-manager module
-    inputs.sops-nix.nixosModules.sops # sops-nix module
+    #inputs.sops-nix.nixosModules.sops # sops-nix module
 
     ## User themes - 
     ## to set a different theme for a user,
