@@ -1,4 +1,4 @@
-{ pkgs, label, version, ... }:
+{ pkgs, label, version, niri, ... }:
 
 {
 
