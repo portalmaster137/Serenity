@@ -117,7 +117,7 @@
     ## https://github.com/YaLTeR/niri
     ## https://github.com/sodiboo/niri-flake/
     niri = {
-      url = "github:github/sodiboo/niri-flake";
+      url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
