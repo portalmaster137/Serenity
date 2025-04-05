@@ -10,13 +10,15 @@
     lsp = {
       enable = true;
       servers = {
-        html.enable = true;
-        cssls.enable = true;
-        marksman.enable = true;
-        bashls.enable = true;
+        html.enable = true; # HTML
+        cssls.enable = true; # CSS
+        marksman.enable = true; # Markdown
+        bashls.enable = true; # Bash
+        rls.enable = true; # Rust
+        ccls.enable = true; # C/++
         nixd = {
-          enable = true;
-          extraOptions = { expr = "import <nixpkgs> {}"; };
+          enable = true; # Nix
+          extraOptions = { expr = "import <nixpkgs> {}"; }; # uhhh
         };
       };
       keymaps.lspBuf = {
