@@ -21,6 +21,8 @@
 
     extraModulePackages = [ ];
 
+    blacklistedKernelModules = [ "ntfs3" ];
+
   };
 
   fileSystems."/" = {
