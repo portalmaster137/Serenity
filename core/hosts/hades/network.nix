@@ -59,12 +59,12 @@
       ## Select a specific server, or a set of servers from the link below
       ## - https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
       server_names = [
+        "cs-sydney"
+        "cs-singapore"
         "mullvad-doh"
         "mullvad-adblock-doh"
         "adfilter-syd"
         "adfilter-syd-ipv6"
-        "cs-sydney"
-        "cs-singapore"
         "userspace-australia"
         "userspace-australia-ipv6"
       ];
