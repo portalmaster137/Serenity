@@ -82,7 +82,10 @@
 
     ## Steam itself
     steam = {
+      ## Enables steam itself
       enable = true;
+      ## Enables protontricks
+      protontricks.enable = true;
       ## This should help games run more betterer
       gamescopeSession.enable = true;
       ## No clue what this is doing
