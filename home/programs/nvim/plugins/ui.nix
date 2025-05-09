@@ -13,6 +13,11 @@ in {
   programs = {
     nixvim = {
 
+      dependencies.ctags = {
+        enable = true;
+        package = with pkgs; [ universal-ctags ];
+      };
+
       highlight = {
         AlphaHeaderColor.fg = accent;
         AlphaTextColor.fg = foreground;
@@ -98,7 +103,7 @@ in {
         colorizer.enable = true;
         tagbar = {
           enable = true;
-          tagsPackage = pkgs.universal-ctags;
+          #tagsPackage = pkgs.universal-ctags;
         };
 
         alpha = {
