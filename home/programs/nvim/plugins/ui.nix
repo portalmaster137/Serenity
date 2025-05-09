@@ -15,7 +15,7 @@ in {
 
       dependencies.ctags = {
         enable = true;
-        package = with pkgs; [ universal-ctags ];
+        #package = with pkgs; [ universal-ctags ];
       };
 
       highlight = {
