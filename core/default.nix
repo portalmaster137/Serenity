@@ -35,36 +35,30 @@
   ## Settings for the nix package manager and daemon
   nix = {
     settings = {
-      cores = 0; # sets nix to use all available cores during rebuild
+      cores = 6; # sets nix to use all available cores during rebuild
       max-jobs = "auto"; # automatically determines max job count
       allow-dirty = false; # refuses to allow rebuilds when git tree is dirty
       auto-optimise-store = true; # automatically optimised nix store on rebuild
-      download-buffer-size = [
+      download-buffer-size = [ # increased download buffer as it caused issues previously
         "268435456"
-      ]; # increased download buffer as it caused issues previously
+      ]; 
       allowed-users = [ "@wheel" ]; # restricts `nix` command to @wheel
-      trusted-users = [
+      trusted-users = [ # adds root, @wheel, and ${primaryUser} to trusted users
         "root"
         "@wheel"
         "${primaryUser}"
-      ]; # adds root, @wheel, and ${primaryUser} to trusted users
-      experimental-features = [ # Enable flakes uwu,,, and some other junk idek
+      ]; 
+      experimental-features = [ # enable flakes uwu,,, and some other junk idek
         "pipe-operators" # who tf knows
         "recursive-nix" # honestly I cannot rember
         "nix-command" # useful nya
         "flakes" # flakes are vv important nya
       ];
-
-      ## Substiters for packages either not in or out of date in nixpkgs
-      substituters = [ ];
-      trusted-public-keys = [ ];
     };
-
-    ## Nix garbage collection
-    gc = {
+    gc = { # garbage collection
       automatic = true; # do garbage collection automagically
       dates = "daily"; # every day
-      options = "--delete-older-than 7d"; # and clear junk older than x days
+      options = "--delete-older-than 3d"; # and clear junk older than x days
       #persistent = true; # https://mynixos.com/nixpkgs/option/nix.gc.persistent
     };
   };

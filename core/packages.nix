@@ -39,6 +39,15 @@
     ];
   };
 
+  ## Nix settings for package related stuff
+  nix = {
+    settings = {
+      substituters = [ # for pkgs not in or out of date in nixpkgs
+      ];
+      trusted-public-keys = [ ];
+    };
+  };
+
   ## System-level Programs
   programs = {
     git = { enable = true; }; # Mandatory version control
