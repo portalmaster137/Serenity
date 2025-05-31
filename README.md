@@ -25,7 +25,6 @@
 <br>
   - `/core` all system-level options
     - `core/hosts` all host-specific configurations
-    - `core/modules` most shared and optional configurations
 <br>
 <br>
   - `/home` all user-level options
