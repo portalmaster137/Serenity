@@ -4,16 +4,13 @@
 
   imports = [
 
-    ## Desktop
-    ./desktop
-    ./scripts
-
-    ## Programs
-    ./programs
+    ./desktop # desktop
+    ./scripts # scripts
+    ./programs # other programs
 
   ];
 
-  programs.home-manager.enable = true;
-  systemd.user.startServices = "sd-switch";
+  programs.home-manager.enable = true; # enables HM
+  systemd.user.startServices = "sd-switch"; # cant remember
 
 }
