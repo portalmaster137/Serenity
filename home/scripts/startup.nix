@@ -17,8 +17,6 @@ let
     otd-gui
 
     easyeffects
-
-    nicotine-plus
   '';
 
 in { home.packages = [ startup startupExtra ]; }

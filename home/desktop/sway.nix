@@ -55,9 +55,9 @@ in {
       terminal = "kitty";
       ## Startup scripts and programs
       startup = [
-        #{ command = "startupExtra"; }
+        { command = "startupExtra"; }
         { command = "startup"; } # defined in `home/scripts/startup.nix`
-        { command = "kitty"; }
+        #{ command = "kitty"; }
         { command = "kitty btop"; }
       ];
       modifier = "Mod4";

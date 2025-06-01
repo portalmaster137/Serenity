@@ -36,6 +36,7 @@
         nv = "nvim";
         sc = "sudo systemctl";
         trc = "tree -C";
+        rbu = "sudo systemctl reboot --firmware-setup";
 
         ## Nix abbreviations
         nd = "cd ${flakePath}";
