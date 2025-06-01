@@ -70,13 +70,7 @@ in {
         home = {
           username = "${primaryUser}";
           homeDirectory = "${homeDir}";
-
-          ## Copies wallpapers from flake to ${homeDir}
-          file."Wallpapers" = {
-            source = ./resources/wallpapers;
-            target = "${wallpapersPath}";
-            recursive = true;
-          };
+          stateVersion = "24.11";
         };
       };
     };

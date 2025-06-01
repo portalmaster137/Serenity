@@ -25,20 +25,4 @@
 
   ];
 
-  home = {
-
-    packages = with pkgs; [
-
-      ## Misc.
-      cmatrix
-      peaclock
-
-      ## Temporary
-      themix-gui # GTK theme maker
-    ];
-
-    stateVersion = "24.11";
-
-  };
-
 }

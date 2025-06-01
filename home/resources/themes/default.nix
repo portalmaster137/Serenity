@@ -5,9 +5,18 @@ with lib;
 {
 
   imports = [
-    ./themepkgs.nix
+    ./themepkgs.nix # imports declared theme packages
   ];
 
+  home = {
+    file."Wallpapers" = { # copies wallpapers from flake to home directory
+      source = ../wallpapers;
+      target = "${wallpapersPath}";
+      recursive = true;
+    };
+  };
+
+  ## Configurable options for themes
   options.theme = {
 
     waybar-transparent = mkOption {

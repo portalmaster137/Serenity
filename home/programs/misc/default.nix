@@ -1,0 +1,16 @@
+{ pkgs, ... }:
+
+{
+
+  imports = [
+    ./homestuck.nix # small module to add a .desktop entry for The Unofficial Homestuck Collection
+  ];
+
+  home = {
+    packages = with pkgs; [
+      cmatrix # funky terminal matrix rain
+      peaclock # neat terminal clock applet
+      themix-gui # for creating themes
+    ];
+  };
+}
