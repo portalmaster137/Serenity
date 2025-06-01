@@ -70,10 +70,10 @@ in {
         home = {
           username = "${primaryUser}"; # passes username from `flake.nix`
           homeDirectory = "${homeDir}"; # passes homedir from `flake.nix`
-          file."Wallpapers" = { # copies wallpapers from flake to home directory
-            source = ../wallpapers;
-            target = "${wallpapersPath}";
-            recursive = true;
+          file."Wallpapers" = { # copies wallpapers
+            source = ./resources/wallpapers; # from flake directory
+            target = "${wallpapersPath}"; # to home directory
+            recursive = true; # think this is important, icr
           };
           stateVersion = "24.11"; # IMPORTANT
         };
