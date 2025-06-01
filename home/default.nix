@@ -68,9 +68,14 @@ in {
           ./home.nix
         ];
         home = {
-          username = "${primaryUser}";
-          homeDirectory = "${homeDir}";
-          stateVersion = "24.11";
+          username = "${primaryUser}"; # passes username from `flake.nix`
+          homeDirectory = "${homeDir}"; # passes homedir from `flake.nix`
+          file."Wallpapers" = { # copies wallpapers from flake to home directory
+            source = ../wallpapers;
+            target = "${wallpapersPath}";
+            recursive = true;
+          };
+          stateVersion = "24.11"; # IMPORTANT
         };
       };
     };
