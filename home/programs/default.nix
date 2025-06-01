@@ -18,6 +18,7 @@
     ./btop
     ./fish
     ./nvim
+    ./misc
     ./music
     ./fetch
     ./kitty
