@@ -1,4 +1,4 @@
-{ lib, config, ... }: 
+{ inputs, outputs, lib, config, flakePath, disksPath, primaryUser, homeDir, wallpapersPath, wallpaper, ... }: 
 
 with lib;
 
