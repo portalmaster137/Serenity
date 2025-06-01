@@ -8,11 +8,26 @@ with lib;
     ./themepkgs.nix # imports declared theme packages
   ];
 
-  home = {
-    file."Wallpapers" = { # copies wallpapers from flake to home directory
-      source = ../wallpapers;
-      target = "${wallpapersPath}";
-      recursive = true;
+  home-manager = {
+    extraSpecialArgs = {
+      inherit inputs outputs;
+      inherit label version;
+      inherit flakePath disksPath;
+      inherit primaryUser homeDir;
+      inherit wallpapersPath wallpaper;
+      inherit hostname;
+    };
+    users = {
+      ${primaryUser} = {
+        imports = [ ];
+        home = {
+          file."Wallpapers" = { # copies wallpapers from flake to home directory
+            source = ../wallpapers;
+            target = "${wallpapersPath}";
+            recursive = true;
+          };
+        };
+      };
     };
   };
 
