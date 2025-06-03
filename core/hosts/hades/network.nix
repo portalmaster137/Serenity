@@ -4,10 +4,10 @@
 
   networking = {
     wireless.enable = false;
-    nameservers = [ "127.0.0.1" "::1" ];
+    #nameservers = [ "127.0.0.1" "::1" ];
     networkmanager = {
       enable = true;
-      dns = "none"; # handled by dnscrypt
+      #dns = "none"; # handled by dnscrypt
     };
   };
 
@@ -35,12 +35,12 @@
   };
 
   ## Systemd service for the dnscrypt config declared below
-  systemd.services.dnscrypt-proxy2.serviceConfig = {
-    StateDirectory = "dnscrypt-proxy";
-  };
+  #systemd.services.dnscrypt-proxy2.serviceConfig = {
+    #StateDirectory = "dnscrypt-proxy";
+  #};
 
   services.dnscrypt-proxy2 = {
-    enable = true;
+    enable = false;
     settings = {
       ipv6_servers = true;
       require_dnssec = true;
