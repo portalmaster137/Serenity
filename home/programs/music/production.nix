@@ -16,7 +16,7 @@
       ## Modular and programmatic music production
       supercollider-with-plugins
       bespokesynth # Modular synth and sequencer
-      vcv-rack # Analogue modular synth emulator
+      #vcv-rack # Analogue modular synth emulator
       puredata # Programmatic synth and sequencer
 
       ## Models and synths
