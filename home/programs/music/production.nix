@@ -6,6 +6,8 @@
     packages = with pkgs; [
 
       ## Misc. Tools
+      libjack2
+      zenity
       metronome # GTK metronome
 
       ## Digital Audio Workstations
