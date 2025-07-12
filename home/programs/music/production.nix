@@ -25,8 +25,8 @@
       ## Models and synths
       neural-amp-modeler-lv2 # Guitar amp emulator
       #cardinal # vcv-rack but as an open source VST
-      vital # Synth/VST
-      helm # Synth/VST:)
+      #vital # Synth/VST
+      #helm # Synth/VST:)
 
     ];
   };
