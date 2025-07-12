@@ -3,7 +3,15 @@
 ## https://github.com/musnix/musnix
 ## https://nixos.wiki/wiki/Audio_production
 
+{ pkgs, ... }:
+
 {
+
+  ## SHOULD BE ELSEWHERE - temporary testing declarations
+  environment.systemPackages = with pkgs; [
+    helm
+    vital
+  ];
 
   boot = {
     kernelModules = [ "snd-seq" "snd-rawmidi" ];
