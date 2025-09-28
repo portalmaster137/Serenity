@@ -118,6 +118,7 @@ in {
 
       ## Desktop
       brightnessctl # Display brightness control
+      wdisplays # Display configuration
       wlr-randr # Display modesetting
       wlsunset # Bluelight filter
       hyprlock # Screen lock
