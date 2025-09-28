@@ -35,7 +35,7 @@
   ## Settings for the nix package manager and daemon
   nix = {
     settings = {
-      cores = 6; # sets nix to use all available cores during rebuild
+      cores = 6; # sets nix to use most available cores during rebuild
       max-jobs = "auto"; # automatically determines max job count
       allow-dirty = false; # refuses to allow rebuilds when git tree is dirty
       auto-optimise-store = true; # automatically optimised nix store on rebuild
@@ -86,8 +86,8 @@
 
   ## SystemD tweaks
   systemd = {
-    extraConfig =
-      "DefaultTimeoutStopSec=10s"; # apparently prevents getting stuck at shutdown
+    # extraConfig = "DefaultTimeoutStopSec=10s"; # apparently prevents getting stuck at shutdown 
+    # settings.Manager = "";
     services = { # Disable these cuz they cause problems (thx sasha)
       # see: https://github.com/NixOS/nixpkgs/issues/180175
       networkManager-wait-online.enable = lib.mkForce false;
