@@ -56,11 +56,11 @@ in {
 
   qt = {
     enable = true;
-    platformTheme.name = "Colloid-dark";
-    style = {
-      name = "Colloid-dark";
-      package = pkgs.colloid-kde;
-    };
+    #platformTheme.name = "Colloid-dark";
+    #style = {
+    #name = "Colloid-dark";
+    #package = pkgs.colloid-kde;
+    #};
   };
 
   gtk = {

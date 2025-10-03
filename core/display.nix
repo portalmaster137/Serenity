@@ -66,7 +66,7 @@
       xorg.xhost # i actually dont remember what this does
       ## Themes
       minimal-grub-theme
-      colloid-kde
+      #colloid-kde
       colloid-gtk-theme
       adapta-gtk-theme
       adapta-kde-theme
