@@ -1,7 +1,7 @@
 { fetchurl, pkgs, lib, }:
 
 pkgs.stdenv.mkDerivation {
-  name = "sygil-plymouth";
+  name = "sygil";
   version = "0.0.1";
 
   src = pkgs.fetchurl {

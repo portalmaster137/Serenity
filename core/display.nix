@@ -1,6 +1,8 @@
 { inputs, pkgs, label, version, lib, niri, ... }:
 
-{
+let sygil = import ./sygil-plymouth.nix { inherit pkgs; };
+
+in {
 
   system = {
     nixos = {
@@ -39,7 +41,7 @@
     plymouth = { # enables plymouth boot animations
       enable = true;
       theme = "sygil"; # uses a funky anim wei found
-      themePackages = [ import ./sygil-plymouth.nix ];
+      themePackages = [ sygil ];
     };
   };
 
