@@ -1,17 +1,11 @@
-{
-  stdenvNoCC,
-  fetchurl,
-  lib,
-}:
-let
-  version = "0.0.1";
-in 
-stdenvNoCC.mkDerivation {
+{ fetchurl, pkgs, lib, }:
+
+pkgs.stdenv.mkDerivation {
   name = "plymouth-sygol-sigil-theme";
-  version = "${version}";
+  version = "0.0.1";
 
   src = fetchurl {
-    url = "https://codeberg.org/serenity-F/sygil-plymouth/archive/${version}.tar.gz";
+    url = "https://codeberg.org/serenity-F/sygil-plymouth/archive/0.0.1.tar.gz";
     hash = "sha256-7eqNxqkgmp3QgNmiYVBJk9hdE3gIMY+GT6PkGlCC6M0=";
   };
 
