@@ -3,10 +3,12 @@
   fetchurl,
   lib,
 }:
-
-stdenvNoCC.mkDerivation rec {
-  name = "plymouth-sygol-sigil-theme";
+let
   version = "0.0.1";
+in 
+stdenvNoCC.mkDerivation {
+  name = "plymouth-sygol-sigil-theme";
+  version = "${version}";
 
   src = fetchurl {
     url = "https://codeberg.org/serenity-F/sygil-plymouth/archive/${version}.tar.gz";
