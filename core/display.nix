@@ -1,4 +1,4 @@
-{ inputs, pkgs, label, version, niri, ... }:
+{ inputs, pkgs, label, version, lib, niri, ... }:
 
 let
 
