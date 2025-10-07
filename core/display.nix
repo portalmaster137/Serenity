@@ -6,7 +6,7 @@ let
     owner = "serenity-F";
     repo = "sygil-plymouth";
     rev = "main";
-    sha256 = "";
+    sha256 = "sha256-oyWfILqZX9Iw5diFc5AAm8nwEZFiGf9ndyG/8CxyyLw=";
   };
 
   sygil = pkgs.callPackage sygil-src {};
