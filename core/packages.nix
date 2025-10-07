@@ -24,19 +24,25 @@
       allowUnfree = true;
       ## Place insecure packages here
       permittedInsecurePackages = [ "olm-3.2.16" ];
+      ## Overrides
+      packageOverrides = pkgs: {
+        sygil-plymouth = pkgs.callPackage /home/serenity/repos/sygil-plymouth-nixpkg/package.nix { };
+      };
     };
-    ## Overlays - BROKEN FOR NOW 
+
+    ## Overlays
     overlays = [
       niri.overlays.niri
       ## to use overlays exported from other flakes:
       #neovim-nightly-overlay.overlays.default
       ## or define it inline, for example:
       #(final: prev: {
-      #hi = final.hello.overrideAttrs (oldAttrs: {
-      #patches = [ ./change-hello-to-hi.patch ];
-      #});
+        #hi = final.hello.overrideAttrs (oldAttrs: {
+          #patches = [ ./change-hello-to-hi.patch ];
+        #});
       #})
     ];
+
   };
 
   ## Nix settings for package related stuff
