@@ -10,7 +10,7 @@ stdenvNoCC.mkDerivation rec {
 
   src = fetchurl {
     url = "https://codeberg.org/serenity-F/sygil-plymouth/archive/${version}.tar.gz";
-    hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    hash = "sha256-7eqNxqkgmp3QgNmiYVBJk9hdE3gIMY+GT6PkGlCC6M0=";
   };
 
   dontBuild = true;
@@ -33,6 +33,6 @@ stdenvNoCC.mkDerivation rec {
     homepage = "https://codeberg.org/serenity-F/sygil-plymouth";
     license = lib.licenses.gpl2Only;
     platforms = lib.platforms.linux;
-    maintainers = with lib.maintainers; [ serenity-f ];
+    maintainers = with lib.maintainers; [ serenity-F ];
   };
 }

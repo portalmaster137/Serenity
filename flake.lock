@@ -541,22 +541,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
-      "locked": {
-        "lastModified": 1759733170,
-        "narHash": "sha256-TXnlsVb5Z8HXZ6mZoeOAIwxmvGHp1g4Dw89eLvIwKVI=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "8913c168d1c56dc49a7718685968f38752171c3b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixvim": {
       "inputs": {
         "flake-parts": "flake-parts_3",
@@ -619,8 +603,7 @@
         "nixos-generators": "nixos-generators",
         "nixpkgs": "nixpkgs_3",
         "nixvim": "nixvim",
-        "sops-nix": "sops-nix",
-        "sygil-plymouth": "sygil-plymouth"
+        "sops-nix": "sops-nix"
       }
     },
     "sops-nix": {
@@ -639,24 +622,6 @@
         "owner": "Mic92",
         "repo": "sops-nix",
         "type": "github"
-      }
-    },
-    "sygil-plymouth": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_5"
-      },
-      "locked": {
-        "lastModified": 1759815882,
-        "narHash": "sha256-oK+vARGHn+LjV+xvXnW+yVskDuw/XoG2NgrY8eEACGY=",
-        "ref": "refs/heads/main",
-        "rev": "5d16c8721906dd6987c7a3990355832adaf0ebf0",
-        "revCount": 10,
-        "type": "git",
-        "url": "https://codeberg.org/serenity-F/sygil-plymouth"
-      },
-      "original": {
-        "type": "git",
-        "url": "https://codeberg.org/serenity-F/sygil-plymouth"
       }
     },
     "systems": {
