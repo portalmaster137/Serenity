@@ -12,10 +12,10 @@ let
     installPhase = ''
 
       mkdir -p $out/share/plymouth/themes/sygil
-      cp -r sygil $out/share/plymouth/themes/sygil/
+      cp -r src/sygil $out/share/plymouth/themes/sygil/
       chmod +x $out/share/plymouth/themes/sygil/sygil.plymouth
       mkdir -p $out/share/plymouth/themes/sygil
-      cp -r sygil $out/share/plymouth/themes/sygil/
+      cp -r src/sygil $out/share/plymouth/themes/sygil/
       chmod +x $out/share/plymouth/themes/sygil/sygil.plymouth
       mkdir -p $out/share/plymouth/themes/sygil
     '';
