@@ -4,11 +4,9 @@ let
   sygil-plymouth = pkgs.stdenv.mkDerivation rec {
     pname = "sygil";
     version = "0.0.1";
-    src = pkgs.fetchgit {
-      url = "https://codeberg.org/serenity-F/sygil-plymouth";
-      rev = "09317a6fb3";
-      sha256 = "sha256-rlGO64/twbu4GHm+Fbvf183t6KYE94hrO8/yEyZdpUg=";
-      fetchSubmodules = true;
+    src = pkgs.fetchurl {
+      url = "https://codeberg.org/serenity-F/sygil-plymouth/archive/main.tar.gz";
+      hash = "sha256-rlGO64/twbu4GHm+Fbvf183t6KYE94hrO8/yEyZdpUg=";
     };
     dontBuild = true;
     installPhase = ''
