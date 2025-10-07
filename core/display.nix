@@ -1,13 +1,15 @@
 { inputs, pkgs, label, version, lib, niri, ... }:
 
 let
-  
-  sygil-plymouth = pkgs.fetchurl {
-    url = "https://codeberg.org/serenity-F/sygil-plymouth/archive/main.tar.gz";
-    hash = "sha256-DIgCVNs6hRZmn2pDQcHPhLxkQjHCkznQRIA4+hUlWUQ=";
+
+  sygil-src = pkgs.fetchFromGithub {
+    owner = "serenity-F";
+    repo = "sygil-plymouth";
+    rev = "main";
+    sha256 = "";
   };
 
-  sygil = pkgs.callPackage sygil-plymouth {};
+  sygil = pkgs.callPackage sygil-src {};
 
 in
 
