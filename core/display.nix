@@ -1,15 +1,21 @@
 { inputs, pkgs, label, version, lib, niri, ... }:
 
 let
-
-  sygil-src = pkgs.fetchFromGitHub {
-    owner = "serenity-F";
-    repo = "sygil-plymouth";
-    rev = "main";
-    sha256 = "sha256-oyWfILqZX9Iw5diFc5AAm8nwEZFiGf9ndyG/8CxyyLw=";
+  sygil-plymouth = pkgs.stdenv.mkDerivation rec {
+    pname = "sygil";
+    version = "0.0.1";
+    src = pkgs.fetchgit {
+      url = "https://codeberg.org/serenity-F/sygil-plymouth";
+      rev = "main";
+      sha256 = "";
+      fetchSubmodules = true;
+    };
+    dontBuild = true;
+    installPhase = ''
+      mkdir -p $out/share/plymouth/themes/sygil
+      cp -r * $out/share/plymouth/themes/sygil/
+    '';
   };
-
-  sygil = pkgs.callPackage sygil-src {};
 
 in
 
@@ -30,15 +36,16 @@ in
     kernelParams =
       [ # grub kernel parameters, set to prevent excessive output on boot
         "quiet" # quiet log level
-        "splash" # uhhh
+        "splash" # unsure ?
         "vga=current" # use current video adapater
         "loglevel=3" # minimal output on boot
-        "rd.systemd.show_status=false" # uhh
+        "rd.systemd.show_status=false" # unsure ?
         "rd.udev.log_level=0" # more minimising of output on boot
         "udev.log_priority=3" # more minimising of output on boot
         "boot.shell_on_fail" # reboots to basic uefi shell on boot failure
-        #"i915.fastboot=1"
+        #"i915.fastboot=1" # unsure ?
         "plymouth.use-simpledrm" # tweak to allow plymouth animations to run smoother
+        "plymouth.ignore-serial-consoles" # unsure ?
       ];
     loader = {
       timeout = 5; # 5 second timeout to default selection
@@ -52,7 +59,7 @@ in
     plymouth = { # enables plymouth boot animations
       enable = true;
       theme = "sygil";
-      themePackages = [ sygil ];
+      themePackages = [ sygil-plymouth ];
     };
   };
 
