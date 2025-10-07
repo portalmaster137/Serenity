@@ -1,8 +1,17 @@
 { inputs, pkgs, label, version, lib, niri, ... }:
 
-let sygil = pkgs.callPackage ./sygil-plymouth.nix { inherit pkgs; };
+let
+  
+  sygil-plymouth = pkgs.fetchurl {
+    url = "https://codeberg.org/serenity-F/sygil-plymouth/archive/main.tar.gz";
+    hash = "sha256-DIgCVNs6hRZmn2pDQcHPhLxkQjHCkznQRIA4+hUlWUQ=";
+  };
 
-in {
+  sygil = pkgs.callPackage sygil-plymouth {};
+
+in
+
+{
 
   system = {
     nixos = {
