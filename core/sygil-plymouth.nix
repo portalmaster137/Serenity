@@ -4,7 +4,7 @@ pkgs.stdenv.mkDerivation {
   name = "plymouth-sygol-sigil-theme";
   version = "0.0.1";
 
-  src = fetchurl {
+  src = pkgs.fetchurl {
     url = "https://codeberg.org/serenity-F/sygil-plymouth/archive/0.0.1.tar.gz";
     hash = "sha256-7eqNxqkgmp3QgNmiYVBJk9hdE3gIMY+GT6PkGlCC6M0=";
   };
