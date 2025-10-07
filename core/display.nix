@@ -1,4 +1,4 @@
-{ pkgs, label, version, niri, ... }:
+{ inputs, pkgs, label, version, niri, ... }:
 
 {
 
@@ -38,13 +38,8 @@
     };
     plymouth = { # enables plymouth boot animations
       enable = true;
-      theme = "circle"; # uses a funky anim wei found
-      themePackages = with pkgs; # uhhh
-        [
-          (adi1090x-plymouth-themes.override {
-            selected_themes = [ "circle" ];
-          })
-        ];
+      theme = "sygil"; # uses a funky anim wei found
+      themePackages = [ inputs.sygil-plymouth.defaultPackage.x86_64-linux ];
     };
   };
 

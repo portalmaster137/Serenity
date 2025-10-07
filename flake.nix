@@ -120,9 +120,14 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sygil-plymouth = {
+      url = "git+https://codeberg.org/serenity-F/sygil-plymouth";
+    };
   };
 
   outputs = { self, nixpkgs, disko, sops-nix, musnix, nixos-generators, niri,
+    sygil-plymouth,
     ## Disabled outputs - part of 'flakeification': enable and use correctly.
     #lix, lix-module, flake-utils, flake-parts, 
     #nix-colors, home-manager, nixvim,
