@@ -1,5 +1,11 @@
 { inputs, pkgs, label, version, niri, ... }:
 
+let
+
+  sygil = import ../home/resources/themes/sygil-plymouth.nix { inherit pkgs; };
+
+in
+
 {
 
   system = {
@@ -39,7 +45,7 @@
     plymouth = { # enables plymouth boot animations
       enable = true;
       theme = "sygil"; # uses a funky anim wei found
-      themePackages = [ inputs.sygil-plymouth.defaultPackage.x86_64-linux ];
+      themePackages = [ sygil ];
     };
   };
 

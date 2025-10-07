@@ -9,8 +9,8 @@ stdenvNoCC.mkDerivation rec {
   version = "0.0.1";
 
   src = fetchurl {
-    url = "https://codeberg.org/serenity-F/sygil-plymouth/archive/snecodn.tar.gz";
-    sha256 = "sha256-MC88q4HvY26FMdRVKrky3WXKHlpMCfNqJwyzcU81Jk8=";
+    url = "https://codeberg.org/serenity-F/sygil-plymouth/archive/${version}.tar.gz";
+    hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
   };
 
   dontBuild = true;
