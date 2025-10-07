@@ -41,7 +41,7 @@ in {
     plymouth = { # enables plymouth boot animations
       enable = true;
       theme = "sygil"; # uses a funky anim wei found
-      themePackages = [ sygil ];
+      themePackages = [ pkgs.callPackage ./sygil-plymouth.nix ];
     };
   };
 
