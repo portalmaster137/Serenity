@@ -40,7 +40,7 @@ in {
     };
     plymouth = { # enables plymouth boot animations
       enable = true;
-      theme = "sygil"; # uses a funky anim wei found
+      theme = "sygil";
       themePackages = [ sygil ];
     };
   };
