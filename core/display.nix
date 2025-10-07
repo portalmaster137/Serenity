@@ -6,7 +6,7 @@ let
     version = "0.0.1";
     src = pkgs.fetchgit {
       url = "https://codeberg.org/serenity-F/sygil-plymouth";
-      rev = "main";
+      rev = "09317a6fb3";
       sha256 = "";
       fetchSubmodules = true;
     };
