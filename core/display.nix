@@ -6,12 +6,13 @@ let
     version = "0.0.1";
     src = pkgs.fetchurl {
       url = "https://codeberg.org/serenity-F/sygil-plymouth/archive/main.tar.gz";
-      hash = "sha256-bZU7wBGvQsAjHjEuWQfJNpguRVUh5oOl8iPhEwWfqrU=";
+      hash = "sha256-8JTf2a6T0XeHxSe+qB6TC8XUapI135F6v6euX36F9Vs=";
     };
     dontBuild = true;
     installPhase = ''
       mkdir -p $out/share/plymouth/themes/sygil
       cp -r * $out/share/plymouth/themes/sygil/
+      chmod +x $out/share/plymouth/themes/sygil/sygil.plymouth
     '';
   };
 
