@@ -2,7 +2,7 @@
 
 let
 
-  sygil-src = pkgs.fetchFromGithub {
+  sygil-src = pkgs.fetchFromGitHub {
     owner = "serenity-F";
     repo = "sygil-plymouth";
     rev = "main";
