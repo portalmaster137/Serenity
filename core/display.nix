@@ -2,7 +2,7 @@
 
 let
 
-  sygil = import ../home/resources/themes/sygil-plymouth.nix { inherit pkgs; };
+  sygil = import ./sygil-plymouth.nix { inherit pkgs; };
 
 in
 
