@@ -10,9 +10,14 @@ let
     };
     dontBuild = true;
     installPhase = ''
+
       mkdir -p $out/share/plymouth/themes/sygil
       cp -r * $out/share/plymouth/themes/sygil/
       chmod +x $out/share/plymouth/themes/sygil/sygil.plymouth
+      mkdir -p $out/share/plymouth/themes/sygil
+      cp -r * $out/share/plymouth/themes/sygil/
+      chmod +x $out/share/plymouth/themes/sygil/sygil.plymouth
+      mkdir -p $out/share/plymouth/themes/sygil
     '';
   };
 
