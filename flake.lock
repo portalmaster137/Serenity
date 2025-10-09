@@ -662,7 +662,7 @@
         "nixpkgs": "nixpkgs_3",
         "nixvim": "nixvim",
         "sops-nix": "sops-nix",
-        "sygil-plymouth": "sygil-plymouth"
+        "sygil-plymouth-clean": "sygil-plymouth-clean"
       }
     },
     "sops-nix": {
@@ -683,7 +683,7 @@
         "type": "github"
       }
     },
-    "sygil-plymouth": {
+    "sygil-plymouth-clean": {
       "inputs": {
         "flake-utils": "flake-utils_5",
         "nixpkgs": [
@@ -691,17 +691,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1759993912,
-        "narHash": "sha256-yrez/Hck7agU9w1cAYPXQZk0w3Sij5VKJ/ncNwCQXcI=",
+        "lastModified": 1759994616,
+        "narHash": "sha256-9IOPJa7cgl83nIiJeloXiDwN6aiJiwmiQW/y61pidTs=",
         "ref": "refs/heads/main",
-        "rev": "415b7859571b329f1900da9a80bdbfb8ded15430",
-        "revCount": 46,
+        "rev": "c3d6c67415564d66df18609b10cf0fbedd05a3d6",
+        "revCount": 2,
         "type": "git",
-        "url": "https://codeberg.org/serenity-F/sygil-plymouth"
+        "url": "https://codeberg.org/serenity-F/sygil-plymouth-clean"
       },
       "original": {
         "type": "git",
-        "url": "https://codeberg.org/serenity-F/sygil-plymouth"
+        "url": "https://codeberg.org/serenity-F/sygil-plymouth-clean"
       }
     },
     "systems": {
