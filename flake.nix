@@ -125,14 +125,14 @@
       url = "github:SergioRibera/s4rchiso-plymouth-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #sygil-plymouth = {
-    #url = "git+https://codeberg.org/serenity-F/sygil-plymouth";
-    #inputs.nixpkgs.follows = "nixpkgs";
-    #};
-    sygil-plymouth-clean = {
-      url = "git+https://codeberg.org/serenity-F/sygil-plymouth-clean";
+    sygil-plymouth = {
+      url = "git+https://codeberg.org/serenity-F/sygil-plymouth";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    #sygil-plymouth-clean = {
+    #url = "git+https://codeberg.org/serenity-F/sygil-plymouth-clean";
+    #inputs.nixpkgs.follows = "nixpkgs";
+    #};
 
   };
 
