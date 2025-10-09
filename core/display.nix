@@ -43,7 +43,7 @@ in {
         "rd.udev.log_level=0" # more minimising of output on boot
         "boot.shell_on_fail" # reboots to basic uefi shell on boot failure
         #"i915.fastboot=1" # unsure ?
-        #"plymouth.use-simpledrm" # tweak to allow plymouth animations to run smoother
+        "plymouth.use-simpledrm" # tweak to allow plymouth animations to run smoother
         "plymouth.ignore-serial-consoles" # unsure ?
       ];
     loader = {
