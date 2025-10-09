@@ -3,7 +3,7 @@
 ## Allows regreet to be bootstrapped by sway
 let
   swayConfig = pkgs.writeText "greetd-sway-config" ''
-    exec "${pkgs.greetd.regreet}/bin/regreet; swaymsg exit"
+    exec "${pkgs.regreet}/bin/regreet; swaymsg exit"
       -t warning \
       -m 'What do you want to do?' \
   '';

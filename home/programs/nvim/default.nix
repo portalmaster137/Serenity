@@ -2,7 +2,7 @@
 
   imports = [
 
-    inputs.nixvim.homeManagerModules.nixvim # uses the module channel from `flake.nix`
+    inputs.nixvim.homeModules.nixvim # uses the module channel from `flake.nix`
     ./keymaps.nix # keybinds
 
     ## Neovim plugins

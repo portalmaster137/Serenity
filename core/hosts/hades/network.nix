@@ -39,7 +39,7 @@
     #StateDirectory = "dnscrypt-proxy";
   #};
 
-  services.dnscrypt-proxy2 = {
+  services.dnscrypt-proxy = {
     enable = false;
     settings = {
       ipv6_servers = true;
