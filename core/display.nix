@@ -1,24 +1,6 @@
 { inputs, pkgs, label, version, lib, niri, ... }:
 
-let
-  sygil-plymouth = pkgs.stdenv.mkDerivation rec {
-    pname = "sygil";
-    version = "0.1.2";
-    src = pkgs.fetchurl {
-      url =
-        "https://codeberg.org/serenity-F/sygil-plymouth/archive/main.tar.gz";
-      hash = "sha256-HLzzMgdu4OxJ9v2jDViPv6Cp54guhFPCAUnbciaeAqE=";
-    };
-    dontBuild = true;
-    installPhase = ''
-
-      mkdir -p $out/share/plymouth/themes
-      cp -r src/* $out/share/plymouth/themes
-      chmod +x $out/share/plymouth/themes/sygil/sygil.plymouth
-    '';
-  };
-
-in {
+{
 
   system = {
     nixos = {
