@@ -15,7 +15,7 @@
         marksman.enable = true; # Markdown
         bashls.enable = true; # Bash
         rls.enable = true; # Rust
-        ccls.enable = true; # C/++
+        #ccls.enable = true; # C/++
         nixd = {
           enable = true; # Nix
           extraOptions = { expr = "import <nixpkgs> {}"; }; # uhhh
