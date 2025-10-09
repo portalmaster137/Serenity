@@ -33,6 +33,7 @@
     ## Overlays
     overlays = [
       niri.overlays.niri
+      inputs.mac-style-plymouth.overlays.default
       ## to use overlays exported from other flakes:
       #neovim-nightly-overlay.overlays.default
       ## or define it inline, for example:

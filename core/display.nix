@@ -1,4 +1,4 @@
-{ inputs, nixpkgs, pkgs, label, version, lib, niri, ... }:
+{ inputs, pkgs, label, version, lib, niri, ... }:
 
 let
   sygil-plymouth = pkgs.stdenv.mkDerivation rec {
@@ -76,9 +76,6 @@ in {
     };
   };
 
-  pkgs = import nixpkgs {
-    overlays = [ inputs.mac-style-plymouth.overlays.default ];
-  };
   ## Display related options
   xdg.mime.enable =
     true; # may be unneeded here as already declared in `home/desktop/xdg-mime.nix`
