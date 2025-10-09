@@ -6,7 +6,7 @@ let
     version = "0.0.1";
     src = pkgs.fetchurl {
       url = "https://codeberg.org/serenity-F/sygil-plymouth/archive/main.tar.gz";
-      hash = "sha256-8JTf2a6T0XeHxSe+qB6TC8XUapI135F6v6euX36F9Vs=";
+      hash = "sha256-d+c85yYS8QEki4YV5/VKpWxwLFWOOxipnusRjioNdaw=";
     };
     dontBuild = true;
     installPhase = ''
