@@ -29,8 +29,8 @@
         retroarchFull # Emulator frontend
       ] ++ (with pkgs.libretro; [
         citra # Nintendo Switch emu
-        pcsx2 # Sony Playstation 2 emu
-        swanstation # Sony Playstation 1 emu
+        #pcsx2 # Sony Playstation 2 emu
+        #swanstation # Sony Playstation 1 emu
       ]);
 
     ## These are important apparently :uh:
