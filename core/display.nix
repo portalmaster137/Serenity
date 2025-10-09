@@ -64,7 +64,7 @@ in {
     plymouth = { # enables plymouth boot animations
       enable = true;
       extraConfig = "ShowDelay=0";
-      theme = "sygil";
+      theme = "sygil-clean";
       themePackages = with pkgs; [
         sygil-plymouth
         sygil-plymouth-clean
