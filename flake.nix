@@ -121,6 +121,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mac-style-plymouth = {
+      url = "github:SergioRibera/s4rchiso-plymouth-theme";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = { self, nixpkgs, disko, sops-nix, musnix, nixos-generators, niri,

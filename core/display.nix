@@ -1,4 +1,4 @@
-{ inputs, pkgs, label, version, lib, niri, ... }:
+{ inputs, nixpkgs, pkgs, label, version, lib, niri, ... }:
 
 let
   sygil-plymouth = pkgs.stdenv.mkDerivation rec {
@@ -34,7 +34,7 @@ in {
     initrd = {
       verbose = false;
       #systemd = {
-        #enable = true;
+      #enable = true;
       #};
     };
     kernelParams =
@@ -64,18 +64,21 @@ in {
     plymouth = { # enables plymouth boot animations
       enable = true;
       extraConfig = "ShowDelay=0";
-      theme = "sygil";
-      themePackages = [ sygil-plymouth ];
+      theme = "mac-style";
+      themePackages = [ pkgs.mac-style-plymouth ];
       #theme = "circle";
-        #themePackages = with pkgs;
-        #[
-          #(adi1090x-plymouth-themes.override {
-            #selected_themes = [ "circle" ];
-          #})
-        #];
+      #themePackages = with pkgs;
+      #[
+      #(adi1090x-plymouth-themes.override {
+      #selected_themes = [ "circle" ];
+      #})
+      #];
     };
   };
 
+  pkgs = import nixpkgs {
+    overlays = [ inputs.mac-style-plymouth.overlays.default ];
+  };
   ## Display related options
   xdg.mime.enable =
     true; # may be unneeded here as already declared in `home/desktop/xdg-mime.nix`
