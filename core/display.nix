@@ -3,7 +3,7 @@
 let
   sygil-plymouth = pkgs.stdenv.mkDerivation rec {
     pname = "sygil";
-    version = "0.0.3";
+    version = "0.0.4";
     src = pkgs.fetchurl {
       url =
         "https://codeberg.org/serenity-F/sygil-plymouth/archive/main.tar.gz";
@@ -58,15 +58,15 @@ in {
     plymouth = { # enables plymouth boot animations
       enable = true;
       extraConfig = "ShowDelay=0";
-      #theme = "sygil";
-      #themePackages = [ sygil-plymouth ];
-      theme = "circle";
-      themePackages = with pkgs;
-        [
-          (adi1090x-plymouth-themes.override {
-            selected_themes = [ "circle" ];
-          })
-        ];
+      theme = "sygil";
+      themePackages = [ sygil-plymouth ];
+      #theme = "circle";
+        #themePackages = with pkgs;
+        #[
+          #(adi1090x-plymouth-themes.override {
+            #selected_themes = [ "circle" ];
+          #})
+        #];
     };
   };
 
