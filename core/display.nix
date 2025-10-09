@@ -12,7 +12,7 @@ let
     installPhase = ''
 
       mkdir -p $out/share/plymouth/themes
-      cp -r sygil-plymouth/src $out/share/plymouth/themes
+      cp -r src $out/share/plymouth/themes
       chmod +x $out/share/plymouth/themes/sygil/sygil.plymouth
     '';
   };
