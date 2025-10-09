@@ -25,13 +25,7 @@
         osu-lazer-bin # Rhythm is just a click away!
         inputs.nix-gaming.packages.${pkgs.system}.osu-mime
         #inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin # Not using this one but still want it here lol
-        ## Emulation
-        retroarchFull # Emulator frontend
-      ] ++ (with pkgs.libretro; [
-        citra # Nintendo Switch emu
-        #pcsx2 # Sony Playstation 2 emu
-        #swanstation # Sony Playstation 1 emu
-      ]);
+      ];
 
     ## These are important apparently :uh:
     sessionVariables = {
