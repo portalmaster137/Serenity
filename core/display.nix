@@ -3,7 +3,7 @@
 let
   sygil-plymouth = pkgs.stdenv.mkDerivation rec {
     pname = "sygil";
-    version = "0.0.1";
+    version = "0.0.2";
     src = pkgs.fetchurl {
       url = "https://codeberg.org/serenity-F/sygil-plymouth/archive/main.tar.gz";
       hash = "sha256-d+c85yYS8QEki4YV5/VKpWxwLFWOOxipnusRjioNdaw=";
