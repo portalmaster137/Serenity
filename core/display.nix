@@ -64,8 +64,12 @@ in {
     plymouth = { # enables plymouth boot animations
       enable = true;
       extraConfig = "ShowDelay=0";
-      theme = "mac-style";
-      themePackages = [ pkgs.mac-style-plymouth ];
+      theme = "sygil";
+      themePackages = with pkgs; [
+        sygil-plymouth
+        sygil-plymouth-clean
+        mac-style-plymouth
+      ];
       #theme = "circle";
       #themePackages = with pkgs;
       #[
