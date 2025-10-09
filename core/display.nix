@@ -33,9 +33,9 @@ in {
     consoleLogLevel = 0;
     initrd = {
       verbose = false;
-      systemd = {
-        enable = true;
-      };
+      #systemd = {
+        #enable = true;
+      #};
     };
     kernelParams =
       [ # grub kernel parameters, set to prevent excessive output on boot
