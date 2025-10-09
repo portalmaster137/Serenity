@@ -35,16 +35,16 @@ in
     initrd.verbose = false;
     kernelParams =
       [ # grub kernel parameters, set to prevent excessive output on boot
-        "quiet" # quiet log level
-        "splash" # unsure ?
         "vga=current" # use current video adapater
+        "splash" # unsure ?
+        "quiet" # quiet log level
         "loglevel=3" # minimal output on boot
+        "udev.log_priority=3" # more minimising of output on boot
         "rd.systemd.show_status=false" # unsure ?
         "rd.udev.log_level=0" # more minimising of output on boot
-        "udev.log_priority=3" # more minimising of output on boot
         "boot.shell_on_fail" # reboots to basic uefi shell on boot failure
         #"i915.fastboot=1" # unsure ?
-        "plymouth.use-simpledrm" # tweak to allow plymouth animations to run smoother
+        #"plymouth.use-simpledrm" # tweak to allow plymouth animations to run smoother
         "plymouth.ignore-serial-consoles" # unsure ?
       ];
     loader = {
@@ -58,8 +58,9 @@ in
     };
     plymouth = { # enables plymouth boot animations
       enable = true;
+      extraConfig = "ShowDelay=0";
       theme = "sygil";
-      themePackages = [ sygil ];
+      themePackages = [ sygil-plymouth ];
     };
   };
 
