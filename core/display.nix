@@ -5,7 +5,8 @@ let
     pname = "sygil";
     version = "0.0.3";
     src = pkgs.fetchurl {
-      url = "https://codeberg.org/serenity-F/sygil-plymouth/archive/main.tar.gz";
+      url =
+        "https://codeberg.org/serenity-F/sygil-plymouth/archive/main.tar.gz";
       hash = "sha256-HLzzMgdu4OxJ9v2jDViPv6Cp54guhFPCAUnbciaeAqE=";
     };
     dontBuild = true;
@@ -17,9 +18,7 @@ let
     '';
   };
 
-in
-
-{
+in {
 
   system = {
     nixos = {
@@ -59,8 +58,15 @@ in
     plymouth = { # enables plymouth boot animations
       enable = true;
       extraConfig = "ShowDelay=0";
-      theme = "sygil";
-      themePackages = [ sygil-plymouth ];
+      #theme = "sygil";
+      #themePackages = [ sygil-plymouth ];
+      theme = "circle";
+      themePackages = with pkgs;
+        [
+          (adi1090x-plymouth-themes.override {
+            selected_themes = [ "circle" ];
+          })
+        ];
     };
   };
 
