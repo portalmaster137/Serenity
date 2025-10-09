@@ -129,10 +129,10 @@
       url = "git+https://codeberg.org/serenity-F/sygil-plymouth";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    sygil-plymouth-clean = {
-      url = "git+https://codeberg.org/serenity-F/sygil-plymouth-clean";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #sygil-plymouth-clean = {
+      #url = "git+https://codeberg.org/serenity-F/sygil-plymouth-clean";
+      #inputs.nixpkgs.follows = "nixpkgs";
+      #};
 
   };
 
