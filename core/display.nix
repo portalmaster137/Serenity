@@ -159,7 +159,7 @@ in
 
   services = {
     libinput.enable = true; # don't think we NEED this tbh - unsure
-    gvfs.enable = true; # virtual filesystem, needed this for ... something
+    #gvfs.enable = true; # virtual filesystem, needed this for ... something
     dbus.enable = true; # dbus is for ... unsure
     upower.enable = true; # no clue
     udisks2.enable = true; # disk management service
