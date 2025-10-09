@@ -59,7 +59,7 @@ in
     plymouth = { # enables plymouth boot animations
       enable = true;
       theme = "sygil";
-      themePackages = [ sygil-plymouth ];
+      themePackages = [ sygil ];
     };
   };
 
