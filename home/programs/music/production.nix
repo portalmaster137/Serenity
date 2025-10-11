@@ -36,7 +36,7 @@
       #superdirt-install
     ] ++ (with pkgs.haskellPackages; [
       #tidal # Pattern language for improvised music
-      tidal_1_10_0 # Pattern language for improvised music
+      tidal # Pattern language for improvised music
       tidal-core # Core pattern library for Tidal 
       tidal-vis # Visual rendering for Tidal patterns
 
