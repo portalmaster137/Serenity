@@ -127,15 +127,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    mac-style-plymouth = {
-      url = "github:SergioRibera/s4rchiso-plymouth-theme";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    sygil-plymouth = {
+    ## Boot animation
+    #mac-style-plymouth = { # example setup I stole the code shamelessly from
+      #url = "github:SergioRibera/s4rchiso-plymouth-theme";
+      #inputs.nixpkgs.follows = "nixpkgs";
+    #};
+    sygil-plymouth = { # first version I "rawdogged" together
       url = "git+https://codeberg.org/serenity-F/sygil-plymouth";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    sygil-plymouth-clean = {
+    sygil-plymouth-clean = { # second version using different options
       url = "git+https://codeberg.org/serenity-F/sygil-plymouth-clean";
       inputs.nixpkgs.follows = "nixpkgs";
     };
