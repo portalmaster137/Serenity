@@ -50,7 +50,7 @@
       themePackages = with pkgs; [
         sygil-plymouth
         sygil-plymouth-clean
-        mac-style-plymouth
+        #mac-style-plymouth
       ];
       #theme = "circle";
       #themePackages = with pkgs;
