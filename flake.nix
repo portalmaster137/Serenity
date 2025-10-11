@@ -95,6 +95,12 @@
     ## Musnix - https://github.com/musnix/musnix
     musnix = { url = "github:musnix/musnix"; };
 
+    ## Tidalcycles.nix 
+    tidalcycles = {
+      url = "github:mitchmindtree/tidalcycles.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ## Dotfiles management - https://github.com/nix-community/home-manager
     home-manager = {
       url = "github:nix-community/home-manager";
