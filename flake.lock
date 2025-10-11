@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "dirt-samples-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1698439458,
+        "narHash": "sha256-Mp8qBpsOvW9Zguv95Kv7EU6S3ICaF2aO02Wz6xGURtE=",
+        "owner": "tidalcycles",
+        "repo": "dirt-samples",
+        "rev": "9a6dff8f9ec3cd55b287290cf04e01afa6b8f532",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tidalcycles",
+        "repo": "dirt-samples",
+        "type": "github"
+      }
+    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -149,7 +165,7 @@
     },
     "flake-utils_4": {
       "inputs": {
-        "systems": "systems_4"
+        "systems": "systems_5"
       },
       "locked": {
         "lastModified": 1731533236,
@@ -168,24 +184,6 @@
     "flake-utils_5": {
       "inputs": {
         "systems": "systems_6"
-      },
-      "locked": {
-        "lastModified": 1731533236,
-        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "flake-utils_6": {
-      "inputs": {
-        "systems": "systems_7"
       },
       "locked": {
         "lastModified": 1731533236,
@@ -318,27 +316,6 @@
       "original": {
         "type": "git",
         "url": "https://git.lix.systems/lix-project/nixos-module"
-      }
-    },
-    "mac-style-plymouth": {
-      "inputs": {
-        "flake-utils": "flake-utils_3",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1756677116,
-        "narHash": "sha256-bjtQvzupAFX5AYAIyBXSFgWhaG4nP4TvgKDoKyUhZ4U=",
-        "owner": "SergioRibera",
-        "repo": "s4rchiso-plymouth-theme",
-        "rev": "2f782f4b68ce1c00cef3fde6970d7b4241bb97d4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "SergioRibera",
-        "repo": "s4rchiso-plymouth-theme",
-        "type": "github"
       }
     },
     "musnix": {
@@ -623,7 +600,7 @@
           "nixpkgs"
         ],
         "nuschtosSearch": "nuschtosSearch",
-        "systems": "systems_5"
+        "systems": "systems_4"
       },
       "locked": {
         "lastModified": 1759927289,
@@ -641,7 +618,7 @@
     },
     "nuschtosSearch": {
       "inputs": {
-        "flake-utils": "flake-utils_4",
+        "flake-utils": "flake-utils_3",
         "ixx": "ixx",
         "nixpkgs": [
           "nixvim",
@@ -671,7 +648,6 @@
         "home-manager": "home-manager",
         "lix": "lix",
         "lix-module": "lix-module",
-        "mac-style-plymouth": "mac-style-plymouth",
         "musnix": "musnix",
         "niri": "niri",
         "nix-colors": "nix-colors",
@@ -681,7 +657,8 @@
         "nixvim": "nixvim",
         "sops-nix": "sops-nix",
         "sygil-plymouth": "sygil-plymouth",
-        "sygil-plymouth-clean": "sygil-plymouth-clean"
+        "sygil-plymouth-clean": "sygil-plymouth-clean",
+        "tidalcycles": "tidalcycles"
       }
     },
     "sops-nix": {
@@ -702,9 +679,25 @@
         "type": "github"
       }
     },
+    "superdirt-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1697377840,
+        "narHash": "sha256-9qU9CHYAXbN1IE3xXDqGipuroifVaSVXj3c/cDfwM80=",
+        "owner": "musikinformatik",
+        "repo": "superdirt",
+        "rev": "c7f32998572984705d340e7c1b9ed9ad998a39b6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "musikinformatik",
+        "repo": "superdirt",
+        "type": "github"
+      }
+    },
     "sygil-plymouth": {
       "inputs": {
-        "flake-utils": "flake-utils_5",
+        "flake-utils": "flake-utils_4",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -725,7 +718,7 @@
     },
     "sygil-plymouth-clean": {
       "inputs": {
-        "flake-utils": "flake-utils_6",
+        "flake-utils": "flake-utils_5",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -834,18 +827,77 @@
         "type": "github"
       }
     },
-    "systems_7": {
+    "tidal-src": {
+      "flake": false,
       "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "lastModified": 1712519522,
+        "narHash": "sha256-LbvxQmVxHElidCgvt+w0g1k+QQbNLebK46vtRCgsLeQ=",
+        "owner": "tidalcycles",
+        "repo": "tidal",
+        "rev": "88f09edf6bef2228d5f530dea872b08a9d803066",
         "type": "github"
       },
       "original": {
-        "owner": "nix-systems",
-        "repo": "default",
+        "owner": "tidalcycles",
+        "ref": "v1.9.5",
+        "repo": "tidal",
+        "type": "github"
+      }
+    },
+    "tidalcycles": {
+      "inputs": {
+        "dirt-samples-src": "dirt-samples-src",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "superdirt-src": "superdirt-src",
+        "tidal-src": "tidal-src",
+        "vim-tidal-src": "vim-tidal-src",
+        "vowel-src": "vowel-src"
+      },
+      "locked": {
+        "lastModified": 1730626669,
+        "narHash": "sha256-nFyZrvTPn9OM9UZmuAwy3e1Ba0ZuYc2FaDCOOhGtqg4=",
+        "owner": "mitchmindtree",
+        "repo": "tidalcycles.nix",
+        "rev": "0db0918e7a3d3c30ed7a6e81dc9d4e3832870ac4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mitchmindtree",
+        "repo": "tidalcycles.nix",
+        "type": "github"
+      }
+    },
+    "vim-tidal-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1685703852,
+        "narHash": "sha256-8gyk17YLeKpLpz3LRtxiwbpsIbZka9bb63nK5/9IUoA=",
+        "owner": "tidalcycles",
+        "repo": "vim-tidal",
+        "rev": "e440fe5bdfe07f805e21e6872099685d38e8b761",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tidalcycles",
+        "repo": "vim-tidal",
+        "type": "github"
+      }
+    },
+    "vowel-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1641306144,
+        "narHash": "sha256-zfF6cvAGDNYWYsE8dOIo38b+dIymd17Pexg0HiPFbxM=",
+        "owner": "supercollider-quarks",
+        "repo": "vowel",
+        "rev": "ab59caa870201ecf2604b3efdd2196e21a8b5446",
+        "type": "github"
+      },
+      "original": {
+        "owner": "supercollider-quarks",
+        "repo": "vowel",
         "type": "github"
       }
     },
