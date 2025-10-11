@@ -1,4 +1,4 @@
-{ inputs, outputs, pkgs, flakePath, niri, ... }:
+{ inputs, outputs, pkgs, flakePath, niri, tidalcycles, ... }:
 
 {
 
@@ -33,6 +33,7 @@
     ## Overlays
     overlays = [
       niri.overlays.niri
+      inputs.tidalcycles.overlays.default
       #inputs.mac-style-plymouth.overlays.default
       inputs.sygil-plymouth.overlays.default
       inputs.sygil-plymouth-clean.overlays.default
