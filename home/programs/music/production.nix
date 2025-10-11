@@ -48,7 +48,7 @@
   ## - same goes for Tidal Cycles
   programs.nixvim.extraPlugins = with pkgs.vimPlugins; [
     #nvim-treesitter-parsers.supercollider # as below for SC
-    vim-tidal # tidal cycles LSP for neovim
+    #vim-tidal # tidal cycles LSP for neovim
   ];
 
 }
