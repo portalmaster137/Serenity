@@ -19,12 +19,15 @@
     allowedTCPPorts = [
       2234 # soulseek/nicotine-plus
       8384 # syncthing
+      8096 # jellyfin http
+      8920 # jellyfin https
     ];
 
     ## Specific UDP ports to be opened
     allowedUDPPorts = [
       2234 # soulseek/nicotine-plus
       8834 # syncthing
+      7359 # jellyfin - client discovery
     ];
 
     ## Ranges for TCP and UDP ports to be opened
