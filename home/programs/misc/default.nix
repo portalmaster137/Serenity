@@ -11,6 +11,7 @@
       cmatrix # funky terminal matrix rain
       peaclock # neat terminal clock applet
       themix-gui # for creating themes
+      nexusmods-app-unfree # skyrim mods lol
     ];
   };
 }
