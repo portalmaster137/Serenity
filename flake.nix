@@ -185,7 +185,7 @@
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
             disko.nixosModules.disko
-            niri.nixosModules.niri
+            #niri.nixosModules.niri
             ./core/hosts/hades
           ];
         };
