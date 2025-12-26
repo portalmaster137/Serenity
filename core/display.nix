@@ -140,9 +140,9 @@
     niri = {
       enable = true;
       package = with pkgs; niri-unstable;
-      settings = {
-        binds = { "Mod+Enter".action = { spawn = [ "kitty" ]; }; };
-      };
+      #settings = {
+      #binds = { "Mod+Enter".action = { spawn = [ "kitty" ]; }; };
+      #};
     };
 
     gnome-disks.enable = true; # For when bimbo needs to manage disks
