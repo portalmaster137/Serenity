@@ -26,8 +26,8 @@
         "margin-left" = config.theme.gaps-out;
         "margin-right" = config.theme.gaps-out;
         height = 44;
-        modules-left = [ "custom/logo" "sway/window" ];
-        modules-center = [ "sway/workspaces" ];
+        modules-left = [ "custom/logo" "niri/window" ];
+        modules-center = [ "niri/workspaces" ];
         modules-right = [ "tray" "backlight" "clock" "battery" "custom/power" ];
 
         "wlr/taskbar" = {
@@ -38,12 +38,12 @@
           "icon-size" = 25;
           "tooltip-format" = "{title}";
         };
-        "sway/window" = {
+        "niri/window" = {
           "format" = "{title:30}";
           "max-length" = 32;
         };
 
-        "sway/workspaces" = {
+        "niri/workspaces" = {
           all-outputs = true;
           "on-click" = "activate";
           format = "{icon}";
