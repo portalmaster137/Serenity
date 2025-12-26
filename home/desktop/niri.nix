@@ -8,7 +8,7 @@ with pkgs;
     packages = with pkgs; [ xwayland-satellite ];
 
     programs.niri = {
-      enable = true;
+      #enable = true;
       settings = {
         binds = { "Mod+Enter".action = { spawn = [ "kitty" ]; }; };
       };
