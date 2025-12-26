@@ -175,7 +175,7 @@
         hades = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
-            inherit niri;
+            #inherit niri;
             inherit label version;
             inherit flakePath disksPath;
             inherit primaryUser userDesc homeDir;
