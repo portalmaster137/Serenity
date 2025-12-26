@@ -10,7 +10,7 @@ in {
 
   imports = [
 
-    inputs.niri.homeModules.niri
+    #inputs.niri.homeModules.niri
 
     ## Import common desktop configs
     ./xdg-mime.nix # file associations
@@ -21,7 +21,7 @@ in {
     ./dunst.nix # notifier
     ./wofi.nix # app menu
     #./sway.nix # desktop
-    #./niri.nix # desktop 2?
+    ./niri.nix # desktop 2?
 
   ];
 
@@ -29,7 +29,7 @@ in {
 
   xdg = {
    
-    configFile."niri/config.kdl".source = ./niri.kdl;
+    #configFile."niri/config.kdl".source = ./niri.kdl;
 
     portal = {
       enable = true;
@@ -169,10 +169,10 @@ in {
 
   programs = {
 
-    niri = {
-      enable = true;
-      package = with pkgs; niri-unstable;
-    };
+    #niri = {
+      #enable = true;
+      #package = with pkgs; niri-unstable;
+    #};
 
     ## CLI fuzzy find
     fzf = {
