@@ -33,9 +33,9 @@
     "Mod+Shift+Space".action = switch-focus-between-floating-and-tiling;
 
     "Mod+Minus".action = set-column-width "-10%";
-    "Mod+Plus".action = set-column-width "+10%";
+    "Mod+Equal".action = set-column-width "+10%";
     "Mod+Shift+Minus".action = set-window-height "-10%";
-    "Mod+Shift+Plus".action = set-window-height "+10%";
+    "Mod+Shift+Equal".action = set-window-height "+10%";
 
     #"Mod+1".action = set-column-width "25%";
     #"Mod+2".action = set-column-width "50%";
