@@ -10,6 +10,9 @@ in {
     niri = {
       enable = true;
       package = with pkgs; niri-unstable;
+      settings = {
+        outputs."DP-4".scale = 1.0;
+      };
     };
 
   };
