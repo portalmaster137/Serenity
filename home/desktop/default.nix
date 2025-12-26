@@ -19,6 +19,7 @@ in {
     ./dunst.nix # notifier
     ./wofi.nix # app menu
     ./sway.nix # desktop
+    ./niri.nix # desktop 2?
 
   ];
 
