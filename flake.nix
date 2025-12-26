@@ -168,7 +168,7 @@
             ./core/hosts/hades
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
-            niri.nixosModules.niri
+            #niri.nixosModules.niri
             home-manager.nixosModules.home-manager
             {
               home-manager = {
