@@ -223,7 +223,7 @@ prefer-no-csd
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "kitty" "btop"
-spawn-sh-at-startup "swaybg -m fill -i ~/Pictures/SerenityOS\ Branding/SerenityOS\ Wallpapers/duskGradient.png"
+spawn-sh-at-startup "swaybg -m fill -i ~/Pictures/SerenityOS Branding/SerenityOS Wallpapers/duskGradient.png"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
