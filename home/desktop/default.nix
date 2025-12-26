@@ -24,6 +24,9 @@ in {
   ];
 
   xdg = {
+   
+    configFile."niri/config.kdl".source = ../../core/niri.kdl;
+
     portal = {
       enable = true;
       xdgOpenUsePortal = false;
