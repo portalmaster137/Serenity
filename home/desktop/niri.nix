@@ -5,7 +5,7 @@ with pkgs;
 {
 
   #home = {
-    packages = with pkgs; [ xwayland-satellite ];
+    home.packages = with pkgs; [ xwayland-satellite ];
 
     programs.niri = {
       #enable = true;
