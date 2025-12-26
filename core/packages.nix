@@ -33,7 +33,7 @@
 
     ## Overlays
     overlays = [
-      niri.overlays.niri
+      #niri.overlays.niri
       inputs.tidalcycles.overlays.default
       #inputs.mac-style-plymouth.overlays.default
       inputs.sygil-plymouth.overlays.default
