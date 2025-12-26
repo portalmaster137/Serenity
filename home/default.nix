@@ -8,7 +8,7 @@ in {
   imports = [
 
     ## Modules
-    inputs.home-manager.nixosModules.default # home-manager module
+    #inputs.home-manager.nixosModules.default # home-manager module
     #inputs.sops-nix.nixosModules.sops # sops-nix module
     #inputs.niri.homeModules.niri
 
@@ -80,9 +80,6 @@ in {
         };
       };
     };
-    backupFileExtension = "backup"; # prevents errors on activation
-    useGlobalPkgs = true; # ensures all packages declared follow -
-    useUserPackages = true; # the same nix-channel as in the flake.nix
   };
 
 }

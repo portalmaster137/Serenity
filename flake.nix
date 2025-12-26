@@ -130,7 +130,7 @@
 
   };
 
-  outputs = { self, nixpkgs, sops-nix, musnix, niri, ... }
+  outputs = { self, nixpkgs, sops-nix, home-manager, musnix, niri, ... }
 
     @inputs:
     let
@@ -165,10 +165,18 @@
             inherit wallpapersPath wallpaper;
           };
           modules = [
+            ./core/hosts/hades
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
             niri.nixosModules.niri
-            ./core/hosts/hades
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                backupFileExtension = "backup";
+              };
+            }
           ];
         };
       };
