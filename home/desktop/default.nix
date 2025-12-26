@@ -1,4 +1,4 @@
-{ config, pkgs, lib, flakePath, homeDir, ... }:
+{ inputs, config, pkgs, lib, flakePath, homeDir, ... }:
 
 ## Base desktop theme
 let
@@ -9,6 +9,8 @@ let
 in {
 
   imports = [
+
+    inputs.niri.homeModules.niri
 
     ## Import common desktop configs
     ./xdg-mime.nix # file associations
