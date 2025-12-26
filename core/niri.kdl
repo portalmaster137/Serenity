@@ -139,8 +139,6 @@ layout {
     // Alternatively, you can override it with a window rule called
     // `draw-border-with-background`.
 
-    prefer-no-csd
-
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
@@ -214,6 +212,8 @@ layout {
          bottom 4
     }
 }
+
+prefer-no-csd
 
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
