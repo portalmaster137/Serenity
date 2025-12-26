@@ -10,7 +10,7 @@ in {
     ## Modules
     inputs.home-manager.nixosModules.default # home-manager module
     #inputs.sops-nix.nixosModules.sops # sops-nix module
-    inputs.niri.homeModules.niri
+    #inputs.niri.homeModules.niri
 
     ## User themes - 
     ## to set a different theme for a user,

@@ -175,7 +175,7 @@
         hades = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
-            #inherit niri;
+            inherit niri;
             inherit label version;
             inherit flakePath disksPath;
             inherit primaryUser userDesc homeDir;
@@ -185,7 +185,7 @@
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
             disko.nixosModules.disko
-            #niri.nixosModules.niri
+            niri.nixosModules.niri
             ./core/hosts/hades
           ];
         };
