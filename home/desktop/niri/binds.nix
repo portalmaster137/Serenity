@@ -42,9 +42,9 @@
     #"Mod+3".action = set-column-width "75%";
     #"Mod+4".action = set-column-width "100%";
 
-    #"Print".action.screenshot-screen = {write-to-disk = true;};
-    #"Mod+Shift+Alt+S".action.screenshot-window = [];
-    #"Mod+Shift+S".action.screenshot = {show-pointer = false;};
+    "Mod+Shift+Alt+S".action.screenshot-screen = {write-to-disk = true;};
+    "Mod+Shift+S".action.screenshot-window = [];
+    "Mod+S".action.screenshot = {show-pointer = false;};
 
     #"Mod+WheelScrollUp".action = focus-workspace-up;
     #"Mod+WheelScrollUp".cooldown-ms = 200;
