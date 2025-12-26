@@ -4,7 +4,6 @@
   imports = [
 
     ## Host-specific config files
-    #./disko.nix
     ./network.nix
     ./hardware.nix
     ## Shared 'core' config options
