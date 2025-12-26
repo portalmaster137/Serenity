@@ -39,7 +39,6 @@
 #
 #  - - - - - - - - - - - - - - - - - - - - - - - -
 #
-#
 {
   description = "SerenityOS";
   ## Latest features:p
@@ -77,27 +76,18 @@
     ## Flake parts - https://github.com/hercules-ci/flake-parts
     flake-parts = { url = "github:hercules-ci/flake-parts"; };
 
-    ## nixos generators
-    nixos-generators = { # https://github.com/nix-community/nixos-generators
-      url = "github:nix-community/nixos-generators";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    ## Declarative disks - https://github.com/nix-community/disko 
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     ## Secrets management - https://github.com/Mic92/sops-nix
     sops-nix = { url = "github:Mic92/sops-nix"; };
 
     ## Musnix - https://github.com/musnix/musnix
     musnix = { url = "github:musnix/musnix"; };
 
-    ## Tidalcycles.nix 
-    tidalcycles = {
-      url = "github:mitchmindtree/tidalcycles.nix";
+    ## Nice-to-haves for gaming - https://github.com/fufexan/nix-gaming
+    nix-gaming = { url = "github:fufexan/nix-gaming"; };
+
+    ## Zoomer text editor - https://github.com/nix-community/nixvim
+    nixvim = {
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -110,20 +100,17 @@
     ## Easy themeing - https://github.com/Misterio77/nix-colors
     nix-colors = { url = "github:misterio77/nix-colors"; };
 
-    ## Zoomer text editor - https://github.com/nix-community/nixvim
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    ## Nice-to-haves for gaming - https://github.com/fufexan/nix-gaming
-    nix-gaming = { url = "github:fufexan/nix-gaming"; };
-
     ## Niri window manager - 
     ## https://github.com/YaLTeR/niri
     ## https://github.com/sodiboo/niri-flake/
     niri = {
       url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ## Tidalcycles.nix 
+    tidalcycles = {
+      url = "github:mitchmindtree/tidalcycles.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -143,11 +130,7 @@
 
   };
 
-  outputs = { self, nixpkgs, disko, sops-nix, musnix, nixos-generators, niri,
-    ## Disabled outputs - part of 'flakeification': enable and use correctly.
-    #lix, lix-module, flake-utils, flake-parts, 
-    #nix-colors, home-manager, nixvim,
-    ... }
+  outputs = { self, nixpkgs, sops-nix, musnix, niri, ... }
 
     @inputs:
     let
@@ -184,30 +167,10 @@
           modules = [
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
-            disko.nixosModules.disko
             niri.nixosModules.niri
             ./core/hosts/hades
           ];
         };
-
-        ## Laptop - needs work 
-        persephone = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs;
-            inherit label version;
-            inherit flakePath disksPath;
-            inherit primaryUser userDesc homeDir;
-            inherit wallpapersPath wallpaper;
-          };
-          modules = [
-            sops-nix.nixosModules.sops
-            musnix.nixosModules.musnix
-            disko.nixosModules.disko
-            ./hosts/persephone
-          ];
-        };
-
       };
-
     };
 }
