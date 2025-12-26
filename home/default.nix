@@ -66,9 +66,14 @@ in {
           ## home directories. Additional modules
           ## can be declared alongside `u-username/default.nix`
           ## and then imported in this section.
-          ./home.nix
+          #./home.nix
+          ./desktop
+          ./programs
+          ./scripts
         ];
         home = {
+          programs.home-manager.enable = true;
+          systemd.user.startServices = "sd-switch";
           username = "${primaryUser}"; # passes username from `flake.nix`
           homeDirectory = "${homeDir}"; # passes homedir from `flake.nix`
           file."Wallpapers" = { # copies wallpapers
