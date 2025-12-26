@@ -131,6 +131,7 @@ in {
       hyprcursor # Cursor, duh
       ydotool # Click/Keypress emulator
       swww # Wallpaper daemon
+      swaybg # Wallpaper daemon
       networkmanagerapplet # Tray applet for networkmanager
       networkmanager # Network manager ...
       blueman # GUI bluetooth control
