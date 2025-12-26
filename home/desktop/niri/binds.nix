@@ -15,6 +15,8 @@
       repeat = false;
     };
 
+    "Mod+Escape".action.spawn = "hyprlock";
+
     "Mod+Shift+P".action = power-off-monitors;
 
     "Mod+Shift+Escape" = {
