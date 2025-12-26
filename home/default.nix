@@ -73,7 +73,7 @@ in {
         ];
         home = {
           #programs.home-manager.enable = true;
-          systemd.user.startServices = "sd-switch";
+          #systemd.user.startServices = "sd-switch";
           username = "${primaryUser}"; # passes username from `flake.nix`
           homeDirectory = "${homeDir}"; # passes homedir from `flake.nix`
           file."Wallpapers" = { # copies wallpapers

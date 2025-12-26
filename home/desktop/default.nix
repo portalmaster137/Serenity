@@ -23,6 +23,8 @@ in {
 
   ];
 
+  systemd.user.startServices = "sd-switch"; # cant remember
+
   xdg = {
    
     configFile."niri/config.kdl".source = ./niri.kdl;
