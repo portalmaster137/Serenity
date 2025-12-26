@@ -96,7 +96,7 @@
     };
     niri = {
       enable = true;
-      package = with pkgs; niri-unstable;
+      #package = with pkgs; niri-unstable;
     };
     sway = { # enable sway window manager
       enable = true;
