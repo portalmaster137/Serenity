@@ -255,10 +255,10 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-         left 16
-         right 16
-         top 16
-         bottom 16
+         left 8
+         right 8
+         top 8
+         bottom 8
     }
 }
 
@@ -316,6 +316,9 @@ window-rule {
     // You can get away with just app-id="wezterm" if you want.
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
+
+    geometry-corner-radius 16
+    clip-to-geometry true
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
