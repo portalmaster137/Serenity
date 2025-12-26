@@ -57,7 +57,9 @@ in {
       ## Startup scripts and programs
       startup = [
         { command = "startupExtra"; }
-        { command = "startup"; } # defined in `home/scripts/startup.nix`
+        {
+          command = "startup";
+        } # defined in `home/scripts/startup.nix`
         #{ command = "kitty"; }
         { command = "kitty btop"; }
       ];
