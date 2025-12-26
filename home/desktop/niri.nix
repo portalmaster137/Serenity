@@ -4,7 +4,7 @@ with pkgs;
 
 {
 
-  home = {
+  #home = {
     packages = with pkgs; [ xwayland-satellite ];
 
     programs.niri = {
@@ -14,5 +14,5 @@ with pkgs;
       };
     };
 
-  };
+  #};
 }
