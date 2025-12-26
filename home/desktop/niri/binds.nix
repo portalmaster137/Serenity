@@ -19,6 +19,9 @@
 
     "Mod+Shift+P".action = power-off-monitors;
 
+    "Mod+Shift+E".action = quit;
+    "Ctrl+Alt+Delete".action = quit;
+
     "Mod+Shift+Escape" = {
       action = toggle-keyboard-shortcuts-inhibit;
       allow-inhibiting = false;
