@@ -94,6 +94,10 @@
       #package = [ ];
       #defaultFontPath = "/run/current-system/sw/share/X11/fonts";
     };
+    niri = {
+      enable = true;
+      package = with pkgs; niri-unstable;
+    };
     sway = { # enable sway window manager
       enable = true;
       package = pkgs.swayfx;
@@ -136,14 +140,6 @@
   security.pam.services.serenity.enableGnomeKeyring = true;
 
   programs = {
-
-    niri = {
-      enable = true;
-      package = with pkgs; niri-unstable;
-      #settings = {
-      #binds = { "Mod+Enter".action = { spawn = [ "kitty" ]; }; };
-      #};
-    };
 
     gnome-disks.enable = true; # For when bimbo needs to manage disks
     seahorse.enable = true; # GTK secrets management

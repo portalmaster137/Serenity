@@ -26,8 +26,8 @@ in {
 
   environment = { # adds sway and fish environments to launch from regreet
     etc."greetd/environments".text = ''
-      sway
       niri
+      sway
       fish
     '';
   };
