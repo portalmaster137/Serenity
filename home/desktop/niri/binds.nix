@@ -46,10 +46,10 @@
     "Mod+Shift+S".action.screenshot-window = [];
     "Mod+S".action.screenshot = {show-pointer = false;};
 
-    #"Mod+WheelScrollUp".action = focus-workspace-up;
-    #"Mod+WheelScrollUp".cooldown-ms = 200;
-    "Mod+WheelScrollDown".action = focus-workspace-Down;
-    #"Mod+WheelScrollDown".cooldown-ms = 200;
+    "Mod+WheelScrollUp".action = focus-workspace-up;
+    "Mod+WheelScrollUp".cooldown-ms = 200;
+    "Mod+WheelScrollDown".action = focus-workspace-down;
+    "Mod+WheelScrollDown".cooldown-ms = 200;
 
     "Mod+H".action = focus-column-left;
     "Mod+L".action = focus-column-right;
