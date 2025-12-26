@@ -12,8 +12,6 @@
     ../../../core/zfs.nix
     ../../../core/sync.nix
     ../../../core/gaming.nix
-    ../../../core/jellyfin.nix
-    #../../../core/bluetooth.nix
 
   ];
 
