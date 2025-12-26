@@ -20,6 +20,16 @@ in {
 
       settings = {
 
+        environment = {
+          MOZ_ENABLE_WAYLAND = "1";
+          NIXOS_OZONE_WL = "1";
+          QT_QPA_PLATFORM = "wayland,xcb";
+          QT_QPA_PLATFORMTHEME = "qt5ct";
+          QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+          SDL_VIDEODRIVER = "wayland,windows";
+          WLR_RENDERER = "vulkan";
+        };
+
         outputs."DP-4" = {
           mode = {
             width = 3440;
