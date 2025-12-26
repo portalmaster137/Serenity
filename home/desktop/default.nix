@@ -167,6 +167,10 @@ in {
 
   programs = {
 
+    niri = {
+      enable = true;
+    };
+
     ## CLI fuzzy find
     fzf = {
       enable = true;
