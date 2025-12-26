@@ -169,11 +169,6 @@ in {
 
   programs = {
 
-    #niri = {
-      #enable = true;
-      #package = with pkgs; niri-unstable;
-    #};
-
     ## CLI fuzzy find
     fzf = {
       enable = true;

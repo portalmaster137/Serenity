@@ -5,23 +5,7 @@ let hostname = "${config.networking.hostName}";
 
 in {
 
-  imports = [
-
-    ## Modules
-    #inputs.home-manager.nixosModules.default # home-manager module
-    #inputs.sops-nix.nixosModules.sops # sops-nix module
-    #inputs.niri.homeModules.niri
-
-    ## User themes - 
-    ## to set a different theme for a user,
-    ## create a theme by copying an existing
-    ## one as a template and import it here,
-    ## then - I haven't figured it out yet :D
-    #../resources # eventually have all theme imports automated
-    #../resources/themes # base theme options
-    #../resources/themes/SerenityOS.nix # default theme
-
-  ];
+  imports = [ ];
 
   ## Primary user configuration -
   ## to create additional users, copy all options
