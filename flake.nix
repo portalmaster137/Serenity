@@ -129,8 +129,8 @@
 
     ## Boot animation
     #mac-style-plymouth = { # example setup I stole the code shamelessly from
-      #url = "github:SergioRibera/s4rchiso-plymouth-theme";
-      #inputs.nixpkgs.follows = "nixpkgs";
+    #url = "github:SergioRibera/s4rchiso-plymouth-theme";
+    #inputs.nixpkgs.follows = "nixpkgs";
     #};
     sygil-plymouth = { # first version I "rawdogged" together
       url = "git+https://codeberg.org/serenity-F/sygil-plymouth";
@@ -190,22 +190,6 @@
           ];
         };
 
-        ## Home server - work in progress
-        orcus = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs;
-            inherit label version;
-            inherit flakePath disksPath;
-            inherit primaryUser userDesc homeDir;
-            inherit wallpapersPath wallpaper;
-          };
-          modules = [
-            sops-nix.nixosModules.sops
-            disko.nixosModules.disko
-            ./hosts/orcus
-          ];
-        };
-
         ## Laptop - needs work 
         persephone = nixpkgs.lib.nixosSystem {
           specialArgs = {
@@ -223,27 +207,6 @@
           ];
         };
 
-      };
-
-      ## Installer for easy nuke-n-paves - work in progress
-      packages.x86_64-linux = {
-        iso = nixos-generators.nixosGenerate {
-          system = "x86_64-linux";
-          format = "install-iso";
-          specialArgs = {
-            inherit inputs outputs;
-            inherit label version;
-            inherit flakePath disksPath;
-            inherit primaryUser userDesc homeDir;
-            inherit wallpapersPath wallpaper;
-          };
-          modules = [
-            sops-nix.nixosModules.sops
-            musnix.nixosModules.musnix
-            disko.nixosModules.disko
-            ./hosts/iso
-          ];
-        };
       };
 
     };
