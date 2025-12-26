@@ -22,10 +22,8 @@
     "Mod+Shift+E".action = quit;
     "Ctrl+Alt+Delete".action = quit;
 
-    "Mod+Shift+Escape" = {
-      action = toggle-keyboard-shortcuts-inhibit;
-      allow-inhibiting = false;
-    };
+    "Mod+Shift+Escape".action = toggle-keyboard-shortcuts-inhibit;
+    "Mod+Shift+Escape".allow-inhibiting = false;
 
     "Mod+C".action = center-visible-columns;
     "Mod+F".action = maximize-column;
@@ -48,14 +46,10 @@
     #"Mod+Shift+Alt+S".action.screenshot-window = [];
     #"Mod+Shift+S".action.screenshot = {show-pointer = false;};
 
-    "Mod+WheelScrollUp" = {
-      action = focus-window-or-workspace-up;
-      cooldown-ms = 200;
-    };
-    "Mod+WheelScrollDown" = {
-      action = focus-window-or-workspace-Down;
-      cooldown-ms = 200;
-    };
+    "Mod+WheelScrollUp".action = focus-workspace-up;
+    "Mod+WheelScrollUp".cooldown-ms = 200;
+    "Mod+WheelScrollDown".action = focus-workspace-Down;
+    "Mod+WheelScrollDown".cooldown-ms = 200;
 
     "Mod+H".action = focus-column-left;
     "Mod+L".action = focus-column-right;
