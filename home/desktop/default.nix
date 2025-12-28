@@ -160,6 +160,7 @@ in {
       xwayland
       wlroots
       libsForQt5.qt5ct
+      libsForQt5.qt5.qtwayland
       libnotify
       libva
       meson
