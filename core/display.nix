@@ -86,6 +86,7 @@
       adapta-kde-theme
       materia-theme
       materia-theme-transparent
+      xwayland-satellite
     ];
   };
   programs = { # xwayland and sway variables

@@ -58,7 +58,7 @@
         };
         location = {
           monthBeforeDay = true;
-          name = "Marseille, France";
+          name = "Brisbane, Australia";
         };
       };
       # this may also be a string or a path to a JSON file,
