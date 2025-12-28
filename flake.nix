@@ -74,7 +74,7 @@
     flake-utils = { url = "github:numtide/flake-utils"; };
 
     ## Flake parts - https://github.com/hercules-ci/flake-parts
-    flake-parts = { url =https://docs.noctalia.dev/getting-started/nixos/ "github:hercules-ci/flake-parts"; };
+    flake-parts = { url = "github:hercules-ci/flake-parts"; };
 
     ## Secrets management - https://github.com/Mic92/sops-nix
     sops-nix = { url = "github:Mic92/sops-nix"; };
