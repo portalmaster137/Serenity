@@ -87,6 +87,7 @@
       materia-theme
       materia-theme-transparent
       xwayland-satellite
+      xwayland-satellite-unstable
     ];
   };
   programs = { # xwayland and sway variables
@@ -97,7 +98,7 @@
     };
     niri = {
       enable = true;
-      #package = with pkgs; niri-unstable;
+      package = with pkgs; niri-unstable;
     };
     sway = { # enable sway window manager
       enable = true;
