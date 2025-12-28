@@ -13,7 +13,7 @@ in {
   #xdg.configFile."niri/config.kdl".source = ./niri.kdl;
 
   home.packages = with pkgs; [
-    xwayland-satellite-unstable;
+    xwayland-satellite-unstable
   ];
 
   programs = {
