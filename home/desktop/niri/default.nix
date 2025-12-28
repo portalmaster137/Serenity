@@ -12,6 +12,10 @@ in {
 
   #xdg.configFile."niri/config.kdl".source = ./niri.kdl;
 
+  home.packages = with pkgs; [
+    xwayland-satellite-unstable;
+  ];
+
   programs = {
 
     niri = {
@@ -30,6 +34,11 @@ in {
           QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
           SDL_VIDEODRIVER = "wayland,windows";
           WLR_RENDERER = "vulkan";
+        };
+
+        xwayland-satellite = {
+          enable = true;
+          path = "lib.getExe pkgs.xwayland-satellite-unstable";
         };
 
         outputs."DP-4" = {
