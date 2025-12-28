@@ -16,8 +16,8 @@ in {
     ./xdg-mime.nix # file associations
     ./hyprcursor.nix # mouse cursor
     ./hyprlock.nix # screen locker
-    ./wlogout.nix # logout prompt
-    ./waybar.nix # statusbar
+    #./wlogout.nix # logout prompt
+    #./waybar.nix # statusbar
     ./dunst.nix # notifier
     ./wofi.nix # app menu
     #./sway.nix # desktop
