@@ -20,7 +20,7 @@ in {
 
     niri = {
       enable = true;
-      package = with pkgs; niri-unstable;
+      #package = with pkgs; niri-unstable;
 
       settings = {
 
