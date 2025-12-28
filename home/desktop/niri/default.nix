@@ -34,6 +34,7 @@ in {
           QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
           SDL_VIDEODRIVER = "wayland,windows";
           WLR_RENDERER = "vulkan";
+          DISPLAY = ":0";
         };
 
         xwayland-satellite = {
