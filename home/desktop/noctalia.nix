@@ -1,6 +1,6 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, primaryUser, ... }:
 {
-  home-manager.users.drfoobar = {
+  home-manager.users.${primaryUser} = {
     # import the home manager module
     imports = [
       inputs.noctalia.homeModules.default
