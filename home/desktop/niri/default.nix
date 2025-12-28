@@ -127,9 +127,8 @@ in {
         };
 
         spawn-at-startup = [
-          {argv = ["waybar"]; }
-          #{argv = ["kitty" "btop"]; }
-          {argv = ["swaybg" "-m" "fill" "-i" "~/Pictures/SerenityOS Branding/SerenityOS Wallpapers/duskGradient.png"]; }
+          {argv = ["noctalia-shell"]; }
+          {argv = ["kitty" "btop"]; }
         ];
 
         hotkey-overlay = {
