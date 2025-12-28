@@ -74,7 +74,7 @@
     flake-utils = { url = "github:numtide/flake-utils"; };
 
     ## Flake parts - https://github.com/hercules-ci/flake-parts
-    flake-parts = { url = "github:hercules-ci/flake-parts"; };
+    flake-parts = { url =https://docs.noctalia.dev/getting-started/nixos/ "github:hercules-ci/flake-parts"; };
 
     ## Secrets management - https://github.com/Mic92/sops-nix
     sops-nix = { url = "github:Mic92/sops-nix"; };
@@ -99,6 +99,11 @@
 
     ## Easy themeing - https://github.com/Misterio77/nix-colors
     nix-colors = { url = "github:misterio77/nix-colors"; };
+
+    noctalia = { # cool desktop shell - https://docs.noctalia.dev/getting-started/nixos/
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     ## Niri window manager - 
     ## https://github.com/YaLTeR/niri
@@ -130,7 +135,7 @@
 
   };
 
-  outputs = { self, nixpkgs, sops-nix, home-manager, musnix, niri, ... }
+  outputs = { self, nixpkgs, sops-nix, home-manager, musnix, niri, noctalia, ... }
 
     @inputs:
     let
@@ -158,7 +163,7 @@
         hades = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
-            inherit niri;
+            inherit niri noctalia;
             inherit label version;
             inherit flakePath disksPath;
             inherit primaryUser userDesc homeDir;
@@ -166,6 +171,7 @@
           };
           modules = [
             ./core/hosts/hades
+            ./home/desktop/noctalia.nix
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
             home-manager.nixosModules.home-manager
