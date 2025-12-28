@@ -95,8 +95,8 @@
       #defaultFontPath = "/run/current-system/sw/share/X11/fonts";
     };
     niri = {
-      #enable = true;
-      #package = with pkgs; niri-unstable;
+      enable = true;
+      package = with pkgs; niri-unstable;
     };
     sway = { # enable sway window manager
       enable = true;
