@@ -29,7 +29,7 @@ in {
           NIXOS_OZONE_WL = "1";
           XDG_SESSION_TYPE = "wayland";
           XDG_CURRENT_DESKTOP = "niri";
-          QT_QPA_PLATFORM = "wayland,xcb";
+          QT_QPA_PLATFORM = "wayland";
           QT_QPA_PLATFORMTHEME = "qt5ct";
           QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
           SDL_VIDEODRIVER = "wayland,windows";
