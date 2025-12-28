@@ -23,6 +23,8 @@ in {
         environment = {
           MOZ_ENABLE_WAYLAND = "1";
           NIXOS_OZONE_WL = "1";
+          XDG_SESSION_TYPE = "wayland";
+          XDG_CURRENT_DESKTOP = "niri";
           QT_QPA_PLATFORM = "wayland,xcb";
           QT_QPA_PLATFORMTHEME = "qt5ct";
           QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
@@ -117,7 +119,7 @@ in {
 
         spawn-at-startup = [
           {argv = ["waybar"]; }
-          {argv = ["kitty" "btop"]; }
+          #{argv = ["kitty" "btop"]; }
           {argv = ["swaybg" "-m" "fill" "-i" "~/Pictures/SerenityOS Branding/SerenityOS Wallpapers/duskGradient.png"]; }
         ];
 
