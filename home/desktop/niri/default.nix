@@ -128,7 +128,7 @@ in {
         };
 
         spawn-at-startup = [
-          {argv = ["xwayland-satellite-unstable"]; }
+          {argv = ["xwayland-satellite"]; }
           {argv = ["noctalia-shell"]; }
           {argv = ["kitty" "btop"]; }
         ];
