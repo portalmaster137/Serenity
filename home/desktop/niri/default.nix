@@ -39,7 +39,7 @@ in {
 
         xwayland-satellite = {
           enable = true;
-          path = "${pkgs.xwayland-satellite-unstable}/bin/xwayland-satellite-unstable";
+          path = "lib.getExe pkgs.xwayland-satellite-unstable";
         };
 
         outputs."DP-4" = {
