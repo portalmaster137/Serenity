@@ -8,6 +8,34 @@
       enable = true;
       settings = {
         # configure noctalia here
+
+        general = {
+          avatarImage = "/home/${primaryUser}/avatar.jpg";
+          radiusRatio = 0.2;
+          showSessionButtonOnLockScreen = false;
+          showHibernateOnLockScreen = true;
+        };
+
+        location = {
+          monthBeforeDay = true;
+          name = "Brisbane, Australia";
+        };
+
+        colorSchemes = {
+          predefinedScheme = "Monochrome";
+        };
+
+        wallpaper = {
+          directory = "/home/${primaryUser}/Pictures/Wallpapers";
+          hideWallpaperFilenames = true;
+
+        };
+
+        appLauncher = {
+          terminalCommand = "kitty -e";
+          showCategories = false;
+        };
+
         bar = {
           density = "comfortable";
           position = "top";
@@ -22,9 +50,8 @@
               {
                 icon = "rocket";
                 id = "CustomButton";
-                leftClickExec = "qs -c noctalia ipc call launcher toggle";
+                leftClickExec = "noctalia-shell ipc call launcher toggle";
               }
-              { id = "ActiveWindow"; }
             ];
 
             center = [{
@@ -57,15 +84,7 @@
 
           };
         };
-        colorSchemes.predefinedScheme = "Monochrome";
-        general = {
-          avatarImage = "/home/drfoobar/.face";
-          radiusRatio = 0.2;
-        };
-        location = {
-          monthBeforeDay = true;
-          name = "Brisbane, Australia";
-        };
+        #ControlCenter = { };
       };
       # this may also be a string or a path to a JSON file,
       # but in this case must include *all* settings.
