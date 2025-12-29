@@ -1,10 +1,7 @@
-{ pkgs, inputs, primaryUser, ... }:
-{
+{ pkgs, inputs, primaryUser, ... }: {
   home-manager.users.${primaryUser} = {
     # import the home manager module
-    imports = [
-      inputs.noctalia.homeModules.default
-    ];
+    imports = [ inputs.noctalia.homeModules.default ];
 
     # configure options
     programs.noctalia-shell = {
@@ -12,30 +9,34 @@
       settings = {
         # configure noctalia here
         bar = {
-          density = "compact";
-          position = "right";
+          density = "comfortable";
+          position = "top";
           showCapsule = false;
+          monitors = [ "DP-4" ];
+          floating = true;
+          marginVertical = 0.25;
+          marginHorizontal = 0.5;
           widgets = {
+
             left = [
               {
-                id = "ControlCenter";
-                useDistroLogo = true;
+                icon = "rocket";
+                id = "CustomButton";
+                leftClickExec = "qs -c noctalia ipc call launcher toggle";
               }
-              {
-                id = "WiFi";
-              }
-              {
-                id = "Bluetooth";
-              }
+              { id = "ActiveWindow"; }
             ];
-            center = [
-              {
-                hideUnoccupied = false;
-                id = "Workspace";
-                labelMode = "none";
-              }
-            ];
+
+            center = [{
+              hideUnoccupied = false;
+              id = "Workspace";
+              labelMode = "none";
+            }];
+
             right = [
+              { id = "Tray"; }
+              { id = "WiFi"; }
+              { id = "Bluetooth"; }
               {
                 alwaysShowPercentage = false;
                 id = "Battery";
@@ -48,7 +49,12 @@
                 useMonospacedFont = true;
                 usePrimaryColor = true;
               }
+              {
+                id = "ControlCenter";
+                useDistroLogo = true;
+              }
             ];
+
           };
         };
         colorSchemes.predefinedScheme = "Monochrome";
