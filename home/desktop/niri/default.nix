@@ -12,15 +12,13 @@ in {
 
   #xdg.configFile."niri/config.kdl".source = ./niri.kdl;
 
-  home.packages = with pkgs; [
-    xwayland-satellite-unstable
-  ];
+  home.packages = with pkgs; [ jq xwayland-satellite-unstable ];
 
   programs = {
 
     niri = {
       enable = true;
-      package = with pkgs; niri-unstable;
+      package = with pkgs; [ niri-unstable ];
 
       settings = {
 
@@ -128,9 +126,9 @@ in {
         };
 
         spawn-at-startup = [
-          {argv = ["xwayland-satellite"]; }
-          {argv = ["noctalia-shell"]; }
-          {argv = ["kitty" "btop"]; }
+          { argv = [ "xwayland-satellite" ]; }
+          { argv = [ "noctalia-shell" ]; }
+          { argv = [ "kitty" "btop" ]; }
         ];
 
         hotkey-overlay = {
