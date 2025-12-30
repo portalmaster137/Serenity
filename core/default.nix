@@ -1,4 +1,4 @@
-{ inputs, lib, pkgs, primaryUser, ... }:
+{ inputs, lib, pkgs, user, ... }:
 
 {
 
@@ -46,7 +46,7 @@
       trusted-users = [ # adds root, @wheel, and ${primaryUser} to trusted users
         "root"
         "@wheel"
-        "${primaryUser}"
+        "${user}"
       ]; 
       experimental-features = [ # enable flakes uwu,,, and some other junk idek
         "pipe-operators" # who tf knows

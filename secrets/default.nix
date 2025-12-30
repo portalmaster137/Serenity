@@ -1,4 +1,4 @@
-{ pkgs, config, inputs, flakePath, disksPath, primaryUser, homeDir, ... }:
+{ pkgs, config, inputs, flakePath, disksPath, user, homeDirectory, ... }:
 
 {
 
@@ -12,7 +12,7 @@
     defaultSopsFile = ./secrets.yaml; # default secrets file
     defaultSopsFormat = "yaml"; # .yaml format - ease of use
     age = {
-      keyFile = "${homeDir}/.config/sops/age/keys.txt"; # keyfile location
+      keyFile = "${homeDirectory}/.config/sops/age/keys.txt"; # keyfile location
       generateKey = true; # generate a new key if the one above is missing
     };
 
