@@ -5,13 +5,13 @@
   imports = [
 
     ## Import user themes
-    ../resources/themes
-    ../resources/themes/SerenityOS.nix
+    ../resources/theme
+    ../resources/theme/SerenityOS.nix
 
     ## Import shared program configs
     ./web
     ./git
-    ./sync
+    ./sync/postActivation.nix
     ./chat
     ./yazi
     ./btop
