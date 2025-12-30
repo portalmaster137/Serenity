@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
 
@@ -11,17 +11,15 @@
     ## Import shared program configs
     ./web
     ./git
-    ./obs
     ./sync
     ./chat
     ./yazi
     ./btop
     ./fish
     ./nvim
-    ./misc
-    ./music
-    ./fetch
+    #./fetch
     ./kitty
+    ./fastfetch
     ./multimedia
 
   ];

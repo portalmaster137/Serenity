@@ -1,4 +1,13 @@
-{ pkgs, inputs, primaryUser, ... }: {
+{
+  config, pkgs, inputs, 
+  user, userDescription, 
+  homeDirectory, 
+  wallpapersPath, wallpaper, 
+  avatarsPath, avatar,  
+  ... 
+}:
+
+{
   home-manager.users.${primaryUser} = {
     # import the home manager module
     imports = [ inputs.noctalia.homeModules.default ];
@@ -10,7 +19,7 @@
         # configure noctalia here
 
         general = {
-          avatarImage = "/home/${primaryUser}/avatar.jpg";
+          avatarImage = "${avatar}";
           radiusRatio = 0.2;
           showSessionButtonOnLockScreen = false;
           showHibernateOnLockScreen = true;
@@ -24,7 +33,7 @@
         colorSchemes = { predefinedScheme = "Monochrome"; };
 
         wallpaper = {
-          directory = "/home/${primaryUser}/Pictures/Wallpapers";
+          directory = "${wallpapersPath}";
           hideWallpaperFilenames = true;
 
         };

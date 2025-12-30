@@ -4,7 +4,7 @@
 
   home = { packages = with pkgs; [ kitty ]; };
 
-  programs.alacritty.enable = true;
+  #programs.alacritty.enable = true;
 
   ## Enables kitty via home-manager
   programs.kitty = {

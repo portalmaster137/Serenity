@@ -1,5 +1,12 @@
-{ inputs, outputs, config, pkgs, label, version, flakePath, disksPath
-, primaryUser, userDesc, homeDir, wallpapersPath, wallpaper, ... }:
+{ 
+  inputs, outputs, config, pkgs, 
+  label, flakePath, 
+  user, userDescription,
+  homeDirectory, 
+  wallpapersPath, wallpaper, 
+  avatarsPath, avatar,
+  ... 
+}:
 
 let hostname = "${config.networking.hostName}";
 
@@ -20,8 +27,8 @@ in {
 
   ## System-level user declarations
   users.users = {
-    ${primaryUser} = {
-      description = "${userDesc}";
+    ${user} = {
+      description = "${userDescription}";
       isNormalUser = true;
       extraGroups = [ "wheel" "networkmanager" "gamemode" "audio" ];
       #hashedPasswordFile = config.sops.secrets.loginPassword.path;
@@ -35,14 +42,15 @@ in {
     verbose = true; # enables verbose output on activation
     extraSpecialArgs = { # passes in specialArgs from flake.nix
       inherit inputs outputs;
-      inherit label version;
-      inherit flakePath disksPath;
-      inherit primaryUser homeDir;
-      inherit wallpapersPath wallpaper;
       inherit hostname;
+      inherit label flakePath;
+      inherit user userDescription;
+      inherit homeDirectory;
+      inherit wallpapersPath wallpaper;
+      inherit avatarsPath avatar;
     };
     users = {
-      ${primaryUser} = {
+      ${user} = {
         imports = [
           ## Home configuration -
           ## currently all users share the same home
@@ -50,22 +58,27 @@ in {
           ## home directories. Additional modules
           ## can be declared alongside `u-username/default.nix`
           ## and then imported in this section.
-          #./theme
+          #./resources/theme
           ./desktop
           ./programs
           ./scripts
         ];
         home = {
+          stateVersion = "24.11"; # IMPORTANT
           #programs.home-manager.enable = true;
           #systemd.user.startServices = "sd-switch";
-          username = "${primaryUser}"; # passes username from `flake.nix`
-          homeDirectory = "${homeDir}"; # passes homedir from `flake.nix`
+          username = "${user}"; # passes username from `flake.nix`
+          homeDirectory = "${homeDirectory}"; # passes homedir from `flake.nix`
+          file."avatar" = {
+            source = ./resources/avatars;
+            target = "${avatarsPath}";
+            recursive = true;
+          };
           file."Wallpapers" = { # copies wallpapers
             source = ./resources/wallpapers; # from flake directory
             target = "${wallpapersPath}"; # to home directory
             recursive = true; # think this is important, icr
           };
-          stateVersion = "24.11"; # IMPORTANT
         };
       };
     };

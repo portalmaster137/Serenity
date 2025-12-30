@@ -133,15 +133,15 @@
 
       ## Universal variable declarations
       label = "SerenityOS";
-      version = "SerenityOS_0.9.0"; # proper versioning system before v1.0.0?
-      primaryUser = "serenity"; # used for admin purposes
-      userDesc = "Serenity Amalgam";
-      homeDir = "/home/${primaryUser}"; # for easy configuration
-      disksPath = "${homeDir}/"; # for easy disk navigation
-      #flakePath = "${homeDir}/flakes/nixdots/"; # current path to flake - unused
-      flakePath = "${homeDir}/SerenityOS/"; # for v1.0.0 release
-      wallpapersPath = "${homeDir}/Pictures/Wallpapers";
+      user = "serenity"; # used for admin purposes
+      userDescription = "Serenity";
+      homeDirectory = "/home/${user}"; # for easy configuration
+      #disksPath = "${homeDirectory}/"; # for easy disk navigation
+      flakePath = "${homeDirectory}/${label}";
+      wallpapersPath = "${homeDirectory}/Pictures/Wallpapers";
       wallpaper = "${wallpapersPath}/almondBlossoms-VanGogh.jpg";
+      avatarsPath = "${homeDirectory}/Pictures/Avatars";
+      avatar = "${avatarsPath}/avatar1.jpg";
 
     in {
 
@@ -153,10 +153,11 @@
           specialArgs = {
             inherit inputs outputs;
             inherit niri noctalia;
-            inherit label version;
-            inherit flakePath disksPath;
-            inherit primaryUser userDesc homeDir;
+            inherit label flakePath;
+            inherit user userDescription; 
+            inherit homeDirectory;
             inherit wallpapersPath wallpaper;
+            inherit avatarsPath avatar;
           };
           modules = [
             ./core/hosts/hades

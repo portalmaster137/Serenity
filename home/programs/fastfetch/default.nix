@@ -2,6 +2,13 @@
 
 {
 
+  home = {
+    packages = with pkgs; [
+      peaclock # neat terminal clock applet
+      cmatrix # funky terminal matrix rain
+    ];
+  };
+
   programs.fastfetch = {
     enable = true;
     package = with pkgs; [
