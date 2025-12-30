@@ -10,7 +10,7 @@
   ## - expand script to only run if desired directories are NOT already linked
 
   ## To utilise this script place the following option into some system-level module
-  imports = [ ../home/scripts/automount/postActivation.nix ];
+  imports = [ ../home/scripts/sync/postActivation.nix ];
 
   ## Runs after using `sudo nixos-rebuild switch --flake .#<hostname>`
   system.activationScripts.disksLink = {
