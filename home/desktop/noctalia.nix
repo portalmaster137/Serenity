@@ -21,9 +21,7 @@
           name = "Brisbane, Australia";
         };
 
-        colorSchemes = {
-          predefinedScheme = "Monochrome";
-        };
+        colorSchemes = { predefinedScheme = "Monochrome"; };
 
         wallpaper = {
           directory = "/home/${primaryUser}/Pictures/Wallpapers";
@@ -46,13 +44,11 @@
           marginHorizontal = 0.5;
           widgets = {
 
-            left = [
-              {
-                icon = "rocket";
-                id = "CustomButton";
-                leftClickExec = "noctalia-shell ipc call launcher toggle";
-              }
-            ];
+            left = [{
+              icon = "rocket";
+              id = "CustomButton";
+              leftClickExec = "wofi";
+            }];
 
             center = [{
               hideUnoccupied = false;
