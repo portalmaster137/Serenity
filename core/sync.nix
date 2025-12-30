@@ -12,7 +12,7 @@
     ];
   };
 
-  services = {
+  #services = {
 
     ## Gitwatch
     #gitwatch = {
@@ -33,13 +33,13 @@
     #};
 
     ## Syncthing
-    syncthing = {
-      enable = false; # easy toggle
-      dataDir = "${homeDirectory}"; # defaults to primaryUser's homedir
-      openDefaultPorts = true; # opens the default firewall ports
+  #syncthing = {
+  #enable = false; # easy toggle
+  #dataDir = "${homeDirectory}"; # defaults to primaryUser's homedir
+  #openDefaultPorts = true; # opens the default firewall ports
       #configDir = "${homeDirectory}/.config/syncthing"; # defaults to primaryUser's homedir
-      user = "${user}"; # uses primaryUser to run the service
-      group = "users"; # runs in the users group
+  #user = "${user}"; # uses primaryUser to run the service
+  #group = "users"; # runs in the users group
       ## For some reason is using `localhost:8384`
       #guiAddress = "home.syncthing:8384"; # default web address for the GUI
       #settings = {
@@ -58,7 +58,7 @@
           #devices = [
               #"Hecate"
               #"Persephone"
-            ];
+  #];
             #versioning = { # versioning, for added redundancy
             # disabled for now as we have versioning through git
             #type = "simple"; # nothing fancy, keeps x number of copies
@@ -94,8 +94,8 @@
         #"Persephone".id = "REALLY-LONG-PERSEPHONE-SYNCTHING-KEY-HERE"; # disabled for testing
         #};
       #};
-    };
-  };
+  #};
+  #};
 
   #systemd.services.syncthing = {
   #environment.STNODEFAULTFOLDER = "true";
