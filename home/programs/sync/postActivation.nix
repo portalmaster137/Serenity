@@ -1,4 +1,4 @@
-{ inputs, outputs, lib, config, pkgs, primaryUser, homeDir, flakePath, disksPath
+{ inputs, outputs, lib, config, pkgs, user, homeDirectory, flakePath, disksPath
 , ... }:
 
 {
@@ -17,10 +17,10 @@
     supportsDryActivation = false;
     ## Prints status of run commmand with a cute message if successful
     text = ''
-      cd ~ && ln -s Disks /run/media/${primaryUser}/*
+      cd ~ && ln -s Disks /run/media/${user}/*
       echo "Current variables required are:"
-      echo "primaryUser - ${primaryUser}"
-      echo "homeDir - ${homeDir}"
+      echo "primaryUser - ${user}"
+      echo "homeDir - ${homeDirectory}"
       echo "current paths linked are:"
       echo "flakePath - ${flakePath}"
       echo "disksPath - ${disksPath}"

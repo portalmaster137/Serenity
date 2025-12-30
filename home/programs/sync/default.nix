@@ -2,7 +2,7 @@
 ## https://nix-community.github.io/home-manager/options.xhtml#opt-home.file
 ## https://nix-community.github.io/home-manager/options.xhtml#opt-home.activation
 
-{ inputs, outputs, pkgs, config, flakePath, disksPath, primaryUser, ... }:
+{ inputs, outputs, pkgs, config, flakePath, disksPath, user, ... }:
 
 {
 
@@ -18,7 +18,7 @@
   #'';
 
   ## Mounts Asphodel to typical media location
-  #fileSystems."/run/media/${primaryUser}/Asphodel".device =
+  #fileSystems."/run/media/${user}/Asphodel".device =
   #"/dev/mapper/Asphodel";
 
   #home.file = { # Files and directories to copy to ${homeDir}
@@ -26,7 +26,7 @@
   ## Example format for home.file
   #"Foo" = { # Name for the copied file
   #source = ./Foo; # Source is relative to this file
-  #target = "Desired/Path/To/Foo"; # Target path for Foo within ${homeDir}
+  #target = "Desired/Path/To/Foo"; # Target path for Foo within ${homeDirectory}
   #recursive = true; # Unsure if necessary for most things
   #};
 
