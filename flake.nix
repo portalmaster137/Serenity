@@ -77,10 +77,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    noctalia = { # cool desktop shell - https://docs.noctalia.dev/getting-started/nixos/
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    noctalia =
+      { # cool desktop shell - https://docs.noctalia.dev/getting-started/nixos/
+        url = "github:noctalia-dev/noctalia-shell";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
 
     ## Nice-to-haves for gaming - https://github.com/fufexan/nix-gaming
     nix-gaming = { url = "github:fufexan/nix-gaming"; };
@@ -104,6 +105,8 @@
     # - REPLACE
     nix-colors = { url = "github:misterio77/nix-colors"; };
 
+    stylix = { url = "github:danth/stylix"; };
+
     ## Boot animation
     #mac-style-plymouth = { # example setup I stole the code shamelessly from
     #url = "github:SergioRibera/s4rchiso-plymouth-theme";
@@ -120,7 +123,8 @@
 
   };
 
-  outputs = { self, nixpkgs, sops-nix, home-manager, musnix, niri, noctalia, ... }
+  outputs =
+    { self, nixpkgs, sops-nix, home-manager, musnix, niri, noctalia, ... }
 
     @inputs:
     let
@@ -160,6 +164,7 @@
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
             home-manager.nixosModules.home-manager
+            #inputs.stylix.nixosModules.stylix
             {
               home-manager = {
                 useGlobalPkgs = true;

@@ -18,7 +18,9 @@ in {
     ./hyprlock.nix # screen locker
     ./dunst.nix # notifier
     ./wofi.nix # launcher
-    ./niri # desktop shell
+    ./niri # WM
+    #./sway # WM
+    ./noctalia.nix # Desktop shell
 
   ];
 

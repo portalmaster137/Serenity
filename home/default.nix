@@ -50,7 +50,7 @@ in {
           ## home directories. Additional modules
           ## can be declared alongside `u-username/default.nix`
           ## and then imported in this section.
-          #./home.nix
+          #./theme
           ./desktop
           ./programs
           ./scripts
