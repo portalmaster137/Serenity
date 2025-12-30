@@ -54,22 +54,6 @@
     ## NixOS hardware - https://github.com/NixOS/nixos-hardware
     hardware = { url = "github:nixos/nixos-hardware"; };
 
-    ## Lix language  - https://lix.systems/
-    ## https://docs.lix.systems/manual/lix/stable/
-    lix = {
-      url = "git+https://git.lix.systems/lix-project/lix";
-      flake = false;
-    };
-
-    ## Lix nixos module - https://lix.systems/add-to-config/
-    lix-module = {
-      url = "git+https://git.lix.systems/lix-project/nixos-module";
-      inputs = {
-        lix.follows = "lix";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
     ## Flake utils - https://github.com/numtide/flake-utils
     flake-utils = { url = "github:numtide/flake-utils"; };
 
@@ -79,29 +63,9 @@
     ## Secrets management - https://github.com/Mic92/sops-nix
     sops-nix = { url = "github:Mic92/sops-nix"; };
 
-    ## Musnix - https://github.com/musnix/musnix
-    musnix = { url = "github:musnix/musnix"; };
-
-    ## Nice-to-haves for gaming - https://github.com/fufexan/nix-gaming
-    nix-gaming = { url = "github:fufexan/nix-gaming"; };
-
     ## Zoomer text editor - https://github.com/nix-community/nixvim
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    ## Dotfiles management - https://github.com/nix-community/home-manager
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    ## Easy themeing - https://github.com/Misterio77/nix-colors
-    nix-colors = { url = "github:misterio77/nix-colors"; };
-
-    noctalia = { # cool desktop shell - https://docs.noctalia.dev/getting-started/nixos/
-      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -113,11 +77,32 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    noctalia = { # cool desktop shell - https://docs.noctalia.dev/getting-started/nixos/
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ## Nice-to-haves for gaming - https://github.com/fufexan/nix-gaming
+    nix-gaming = { url = "github:fufexan/nix-gaming"; };
+
+    ## Musnix - https://github.com/musnix/musnix
+    musnix = { url = "github:musnix/musnix"; };
+
     ## Tidalcycles.nix 
     tidalcycles = {
       url = "github:mitchmindtree/tidalcycles.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    ## Dotfiles management - https://github.com/nix-community/home-manager
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ## Easy themeing - https://github.com/Misterio77/nix-colors
+    # - REPLACE
+    nix-colors = { url = "github:misterio77/nix-colors"; };
 
     ## Boot animation
     #mac-style-plymouth = { # example setup I stole the code shamelessly from
