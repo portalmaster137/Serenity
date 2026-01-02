@@ -5,6 +5,8 @@ in {
 
   imports = [
     inputs.niri.homeModules.niri
+    #inputs.noctalia.homeModules.default
+    ../noctalia.nix
     ./window-rules.nix
     #./visual.nix
     ./binds.nix

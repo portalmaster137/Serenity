@@ -20,7 +20,7 @@ in {
     ./wofi.nix # launcher
     ./niri # WM
     #./sway # WM
-    ./noctalia.nix # Desktop shell
+    #./noctalia.nix # Desktop shell
 
   ];
 
