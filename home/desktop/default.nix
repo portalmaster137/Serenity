@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, lib, flakePath, homeDir, ... }:
+{ inputs, config, pkgs, lib, flakePath, homeDirectory, ... }:
 
 ## Base desktop theme
 let
@@ -54,7 +54,7 @@ in {
       createDirectories = true;
       extraConfig = {
         XDG_FLAKE_DIR = "${flakePath}";
-        XDG_SYNC_DIR = "${homeDir}/Sync";
+        XDG_SYNC_DIR = "${homeDirectory}/Sync";
       };
     };
   };

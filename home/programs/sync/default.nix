@@ -22,7 +22,7 @@
   #fileSystems."/run/media/${user}/Asphodel".device =
   #"/dev/mapper/Asphodel";
 
-  #home.file = { # Files and directories to copy to ${homeDir}
+  #home.file = { # Files and directories to copy to ${homeDirectory}
 
   ## Example format for home.file
   #"Foo" = { # Name for the copied file

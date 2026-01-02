@@ -1,4 +1,4 @@
-{ pkgs, primaryUser, homeDir, flakePath, ... }:
+{ pkgs, primaryUser, homeDirectory, flakePath, ... }:
 
 ## Allows regreet to be bootstrapped by sway
 let
