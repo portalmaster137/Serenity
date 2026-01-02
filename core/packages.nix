@@ -2,7 +2,9 @@
 
 {
 
-  imports = [ ];
+  imports = [ 
+    ./python.nix
+  ];
 
   ## Activation Scripts
   ## - these run after using `sudo nixos-rebuild switch`
