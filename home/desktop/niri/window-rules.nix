@@ -17,6 +17,11 @@ let
       matches = [{ is-floating = true; }];
       shadow.enable = true;
     }
+    {
+      matches = [{title = "python\s[A-Za-z]+\.py";}];
+      open-floating = true;
+      open-focused = true;
+    }
   ];
 in {
   programs.niri.settings = {
