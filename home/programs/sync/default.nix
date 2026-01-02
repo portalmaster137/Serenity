@@ -41,7 +41,7 @@
       enable = true;
       automount = true; # automounts newly registered disks
       notify = true; # sends a notification on disk mount
-      tray = "auto"; # enables the tray applet only when a device is available
+      #tray = "auto"; # enables the tray applet only when a device is available
       #settings = {
       #};
     };

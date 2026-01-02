@@ -11,7 +11,7 @@
     ## Import shared program configs
     ./web
     ./git
-    ./sync/postActivation.nix
+    ./sync
     ./chat
     ./yazi
     ./btop
