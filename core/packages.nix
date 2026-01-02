@@ -118,6 +118,7 @@
     systemPackages = with pkgs; [
 
       ## Nix specific tools
+      cabal2nix
       nix-tree # Dependency tree viewer for nix store
       nix-init # Generate nix packages from URLs
       nix-index # Database for nixpkgs
