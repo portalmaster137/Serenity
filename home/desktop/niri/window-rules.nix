@@ -15,6 +15,13 @@ let
     }
     {
       matches = [{ is-floating = true; }];
+      default-floating-position = {
+        relative-to = "top-left";
+        x = 1720;
+        y = 720;
+      };
+      max-height = 720;
+      max-width = 1720;
       shadow.enable = true;
     }
     {
