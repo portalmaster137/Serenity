@@ -24,7 +24,7 @@
       allowUnfree = true;
       allowBroken = true;
       ## Place insecure packages here
-      permittedInsecurePackages = [ "olm-3.2.16" ];
+      #permittedInsecurePackages = [ "olm-3.2.16" ];
       ## Overrides
       #packageOverrides = pkgs: {
         #sygil-plymouth = pkgs.callPackage /home/serenity/repos/sygil-plymouth/package.nix { };
@@ -36,8 +36,8 @@
       niri.overlays.niri
       inputs.tidalcycles.overlays.default
       #inputs.mac-style-plymouth.overlays.default
-      inputs.sygil-plymouth.overlays.default
-      inputs.sygil-plymouth-clean.overlays.default
+      #inputs.sygil-plymouth.overlays.default
+      #inputs.sygil-plymouth-clean.overlays.default
       ## to use overlays exported from other flakes:
       #neovim-nightly-overlay.overlays.default
       ## or define it inline, for example:
