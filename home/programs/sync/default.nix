@@ -2,7 +2,7 @@
 ## https://nix-community.github.io/home-manager/options.xhtml#opt-home.file
 ## https://nix-community.github.io/home-manager/options.xhtml#opt-home.activation
 
-{ inputs, outputs, pkgs, config, flakePath, disksPath, user, ... }:
+{ inputs, outputs, pkgs, config, flakePath, user, ... }:
 
 {
 

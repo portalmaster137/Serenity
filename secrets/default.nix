@@ -1,4 +1,4 @@
-{ pkgs, config, inputs, flakePath, disksPath, user, homeDirectory, ... }:
+{ pkgs, config, inputs, flakePath, user, homeDirectory, ... }:
 
 {
 

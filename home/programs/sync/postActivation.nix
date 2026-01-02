@@ -23,7 +23,6 @@
       echo "homeDir - ${homeDirectory}"
       echo "current paths linked are:"
       echo "flakePath - ${flakePath}"
-      echo "disksPath - ${disksPath}"
       echo "<3"
     '';
   };
