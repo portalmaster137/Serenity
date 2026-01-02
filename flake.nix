@@ -136,7 +136,7 @@
       user = "serenity"; # used for admin purposes
       userDescription = "Serenity";
       homeDirectory = "/home/${user}"; # for easy configuration
-      #disksPath = "${homeDirectory}/"; # for easy disk navigation
+      disksPath = "${homeDirectory}/"; # for easy disk navigation
       flakePath = "${homeDirectory}/${label}";
       wallpapersPath = "${homeDirectory}/Pictures/Wallpapers";
       wallpaper = "${wallpapersPath}/almondBlossoms-VanGogh.jpg";
@@ -155,7 +155,7 @@
             inherit niri noctalia;
             inherit label flakePath;
             inherit user userDescription; 
-            inherit homeDirectory;
+            inherit homeDirectory disksPath;
             inherit wallpapersPath wallpaper;
             inherit avatarsPath avatar;
           };
