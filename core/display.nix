@@ -1,10 +1,9 @@
-{ inputs, pkgs, label, version, lib, niri, ... }:
+{ inputs, pkgs, label, lib, niri, ... }:
 
 {
 
   system = {
     nixos = {
-      label = "${version}";
       variantName = "${label}";
     };
   };
@@ -37,8 +36,6 @@
     loader = {
       timeout = 5; # 5 second timeout to default selection
       grub = {
-        configurationName =
-          "${version}"; # prints SerenitOS version instead of NixOS version
         splashImage = null; # hides splashimage
         timeoutStyle = "hidden"; # hides timeout
       };
@@ -46,19 +43,12 @@
     plymouth = { # enables plymouth boot animations
       enable = true;
       extraConfig = "ShowDelay=0";
-      theme = "sygil-clean";
+      theme = "circle";
       themePackages = with pkgs; [
-        sygil-plymouth
-        sygil-plymouth-clean
-        #mac-style-plymouth
+        (adi1090x-plymouth-themes.override {
+          selected_themes = [ "circle" ];
+        })
       ];
-      #theme = "circle";
-      #themePackages = with pkgs;
-      #[
-      #(adi1090x-plymouth-themes.override {
-      #selected_themes = [ "circle" ];
-      #})
-      #];
     };
   };
 
