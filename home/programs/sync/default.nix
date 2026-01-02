@@ -7,7 +7,7 @@
 {
 
   imports = [ # inputs.sops-nix.nixosModules.sops
-    ./postActivation.nix
+    #./postActivation.nix
   ];
 
   # need option for `zfs set mountpoint=/myspecialfolder mypool`
