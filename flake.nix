@@ -136,7 +136,7 @@
       user = "serenity"; # used for admin purposes
       userDescription = "Serenity";
       homeDirectory = "/home/${user}"; # for easy configuration
-      disksPath = "${homeDirectory}/"; # for easy disk navigation
+      disksPath = "${homeDirectory}/Disks"; # for easy disk navigation
       flakePath = "${homeDirectory}/${label}";
       wallpapersPath = "${homeDirectory}/Pictures/Wallpapers";
       wallpaper = "${wallpapersPath}/almondBlossoms-VanGogh.jpg";
