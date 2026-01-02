@@ -161,7 +161,7 @@
           };
           modules = [
             ./core/hosts/hades
-            ./home/desktop/noctalia.nix
+            #./home/desktop/noctalia.nix
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
             home-manager.nixosModules.home-manager
@@ -171,6 +171,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 backupFileExtension = "backup";
+                stateVersion = "24.11";
               };
             }
           ];
