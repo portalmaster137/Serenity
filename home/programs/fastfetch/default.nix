@@ -12,7 +12,7 @@
   programs.fastfetch = {
     enable = true;
     #package = with pkgs; [
-      fastfetch
+      #fastfetch
       #fastfetchMinimal
     #];
 
