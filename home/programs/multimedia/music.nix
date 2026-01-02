@@ -9,9 +9,7 @@
 
 {
 
-  imports = [
-    ./production.nix # programs for creation of music :D
-  ];
+  imports = [ ];
 
   home = {
     packages = with pkgs; [
