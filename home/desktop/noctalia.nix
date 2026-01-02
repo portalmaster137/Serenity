@@ -1,5 +1,5 @@
 {
-  config, pkgs, inputs, 
+  inputs, outputs, config, pkgs,
   user, userDescription, 
   homeDirectory, 
   wallpapersPath, wallpaper, 
