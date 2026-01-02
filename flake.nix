@@ -171,7 +171,6 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 backupFileExtension = "backup";
-                stateVersion = "24.11";
               };
             }
           ];

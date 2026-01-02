@@ -64,7 +64,7 @@ in {
           ./scripts
         ];
         home = {
-          #stateVersion = "24.11"; # IMPORTANT
+          stateVersion = "24.11"; # IMPORTANT
           #programs.home-manager.enable = true;
           #systemd.user.startServices = "sd-switch";
           username = "${user}"; # passes username from `flake.nix`
