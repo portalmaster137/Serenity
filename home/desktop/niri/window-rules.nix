@@ -22,6 +22,11 @@ let
       open-floating = true;
       open-focused = true;
     }
+    {
+      matches = [{title = "Python Turtle Graphics";}];
+      open-floating = true;
+      open-focused = true;
+    }
   ];
 in {
   programs.niri.settings = {
