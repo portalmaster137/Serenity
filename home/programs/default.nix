@@ -12,7 +12,6 @@
     ./web
     ./git
     ./sync
-    ./chat
     ./yazi
     ./btop
     ./fish
@@ -20,6 +19,7 @@
     #./fetch
     ./kitty
     ./fastfetch
+    #./terminal
     ./multimedia
 
   ];
