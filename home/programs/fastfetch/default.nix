@@ -11,10 +11,10 @@
 
   programs.fastfetch = {
     enable = true;
-    package = with pkgs; [
+    #package = with pkgs; [
       fastfetch
       #fastfetchMinimal
-    ];
+    #];
 
     #settings = {
     #"$schema" = "https://github.com/fastfetch=cli/fastfetch/raw/dev/doc/json_schema.json";
