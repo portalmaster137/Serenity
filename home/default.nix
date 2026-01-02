@@ -70,7 +70,7 @@ in {
           username = "${user}"; # passes username from `flake.nix`
           homeDirectory = "${homeDirectory}"; # passes homedir from `flake.nix`
           file."avatar" = {
-            source = ./resources/avatars;
+            source = ./resources/theme/avatar.jpg;
             target = "${avatarsPath}";
             recursive = true;
           };

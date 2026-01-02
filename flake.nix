@@ -141,7 +141,7 @@
       wallpapersPath = "${homeDirectory}/Pictures/Wallpapers";
       wallpaper = "${wallpapersPath}/almondBlossoms-VanGogh.jpg";
       avatarsPath = "${homeDirectory}/Pictures/Avatars";
-      avatar = "${avatarsPath}/avatar1.jpg";
+      avatar = "${avatarsPath}/avatar.jpg";
 
     in {
 
