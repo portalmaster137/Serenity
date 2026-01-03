@@ -24,7 +24,7 @@
     config = {
       ## Not doing full-FOSS lol
       allowUnfree = true;
-      #allowBroken = true;
+      allowBroken = true;
 
       ## Place insecure packages here
       #permittedInsecurePackages = [ 
