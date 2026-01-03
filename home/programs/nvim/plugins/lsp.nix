@@ -17,7 +17,10 @@
         fish_lsp.enable = true; # Fish 
         pyright.enable = true; # Python
         rls.enable = true; # Rust
-        hls.enable = true; # Haskell
+        hls = {
+          enable = true; # Haskell
+          installGhc = true; # GHC
+        };
         nixd = {
           enable = true; # Nix
           extraOptions = { expr = "import <nixpkgs> {}"; }; # uhhh
