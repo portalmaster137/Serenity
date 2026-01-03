@@ -14,8 +14,10 @@
         cssls.enable = true; # CSS
         marksman.enable = true; # Markdown
         bashls.enable = true; # Bash
+        fish_lsp.enable = true; # Fish 
+        pyright.enable = true; # Python
         rls.enable = true; # Rust
-        #ccls.enable = true; # C/++
+        hls.enable = true; # Haskell
         nixd = {
           enable = true; # Nix
           extraOptions = { expr = "import <nixpkgs> {}"; }; # uhhh
