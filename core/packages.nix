@@ -40,7 +40,7 @@
     ## Place package overlays here
     overlays = [
       niri.overlays.niri
-      inputs.tidalcycles.overlays.default
+      #inputs.tidalcycles.overlays.default
       #inputs.mac-style-plymouth.overlays.default
       #inputs.sygil-plymouth.overlays.default
       #inputs.sygil-plymouth-clean.overlays.default
@@ -118,7 +118,7 @@
     systemPackages = with pkgs; [
 
       ## Nix specific tools
-      cabal2nix
+      #cabal2nix
       nix-tree # Dependency tree viewer for nix store
       nix-init # Generate nix packages from URLs
       nix-index # Database for nixpkgs
