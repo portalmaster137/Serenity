@@ -48,78 +48,70 @@
 
   inputs = {
 
-    ## Nixpkgs version - https://github.com/NixOS/nixpkgs
+    ## NixOS Core and Utilities
+    # - Nixpkgs version - https://github.com/NixOS/nixpkgs
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
-
-    ## NixOS hardware - https://github.com/NixOS/nixos-hardware
+    # - NixOS hardware - https://github.com/NixOS/nixos-hardware
     hardware = { url = "github:nixos/nixos-hardware"; };
-
-    ## Flake utils - https://github.com/numtide/flake-utils
+    # - Flake utils - https://github.com/numtide/flake-utils
     flake-utils = { url = "github:numtide/flake-utils"; };
-
-    ## Flake parts - https://github.com/hercules-ci/flake-parts
+    # - Flake parts - https://github.com/hercules-ci/flake-parts
     flake-parts = { url = "github:hercules-ci/flake-parts"; };
 
-    ## Secrets management - https://github.com/Mic92/sops-nix
+    ## Secrets management & Synchronisation
+    # - https://github.com/Mic92/sops-nix
     sops-nix = { url = "github:Mic92/sops-nix"; };
 
-    ## Zoomer text editor - https://github.com/nix-community/nixvim
+    ## Window Management & Desktop
+    # Niri window manager
+    # - https://github.com/YaLTeR/niri
+    # - https://github.com/sodiboo/niri-flake/
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # Hassle free desktop shell
+    # - https://docs.noctalia.dev/getting-started/nixos/
+    noctalia = { 
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # Zoomer text editor 
+    # - https://github.com/nix-community/nixvim
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ## Niri window manager - 
-    ## https://github.com/YaLTeR/niri
-    ## https://github.com/sodiboo/niri-flake/
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    noctalia =
-      { # cool desktop shell - https://docs.noctalia.dev/getting-started/nixos/
-        url = "github:noctalia-dev/noctalia-shell";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-
-    ## Nice-to-haves for gaming - https://github.com/fufexan/nix-gaming
-    nix-gaming = { url = "github:fufexan/nix-gaming"; };
-
-    ## Musnix - https://github.com/musnix/musnix
+    ## Sound & Multimedia
+    # Sound driver optimisations
+    # - https://github.com/musnix/musnix
     musnix = { url = "github:musnix/musnix"; };
-
-    ## Tidalcycles.nix 
+    # Programmatic music language
+    # - https://github.com/mitchmindtree/tidalcycles.nix
     tidalcycles = {
       url = "github:mitchmindtree/tidalcycles.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Nice-to-haves for gaming 
+    # - https://github.com/fufexan/nix-gaming
+    nix-gaming = { url = "github:fufexan/nix-gaming"; };
 
-    ## Dotfiles management - https://github.com/nix-community/home-manager
+    ## Dotfiles & Theme management 
+    # Declarative dots
+    # - https://github.com/nix-community/home-manager
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    ## Easy themeing - https://github.com/Misterio77/nix-colors
-    # - REPLACE
+    # Easy themeing (Switch to stylix) - 
+    # - https://github.com/nix-community/stylix
+    # - https://github.com/Misterio77/nix-colors
+    #stylix = { url = "github:danth/stylix"; };
     nix-colors = { url = "github:misterio77/nix-colors"; };
-
-    stylix = { url = "github:danth/stylix"; };
-
-    ## Boot animation
-    #mac-style-plymouth = { # example setup I stole the code shamelessly from
-    #url = "github:SergioRibera/s4rchiso-plymouth-theme";
-    #inputs.nixpkgs.follows = "nixpkgs";
-    #};
-    sygil-plymouth = { # first version I "rawdogged" together
-      url = "git+https://codeberg.org/serenity-F/sygil-plymouth";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    sygil-plymouth-clean = { # second version using different options
-      url = "git+https://codeberg.org/serenity-F/sygil-plymouth-clean";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # Custom 'Sygil' plymouth boot theme [WIP]
+    # - https://codeberg.org/serenity-F/sygil-plymouth
+    sygil-plymouth = { url = "git+https://codeberg.org/serenity-F/sygil-plymouth"; };
 
   };
 
@@ -137,7 +129,7 @@
       userDescription = "Serenity";
       homeDirectory = "/home/${user}"; # for easy configuration
       disksPath = "${homeDirectory}/Disks"; # for easy disk navigation
-      flakePath = "${homeDirectory}/${label}";
+      flakePath = "${homeDirectory}/${label}"; # unused currently
       wallpapersPath = "${homeDirectory}/Pictures/Wallpapers";
       wallpaper = "${wallpapersPath}/almondBlossoms-VanGogh.jpg";
       avatarsPath = "${homeDirectory}/Pictures/Avatars";
@@ -161,11 +153,9 @@
           };
           modules = [
             ./core/hosts/hades
-            #./home/desktop/noctalia.nix
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
             home-manager.nixosModules.home-manager
-            #inputs.stylix.nixosModules.stylix
             {
               home-manager = {
                 useGlobalPkgs = true;
