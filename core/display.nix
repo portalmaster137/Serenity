@@ -67,7 +67,8 @@
       XDG_CURRENT_DESKTOP = "sway";
     };
     systemPackages = with pkgs; [ # theme packages
-      xorg.xhost # i actually dont remember what this does
+      #xorg.xhost # i actually dont remember what this does
+      xhost
       ## Themes
       minimal-grub-theme
       #colloid-kde
