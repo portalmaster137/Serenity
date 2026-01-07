@@ -20,7 +20,7 @@
       #supercollider-with-plugins
       #tidal # from flake ?
       bespokesynth # Modular synth and sequencer
-      #vcv-rack # Analogue modular synth emulator
+      vcv-rack # Analogue modular synth emulator
       #puredata # Programmatic synth and sequencer
 
       ## Models and synths
