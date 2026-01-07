@@ -6,7 +6,7 @@
     packages = with pkgs; [
 
       ## Misc. Tools
-      glfw-wayland
+      glfw
       libjack2
       zenity
       metronome # GTK metronome
