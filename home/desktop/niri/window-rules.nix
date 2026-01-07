@@ -11,6 +11,9 @@ let
       };
       clip-to-geometry = true;
       draw-border-with-background = false;
+    }
+    {
+      matches = [{ app-id = "kitty"; }];
       opacity = 0.95;
     }
     {
@@ -22,6 +25,7 @@ let
       };
       max-height = 720;
       max-width = 1720;
+      opacity = 0.95;
       shadow.enable = true;
     }
     {
