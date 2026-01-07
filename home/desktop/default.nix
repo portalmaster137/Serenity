@@ -117,7 +117,7 @@ in {
       ## Network & Auth/Security
       #networkmanagerapplet # Tray applet for networkmanager 
       hyprpolkitagent # Hyprland native polkit agent
-      networkmanager # Network manager ...
+      #networkmanager # Network manager ...
       gnome-keyring # Keyring for login prompts
       gnome-secrets # GTK password manager
       keepass-diff # CLI-tool to diff kbdx files

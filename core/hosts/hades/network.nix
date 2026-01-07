@@ -3,7 +3,7 @@
 {
 
   networking = {
-    wireless.enable = false;
+    #wireless.enable = false;
     #nameservers = [ "127.0.0.1" "::1" ];
     networkmanager = {
       enable = true;
