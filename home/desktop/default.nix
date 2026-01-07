@@ -135,9 +135,10 @@ in {
       ydotool # Click/Keypress emulator
       swww # Wallpaper daemon
       swaybg # Wallpaper daemon
-      networkmanagerapplet # Tray applet for networkmanager
+
+      #networkmanagerapplet # Tray applet for networkmanager 
       networkmanager # Network manager ...
-      blueman # GUI bluetooth control
+      #blueman # GUI bluetooth control
       easyeffects # Graphical volume control
       pavucontrol # Graphical volume control
       helvum # GTK patchbay

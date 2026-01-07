@@ -3,7 +3,7 @@
 {
   imports = [ ];
 
-  services.blueman.enable = true; # enables blueman
+  #services.blueman.enable = true; # enables blueman
 
   hardware.bluetooth = {
     enable = true; # Enables bluetooth
