@@ -114,8 +114,10 @@ in {
     };
 
     packages = with pkgs; [
-      ## Auth/Security
+      ## Network & Auth/Security
+      #networkmanagerapplet # Tray applet for networkmanager 
       hyprpolkitagent # Hyprland native polkit agent
+      networkmanager # Network manager ...
       gnome-keyring # Keyring for login prompts
       gnome-secrets # GTK password manager
       keepass-diff # CLI-tool to diff kbdx files
@@ -133,15 +135,8 @@ in {
       hyprpicker # Colour picker
       hyprcursor # Cursor, duh
       ydotool # Click/Keypress emulator
-      swww # Wallpaper daemon
-      swaybg # Wallpaper daemon
-
-      #networkmanagerapplet # Tray applet for networkmanager 
-      networkmanager # Network manager ...
-      #blueman # GUI bluetooth control
-      easyeffects # Graphical volume control
-      pavucontrol # Graphical volume control
-      helvum # GTK patchbay
+      #swww # Wallpaper daemon
+      #swaybg # Wallpaper daemon
 
       ## Desktop App Suite
       gnome-calculator # GTK calculator
@@ -169,22 +164,16 @@ in {
   };
 
   programs = {
-
     ## CLI fuzzy find
     fzf = {
       enable = true;
       enableFishIntegration = true;
     };
-
   };
 
   services = {
-    ## Daemon for easyeffects
-    easyeffects.enable = true;
     ## GTK keyring for password prompts
     gnome-keyring.enable = true;
-    ## Another method to enable nm-applet
-    network-manager-applet.enable = true;
     ## Mobile <-> desktop interaction
     kdeconnect = {
       enable = true;

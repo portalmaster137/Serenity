@@ -8,21 +8,24 @@
     ./music-production.nix
   ];
 
-  home = {
-    packages = with pkgs; [
+  ## Easy effects daemon
+  services.easyeffects.enable = true;
 
-      ## Image and Video playback and production
-      #inkscape # Vector image editing
-      #shotcut # Video editing
-      #blender # 3D modelling
-      gimp # Image editor
-      vlc # Multimedia player
-
-      ## Miscellaneous
-      themix-gui # for creating gtk themes
-      orca-slicer # 3d printing slicer
-
-    ];
-  };
-
+  home.packages = with pkgs; [
+    ## Audio
+    helvum # Patchbay
+    pavucontrol # Volume control
+    easyeffects # Effects and routing
+    ## Image
+    gimp # General image editing
+    #inkscape # Vector image editing
+    ## Video
+    vlc # Video playback
+    #shotcut # Video editing
+    ## 3D Creative
+    blender # 3D modelling software
+    orca-slicer # 3D print slicing
+    ## Miscellaneous
+    themix-gui # for creating gtk themes
+  ];
 }
