@@ -9,6 +9,7 @@
     ## Shared 'core' config options
     ../../../core
     ## Host-specific core modules
+    ../../../core/bluetooth.nix
     ../../../core/zfs.nix
     ../../../core/sync.nix
     ../../../core/gaming.nix
@@ -54,26 +55,6 @@
 
   hardware = {
 
-    ## Bluetooth settings for Hades
-    ## Also see line 103 for blueman service,
-    ## and home/desktop/waybar.nix for tray applet.
-    ## To do: Move bluetooth options to own module
-    bluetooth = {
-      enable = true;
-      ## Turns the bluetooth adapter on at boot
-      powerOnBoot = true;
-      settings.General = {
-        ## Displays battery charge of connected devices
-        Experimental = true;
-        ## Uses more power, but hades is a desktop
-        FastConnectable = true;
-      };
-
-      ## To fix bluetooth keyboard input
-      #input.General = { UserspaceHID = true; };
-
-    };
-
     ## GPU and graphics
     graphics = {
       enable = true;
@@ -97,7 +78,6 @@
   };
 
   services = {
-    blueman.enable = true; # enables bluetooth service
     xserver.videoDrivers = [ "amdgpu" ]; # sets X to use amdgpu drivers
   };
 
