@@ -16,7 +16,7 @@
     ./btop
     ./fish
     ./nvim
-    #./fetch
+    ./fetch
     ./kitty
     ./fastfetch
     #./terminal
