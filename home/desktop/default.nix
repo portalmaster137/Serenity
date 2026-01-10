@@ -142,8 +142,6 @@ in {
       hyprpicker # Colour picker
       hyprcursor # Cursor, duh
       ydotool # Click/Keypress emulator
-      #swww # Wallpaper daemon
-      #swaybg # Wallpaper daemon
 
       ## Desktop App Suite
       gnome-calculator # GTK calculator
