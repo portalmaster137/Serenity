@@ -3,6 +3,7 @@
 {
 
   imports = [
+    ./web.nix
     ./obs.nix
     ./music.nix
     ./music-production.nix

@@ -60,7 +60,8 @@ in {
           ## and then imported in this section.
           #./resources/theme
           ./desktop
-          ./programs
+          ./terminal
+          ./multimedia
           ./scripts
         ];
         home = {

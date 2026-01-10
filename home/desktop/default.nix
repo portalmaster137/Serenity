@@ -22,6 +22,9 @@ in {
     #./sway # WM
     #./noctalia.nix # Desktop shell
 
+    ## Import user theme(s)
+    ../resources/theme 
+    ../resources/theme/SerenityOS.nix
   ];
 
   systemd.user.startServices = "sd-switch"; # cant remember
