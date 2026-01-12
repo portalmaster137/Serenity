@@ -107,7 +107,7 @@
     # Easy themeing (Switch to stylix) - 
     # - https://github.com/nix-community/stylix
     # - https://github.com/Misterio77/nix-colors
-    #stylix = { url = "github:danth/stylix"; };
+    stylix = { url = "github:danth/stylix"; };
     nix-colors = { url = "github:misterio77/nix-colors"; };
     # Custom 'Sygil' plymouth boot theme [WIP]
     # - https://codeberg.org/serenity-F/sygil-plymouth
@@ -116,7 +116,7 @@
   };
 
   outputs =
-    { self, nixpkgs, sops-nix, home-manager, musnix, niri, noctalia, ... }
+    { self, nixpkgs, sops-nix, home-manager, musnix, niri, noctalia, stylix, ... }
 
     @inputs:
     let
@@ -155,6 +155,7 @@
             ./core/hosts/hades
             sops-nix.nixosModules.sops
             musnix.nixosModules.musnix
+            stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
             {
               home-manager = {
