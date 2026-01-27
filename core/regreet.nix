@@ -4,8 +4,6 @@
 let
   swayConfig = pkgs.writeText "greetd-sway-config" ''
     exec "${pkgs.regreet}/bin/regreet; swaymsg exit"
-      -t warning \
-      -m 'What do you want to do?' \
   '';
 in {
 
