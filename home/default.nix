@@ -69,12 +69,12 @@ in {
           #systemd.user.startServices = "sd-switch";
           username = "${user}"; # passes username from `flake.nix`
           homeDirectory = "${homeDirectory}"; # passes homedir from `flake.nix`
-          file."avatar" = {
+          file."avatars" = {
             source = ./resources/avatars;
             target = "${avatarsPath}";
             recursive = true;
           };
-          file."Wallpapers" = { # copies wallpapers
+          file."wallpapers" = { # copies wallpapers
             source = ./resources/wallpapers; # from flake directory
             target = "${wallpapersPath}"; # to home directory
             recursive = true; # think this is important, icr
