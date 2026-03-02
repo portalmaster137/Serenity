@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, user, homeDirectory, ... }:
 
 {
   programs.git = {
@@ -8,6 +8,9 @@
     extraConfig = {
       init.defaultBranch = "main";
       # Automatically track remote branch
+      gpg.format = "ssh";
+      commit.gpgSign = true;
+      user.signingKey = "/home/serenity/.ssh/id_ed25519.pub";
       push.autoSetupRemote = true;
     };
   };

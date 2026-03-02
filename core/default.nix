@@ -9,7 +9,6 @@
 
     ## Semi-modularised config
     ../home # user-level packages in ../home/programs/
-    ../secrets # secrets :shh:
 
     ## Shared modules to import
     ./audio.nix
@@ -28,8 +27,15 @@
       enable = true;
       #extraConfig = '' '';
     };
+  ## Increasing max open files - needed for my huge ass bloaty flake
+    pam.loginLimits = [{
+      domain = "*";
+      type = "soft";
+      item = "nofile";
+      value = "8192";
+    }];
   };
-
+  systemd.settings.Manager = { DefaultLimitNOFILE = "8192:524288"; };
   ## test line
 
   ## Settings for the nix package manager and daemon

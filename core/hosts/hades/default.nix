@@ -28,26 +28,21 @@
     supportedFilesystems =
       [ "vfat" "ext4" ]; # adds fat32 and ext3 filesystems to defaults
 
-    ## Specifies where GRUB is installed
     loader = {
-      grub = {
-        enable = true;
-        device = "/dev/nvme0n1";
-        enableCryptodisk = true; # allows decrypting luks drive
+      efi.canTouchEfiVariables = true;
+      systemd-boot = {
+      	enable = true;
       };
     };
-    initrd.luks.devices = { # luks options
-      root = { # Use https://nixos.wiki/wiki/Full_Disk_Encryption
-        device = "/dev/disk/by-uuid/5526aab7-b779-4fc8-95bd-9452bc3a9232";
-        preLVM = true;
-      };
+
+    initrd.luks.devices."luks-55f7d546-fac9-4ea0-a21e-4c50ecc0d67d".device = "/dev/disk/by-uuid/55f7d546-fac9-4ea0-a21e-4c50ecc0d67d";
 
       ## Uhhhhhhh
       #Asphodel = { # secondary partition on Tartarus drive
       #device = "/dev/disk/by-uuid/45f5f6ad-a676-4bc1-ad4b-e3e26b5697f4";
       #preLVM =false;
       #};
-    };
+    #};
 
   };
 

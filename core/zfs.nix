@@ -22,9 +22,9 @@ in {
     supportedFilesystems = [ "zfs" ];
     zfs = {
       ## uhhh
-      extraPools = [ "orcus" ];
+      #extraPools = [ "orcus" ];
       ## uhhh
-      forceImportRoot = false;
+      #forceImportRoot = false;
     };
   };
   networking = { hostId = "603b0c8b"; }; # Unsure why this is here actually ?

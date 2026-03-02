@@ -29,4 +29,13 @@
     ## Miscellaneous
     themix-gui # for creating gtk themes
   ];
+
+  programs = {
+    obsidian = {
+      # note taking
+      enable = true;
+      #defaultSettings = { };
+    };
+  };
+
 }
