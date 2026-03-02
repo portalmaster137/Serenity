@@ -17,28 +17,28 @@ in
   # Boot/GRUB options
   boot = {
     #bootspec.enable = true;
-    #consoleLogLevel = 0;
-    #initrd = {
-      #verbose = false;
-      #systemd = {
-      #enable = true;
-      #};
-    #};
-    #kernelParams =
-      #[ # grub kernel parameters, set to prevent excessive output on boot
+    consoleLogLevel = 3;
+    initrd = {
+      verbose = false;
+      systemd = {
+        enable = true;
+      };
+    };
+    kernelParams =
+      [ # grub kernel parameters, set to prevent excessive output on boot
         #"vga=current" # use current video adapater
         #"splash" # unsure ?
-        #"quiet" # quiet log level
-        #"loglevel=3" # minimal output on boot
-        #"udev.log_priority=3" # more minimising of output on boot
-        #"rd.systemd.show_status=false" # unsure ?
-        #"rd.udev.log_level=0" # more minimising of output on boot
-        #"boot.shell_on_fail" # reboots to basic uefi shell on boot failure
-        #"i915.fastboot=1" # unsure ?
+        "quiet" # quiet log level
+        "loglevel=3" # minimal output on boot
+        "udev.log_priority=3" # more minimising of output on boot
+        "rd.systemd.show_status=false" # unsure ?
+        "rd.udev.log_level=0" # more minimising of output on boot
+        "boot.shell_on_fail" # reboots to basic uefi shell on boot failure
+        "i915.fastboot=1" # unsure ?
         #"plymouth.debug" # I NEED ANSWERS
         #"plymouth.use-simpledrm" # tweak to allow plymouth animations to run smoother
         #"plymouth.ignore-serial-consoles" # unsure ?
-      #];
+      ];
     loader = {
       timeout = 5; # 5 second timeout to default selection
       #grub = {
