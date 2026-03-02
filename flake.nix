@@ -109,7 +109,7 @@
 
   outputs =
     ## THIS IS DEFINITELY
-    { self, nixpkgs, sops-nix, home-manager, musnix, niri, noctalia, stylix, ... }
+    { self, nixpkgs, sops-nix, home-manager, musnix, niri, noctalia, stylix, flake-parts, ... }
     ## A WEIRD WAY
     @inputs:
     let
@@ -139,6 +139,7 @@
           specialArgs = {
             inherit inputs outputs;
             inherit niri noctalia;
+            inherit flake-parts;
             inherit label flakePath;
             inherit user userDescription; 
             inherit homeDirectory disksPath;
