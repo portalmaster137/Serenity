@@ -4,11 +4,10 @@
 
   imports = [ ];
 
-  ## Activation Scripts
-  ## - these run after using `sudo nixos-rebuild switch`
+  # Activation Scripts - runs after using `sudo nixos-rebuild switch`
   system.activationScripts.diff = {
     supportsDryActivation = true;
-    ## Prints diff of the nix store and a cute message if rebuild successful
+    # Prints diff of the nix store and a cute message if rebuild successful
     text = ''
       ${pkgs.nvd}/bin/nvd --nix-bin-dir=${pkgs.nix}/bin diff \
           /run/current-system "$systemConfig"
@@ -20,22 +19,23 @@
   ## Nixpkgs Settings
   nixpkgs = {
     config = {
-      ## Not doing full-FOSS lol
+
+      # Not doing full-FOSS lol
       allowUnfree = true;
       allowBroken = true;
 
-      ## Place insecure packages here
+      # Place insecure packages here
       #permittedInsecurePackages = [ 
         #"olm-3.2.16"
       #];
 
-      ## Place package overrides here
+      # Place package overrides here
       #packageOverrides = pkgs: {
         #sygil-plymouth = pkgs.callPackage /home/serenity/repos/sygil-plymouth/package.nix { };
       #};
     };
 
-    ## Place package overlays here
+    # Place package overlays here
     overlays = [
       niri.overlays.niri
       #inputs.tidalcycles.overlays.default
@@ -68,57 +68,58 @@
 
   ## System-level Programs
   programs = {
+    # Core terminal suite
     git = { enable = true; }; # Mandatory version control
     fish = { enable = true; }; # A catgirls favourite shell
     neovim = { enable = true; }; # Neovim declared here too, just in case
 
-    ## NixOS CLI helper
+    # NixOS CLI helper
     nh = {
       enable = true;
       flake = "${flakePath}"; # Declared in flake.nix
     };
 
-    ## For handling encryption keys
+    # For handling encryption keys
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
       #pinentryPackage = [ ];
     };
 
-    ## For running unpackaged binaries
+    # For running unpackaged binaries
     nix-ld = {
       enable = true;
       #libraries = with pkgs; [ ];
     };
 
-    ## To run "normal" linux applications seamlessly
+    # To run "normal" linux applications seamlessly
     appimage = {
       enable = true;
       binfmt = true;
     };
   };
 
-  ## Flatpak, just in case
+  # Flatpak, just in case
   services.flatpak.enable = true;
 
   environment = {
 
-    ## Environment Variables
+    # Environment Variables
     variables = { # sets neovim to default editor in other apps
       EDITOR = "nvim";
       VISUAL = "nvim";
       SYSTEMD_EDITOR = "nvim";
     };
 
-    ## Install a stub ELF loader to print an informative
-    ## error message in the event that a user attempts
-    ## to run an ELF binary not compiled for NixOS.
+    # Install a stub ELF loader to print an informative
+    # error message in the event that a user attempts
+    # to run an ELF binary not compiled for NixOS.
     stub-ld.enable = true;
 
     ## System-level Packages
     systemPackages = with pkgs; [
 
-      ## Nix specific tools
+      # Nix specific tools
       #cabal2nix
       nix-tree # Dependency tree viewer for nix store
       nix-init # Generate nix packages from URLs
@@ -126,13 +127,13 @@
       nix-prefetch # provides info on a url
       nix-output-monitor # Shows extra information on nix commands
 
-      ## Filsesystem utilities
+      # Filsesystem utilities
       ddrutility # Set of tools for HDD rescure
       exfatprogs # ExFAT filesystem
       btrfs-progs # BTRFS filesystem
       ntfs3g # NTFS filesystem
 
-      ## CLI tools & utilities
+      # CLI tools & utilities
       fd # Find, but faster
       bc # Calculator
       zip # What it says on the tin

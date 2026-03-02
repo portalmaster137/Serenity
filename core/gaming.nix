@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 
 {
-  ## Open tablet driver, for Osu!, mainly.
+  # Open tablet driver, for Osu!, mainly.
   hardware.opentabletdriver = {
     enable = true; # Enables the driver lol
     daemon.enable = true; # Enables the daemon via systemd
@@ -15,19 +15,18 @@
 
   environment = {
 
-    ## Games and misc.
-    systemPackages = with pkgs;
-      [
-        piper # Mouse config
-        vassal # FOSSy board game sim
-        cockatrice # Magical the gathering, but free
-        prismlauncher # Modded Minecraft client
-        osu-lazer-bin # Rhythm is just a click away!
-        inputs.nix-gaming.packages.${pkgs.system}.osu-mime
-        #inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin # Not using this one but still want it here lol
-      ];
+    # Games and misc.
+    systemPackages = with pkgs; [
+      piper # Mouse config
+      vassal # FOSSy board game sim
+      cockatrice # Magical the gathering, but free
+      prismlauncher # Modded Minecraft client
+      osu-lazer-bin # Rhythm is just a click away!
+      inputs.nix-gaming.packages.${pkgs.system}.osu-mime
+      #inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin # Not using this one but still want it here lol
+    ];
 
-    ## These are important apparently :uh:
+    # These are important apparently :uh:
     sessionVariables = {
       XDG_CACHE_HOME = "$HOME/.cache";
       XDG_CONFIG_HOME = "$HOME/.config";
@@ -46,17 +45,17 @@
 
   programs = {
 
-    ## Java, just in case i guess ?
+    # Java, just in case i guess ?
     java.enable = true;
 
-    ## This should help games run more betterer
+    # This should help games run more betterer
     gamescope = {
       enable = true;
       capSysNice = true;
     };
 
-    ## "GameMode" - https://nixos.wiki/wiki/Gamemode
-    ## (config copy-pasted from mynixos)
+    # "GameMode" - https://nixos.wiki/wiki/Gamemode
+    # (config copy-pasted from mynixos)
     gamemode = {
       enable = false;
       settings = {
@@ -74,32 +73,31 @@
       };
     };
 
-    ## Steam itself
+    # Steam itself
     steam = {
-      ## Enables steam itself
+      # Enables steam itself
       enable = true;
-      ## Enables protontricks
+      # Enables protontricks
       protontricks.enable = true;
-      ## This should help games run more betterer
+      # This should help games run more betterer
       gamescopeSession.enable = true;
       ## No clue what this is doing
       #package = pkgs.steam.override {
-      #  extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
-      #  ## No clue what this shit does
-      #  extraPkgs = pkgs:
-      #    with pkgs;
-      #    [
-      #      libpng
-      #      libpulseaudio
-      #      libvorbis
-      #      stdenv.cc.cc.lib
-      #      libkrb5
-      #      keyutils
-      #      #gamemode
-      #    ] ++ (with pkgs.xorg; [ libXi libXcursor libXinerama libXScrnSaver ]);
+        #extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
+        ## No clue what this shit does
+        #extraPkgs = pkgs:
+          #with pkgs; [
+            #libpng
+            #libpulseaudio
+            #libvorbis
+            #stdenv.cc.cc.lib
+            #libkrb5
+            #keyutils
+            #gamemode
+          #] ++ (with pkgs.xorg; [ libXi libXcursor libXinerama libXScrnSaver ]);
       #};
       #extraPackages = with pkgs; [ ];
-      ## Gotta have the glorious eggroll
+      # Gotta have the glorious eggroll
       extraCompatPackages = with pkgs; [ proton-ge-bin ];
     };
 

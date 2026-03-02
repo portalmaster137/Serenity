@@ -1,6 +1,6 @@
 { pkgs, primaryUser, homeDirectory, flakePath, ... }:
 
-## Allows regreet to be bootstrapped by sway
+# Allows regreet to be bootstrapped by sway
 let
   swayConfig = pkgs.writeText "greetd-sway-config" ''
     exec "${pkgs.regreet}/bin/regreet; swaymsg exit"
@@ -30,12 +30,12 @@ in {
     '';
   };
 
-  ## ReGreet specific configuration and theme
+  # ReGreet specific configuration and theme
   programs.regreet = {
     enable = true;
     #package = [ ];
 
-    ## Appearance
+    # Appearance
     font = {
       name = "Spleen-32x64";
       size = 16;
@@ -80,7 +80,7 @@ in {
         label_width = 150; # will need adjustment
       };
 
-      ## Other
+      # Other
       commands = {
         reboot = [ "systemctl" "reboot" ];
         poweroff = [ "systemctl" "poweroff" ];

@@ -4,30 +4,28 @@
 
   imports = [
 
-    ## Not sure wei need the home-manager import here
+    # Not sure we need the home-manager import here
     inputs.home-manager.nixosModules.home-manager
 
-    ## Semi-modularised config
-    ../home # user-level packages in ../home/programs/
+    # Semi-modularised config
+    ../home # user-level/additional packages
 
-    ## Shared modules to import
-    ./audio.nix
-    ./display.nix
-    ./regreet.nix
-    ./packages.nix
+    # Shared modules to import
+    ./audio.nix # musnix and audio options
+    ./display.nix # base display and output options
+    ./regreet.nix # login manager
+    ./packages.nix # core/essential packages
 
   ];
 
-  ## Core security options
+  # Core security options
   security = {
     sudo.execWheelOnly = true; # sets sudo auth to @wheel only
-    #soteria.enable = true; # enables soteria polkit
-    # - disabled forNow:tm: - https://github.com/NixOS/nixpkgs/issues/379104
     polkit = { # enables system polkit ???
       enable = true;
-      #extraConfig = '' '';
     };
-  ## Increasing max open files - needed for my huge ass bloaty flake
+  ## Temporarily ncreasing max open files 
+  ## needed for my huge ass bloaty flake
     pam.loginLimits = [{
       domain = "*";
       type = "soft";
@@ -36,9 +34,8 @@
     }];
   };
   systemd.settings.Manager = { DefaultLimitNOFILE = "8192:524288"; };
-  ## test line
 
-  ## Settings for the nix package manager and daemon
+  # Settings for the nix package manager and daemon
   nix = {
     settings = {
       cores = 6; # sets nix to use most available cores during rebuild
@@ -61,7 +58,8 @@
         "flakes" # flakes are vv important nya
       ];
     };
-    gc = { # garbage collection
+    # Garbage collection
+    gc = {
       automatic = true; # do garbage collection automagically
       dates = "daily"; # every day
       options = "--delete-older-than 3d"; # and clear junk older than x days
@@ -69,7 +67,7 @@
     };
   };
 
-  ## Hardware settings
+  # Hardware settings
   hardware = {
     enableAllFirmware = true; # enables all firmware modules
     sensor.hddtemp = { # enables temperature readings for mechanical drives
@@ -80,7 +78,7 @@
     usbStorage.manageShutdown = true; # shrugge
   };
 
-  ## Manual pages and caching
+  # Manual pages and caching
   environment.systemPackages = with pkgs;
     [ man-pages ]; # adds manual pages to system packages for ease of access
   documentation = {
@@ -90,19 +88,7 @@
     #nixos.includeAllModules = true;
   };
 
-  ## SystemD tweaks
-  systemd = {
-    # extraConfig = "DefaultTimeoutStopSec=10s"; # apparently prevents getting stuck at shutdown 
-    # settings.Manager = "";
-    services = { # Disable these cuz they cause problems (thx sasha)
-      # see: https://github.com/NixOS/nixpkgs/issues/180175
-      networkManager-wait-online.enable = lib.mkForce false;
-      systemd-networkd-wait-online.enable = lib.mkForce false;
-    };
-  };
-
-  ## Crikey !
-  ## Don't forget to set your& locale settings !
+  # Locale settings
   time.timeZone = "Australia/Brisbane";
   i18n = {
     defaultLocale = "en_AU.UTF-8";
@@ -118,7 +104,7 @@
     };
   };
 
-  ## Make sure this is set !
+  # Make sure this is set !
   system = { stateVersion = "24.11"; };
 
 }

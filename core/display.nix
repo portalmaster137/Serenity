@@ -8,7 +8,7 @@
     };
   };
 
-  ## Boot/GRUB options
+  # Boot/GRUB options
   boot = {
     #bootspec.enable = true;
     #consoleLogLevel = 0;
@@ -52,7 +52,7 @@
     };
   };
 
-  ## Display related options
+  # Display related options
   xdg.mime.enable =
     true; # may be unneeded here as already declared in `home/desktop/xdg-mime.nix`
   services.xserver.enable = true; # xserver still needed for xwayland stuff
@@ -132,22 +132,21 @@
   ## Dunno if i did this right, but possible needed for keyring/polkit stuff ? 
   security.pam.services.serenity.enableGnomeKeyring = true;
 
+  ## Move this
   programs = {
-
     gnome-disks.enable = true; # For when bimbo needs to manage disks
     seahorse.enable = true; # GTK secrets management
     droidcam.enable = true; # Use android device as a webcam
     obs-studio = { # screen capture, recording, and sharing
       enable = true;
       enableVirtualCamera = true; # virtual webcam
-      plugins = with pkgs.obs-studio-plugins;
-        [
-          #droidcam-obs # enables droidcam integration
-        ];
+      plugins = with pkgs.obs-studio-plugins; [
+        #droidcam-obs # enables droidcam integration
+      ];
     };
-
   };
 
+  ## Move these
   services = {
     libinput.enable = true; # don't think we NEED this tbh - unsure
     #gvfs.enable = true; # virtual filesystem, needed this for ... something

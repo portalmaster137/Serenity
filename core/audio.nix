@@ -58,7 +58,7 @@
     '';
   };
 
-  ## Musnix for audio production
+  # Musnix for audio production
   musnix = {
     enable = true;
     rtcqs.enable = true;
@@ -66,10 +66,10 @@
     kernel.realtime = true;
   };
 
-  ## Pipewire baybee
+  # Pipewire baybee
   services = {
 
-    ## Not using pulse directly
+    # Not using pulse directly
     pulseaudio = { enable = false; };
 
     pipewire = {
@@ -82,7 +82,7 @@
         support32Bit = true;
       };
 
-      ## Low latency config
+      # Low latency config
       extraConfig = {
         pipewire."92-low-latency" = {
           "context.properties" = {
