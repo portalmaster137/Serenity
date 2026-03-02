@@ -19,7 +19,7 @@
     ## Declares "spleen" as the font
     font = {
       name = "spleen 32x64";
-      size = 11;
+      size = 12;
     };
 
     ## Unsure if this is needed, but it should enhance fish integration ?
@@ -53,8 +53,8 @@
       cursor = "#" + config.theme.colors.fg;
       cursor_text_color = "#" + config.theme.colors.bg;
       background = "#" + config.theme.colors.bg;
-      background_blur = 0;
-      background_opacity = "0.70";
+      background_blur = 2;
+      background_opacity = "0.75";
       selection_foreground = "#" + config.theme.colors.primary-fg;
       selection_background = "#" + config.theme.colors.primary-bg;
       url_color = "#" + config.theme.colors.primary-fg;
