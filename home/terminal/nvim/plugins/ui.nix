@@ -108,7 +108,7 @@ in {
 
         alpha = {
           enable = true;
-          layout = [
+          settings.layout = [
             {
               type = "padding";
               val = 4;
