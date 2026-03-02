@@ -1,7 +1,7 @@
 # SerenityOS
 #
 #  A study in linux, packaging, user experience,
-#  system and desktop environments, themeing,
+#  desktop and system environments, themeing,
 #  system administration, and functional programming.
 #
 #  Basically, we are playing linux distro simulator. /pos
