@@ -21,8 +21,6 @@
       #tidal # from flake ?
       bespokesynth # Modular synth and sequencer
       cardinal # VST Analogue modular synth
-      #vcv-rack # Analogue modular synth emulator
-      #puredata # Programmatic synth and sequencer
 
       ## Models and synths
       #neural-amp-modeler-lv2 # Guitar amp emulator
