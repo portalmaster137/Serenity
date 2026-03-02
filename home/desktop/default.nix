@@ -15,7 +15,6 @@ in {
     # Import common desktop configs
     ./xdg-mime.nix # file associations
     ./hyprcursor.nix # mouse cursor
-    ./hyprlock.nix # screen locker
     ./wofi.nix # launcher
     ./niri # WM
 

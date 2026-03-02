@@ -20,7 +20,7 @@
 
     # Session management
     "Ctrl+Alt+Delete".action = quit; # Log out
-    "Mod+Escape".action.spawn = "hyprlock"; # Screen lock
+    #"Mod+Escape".action.spawn = "hyprlock"; # Screen lock
     "Mod+Shift+P".action = power-off-monitors; # Power saving
 
     # Task management
