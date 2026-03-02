@@ -11,7 +11,6 @@
     ../../../core
     ## Host-specific core modules
     ../../../core/zfs.nix
-    ../../../core/sync.nix
     ../../../core/gaming.nix
 
   ];
