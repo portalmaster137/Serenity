@@ -3,8 +3,6 @@
 {
 
   imports = [
-    ./web.nix
-    ./obs.nix
     ./music.nix
   ];
 
