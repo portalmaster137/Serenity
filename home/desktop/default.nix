@@ -119,7 +119,6 @@ in {
     packages = with pkgs; [
       # Network & Auth/Security
       #networkmanagerapplet # Tray applet for networkmanager 
-      hyprpolkitagent # Hyprland native polkit agent
       #networkmanager # Network manager ...
       gnome-keyring # Keyring for login prompts
       gnome-secrets # GTK password manager
@@ -133,7 +132,6 @@ in {
       wdisplays # Display configuration
       wlr-randr # Display modesetting
       wlsunset # Bluelight filter
-      #hyprlock # Screen lock
       wl-clipboard # Clipboard service
 
       # Desktop App Suite
