@@ -14,7 +14,6 @@ in {
 
     # Import common desktop configs
     ./xdg-mime.nix # file associations
-    ./hyprcursor.nix # mouse cursor
     ./wofi.nix # launcher
     ./niri # WM
 
@@ -136,9 +135,6 @@ in {
       wlsunset # Bluelight filter
       #hyprlock # Screen lock
       wl-clipboard # Clipboard service
-      hyprpicker # Colour picker
-      hyprcursor # Cursor, duh
-      ydotool # Click/Keypress emulator
 
       # Desktop App Suite
       gnome-calculator # GTK calculator
