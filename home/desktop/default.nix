@@ -18,8 +18,9 @@ in {
     ./hyprlock.nix # screen locker
     ./wofi.nix # launcher
     ./niri # WM
-    #./sway # WM
-    #./noctalia.nix # Desktop shell
+
+    ## IMPORTED ELSEWHERE
+    #./niri/noctalia.nix # Desktop shell
 
     # Import user theme(s)
     ../resources/theme 
@@ -38,6 +39,7 @@ in {
       config = {
         common."org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
         common.default = [ "gtk" "wlr" "gnome" ];
+    #./sway # WM
         sway.default = [ "gtk" "wlr" "gnome" ];
       };
       configPackages = with pkgs; [
@@ -100,10 +102,7 @@ in {
 
   home = {
 
-    file = {
-      ".icons/bibata".source =
-        "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Classic";
-    };
+    file.".icons/bibata".source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Classic";
 
     pointerCursor = {
       gtk.enable = true;
@@ -166,19 +165,16 @@ in {
     ];
   };
 
+  # GTK keyring for password prompts
+  services.gnome-keyring.enable = true;
 
-  # MOVE TO SYNC.nix
-  services = {
-    ## GTK keyring for password prompts
-    gnome-keyring.enable = true;
-    ## Mobile <-> desktop interaction
-    kdeconnect = {
-      enable = false;
-      indicator = true;
-    };
+  ## MOVE TO SYNC.nix
+  services.kdeconnect = {
+    enable = false;
+    indicator = true;
   };
 
-  # MOVE TO MORE SENSIBLE SPOT
+  ## MOVE TO MORE SENSIBLE SPOT
   nix.gc = {
     automatic = true;
     dates = "daily";

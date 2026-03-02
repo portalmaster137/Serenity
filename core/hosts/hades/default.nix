@@ -6,10 +6,10 @@
     ## Host-specific config files
     ./network.nix
     ./hardware.nix
+    ./bluetooth.nix
     ## Shared 'core' config options
     ../../../core
     ## Host-specific core modules
-    ../../../core/bluetooth.nix
     ../../../core/zfs.nix
     ../../../core/sync.nix
     ../../../core/gaming.nix
