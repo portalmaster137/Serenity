@@ -26,11 +26,10 @@
 <br>
 <br>
   - `home/` all user-level options
-    - `/home/scripts` what it says on the tin
     - `/home/desktop` all desktop/wm and related options
     - `/home/terminal` all terminal and cli options
+    - `/home/resources` wallpapers, themes, icons, etc.
     - `/home/multimedia` all media consumption options
-    - `/home/resouces` wallpapers, themes, icons, etc.
 <br>
 <br>
 

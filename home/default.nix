@@ -62,7 +62,6 @@ in {
           ./desktop
           ./terminal
           ./multimedia
-          ./scripts
         ];
         home = {
           stateVersion = "24.11"; # IMPORTANT
