@@ -13,6 +13,7 @@
     imports = [ inputs.noctalia.homeModules.default ];
 
     # configure options
+    # https://docs.noctalia.dev/getting-started/nixos/
     programs.noctalia-shell = {
       enable = true;
       settings = {

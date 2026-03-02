@@ -6,6 +6,12 @@
 
   #programs.alacritty.enable = true;
 
+  programs.fzf = {
+    # CLI fuzzy find
+    enable = true;
+    enableFishIntegration = true;
+  };
+
   ## Enables kitty via home-manager
   programs.kitty = {
     enable = true;

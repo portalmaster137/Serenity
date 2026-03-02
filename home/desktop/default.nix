@@ -12,17 +12,16 @@ in {
 
     #inputs.niri.homeModules.niri
 
-    ## Import common desktop configs
+    # Import common desktop configs
     ./xdg-mime.nix # file associations
     ./hyprcursor.nix # mouse cursor
     ./hyprlock.nix # screen locker
-    ./dunst.nix # notifier
     ./wofi.nix # launcher
     ./niri # WM
     #./sway # WM
     #./noctalia.nix # Desktop shell
 
-    ## Import user theme(s)
+    # Import user theme(s)
     ../resources/theme 
     ../resources/theme/SerenityOS.nix
   ];
@@ -121,7 +120,7 @@ in {
     };
 
     packages = with pkgs; [
-      ## Network & Auth/Security
+      # Network & Auth/Security
       #networkmanagerapplet # Tray applet for networkmanager 
       hyprpolkitagent # Hyprland native polkit agent
       #networkmanager # Network manager ...
@@ -132,29 +131,28 @@ in {
       seahorse # GTK secrets managment
       soteria # GTK/rust desktop-agnostic polkit agent
 
-      ## Desktop
+      # Desktop
       brightnessctl # Display brightness control
       wdisplays # Display configuration
       wlr-randr # Display modesetting
       wlsunset # Bluelight filter
-      hyprlock # Screen lock
+      #hyprlock # Screen lock
       wl-clipboard # Clipboard service
       hyprpicker # Colour picker
       hyprcursor # Cursor, duh
       ydotool # Click/Keypress emulator
 
-      ## Desktop App Suite
+      # Desktop App Suite
       gnome-calculator # GTK calculator
       appimage-run # Runs appimages
       file-roller # Archive manager
       #virtualbox # Virtual machine
       nautilus # GTK File manager
-      obsidian # Note taking
       swayimg # Terminal based image viewer
       zathura # PDF viewer
       gparted # GUI partition editor
 
-      ## Misc./lib/compat
+      # Misc./lib/compat
       wayland-protocols
       wayland-utils
       xwayland
@@ -168,24 +166,19 @@ in {
     ];
   };
 
-  programs = {
-    ## CLI fuzzy find
-    fzf = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-  };
 
+  # MOVE TO SYNC.nix
   services = {
     ## GTK keyring for password prompts
     gnome-keyring.enable = true;
     ## Mobile <-> desktop interaction
     kdeconnect = {
-      enable = true;
+      enable = false;
       indicator = true;
     };
   };
 
+  # MOVE TO MORE SENSIBLE SPOT
   nix.gc = {
     automatic = true;
     dates = "daily";

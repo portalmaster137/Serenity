@@ -28,6 +28,7 @@
     orca-slicer # 3D print slicing
     ## Miscellaneous
     themix-gui # for creating gtk themes
+    obsidian # note taking
   ];
 
   programs = {
