@@ -154,6 +154,7 @@ in {
       libnotify
       libva
       meson
+      themix-gui # GTK theme creation
 
     ];
   };
