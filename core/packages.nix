@@ -135,7 +135,6 @@
       ## CLI tools & utilities
       fd # Find, but faster
       bc # Calculator
-      nvd # For nixos-rebuild summary
       zip # What it says on the tin
       doas # alternative to sudo
       btop # System metrics and process viewer
