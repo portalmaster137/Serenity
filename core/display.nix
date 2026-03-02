@@ -2,7 +2,7 @@
 
 let
 
-  sygil-plymouth = import ../home/resources/theme/sygil-plymouth.nix { inherit lib pkgs; };
+  #  sygil-plymouth = import ../home/resources/theme/sygil-plymouth.nix { inherit lib pkgs; };
 
 in 
 
@@ -47,10 +47,10 @@ in
       #};
     };
     plymouth = { # enables plymouth boot animations
-      enable = true;
+      enable = false;
       extraConfig = "ShowDelay=0";
-      theme = "sygil-plymouth";
-      themePackages = sygil-plymouth;
+      #theme = "sygil-plymouth";
+      #themePackages = sygil-plymouth;
       #themePackages = with pkgs; [
         #(adi1090x-plymouth-themes.override {
           #selected_themes = [ "circle" ];
