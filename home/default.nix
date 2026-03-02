@@ -80,6 +80,11 @@ in {
             recursive = true; # think this is important, icr
           };
         };
+        nix.gc = {
+          automatic = true;
+          dates = "daily";
+          options = "--delete-older-than 1d";
+        };
       };
     };
   };

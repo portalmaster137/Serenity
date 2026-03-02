@@ -158,20 +158,64 @@ in {
     ];
   };
 
-  # GTK keyring for password prompts
-  services.gnome-keyring.enable = true;
+  services = {
 
-  ## MOVE TO SYNC.nix
-  services.kdeconnect = {
-    enable = false;
-    indicator = true;
+    # GTK keyring for password prompts
+    gnome-keyring.enable = true;
+
+    # Phone <-> Desktop integration
+    kdeconnect = {
+      enable = false;
+      indicator = true;
+    };
+
+    # Syncthing program service
+    #syncthing = {
+      #enable = false;
+      #tray.enable = true;
+      #guiAddress = "home.syncthing:8384";
+    #};
+
+  # Disk automount service
+    udiskie = {
+      enable = true;
+      automount = true; # automatically mount new disk
+      notify = true; # sends notification on disk mount
+    };
   };
 
   ## MOVE TO MORE SENSIBLE SPOT
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 1d";
-  };
+  #nix.gc = {
+    #automatic = true;
+    #dates = "daily";
+    #options = "--delete-older-than 1d";
+  #};
+
+  ## ORGANISE THIS MESS
+  # https://mynixos.com/home-manager/options/home.file.%3Cname%3E
+  # https://nix-community.github.io/home-manager/options.xhtml#opt-home.file
+  # https://nix-community.github.io/home-manager/options.xhtml#opt-home.activation
+  # need option for `zfs set mountpoint=/myspecialfolder mypool`
+  # need to set up auto luks unlock with sops-nix
+
+  ## Provides LUKS key for Asphodel
+  #environment.etc."crypttab".text = ''
+  #Asphodel /dev/disk/by-uuid/45f5f6ad-a676-4bc1-ad4b-e3e26b5697f4 ${config.sops.secrets.asphodelLuksPassword}
+  #'';
+
+  ## Mounts Asphodel to typical media location
+  #fileSystems."/run/media/${user}/Asphodel".device =
+  #"/dev/mapper/Asphodel";
+
+  #home.file = { # Files and directories to copy to ${homeDirectory}
+
+  ## Example format for home.file
+  #"Foo" = { # Name for the copied file
+  #source = ./Foo; # Source is relative to this file
+  #target = "Desired/Path/To/Foo"; # Target path for Foo within ${homeDirectory}
+  #recursive = true; # Unsure if necessary for most things
+  #};
+
+  #};
 
 }
