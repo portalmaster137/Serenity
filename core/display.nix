@@ -1,5 +1,11 @@
 { inputs, pkgs, label, lib, niri, ... }:
 
+let
+
+  sygil-plymouth = import ../home/resources/theme/sygil-plymouth.nix { inherit pkgs; };
+
+in 
+
 {
 
   system = {
@@ -43,12 +49,13 @@
     plymouth = { # enables plymouth boot animations
       enable = false;
       extraConfig = "ShowDelay=0";
-      theme = "circle";
-      themePackages = with pkgs; [
-        (adi1090x-plymouth-themes.override {
-          selected_themes = [ "circle" ];
-        })
-      ];
+      theme = "sygil-plymouth";
+      themePackages = sygil-plymouth;
+      #themePackages = with pkgs; [
+        #(adi1090x-plymouth-themes.override {
+          #selected_themes = [ "circle" ];
+        #})
+      #];
     };
   };
 
