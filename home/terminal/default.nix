@@ -10,7 +10,7 @@
     ./kitty.nix # Catgirl terminal
 
     #./fetch # CHOOSE FETCH PROVIDER
-    ./neofetch.nix # OG fetch
+    #./neofetch.nix # OG fetch
     ./fastfetch.nix # New fetch
 
     ./nvim # Neovim config, stolen
