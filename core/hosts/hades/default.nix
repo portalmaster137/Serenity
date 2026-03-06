@@ -73,6 +73,10 @@
 
   services = {
     xserver.videoDrivers = [ "amdgpu" ]; # sets X to use amdgpu drivers
+
+    hardware.openrgb = {
+      enable = true;
+    };
   };
 
   programs = {
@@ -96,6 +100,7 @@
 
   ## Some packages for managing the hardware inside Hades
   environment.systemPackages = with pkgs; [
+    openrgb-with-all-plugins
     #umr
     lact
     radeontop
