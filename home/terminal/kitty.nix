@@ -54,7 +54,7 @@
       cursor_text_color = "#" + config.theme.colors.bg;
       background = "#" + config.theme.colors.bg;
       background_blur = 2;
-      background_opacity = "0.75";
+      background_opacity = "0.82";
       selection_foreground = "#" + config.theme.colors.primary-fg;
       selection_background = "#" + config.theme.colors.primary-bg;
       url_color = "#" + config.theme.colors.primary-fg;
