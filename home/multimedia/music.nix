@@ -1,4 +1,11 @@
-{ inputs, outputs, lib, config, pkgs, ... }:
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
 
@@ -22,7 +29,7 @@
       # Music Production
       easyeffects # Effects and DSP
       pavucontrol # Precise volume control
-      helvum # Patchbay and routing
+      crosspipe # patchbay and routing
       #neural-amp-modeler-lv2 # Guitar amp emulator
       metronome # GTK metronome
       bespokesynth # DAW/Synth
@@ -45,11 +52,11 @@
       #vim-tidal
       #superdirt-start
       #superdirt-install
-    ]; #++ (with pkgs.haskellPackages; [
-      #tidal # Pattern language for improvised music
-      #tidal # Pattern language for improvised music
-      #tidal-core # Core pattern library for Tidal 
-      #tidal-vis # Visual rendering for Tidal patterns
+    ]; # ++ (with pkgs.haskellPackages; [
+    #tidal # Pattern language for improvised music
+    #tidal # Pattern language for improvised music
+    #tidal-core # Core pattern library for Tidal
+    #tidal-vis # Visual rendering for Tidal patterns
     #]);
   };
 
@@ -57,8 +64,8 @@
   ## - full nvim environment for supercollider is WIP
   ## - same goes for Tidal Cycles
   #programs.nixvim.extraPlugins = with pkgs.vimPlugins; [
-    #nvim-treesitter-parsers.supercollider # as below for SC
-    #vim-tidal # tidal cycles LSP for neovim
+  #nvim-treesitter-parsers.supercollider # as below for SC
+  #vim-tidal # tidal cycles LSP for neovim
   #];
 
 }
