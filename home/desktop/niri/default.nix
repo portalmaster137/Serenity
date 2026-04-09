@@ -32,7 +32,7 @@ in {
           QT_QPA_PLATFORM = "wayland;xcb";
           QT_QPA_PLATFORMTHEME = "qt5ct";
           QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-          SDL_VIDEODRIVER = "wayland,windows";
+          SDL_VIDEODRIVER = "wayland";
           WLR_RENDERER = "vulkan";
           DISPLAY = ":0";
         };
