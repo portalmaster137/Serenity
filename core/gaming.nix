@@ -52,7 +52,7 @@
 
     # This should help games run more betterer
     gamescope = {
-      enable = false;
+      enable = true;
       capSysNice = true;
     };
 
@@ -84,7 +84,7 @@
       # Enables protontricks
       protontricks.enable = true;
       # This should help games run more betterer
-      gamescopeSession.enable = false;
+      gamescopeSession.enable = true;
       ## No clue what this is doing
       #package = pkgs.steam.override {
       #extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
