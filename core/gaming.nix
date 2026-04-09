@@ -5,11 +5,14 @@
   hardware.opentabletdriver = {
     enable = true; # Enables the driver lol
     daemon.enable = true; # Enables the daemon via systemd
-    blacklistedKernelModules = [ # Disable conflicting drivers
+    blacklistedKernelModules = [
+      # Disable conflicting drivers
       "hid-uclogic"
       "wacom"
     ];
   };
+
+  hardware.graphics.enable32Bit = true;
 
   services.ratbagd.enable = true; # ratbagd for gaming mouse config
 
@@ -33,8 +36,7 @@
       XDG_BIN_HOME = "$HOME/.local/bin";
       XDG_DATA_HOME = "$HOME/.local/share";
       ## Steam needs this to find Proton-GE
-      STEAM_EXTRA_COMPAT_TOOLS_PATHS =
-        "\${HOME}/.steam/root/compatibilitytools.d";
+      STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
       ## Note: this doesn't replace PATH, it just adds this to it
       PATH = [ "\${XDG_BIN_HOME}" ];
       NIXOS_OZONE_WL = "1";
@@ -59,7 +61,9 @@
     gamemode = {
       enable = false;
       settings = {
-        general = { renice = 10; };
+        general = {
+          renice = 10;
+        };
         ## Warning: GPU optimisations have the potential to damage hardware
         gpu = {
           apply_gpu_optimisations = "accept-responsibility";
@@ -83,18 +87,18 @@
       gamescopeSession.enable = true;
       ## No clue what this is doing
       #package = pkgs.steam.override {
-        #extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
-        ## No clue what this shit does
-        #extraPkgs = pkgs:
-          #with pkgs; [
-            #libpng
-            #libpulseaudio
-            #libvorbis
-            #stdenv.cc.cc.lib
-            #libkrb5
-            #keyutils
-            #gamemode
-          #] ++ (with pkgs.xorg; [ libXi libXcursor libXinerama libXScrnSaver ]);
+      #extraLibraries = pkgs: [ pkgs.xorg.libxcb ];
+      ## No clue what this shit does
+      #extraPkgs = pkgs:
+      #with pkgs; [
+      #libpng
+      #libpulseaudio
+      #libvorbis
+      #stdenv.cc.cc.lib
+      #libkrb5
+      #keyutils
+      #gamemode
+      #] ++ (with pkgs.xorg; [ libXi libXcursor libXinerama libXScrnSaver ]);
       #};
       #extraPackages = with pkgs; [ ];
       # Gotta have the glorious eggroll
