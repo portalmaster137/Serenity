@@ -1,4 +1,32 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: 
+
+let
+  widthDivisions = [ 1.0 2.0 3.0 4.0 ];
+  heightDivisions = [ 1.0 2.0 3.0 4.0 ];
+
+  # black magic, expected output:
+  # [ { proportion = 1.0 / 1.0 }
+  # { proportion = 1.0 / 2.0 }
+  # ...
+  # { proportion = 2.0 / 1.0 }
+  # { proportion = 2.0 / 3.0 }
+  #	...
+  # { proportion = 4.0 / 4.0 } ]
+  getProportions = divisions: lib.lists.unique(lib.lists.flatten( # TODO: make this a callable function 
+    map(x: map(y:
+      { proportion = x / y; }
+	) divisions) divisions
+  ));
+
+
+  # then get all the unique outputs (removing double ups of 0.5 or others)
+  columnWidths = getProportions widthDivisions;
+  columnWidthsFiltered = builtins.filter(x: builtins.lessThan x.proportion 1.0) columnWidths; # just get the values that are below 1
+
+  windowHeights = getProportions heightDivisions;
+  windowHeightsFiltered = builtins.filter(x: builtins.lessThan x.proportion 1.0) windowHeights;
+
+in {
 
   ## Goals:
   ## - Way to open new windows in specific areas of the creen
@@ -7,9 +35,20 @@
 
   programs.niri.settings.binds = with config.lib.niri.actions; {
 
+  ## Window manager controls
 
 
-    ## Window manager controls
+	# credit sodiboo for this one in particular
+	layout = {
+	  preset-column-widths = builtins.sort( # sort list for predictable behaviour
+	    a: b: builtins.lessThan a.proportion b.proportion
+	  ) columnWidthsFiltered;
+	  default-column-width.proportion = 1.0 / 3.0;
+
+	  preset-window-heights = builtins.sort(
+	  	a: b: builtins.lessThan a.proportion b.proportion
+	  ) windowHeightsFiltered;
+	};
 
     # Debug & Utility
     "Mod+Shift+Slash".action = show-hotkey-overlay; # I am forgetful
