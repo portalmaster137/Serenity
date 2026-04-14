@@ -32,14 +32,8 @@ in {
   ## - Way to open new windows in specific areas of the creen
   ## - Way to spawn terminals floating 
   ## - Interact with Noctalia shell more with binds
-
-  programs.niri.settings.binds = with config.lib.niri.actions; {
-
-  ## Window manager controls
-
-
-	# credit sodiboo for this one in particular
-	layout = {
+  # credit sodiboo for this one in particular
+	programs.niri.settings.layout = {
 	  preset-column-widths = builtins.sort( # sort list for predictable behaviour
 	    a: b: builtins.lessThan a.proportion b.proportion
 	  ) columnWidthsFiltered;
@@ -49,6 +43,12 @@ in {
 	  	a: b: builtins.lessThan a.proportion b.proportion
 	  ) windowHeightsFiltered;
 	};
+  programs.niri.settings.binds = with config.lib.niri.actions; {
+
+  ## Window manager controls
+
+
+	
 
     # Debug & Utility
     "Mod+Shift+Slash".action = show-hotkey-overlay; # I am forgetful
@@ -111,10 +111,10 @@ in {
     #"Mod+2".action = set-column-width "50%";
     #"Mod+3".action = set-column-width "75%";
     #"Mod+4".action = set-column-width "100%";
-    "Mod+Minus".action = set-column-width "-10%";
-    "Mod+Equal".action = set-column-width "+10%";
-    "Mod+Shift+Minus".action = set-window-height "-10%";
-    "Mod+Shift+Equal".action = set-window-height "+10%";
+    "Mod+Minus".action = switch-preset-column-width-back;
+    "Mod+Equal".action = switch-preset-column-width;
+    "Mod+Shift+Minus".action = switch-preset-window-height-back;
+    "Mod+Shift+Equal".action = switch-preset-window-height;
     "Mod+C".action = center-visible-columns;
     "Mod+F".action = maximize-column;
     "Mod+Shift+F".action = fullscreen-window;
