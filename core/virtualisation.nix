@@ -1,46 +1,52 @@
 { user, pkgs, ... }:
 
 let
-
-  # Name of the group needed to use VirtualBox
-  vmgroup = "vmusers";
+  
+  #sharePublicSourceDirectory = "/home/${user}/Public/"; # it's named public right
+  #sharePublicTargetDirectory = "F:"; # for windows
 
 in {
 
-  # Permissions configuration
-  users = {
-    # Gives users virtualisation permissions
-    groups.kvm.members = [ "${user}" ];
-    groups.libvirtd.members = [ "${user}" ];
-    extraGroups."${vmgroup}".members = [ "${user}" ];
-    users."${user}".extraGroups = [ "${vmgroup}" ];
+  # Security
+  #users.groups = { # creates grouped virtualisation permissions
+    #kvm.members = [ "${user}" "${anotherUser}" ];
+    #libvirtd.members = [ "${user}" "${anotherUser}" ];
+  #};
+  users.users."${user}" = { # Gives primary user virtualisation permissions
+    extraGroups = [ "libvirtd" "kvm" ];
   };
+  networking.firewall.trustedInterfaces = [ "virbr0" ]; # network bridge to VM
+  # https://wiki.nixos.org/wiki/Virt-manager#Networking
+  # Inactive by default, enable in host by running:
+  # `sudo virsh net-start default`
+  # Enable it automatically it at boot by running:
+  # `sudo virsh net-autostart default`
 
-  # Virtualisation packages
+  # virtualisation
+  programs.virt-manager.enable = true; # simple vm frontend
   environment.systemPackages = with pkgs; [
-    gnome-boxes # VM frontend
-    dnsmasq # Vm networking
-    phodav # Fileshare with guest VMs
+    dnsmasq # for vm networking
+    #phodav # for vm fileshare
   ];
-
-  # Virtualisation configuration
   virtualisation = {
-    # Base virtualisation set up
-    libvirtd.enable = true;
-    # TPM emulation for Win11
-    libvirtd.qemu = {
-      swtpm.enable = true;
+    #cores = 4; # fine for now
+    graphics = true; # run qemu in gui or no gui mode
+    spiceUSBRedirection.enable = true; # for USB passthrough
+    libvirtd = {
+      enable = true;
+      qemu = {
+        vhostUserPackages = with pkgs; [ virtiofsd ]; # host fileshare
+        swtpm.enable = true; # tpm emulation for windows 11
+        runAsRoot = true; # for `passthrough` security on fileshare
+      };
     };
-    # Enables USB passthrough
-    spiceUSBRedirection.enable = true;
-    # VirtualBox configuration
-    virtualbox = {
-      # Enables VirtualBox with this machine as the host
-      #host.enable = false;
-      # Increases security when using VirtualBox
-      #host.enableHardening = true;
-      # Needed for USB2 and USB3 passthrough
-      #host.enableExtensionPack = true;
-    };
+    #sharedDirectories = { # list of directories to share to VMs
+      #Public = { # ~/Public
+        #securityModel = "passthrough";
+        #source = "${sharePublicSourceDirectory}";
+        #target = "${sharePublicTargetDirectory}";
+      #};
+    #};
   };
+
 }
