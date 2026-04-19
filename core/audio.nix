@@ -3,9 +3,11 @@
 ## https://github.com/musnix/musnix
 ## https://nixos.wiki/wiki/Audio_production
 
-{ pkgs, ... }:
+{ pkgs, user, ... }:
 
 {
+
+  users.users.${user}.extraGroups = [ "audio" ];
 
   ## SHOULD BE ELSEWHERE - temporary testing declarations
   environment.systemPackages = with pkgs; [

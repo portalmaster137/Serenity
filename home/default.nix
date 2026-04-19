@@ -30,7 +30,7 @@ in {
     ${user} = {
       description = "${userDescription}";
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "gamemode" "audio" ];
+      extraGroups = [ "wheel" "networkmanager" ];
       #hashedPasswordFile = config.sops.secrets.loginPassword.path;
       ## A catgirl's favourite shell
       shell = pkgs.fish;
