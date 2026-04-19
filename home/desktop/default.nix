@@ -33,7 +33,7 @@ in {
     # Disk automount service
     udiskie = {
       enable = true; # enables udiskie
-      tray = true; # enables tray applet
+      tray = "always"; # enables tray applet
       notify = true; # sends notification on disk mount
       automount = true; # automatically mount new disk
     };
