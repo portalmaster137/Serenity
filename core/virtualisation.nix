@@ -30,7 +30,6 @@ in {
     # TPM emulation for Win11
     libvirtd.qemu = {
       swtpm.enable = true;
-      ovmf.packages = [ pkgs.OVMFFull.fd ];
     };
     # Enables USB passthrough
     spiceUSBRedirection.enable = true;
