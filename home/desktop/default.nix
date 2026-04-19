@@ -138,7 +138,6 @@ in {
       gnome-calculator # GTK calculator
       appimage-run # Runs appimages
       file-roller # Archive manager
-      #virtualbox # Virtual machine
       nautilus # GTK File manager
       swayimg # Terminal based image viewer
       zathura # PDF viewer
