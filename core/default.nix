@@ -69,23 +69,22 @@
 
   # Hardware settings
   hardware = {
+    enableAllHardware = true; # enables all hardware modules
     enableAllFirmware = true; # enables all firmware modules
-    sensor.hddtemp = { # enables temperature readings for mechanical drives
-      enable = true;
-      drives =
-        [ "/dev/disk/by-uuid/*" ]; # tries to find drives with sensors by uuid
+    #enableRedistributableFirmware = true; # enables redistributables 
+    sensor.hddtemp = { 
+      enable = true; # enables temperature readings for mechanical drives
+      drives = [ "/dev/disk/by-uuid/*" ]; # tries to find drives with sensors by uuid
     };
-    usbStorage.manageShutdown = true; # shrugge
+    usbStorage.manageShutdown = true; # graceful usb storage shutdown 
   };
 
   # Manual pages and caching
-  environment.systemPackages = with pkgs;
-    [ man-pages ]; # adds manual pages to system packages for ease of access
+  environment.systemPackages = with pkgs; [ man-pages ]; # adds manual to system packages
   documentation = {
     dev.enable = true; # enables development documentation
-    man.generateCaches =
-      true; # generates caches for manuals to save rebuild time
-    #nixos.includeAllModules = true;
+    man.generateCaches = true; # generates manual caches to save rebuild time
+    #nixos.includeAllModules = true; # unsure lol
   };
 
   # Locale settings
