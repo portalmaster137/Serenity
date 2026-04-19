@@ -12,6 +12,7 @@
     # Host-specific core modules
     ../../../core/zfs.nix
     ../../../core/gaming.nix
+    ../../../core/virtualisation.nix
   ];
 
   # ooh, hostname - this one's important!

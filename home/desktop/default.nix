@@ -150,7 +150,6 @@ in {
       # Desktop App Suite
       gnome-calculator # Simple calculator
       appimage-run # Runs appimages
-      gnome-boxes # Virtualisation host
       file-roller # Simple archive manager
       themix-gui # GTK theme creation tool
       nautilus # Simple file manager
