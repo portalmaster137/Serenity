@@ -79,10 +79,15 @@
   };
 
   services = {
-    xserver.videoDrivers = [ "amdgpu" ]; # sets X to use amdgpu drivers
 
-    hardware.openrgb = {
+    # Tells X to use amdgpu drivers
+    xserver.videoDrivers = [ "amdgpu" ];
+    # Openrgb background service
+    hardware.openrgb.enable = true;
+    # Peripheral input remapping
+    input-remapper = {
       enable = true;
+      enableUdevRules = true; # hotplug support
     };
   };
 
@@ -117,14 +122,13 @@
     #radeon-profile # tweaking
     nvtopPackages.amd # monitoring
 
-    # RGB lighting control
-    openrgb-with-all-plugins # frontend
-
-    # Razer peripherals
-    #openrazer #firmware
-    openrazer-daemon # daemon
-    razergenie # frontend
-    polychromatic # frontent
+    # peripherals & Input
+    input-remapper # Input control
+    razergenie # Razer frontend
+    #openrazer # Razer firmware
+    openrazer-daemon # Razer daemon
+    #polychromatic # Razer frontend
+    openrgb-with-all-plugins # RGB control
   ];
 
   # Systemd services for lact
