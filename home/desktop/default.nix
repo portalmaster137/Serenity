@@ -87,7 +87,7 @@ in {
 
   gtk = {
     # Enables GTK
-    enables = true;
+    enable = true;
     # Specifies the font to use
     font = {
       name = "${config.theme.font}";
