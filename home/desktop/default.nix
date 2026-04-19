@@ -1,56 +1,46 @@
 { inputs, config, pkgs, lib, flakePath, homeDirectory, ... }:
 
-## Base desktop theme
 let
 
+  # Base desktop theme
   #serenityos-base = import ./serenityos-base.nix { inherit pkgs; };
   #line-icons = import ./line-icons.nix { inherit pkgs; };
 
 in {
 
   imports = [
-
-    #inputs.niri.homeModules.niri
-
     # Import common desktop configs
     ./xdg-mime.nix # file associations
     ./wofi.nix # launcher
     ./niri # WM
-
-    ## IMPORTED ELSEWHERE
-    #./niri/noctalia.nix # Desktop shell
-
     # Import user theme(s)
     ../resources/theme 
     ../resources/theme/SerenityOS.nix
   ];
 
+  # Services
   systemd.user.startServices = "sd-switch"; # cant remember
+  services = {
+    # GTK keyring for password prompts
+    gnome-keyring = {
+      enable = true; # enables gnome-keyring
+    };
+    # Phone <-> Desktop integration
+    kdeconnect = {
+      enable = false; # enables kdeconnect
+      indicator = false; # enables tray applet
+    };
+    # Disk automount service
+    udiskie = {
+      enable = true; # enables udiskie
+      tray = true; # enables tray applet
+      notify = true; # sends notification on disk mount
+      automount = true; # automatically mount new disk
+    };
+  };
 
   xdg = {
-   
-    #configFile."niri/config.kdl".source = ./niri.kdl;
-
-    portal = {
-      enable = true;
-      xdgOpenUsePortal = false;
-      config = {
-        common."org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
-        common.default = [ "gtk" "wlr" "gnome" ];
-    #./sway # WM
-        sway.default = [ "gtk" "wlr" "gnome" ];
-      };
-      configPackages = with pkgs; [
-        xdg-desktop-portal-gtk
-        xdg-desktop-portal-wlr
-        xdg-desktop-portal-gnome
-      ];
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-        xdg-desktop-portal-wlr
-        xdg-desktop-portal-gnome
-      ];
-    };
+    # Creates user directory variables
     userDirs = {
       enable = true;
       createDirectories = true;
@@ -59,137 +49,128 @@ in {
         XDG_SYNC_DIR = "${homeDirectory}/Sync";
       };
     };
+    # Enables portals
+    portal = {
+      enable = true;
+      xdgOpenUsePortal = false;
+      # Extra portal config
+      config = {
+        common."org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
+        common.default = [ "gtk" "wlr" "gnome" ];
+        sway.default = [ "gtk" "wlr" "gnome" ];
+      };
+      # Packages to use for config
+      configPackages = with pkgs; [
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gnome
+      ];
+      # Extra portals to enable
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gnome
+      ];
+    };
   };
 
-  fonts = { fontconfig = { enable = true; }; };
-
   qt = {
+    # Enables QT
     enable = true;
+    # Specifies the base theme to use
     #platformTheme.name = "Colloid-dark";
     #style = {
-    #name = "Colloid-dark";
-    #package = pkgs.colloid-kde;
+      #name = "Colloid-dark";
+      #package = pkgs.colloid-kde;
     #};
   };
 
   gtk = {
-    enable = true;
-    theme = lib.mkForce {
-      name = "Colloid-Dark";
-      package = pkgs.colloid-gtk-theme;
-      #name = "serenityos-base";
-      #package = pkgs.serenityos-base;
-    };
+    # Enables GTK
+    enables = true;
+    # Specifies the font to use
     font = {
       name = "${config.theme.font}";
       size = 10;
     };
+    # Specifies the icon theme to use
     iconTheme = {
       name = "Flat-Remix-Grey-Darkest";
       package = pkgs.flat-remix-icon-theme;
-      #name = "line-icons";
-      #package = pkgs.line-icons;
     };
-    gtk3.extraConfig = { 
-      gtk-application-prefer-dark-theme = 1;
+    # Specifies the base theme to use
+    theme = lib.mkForce {
+      name = "Colloid-Dark";
+      package = pkgs.colloid-gtk-theme;
     };
-    gtk4.extraConfig = { 
-      gtk-application-prefer-dark-theme = 1; 
-    };
+    # Tries to force a dark theme globally
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
   };
 
+  # Fonts
+  # surely there is a better way to do fonts ?
+  fonts = { fontconfig = { enable = true; }; };
+
   home = {
-
+    # Sets user session variables
+    sessionVariables = {
+      GTK_THEME = "Colloid-Teal-Dark-Dracula"; # i haev no idea what im doing
+      BROWSER = "firefox"; # furry browser
+      TERMINAL = "kitty"; # furry terminal
+      NIXPKGS_ALLOW_UNFREE = 1; # unfortunately
+    };
+    # Copies cursor theme files to the relevant location
     file.".icons/bibata".source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Classic";
-
+    # Specifies pointer theme and size
     pointerCursor = {
-      gtk.enable = true;
+      gtk.enable = true; # GTK cursor
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
       size = 12;
     };
-
-    sessionVariables = {
-      GTK_THEME = "Colloid-Teal-Dark-Dracula"; # i haev no idea what im doing
-      BROWSER = "firefox";
-      TERMINAL = "kitty";
-      NIXPKGS_ALLOW_UNFREE = 1;
-    };
-
+    # Base package set to include in home/desktop configuration
     packages = with pkgs; [
-      # Network & Auth/Security
+      # Networking
       #networkmanagerapplet # Tray applet for networkmanager 
       #networkmanager # Network manager ...
+      # Security
       gnome-keyring # Keyring for login prompts
       gnome-secrets # GTK password manager
       keepass-diff # CLI-tool to diff kbdx files
       keepassxc # Feature rich password manager
       seahorse # GTK secrets managment
       soteria # GTK/rust desktop-agnostic polkit agent
-
-      # Desktop
+      # Desktop Features
       brightnessctl # Display brightness control
       wdisplays # Display configuration
       wlr-randr # Display modesetting
       wlsunset # Bluelight filter
       wl-clipboard # Clipboard service
-
       # Desktop App Suite
-      gnome-calculator # GTK calculator
+      gnome-calculator # Simple calculator
       appimage-run # Runs appimages
-      file-roller # Archive manager
-      nautilus # GTK File manager
+      gnome-boxes # Virtualisation host
+      file-roller # Simple archive manager
+      themix-gui # GTK theme creation tool
+      nautilus # Simple file manager
       swayimg # Terminal based image viewer
-      zathura # PDF viewer
+      zathura # Simple PDF viewer
       gparted # GUI partition editor
-
-      # Misc./lib/compat
+      # Wayland
       wayland-protocols
       wayland-utils
       xwayland
       wlroots
+      # QT
+      libsForQt5.qt5.qtwayland 
       libsForQt5.qt5ct
-      libsForQt5.qt5.qtwayland
-      libnotify
-      libva
-      meson
-      themix-gui # GTK theme creation
-
+      # Misc.
+      libnotify # Notifier library
+      libva # Library for ???
+      meson # Package builder
     ];
   };
-
-  services = {
-
-    # GTK keyring for password prompts
-    gnome-keyring.enable = true;
-
-    # Phone <-> Desktop integration
-    kdeconnect = {
-      enable = false;
-      indicator = true;
-    };
-
-    # Syncthing program service
-    #syncthing = {
-      #enable = false;
-      #tray.enable = true;
-      #guiAddress = "home.syncthing:8384";
-    #};
-
-  # Disk automount service
-    udiskie = {
-      enable = true;
-      automount = true; # automatically mount new disk
-      notify = true; # sends notification on disk mount
-    };
-  };
-
-  ## MOVE TO MORE SENSIBLE SPOT
-  #nix.gc = {
-    #automatic = true;
-    #dates = "daily";
-    #options = "--delete-older-than 1d";
-  #};
 
   ## ORGANISE THIS MESS
   # https://mynixos.com/home-manager/options/home.file.%3Cname%3E
@@ -217,5 +198,11 @@ in {
   #};
 
   #};
+    # Syncthing program service
+    #syncthing = {
+      #enable = false; # enables syncthing
+      #tray.enable = true; # enables tray applet
+      #guiAddress = "home.syncthing:8384"; # local addess to use
+    #};
 
 }
