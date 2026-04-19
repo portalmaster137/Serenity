@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, user, ... }:
 
 {
   # Open tablet driver, for Osu!, mainly.
@@ -12,6 +12,12 @@
     ];
   };
 
+  # Open Razer stuff
+  hardware.openrazer = {
+    enable = true;
+    users = [ "${user}" ];
+  };
+
   hardware.graphics.enable32Bit = true;
 
   services.ratbagd.enable = true; # ratbagd for gaming mouse config
@@ -20,13 +26,20 @@
 
     # Games and misc.
     systemPackages = with pkgs; [
-      piper # Mouse config
+
+      piper # Open mouse config 
+      razergenie # Razer peripherals
+      openrazer-daemon # Razer peripherals
+
       vassal # FOSSy board game sim
       cockatrice # Magical the gathering, but free
+
       prismlauncher # Modded Minecraft client
+
       osu-lazer-bin # Rhythm is just a click away!
       inputs.nix-gaming.packages.${pkgs.system}.osu-mime
-      #inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin # Not using this one but still want it here lol
+      #inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin # Not using this one but still want it here lol 
+
     ];
 
     # These are important apparently :uh:
