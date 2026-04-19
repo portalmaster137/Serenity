@@ -24,6 +24,9 @@ in {
     # Enables VirtualBox with this machine as the host
     host.enable = true;
 
+    # Increases security when using VirtualBox
+    #host.enableHardening = true;
+
     # Needed for USB2 and USB3 passthrough
     host.enableExtensionPack = true;
 
