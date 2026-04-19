@@ -75,6 +75,10 @@
     amdgpu = {
       initrd.enable = true;
       opencl.enable = true;
+      overdrive = {
+        enable = true;
+        #ppfeaturemask = "0xffffffff";
+      };
     };
   };
 
@@ -125,9 +129,7 @@
     # peripherals & Input
     input-remapper # Input control
     razergenie # Razer frontend
-    #openrazer # Razer firmware
     openrazer-daemon # Razer daemon
-    #polychromatic # Razer frontend
     openrgb-with-all-plugins # RGB control
   ];
 
