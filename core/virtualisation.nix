@@ -30,7 +30,7 @@ in {
   ];
   virtualisation = {
     #cores = 4; # fine for now
-    graphics = true; # run qemu in gui or no gui mode
+    #graphics = true; # run qemu in gui or no gui mode
     spiceUSBRedirection.enable = true; # for USB passthrough
     libvirtd = {
       enable = true;
