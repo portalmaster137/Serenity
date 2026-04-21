@@ -27,7 +27,7 @@
     # Place package overlays here
     overlays = [
       # Enabled overlays
-      niri.overlays.nixos-rebuild # latest niri
+      niri.overlays.niri # latest niri
       # Disabled overlays
       #inputs.tidalcycles.overlays.default # programmatic music
       #inputs.mac-style-plymouth.overlays.default # for theme
