@@ -1,5 +1,5 @@
 { 
-  inputs, outputs, config, pkgs, 
+  inputs, outputs, config, pkgs, lib,
   label, flakePath, 
   user, userDescription,
   homeDirectory, 
