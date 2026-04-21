@@ -1,50 +1,35 @@
-{ inputs, lib, pkgs, user, ... }:
+{ inputs, pkgs, user, ... }:
 
 {
 
   imports = [
-
     # Not sure we need the home-manager import here
     inputs.home-manager.nixosModules.home-manager
-
     # Semi-modularised config
     ../home # user-level/additional packages
-
     # Shared modules to import
     ./audio.nix # musnix and audio options
     ./display.nix # base display and output options
     ./regreet.nix # login manager
     ./packages.nix # core/essential packages
-
   ];
+
+  # Make sure this is set !
+  system = { stateVersion = "24.11"; };
 
   # Core security options
   security = {
     sudo.execWheelOnly = true; # sets sudo auth to @wheel only
-    polkit = { # enables system polkit ???
-      enable = true;
-    };
-  ## Temporarily ncreasing max open files 
-  ## needed for my huge ass bloaty flake
-    pam.loginLimits = [{
-      domain = "*";
-      type = "soft";
-      item = "nofile";
-      value = "8192";
-    }];
+    polkit.enable = true; # enables system polkit ???
   };
-  systemd.settings.Manager = { DefaultLimitNOFILE = "8192:524288"; };
 
   # Settings for the nix package manager and daemon
   nix = {
     settings = {
-      cores = 6; # sets nix to use most available cores during rebuild
+      cores = 12; # sets nix to use most available cores during rebuild
       max-jobs = "auto"; # automatically determines max job count
       allow-dirty = false; # refuses to allow rebuilds when git tree is dirty
       auto-optimise-store = true; # automatically optimised nix store on rebuild
-      download-buffer-size = [ # increased download buffer as it caused issues previously
-        "268435456"
-      ]; 
       allowed-users = [ "@wheel" ]; # restricts `nix` command to @wheel
       trusted-users = [ # adds root, @wheel, and ${primaryUser} to trusted users
         "root"
@@ -71,12 +56,12 @@
   hardware = {
     enableAllHardware = true; # enables all hardware modules
     enableAllFirmware = true; # enables all firmware modules
-    #enableRedistributableFirmware = true; # enables redistributables 
+    #enableRedistributableFirmware = true; # enables redistributables
+    usbStorage.manageShutdown = true; # graceful usb storage shutdown 
     sensor.hddtemp = { 
       enable = true; # enables temperature readings for mechanical drives
       drives = [ "/dev/disk/by-uuid/*" ]; # tries to find drives with sensors by uuid
     };
-    usbStorage.manageShutdown = true; # graceful usb storage shutdown 
   };
 
   # Manual pages and caching
@@ -102,8 +87,5 @@
       LC_IDENTIFICATION = "en_AU.UTF-8";
     };
   };
-
-  # Make sure this is set !
-  system = { stateVersion = "24.11"; };
 
 }

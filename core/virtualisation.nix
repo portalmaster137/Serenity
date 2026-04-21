@@ -29,8 +29,6 @@ in {
     #phodav # for vm fileshare
   ];
   virtualisation = {
-    #cores = 4; # fine for now
-    #graphics = true; # run qemu in gui or no gui mode
     spiceUSBRedirection.enable = true; # for USB passthrough
     libvirtd = {
       enable = true;
@@ -40,13 +38,6 @@ in {
         runAsRoot = true; # for `passthrough` security on fileshare
       };
     };
-    #sharedDirectories = { # list of directories to share to VMs
-      #Public = { # ~/Public
-        #securityModel = "passthrough";
-        #source = "${sharePublicSourceDirectory}";
-        #target = "${sharePublicTargetDirectory}";
-      #};
-    #};
   };
 
 }

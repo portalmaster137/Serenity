@@ -1,8 +1,8 @@
 { pkgs, user, ... }:
 
 {
-  imports = [
 
+  imports = [
     # Host-specific config files
     ./network.nix
     ./hardware.nix
@@ -15,115 +15,75 @@
     ../../../core/virtualisation.nix
   ];
 
-  # ooh, hostname - this one's important!
+  # Name of this computer ?
   networking.hostName = "hades";
 
-  ## ## ## ## ##
-
+  # Boot options
   boot = {
-
-    kernelPackages =
-      pkgs.linuxPackages_latest; # use the latest compatible linux kernel
-    supportedFilesystems =
-      [ "vfat" "ext4" ]; # adds fat32 and ext3 filesystems to defaults
-
+    # Linux kernel version selection
+    kernelPackages = pkgs.linuxPackages_latest; # latest compatible
+    # Bootloader settings
     loader = {
-      efi.canTouchEfiVariables = true;
-      systemd-boot = {
-      	enable = true;
-      };
+      systemd-boot.enable = true; # better than grub
+      efi.canTouchEfiVariables = true; # needed for stuff:tm:
     };
-
-    initrd.luks.devices."luks-55f7d546-fac9-4ea0-a21e-4c50ecc0d67d".device = "/dev/disk/by-uuid/55f7d546-fac9-4ea0-a21e-4c50ecc0d67d";
-
-      # Uhhhhhhh
-      #Asphodel = { # secondary partition on Tartarus drive
-      #device = "/dev/disk/by-uuid/45f5f6ad-a676-4bc1-ad4b-e3e26b5697f4";
-      #preLVM =false;
+    # Filesystem support at boot
+    supportedFilesystems = [ 
+      "vfat" # fat32
+      "ext4" # ext4 
+      #"ntfs" # windows lol
+    ];
+    # Decryption via LUKS
+    initrd.luks = {
+      # Primary boot drive
+      devices."luks-55f7d546-fac9-4ea0-a21e-4c50ecc0d67d" = {
+        device = "/dev/disk/by-uuid/55f7d546-fac9-4ea0-a21e-4c50ecc0d67d";
+      };
+      # Secondary storage drive
+      #devices.Asphodel = { # secondary partition on Tartarus drive
+        #device = "/dev/disk/by-uuid/45f5f6ad-a676-4bc1-ad4b-e3e26b5697f4";
+        #preLVM = false;
       #};
-    #};
-
+    };
   };
 
-  ## ## ## ## ##
-
-  # Hades specific Razer peripherals
-  users.users.${user}.extraGroups = [ "openrazer" ];
-  hardware.openrazer = {
-    enable = true;
-    users = [ "${user}" ];
-  };
-
+  # Hardware
+  services.xserver.videoDrivers = [ "amdgpu" ]; # makes x use amd
   hardware = {
-
     # GPU and graphics
     graphics = {
       enable = true;
       enable32Bit = true;
-      # Packages for the iGPU inside Hades
-      # - disabled for now:tm:
-      extraPackages = with pkgs;
-        [
-          #intel-compute-runtime
-          #intel-media-driver
-          #libvdpau-va-gl
-          #vaapiIntel
-          #vaapiVdpau
-        ];
     };
     # Driver packages for the dGPU inside Hades
     amdgpu = {
-      initrd.enable = true;
-      opencl.enable = true;
-      overdrive = {
-        enable = true;
-        #ppfeaturemask = "0xffffffff";
-      };
+      overdrive.enable = true; # overclocking lol
+      initrd.enable = true; # for video at boot
+      opencl.enable = true; # gpu tech idk lol
     };
   };
 
+  # Peripherals
+  hardware.openrazer = {
+    enable = true; # enables openrazer daemon
+    users = [ "${user}" ]; # giving primary user permissions (again)
+  };
+  users.users.${user} = { # giving primary user permissions (again)
+    extraGroups = [ "openrazer" ];
+  };
   services = {
-
-    # Tells X to use amdgpu drivers
-    xserver.videoDrivers = [ "amdgpu" ];
-    # Openrgb background service
-    hardware.openrgb.enable = true;
-    # Peripheral input remapping
-    input-remapper = {
-      enable = true;
+    hardware.openrgb.enable = true; # rgb control
+    input-remapper = { 
+      enable = true; # needed to remap some stuff
       enableUdevRules = true; # hotplug support
     };
   };
 
-  programs = {
-    # For tweaking system performance
-    #corectrl = {
-    #enable = true;
-    # Allows tweaking GPU performance
-    #gpuOverclock = {
-    #enable = true;
-    # Needed for radeon GPU overclocking
-    #ppfeaturemask = "0xfffd7fff";
-    #};
-    #};
-    # Performance tweaking continued
-    #tuxclocker = {
-    #enable = true;
-    #enableAMD = true;
-    #useUnfree = true;
-    #};
-  };
-
-  # Some packages for managing the hardware inside Hades
+  # Packages
   environment.systemPackages = with pkgs; [
 
-    # GPU firmware and control
-    #umr # tweaking
-    lact # tweaking
+    # Hardware & Firmware
     radeontop # monitoring
-    #amdgpu_top # monitoring
-    #radeontools # tweaking
-    #radeon-profile # tweaking
     nvtopPackages.amd # monitoring
 
     # peripherals & Input
@@ -131,12 +91,7 @@
     razergenie # Razer frontend
     openrazer-daemon # Razer daemon
     openrgb-with-all-plugins # RGB control
-  ];
 
-  # Systemd services for lact
-  systemd = {
-    packages = with pkgs; [ lact ];
-    services.lactd.wantedBy = [ "multi-user.target" ];
-  };
+  ];
 
 }

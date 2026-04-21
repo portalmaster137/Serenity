@@ -1,4 +1,4 @@
-{ inputs, pkgs, label, lib, niri, ... }:
+{ pkgs, label, lib, ... }:
 
 let
 
@@ -116,11 +116,11 @@ in
     };
   };
 
-  ## Utter junk from here on out, pls fix
-  ## - - - - - - - - - - - - - - - - - - -
+  # Utter junk from here on out, pls fix
+  # - - - - - - - - - - - - - - - - - - -
 
-  ## I put fonts here because i didn't know where tf else to put them lol
-  ## duplicate to home-manager config ?
+  # I put fonts here because i didn't know where tf else to put them lol
+  # duplicate to home-manager config ?
   fonts = {
     packages = with pkgs;
       [ spleen terminus_font terminus_font_ttf nerd-fonts.symbols-only ]
@@ -136,27 +136,18 @@ in
     };
   };
 
-  ## Dunno if i did this right, but possible needed for keyring/polkit stuff ? 
+  #Dunno if i did this right, but possible needed for keyring/polkit stuff ? 
   security.pam.services.serenity.enableGnomeKeyring = true;
 
-  ## Move this
+  # Move this
   programs = {
     gnome-disks.enable = true; # For when bimbo needs to manage disks
     seahorse.enable = true; # GTK secrets management
-    droidcam.enable = true; # Use android device as a webcam
-    obs-studio = { # screen capture, recording, and sharing
-      enable = true;
-      enableVirtualCamera = true; # virtual webcam
-      plugins = with pkgs.obs-studio-plugins; [
-        #droidcam-obs # enables droidcam integration
-      ];
-    };
   };
 
-  ## Move these
+  # Move these
   services = {
     libinput.enable = true; # don't think we NEED this tbh - unsure
-    #gvfs.enable = true; # virtual filesystem, needed this for ... something
     dbus.enable = true; # dbus is for ... unsure
     upower.enable = true; # no clue
     udisks2.enable = true; # disk management service

@@ -3,62 +3,53 @@
 ## https://github.com/musnix/musnix
 ## https://nixos.wiki/wiki/Audio_production
 
-{ pkgs, user, ... }:
+{ user, ... }:
 
 {
 
-  users.users.${user}.extraGroups = [ "audio" ];
-
-  ## SHOULD BE ELSEWHERE - temporary testing declarations
-  environment.systemPackages = with pkgs; [
-    helm
-    vital
-  ];
-
-  boot = {
-    kernelModules = [ "snd-seq" "snd-rawmidi" ];
-    kernelParams = [ "preempt=full" ];
-  };
-
-  ## Can't remember what this does,
-  ## recommended to be enabled though
-  security = {
-    rtkit.enable = true;
-    # realtime audio priority (initially for JACK2)
-    pam.loginLimits = [
-      {
-        domain = "@audio";
-        item = "memlock";
-        type = "-";
-        value = "unlimited";
-      }
-      {
-        domain = "@audio";
-        item = "rtprio";
-        type = "-";
-        value = "99";
-      }
-      {
-        domain = "@audio";
-        item = "nofile";
-        type = "soft";
-        value = "99999";
-      }
-      {
-        domain = "@audio";
-        item = "nofile";
-        type = "hard";
-        value = "99999";
-      }
-    ];
-  };
-
-  services.udev = {
+  # Permissions & Security
+  security.rtkit.enable = true;
+  users.users.${user}.extraGroups = [ "audio" ]; # adds user to audio group
+  services.udev = { # needed for security
     extraRules = ''
       KERNEL=="rtc0", GROUP="audio"
       KERNEL=="hpet", GROUP="audio"
     '';
   };
+
+  # Available kernel modules
+  boot = {
+    kernelModules = [ "snd-seq" "snd-rawmidi" ];
+    kernelParams = [ "preempt=full" ];
+  };
+
+  # realtime audio priority (initially for JACK2)
+  security.pam.loginLimits = [
+    {
+      domain = "@audio";
+      item = "memlock";
+      type = "-";
+      value = "unlimited";
+    }
+    {
+      domain = "@audio";
+      item = "rtprio";
+      type = "-";
+      value = "99";
+    }
+    {
+      domain = "@audio";
+      item = "nofile";
+      type = "soft";
+      value = "99999";
+    }
+    {
+      domain = "@audio";
+      item = "nofile";
+      type = "hard";
+      value = "99999";
+    }
+  ];
 
   # Musnix for audio production
   musnix = {
@@ -70,23 +61,19 @@
 
   # Pipewire baybee
   services = {
-
-    # Not using pulse directly
-    pulseaudio = { enable = false; };
-
+    pulseaudio = { enable = false; }; # not directly using pulse 
     pipewire = {
-      enable = true;
-      jack.enable = true;
-      pulse.enable = true;
-      wireplumber.enable = true;
+      enable = true; # enables pipewire
       alsa = {
-        enable = true;
-        support32Bit = true;
+        enable = true; # enables alsa through pipewire
+        support32Bit = true; # enables 32bit application support
       };
-
-      # Low latency config
-      extraConfig = {
-        pipewire."92-low-latency" = {
+      jack.enable = true; # enables jack through pipewire
+      pulse.enable = true; # enables pulse through pipewire
+      wireplumber.enable = true; # enables wireplumber
+      extraConfig = { 
+        # Low latency optimisations
+        pipewire."92-low-latency" = { # for pipewire
           "context.properties" = {
             "default.clock.rate" = 48000;
             "default.clock.allowed-rates" = [ 44100 48000 96000 192000 ];
@@ -95,7 +82,7 @@
             "default.clock.max-quantum" = 384;
           };
         };
-        pipewire-pulse."92-low-latency" = {
+        pipewire-pulse."92-low-latency" = { # for pulseaudio
           stream.properties = {
             node.latency = "256/48000";
             resample.quality = 1;
@@ -113,12 +100,10 @@
               pulse.max.quantum = "384/48000";
             };
           }];
-
         };
-
       };
-
     };
+
   };
 
 }

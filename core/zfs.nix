@@ -3,8 +3,8 @@
 
 let
 
-  ## Black magic wizardry from https://wiki.nixos.org/wiki/ZFS
-  ## - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  # Black magic wizardry from https://wiki.nixos.org/wiki/ZFS
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   zfsCompatibleKernelPackages = lib.filterAttrs (name: kernelPackages:
     (builtins.match "linux_[0-9]+_[0-9]+" name) != null
     && (builtins.tryEval kernelPackages).success
@@ -13,7 +13,7 @@ let
   latestKernelPackage = lib.last
     (lib.sort (a: b: (lib.versionOlder a.kernel.version b.kernel.version))
       (builtins.attrValues zfsCompatibleKernelPackages));
-  ## - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  # - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 in {
 
@@ -27,7 +27,6 @@ in {
       #forceImportRoot = false;
     };
   };
-
   environment.systemPackages = with pkgs; [ zfs ];
   networking = { hostId = "603b0c8b"; }; # Unsure why this is here actually ?
   services = {

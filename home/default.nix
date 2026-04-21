@@ -14,30 +14,29 @@ in {
 
   imports = [ ];
 
-  ## Primary user configuration -
-  ## to create additional users, copy all options
-  ## below to a new file akin to `u-username.nix`,
-  ## or `u-username/default.nix` with more modules,
-  ## making sure to replace all instances of
-  ## `${primaryUser}` with the new username.
+  # Primary user configuration -
+  # to create additional users, copy all options
+  # below to a new file akin to `u-username.nix`,
+  # or `u-username/default.nix` with more modules,
+  # making sure to replace all instances of
+  # `${primaryUser}` with the new username.
 
-  ## Needed for sops-nix to handle loginPassword
+  # Needed for sops-nix to handle loginPassword
   #sops.secrets.loginPassword.neededForUsers = true;
   #users.mutableUsers = false;
 
-  ## System-level user declarations
+  # System-level user declarations
   users.users = {
     ${user} = {
       description = "${userDescription}";
       isNormalUser = true;
       extraGroups = [ "wheel" "networkmanager" ];
       #hashedPasswordFile = config.sops.secrets.loginPassword.path;
-      ## A catgirl's favourite shell
-      shell = pkgs.fish;
+      shell = pkgs.fish; # catgirls favourite shell
     };
   };
 
-  ## home-manager configuration
+  # home-manager configuration
   home-manager = {
     verbose = true; # enables verbose output on activation
     extraSpecialArgs = { # passes in specialArgs from flake.nix
@@ -52,12 +51,12 @@ in {
     users = {
       ${user} = {
         imports = [
-          ## Home configuration -
-          ## currently all users share the same home
-          ## configuration, though each has separate
-          ## home directories. Additional modules
-          ## can be declared alongside `u-username/default.nix`
-          ## and then imported in this section.
+          # Home configuration -
+          # currently all users share the same home
+          # configuration, though each has separate
+          # home directories. Additional modules
+          # can be declared alongside `u-username/default.nix`
+          # and then imported in this section.
           #./resources/theme
           ./desktop
           ./terminal

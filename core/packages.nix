@@ -1,8 +1,6 @@
-{ inputs, outputs, pkgs, flakePath, niri, tidalcycles, ... }:
+{ pkgs, flakePath, niri, ... }:
 
 {
-
-  imports = [ ];
 
   # Activation Scripts - runs after using `sudo nixos-rebuild switch`
   system.activationScripts.diff = {
@@ -16,109 +14,71 @@
     '';
   };
 
-  ## Nixpkgs Settings
+  # Nixpkgs Settings
   nixpkgs = {
     config = {
-
-      # Not doing full-FOSS lol
-      allowUnfree = true;
-      allowBroken = true;
-
-      # Place insecure packages here
-      #permittedInsecurePackages = [ 
-        #"olm-3.2.16"
-      #];
-
-      # Place package overrides here
-      #packageOverrides = pkgs: {
+      allowUnfree = true; # not doing full foss lol
+      allowBroken = true; # I like 'em broken
+      permittedInsecurePackages = [ ]; # insert obvious joke here
+      #packageOverrides = pkgs: { # package overrides here
         #sygil-plymouth = pkgs.callPackage /home/serenity/repos/sygil-plymouth/package.nix { };
       #};
     };
-
     # Place package overlays here
     overlays = [
-      niri.overlays.niri
-      #inputs.tidalcycles.overlays.default
-      #inputs.mac-style-plymouth.overlays.default
-      #inputs.sygil-plymouth.overlays.default
-      #inputs.sygil-plymouth-clean.overlays.default
-      ## to use overlays exported from other flakes:
-      #neovim-nightly-overlay.overlays.default
-      ## or define it inline, for example:
-      #(final: prev: {
-        #hi = final.hello.overrideAttrs (oldAttrs: {
-          #patches = [ ./change-hello-to-hi.patch ];
-        #});
-      #})
+      # Enabled overlays
+      niri.overlays.nixos-rebuild # latest niri
+      # Disabled overlays
+      #inputs.tidalcycles.overlays.default # programmatic music
+      #inputs.mac-style-plymouth.overlays.default # for theme
+      #inputs.sygil-plymouth.overlays.default # indev theme
     ];
-
   };
-
-  ## Nix settings for package related stuff
   nix = {
     settings = {
       substituters = [ # for pkgs not in or out of date in nixpkgs
         "https://cache.iog.io"
       ];
-      trusted-public-keys = [ 
+      trusted-public-keys = [ # keys to sign the packages 
         "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
       ];
     };
   };
 
-  ## System-level Programs
+  # System-level Programs
   programs = {
     # Core terminal suite
     git = { enable = true; }; # Mandatory version control
     fish = { enable = true; }; # A catgirls favourite shell
     neovim = { enable = true; }; # Neovim declared here too, just in case
-
-    # NixOS CLI helper
     nh = {
-      enable = true;
+      enable = true; # nixos cli helper
       flake = "${flakePath}"; # Declared in flake.nix
     };
-
-    # For handling encryption keys
     gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
+      enable = true; # handles encryption keys
+      enableSSHSupport = true; # ssh good, lol
       #pinentryPackage = [ ];
     };
-
-    # For running unpackaged binaries
     nix-ld = {
-      enable = true;
+      enable = true; # runs unpackaged binaries
       #libraries = with pkgs; [ ];
     };
-
-    # To run "normal" linux applications seamlessly
     appimage = {
-      enable = true;
+      enable = true; # runs "normal" linux applications
       binfmt = true;
     };
   };
-
-  # Flatpak, just in case
-  services.flatpak.enable = true;
-
+  services.flatpak.enable = true; # flatpak just in case
   environment = {
-
     # Environment Variables
     variables = { # sets neovim to default editor in other apps
       EDITOR = "nvim";
       VISUAL = "nvim";
       SYSTEMD_EDITOR = "nvim";
     };
-
-    # Install a stub ELF loader to print an informative
-    # error message in the event that a user attempts
-    # to run an ELF binary not compiled for NixOS.
-    stub-ld.enable = true;
-
-    ## System-level Packages
+    # System-level Packages
     systemPackages = with pkgs; [
-
       # Nix specific tools
       #cabal2nix
       nix-tree # Dependency tree viewer for nix store
@@ -126,13 +86,11 @@
       nix-index # Database for nixpkgs
       nix-prefetch # provides info on a url
       nix-output-monitor # Shows extra information on nix commands
-
       # Filsesystem utilities
       ddrutility # Set of tools for HDD rescure
       exfatprogs # ExFAT filesystem
       btrfs-progs # BTRFS filesystem
       ntfs3g # NTFS filesystem
-
       # CLI tools & utilities
       fd # Find, but faster
       bc # Calculator
@@ -163,6 +121,10 @@
       smartmontools # Tools for monitoring HDD health
       magic-wormhole # Direct file sharing
     ];
+    # Install a stub ELF loader to print an informative
+    # error message in the event that a user attempts
+    # to run an ELF binary not compiled for NixOS.
+    stub-ld.enable = true;
   };
 
 }
