@@ -1,4 +1,4 @@
-{ pkgs, flakePath, niri, ... }:
+{ inputs, outputs, pkgs, flakePath, niri, ... }:
 
 {
 
