@@ -19,7 +19,7 @@
     config = {
       allowUnfree = true; # not doing full foss lol
       allowBroken = true; # I like 'em broken
-      permittedInsecurePackages = [ ]; # insert obvious joke here
+      #permittedInsecurePackages = [ ]; # insert obvious joke here
       #packageOverrides = pkgs: { # package overrides here
         #sygil-plymouth = pkgs.callPackage /home/serenity/repos/sygil-plymouth/package.nix { };
       #};
