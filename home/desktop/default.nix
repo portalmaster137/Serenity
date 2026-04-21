@@ -45,8 +45,8 @@ in {
       enable = true;
       createDirectories = true;
       extraConfig = {
-        XDG_FLAKE_DIR = "${flakePath}";
-        XDG_SYNC_DIR = "${homeDirectory}/Sync";
+        FLAKE = "${flakePath}";
+        SYNC = "${homeDirectory}/Sync";
       };
     };
     # Enables portals

@@ -56,7 +56,7 @@
   hardware = {
     enableAllHardware = true; # enables all hardware modules
     enableAllFirmware = true; # enables all firmware modules
-    #enableRedistributableFirmware = true; # enables redistributables
+    enableRedistributableFirmware = true; # enables redistributables
     usbStorage.manageShutdown = true; # graceful usb storage shutdown 
     sensor.hddtemp = { 
       enable = true; # enables temperature readings for mechanical drives
@@ -68,8 +68,8 @@
   environment.systemPackages = with pkgs; [ man-pages ]; # adds manual to system packages
   documentation = {
     dev.enable = true; # enables development documentation
-    man.generateCaches = true; # generates manual caches to save rebuild time
-    #nixos.includeAllModules = true; # unsure lol
+    man.cache.enable = true; # generates manual caches to save rebuild time
+    nixos.includeAllModules = true; # unsure lol
   };
 
   # Locale settings

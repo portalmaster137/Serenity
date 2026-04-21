@@ -61,7 +61,7 @@
       gamescopeSession.enable = true; # compositor for games
       extraCompatPackages = with pkgs; [ proton-ge-bin ]; # glorious eggroll
       package = pkgs.steam.override { # no clue lol
-        extraLibraries = pkgs: [ pkgs.xorg.libxcb ]; # what
+        extraLibraries = pkgs: [ pkgs.libxcb ]; # what
         extraPkgs = pkgs: with pkgs; [ # absolutely clueless lol
           libpng
           libpulseaudio
@@ -70,7 +70,11 @@
           libkrb5
           keyutils
           gamemode
-        ] ++ (with pkgs.xorg; [ libXi libXcursor libXinerama libXScrnSaver ]);
+          libxi 
+          libxcursor 
+          libxinerama 
+          libxscrnsaver 
+        ];
       };
     };
 
