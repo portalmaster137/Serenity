@@ -8,7 +8,6 @@
 <br>
 
 ## **Breakdown of structure:**
-
 <br>
   - `README.md` this file
   - `resources/` various extraneous files
@@ -20,9 +19,11 @@
 <br>
   - `modules/` modules the flake is to build
 <br>
+<br>
     - `misc` assorted modules :shrug:
     - `pkgs` custom package derivations
     - `users` user declarations [REDUNDANT?]
+<br>
 <br>
     - `system/` shared system-level options
       - `nix` package manager config
@@ -33,10 +34,12 @@
         - `users.nix` user declarations [REDUNDANT?]
         - `default.nix` core configurations
 <br>
+<br>
     - `home/` user-level options
       - `desktop` desktop/wm and related options
       - `terminal` terminal and cli options
       - `programs` other user-level options
+<br>
 <br>
     - `hosts/` host-specific configurations
       - `hades` only current functional host
