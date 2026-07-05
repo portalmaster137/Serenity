@@ -6,6 +6,7 @@ in
 
 {
 
+  # Try `$ nix run .#boilerplate`
   flake = {
 
     nixosConfigurations.main = inputs.nixpkgs.lib.nixosSystem {
