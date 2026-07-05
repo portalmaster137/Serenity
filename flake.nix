@@ -15,6 +15,7 @@
     flake-utils = { url = "github:numtide/flake-utils"; };
     import-tree = { url = "github:vic/import-tree"; };
     wrapper-modules = { url = "github:BirdeeHub/nix-wrapper-modules";};
+    den = { url = "github:vic/den/v0.17.0"; };
 
     # Secrets management - https://github.com/Mic92/sops-nix
     #sops-nix = { url = "github:Mic92/sops-nix"; };
@@ -39,6 +40,10 @@
     niri = { # - https://github.com/sodiboo/niri-flake/
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.niri-unstable.follows = "";
+      #inputs.niri-stable.follows = "";
+      #inputs.xwayland-satellite-unstable.follows = "";
+      #inputs.xwayland-satellite-stable.follows = "";
     };
 
     # Hassle free desktop shell - https://docs.noctalia.dev/getting-started/nixos/

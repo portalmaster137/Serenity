@@ -1,16 +1,17 @@
 let
   desktop = [
 
-    ./core
-    ./core/boot.nix
+    ./security.nix
+    ./users.nix
+
+    ./core.nix
+    #./core
+    ./nix
+
     ./network
-    ./hardware/brightness.nix
-    ./hardware/graphics.nix
-    ./hardware/bluetooth.nix
+    ./hardware
     ./programs
     ./services
-    ./services/greetd.nix
-    ./services/pipewire.nix
   ];
 
   laptop = desktop ++ [

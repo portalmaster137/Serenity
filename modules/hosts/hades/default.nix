@@ -1,10 +1,5 @@
-{
-  pkgs,
-  lib,
-  self,
-  ...
-}:
-{
+{ pkgs, lib, self, ... }: {
+
   imports = [
     ./hardware
     ./network 
@@ -13,11 +8,10 @@
 
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
 
+  # Set hostname
   networking.hostName = "hades";
 
-  security.tpm2.enable = true;
-
-  # for SSD/NVME
+  # For SSD/NVME
   services.fstrim.enable = true;
 
 }

@@ -12,7 +12,7 @@
   home = {
     username = "serenity";
     homeDirectory = "/home/serenity";
-    stateVersion = "23.11";
+    stateVersion = "24.11";
     #extraOutputsToInstall = [ ];
   };
 

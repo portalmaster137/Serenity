@@ -4,11 +4,11 @@ let
   home = "/home/${name}";
 in
 {
-  flake.modules.nixos.user =
+  flake.nixosModules.u-serenity =
     { pkgs, ... }:
     {
       imports = [
-        inputs.home-manager.nixosModules.home-manager
+        self.homeModules.baseHome
       ];
 
       home-manager = {
@@ -27,7 +27,6 @@ in
                 stateVersion = "26.05";
               };
             }
-            kitty
           ];
         };
       };
