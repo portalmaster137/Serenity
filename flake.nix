@@ -16,7 +16,7 @@
     import-tree = { url = "github:vic/import-tree"; };
     wrapper-modules = { url = "github:BirdeeHub/nix-wrapper-modules";};
     # Secrets management - https://github.com/Mic92/sops-nix
-    sops-nix = { url = "github:Mic92/sops-nix"; };
+    #sops-nix = { url = "github:Mic92/sops-nix"; };
     # Sound driver optimisations - https://github.com/musnix/musnix
     musnix = { url = "github:musnix/musnix"; };
     # Programmatic music language - https://github.com/mitchmindtree/tidalcycles.nix
