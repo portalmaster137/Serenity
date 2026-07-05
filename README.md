@@ -1,39 +1,44 @@
-# Serenity OS - WIP
+# Serenity OS
 
-**Configuration for system, applications, themes, and more; shared between multiple machines and users.**
-<br>
-**A study in linux, packaging, user experience, desktop and system environments, themeing, system administration, and functional programming.**
-<br>
-<br>
-![desktop](https://codeberg.org/serenity-F/nixdots/raw/branch/rebuild-2/home/resources/desktop.png)
-![btop](https://codeberg.org/serenity-F/nixdots/raw/branch/rebuild-2/home/resources/btop.png)
-<br>
-
-- **A to do list and longer term goals can be found [here](https://codeberg.org/serenity-F/nixdots/issues), and [here](https://codeberg.org/serenity-F/nixdots/milestones) respectively.**
-<br>
-- A [Wiki](https://codeberg.org/serenity-F/nixdots/wiki) and [install guide](https://codeberg.org/serenity-F/nixdots/wiki/Install-Guide) are works in progress.
+- CURRENTLY UNDERGOING A MASSIVE REBUILD
+- SUPPORT FOR MULTIPLE HOSTS AND USERS
+- DENDRITIC STRUCTURE
+- MAYBE FULLY COMMENTED
+- MAYBE A GUIDE AND WIKI
 <br>
 
 ## **Breakdown of structure:**
-  - Loose evaluation path is `flake.nix` -> `core/hosts/<hostName>` -> `core/` -> `home/`
-<br>
-<br>
-  - `flake.nix` is the root of the config
-<br>
-<br>
-  - `core/` all system-level options
-    - `core/hosts` all host-specific configurations
-<br>
-<br>
-  - `home/` all user-level options
-    - `/home/desktop` all desktop/wm and related options
-    - `/home/terminal` all terminal and cli options
-    - `/home/resources` wallpapers, themes, icons, etc.
-    - `/home/multimedia` all media consumption options
-<br>
-<br>
 
- ## **Attributions:**
- - #### **Artwork:**
-    - [Vincent Van Gogh](https://en.wikipedia.org/wiki/Almond_Blossoms)
-    - [Helvetica Blanc](https://helveticablanc.com/)
+<br>
+  - `README.md` this file
+  - `resources/` various extraneous files
+    - `maintenance` QoL tools and repo presentation
+    - `system` wallpapers, themes, icons, avatars, etc.
+<br>
+  - `flake.nix` root of the config
+<br>
+  - `modules/` modules the flake is to build
+<br>
+    - `misc` assorted modules :shrug:
+<br>
+    - `pkgs` custom package derivations
+<br>
+    - `users` user declarations [REDUNDANT?]
+<br>
+    - `system/` shared system-level options
+      - `nix` package manager config
+      - `network` GLOBAL network configs
+      - `programs` GLOBAL software configs
+      - `hardware` GLOBAL hardware configs
+      - `core/` [REDUNDANT?]
+        - `users.nix` user declarations [REDUNDANT?]
+        - `default.nix` core configurations
+<br>
+    - `home/` user-level options
+      - `desktop` desktop/wm and related options
+      - `terminal` terminal and cli options
+      - `programs` other user-level options
+<br>
+    - `hosts/` host-specific configurations
+      - `hades` only current functional host
+<br>
