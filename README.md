@@ -20,23 +20,26 @@
 <br>
   - `modules/` modules the flake is to build
 <br>
+<br>
     - `misc` assorted modules :shrug:
     - `pkgs` custom package derivations
     - `users` user declarations [REDUNDANT?]
+    - `hosts` host-specific configurations
 <br>
-    - `hosts/` host-specific configurations
-      - `hades` only current functional host
 <br>
     - `home/` user-level options
       - `desktop` desktop/wm and related options
       - `terminal` terminal and cli options
       - `programs` other user-level options
 <br>
+<br>
     - `system/` shared system-level options
       - `nix` package manager config
       - `network` GLOBAL network configs
       - `programs` GLOBAL software configs
       - `hardware` GLOBAL hardware configs
+<br>
+<br>
       - `core/` [REDUNDANT?]
         - `users.nix` user declarations [REDUNDANT?]
         - `default.nix` core configurations
