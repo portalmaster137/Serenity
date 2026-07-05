@@ -25,11 +25,13 @@
 <br>
     - `pkgs` custom package derivations
 <br>
-<br>
     - `users` user declarations [REDUNDANT?]
 <br>
 <br>
-    - `hosts` host-specific configurations
+    - `hosts/` host-specific configurations
+      - `hades` desktop
+      - `orcus` home server
+      - `persephone` laptop
 <br>
 <br>
     - `home/` user-level options
