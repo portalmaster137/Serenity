@@ -17,12 +17,11 @@
 <br>
   - `flake.nix` root of the config
 <br>
+<br>
   - `modules/` modules the flake is to build
 <br>
     - `misc` assorted modules :shrug:
-<br>
     - `pkgs` custom package derivations
-<br>
     - `users` user declarations [REDUNDANT?]
 <br>
     - `system/` shared system-level options
