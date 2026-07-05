@@ -5,6 +5,7 @@
     imports = [
       self.nixosModules.audioConfig
       self.nixosModules.nixConfig
+      self.nixosModules.corePackages
     ];
 
     documentation.dev.enable = true;

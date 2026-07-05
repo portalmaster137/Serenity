@@ -1,6 +1,6 @@
 { self, ... }:
 {
-  flake.nixosModules.coreConfiguration =
+  flake.nixosModules.hadesConfig =
     {
       pkgs,
       ...
