@@ -22,8 +22,13 @@
 <br>
 <br>
     - `misc` assorted modules :shrug:
+<br>
     - `pkgs` custom package derivations
+<br>
+<br>
     - `users` user declarations [REDUNDANT?]
+<br>
+<br>
     - `hosts` host-specific configurations
 <br>
 <br>
@@ -43,4 +48,5 @@
       - `core/` [REDUNDANT?]
         - `users.nix` user declarations [REDUNDANT?]
         - `default.nix` core configurations
+<br>
 <br>
