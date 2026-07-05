@@ -15,16 +15,22 @@
     - `maintenance` QoL tools and repo presentation
     - `system` wallpapers, themes, icons, avatars, etc.
 <br>
+<br>
   - `flake.nix` root of the config
 <br>
-<br>
   - `modules/` modules the flake is to build
-<br>
 <br>
     - `misc` assorted modules :shrug:
     - `pkgs` custom package derivations
     - `users` user declarations [REDUNDANT?]
 <br>
+    - `hosts/` host-specific configurations
+      - `hades` only current functional host
+<br>
+    - `home/` user-level options
+      - `desktop` desktop/wm and related options
+      - `terminal` terminal and cli options
+      - `programs` other user-level options
 <br>
     - `system/` shared system-level options
       - `nix` package manager config
@@ -34,14 +40,4 @@
       - `core/` [REDUNDANT?]
         - `users.nix` user declarations [REDUNDANT?]
         - `default.nix` core configurations
-<br>
-<br>
-    - `home/` user-level options
-      - `desktop` desktop/wm and related options
-      - `terminal` terminal and cli options
-      - `programs` other user-level options
-<br>
-<br>
-    - `hosts/` host-specific configurations
-      - `hades` only current functional host
 <br>
