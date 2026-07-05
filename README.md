@@ -9,6 +9,7 @@
 
 ## **Breakdown of structure:**
 <br>
+
   - `README.md` this file
   - `resources/` various extraneous files
     - `maintenance` QoL tools and repo presentation
