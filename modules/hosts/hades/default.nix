@@ -1,25 +1,22 @@
-{
-  pkgs,
-  lib,
-  self,
-  ...
-}:
-{
+{ self, inputs, config, ... }: {
 
-  # module paths to import
-  imports = [
-    ./hardware
-    ./network
-    ./radeon
-  ];
+  flake.nixosConfigurations.hades = inputs.nixpkgs.lib.nixosSystem {
+    modules = [
+      self.nixosModules.hadesHardware
+      self.nixosModules.hadesConfig
+      self.nixosModules.coreConfig
 
-  # select kernel to use
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
+      inputs.home-manager.nixosModules.home-manager
+      {
+        home-manager.backupFileExtension = "bak";
+        home-manager.users.serenity = {
+          imports = [
+            config.flake.homeModules.base
+            config.flake.homeModules.hadesHome
+          ];
+        };
+      }
 
-  # set hostname
-  networking.hostName = "hades";
-
-  # for ssd
-  services.fstrim.enable = true;
-
+    ];
+  };
 }

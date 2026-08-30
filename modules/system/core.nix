@@ -11,6 +11,14 @@
       self.nixosModules.corePackages
     ];
 
+    # extra features
+    nix.settings.experimental-features = [
+      # flake based config requires flakes
+      "flakes"
+      #fancier nix usage
+      "nix-command"
+    ];
+
     # compresses half the ram for use as swap
     zramSwap.enable = true;
 
