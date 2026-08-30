@@ -71,8 +71,5 @@
         openrgb-with-all-plugins
       ];
 
-      # dont touch this
-      system.stateVersion = "24.11";
-
     };
 }
