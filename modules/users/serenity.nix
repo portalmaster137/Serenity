@@ -43,6 +43,7 @@ in
               # user specific modules to import
               imports = [
                 self.flake.homeModules.baseHome
+                #self.flake.homeModules.configName
               ];
 
             };
@@ -67,6 +68,7 @@ in
         ];
 
         # dont hardcode this
+        # catgirl shell
         shell = pkgs.fish;
 
       };

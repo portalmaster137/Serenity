@@ -1,7 +1,13 @@
 { self, inputs, ... }: {
 
+  # this module defines all hosts and allocates users to those hosts
   flake.nixosConfigurations =
     let
+
+      # users to include on machine
+      username = "serenity";
+      #username2 = "foobar";
+      
       # shorten paths
       inherit (inputs.nixpkgs.lib) nixosSystem;
       homeImports = import "${self}/home/profiles";
@@ -13,40 +19,39 @@
     in 
 
     {
+
+      # declare hosts here
       hades = nixosSystem {
         inherit specialArgs;
-        modules = base ++ [
-          #inputs.foo.bar
-          ./hades
-          "${mod}/programs/games.nix"
-          "${mod}/network/syncthing.nix"
-          "${mod}/services/kanata"
-          {
-            home-manager = {
-              users.serenity.imports = homeImports."serenity";
-              extraSpecialArgs = specialArgs;
-              backupFileExtension = ".hm-backup";
-            };
-          }
-        ];
-      };
-
-      nixos = nixosSystem {
-        inherit specialArgs;
         modules = [
-          "${mod}/users.nix"
-          "${mod}/nix"
-          "${mod}/programs/fish.nix"
-          "${mod}/programs/home-manager.nix"
+
+          # include the core configuration
+          self.nixosModules.coreConfig
+
+          # specify host config directory
+          ./hades
+
+          # users to include on machine
+          "${mod}/users/u-${username}.nix"
+          #"${mod}/users/u-${username2}.nix"
+          
+          # home manager
+          "${mod}/misc/hm-parts.nix"
           {
             home-manager = {
-              users.serenity.imports = homeImports.minimal;
+
+              # misc. hm settings
               extraSpecialArgs = specialArgs;
               backupFileExtension = ".hm-backup";
+
+              # user specific hm configurations present on machine            
+              users.${username}.imports = homeImports."${username}";
+              #users.${username2}.imports = homeImports."${username2}";
+
             };
           }
+
         ];
       };
 
-    };
 }
