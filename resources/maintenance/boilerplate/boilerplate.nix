@@ -1,19 +1,28 @@
-{ inputs, ... }: 
+{ inputs, ... }:
 
+# let bindings
 let
+
   #foo = bar
-in 
+  #
+
+in
 
 {
 
-  # Try `$ nix run .#boilerplate`
+  # try `$ nix run .#boilerplate`
   flake = {
 
+    # modules declaration
     nixosConfigurations.main = inputs.nixpkgs.lib.nixosSystem {
+
+      # list of modules to import
       modules = [
         ./configuration.nix
       ];
+
     };
 
   };
+
 }
