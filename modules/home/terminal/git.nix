@@ -2,10 +2,13 @@
 
   perSystem = { pkgs, ... }: {
 
-    packages.myYazi = inputs.wrapper-modules.wrappers.yazi.wrap {
+    # defines a custom git package
+    packages.myGit = inputs.wrapper-modules.wrappers.git.wrap {
+
       settings = {
         foo = bar;
       };
+
     };
 
   };

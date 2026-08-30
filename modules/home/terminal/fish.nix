@@ -2,10 +2,13 @@
 
   perSystem = { pkgs, ... }: {
 
-    packages.myYazi = inputs.wrapper-modules.wrappers.yazi.wrap {
+    # defines a custom fish package
+    packages.myFish = inputs.wrapper-modules.wrappers.fish.wrap {
+
       settings = {
         foo = bar;
       };
+
     };
 
   };

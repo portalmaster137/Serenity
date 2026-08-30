@@ -1,17 +1,25 @@
-{ pkgs, lib, self, ... }: {
+{
+  pkgs,
+  lib,
+  self,
+  ...
+}:
+{
 
+  # module paths to import
   imports = [
     ./hardware
-    ./network 
+    ./network
     ./radeon
   ];
 
+  # select kernel to use
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
 
-  # Set hostname
+  # set hostname
   networking.hostName = "hades";
 
-  # For SSD/NVME
+  # for ssd
   services.fstrim.enable = true;
 
 }

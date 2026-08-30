@@ -1,41 +1,68 @@
 { self, inputs, ... }: {
 
+  # module declaration
   flake.nixosModules.niri = { pkgs, lib, ... }: {
+
     programs.niri = {
+
+      # enables niri
       enable = true;
+
+      # use a custom niri package
       package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
+
     };
+
   };
 
-  perSystem = { pkgs, lib, self',... }: {
-    packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
-      inherit pkgs;
-      settings = {
+  # defines a custom niri package
+  perSystem =
+    {
+      pkgs,
+      lib,
+      self',
+      ...
+    }:
+    {
 
-        xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+      packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
 
-        spawn-at-startup = [
-          # Makes our custom noctalia a dependency and spawns it at startup
-          (lib.getExe self'.packages.myNoctalia)
-        ];
+        # follow global packages
+        inherit pkgs;
 
-        input.keyboard.xkb.layout = "us";
+        # customised niri settings
+        settings = {
 
-        binds = {
-          # Terminal bind
-          "Mod+Return".spawn-sh = lib.getExe self'.packages.myKitty;
-          # Launcher bind
-          "Mod+Tab".spawn-sh = "${lib.getExe self.packages.myNoctalia} ipc call launcher toggle";
-          # Window control binds
-          "Mod+Q".close-window = null;
+          # xwayland-satellite package to use
+          xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+
+          # makes our custom noctalia a dependency and spawns it at startup
+          spawn-at-startup = [
+            (lib.getExe self'.packages.myNoctalia)
+          ];
+
+          # keyboard layout and binds
+          input.keyboard.xkb.layout = "us";
+          binds = {
+
+            # terminal and launcher binds
+            "Mod+Return".spawn-sh = lib.getExe self'.packages.myKitty;
+            "Mod+Tab".spawn-sh = "${lib.getExe self.packages.myNoctalia} ipc call launcher toggle";
+
+            # window control binds
+            "Mod+Q".close-window = null;
+
+          };
+
+          # layout and visual settings
+          layout = {
+
+            gaps = 5;
+
+          };
+
         };
-
-        layout = {
-          gaps = 5;
-        };
-
       };
     };
-  };
 
 }

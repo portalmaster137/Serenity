@@ -1,41 +1,76 @@
 { self, inputs, ... }:
+
+# let bindings
 let
+
+  # set your username here
   name = "serenity";
+
+  # qol variable to make paths shorter
   home = "/home/${name}";
+
 in
+
 {
+
+  # user module declaration
   flake.nixosModules.u-serenity =
+
     { pkgs, ... }:
+
     {
+
+      # modules to include
       modules = [
-        self.foo.bar
+
+        # home-manager module
         inputs.home-manager.nixosModules.home-manager
         {
           home-manager = {
-            verbose = true;
-            useUserPackages = true;
-            useGlobalPkgs = true;
+
+            # home-manager settings
             backupFileExtension = "backup";
             overwriteBackup = true;
+            verbose = true;
+
+            # set home-manager packages to follow system
+            useUserPackages = true;
+            useGlobalPkgs = true;
+
+            # hm user declaration
             users.${name} = {
+
+              # user specific modules to import
               imports = [
                 self.flake.homeModules.baseHome
               ];
+
             };
+
           };
         }
 
       ];
 
+      # user declaration
       users.users.${name} = {
-        isNormalUser = true;
+
+        # remember to change this
         initialPassword = "password";
         inherit home;
+        isNormalUser = true;
+
+        # groups to include user in
         extraGroups = [
           "wheel"
           "networkmanager"
         ];
-        shell = pkgs.fish; # TODO: Don't hardcode this.
+
+        # dont hardcode this
+        shell = pkgs.fish;
+
       };
+
     };
+
 }
