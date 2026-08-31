@@ -19,6 +19,9 @@
       self.nixosModules.hades
       self.nixosModules.hades-hardware
 
+      # extra modules
+      self.modules.nixos.gaming
+
       # home manager and home manager imports
       inputs.home-manager.nixosModules.home-manager
       {
@@ -26,7 +29,7 @@
         home-manager.users.serenity = {
           imports = [
             config.flake.homeModules.core-home
-            #config.flake.homeModules.hades-home
+            config.flake.homeModules.desktop
           ];
         };
       }
