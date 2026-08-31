@@ -14,7 +14,7 @@ in
 {
 
   # user module declaration
-  flake.nixosModules.u-serenity =
+  flake.modules.nixos.${name} =
 
     { pkgs, ... }:
 
@@ -42,8 +42,8 @@ in
 
               # user specific modules to import
               imports = [
-                self.flake.homeModules.baseHome
-                #self.flake.homeModules.configName
+                self.flake.homeModules.core-home
+                #self.flake.homeModules.${name}
               ];
 
             };

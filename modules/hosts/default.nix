@@ -25,9 +25,6 @@
         inherit specialArgs;
         modules = [
 
-          # include the core configuration
-          self.nixosModules.coreConfig
-
           # specify host config directory
           ./hades
 

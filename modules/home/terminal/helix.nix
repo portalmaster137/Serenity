@@ -1,10 +1,16 @@
 { self, inputs, ... }: {
 
+  # defines a custom helix module
   flake.modules.homeManager.helix = {
+
+    home.packages = with pkgs; [
+      helix
+    ];
 
     programs.helix = {
 
-      enable = true; # enables helix
+      # enables helix
+      enable = true;
 
       settings = {
 

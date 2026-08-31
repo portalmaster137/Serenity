@@ -2,7 +2,7 @@
 
 {
   # defines a module
-  flake.nixosModules.hadesHardware =
+  flake.nixosModules.hades-hardware =
     {
       config,
       lib,

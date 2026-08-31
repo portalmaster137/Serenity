@@ -1,26 +1,22 @@
 { self, inputs, ... }: {
 
-  flake.nixosModules.niri = { pkgs, lib, ... }: {
-    programs.niri = {
+  # defines a custom yazi module
+  flake.modules.homeManager.yazi = {
+
+    # packages to include
+    home.package = with pkgs; [
+      yazi
+    ];
+
+    programs.yazi = {
+
+      # enables yazi
       enable = true;
-      package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
-    };
-  };
 
-  perSystem = { pkgs, ... }: {
+      # yazi settings
+      settings = { };
 
-    packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
-      inherit pkgs;
-      settings = {
-        foo = bar;
-        foorbar = {
-          bar = true;
-          foo = "always";
-          barbar = 5;
-        };
-      };
     };
 
   };
-
 }

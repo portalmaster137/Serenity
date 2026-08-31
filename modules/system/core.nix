@@ -2,13 +2,12 @@
 
 {
 
-  flake.nixosModules.coreConfig = { pkgs, ... }: {
+  flake.modules.nixos.core = { pkgs, ... }: {
 
     # other modules to load
     imports = [
-      self.nixosModules.audioConfig
-      self.nixosModules.nixConfig
-      self.nixosModules.corePackages
+      self.nixosModules.audio
+      self.nixosModules.packages
     ];
 
     # extra features

@@ -13,11 +13,11 @@
     modules = [
 
       # core system modules
-      self.nixosModules.coreConfig
+      self.nixosModules.core
 
       # hades system modules
-      self.nixosModules.hadesHardware
-      self.nixosModules.hadesConfig
+      self.nixosModules.hades
+      self.nixosModules.hades-hardware
 
       # home manager and home manager imports
       inputs.home-manager.nixosModules.home-manager
@@ -25,8 +25,8 @@
         home-manager.backupFileExtension = "bak";
         home-manager.users.serenity = {
           imports = [
-            config.flake.homeModules.baseHome
-            config.flake.homeModules.hadesHome
+            config.flake.homeModules.core-home
+            #config.flake.homeModules.hades-home
           ];
         };
       }

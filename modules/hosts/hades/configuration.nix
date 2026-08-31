@@ -3,7 +3,7 @@
 {
 
   # defines a module
-  flake.nixosModules.hadesConfig =
+  flake.nixosModules.hades =
     {
       pkgs,
       lib,
@@ -14,12 +14,7 @@
     {
 
       # other modules to import
-      imports = [
-        self.nixosModules.hadesHardware
-        self.nixosModules.coreConfig
-        self.nixosModules.programs
-        self.nixosModules.niri
-      ];
+      imports = [ ];
 
       # set hostname
       networking.hostName = "hades";

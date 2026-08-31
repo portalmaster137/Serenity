@@ -1,4 +1,4 @@
-{ config, ... }:
+{ self, inputs, ... }:
 
 # let bindings
 let
@@ -12,27 +12,42 @@ in
 
 {
 
-  # list of modules to include
-  imports = [
-    ./programs
-    ./kitty.nix
-    ./fish.nix
-  ];
+  # terminal supermodule
+  flake.homeModules.terminal = { config, pkgs, ... }: {
 
-  # environment variables
-  home.sessionVariables = {
+    # list of modules to include
+    imports = [
 
-    # clean up ~
-    LESSHISTFILE = "${cache}/less/history";
-    LESSKEY = "${conf}/less/lesskey";
+      # terminal emulator
+      self.modules.kitty
+      # text editor
+      self.modules.helix
+      # file manager
+      self.modules.yazi
+      # shell and prompt
+      self.modules.fish
+      # version control
+      self.modules.git
 
-    WINEPREFIX = "${data}/wine";
-    XAUTHORITY = "$XDG_RUNTIME_DIR/Xauthority";
+    ];
 
-    EDITOR = "helix";
-    DIRENV_LOG_FORMAT = "";
+    # environment variables
+    home.sessionVariables = {
 
-    # auto-run programs using nix-index-database
-    NIX_AUTO_RUN = "1";
+      # clean up ~
+      LESSHISTFILE = "${cache}/less/history";
+      LESSKEY = "${conf}/less/lesskey";
+
+      WINEPREFIX = "${data}/wine";
+      XAUTHORITY = "$XDG_RUNTIME_DIR/Xauthority";
+
+      EDITOR = "helix";
+      DIRENV_LOG_FORMAT = "";
+
+      # auto-run programs using nix-index-database
+      NIX_AUTO_RUN = "1";
+    };
+
   };
+
 }

@@ -1,10 +1,17 @@
 { self, inputs, ... }: {
 
-  flake.homeModules.baseHome = { config, pkgs, ... }: {
+  flake.homeModules.core-home = { config, pkgs, ... }: {
+
+    #modules = [
+    #self.modules.terminal
+    #self.modules.theme
+    #];
 
     imports = [
-      ./terminal
-      self.modules.theme
+      #./terminal
+      self.modules.terminal
+      self.modules.desktop
+      #self.modules.theme
     ];
 
     home = {

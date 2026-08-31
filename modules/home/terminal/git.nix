@@ -1,14 +1,15 @@
 { self, inputs, ... }: {
 
-  perSystem = { pkgs, ... }: {
+  # defines a custom git module
+  flake.modules.homeManager.git = {
 
-    # defines a custom git package
-    packages.myGit = inputs.wrapper-modules.wrappers.git.wrap {
+    # packages to include
+    home.packages = with pkgs; [
+      git
+    ];
 
-      settings = {
-        foo = bar;
-      };
-
+    programs.git = {
+      enable = true;
     };
 
   };
