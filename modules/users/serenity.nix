@@ -4,7 +4,7 @@
 let
 
   # set your username here
-  name = "serenity";
+  username = "serenity";
 
   # qol variable to make paths shorter
   home = "/home/${name}";
@@ -14,7 +14,7 @@ in
 {
 
   # user module declaration
-  flake.modules.nixos.${name} =
+  flake.modules.nixos.serenity =
 
     { pkgs, ... }:
 
@@ -29,7 +29,7 @@ in
           home-manager = {
 
             # home-manager settings
-            backupFileExtension = "backup";
+            backupFileExtension = ".bak";
             overwriteBackup = true;
             verbose = true;
 
@@ -38,7 +38,7 @@ in
             useGlobalPkgs = true;
 
             # hm user declaration
-            users.${name} = {
+            users.serenity = {
 
               # user specific modules to import
               imports = [
@@ -54,7 +54,7 @@ in
       ];
 
       # user declaration
-      users.users.${name} = {
+      users.users.serenity = {
 
         # remember to change this
         initialPassword = "password";

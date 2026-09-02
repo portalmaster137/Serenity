@@ -1,9 +1,10 @@
-{
-  self,
-  inputs,
-  config,
-  ...
-}:
+{ self, inputs, config, ... }:
+
+let
+
+  # default username here
+  username = "serenity";
+
 {
 
   # defines the hades specific config modules
@@ -22,13 +23,13 @@
       # extra modules
       self.modules.nixos.gaming
 
+      # users to include on host
+      self.modules.nixos.serenity
       # home manager and home manager imports
       inputs.home-manager.nixosModules.home-manager
       {
-        home-manager.backupFileExtension = "bak";
         home-manager.users.serenity = {
           imports = [
-            config.flake.homeModules.core-home
             config.flake.homeModules.desktop
           ];
         };
