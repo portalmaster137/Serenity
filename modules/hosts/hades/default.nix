@@ -11,6 +11,9 @@
       # host-specific hardware options
       hadesHardware
 
+      # user defined options
+      userOptions
+
       # users to include on host
       serenity
 

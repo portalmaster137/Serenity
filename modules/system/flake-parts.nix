@@ -1,10 +1,9 @@
-{ inputs, self, ... }: {
+{ inputs, ... }: {
 
   imports = [
 
     # necessary for home manager functionality
     inputs.home-manager.flakeModules.home-manager
-    self.nixosModules.userOptions
 
   ];
 
