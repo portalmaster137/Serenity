@@ -16,7 +16,7 @@
 
       # extra modules to include on host
       desktop
-      terminal
+      #terminal
 
     ];
 
