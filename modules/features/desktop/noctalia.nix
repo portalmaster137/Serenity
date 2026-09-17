@@ -2,6 +2,7 @@
 
 {
 
+  # noctalia shell module declaration
   flake.nixosModules.noctalia =
     { pkgs, ... }:
 
@@ -13,8 +14,9 @@
       # home manager options
       home-manager.users.serenity = {
 
-        # for noctalia home manager configuration
+        # for noctalia home manager functionality
         imports = [ inputs.noctalia.homeModules.default ];
+
         programs.noctalia = {
 
           # enables noctalia
@@ -26,8 +28,10 @@
 
             general = { };
 
+            # for calendar/weather
             location = { };
 
+            # NOT YET IMPLEMENTED
             #colorSchemes.predefinedscheme = "foobar";
 
             # no want dock :(
@@ -35,6 +39,7 @@
               enabled = false;
             };
 
+            # status bar settings
             bar = { };
 
           };

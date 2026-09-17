@@ -1,15 +1,20 @@
 { inputs, ... }: {
 
-  # module declaration
-  flake.nixosModules.gaming = { pkgs, ... }: {
+  # gaming module declaration
+  flake.nixosModules.gaming = { inputs, pkgs, ... }: {
 
     # options declarations
     #programs.whatever = {};
 
-    # steam
-    programs.steam = { };
+    # steam settings
+    programs.steam = {
 
-    # packages to include
+      # enables steam
+      enable = true;
+
+    };
+
+    # other packages to include
     environment.systemPackages = with pkgs; [ ];
 
   };

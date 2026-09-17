@@ -1,14 +1,10 @@
-{ self, ... }:
+{ self, inputs, ... }:
 
 {
 
-  # defines a module
+  # host module declaration
   flake.nixosModules.hades =
-    {
-      pkgs,
-      lib,
-      ...
-    }:
+    { pkgs, lib, ... }:
 
     {
 

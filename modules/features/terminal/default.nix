@@ -1,8 +1,4 @@
-{
-  self,
-  inputs,
-  ...
-}:
+{ self, inputs, ... }:
 
 {
 
@@ -14,16 +10,21 @@
 
       # home manager
       inputs.home-manager.nixosModules.home-manager
+
       # terminal emulator
       self.nixosModules.kitty
+
       # text editor
       self.nixosModules.helix
+
       # file manager
-      #self.modules.yazi
+      #self.nixosModules.yazi
+
       # shell and prompt
-      #self.modules.fish
+      #self.nixosModules.fish
+
       # version control
-      #self.modules.git
+      #self.nixosModules.git
 
     ];
 

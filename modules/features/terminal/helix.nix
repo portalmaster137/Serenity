@@ -1,10 +1,5 @@
-{
-  self,
-  inputs,
-  pkgs,
-  lib,
-  ...
-}:
+{ self, inputs, ... }:
+
 {
 
   # defines a custom helix module
@@ -13,10 +8,12 @@
 
     {
 
+      # needed for home manager functionality
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       home-manager.users.serenity = {
 
+        # redundancy, not sure this is needed?
         home.packages = with pkgs; [
           helix
         ];

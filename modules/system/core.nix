@@ -5,10 +5,6 @@
   flake.nixosModules.core =
     { lib, pkgs, ... }:
 
-    let
-
-    in
-
     {
 
       # other modules to load

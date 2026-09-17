@@ -1,36 +1,19 @@
 { self, inputs, ... }: {
 
-  # module declaration
+  # niri window manager module declaration
   flake.nixosModules.niri =
     { pkgs, ... }:
 
-    let
-
-      #username = config.userOptions.username;
-
-    in
-
     {
 
-      imports = [
+      # for home manager functionality
+      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-        # for home manager functionality
-        inputs.home-manager.nixosModules.home-manager
-
-        # for noctalia shell atop niri
-        #self.nixosModules.noctalia
-
+      # packages for desktop environment
+      environment.systemPackages = with pkgs; [
+        #foo
+        #bar
       ];
-
-      environment = {
-
-        # packages for desktop environment
-        systemPackages = with pkgs; [
-          #foo
-          #bar
-        ];
-
-      };
 
       # session management
       programs.uwsm = {
@@ -45,6 +28,7 @@
       # niri settings
       home-manager.users.serenity = {
 
+        # for home manager functionality
         imports = [ inputs.niri.homeModules.niri ];
 
         programs.niri = {

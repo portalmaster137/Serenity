@@ -8,17 +8,19 @@
     # modules that comprise the host specific configuration
     modules = with self.nixosModules; [
 
+      # shared system modules
+      core
+
       # host-specific options
       hades
       hadesHardware
 
-      # users to include on host
-      serenity
-
       # extra modules to include on host
       terminal
       desktop
-      #noctalia
+
+      # users to include on host
+      serenity
 
     ];
 

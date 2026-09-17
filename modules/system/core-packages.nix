@@ -3,13 +3,6 @@
   # module declaration
   flake.nixosModules.core-packages = { pkgs, ... }: {
 
-    # environment variables
-    environment.variables = {
-      EDITOR = "helix";
-      VISUAL = "helix";
-      SYSTEMD_EDITOR = "helix";
-    };
-
     # nix settings
     nix.settings = {
 
@@ -26,20 +19,37 @@
     # nixpkgs settings
     nixpkgs = {
 
-      # allows crud
+      # allows broken and ideologically impure packages
       config = {
         allowUnfree = true;
         allowBroken = true;
       };
 
-      # overlays
+      # nixpkgs overlays
       overlays = [
         #niri.overlays.niri
       ];
 
     };
 
-    # options declarations
+    # services to include in base system
+    services = {
+
+      # flatpak software
+      flatpak = {
+        enable = true;
+      };
+
+    };
+
+    # environment variables
+    environment.variables = {
+      EDITOR = "helix";
+      VISUAL = "helix";
+      SYSTEMD_EDITOR = "helix";
+    };
+
+    # core programs to include in base system
     programs = {
 
       # necessary terminal programs
@@ -65,16 +75,7 @@
     # to run an elf binary not compiled for nixos.
     environment.stub-ld.enable = true;
 
-    services = {
-
-      # flatpak software
-      flatpak = {
-        enable = true;
-      };
-
-    };
-
-    # packages to include
+    # core packages to include in base system
     environment.systemPackages = with pkgs; [
 
       # nix utilities
@@ -128,6 +129,7 @@
       libsecret
       git-crypt
       undervolt
+
     ];
 
   };

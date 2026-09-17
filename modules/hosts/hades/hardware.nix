@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  # defines a module
+  # hardware module declaration
   flake.nixosModules.hadesHardware =
     {
       config,
@@ -15,6 +15,7 @@
       # important i think lol
       imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
+      # bootloader
       boot.loader.systemd-boot.enable = true;
 
       # shrug

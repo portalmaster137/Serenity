@@ -2,9 +2,6 @@
 
 {
 
-  # necessary for home manager function
-  #imports = [ inputs.home-manager.nixosModules.home-manager ];
-
   # user module declaration
   flake.nixosModules.serenity =
 
@@ -15,9 +12,10 @@
       # necessary for home manager function
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
+      # needed or nix yells at me
       programs.fish.enable = true;
 
-      # user declaration
+      # nixos user declaration
       users.users.serenity = {
 
         # remember to change this
@@ -30,12 +28,13 @@
           "networkmanager"
         ];
 
-        # dont hardcode this
+        # dont hardcode this ?
         # catgirl shell
         shell = pkgs.fish;
 
       };
 
+      # not entirely sure this is necessary tbh
       environment.systemPackages = with pkgs; [ home-manager ];
 
       # home manager settings
@@ -43,12 +42,18 @@
         verbose = true;
         overwriteBackup = true;
         backupFileExtension = ".bak";
+
+        # need to disable soon ?
         useGlobalPkgs = true;
         useUserPackages = true;
+
+        # home manager user declaration
         users.serenity = {
           home.stateVersion = "24.11";
           nixpkgs.config.allowUnfree = true;
-          imports = [ ];
+
+          # user specific modules to include
+          #imports = [ ];
         };
       };
 
