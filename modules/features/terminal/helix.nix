@@ -4,7 +4,7 @@
 
   # defines a custom helix module
   flake.nixosModules.helix =
-    { pkgs, ... }:
+    { lib, pkgs, ... }:
 
     {
 
