@@ -3,8 +3,8 @@
 # let bindings
 let
 
+  # for foobar
   #foo = bar
-  #
 
 in
 
@@ -17,23 +17,30 @@ in
     modules = [
       self.modules.nixos.othermodule
     ];
-    imports = [
-      ./otherfile.nix
-    ];
 
-    # options
-    programs = { };
+    # for home manager functionality
+    imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-  };
+    # nixos options
+    programs = {
+      foo = {
+        bar = true;
+      };
+    };
 
-  # home manager module declaration
-  flake.modules.homeManager.modulename = { ... }: {
+    # home manager options
+    home-manager.users.${username} = {
 
-    # module imports
-    imports = [ ];
+      # program settings
+      programs = {
 
-    # options
-    programs = { };
+        foo = {
+          bar = true;
+        };
+
+      };
+
+    };
 
   };
 

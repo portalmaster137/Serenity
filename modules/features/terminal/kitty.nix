@@ -1,9 +1,5 @@
-{
-  self,
-  inputs,
-  pkgs,
-  ...
-}:
+{ self, inputs, ... }:
+
 {
 
   # defines a custom kitty module
@@ -12,8 +8,10 @@
 
     {
 
+      # for home manager functionality
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
+      # home manager settings
       home-manager.users.serenity = {
 
         # packages to include
@@ -42,11 +40,7 @@
             size = 12;
           };
 
-          # misecellaneous kitty config
-          extraConfig = ''
-            window_padding_width 0 20
-          '';
-
+          # kitty settings
           settings = {
 
             # sets fish as the default shell
@@ -79,9 +73,15 @@
 
           };
 
+          # misecellaneous kitty config
+          extraConfig = ''
+            window_padding_width 0 20
+          '';
+
         };
 
       };
+
     };
 
 }

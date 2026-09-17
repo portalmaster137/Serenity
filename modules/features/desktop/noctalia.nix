@@ -1,21 +1,20 @@
-{ inputs, ... }: {
+{ self, inputs, ... }:
+
+{
 
   flake.nixosModules.noctalia =
-    { lib, ... }:
-
-    let
-      #username = config.userOptions.username;
-      #hostName = config.userOptions.hostName;
-      #wallpaper = config.userOptions.wallpaper;
-    in
+    { pkgs, ... }:
 
     {
 
       # for home manager functionality
       imports = [ inputs.home-manager.nixosModules.home-manager ];
-      home-manager.users.serenity = {
-        imports = [ inputs.noctalia.homeModules.default ];
 
+      # home manager options
+      home-manager.users.serenity = {
+
+        # for noctalia home manager configuration
+        imports = [ inputs.noctalia.homeModules.default ];
         programs.noctalia-shell = {
 
           # enables noctalia
@@ -31,6 +30,7 @@
 
             #colorSchemes.predefinedscheme = "foobar";
 
+            # no want dock :(
             dock = {
               enabled = false;
             };
@@ -38,8 +38,11 @@
             bar = { };
 
           };
+
         };
+
       };
+
     };
 
 }
