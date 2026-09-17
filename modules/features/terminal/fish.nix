@@ -41,7 +41,7 @@
               name = "puffer";
               src = pkgs.fishPlugins.puffer.src;
             }
-            
+
             {
               name = "autopair";
               src = pkgs.fishPlugins.autopair.src;
@@ -55,7 +55,7 @@
             trc = "tree -C";
           };
           shellAliases = {
-            rbu "sudo systemctl reboot --firmware-setup";
+            rbu = "sudo systemctl reboot --firmware-setup";
           };
 
           # fish functions
@@ -63,12 +63,12 @@
 
             # foo
             foo = ''
-                if bar
-                  printf 'foo'
-                else
-                  echo loser
-                end
-              '';
+              if bar
+                printf 'foo'
+              else
+                echo loser
+              end
+            '';
           };
 
         };
