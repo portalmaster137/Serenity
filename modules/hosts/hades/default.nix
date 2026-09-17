@@ -17,8 +17,8 @@
 
       # extra modules to include on host
       terminal
-      #desktop
-      noctalia
+      desktop
+      #noctalia
 
     ];
 

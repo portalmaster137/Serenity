@@ -49,8 +49,15 @@
 
       # niri settings
       home-manager.users.serenity = {
+
+        imports = [ inputs.niri.homeModules.niri ];
+
         programs.niri = {
+
+          # enables niri within home manager
           enable = true;
+
+          # niri configuration
           #settings = { };
 
         };
