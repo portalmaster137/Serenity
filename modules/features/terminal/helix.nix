@@ -11,6 +11,7 @@
       # needed for home manager functionality
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
+      # home manager options
       home-manager.users.serenity = {
 
         # redundancy, not sure this is needed?

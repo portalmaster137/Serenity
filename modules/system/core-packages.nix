@@ -7,13 +7,15 @@
     nix.settings = {
 
       # for packages not in nixpkgs
-      substituters = [
-        "name.here"
-      ];
+      #substituters = [
+      #"name.here"
+      #];
+
       # keys to sign aforementioned packages
-      trusted-public-keys = [
-        "name.here"
-      ];
+      #trusted-public-keys = [
+      #"name.here"
+      #];
+
     };
 
     # nixpkgs settings
