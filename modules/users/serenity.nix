@@ -23,10 +23,9 @@
 
         # remember to change this
         initialPassword = "password";
-        inherit home;
-        isNormalUser = true;
 
-        # groups to include user in
+        # permissions management
+        isNormalUser = true;
         extraGroups = [
           "wheel"
           "networkmanager"
