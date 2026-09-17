@@ -1,9 +1,16 @@
-{ self, inputs, config, ... }:
+{
+  self,
+  inputs,
+  config,
+  ...
+}:
 
 let
 
   # default username here
   username = "serenity";
+
+in
 
 {
 
