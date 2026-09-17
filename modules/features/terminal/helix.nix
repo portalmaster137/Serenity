@@ -1,4 +1,10 @@
-{ self, inputs, ... }: {
+{
+  self,
+  inputs,
+  lib,
+  ...
+}:
+{
 
   # defines a custom helix module
   flake.modules.homeManager.helix = {
