@@ -6,7 +6,6 @@
 
     # other modules to load
     imports = with self.nixosModules; [
-      audio
       core-packages
     ];
 
