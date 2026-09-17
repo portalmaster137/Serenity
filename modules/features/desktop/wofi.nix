@@ -7,7 +7,7 @@
     imports = [ inputs.home-manager.nixosModules.home-manager ];
 
     # home manager options
-    home-manager.user.serenity = {
+    home-manager.users.serenity = {
 
       # enables wofi
       programs.wofi = {
