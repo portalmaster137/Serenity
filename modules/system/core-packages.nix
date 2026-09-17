@@ -1,7 +1,7 @@
 { inputs, ... }: {
 
   # module declaration
-  flake.nixosModules.packages = { pkgs, ... }: {
+  flake.nixosModules.core-packages = { pkgs, ... }: {
 
     # environment variables
     environment.variables = {
