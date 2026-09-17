@@ -14,6 +14,9 @@
       # window manager
       self.nixosModules.niri
 
+      # application launcher
+      self.nixosModules.wofi
+
       # desktop shell/status bar
       self.nixosModules.noctalia
 
