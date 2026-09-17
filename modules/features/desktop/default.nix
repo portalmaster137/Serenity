@@ -13,8 +13,8 @@
       inputs.home-manager.nixosModules.home-manager
 
       # home manager modules for niri and noctalia
-      inputs.niri.homeModules.niri
-      inputs.noctalia.homeModules.default
+      #inputs.niri.homeModules.niri
+      #inputs.noctalia.homeModules.default
     ];
 
     #programs.foo = bar;
