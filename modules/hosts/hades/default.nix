@@ -56,8 +56,8 @@ in
         inputs.home-manager.nixosModules.home-manager
         {
           home-manager.users.serenity = {
-            imports = [
-              config.flake.homeModules.desktop
+            imports = with self.homeModules; [
+              desktop
             ];
           };
         }

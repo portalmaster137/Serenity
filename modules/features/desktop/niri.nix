@@ -1,7 +1,7 @@
 { self, inputs, ... }: {
 
   # module declaration
-  flake.modules.nixos.niri = { pkgs, ... }: {
+  flake.nixosModules.niri = { pkgs, ... }: {
 
     programs.niri = {
 
@@ -13,20 +13,21 @@
   };
 
   # defines a niri hm config
-  flake.modules.homeManager.niri =
+  flake.homeModules.niri =
     {
       config,
       pkgs,
       lib,
       ...
     }:
+
     {
 
-      imports = [
+      imports = with self.homeModules; [
         # launcher
-        self.modules.homeManager.wofi
+        wofi
         # desktop shell
-        self.modules.homeManager.noctalia
+        noctalia
 
       ];
 
@@ -41,7 +42,9 @@
           settings = {
 
           };
+
         };
+
       };
 
     };
