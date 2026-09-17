@@ -61,6 +61,7 @@
     # niri window manager - https://github.com/YaLTeR/niri
     # niri flake docs - https://github.com/sodiboo/niri-flake/
     niri = {
+      # using alternate flake repo while sodiboo gets their shit together
       url = "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       #inputs.niri-unstable.follows = "";
