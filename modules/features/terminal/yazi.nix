@@ -25,13 +25,16 @@
 
           # yazi settings
           settings.log.enabled = false;
-          manager = {
+          mgr = {
             show_hidden = true;
             linemode = "none";
             sort_by = "mtime";
             sort_reverse = false;
             sort_dir_first = true;
           };
+
+          # NOT YET IMPLEMENTED
+          #theme = { };
 
         };
 
