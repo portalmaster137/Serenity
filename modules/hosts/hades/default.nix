@@ -16,8 +16,8 @@
       serenity
 
       # extra modules to include on host
-      #terminal
-      #desktop
+      terminal
+      desktop
 
     ];
 

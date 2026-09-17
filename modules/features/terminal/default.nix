@@ -28,11 +28,11 @@ in
       # text editor
       self.modules.helix
       # file manager
-      self.modules.yazi
+      #self.modules.yazi
       # shell and prompt
-      self.modules.fish
+      #self.modules.fish
       # version control
-      self.modules.git
+      #self.modules.git
 
     ];
 
