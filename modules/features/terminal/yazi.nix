@@ -1,4 +1,10 @@
-{ self, inputs, ... }: {
+{
+  self,
+  inputs,
+  pkgs,
+  ...
+}:
+{
 
   # defines a custom yazi module
   flake.modules.homeManager.yazi = {

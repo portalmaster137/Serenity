@@ -1,4 +1,10 @@
-{ self, inputs, ... }: {
+{
+  self,
+  inputs,
+  pkgs,
+  ...
+}:
+{
 
   # defines a custom git module
   flake.modules.homeManager.git = {
