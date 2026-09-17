@@ -11,7 +11,7 @@
 
     let
 
-      username = config.userOptions.username;
+      #username = config.userOptions.username;
 
     in
 
@@ -48,7 +48,7 @@
       };
 
       # niri settings
-      home-manager.users.${username} = {
+      home-manager.users.serenity = {
         programs.niri = {
 
           settings = {

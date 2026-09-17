@@ -13,7 +13,7 @@
       hadesHardware
 
       # user defined options
-      userOptions
+      #userOptions
 
       # users to include on host
       serenity

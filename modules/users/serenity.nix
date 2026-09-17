@@ -5,7 +5,12 @@
   # user module declaration
   flake.nixosModules.serenity =
 
-    { config, pkgs, ... }:
+    {
+      inputs,
+      config,
+      pkgs,
+      ...
+    }:
 
     let
 
@@ -18,13 +23,6 @@
 
       # necessary for home manager function
       imports = [ inputs.home-manager.nixosModules.home-manager ];
-
-      config.userOptions = {
-        username = "${user}";
-        flakePath = "/home/${user}/SerenityOS";
-        wallpaper = "attunement.png";
-        colorScheme = "SerenityOS";
-      };
 
       # user declaration
       users.users.${user} = {

@@ -4,16 +4,16 @@
     { config, lib, ... }:
 
     let
-      username = config.userOptions.username;
-      hostName = config.userOptions.hostName;
-      wallpaper = config.userOptions.wallpaper;
+      #username = config.userOptions.username;
+      #hostName = config.userOptions.hostName;
+      #wallpaper = config.userOptions.wallpaper;
     in
 
     {
 
       # for home manager functionality
       imports = [ inputs.home-manager.nixosModules.home-manager ];
-      home-manager.users.${username} = {
+      home-manager.users.serenity = {
         imports = [ inputs.noctalia.homeModules.default ];
 
         programs.noctalia-shell = {
@@ -29,7 +29,7 @@
 
             location = { };
 
-            colorSchemes.predefinedscheme = "foobar";
+            #colorSchemes.predefinedscheme = "foobar";
 
             dock = {
               enabled = false;

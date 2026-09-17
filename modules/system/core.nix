@@ -13,10 +13,10 @@
     let
 
       # flakepath for QoL
-      flakePath = config.userOptions.flakePath;
+      #flakePath = config.userOptions.flakePath;
 
       # username
-      username = config.userOptions.username;
+      #username = config.userOptions.username;
 
     in
 
@@ -66,7 +66,7 @@
         backupFileExtension = ".bak";
         useGlobalPkgs = true;
         useUserPackages = true;
-        users.${username} = {
+        users.serenity = {
           home.stateversion = "24.11";
           nixpkgs.config.allowUnfree = true;
         };
