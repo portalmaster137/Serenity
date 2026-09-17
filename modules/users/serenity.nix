@@ -10,7 +10,7 @@
     let
 
       # change this when making a new user
-      user = serenity;
+      user = "serenity";
 
     in
 
