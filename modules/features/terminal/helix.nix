@@ -59,7 +59,7 @@
               {
                 name = "nix";
                 auto-format = true;
-                formatter.command = lib.getExe pkgs.nxfmt;
+                formatter.command = lib.getExe pkgs.nixfmt;
               }
             ];
 
