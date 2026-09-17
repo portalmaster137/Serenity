@@ -2,6 +2,9 @@
 
 {
 
+  # necessary for home manager function
+  imports = [ inputs.home-manager.nixosModules.home-manager ];
+
   # user module declaration
   flake.nixosModules.serenity =
 
@@ -17,7 +20,7 @@
     {
 
       # necessary for home manager function
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
+      #imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # user declaration
       users.users.${user} = {
