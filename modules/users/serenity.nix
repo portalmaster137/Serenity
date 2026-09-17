@@ -14,7 +14,7 @@ in
 {
 
   # user module declaration
-  flake.modules.nixos.serenity =
+  flake.nixosModules.serenity =
 
     { pkgs, ... }:
 
