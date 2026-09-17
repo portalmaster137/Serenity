@@ -1,49 +1,53 @@
 { self, inputs, ... }: {
 
   # module declaration
-  flake.nixosModules.niri = { pkgs, ... }: {
+  flake.nixosModules.niri = { config, lib, pkgs, ... }:
+  
+  let
+    
+    username = config.userOptions.username;
+    
+  in
 
-    programs.niri = {
+  {
+    
+    imports = [
+      
+      # for home manager functionality
+      inputs.home-manager.nixosModules.home-manager
 
-      # enables niri
-      enable = true;
+      # for noctalia shell atop niri
+      self.nixosModules.noctalia
+      
+    ];
 
+    environment = {
+
+      # packages for desktop environment
+      systemPackages = with pkgs; [
+        foo
+        bar
+      ];
+      
     };
 
-  };
+    # session management
+    programs.uwsm = {
+      enable = true;
+    };
 
-  # defines a niri hm config
-  flake.homeModules.niri =
-    {
-      config,
-      pkgs,
-      lib,
-      ...
-    }:
+    # enables niri globally
+    programs.niri = {
+      enable = true;
+    };
 
-    {
-
-      imports = with self.homeModules; [
-        # launcher
-        wofi
-        # desktop shell
-        noctalia
-
-      ];
-
-      programs = {
-
-        niri = {
-
-          # enables niri
-          enable = true;
-
-          # niri settings
+    # niri settings
+    home-manager.users.${username} = {
+      programs.niri = {
+        
           settings = {
 
           };
-
-        };
 
       };
 

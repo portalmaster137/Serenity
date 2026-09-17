@@ -1,69 +1,25 @@
-{
-  self,
-  inputs,
-  config,
-  ...
-}:
-
-let
-
-  # default username here
-  username = "serenity";
-
-in
+{ self, inputs, ... }:
 
 {
 
-  # defines the hades specific configuration (glue code?)
+  # defines the hades specific configuration
   flake.nixosConfigurations.hades = inputs.nixpkgs.lib.nixosSystem {
 
     # modules that comprise the host specific configuration
     modules = with self.nixosModules; [
 
-      # actual desktop module set defined below
-      hades
+      # host-specific hardware options
+      hadesHardware
+
+      # users to include on host
+      serenity
+
+      # extra modules to include on host
+      desktop
+      terminal
 
     ];
 
   };
-
-  # module set that comprises the hades configuration
-  flake.nixosModules.hades =
-    {
-      pkgs,
-      inputs,
-      config,
-      ...
-    }:
-
-    {
-
-      imports = with self.nixosModules; [
-
-        # core system modules
-        core
-
-        # hades system modules
-        hades-hardware
-
-        # extra modules
-        gaming
-
-        # users to include on host
-        serenity
-
-        # home manager and home manager imports
-        inputs.home-manager.nixosModules.home-manager
-        {
-          home-manager.users.serenity = {
-            imports = with self.homeModules; [
-              desktop
-            ];
-          };
-        }
-
-      ];
-
-    };
 
 }

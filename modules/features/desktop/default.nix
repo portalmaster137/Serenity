@@ -1,17 +1,16 @@
-{ self, inputs, ... }: {
+{ self, ... }: {
 
-  flake.nixosModules.desktop = { pkgs, ... }: {
+  flake.nixosModules.desktop = {
+
+    # modules to include
+    imports = with self.nixosModules; [
+      #greeter
+      niri
+      noctalia
+      #stylix
+    ];
 
     #programs.foo = bar;
-
-  };
-
-  flake.homeModules.desktop = { self, inputs, ... }: {
-
-    imports = with self.homeModules; [
-      niri
-      terminal
-    ];
 
   };
 

@@ -2,6 +2,18 @@
 
   description = "SerenityOS";
 
+  # my 1 trillionth rewrite of my flake, hopefully more robust and easier to modify in future now
+  # rewriting using the 'dendritic' pattern using flake-parts and such, based on examples provided by:
+  #
+  # vimjoyer
+  # https://www.vimjoyer.com/nix/dendritic-home-manager
+  #
+  # v3rm1n
+  # https://codeberg.org/v3rm1n/dotfiles
+  #
+  # quantenzitrone
+  # https://codeberg.org/quantenzitrone/nixos-config
+
   inputs = {
 
     # nix hardware - https://github.com/NixOS/nixos-hardware
@@ -14,10 +26,7 @@
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
 
-    # dendritic stuff - https://www.vimjoyer.com/vid79-parts-wrapped
-    den = {
-      url = "github:vic/den/v0.17.0";
-    };
+    # dendritic stuff - https://github.com/mightyiam/dendritic
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
     };
@@ -26,9 +35,6 @@
     };
     import-tree = {
       url = "github:vic/import-tree";
-    };
-    wrapper-modules = {
-      url = "github:BirdeeHub/nix-wrapper-modules";
     };
 
     # sound driver optimisations - https://github.com/musnix/musnix
@@ -40,9 +46,6 @@
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
     };
-
-    # secrets management - https://github.com/Mic92/sops-nix
-    #sops-nix = { url = "github:Mic92/sops-nix"; };
 
     # declarative dots - https://github.com/nix-community/home-manager
     home-manager = {

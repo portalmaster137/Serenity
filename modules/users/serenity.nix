@@ -1,60 +1,25 @@
-{ self, inputs, ... }:
-
-# let bindings
-let
-
-  # set your username here
-  username = "serenity";
-
-  # qol variable to make paths shorter
-  home = "/home/${username}";
-
-in
+{ inputs, ... }:
 
 {
 
   # user module declaration
   flake.nixosModules.serenity =
 
-    { pkgs, ... }:
+    { config, pkgs, ... }:
+
+    let
+
+      username = config.userOptions.username;
+
+    in
 
     {
 
-      # modules to include
-      modules = [
-
-        # home-manager module
-        inputs.home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-
-            # home-manager settings
-            backupFileExtension = ".bak";
-            overwriteBackup = true;
-            verbose = true;
-
-            # set home-manager packages to follow system
-            useUserPackages = true;
-            useGlobalPkgs = true;
-
-            # hm user declaration
-            users.serenity = {
-
-              # user specific modules to import
-              imports = [
-                self.flake.homeModules.core-home
-                #self.flake.homeModules.${name}
-              ];
-
-            };
-
-          };
-        }
-
-      ];
+      # necessary for home manager function
+      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # user declaration
-      users.users.serenity = {
+      users.users.${username} = {
 
         # remember to change this
         initialPassword = "password";

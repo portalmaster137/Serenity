@@ -1,4 +1,11 @@
-{
+{ inputs, ... }: {
+
+  imports = [
+
+    # necessary for home manager functionality
+    inputs.home-manager.flakeModules.home-manager
+
+  ];
 
   # misc flake-parts configuration
   config = {
