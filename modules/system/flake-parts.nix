@@ -1,20 +1,7 @@
-{ inputs, ... }: {
-
-  imports = [
-
-    # necessary for home manager functionality
-    inputs.home-manager.flakeModules.home-manager
-
-  ];
-
+{
   # misc flake-parts configuration
   config = {
-
     # uarchs to build for
-    systems = [
-      "x86_64-linux"
-    ];
-
+    systems = [ "x86_64-linux" ];
   };
-
 }

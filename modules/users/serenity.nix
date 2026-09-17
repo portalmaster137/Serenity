@@ -5,12 +5,7 @@
   # user module declaration
   flake.nixosModules.serenity =
 
-    {
-      inputs,
-      config,
-      pkgs,
-      ...
-    }:
+    { inputs, pkgs, ... }:
 
     let
 

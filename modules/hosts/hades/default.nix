@@ -12,15 +12,12 @@
       hades
       hadesHardware
 
-      # user defined options
-      #userOptions
-
       # users to include on host
       serenity
 
       # extra modules to include on host
-      #desktop
       #terminal
+      #desktop
 
     ];
 

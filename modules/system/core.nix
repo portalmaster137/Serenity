@@ -3,19 +3,9 @@
 {
 
   flake.nixosModules.core =
-    {
-      lib,
-      pkgs,
-      ...
-    }:
+    { lib, pkgs, ... }:
 
     let
-
-      # flakepath for QoL
-      #flakePath = config.userOptions.flakePath;
-
-      # username
-      #username = config.userOptions.username;
 
     in
 
