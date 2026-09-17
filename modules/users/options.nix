@@ -37,22 +37,13 @@
           example = "kanagawa";
         };
 
-        dots = lib.mkOption {
+        flakePath = lib.mkOption {
           type = lib.types.str;
           description = ''
             The absolute path to the dotfiles repository (flake root).
             Used by various modules to reference assets and configuration files.
           '';
           example = "/home/user/.dotfiles";
-        };
-
-        hostName = lib.mkOption {
-          type = lib.types.str;
-          description = ''
-            The hostname for this system.
-            This will be set as the system hostname and can be used for host-specific configuration.
-          '';
-          example = "Desktop";
         };
 
         username = lib.mkOption {

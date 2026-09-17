@@ -8,7 +8,8 @@
     # modules that comprise the host specific configuration
     modules = with self.nixosModules; [
 
-      # host-specific hardware options
+      # host-specific options
+      hades
       hadesHardware
 
       # user defined options
@@ -18,7 +19,7 @@
       serenity
 
       # extra modules to include on host
-      desktop
+      #desktop
       #terminal
 
     ];
