@@ -1,19 +1,8 @@
 {
   self,
   inputs,
-  config,
   ...
 }:
-
-# let bindings
-let
-
-  # xdg variables
-  data = config.xdg.dataHome;
-  conf = config.xdg.configHome;
-  cache = config.xdg.cacheHome;
-
-in
 
 {
 
@@ -21,12 +10,14 @@ in
   flake.nixosModules.terminal = { pkgs, ... }: {
 
     # list of modules to include
-    imports = with self.nixosModules; [
+    imports = [
 
+      # home manager
+      inputs.home-manager.nixosModules.home-manager
       # terminal emulator
-      kitty
+      self.nixosModules.kitty
       # text editor
-      helix
+      self.nixosModules.helix
       # file manager
       #self.modules.yazi
       # shell and prompt

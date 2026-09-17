@@ -8,54 +8,59 @@
 {
 
   # defines a custom helix module
-  flake.modules.homeManager.helix = {
+  flake.nixosModules.helix = {
 
-    home.packages = with pkgs; [
-      helix
-    ];
+    imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-    programs.helix = {
+    home-manager.users.serenity = {
 
-      # enables helix
-      enable = true;
+      home.packages = with pkgs; [
+        helix
+      ];
 
-      settings = {
+      programs.helix = {
 
-        # cursor settings
-        editor.cursor-shape = {
-          normal = "underline";
-          insert = "bar";
-          select = "block";
+        # enables helix
+        enable = true;
+
+        settings = {
+
+          # cursor settings
+          editor.cursor-shape = {
+            normal = "underline";
+            insert = "bar";
+            select = "block";
+          };
+
+          # declare theme to use
+          theme = "onedarker_transparent";
+
         };
 
-        # declare theme to use
-        theme = "onedarker_transparent";
+        # list of themes
+        themes = {
 
-      };
+          # modified theme
+          onedarker_transparent = {
+            "inherits" = "onedarker";
+            "ui.background" = { };
+          };
 
-      # list of themes
-      themes = {
-
-        # modified theme
-        onedarker_transparent = {
-          "inherits" = "onedarker";
-          "ui.background" = { };
         };
 
-      };
+        # lsp settings
+        languages = {
 
-      # lsp settings
-      languages = {
+          # nix
+          language = [
+            {
+              name = "nix";
+              auto-format = true;
+              formatter.command = lib.getExe pkgs.nxfmt;
+            }
+          ];
 
-        # nix
-        language = [
-          {
-            name = "nix";
-            auto-format = true;
-            formatter.command = lib.getExe pkgs.nxfmt;
-          }
-        ];
-
+        };
       };
     };
   };

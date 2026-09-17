@@ -50,10 +50,8 @@
       # niri settings
       home-manager.users.serenity = {
         programs.niri = {
-
-          settings = {
-
-          };
+          enable = true;
+          #settings = { };
 
         };
 

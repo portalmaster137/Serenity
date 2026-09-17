@@ -11,7 +11,6 @@
         noctalia
         #stylix
       ]
-      ++ [ inputs.home-manager.nixosModules.home-manager ];
 
     #programs.foo = bar;
 
