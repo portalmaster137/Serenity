@@ -3,7 +3,12 @@
 {
 
   flake.nixosModules.core =
-    { config, pkgs, ... }:
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
 
     let
 
