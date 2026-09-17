@@ -20,9 +20,10 @@
 
         # for home manager functionality
         inputs.home-manager.nixosModules.home-manager
+        inputs.niri.homeModules.niri
 
         # for noctalia shell atop niri
-        self.nixosModules.noctalia
+        #self.nixosModules.noctalia
 
       ];
 
