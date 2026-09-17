@@ -7,7 +7,7 @@ let
   username = "serenity";
 
   # qol variable to make paths shorter
-  home = "/home/${name}";
+  home = "/home/${username}";
 
 in
 
