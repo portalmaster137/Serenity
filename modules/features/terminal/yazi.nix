@@ -3,7 +3,7 @@
 {
 
   # yazi module declaration
-  flake.modules.nixos.yazi = { ... }: {
+  flake.nixosModules.yazi = { ... }: {
 
     # for home manager functionality
     imports = [ inputs.home-manager.nixosModules.home-manager ];

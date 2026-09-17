@@ -3,7 +3,7 @@
 {
 
   # defines a custom git module
-  flake.modules.nixos.git = { ... }: {
+  flake.nixosModules.git = { ... }: {
 
     # for home manager functionality
     imports = [ inputs.home-manager.nixosModules.home-manager ];

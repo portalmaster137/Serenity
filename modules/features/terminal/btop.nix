@@ -3,7 +3,7 @@
 {
 
   # defines a custom btop module
-  flake.modules.nixos.btop = { ... }: {
+  flake.nixosModules.btop = { ... }: {
 
     # for home manager functionality
     imports = [ inputs.home-manager.nixosModules.home-manager ];

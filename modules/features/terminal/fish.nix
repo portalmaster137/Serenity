@@ -3,7 +3,7 @@
 {
 
   # defines a custom fish module
-  flake.modules.nixos.fish = { pkgs, ... }: {
+  flake.nixosModules.fish = { pkgs, ... }: {
 
     # for home manager functionality
     imports = [ inputs.home-manager.nixosModules.home-manager ];
