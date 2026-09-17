@@ -34,7 +34,7 @@
 
       # overlays
       overlays = [
-        niri.overlays.niri
+        #niri.overlays.niri
       ];
 
     };
