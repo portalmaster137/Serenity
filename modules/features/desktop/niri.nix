@@ -2,11 +2,7 @@
 
   # module declaration
   flake.nixosModules.niri =
-    {
-      lib,
-      pkgs,
-      ...
-    }:
+    { pkgs, ... }:
 
     let
 
@@ -20,7 +16,6 @@
 
         # for home manager functionality
         inputs.home-manager.nixosModules.home-manager
-        inputs.niri.homeModules.niri
 
         # for noctalia shell atop niri
         #self.nixosModules.noctalia
@@ -31,8 +26,8 @@
 
         # packages for desktop environment
         systemPackages = with pkgs; [
-          foo
-          bar
+          #foo
+          #bar
         ];
 
       };
