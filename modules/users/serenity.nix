@@ -38,6 +38,19 @@
 
       };
 
+      # home manager settings
+      home-manager = {
+        verbose = true;
+        overwriteBackup = true;
+        backupFileExtension = ".bak";
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        users.serenity = {
+          home.stateversion = "24.11";
+          nixpkgs.config.allowUnfree = true;
+        };
+      };
+
     };
 
 }
