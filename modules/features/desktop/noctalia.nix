@@ -21,7 +21,7 @@
 
           # for noctalia home manager configuration
           imports = [ inputs.noctalia.homeModules.default ];
-          programs.noctalia-shell = {
+          programs.noctalia = {
 
             # enables noctalia
             enable = true;
