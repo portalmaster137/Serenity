@@ -44,7 +44,7 @@
         useGlobalPkgs = true;
         useUserPackages = true;
         users.serenity = {
-          home.stateversion = "24.11";
+          home.stateVersion = "24.11";
           nixpkgs.config.allowUnfree = true;
           imports = [ ];
         };
