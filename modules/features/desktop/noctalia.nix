@@ -11,39 +11,31 @@
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # home manager options
-      home-manager = {
+      home-manager.users.serenity = {
 
-        extraSpecialArgs = {
-          inherit inputs;
-        };
+        # for noctalia home manager configuration
+        imports = [ inputs.noctalia.homeModules.default ];
+        programs.noctalia = {
 
-        users.serenity = {
+          # enables noctalia
+          enable = true;
+          systemd.enable = true;
 
-          # for noctalia home manager configuration
-          imports = [ inputs.noctalia.homeModules.default ];
-          programs.noctalia = {
+          # noctalia settings
+          settings = {
 
-            # enables noctalia
-            enable = true;
-            systemd.enable = true;
+            general = { };
 
-            # noctalia settings
-            settings = {
+            location = { };
 
-              general = { };
+            #colorSchemes.predefinedscheme = "foobar";
 
-              location = { };
-
-              #colorSchemes.predefinedscheme = "foobar";
-
-              # no want dock :(
-              dock = {
-                enabled = false;
-              };
-
-              bar = { };
-
+            # no want dock :(
+            dock = {
+              enabled = false;
             };
+
+            bar = { };
 
           };
 
