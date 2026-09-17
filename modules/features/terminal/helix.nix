@@ -8,60 +8,63 @@
 {
 
   # defines a custom helix module
-  flake.nixosModules.helix = {
+  flake.nixosModules.helix =
+    { pkgs, ... }:
 
-    imports = [ inputs.home-manager.nixosModules.home-manager ];
+    {
 
-    home-manager.users.serenity = {
+      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-      home.packages = with pkgs; [
-        helix
-      ];
+      home-manager.users.serenity = {
 
-      programs.helix = {
+        home.packages = with pkgs; [
+          helix
+        ];
 
-        # enables helix
-        enable = true;
+        programs.helix = {
 
-        settings = {
+          # enables helix
+          enable = true;
 
-          # cursor settings
-          editor.cursor-shape = {
-            normal = "underline";
-            insert = "bar";
-            select = "block";
+          settings = {
+
+            # cursor settings
+            editor.cursor-shape = {
+              normal = "underline";
+              insert = "bar";
+              select = "block";
+            };
+
+            # declare theme to use
+            theme = "onedarker_transparent";
+
           };
 
-          # declare theme to use
-          theme = "onedarker_transparent";
+          # list of themes
+          themes = {
 
-        };
+            # modified theme
+            onedarker_transparent = {
+              "inherits" = "onedarker";
+              "ui.background" = { };
+            };
 
-        # list of themes
-        themes = {
-
-          # modified theme
-          onedarker_transparent = {
-            "inherits" = "onedarker";
-            "ui.background" = { };
           };
 
-        };
+          # lsp settings
+          languages = {
 
-        # lsp settings
-        languages = {
+            # nix
+            language = [
+              {
+                name = "nix";
+                auto-format = true;
+                formatter.command = lib.getExe pkgs.nxfmt;
+              }
+            ];
 
-          # nix
-          language = [
-            {
-              name = "nix";
-              auto-format = true;
-              formatter.command = lib.getExe pkgs.nxfmt;
-            }
-          ];
-
+          };
         };
       };
     };
-  };
 }
