@@ -15,6 +15,8 @@
       # necessary for home manager function
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
+      fish.enable = true;
+
       # user declaration
       users.users.serenity = {
 
