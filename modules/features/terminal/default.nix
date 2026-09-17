@@ -23,8 +23,11 @@
       # shell and prompt
       #self.nixosModules.fish
 
+      # system monitor
+      self.nixosModules.btop
+
       # version control
-      #self.nixosModules.git
+      self.nixosModules.git
 
     ];
 
