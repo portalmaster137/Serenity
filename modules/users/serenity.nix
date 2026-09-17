@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ self, inputs, ... }:
 
 {
 
@@ -8,22 +8,15 @@
   # user module declaration
   flake.nixosModules.serenity =
 
-    { inputs, pkgs, ... }:
-
-    let
-
-      # change this when making a new user
-      user = "serenity";
-
-    in
+    { pkgs, config, ... }:
 
     {
 
       # necessary for home manager function
-      imports = [ inputs.home-manager.nixosModules.default ];
+      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # user declaration
-      users.users.${user} = {
+      users.users.serenity = {
 
         # remember to change this
         initialPassword = "password";
@@ -41,6 +34,8 @@
 
       };
 
+      environment.systemPackages = with pkgs; [ home-manager ];
+
       # home manager settings
       home-manager = {
         verbose = true;
@@ -51,6 +46,7 @@
         users.serenity = {
           home.stateversion = "24.11";
           nixpkgs.config.allowUnfree = true;
+          imports = [ ];
         };
       };
 

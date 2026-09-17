@@ -27,27 +27,6 @@
       # fstrim for ssd
       services.fstrim.enable = true;
 
-      # nixify this more betterer
-      users.users.serenity = {
-        shell = pkgs.fish;
-        ignoreShellProgramCheck = true;
-        isNormalUser = true;
-        description = "";
-        extraGroups = [
-          "networkmanager"
-          "wheel"
-          "i2c"
-          "audio"
-          "video"
-          "input"
-        ];
-
-        # user specific packages
-        packages = with pkgs; [
-          tree
-        ];
-      };
-
       # enable firefox
       programs.firefox.enable = true;
 
