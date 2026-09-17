@@ -19,7 +19,7 @@
 { ... }:
 {
 
-  flake.nixosModules.modulesUser =
+  flake.nixosModules.userOptions =
     { lib, ... }:
 
     {
