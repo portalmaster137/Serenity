@@ -2,7 +2,7 @@
 
 {
 
-  # btop module declaration
+  # defines a custom btop module
   flake.modules.nixos.btop = { ... }: {
 
     # for home manager functionality

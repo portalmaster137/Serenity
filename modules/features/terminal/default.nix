@@ -18,10 +18,10 @@
       self.nixosModules.helix
 
       # file manager
-      #self.nixosModules.yazi
+      self.nixosModules.yazi
 
       # shell and prompt
-      #self.nixosModules.fish
+      self.nixosModules.fish
 
       # system monitor
       self.nixosModules.btop

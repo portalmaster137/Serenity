@@ -2,7 +2,7 @@
 
 {
 
-  # git module declaration
+  # defines a custom git module
   flake.modules.nixos.git = { ... }: {
 
     # for home manager functionality
