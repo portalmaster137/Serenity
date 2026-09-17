@@ -1,4 +1,10 @@
-{ self, inputs, ... }: {
+{
+  self,
+  inputs,
+  pkgs,
+  ...
+}:
+{
 
   flake.modules.homeManager.fish = {
 
