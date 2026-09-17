@@ -8,7 +8,7 @@
     {
 
       # for home manager functionality
-      imports = [
+      modules = [
         inputs.home-manager.nixosModules.home-manager
         inputs.noctalia.homeModules.default
 
