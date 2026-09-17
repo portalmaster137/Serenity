@@ -18,15 +18,15 @@ in
 {
 
   # terminal supermodule
-  flake.homeModules.terminal = { pkgs, ... }: {
+  flake.nixosModules.terminal = { pkgs, ... }: {
 
     # list of modules to include
-    imports = [
+    imports = with self.nixosModules; [
 
       # terminal emulator
-      self.modules.kitty
+      kitty
       # text editor
-      self.modules.helix
+      helix
       # file manager
       #self.modules.yazi
       # shell and prompt
@@ -35,23 +35,6 @@ in
       #self.modules.git
 
     ];
-
-    # environment variables
-    home.sessionVariables = {
-
-      # clean up ~
-      LESSHISTFILE = "${cache}/less/history";
-      LESSKEY = "${conf}/less/lesskey";
-
-      WINEPREFIX = "${data}/wine";
-      XAUTHORITY = "$XDG_RUNTIME_DIR/Xauthority";
-
-      EDITOR = "helix";
-      DIRENV_LOG_FORMAT = "";
-
-      # auto-run programs using nix-index-database
-      NIX_AUTO_RUN = "1";
-    };
 
   };
 
