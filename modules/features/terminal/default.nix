@@ -18,7 +18,7 @@ in
 {
 
   # terminal supermodule
-  flake.homeModules.terminal = { config, pkgs, ... }: {
+  flake.homeModules.terminal = { pkgs, ... }: {
 
     # list of modules to include
     imports = [

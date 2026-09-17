@@ -1,7 +1,7 @@
 { inputs, ... }: {
 
   flake.nixosModules.noctalia =
-    { config, lib, ... }:
+    { lib, ... }:
 
     let
       #username = config.userOptions.username;
