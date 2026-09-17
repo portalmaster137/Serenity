@@ -8,7 +8,11 @@
     {
 
       # for home manager functionality
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
+      imports = [
+        inputs.home-manager.nixosModules.home-manager
+        inputs.noctalia.homeModules.default
+
+      ];
 
       # home manager options
       home-manager.users.serenity = {
