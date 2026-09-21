@@ -38,6 +38,10 @@
           # enables noctalia
           enable = true;
           systemd.enable = true;
+          # ensures networkmanager and bluetooth
+          # as well as upower and a power profile service
+          # are enabled globally
+          #recommendedServices.enable = true;
 
           # noctalia settings
           settings = {
@@ -142,7 +146,7 @@
                   {
                     # quick settings
                     id = "ControlCenter";
-                    useDistroLogo = true;
+                    #useDistroLogo = true;
                   }
                 ];
 
