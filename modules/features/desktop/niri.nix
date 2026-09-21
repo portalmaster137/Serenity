@@ -41,11 +41,11 @@
       };
 
       # enables niri globally
-      programs.niri = {
-        enable = true;
-        # use latest unstable version
-        #package = with pkgs; [ niri-unstable ];
-      };
+      #programs.niri = {
+      #enable = true;
+      # use latest unstable version
+      #package = with pkgs; [ niri-unstable ];
+      #};
 
       # niri personalisation
       home-manager.users.serenity = {
