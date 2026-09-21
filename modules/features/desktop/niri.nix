@@ -174,6 +174,7 @@
             ];
 
             # visual settings
+            prefer-no-csd = true;
             center-focused-column = "never";
             overview = {
               workspace-shadow.enable = false;
@@ -182,8 +183,6 @@
               enable = true;
               slowdown = 1.25;
             };
-            prefer-no-csd = true;
-            border.enable = false;
             layout = {
               # window|window gaps
               gaps = 8;
@@ -194,16 +193,18 @@
                 top = 2;
                 bottom = 4;
               };
-            };
-            # highlights the focused window bounds
-            focus-ring = {
-              enable = true;
-              width = 2;
-              #focus ring colour
-              active.gradient = {
-                angle = 45;
-                from = "#00cdff";
-                to = "#80c8ff";
+              # using focus ring instead of a border
+              border.enable = false;
+              # highlights the focused window bounds
+              focus-ring = {
+                enable = true;
+                width = 2;
+                #focus ring colour
+                active.gradient = {
+                  angle = 45;
+                  from = "#00cdff";
+                  to = "#80c8ff";
+                };
               };
             };
             # used when increasing window size in steps
