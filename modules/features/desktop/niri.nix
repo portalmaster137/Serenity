@@ -18,8 +18,8 @@
       # disable if untrusted
       niri-flake.cache.enable = true;
 
-      # for latest niri versions
-      nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+      # for latest niri versions - disable if using binary cache
+      #nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
       # packages for desktop environment
       environment.systemPackages = with pkgs; [
@@ -43,8 +43,8 @@
       # enables niri globally
       programs.niri = {
         enable = true;
-        # use latest unstable version
-        package = with pkgs; niri-unstable;
+        # use latest unstable version - disable if using binary cache
+        #package = with pkgs; niri-unstable;
       };
 
       # niri personalisation
@@ -56,14 +56,18 @@
         programs.niri = {
           # enables niri within home manager
           enable = true;
-          # uses latest unstable version
-          package = with pkgs; niri-unstable;
+          # uses latest unstable version - disable if using binary cache
+          #package = with pkgs; niri-unstable;
           settings = {
+
             # xwayland implementation
             xwayland-satellite = {
               enable = true;
               path = lib.getExe pkgs.xwayland-satellite-unstable;
             };
+
+            # display configuration
+            #foo.bar = { };
 
           };
 
