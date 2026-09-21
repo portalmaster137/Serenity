@@ -2,7 +2,7 @@
 
   # niri window manager module declaration
   flake.nixosModules.niri =
-    { pkgs, lib, ... }:
+    { pkgs, config, lib, ... }:
 
     {
 
@@ -120,11 +120,7 @@
               };
             };
 
-            # input settings - keybinds are elsewhere
-            hotkey-overlay = {
-              hide-not-bound = true;
-              skip-at-startup = true;
-            };
+            # input settings - keybinds further below
             input = {
               # window focus
               focus-follows-mouse = {
@@ -182,7 +178,46 @@
               enable = true;
               slowdown = 1.25;
             };
+            window-rules = {
+              # sets corner radius for all windows
+              {
+                clip-to-geometry = true;
+                draw-border-with-background = false;
+                geometry-corner-radius =
+                  let
+                    radius = 16.0;
+                  in
+                  {
+                    bottom-left = radius;
+                    bottom-right = radius;
+                    top-left = radius;
+                    top-right = radius;
+                  };
+              }
+              # sets sizing and position of floating windows
+              {
+                matches = [ { is-floating = true; } ];
+                opacity = 0.95;
+                shadow.enable = true;
+                max-width = 1720;
+                max-height = 720;
+                default-floating-position = {
+                  relative-to = "top-left";
+                  x = 1720;
+                  y = 720;
+                };
+              }
+            };
+            # pushes wallpaper set by noctalia to lowest layer
+            layer-rules = [
+              {
+                matches = [ { namespace = "^noctalia-wallpaper*"; } ];
+                place-within-backdrop = true;
+              }
+            ];
             layout = {
+              # remove backdrop colour
+              background-color = "transparent";
               center-focused-column = "never";
               # window|window gaps
               gaps = 8;
@@ -223,6 +258,69 @@
               ];
 
             };
+
+            # rules for specific windows
+            window-rules = {
+            
+              # kitty opacity
+              {
+                matches = [ { app-id = "kitty"; } ];
+                opacity = 0.95;
+              }
+
+              # startup btop spawns on specific workspace
+              {
+                matches = [
+                  {
+                    at-startup = true;
+                    title = "btop";
+                  }
+                ];
+                open-on-output = "DP-4";
+                open-on-workspace = "System";
+                open-maximized = true;
+              }
+
+              # calculator spawns floating
+              {
+                matches = [ { title = "calculator"; } ];
+                open-floating = true;
+                open-focused = true;
+              }
+              
+            };
+
+            # keybinds
+            hotkey-overlay = {
+              hide-not-bound = true;
+              skip-at-startup = true;
+            };
+            binds = with config.lib.niri.actions; {
+
+              # debug and utility
+              "Mod+Shift+Slash".action = show-hotkey-overlay; # shows help
+              "Mod+Shift+Escape" = {
+                action = toggle-keyboard-shortcuts-inhibit;
+                allow-inhibiting = false; # ensures niri binds are read
+              };
+              "Mod+Shift+P".action = power-off-monitors; # turn displays off
+              "Ctrl+Alt+Delete".action = quit; # log out
+
+              # task management
+              #
+              # terminal
+              #
+              # screen capture
+              #
+              # focus controls
+              #
+              # movement controls
+              #
+              # size controls
+              #
+ 
+            };
+            
           };
 
         };
