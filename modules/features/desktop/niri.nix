@@ -206,23 +206,23 @@
                   to = "#80c8ff";
                 };
               };
-            };
-            # used when increasing window size in steps
-            preset-column-widths = [
-              {
-                proportion = 0.33;
-              }
-              {
-                proportion = 0.5;
-              }
-              {
-                proportion = 0.67;
-              }
-              {
-                proportion = 1.0;
-              }
-            ];
+              # used when increasing window size in steps
+              preset-column-widths = [
+                {
+                  proportion = 0.33;
+                }
+                {
+                  proportion = 0.5;
+                }
+                {
+                  proportion = 0.67;
+                }
+                {
+                  proportion = 1.0;
+                }
+              ];
 
+            };
           };
 
         };
