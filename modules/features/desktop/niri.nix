@@ -44,7 +44,7 @@
       programs.niri = {
         enable = true;
         # use latest unstable version
-        package = with pkgs; [ niri-unstable ];
+        #package = with pkgs; [ niri-unstable ];
       };
 
       # niri personalisation
