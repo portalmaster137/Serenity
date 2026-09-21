@@ -1,5 +1,7 @@
-_:
+{ self, inputs, ... }:
+
 let
+
   windowRules = [
     {
       geometry-corner-radius =
@@ -38,7 +40,7 @@ let
           title = "btop";
         }
       ];
-      open-on-output = "DP-1";
+      open-on-output = "DP-4";
       open-on-workspace = "System";
       open-maximized = true;
     }
@@ -48,18 +50,28 @@ let
       open-focused = true;
     }
   ];
+
 in
+
 {
-  programs.niri.settings = {
-    window-rules = windowRules;
-    layout = {
-      background-color = "transparent";
+  flake.nixosModules.niri-window-rules = { pkgs, ... }: {
+
+    # for home manager functionality
+    imports = [ inputs.home-manager.nixosModules.home-manager ];
+
+    home-manager.users.serenity = {
+      programs.niri.settings = {
+        window-rules = windowRules;
+        layout = {
+          background-color = "transparent";
+        };
+        layer-rules = [
+          {
+            matches = [ { namespace = "^noctalia-wallpaper*"; } ];
+            place-within-backdrop = true;
+          }
+        ];
+      };
     };
-    layer-rules = [
-      {
-        matches = [ { namespace = "^noctalia-wallpaper*"; } ];
-        place-within-backdrop = true;
-      }
-    ];
   };
 }
