@@ -183,43 +183,6 @@
               enable = true;
               slowdown = 1.25;
             };
-            window-rules = [
-              # sets corner radius for all windows
-              {
-                clip-to-geometry = true;
-                draw-border-with-background = false;
-                geometry-corner-radius =
-                  let
-                    radius = 16.0;
-                  in
-                  {
-                    bottom-left = radius;
-                    bottom-right = radius;
-                    top-left = radius;
-                    top-right = radius;
-                  };
-              }
-              # sets sizing and position of floating windows
-              {
-                matches = [ { is-floating = true; } ];
-                opacity = 0.95;
-                shadow.enable = true;
-                max-width = 1720;
-                max-height = 720;
-                default-floating-position = {
-                  relative-to = "top-left";
-                  x = 1720;
-                  y = 720;
-                };
-              }
-            ];
-            # pushes wallpaper set by noctalia to lowest layer
-            layer-rules = [
-              {
-                matches = [ { namespace = "^noctalia-wallpaper*"; } ];
-                place-within-backdrop = true;
-              }
-            ];
             layout = {
               # remove backdrop colour
               background-color = "transparent";
@@ -264,17 +227,56 @@
 
             };
 
-            # rules for specific windows
+            layer-rules = [
+
+              # pushes wallpaper set by noctalia to lowest layer
+              {
+                matches = [ { namespace = "^noctalia-wallpaper*"; } ];
+                place-within-backdrop = true;
+              }
+
+            ];
+
             window-rules = [
 
-              # kitty opacity
+              # sets corner radius for all windows
               {
+                clip-to-geometry = true;
+                draw-border-with-background = false;
+                geometry-corner-radius =
+                  let
+                    radius = 16.0;
+                  in
+                  {
+                    bottom-left = radius;
+                    bottom-right = radius;
+                    top-left = radius;
+                    top-right = radius;
+                  };
+              }
+
+              # sets sizing and position of floating windows
+              {
+                matches = [ { is-floating = true; } ];
+                opacity = 0.95;
+                shadow.enable = true;
+                max-width = 1720;
+                max-height = 720;
+                default-floating-position = {
+                  relative-to = "top-left";
+                  x = 1720;
+                  y = 720;
+                };
+              }
+
+              # rules for specific windows
+              {
+                # kitty opacity
                 matches = [ { app-id = "kitty"; } ];
                 opacity = 0.95;
               }
-
-              # startup btop spawns on specific workspace
               {
+                # startup btop spawns on specific workspace
                 matches = [
                   {
                     at-startup = true;
@@ -285,9 +287,8 @@
                 open-on-workspace = "System";
                 open-maximized = true;
               }
-
-              # calculator spawns floating
               {
+                # calculator spawns floating
                 matches = [ { title = "calculator"; } ];
                 open-floating = true;
                 open-focused = true;
