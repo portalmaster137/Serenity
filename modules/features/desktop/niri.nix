@@ -44,8 +44,10 @@
       # enables niri globally
       programs.niri = {
         enable = true;
-        # use latest unstable version - disable if using binary cache
-        package = with pkgs; niri-unstable;
+        # use latest nixpkgs version - disable if using binary cache or unstable
+        package = with pkgs; niri;
+        # use latest unstable version - disable if using binary cache or stable
+        #package = with pkgs; niri-unstable;
       };
 
       # niri personalisation
@@ -57,8 +59,10 @@
         programs.niri = {
           # enables niri within home manager
           enable = true;
-          # uses latest unstable version - disable if using binary cache
-          package = with pkgs; niri-unstable;
+          # use latest nixpkgs version - disable if using binary cache or unstable
+          package = with pkgs; niri;
+          # uses latest unstable version - disable if using binary cache or stable
+          #package = with pkgs; niri-unstable;
           settings = {
 
             # xwayland implementation
