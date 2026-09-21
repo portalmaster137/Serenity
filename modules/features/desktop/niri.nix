@@ -44,10 +44,13 @@
         enable = true;
         # use latest unstable version
         package = with pkgs; [ niri-unstable ];
-        # xwayland implementation
-        xwayland-satellite = {
-          enable = true;
-          path = lib.getExe pkgs.xwayland-satellite-unstable;
+
+        settings = {
+          # xwayland implementation
+          xwayland-satellite = {
+            enable = true;
+            path = lib.getExe pkgs.xwayland-satellite-unstable;
+          };
         };
       };
 
@@ -62,14 +65,15 @@
           enable = true;
           # uses latest unstable version
           package = with pkgs; [ niri-unstable ];
-          # xwayland implementation
-          xwayland-satellite = {
-            enable = true;
-            path = lib.getExe pkgs.xwayland-satellite-unstable;
-          };
 
-          # niri configuration
-          #settings = { };
+          settings = {
+            # xwayland implementation
+            xwayland-satellite = {
+              enable = true;
+              path = lib.getExe pkgs.xwayland-satellite-unstable;
+            };
+
+          };
 
         };
 
