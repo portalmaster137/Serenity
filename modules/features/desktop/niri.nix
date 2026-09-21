@@ -60,7 +60,7 @@
       };
 
       # niri personalisation
-      home-manager.users.serenity = { config, ... }: {
+      home-manager.users.serenity = { osConfig, ... }: {
 
         # for niri home manager module
         imports = [ inputs.niri.homeModules.niri ];
