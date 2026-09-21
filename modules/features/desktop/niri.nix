@@ -301,12 +301,12 @@
               hide-not-bound = true;
               skip-at-startup = true;
             };
-            binds = with config.niri.lib.actions; {
-              #binds = with config.lib.niri.actions; {
-              #binds = with lib.niri.actions; {
-              #binds = with niri.actions; {
-              #binds = with actions; {
-              #binds = {
+            #binds = with config.niri.lib.actions; {
+            #binds = with config.lib.niri.actions; {
+            #binds = with lib.niri.actions; {
+            #binds = with niri.actions; {
+            #binds = with actions; {
+            binds = {
 
               # debug and utility
               "Mod+Shift+Slash".action = show-hotkey-overlay; # shows help
