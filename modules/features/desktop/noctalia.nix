@@ -11,6 +11,12 @@
       # for home manager functionality
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
+      # noctalia power management
+      services = {
+        power-profiles-daemon.enable = true;
+        upower.enable = true;
+      };
+
       # home manager options
       home-manager.users.serenity = {
 
