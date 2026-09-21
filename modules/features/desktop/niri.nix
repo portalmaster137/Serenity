@@ -2,7 +2,7 @@
 
   # niri window manager module declaration
   flake.nixosModules.niri =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
 
     {
 
