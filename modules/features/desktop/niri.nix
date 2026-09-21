@@ -18,6 +18,14 @@
       # session management
       programs.uwsm = {
         enable = true;
+        # configures uwsm to launch niri
+        waylandCompositors.niri = {
+          prettyName = "Niri";
+          comment = "Niri scrolling WM managed by UWSM";
+          # points to niri binary and declares it as a session
+          binPath = "/run/current-system/sw/bin/niri";
+          extraArgs = [ "--session" ];
+        };
       };
 
       # enables niri globally
@@ -28,7 +36,7 @@
       # niri settings
       home-manager.users.serenity = {
 
-        # for home manager functionality
+        # for niri home manager module
         imports = [ inputs.niri.homeModules.niri ];
 
         programs.niri = {
