@@ -11,7 +11,7 @@
         inputs.home-manager.nixosModules.home-manager
         # for niri binary cache from epireyn
         # disable if untrusted
-        niri.nixosModules.niri
+        inputs.niri.nixosModules.niri
       ];
 
       # for niri binary cache from epireyn
