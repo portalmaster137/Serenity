@@ -175,7 +175,6 @@
 
             # visual settings
             prefer-no-csd = true;
-            center-focused-column = "never";
             overview = {
               workspace-shadow.enable = false;
             };
@@ -184,6 +183,7 @@
               slowdown = 1.25;
             };
             layout = {
+              center-focused-column = "never";
               # window|window gaps
               gaps = 8;
               #window|screen edge gaps
