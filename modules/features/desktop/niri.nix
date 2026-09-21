@@ -3,8 +3,9 @@
   # niri window manager module declaration
   flake.nixosModules.niri =
     {
-      pkgs,
+      inputs,
       config,
+      pkgs,
       lib,
       ...
     }:
@@ -301,8 +302,7 @@
               hide-not-bound = true;
               skip-at-startup = true;
             };
-            binds = with niri.config.lib.niri.actions; {
-              #binds = with config.lib.niri.actions; {
+            binds = with config.lib.niri.actions; {
               #binds = with lib.niri.actions; {
               #binds = with niri.actions; {
               #binds = with actions; {
