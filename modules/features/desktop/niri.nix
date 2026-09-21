@@ -11,15 +11,16 @@
         inputs.home-manager.nixosModules.home-manager
         # for niri binary cache from epireyn
         # disable if untrusted
-        inputs.niri.nixosModules.niri
+        # conflicts with unstable overlay
+        #inputs.niri.nixosModules.niri
       ];
 
       # for niri binary cache from epireyn
       # disable if untrusted
-      niri-flake.cache.enable = true;
+      #niri-flake.cache.enable = true;
 
       # for latest niri versions - disable if using binary cache
-      #nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+      nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
       # packages for desktop environment
       environment.systemPackages = with pkgs; [
@@ -44,7 +45,7 @@
       programs.niri = {
         enable = true;
         # use latest unstable version - disable if using binary cache
-        #package = with pkgs; niri-unstable;
+        package = with pkgs; niri-unstable;
       };
 
       # niri personalisation
@@ -57,7 +58,7 @@
           # enables niri within home manager
           enable = true;
           # uses latest unstable version - disable if using binary cache
-          #package = with pkgs; niri-unstable;
+          package = with pkgs; niri-unstable;
           settings = {
 
             # xwayland implementation
