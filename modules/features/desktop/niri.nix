@@ -16,10 +16,6 @@
         # for home manager functionality
         inputs.home-manager.nixosModules.home-manager
 
-        # extra niri config files
-        #self.nixosModules.niri-binds
-        #self.nixosModules.niri-window-rules
-
         # for niri binary cache from epireyn
         # disable if untrusted
         # conflicts with unstable overlay
@@ -301,13 +297,7 @@
               hide-not-bound = true;
               skip-at-startup = true;
             };
-            #binds = with config.niri.lib.actions; {
-            #binds = with config.lib.niri.actions; {
-            binds = with niri.lib.actions; {
-              #binds = with lib.niri.actions; {
-              #binds = with niri.actions; {
-              #binds = with actions; {
-              #binds = {
+            binds = with config.lib.niri.actions; {
 
               # debug and utility
               "Mod+Shift+Slash".action = show-hotkey-overlay; # shows help
@@ -319,17 +309,16 @@
               "Ctrl+Alt+Delete".action = quit; # log out
 
               # task management
-              #
+
               # terminal
-              #
+
               # screen capture
-              #
+
               # focus controls
-              #
+
               # movement controls
-              #
+
               # size controls
-              #
 
             };
 
