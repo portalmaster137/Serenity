@@ -26,13 +26,34 @@
           # noctalia settings
           settings = {
 
-            general = { };
+            general = {
+              avatarImage = "../../../assets/media/avatar.png";
+              radiusRatio = 0.2;
+              showSessionButtonOnLockScreen = false;
+              showHibernateButtonOnLockScreen = true;
+            };
+
+            # wallpaper
+            wallpaper = {
+              directory = "../../../assets/media/wallpapers/mimaKirigoe.jpg";
+              hideWallpaperFilenames = true;
+            };
+
+            # theme
+            # custom theme not yet configured
+            colorSchemes.predefinedscheme = "Monochrome";
 
             # for calendar/weather
-            location = { };
+            location = {
+              name = "Brisbane, Australia";
+              monthBeforeDay = false;
+            };
 
-            # NOT YET IMPLEMENTED
-            #colorSchemes.predefinedscheme = "foobar";
+            # launcher - using wofi, try disable this?
+            appLauncher = {
+              terminalCommand = "kitty -e";
+              showCategories = false;
+            };
 
             # no want dock :(
             dock = {
@@ -40,7 +61,22 @@
             };
 
             # status bar settings
-            bar = { };
+            bar = {
+              # monitors to display on
+              monitors = [ "DP-4" ];
+              # position and density
+              position = "top";
+              floating = true;
+              density = "comfortable";
+              marginVertical = 0.25;
+              marginHorizontal = 0.5;
+              # statusbar widgets
+              showCapsule = false;
+              #widgets = { };
+            };
+
+            # noctalia menu settings
+            #controlCenter = { };
 
           };
 
