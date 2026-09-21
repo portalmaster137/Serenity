@@ -11,14 +11,14 @@
         # for home manager functionality
         inputs.home-manager.nixosModules.home-manager
 
+        # extra niri config files
+        self.nixosModules.niri-binds
+        self.nixosModules.niri-window-rules
+
         # for niri binary cache from epireyn
         # disable if untrusted
         # conflicts with unstable overlay
         #inputs.niri.nixosModules.niri
-
-        # extra niri config files
-        ./binds.nix
-        ./window-rules.nix
 
       ];
 
