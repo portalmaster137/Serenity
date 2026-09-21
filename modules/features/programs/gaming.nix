@@ -34,7 +34,7 @@
       };
 
       # for gamemode functionality
-      user.users = {
+      users.users = {
         serenity.extraGroups = [ "gamemode" ];
       };
 
