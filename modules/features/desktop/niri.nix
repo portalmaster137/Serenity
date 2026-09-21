@@ -19,7 +19,7 @@
       niri-flake.cache.enable = true;
 
       # for latest niri versions
-      nixpkgs.overlays = [ niri.overlays.niri ];
+      nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
       # packages for desktop environment
       environment.systemPackages = with pkgs; [
