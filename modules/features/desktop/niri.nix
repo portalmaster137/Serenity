@@ -301,8 +301,8 @@
               hide-not-bound = true;
               skip-at-startup = true;
             };
-            #binds = with config.lib.niri.actions; {
-            binds = {
+            binds = with config.lib.niri.actions; {
+              #binds = {
 
               # debug and utility
               "Mod+Shift+Slash".action = show-hotkey-overlay; # shows help
