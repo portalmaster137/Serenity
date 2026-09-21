@@ -24,8 +24,8 @@
 
       # packages for desktop environment
       environment.systemPackages = with pkgs; [
-        #xwayland-satellite # niri xwayland support
-        xwayland-satellite-unstable # matches niri-unstable
+        xwayland-satellite # niri xwayland support - disable if using unstable
+        #xwayland-satellite-unstable # niri xwayland support - disable if using stable
       ];
 
       # session management
@@ -68,7 +68,10 @@
             # xwayland implementation
             xwayland-satellite = {
               enable = true;
-              path = lib.getExe pkgs.xwayland-satellite-unstable;
+              # use niri-stable matching version - disable if using unstable
+              path = lib.getExe pkgs.xwayland-satellite;
+              # use niri-unstable matching version - disable if using stable
+              #path = lib.getExe pkgs.xwayland-satellite-unstable;
             };
 
             # display configuration
