@@ -17,6 +17,9 @@
       # text editor
       self.nixosModules.helix
 
+      # for showing off, lol
+      self.nixosModules.fetch
+
       # file manager
       self.nixosModules.yazi
 
