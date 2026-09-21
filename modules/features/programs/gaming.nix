@@ -70,7 +70,7 @@
       # other packages to include
       environment.systemPackages = with pkgs; [
         cockatrice # mtg client
-        prismlauncer # modded minecraft
+        prismlauncher # modded minecraft
         osu-lazer-bin # rhythm is just a click away!
         #inputs.nix-gaming.packages.${pkgs.system}.osu-mime # osu mime types
       ];
