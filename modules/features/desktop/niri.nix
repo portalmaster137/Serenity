@@ -300,28 +300,28 @@
             #binds = with config.lib.niri.actions; {
             #binds = {
 
-              # debug and utility
-              #"Mod+Shift+Slash".action = show-hotkey-overlay; # shows help
-              #"Mod+Shift+Escape" = {
-                #action = toggle-keyboard-shortcuts-inhibit;
-                #allow-inhibiting = false; # ensures niri binds are read
-              #};
-              #"Mod+Shift+P".action = power-off-monitors; # turn displays off
-              #"Ctrl+Alt+Delete".action = quit; # log out
+            # debug and utility
+            #"Mod+Shift+Slash".action = show-hotkey-overlay; # shows help
+            #"Mod+Shift+Escape" = {
+            #action = toggle-keyboard-shortcuts-inhibit;
+            #allow-inhibiting = false; # ensures niri binds are read
+            #};
+            #"Mod+Shift+P".action = power-off-monitors; # turn displays off
+            #"Ctrl+Alt+Delete".action = quit; # log out
 
-              # task management
+            # task management
 
-              # terminal
+            # terminal
 
-              # screen capture
+            # screen capture
 
-              # focus controls
+            # focus controls
 
-              # movement controls
+            # movement controls
 
-              # size controls
+            # size controls
 
-            };
+            #};
 
           };
 
