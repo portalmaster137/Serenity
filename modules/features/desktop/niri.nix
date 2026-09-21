@@ -298,30 +298,30 @@
               skip-at-startup = true;
             };
             binds = with config.lib.niri.actions; {
-            #binds = {
+              #binds = {
 
-            # debug and utility
-            "Mod+Shift+Slash".action = show-hotkey-overlay; # shows help
-            "Mod+Shift+Escape" = {
-              action = toggle-keyboard-shortcuts-inhibit;
-              allow-inhibiting = false; # ensures niri binds are read
+              # debug and utility
+              "Mod+Shift+Slash".action = show-hotkey-overlay; # shows help
+              "Mod+Shift+Escape" = {
+                action = toggle-keyboard-shortcuts-inhibit;
+                allow-inhibiting = false; # ensures niri binds are read
+              };
+              "Mod+Shift+P".action = power-off-monitors; # turn displays off
+              "Ctrl+Alt+Delete".action = quit; # log out
+
+              # task management
+
+              # terminal
+
+              # screen capture
+
+              # focus controls
+
+              # movement controls
+
+              # size controls
+
             };
-            "Mod+Shift+P".action = power-off-monitors; # turn displays off
-            "Ctrl+Alt+Delete".action = quit; # log out
-
-            # task management
-
-            # terminal
-
-            # screen capture
-
-            # focus controls
-
-            # movement controls
-
-            # size controls
-
-            #};
 
           };
 
