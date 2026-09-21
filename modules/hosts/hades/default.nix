@@ -18,6 +18,8 @@
       # extra modules to include on host
       terminal
       desktop
+      gaming
+      virtual-reality
 
       # users to include on host
       serenity
