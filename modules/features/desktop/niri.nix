@@ -12,8 +12,8 @@
         inputs.home-manager.nixosModules.home-manager
 
         # extra niri config files
-        self.nixosModules.niri-binds
-        self.nixosModules.niri-window-rules
+        #self.nixosModules.niri-binds
+        #self.nixosModules.niri-window-rules
 
         # for niri binary cache from epireyn
         # disable if untrusted
