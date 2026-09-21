@@ -40,5 +40,22 @@
         openrgb-with-all-plugins
       ];
 
+      # amd radeon gpu drivers and software
+      # https://nixos.wiki/wiki/AMD_GPU
+
+      boot = {
+        # load amdgpu driver pre boot
+        initrd.kernelModules = [ "amdgpu" ];
+        #exposes gpu driver
+        kernelModules = [ "amdgpu" ];
+      };
+
+      hardware = {
+        # discrete graphics support
+        graphics.enable = true;
+        # fixes early video issues
+        amdgpu.initrd.enable = true;
+      };
+
     };
 }
