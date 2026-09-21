@@ -57,7 +57,7 @@
           # enables niri within home manager
           enable = true;
           # uses latest unstable version
-          package = with pkgs; [ niri-unstable ];
+          #package = with pkgs; [ niri-unstable ];
           settings = {
             # xwayland implementation
             xwayland-satellite = {
