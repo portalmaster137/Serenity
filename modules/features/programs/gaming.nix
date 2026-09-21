@@ -80,12 +80,7 @@
   # virtual reality module declaration
   # README - https://wiki.nixos.org/wiki/VR
   flake.nixosModules.virtual-reality =
-    {
-      inputs,
-      pkgs,
-      user,
-      ...
-    }:
+    { pkgs, user, ... }:
 
     {
 
