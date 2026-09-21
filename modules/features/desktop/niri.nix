@@ -2,7 +2,12 @@
 
   # niri window manager module declaration
   flake.nixosModules.niri =
-    { pkgs, config, lib, ... }:
+    {
+      pkgs,
+      config,
+      lib,
+      ...
+    }:
 
     {
 
@@ -178,7 +183,7 @@
               enable = true;
               slowdown = 1.25;
             };
-            window-rules = {
+            window-rules = [
               # sets corner radius for all windows
               {
                 clip-to-geometry = true;
@@ -207,7 +212,7 @@
                   y = 720;
                 };
               }
-            };
+            ];
             # pushes wallpaper set by noctalia to lowest layer
             layer-rules = [
               {
@@ -260,8 +265,8 @@
             };
 
             # rules for specific windows
-            window-rules = {
-            
+            window-rules = [
+
               # kitty opacity
               {
                 matches = [ { app-id = "kitty"; } ];
@@ -287,8 +292,8 @@
                 open-floating = true;
                 open-focused = true;
               }
-              
-            };
+
+            ];
 
             # keybinds
             hotkey-overlay = {
@@ -318,9 +323,9 @@
               #
               # size controls
               #
- 
+
             };
-            
+
           };
 
         };
