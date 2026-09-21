@@ -302,9 +302,9 @@
               skip-at-startup = true;
             };
             #binds = with config.lib.niri.actions; {
-            #binds = with lib.niri.actions; {
-            #binds = with niri.actions; {
-            binds = with actions; {
+            binds = with lib.niri.actions; {
+              #binds = with niri.actions; {
+              #binds = with actions; {
               #binds = {
 
               # debug and utility
