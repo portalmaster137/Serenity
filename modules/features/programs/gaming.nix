@@ -61,7 +61,7 @@
         # enables systemd daemon
         daemon.enable = true;
         # disable conflicting drivers
-        blackListedKernelModules = [
+        blacklistedKernelModules = [
           "hid-uclogic"
           "wacom"
         ];
