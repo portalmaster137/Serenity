@@ -47,7 +47,12 @@
 
             # theme
             # custom theme not yet configured
-            colorSchemes.predefinedscheme = "Monochrome";
+            colorSchemes = {
+              darkMode = true;
+              pureBlack = true;
+              useWallpaperColors = true;
+              generationMethod = "fruit-salad";
+            };
 
             # for calendar/weather
             location = {
