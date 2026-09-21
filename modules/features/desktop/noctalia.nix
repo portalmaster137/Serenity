@@ -91,9 +91,62 @@
               density = "comfortable";
               marginVertical = 0.25;
               marginHorizontal = 0.5;
+
               # statusbar widgets
               showCapsule = false;
-              #widgets = { };
+              widgets = {
+
+                left = [
+                  {
+                    icon = "rocket";
+                    id = "CustomButton";
+                    leftClickExec = "wofi";
+                  }
+                ];
+
+                center = [
+                  {
+                    hideUnoccupied = false;
+                    id = "Workspace";
+                    labelMode = "none";
+                  }
+                ];
+
+                right = [
+                  {
+                    # system tray/overflow
+                    id = "tray";
+                  }
+                  {
+                    # wifi/networking widget
+                    id = "WiFi";
+                  }
+                  {
+                    # bluetooth devices/pairing
+                    id = "Bluetooth";
+                  }
+                  {
+                    # battery for laptop
+                    alwaysShowPercentage = false;
+                    id = "Battery";
+                    warningThreshold = 30;
+                  }
+                  {
+                    # statusbar clock
+                    formatHorizontal = "HH:mm";
+                    formatVertical = "HH mm";
+                    id = "Clock";
+                    useMonospacedFont = true;
+                    usePrimaryColor = true;
+                  }
+                  {
+                    # quick settings
+                    id = "ControlCenter";
+                    useDistroLogo = true;
+                  }
+                ];
+
+              };
             };
 
             # noctalia menu settings
