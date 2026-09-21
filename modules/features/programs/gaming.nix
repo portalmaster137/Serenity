@@ -124,7 +124,7 @@
         defaultRuntime = true;
         # sets as high priority service in kernel
         # may fix some performance issues
-        highPriority = true;
+        #highPriority = true;
       };
 
       # environment variables for monado runtime
@@ -140,16 +140,16 @@
       # requires kernel recompile, disable if undesired
       # OR patch only amdgpu itself
       # https://wiki.nixos.org/wiki/Linux_kernel#Patching_a_single_In-tree_kernel_module
-      boot.kernelPatches = [
-        {
-          name = "amdgpu-ignore-ctx-privileges";
-          patch = pkgs.fetchpatch {
-            name = "cap_sys_nice_begone.patch";
-            url = "https://github.com/Frogging-Family/community-patches/raw/master/linux61-tkg/cap_sys_nice_begone.mypatch";
-            hash = "sha256-Y3a0+x2xvHsfLax/uwycdJf3xLxvVfkfDVqjkxNaYEo=";
-          };
-        }
-      ];
+      #boot.kernelPatches = [
+      #{
+      #name = "amdgpu-ignore-ctx-privileges";
+      #patch = pkgs.fetchpatch {
+      #name = "cap_sys_nice_begone.patch";
+      #url = "https://github.com/Frogging-Family/community-patches/raw/master/linux61-tkg/cap_sys_nice_begone.mypatch";
+      #hash = "sha256-Y3a0+x2xvHsfLax/uwycdJf3xLxvVfkfDVqjkxNaYEo=";
+      #};
+      #}
+      #];
 
       # wivrn service
       services.wivrn = {
