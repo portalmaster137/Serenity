@@ -19,12 +19,12 @@
       niri-flake.cache.enable = true;
 
       # for latest niri versions
-      #nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+      nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
       # packages for desktop environment
       environment.systemPackages = with pkgs; [
-        xwayland-satellite # niri xwayland support
-        #xwayland-satellite-unstable # matches niri-unstable
+        #xwayland-satellite # niri xwayland support
+        xwayland-satellite-unstable # matches niri-unstable
       ];
 
       # session management
@@ -44,15 +44,7 @@
       programs.niri = {
         enable = true;
         # use latest unstable version
-        #package = with pkgs; [ niri-unstable ];
-
-        settings = {
-          # xwayland implementation
-          xwayland-satellite = {
-            enable = true;
-            #path = lib.getExe pkgs.xwayland-satellite-unstable;
-          };
-        };
+        package = with pkgs; [ niri-unstable ];
       };
 
       # niri personalisation
@@ -66,12 +58,11 @@
           enable = true;
           # uses latest unstable version
           package = with pkgs; [ niri-unstable ];
-
           settings = {
             # xwayland implementation
             xwayland-satellite = {
               enable = true;
-              #path = lib.getExe pkgs.xwayland-satellite-unstable;
+              path = lib.getExe pkgs.xwayland-satellite-unstable;
             };
 
           };
