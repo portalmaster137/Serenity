@@ -14,7 +14,7 @@
       hardware.graphics.enable32Bit = true;
 
       # session variables
-      environment.SessionVariables = {
+      environment.sessionVariables = {
 
         # xdg data directories
         XDG_CONFIG_HOME = "$HOME/.config";
