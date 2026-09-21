@@ -11,6 +11,16 @@
       # for home manager functionality
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
+      # binary cache to reduce rebuild time
+      nix.settings = {
+        extra-substituters = [
+          "https://noctalia.cachix.org"
+        ];
+        extra-trusted-public-keys = [
+          "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+        ];
+      };
+
       # noctalia power management
       services = {
         power-profiles-daemon.enable = true;
