@@ -4,6 +4,7 @@
 
   # host module declaration
   flake.nixosModules.hades =
+
     { pkgs, lib, ... }:
 
     {

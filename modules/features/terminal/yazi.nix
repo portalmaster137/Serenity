@@ -3,47 +3,51 @@
 {
 
   # yazi module declaration
-  flake.nixosModules.yazi = { ... }: {
+  flake.nixosModules.yazi =
 
-    # for home manager functionality
-    imports = [ inputs.home-manager.nixosModules.home-manager ];
+    { ... }:
 
-    # home manager options
-    home-manager.users.serenity = {
+    {
 
-      # yazi settings
-      programs = {
+      # for home manager functionality
+      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-        yazi = {
+      # home manager options
+      home-manager.users.serenity = {
 
-          # enables yazi
-          enable = true;
+        # yazi settings
+        programs = {
 
-          # shell integration
-          shellWrapperName = "y";
-          enableFishIntegration = true;
+          yazi = {
 
-          # yazi settings
-          settings = {
-            log.enabled = false;
-            mgr = {
-              show_hidden = true;
-              linemode = "none";
-              sort_by = "mtime";
-              sort_reverse = false;
-              sort_dir_first = true;
+            # enables yazi
+            enable = true;
+
+            # shell integration
+            shellWrapperName = "y";
+            enableFishIntegration = true;
+
+            # yazi settings
+            settings = {
+              log.enabled = false;
+              mgr = {
+                show_hidden = true;
+                linemode = "none";
+                sort_by = "mtime";
+                sort_reverse = false;
+                sort_dir_first = true;
+              };
             };
-          };
 
-          # NOT YET IMPLEMENTED
-          #theme = { };
+            # NOT YET IMPLEMENTED
+            #theme = { };
+
+          };
 
         };
 
       };
 
     };
-
-  };
 
 }

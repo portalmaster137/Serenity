@@ -2,7 +2,9 @@
 
 {
 
+  # common module declaration
   flake.nixosModules.core =
+
     { lib, pkgs, ... }:
 
     {

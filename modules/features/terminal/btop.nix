@@ -3,25 +3,33 @@
 {
 
   # defines a custom btop module
-  flake.nixosModules.btop = { ... }: {
+  flake.nixosModules.btop =
 
-    # for home manager functionality
-    imports = [ inputs.home-manager.nixosModules.home-manager ];
+    { pkgs, ... }:
 
-    # home manager options
-    home-manager.users.serenity = {
+    {
 
-      programs = {
+      # for home manager functionality
+      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-        btop = {
+      environment.systemPackages = with pkgs; [ btop ];
 
-          # enables btop
-          enable = true;
+      # home manager options
+      home-manager.users.serenity = {
 
-          # btop settings
-          settings = {
-            color_theme = "adapta";
-            theme_background = false;
+        programs = {
+
+          btop = {
+
+            # enables btop
+            enable = true;
+
+            # btop settings
+            settings = {
+              color_theme = "adapta";
+              theme_background = false;
+            };
+
           };
 
         };
@@ -29,7 +37,5 @@
       };
 
     };
-
-  };
 
 }

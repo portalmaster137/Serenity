@@ -4,6 +4,7 @@
 
   # defines a custom helix module
   flake.nixosModules.helix =
+
     { lib, pkgs, ... }:
 
     {
@@ -11,13 +12,17 @@
       # needed for home manager functionality
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
+      # editor variables
+      environment.variables = {
+        EDITOR = "helix";
+        VISUAL = "helix";
+        SYSTEMD_EDITOR = "helix";
+      };
+
+      environment.systemPackages = with pkgs; [ helix ];
+
       # home manager options
       home-manager.users.serenity = {
-
-        # redundancy, not sure this is needed?
-        home.packages = with pkgs; [
-          helix
-        ];
 
         programs.helix = {
 

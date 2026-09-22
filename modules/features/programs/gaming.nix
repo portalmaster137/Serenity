@@ -1,13 +1,17 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+
+{
 
   # general gaming module declaration
   flake.nixosModules.gaming =
+
     {
       inputs,
       pkgs,
       user,
       ...
     }:
+
     {
 
       # 32bit graphics support

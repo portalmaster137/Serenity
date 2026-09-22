@@ -4,6 +4,7 @@
 
   # noctalia shell module declaration
   flake.nixosModules.noctalia =
+
     { pkgs, ... }:
 
     {

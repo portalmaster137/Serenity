@@ -3,37 +3,41 @@
 {
 
   # terminal supermodule
-  flake.nixosModules.terminal = { pkgs, ... }: {
+  flake.nixosModules.terminal =
 
-    # list of modules to include
-    imports = [
+    { pkgs, ... }:
 
-      # home manager
-      inputs.home-manager.nixosModules.home-manager
+    {
 
-      # terminal emulator
-      self.nixosModules.kitty
+      # list of modules to include
+      imports = [
 
-      # text editor
-      self.nixosModules.helix
+        # home manager
+        inputs.home-manager.nixosModules.home-manager
 
-      # for showing off, lol
-      self.nixosModules.fetch
+        # terminal emulator
+        self.nixosModules.kitty
 
-      # file manager
-      self.nixosModules.yazi
+        # text editor
+        self.nixosModules.helix
 
-      # shell and prompt
-      self.nixosModules.fish
+        # for showing off, lol
+        self.nixosModules.fetch
 
-      # system monitor
-      self.nixosModules.btop
+        # file manager
+        self.nixosModules.yazi
 
-      # version control
-      self.nixosModules.git
+        # shell and prompt
+        self.nixosModules.fish
 
-    ];
+        # system monitor
+        self.nixosModules.btop
 
-  };
+        # version control
+        self.nixosModules.git
+
+      ];
+
+    };
 
 }

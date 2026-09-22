@@ -1,4 +1,6 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+
+{
 
   # needed for home manager functionality
   imports = [ inputs.home-manager.flakeModules.home-manager ];

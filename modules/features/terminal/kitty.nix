@@ -3,82 +3,86 @@
 {
 
   # defines a custom kitty module
-  flake.nixosModules.kitty = { pkgs, ... }: {
+  flake.nixosModules.kitty =
 
-    # needed for home manager functionality
-    imports = [ inputs.home-manager.nixosModules.home-manager ];
+    { pkgs, ... }:
 
-    # home manager options
-    home-manager.users.serenity = {
+    {
 
-      # packages to include
-      home.packages = with pkgs; [
-        kitty
-      ];
+      # needed for home manager functionality
+      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-      # cli fuzzy finder
-      programs.fzf = {
-        enable = true;
-        enableFishIntegration = true;
-      };
+      # home manager options
+      home-manager.users.serenity = {
 
-      programs.kitty = {
+        # packages to include
+        home.packages = with pkgs; [
+          kitty
+        ];
 
-        # enables kitty
-        enable = true;
-
-        # kitty integrations
-        enableGitIntegration = true;
-        shellIntegration.enableFishIntegration = true;
-
-        # font settings
-        font = {
-          name = "spleen 32x64";
-          size = 12;
+        # cli fuzzy finder
+        programs.fzf = {
+          enable = true;
+          enableFishIntegration = true;
         };
 
-        # kitty settings
-        settings = {
+        programs.kitty = {
 
-          # sets fish as the default shell
-          shell = "${pkgs.fish}/bin/fish";
+          # enables kitty
+          enable = true;
 
-          # misc. settings
-          url_style = "curly";
-          disable_ligutures = "never";
-          scrollback_lines = 10000;
-          enable_audio_bell = false;
-          update_check_interval = 0;
+          # kitty integrations
+          enableGitIntegration = true;
+          shellIntegration.enableFishIntegration = true;
 
-          # cursor settings
-          cursor_shape = "Underline";
-          cursor_shape_unfocused = "unchanged";
-          cursor_underline_thickness = 1;
-          cursor_trail = 1;
+          # font settings
+          font = {
+            name = "spleen 32x64";
+            size = 12;
+          };
 
-          # window settings
-          window_padding_width = 5;
-          remember_window_size = "no";
-          initial_window_width = 1200;
-          initial_window_height = 600;
-          confirm_os_window_close = "0";
-          hide_window_decorations = true;
-          show_window_resize_notification = false;
+          # kitty settings
+          settings = {
 
-          # Colours
-          # NOT YET IMPLEMENTED
+            # sets fish as the default shell
+            shell = "${pkgs.fish}/bin/fish";
+
+            # misc. settings
+            url_style = "curly";
+            disable_ligutures = "never";
+            scrollback_lines = 10000;
+            enable_audio_bell = false;
+            update_check_interval = 0;
+
+            # cursor settings
+            cursor_shape = "Underline";
+            cursor_shape_unfocused = "unchanged";
+            cursor_underline_thickness = 1;
+            cursor_trail = 1;
+
+            # window settings
+            window_padding_width = 5;
+            remember_window_size = "no";
+            initial_window_width = 1200;
+            initial_window_height = 600;
+            confirm_os_window_close = "0";
+            hide_window_decorations = true;
+            show_window_resize_notification = false;
+
+            # Colours
+            # NOT YET IMPLEMENTED
+
+          };
+
+          # misecellaneous kitty config
+          extraConfig = ''
+            window_padding_width 0 20
+          '';
 
         };
-
-        # misecellaneous kitty config
-        extraConfig = ''
-          window_padding_width 0 20
-        '';
 
       };
 
     };
-
-  };
 
 }

@@ -1,54 +1,64 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+
+{
 
   # general music module declaration
-  flake.nixosModules.music = { pkgs, ... }: {
+  flake.nixosModules.music =
 
-    # for home manager functionality
-    imports = [ inputs.home-manager.nixosModules.home-manager ];
+    { pkgs, ... }:
 
-    home-manager.users.serenity = {
+    {
 
-      # audio effects
-      services.easyeffects.enable = true;
+      # for home manager functionality
+      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-      home.packages = with pkgs; [
+      home-manager.users.serenity = {
 
-        # players
-        spotify # corporate garbage
-        strawberry # qt music player
+        # audio effects
+        services.easyeffects.enable = true;
 
-        # misc
-        audacity # audio editing
-        puddletag # file tagger
+        home.packages = with pkgs; [
 
-      ];
+          # players
+          spotify # corporate garbage
+          strawberry # qt music player
+
+          # misc
+          audacity # audio editing
+          puddletag # file tagger
+
+        ];
+
+      };
 
     };
-
-  };
 
   # music production module declaration
-  flake.nixosModules.music-production = { pkgs, musnix, ... }: {
+  flake.nixosModules.music-production =
 
-    # for home manager functionality
-    imports = [ inputs.home-manager.nixosModules.home-manager ];
+    { pkgs, musnix, ... }:
 
-    boot = { };
+    {
 
-    musnix.enable = true;
+      # for home manager functionality
+      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-    users.users.serenity.extraGroups = [ "audio" ];
-    home-manager.users.serenity = {
+      boot = { };
 
-      home.packages = with pkgs; [
+      musnix.enable = true;
 
-        # daws
-        bespokesynth
+      users.users.serenity.extraGroups = [ "audio" ];
+      home-manager.users.serenity = {
 
-      ];
+        home.packages = with pkgs; [
+
+          # daws
+          bespokesynth
+
+        ];
+
+      };
 
     };
-
-  };
 
 }

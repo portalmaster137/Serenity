@@ -3,6 +3,7 @@
 {
   # hardware module declaration
   flake.nixosModules.hadesHardware =
+
     {
       config,
       lib,

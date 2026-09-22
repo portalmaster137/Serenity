@@ -3,72 +3,87 @@
 {
 
   # defines a custom fish module
-  flake.nixosModules.fish = { pkgs, ... }: {
+  flake.nixosModules.fish =
 
-    # for home manager functionality
-    imports = [ inputs.home-manager.nixosModules.home-manager ];
+    { pkgs, ... }:
 
-    # home manager options
-    home-manager.users.serenity = {
+    {
 
-      # program settings
-      programs = {
+      # for home manager functionality
+      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-        # starship prompt
-        starship = {
-          enable = true;
-        };
+      # adding shell packages to system, unsure if necessary
+      environment.systemPackages = with pkgs; [
+        fish # primary shell
+        bash # backup shell
+      ];
 
-        # fish shell
-        fish = {
+      # system level fish declaration
+      programs.fish.enable = true;
 
-          # enables fish
-          enable = true;
+      # home manager options
+      home-manager.users.serenity = {
 
-          # shell initialisation
-          loginShellInit = "";
-          interactiveShellInit = "";
+        # program settings
+        programs = {
 
-          # fish plugins
-          plugins = [
-
-            {
-              name = "done";
-              src = pkgs.fishPlugins.done.src;
-            }
-
-            {
-              name = "puffer";
-              src = pkgs.fishPlugins.puffer.src;
-            }
-
-            {
-              name = "autopair";
-              src = pkgs.fishPlugins.autopair.src;
-            }
-          ];
-
-          # command aliases & abbreviations
-          shellAbbrs = {
-            nv = "hx";
-            nvim = "hx";
-            trc = "tree -C";
-          };
-          shellAliases = {
-            rbu = "sudo systemctl reboot --firmware-setup";
+          # starship prompt
+          starship = {
+            enable = true;
           };
 
-          # fish functions
-          functions = {
+          # fish shell
+          fish = {
 
-            # foo
-            foo = ''
-              if bar
-                printf 'foo'
-              else
-                echo loser
-              end
-            '';
+            # enables fish
+            enable = true;
+
+            # shell initialisation
+            loginShellInit = "";
+            interactiveShellInit = "";
+
+            # fish plugins
+            plugins = [
+
+              {
+                name = "done";
+                src = pkgs.fishPlugins.done.src;
+              }
+
+              {
+                name = "puffer";
+                src = pkgs.fishPlugins.puffer.src;
+              }
+
+              {
+                name = "autopair";
+                src = pkgs.fishPlugins.autopair.src;
+              }
+            ];
+
+            # command aliases & abbreviations
+            shellAbbrs = {
+              nv = "hx";
+              nvim = "hx";
+              trc = "tree -C";
+            };
+            shellAliases = {
+              rbu = "sudo systemctl reboot --firmware-setup";
+            };
+
+            # fish functions
+            functions = {
+
+              # foo
+              foo = ''
+                if bar
+                  printf 'foo'
+                else
+                  echo loser
+                end
+              '';
+            };
+
           };
 
         };
@@ -76,7 +91,5 @@
       };
 
     };
-
-  };
 
 }

@@ -3,51 +3,58 @@
 {
 
   # defines a custom git module
-  flake.nixosModules.git = { ... }: {
+  flake.nixosModules.git =
 
-    # for home manager functionality
-    imports = [ inputs.home-manager.nixosModules.home-manager ];
+    { pkgs, ... }:
 
-    # home manager options
-    home-manager.users.serenity = {
+    {
 
-      programs = {
+      # for home manager functionality
+      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-        git = {
+      # system level git declaration
+      programs.git.enable = true;
 
-          # enables git
-          enable = true;
+      # home manager options
+      home-manager.users.serenity = {
 
-          # git settings
-          settings = {
+        programs = {
 
-            # user details
-            user = {
-              name = "serenity-F";
-              email = "serenity-F@noreply.codeberg.org";
+          git = {
 
-              #path to signing key
-              signingKey = "/home/serenity/.ssh/id_ed25519.pub";
+            # enables git
+            enable = true;
+
+            # git settings
+            settings = {
+
+              # user details
+              user = {
+                name = "serenity-F";
+                email = "serenity-F@noreply.codeberg.org";
+
+                #path to signing key
+                signingKey = "/home/serenity/.ssh/id_ed25519.pub";
+
+              };
+
+              # use ssh keys for auth
+              gpg.format = "ssh";
+              commit.gpgSign = true;
+
+              # use 'main' as default branch
+              init.defaultBranch = "main";
+
+              # automatically track remote branch
+              push.autoSetupRemote = true;
 
             };
-
-            # use ssh keys for auth
-            gpg.format = "ssh";
-            commit.gpgSign = true;
-
-            # use 'main' as default branch
-            init.defaultBranch = "main";
-
-            # automatically track remote branch
-            push.autoSetupRemote = true;
-
           };
+
         };
 
       };
 
     };
-
-  };
 
 }
