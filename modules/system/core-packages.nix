@@ -94,6 +94,7 @@
         curl
         file
         tree
+        tokei
         unzip
         gnupg
         s-tui
