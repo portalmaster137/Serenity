@@ -5,7 +5,7 @@
   # desktop supermodule declaration
   flake.nixosModules.desktop =
 
-    { ... }:
+    { pkgs, ... }:
 
     {
 
