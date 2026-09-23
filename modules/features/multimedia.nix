@@ -43,6 +43,9 @@
         # web browser
         programs.firefox = {
           enable = true;
+          profiles = {
+            default = { };
+          };
         };
 
         # other multimedia programs

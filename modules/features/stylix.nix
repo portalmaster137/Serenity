@@ -105,6 +105,7 @@
             #colorTheme.enable = true;
             colors.enable = true;
             fonts.enable = true;
+            profileNames = [ "default" ];
           };
 
         };
