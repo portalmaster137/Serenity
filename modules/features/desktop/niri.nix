@@ -316,7 +316,7 @@
                 "Mod+K".action = focus-workspace-up;
                 "Mod+L".action = focus-column-right;
                 "Mod+Left".action = focus-column-left;
-                "Mod+Down".action = focus-column-down;
+                "Mod+Down".action = focus-workspace-down;
                 "Mod+Up".action = focus-workspace-up;
                 "Mod+Right".action = focus-workspace-right;
                 "Mod+WheelScrollDown".action = focus-workspace-down;
