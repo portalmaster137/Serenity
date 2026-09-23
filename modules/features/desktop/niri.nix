@@ -23,7 +23,7 @@
 
       # session management
       programs.uwsm = {
-        enable = true;
+        enable = false;
         # configures uwsm to launch niri
         waylandCompositors.niri = {
           prettyName = "Niri";

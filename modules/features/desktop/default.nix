@@ -78,6 +78,13 @@
         };
       };
 
+      services.displayManager.ly = {
+        enable = true;
+        settings = {
+
+        };
+      };
+
       # I put fonts here because i didn't know where tf else to put them lol
       # duplicate to home-manager config ?
       fonts = {
