@@ -21,19 +21,6 @@
         xwayland-satellite # niri xwayland support
       ];
 
-      # session management
-      programs.uwsm = {
-        enable = false;
-        # configures uwsm to launch niri
-        waylandCompositors.niri = {
-          prettyName = "Niri";
-          comment = "Niri scrolling WM managed by UWSM";
-          # points to niri binary and declares it as a session
-          binPath = "${pkgs.niri}/bin/niri";
-          extraArgs = [ "--session" ];
-        };
-      };
-
       # enables niri globally
       programs.niri = {
         enable = true;
