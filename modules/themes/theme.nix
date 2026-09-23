@@ -13,7 +13,7 @@
     let
       wallpaper = ../../assets/media/wallpapers/mimaKirigoe.jpg;
     in
-    
+
     {
 
       # for home manager functionality
@@ -23,7 +23,7 @@
 
         # enables automatic themeing based on wallpaper
         enable = true;
-        image = ${wallpaper};
+        image = "${wallpaper}";
 
         # cursor settings
         cursor = {
@@ -68,7 +68,7 @@
 
         # copies wallpaper from flake into home
         home.file."wallpaper" = {
-          source = ${wallpaper};
+          source = "${wallpaper}";
           target = "/home/serenity/Pictures/Wallpapers";
           recursive = true;
         };
