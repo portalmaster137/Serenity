@@ -26,7 +26,7 @@
 
             # btop settings
             settings = {
-              color_theme = "adapta";
+              #color_theme = "adapta";
               theme_background = false;
             };
 
