@@ -74,15 +74,15 @@
         #imports = [ inputs.stylix.homeModules.stylix ];
 
         # copies avatar from flake into home
-        home.file."avatar.png" = {
-          source = ../../assets/media/avatar.png;
-          target = "/home/serenity/Pictures/Avatars";
+        home.file."Avatar" = {
+          source = ../../assets/media/avatar;
+          target = "/home/serenity/Pictures/Avatars/";
           recursive = true;
         };
 
         # copies wallpaper from flake into home
-        home.file."wallpaper.png" = {
-          source = "${wallpaper}";
+        home.file."Wallpapers" = {
+          source = "../../assets/media/wallpapers;
           target = "/home/serenity/Pictures/Wallpapers";
           recursive = true;
         };
