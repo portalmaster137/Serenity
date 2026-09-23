@@ -321,7 +321,7 @@
                 "Mod+Right".action = focus-workspace-right;
                 "Mod+WheelScrollDown".action = focus-workspace-down;
                 "Mod+WheelScrollDown".cooldown-ms = 100;
-                "Mod+WheelScrollUp".cooldown-ms = focus-workspace-up;
+                "Mod+WheelScrollUp".action = focus-workspace-up;
                 "Mod+WheelScrollUp".cooldown-ms = 100;
 
                 # movement controls
@@ -335,7 +335,7 @@
                 "Mod+Shift+Right".action = move-column-to-workspace-right;
                 "Mod+Shift+WheelScrollDown".action = move-column-to-workspace-down;
                 "Mod+Shift+WheelScrollDown".cooldown-ms = 100;
-                "Mod+Shift+WheelScrollUp".cooldown-ms = move-column-to-workspace-up;
+                "Mod+Shift+WheelScrollUp".action = move-column-to-workspace-up;
                 "Mod+Shift+WheelScrollUp".cooldown-ms = 100;
 
                 # size controls
