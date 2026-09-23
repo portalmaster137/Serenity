@@ -12,8 +12,8 @@
       # modules to include
       imports = [
 
-        # session management
-        #self.nixosModules.${greeter}
+        # theme module
+        self.nixosModules.theme1
 
         # window manager
         self.nixosModules.niri
