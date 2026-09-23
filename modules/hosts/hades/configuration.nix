@@ -18,6 +18,19 @@
       # specify kernel to use
       boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
 
+      # bootloader settings
+      boot.loader = {
+        systemd-boot.enable = true;
+        efi.canTouchEfiVariables = true;
+      };
+
+      # supported filesystems at boot
+      boot.supportedFilesystems = [
+        "vfat"
+        "ext4"
+        #"ntfs"
+      ];
+
       # enable printing support
       services.printing.enable = true;
 
@@ -30,17 +43,16 @@
       # other packages to include
       environment.systemPackages = with pkgs; [
 
-        # tools and utilities
-        git
-        helix
-
         # packages for hades peripherals
-        input-remapper
-        razergenie
-        openrazer-daemon
-        openrgb-with-all-pluginsi
+        #input-remapper
+        #razergenie
+        #openrazer-daemon
+        #openrgb-with-all-plugins
 
       ];
+
+      # peripherals for hades
+      hardware.ckb-next.enable = true;
 
       # amd radeon gpu drivers and software
       # https://nixos.wiki/wiki/AMD_GPU
