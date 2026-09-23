@@ -2,7 +2,7 @@
 
 {
 
-  flake.nixosModules.theme1 =
+  flake.nixosModules.theme-autogen =
     {
       config,
       lib,
@@ -11,7 +11,7 @@
     }:
 
     let
-      wallpaper = ../../assets/media/wallpapers/mimaKirigoe.jpg;
+      wallpaper = ../../assets/media/wallpapers/helixNebula.jpg;
     in
 
     {
