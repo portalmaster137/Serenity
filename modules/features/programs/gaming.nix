@@ -1,16 +1,11 @@
-{ inputs, ... }:
+{ self, inputs, ... }:
 
 {
 
   # general gaming module declaration
   flake.nixosModules.gaming =
 
-    {
-      inputs,
-      pkgs,
-      user,
-      ...
-    }:
+    { pkgs, user, ... }:
 
     {
 

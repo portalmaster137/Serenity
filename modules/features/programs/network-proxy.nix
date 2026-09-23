@@ -5,10 +5,7 @@
   # network proxy module declaration
   flake.nixosModules.network-proxy =
 
-    {
-      inputs,
-      ...
-    }:
+    { ... }:
 
     {
 

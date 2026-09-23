@@ -4,6 +4,7 @@
 
   # virtualisation module declaration
   flake.nixosModules.virtualisation =
+
     { pkgs, ... }:
 
     {

@@ -1,11 +1,11 @@
-{ inputs, ... }:
+{ self, inputs, ... }:
 
 {
 
   # general multimedia module declaration
   flake.nixosModules.multimedia =
 
-    { inputs, pkgs, ... }:
+    { pkgs, ... }:
 
     {
 
