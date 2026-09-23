@@ -43,12 +43,12 @@
         fonts = {
 
           # point sizes for various ui elements
-          #sizes = {
-          #terminal = 10;
-          #desktop = 10;
-          #popups = 10;
-          #applications = 12;
-          #};
+          sizes = {
+            terminal = 12;
+            desktop = 12;
+            popups = 12;
+            applications = 12;
+          };
 
           # emoji font to use
           emoji = {
@@ -57,9 +57,12 @@
           };
 
           # text fonts to use
-          #monospace = { };
-          #serif = config.stylix.fonts.sansSerif;
-          #sansSerif = { };
+          monospace = {
+            package = with pkgs; spleen;
+            name = "Spleen 32x64";
+          };
+          serif = config.stylix.fonts.monospace;
+          sansSerif = config.stylix.fonts.monospace;
 
         };
       };

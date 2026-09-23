@@ -36,10 +36,10 @@
           shellIntegration.enableFishIntegration = true;
 
           # font settings
-          font = {
-            name = "spleen 32x64";
-            size = 12;
-          };
+          #font = {
+          #name = "spleen 32x64";
+          #size = 12;
+          #};
 
           # kitty settings
           settings = {
