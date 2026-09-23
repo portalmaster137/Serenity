@@ -78,7 +78,7 @@
 
           # misecellaneous kitty config
           extraConfig = ''
-            window_padding_width 0 0
+            window_padding_width 5 0
           '';
 
         };
