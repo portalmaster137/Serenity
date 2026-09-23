@@ -42,9 +42,6 @@
         verbose = true;
         overwriteBackup = true;
         backupFileExtension = ".bak";
-
-        # need to disable soon ?
-        useGlobalPkgs = true;
         useUserPackages = true;
 
         # home manager user declaration
