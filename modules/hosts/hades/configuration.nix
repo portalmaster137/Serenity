@@ -38,19 +38,21 @@
         input-remapper
         razergenie
         openrazer-daemon
-        openrgb-with-all-plugins
+        openrgb-with-all-pluginsi
+
       ];
 
       # amd radeon gpu drivers and software
       # https://nixos.wiki/wiki/AMD_GPU
-
       boot = {
         # load amdgpu driver pre boot
         initrd.kernelModules = [ "amdgpu" ];
         #exposes gpu driver
-        kernelModules = [ "amdgpu" ];
+        kernelModules = [
+          "amdgpu"
+          "kvm-amd"
+        ];
       };
-
       hardware = {
         # discrete graphics support
         graphics.enable = true;
