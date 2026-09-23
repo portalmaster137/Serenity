@@ -37,8 +37,10 @@
       boot.initrd.kernelModules = [ "amdgpu" ];
 
       # luks device mapping
-      boot.initrd.luks.devices."luks-35440a88-293e-455b-a018-ee1086b07321".device = "/dev/disk/by-uuid/35440a88-293e-455b-a018-ee1086b07321";
-      boot.initrd.luks.devices."luks-55f7d546-fac9-4ea0-a21e-4c50ecc0d67d".device = "/dev/disk/by-uuid/55f7d546-fac9-4ea0-a21e-4c50ecc0d67d";
+      boot.initrd.luks.devices."luks-35440a88-293e-455b-a018-ee1086b07321".device =
+        "/dev/disk/by-uuid/35440a88-293e-455b-a018-ee1086b07321";
+      boot.initrd.luks.devices."luks-55f7d546-fac9-4ea0-a21e-4c50ecc0d67d".device =
+        "/dev/disk/by-uuid/55f7d546-fac9-4ea0-a21e-4c50ecc0d67d";
 
       # root partition
       fileSystems."/" = {
@@ -59,7 +61,7 @@
       # swap
       swapDevices = [
         {
-          device = "/dev/mapper/luks-55f7d546-fac9-4ea0-a21e-4c50ecc0d67d"
+          device = "/dev/mapper/luks-55f7d546-fac9-4ea0-a21e-4c50ecc0d67d";
         }
       ];
 
