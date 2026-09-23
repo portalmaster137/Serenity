@@ -20,15 +20,15 @@
         home = {
 
           # copies avatar from flake into home
-          file."avatars" = {
-            source = ./resources/avatars;
+          file."avatar" = {
+            source = ./assets/media/avatar.png;
             target = "/home/serenity/Pictures/Avatars";
             recursive = true;
           };
 
           # copies wallpapers from flake into home
           file."wallpapers" = {
-            source = ./resources/wallpapers;
+            source = ./assets/media/wallpapers;
             target = "/home/serenity/Pictures/Wallpapers";
             recursive = true;
           };
