@@ -32,7 +32,7 @@
 
       };
 
-      home-manager.users.sernity = {
+      home-manager.users.serenity = {
 
         # alternative youtube frontend
         programs.freetube = {
