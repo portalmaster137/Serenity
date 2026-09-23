@@ -24,7 +24,7 @@
       music
       music-production
       virtual-reality
-      network-proxy
+      #network-proxy
       virtualisation
 
       # users to include on host
