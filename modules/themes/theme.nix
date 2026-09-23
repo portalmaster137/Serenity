@@ -67,7 +67,7 @@
       home-manager.users.serenity = {
 
         # for stylix home manager module
-        imports = [ inputs.stylix.homeModules.stylix ];
+        #imports = [ inputs.stylix.homeModules.stylix ];
 
         # copies avatar from flake into home
         home.file."avatar" = {
