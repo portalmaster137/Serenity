@@ -24,8 +24,8 @@
       music
       music-production
       virtual-reality
-      #network-proxy
-      #virtualisation
+      network-proxy
+      virtualisation
 
       # users to include on host
       serenity
