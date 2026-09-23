@@ -72,7 +72,7 @@
             # Colours
             # NOT YET IMPLEMENTED
             background_blur = 2;
-            background_opacity = "0.82";
+            #background_opacity = "0.82";
 
           };
 
