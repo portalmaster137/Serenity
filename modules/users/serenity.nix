@@ -49,7 +49,7 @@
 
         # home manager user declaration
         users.serenity = {
-          home.stateVersion = "24.11";
+          #home.stateVersion = "24.11";
           nixpkgs.config.allowUnfree = true;
 
           # user specific modules to include
