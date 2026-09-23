@@ -47,8 +47,8 @@
       # adds zfs to system packages
       environment.systemPackages = with pkgs; [ zfs ];
 
-      # is this needed?
-      #networking.hostId = "603b0c8b";
+      # is this needed? - YES nixos yelled at me about it
+      networking.hostId = "603b0c8b";
 
       # data integrity service
       services.zfs.autoScrub.enable = true;
