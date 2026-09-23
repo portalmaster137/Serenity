@@ -318,7 +318,7 @@
                 "Mod+Left".action = focus-column-left;
                 "Mod+Down".action = focus-workspace-down;
                 "Mod+Up".action = focus-workspace-up;
-                "Mod+Right".action = focus-workspace-right;
+                "Mod+Right".action = focus-column-right;
                 "Mod+WheelScrollDown".action = focus-workspace-down;
                 "Mod+WheelScrollDown".cooldown-ms = 100;
                 "Mod+WheelScrollUp".action = focus-workspace-up;
