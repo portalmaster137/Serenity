@@ -51,6 +51,6 @@
       #networking.hostId = "603b0c8b";
 
       # data integrity service
-      services.zfs.autoScrub = true;
+      services.zfs.autoScrub.enable = true;
     };
 }
