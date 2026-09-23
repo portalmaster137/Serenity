@@ -98,10 +98,13 @@
 
           # application icons to use
           #icons = { };
-          #
+
+          # firefox tweaks
           targets.firefox = {
+            enable = true;
             colorTheme.enable = true;
             colors.enable = true;
+            fonts.enable = true;
           };
 
         };

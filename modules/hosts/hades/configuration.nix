@@ -37,9 +37,6 @@
       # fstrim for ssd
       services.fstrim.enable = true;
 
-      # enable firefox
-      programs.firefox.enable = true;
-
       # other packages to include
       environment.systemPackages = with pkgs; [
 
