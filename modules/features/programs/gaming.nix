@@ -123,21 +123,21 @@
       # `$ systemctl --user start monado.service`
       # `$ jounralctl --user --follow --unit monado.service`
       #services.monado = {
-        #enable = true;
-        # use as default openxr runtime
-        #defaultRuntime = true;
-        # sets as high priority service in kernel
-        # may fix some performance issues
-        #highPriority = true;
+      #enable = true;
+      # use as default openxr runtime
+      #defaultRuntime = true;
+      # sets as high priority service in kernel
+      # may fix some performance issues
+      #highPriority = true;
       #};
 
       # environment variables for monado runtime
       #systemd.user.services.mondado.environment = {
-        #STEAMVR_LH_ENABLE = "1";
-        #XRT_COMPOSITOR_COMPUTE = "1";
-        # disables hand tracking, re-enable after downloading models
-        #WMR_HANDTRACKING = "0";
-      };
+      #STEAMVR_LH_ENABLE = "1";
+      #XRT_COMPOSITOR_COMPUTE = "1";
+      # disables hand tracking, re-enable after downloading models
+      #WMR_HANDTRACKING = "0";
+      #};
 
       # amdgpu patch, may fix some performance issues
       # required for monado high priority scheduling
@@ -177,17 +177,17 @@
 
       # wayvr virtual desktop
       #systemd.user.services.wayvr = {
-        #description = "WayVR desktop overlay for OpenXR/OpenVR";
-        # assigns it as a graphical service
-        #partOf = [ "graphical-session.target" ];
-        #after = [ "graphical-session.target" ];
-        #wantedBy = [ "graphical-session.target" ];
-        #serviceConfig = {
-          # points to executable to use for wayvr
-          #ExecStart = "${pkgs.wayvr}/bin/wayvr --replace";
-          # restarts wayvr if it crashes
-          #Restart = "on-failure";
-        #};
+      #description = "WayVR desktop overlay for OpenXR/OpenVR";
+      # assigns it as a graphical service
+      #partOf = [ "graphical-session.target" ];
+      #after = [ "graphical-session.target" ];
+      #wantedBy = [ "graphical-session.target" ];
+      #serviceConfig = {
+      # points to executable to use for wayvr
+      #ExecStart = "${pkgs.wayvr}/bin/wayvr --replace";
+      # restarts wayvr if it crashes
+      #Restart = "on-failure";
+      #};
       #};
 
     };
