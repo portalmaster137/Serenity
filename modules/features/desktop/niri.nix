@@ -327,8 +327,8 @@
                 # movement controls
                 "Mod+Shift+H".action = move-column-left;
                 "Mod+Shift+J".action = move-column-to-workspace-down;
-                "Mod+Shift+J".action = move-column-to-workspace-up;
-                "Mod+Shift+J".action = move-column-to-right;
+                "Mod+Shift+K".action = move-column-to-workspace-up;
+                "Mod+Shift+L".action = move-column-to-right;
                 "Mod+Shift+Left".action = move-column-to-left;
                 "Mod+Shift+Down".action = move-column-to-workspace-down;
                 "Mod+Shift+Up".action = move-column-to-workspace-up;
