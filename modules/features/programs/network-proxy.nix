@@ -3,7 +3,7 @@
 {
 
   # network proxy module declaration
-  flake.nixosModules.netproxy =
+  flake.nixosModules.network-proxy =
 
     {
       inputs,
