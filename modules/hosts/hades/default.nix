@@ -20,6 +20,7 @@
       terminal
       desktop
       #multimedia
+      zfs
       gaming
       music
       music-production
