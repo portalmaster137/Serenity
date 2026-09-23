@@ -13,7 +13,7 @@
       imports = [
 
         # theme module
-        self.nixosModules.theme1
+        #self.nixosModules.theme1
 
         # window manager
         self.nixosModules.niri
