@@ -29,7 +29,7 @@
           prettyName = "Niri";
           comment = "Niri scrolling WM managed by UWSM";
           # points to niri binary and declares it as a session
-          binPath = "/run/current-system/sw/bin/niri";
+          binPath = "${pkgs.niri}/bin/niri";
           extraArgs = [ "--session" ];
         };
       };
