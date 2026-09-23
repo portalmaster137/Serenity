@@ -122,19 +122,19 @@
       # TODO: nixify this?
       # `$ systemctl --user start monado.service`
       # `$ jounralctl --user --follow --unit monado.service`
-      services.monado = {
-        enable = true;
+      #services.monado = {
+        #enable = true;
         # use as default openxr runtime
-        defaultRuntime = true;
+        #defaultRuntime = true;
         # sets as high priority service in kernel
         # may fix some performance issues
         #highPriority = true;
-      };
+      #};
 
       # environment variables for monado runtime
-      systemd.user.services.mondado.environment = {
-        STEAMVR_LH_ENABLE = "1";
-        XRT_COMPOSITOR_COMPUTE = "1";
+      #systemd.user.services.mondado.environment = {
+        #STEAMVR_LH_ENABLE = "1";
+        #XRT_COMPOSITOR_COMPUTE = "1";
         # disables hand tracking, re-enable after downloading models
         #WMR_HANDTRACKING = "0";
       };
@@ -176,19 +176,19 @@
       };
 
       # wayvr virtual desktop
-      systemd.user.services.wayvr = {
-        description = "WayVR desktop overlay for OpenXR/OpenVR";
+      #systemd.user.services.wayvr = {
+        #description = "WayVR desktop overlay for OpenXR/OpenVR";
         # assigns it as a graphical service
-        partOf = [ "graphical-session.target" ];
-        after = [ "graphical-session.target" ];
-        wantedBy = [ "graphical-session.target" ];
-        serviceConfig = {
+        #partOf = [ "graphical-session.target" ];
+        #after = [ "graphical-session.target" ];
+        #wantedBy = [ "graphical-session.target" ];
+        #serviceConfig = {
           # points to executable to use for wayvr
-          ExecStart = "${pkgs.wayvr}/bin/wayvr --replace";
+          #ExecStart = "${pkgs.wayvr}/bin/wayvr --replace";
           # restarts wayvr if it crashes
-          Restart = "on-failure";
-        };
-      };
+          #Restart = "on-failure";
+        #};
+      #};
 
     };
 
