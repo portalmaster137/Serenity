@@ -21,14 +21,14 @@
 
           # copies avatar from flake into home
           file."avatar" = {
-            source = ./assets/media/avatar.png;
+            source = ../../assets/media/avatar.png;
             target = "/home/serenity/Pictures/Avatars";
             recursive = true;
           };
 
           # copies wallpapers from flake into home
           file."wallpapers" = {
-            source = ./assets/media/wallpapers;
+            source = ../../assets/media/wallpapers;
             target = "/home/serenity/Pictures/Wallpapers";
             recursive = true;
           };
