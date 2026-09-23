@@ -9,8 +9,15 @@
 
     {
 
-      # necessary for home manager function
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
+      imports = [
+
+        # necessary for home manager function
+        inputs.home-manager.nixosModules.home-manager
+
+        # select user theme
+        self.nixosModules.theme1
+
+      ];
 
       # needed or nix yells at me
       programs.fish.enable = true;
