@@ -17,7 +17,6 @@
 
       # packages for desktop environment
       environment.systemPackages = with pkgs; [
-        jq # unsure what this is for - research time?
         xwayland-satellite # niri xwayland support
       ];
 
