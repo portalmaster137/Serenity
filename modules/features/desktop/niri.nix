@@ -326,16 +326,16 @@
 
                 # movement controls
                 "Mod+Shift+H".action = move-column-left;
-                "Mod+Shift+J".action = move-column-to-workspace-down;
-                "Mod+Shift+K".action = move-column-to-workspace-up;
-                "Mod+Shift+L".action = move-column-to-right;
-                "Mod+Shift+Left".action = move-column-to-left;
-                "Mod+Shift+Down".action = move-column-to-workspace-down;
-                "Mod+Shift+Up".action = move-column-to-workspace-up;
-                "Mod+Shift+Right".action = move-column-to-workspace-right;
-                "Mod+Shift+WheelScrollDown".action = move-column-to-workspace-down;
+                "Mod+Shift+J".action = move-window-down-or-to-workspace-down;
+                "Mod+Shift+K".action = move-window-up-or-to-workspace-up;
+                "Mod+Shift+L".action = move-column-right;
+                "Mod+Shift+Left".action = move-column-left;
+                "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
+                "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
+                "Mod+Shift+Right".action = move-column-right;
+                "Mod+Shift+WheelScrollDown".action = move-window-down-or-to-workspace-down;
                 "Mod+Shift+WheelScrollDown".cooldown-ms = 100;
-                "Mod+Shift+WheelScrollUp".action = move-column-to-workspace-up;
+                "Mod+Shift+WheelScrollUp".action = move-window-up-or-to-workspace-up;
                 "Mod+Shift+WheelScrollUp".cooldown-ms = 100;
 
                 # size controls
