@@ -18,7 +18,7 @@
       # packages for desktop environment
       environment.systemPackages = with pkgs; [
         jq # unsure what this is for - research time?
-        xwayland-satellite # niri xwayland support - disable if using unstable
+        xwayland-satellite # niri xwayland support
       ];
 
       # session management
@@ -275,12 +275,12 @@
               ];
 
               # keybinds
+              # https://github.com/niri-wm/niri/wiki/Configuration:-Key-Bindings
               hotkey-overlay = {
                 hide-not-bound = true;
                 skip-at-startup = true;
               };
               binds = with config.lib.niri.actions; {
-                #binds = {
 
                 # debug and utility
                 "Mod+Shift+Slash".action = show-hotkey-overlay; # shows help
@@ -292,16 +292,67 @@
                 "Ctrl+Alt+Delete".action = quit; # log out
 
                 # task management
-
-                # terminal
+                "Mod+Q".action = close-window;
+                "Mod+Q".repeat = false;
+                "Mod+O".action = toggle-overview;
+                "Mod+O".repeat = false;
+                "Mod+Tab".action = spawn "${pkgs.wofi}/bin/wofi";
+                "Mod+Tab".repeat = false; # launcher
+                "Mod+Return".action = spawn "${pkgs.kitty}/bin/kitty";
+                "Mod+Return".repeat = false; # terminal
 
                 # screen capture
+                "Mod+S".action.screenshot = {
+                  show-pointer = false;
+                };
+                "Mod+Shift+S".action.screenshot-window = [ ];
+                "Mod+Shift+Alt+S".action.screenshot-screen = {
+                  show-pointer = true;
+                };
 
                 # focus controls
+                "Mod+H".action = focus-column-left;
+                "Mod+J".action = focus-workspace-down;
+                "Mod+K".action = focus-workspace-up;
+                "Mod+L".action = focus-column-right;
+                "Mod+Left".action = focus-column-left;
+                "Mod+Down".action = focus-column-down;
+                "Mod+Up".action = focus-workspace-up;
+                "Mod+Right".action = focus-workspace-right;
+                "Mod+WheelScrollDown".action = focus-workspace-down;
+                "Mod+WheelScrollDown".cooldown-ms = 100;
+                "Mod+WheelScrollUp".cooldown-ms = focus-workspace-up;
+                "Mod+WheelScrollUp".cooldown-ms = 100;
 
                 # movement controls
+                "Mod+Shift+H".action = move-column-left;
+                "Mod+Shift+J".action = move-column-to-workspace-down;
+                "Mod+Shift+J".action = move-column-to-workspace-up;
+                "Mod+Shift+J".action = move-column-to-right;
+                "Mod+Shift+Left".action = move-column-to-left;
+                "Mod+Shift+Down".action = move-column-to-workspace-down;
+                "Mod+Shift+Up".action = move-column-to-workspace-up;
+                "Mod+Shift+Right".action = move-column-to-workspace-right;
+                "Mod+Shift+WheelScrollDown".action = move-column-to-workspace-down;
+                "Mod+Shift+WheelScrollDown".cooldown-ms = 100;
+                "Mod+Shift+WheelScrollUp".cooldown-ms = move-column-to-workspace-up;
+                "Mod+Shift+WheelScrollUp".cooldown-ms = 100;
 
                 # size controls
+                #"Mod+1".action = set-column-width "25%";
+                #"Mod+2".action = set-column-width "50%";
+                #"Mod+3".action = set-column-width "75%";
+                #"Mod+4".action = set-column-width "100%";
+                "Mod+Minus".action = switch-preset-column-width-back;
+                "Mod+Equal".action = switch-preset-column-width;
+                "Mod+Shift+Minus".action = switch-preset-window-height-back;
+                "Mod+Shift+Equal".action = switch-preset-window-height;
+                "Mod+C".action = center-visible-columns;
+                "Mod+F".action = maximize-column;
+                "Mod+Shift+F".action = fullscreen-window;
+                "Mod+Ctrl+F".action = expand-column-to-available-width;
+                "Mod+Space".action = toggle-window-floating;
+                "Mod+Shift+Space".action = switch-focus-between-floating-and-tiling;
 
               };
 
