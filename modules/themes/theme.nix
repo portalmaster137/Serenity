@@ -82,7 +82,7 @@
 
         # copies wallpaper from flake into home
         home.file."Wallpapers" = {
-          source = "../../assets/media/wallpapers;
+          source = ../../assets/media/wallpapers;
           target = "/home/serenity/Pictures/Wallpapers";
           recursive = true;
         };
