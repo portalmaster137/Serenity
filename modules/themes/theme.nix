@@ -31,6 +31,7 @@
         # enables automatic themeing based on wallpaper
         enable = true;
         image = "${wallpaper}";
+        polarity = "dark";
 
         # cursor settings
         cursor = {
