@@ -102,7 +102,7 @@
           # firefox tweaks
           targets.firefox = {
             enable = true;
-            colorTheme.enable = true;
+            #colorTheme.enable = true;
             colors.enable = true;
             fonts.enable = true;
           };
