@@ -98,6 +98,11 @@
 
           # application icons to use
           #icons = { };
+          #
+          targets.firefox = {
+            colorTheme.enable = true;
+            colors.enable = true;
+          };
 
         };
 
