@@ -39,7 +39,7 @@
             };
 
             # declare theme to use
-            theme = "onedarker_transparent";
+            #theme = "onedarker_transparent";
 
           };
 
