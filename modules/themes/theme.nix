@@ -11,7 +11,7 @@
     }:
 
     let
-      wallpaper = ../../assets/media/wallpapers/attunement.jpg;
+      wallpaper = ../../assets/media/wallpapers/attunement.png;
     in
 
     {
