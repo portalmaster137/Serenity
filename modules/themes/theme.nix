@@ -75,7 +75,7 @@
 
         # copies avatar from flake into home
         home.file."Avatar" = {
-          source = ../../assets/media/avatar;
+          source = ../../assets/media/avatar.png;
           target = "/home/serenity/Pictures/Avatars/";
           recursive = true;
         };
