@@ -11,7 +11,7 @@
     }:
 
     let
-      wallpaper = ../../assets/media/wallpapers/almondBlossoms.jpg;
+      wallpaper = ../../assets/media/wallpapers/mimaKirigoe.jpg;
     in
 
     {
