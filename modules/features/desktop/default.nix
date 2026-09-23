@@ -78,11 +78,9 @@
         };
       };
 
-      services.displayManager.ly = {
+      # login manager
+      programs.regreet = {
         enable = true;
-        settings = {
-
-        };
       };
 
       # I put fonts here because i didn't know where tf else to put them lol
