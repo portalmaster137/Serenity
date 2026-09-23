@@ -12,7 +12,9 @@
       # for home manager functionality
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
+      # networking
       networking.firewall = {
+
         allowedTCPPorts = [
           # fileshare
           2234 # nicotine/soulseek
@@ -20,12 +22,14 @@
           8096 # jellyfin http
           8920 # jellyfin https
         ];
+
         allowedUDPPorts = [
           # fileshare
           2234 # nicotine/soulseek
           8384 # syncthing
           7359 # jellyfin client discovery
         ];
+
       };
 
       home-manager.users.sernity = {

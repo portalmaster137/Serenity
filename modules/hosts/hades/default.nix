@@ -20,10 +20,10 @@
       terminal
       desktop
       #multimedia
-      #gaming
-      #music
-      #music-production
-      #virtual-reality
+      gaming
+      music
+      music-production
+      virtual-reality
       #network-proxy
       #virtualisation
 
