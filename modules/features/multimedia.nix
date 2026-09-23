@@ -40,6 +40,11 @@
           settings.defaultQuality = "1080";
         };
 
+        # web browser
+        programs.firefox = {
+          enable = true;
+        };
+
         # other multimedia programs
         home.packages = with pkgs; [
 
