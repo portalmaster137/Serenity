@@ -45,7 +45,7 @@
 
       boot = { };
 
-      musnix.enable = true;
+      #musnix.enable = true;
 
       users.users.serenity.extraGroups = [ "audio" ];
       home-manager.users.serenity = {
