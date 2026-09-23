@@ -29,17 +29,9 @@
           allowBroken = true;
         };
         # nixpkgs overlays
-        overlays = [
-          #niri.overlays.niri
-        ];
+        overlays = [ ];
       };
 
-      # flatpak
-      services.flatpak = {
-        enable = true;
-      };
-
-      # core programs to include in base system
       programs = {
         # necessary terminal programs
         gnupg.agent = {
@@ -53,6 +45,11 @@
           enable = true;
           binfmt = true;
         };
+      };
+
+      # flatpak support
+      services.flatpak = {
+        enable = true;
       };
 
       # installs a stub elf loader to print an error
