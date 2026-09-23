@@ -16,10 +16,16 @@
       hadesHardware
 
       # extra modules to include on host
+      # in order of priority
       terminal
       desktop
+      multimedia
       gaming
+      music
+      music-production
       virtual-reality
+      network-proxy
+      virtualisation
 
       # users to include on host
       serenity
