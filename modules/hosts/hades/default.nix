@@ -20,7 +20,7 @@
       terminal
       desktop
       multimedia
-      gaming
+      #gaming
       #music
       #music-production
       #virtual-reality
