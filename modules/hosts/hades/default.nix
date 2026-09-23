@@ -21,9 +21,9 @@
       desktop
       multimedia
       gaming
-      music
-      music-production
-      virtual-reality
+      #music
+      #music-production
+      #virtual-reality
       #network-proxy
       #virtualisation
 
