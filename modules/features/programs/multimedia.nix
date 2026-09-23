@@ -5,7 +5,7 @@
   # general multimedia module declaration
   flake.nixosModules.multimedia =
 
-    { pkgs, ... }:
+    { inputs, pkgs, ... }:
 
     {
 
