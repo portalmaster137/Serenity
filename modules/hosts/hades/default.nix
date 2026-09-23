@@ -19,7 +19,7 @@
       # in order of priority
       terminal
       desktop
-      #multimedia
+      multimedia
       zfs-support
       gaming
       music
