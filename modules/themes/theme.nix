@@ -16,8 +16,15 @@
 
     {
 
-      # for home manager functionality
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
+      imports = [
+
+        # for home manager functionality
+        inputs.home-manager.nixosModules.home-manager
+
+        # for stylix functionality
+        inputs.stylix.nixosModules.stylix
+        
+      ];
 
       stylix = {
 
@@ -58,6 +65,9 @@
       };
 
       home-manager.users.serenity = {
+
+        # for stylix home manager module
+        imports = [ inputs.stylix.homeModules.stylix ]
 
         # copies avatar from flake into home
         home.file."avatar" = {
