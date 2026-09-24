@@ -24,11 +24,6 @@
       # home manager options
       home-manager.users.serenity = {
 
-        # alternative user friendly text editor
-        micro = {
-          enable = true;
-        };
-
         # primary text editor
         programs.helix = {
 
