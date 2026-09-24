@@ -81,9 +81,9 @@ While this is a personal configuration, suggestions and improvements are welcome
 
 - [NixOS Manual](https://nixos.org/manual/nixos/stable/)
 - [Nix Pills](https://nixos.org/guides/nix-pills/)
-- [Niri flake](https://github.com/epireyn/niri-flake)
-- [Home Manager Manual](https://nix-community.github.io/home-manager/)
-- [Stylix Documentation](https://stylix.danth.me/)
+- [Home Manager](https://nix-community.github.io/home-manager/)
+- [Niri Flake](https://github.com/epireyn/niri-flake)
+- [Stylix](https://stylix.danth.me/)
 
 ## 📜 Attributions
 
