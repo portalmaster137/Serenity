@@ -55,8 +55,8 @@ _Declarative NixOS configuration with Flakes & Home Manager_
 
  - Enable multi-host functionality
  - Enable multi-user functionality
- - Provide an installer .ISO or script
  - Provide a wiki for this config
+ - Provide an installer .ISO or script
 
 ## 📝 Dev Notes
 
@@ -69,9 +69,9 @@ For the purposes of authenticity and earnestness
 
 While this is a personal configuration, suggestions and improvements are welcome!
 
-- Open an issue for bugs or questions
-- Submit PRs for improvements
-- Share your own configs inspired by this setup
+- [Open an issue for bugs or questions](https://codeberg.org/serenity-F/SerenityOS/issues/new)
+- [Submit PRs for improvements](https://codeberg.org/serenity-F/SerenityOS/pulls)
+- [Share your own configs inspired by this setup](https://discord.com/users/875234828776247308)
 
 ## 📜 License
 
