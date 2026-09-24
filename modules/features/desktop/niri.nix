@@ -17,6 +17,7 @@
 
       # packages for desktop environment
       environment.systemPackages = with pkgs; [
+        jq # for parsing JSON
         xwayland-satellite # niri xwayland support
       ];
 
