@@ -68,7 +68,7 @@ While this is a personal configuration, suggestions and improvements are welcome
 
 ## 📜 License
 
-MIT License - feel free to use and modify as you wish.
+- MIT License - feel free to use and modify as you wish.
 
 ## 📚 Learning Resources
 
