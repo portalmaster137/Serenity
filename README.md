@@ -51,6 +51,13 @@ _Declarative NixOS configuration with Flakes & Home Manager_
 | `sudo nixos-rebuild test --flake .#<host>`  | Test configuration without switching               |
 | `sudo nixos-rebuild boot --flake .#<host>`  | Build and set for next boot                        |
 
+## 📝 Dev Notes
+
+ For the purposes of authenticity and earnestness:
+
+ - I will not rebase or squash any commits
+ - I will not remove any outdated branches
+
 ## 🤝 Contributing
 
 While this is a personal configuration, suggestions and improvements are welcome!
@@ -58,13 +65,6 @@ While this is a personal configuration, suggestions and improvements are welcome
 - Open an issue for bugs or questions
 - Submit PRs for improvements
 - Share your own configs inspired by this setup
-
-## 📝 Dev Notes
-
- For the purposes of authenticity and earnestness:
-
- - I will not rebase or squash any commits
- - I will not remove any outdated branches
 
 ## 📜 License
 
