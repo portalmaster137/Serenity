@@ -19,9 +19,6 @@
         (modulesPath + "/installer/scan/not-detected.nix")
       ];
 
-      # bootloader
-      boot.loader.systemd-boot.enable = true;
-
       # kernel modules to include
       boot.initrd.availableKernelModules = [
         "ehci_pci"
@@ -33,8 +30,23 @@
         "sd_mod"
       ];
 
-      # enable amdgpu at boot
-      boot.initrd.kernelModules = [ "amdgpu" ];
+      # enable amd radeon gpu drivers
+      # https://nixos.wiki/wiki/AMD_GPU
+      boot = {
+        # exposes gpu drivers
+        kernelModules = [
+          "amdgpu"
+          "kvm-amd"
+        ];
+        # gpu drivers during boot and pre boot
+        initrd.kernelModules = [ "amdgpu" ];
+      };
+      hardware = {
+        # discrete graphics support
+        graphics.enable = true;
+        # fixes early video issues
+        amdgpu.initrd.enable = true;
+      };
 
       # luks device mapping
       boot.initrd.luks.devices."luks-35440a88-293e-455b-a018-ee1086b07321".device =
