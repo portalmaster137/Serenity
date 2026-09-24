@@ -100,6 +100,8 @@ While this is a personal configuration, suggestions and improvements are welcome
  
 <div align="center">
 
+<br>
+
 _Built with 🩵 and lots of ☕_
 
 **[⭐ Star this repo](https://codeberg.org/Serenity-F/SerenityOS) if you found it helpful!**
