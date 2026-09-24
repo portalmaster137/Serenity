@@ -85,6 +85,19 @@ While this is a personal configuration, suggestions and improvements are welcome
 - [Niri flake](https://github.com/epireyn/niri-flake)
 - [Stylix Documentation](https://stylix.danth.me/)
 
+## 🙋 Attributions
+
+ ### 🖼️ Artwork
+ 
+ - [Helvetica Blanc](https://helveticablanc.com/)
+ - [Vincent Van Gogh](https://en.wikipedia.org/wiki/Almond_Blossoms/)
+
+ ### 📜 Code
+ 
+ - [V3rm1n](https://codeberg.org/v3rm1n/dotfiles/)
+ - [Quantenzitrone](https://codeberg.org/quantenzitrone/nixos-config/)
+ - [Sashanoraa](https://codeberg.org/sashanoraa/nixcfg/)
+ 
 <div align="center">
 
 _Built with ❤️ and lots of ☕_
