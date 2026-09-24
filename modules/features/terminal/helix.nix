@@ -44,20 +44,6 @@
               select = "block";
             };
 
-            # declare theme to use
-            #theme = "onedarker_transparent";
-
-          };
-
-          # list of themes
-          themes = {
-
-            # modified theme
-            onedarker_transparent = {
-              "inherits" = "onedarker";
-              "ui.background" = { };
-            };
-
           };
 
           # lsp settings
