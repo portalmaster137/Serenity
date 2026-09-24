@@ -59,6 +59,13 @@ While this is a personal configuration, suggestions and improvements are welcome
 - Submit PRs for improvements
 - Share your own configs inspired by this setup
 
+## 📝 Dev Notes
+
+ For the purposes of authenticity and earnestness:
+
+ - I will not rebase or squash any commits
+ - I will not remove any outdated branches
+
 ## 📜 License
 
 MIT License - feel free to use and modify as you wish.
