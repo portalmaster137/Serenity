@@ -95,8 +95,8 @@ While this is a personal configuration, suggestions and improvements are welcome
  ### Code
  
  - [V3rm1n](https://codeberg.org/v3rm1n/dotfiles/)
- - [Quantenzitrone](https://codeberg.org/quantenzitrone/nixos-config/)
  - [Sashanoraa](https://codeberg.org/sashanoraa/nixcfg/)
+ - [Quantenzitrone](https://codeberg.org/quantenzitrone/nixos-config/)
  
 <div align="center">
 
