@@ -24,7 +24,7 @@
       # home manager options
       home-manager.users.serenity = {
 
-        # alternate user friendly text edito
+        # alternate user friendly text editor
         programs.micro = {
           enable = true;
         };
