@@ -85,7 +85,7 @@ While this is a personal configuration, suggestions and improvements are welcome
 - [Niri Flake](https://github.com/epireyn/niri-flake)
 - [Stylix](https://stylix.danth.me/)
 
-## 📜 Attributions
+## 🙋 Attributions
 
  ### Artwork
  
