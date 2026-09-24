@@ -16,7 +16,7 @@ _Declarative NixOS configuration with Flakes & Home Manager_
 ## ✨ Key Features
 
 - 🎨 **Unified Theming** with Stylix
-- 🪟 **Niri** with ReGreet session management
+- 🪟 **Niri** with **ReGreet** session management
 - 🏠 **Home Manager** for declarative user environments
 - 📦 **Modular Architecture** for easy customization
 
