@@ -34,15 +34,20 @@
 
       home-manager.users.serenity = {
 
+        # web browser
+        programs.firefox = {
+          enable = true;
+        };
+
         # alternative youtube frontend
         programs.freetube = {
           enable = true;
           settings.defaultQuality = "1080";
         };
 
-        # web browser
-        programs.firefox = {
+        programs.obs-studio = {
           enable = true;
+          #plugins = { };
         };
 
         # other multimedia programs
