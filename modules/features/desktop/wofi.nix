@@ -52,10 +52,10 @@
             disable_prime = false;
           };
 
-          # NOT YET IMPLEMENTED
-          # wofi theme
-          #style = '' '';
         };
+
       };
+
     };
+
 }

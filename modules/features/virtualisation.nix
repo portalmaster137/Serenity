@@ -28,11 +28,8 @@
         enable = true;
       };
 
-      environment = {
-        systemPackages = with pkgs; [
-          dnsmasq # for vm networking
-        ];
-      };
+      # for vm networking
+      environment.systemPackages = with pkgs; [ dnsmasq ];
 
       # virtualisation settings
       virtualisation = {

@@ -35,12 +35,6 @@
           enableGitIntegration = true;
           shellIntegration.enableFishIntegration = true;
 
-          # font settings
-          #font = {
-          #name = "spleen 32x64";
-          #size = 12;
-          #};
-
           # kitty settings
           settings = {
 
@@ -53,6 +47,7 @@
             scrollback_lines = 10000;
             enable_audio_bell = false;
             update_check_interval = 0;
+            background_blur = 2;
 
             # cursor settings
             cursor_shape = "Underline";
@@ -68,11 +63,6 @@
             confirm_os_window_close = "0";
             hide_window_decorations = true;
             show_window_resize_notification = false;
-
-            # Colours
-            # NOT YET IMPLEMENTED
-            background_blur = 2;
-            #background_opacity = "0.82";
 
           };
 

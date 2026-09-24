@@ -39,9 +39,6 @@
               };
             };
 
-            # NOT YET IMPLEMENTED
-            #theme = { };
-
           };
 
         };

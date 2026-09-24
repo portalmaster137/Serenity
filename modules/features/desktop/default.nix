@@ -12,9 +12,6 @@
       # modules to include
       imports = [
 
-        # theme module
-        #self.nixosModules.theme1
-
         # window manager
         self.nixosModules.niri
 
@@ -59,50 +56,22 @@
         ];
         loader = {
           timeout = 5; # 5 second timeout to default selection
-          #grub = {
-          #splashImage = null; # hides splashimage
-          #timeoutStyle = "hidden"; # hides timeout
-          #};
         };
         plymouth = {
           # enables plymouth boot animations
-          enable = false;
+          enable = true;
           extraConfig = "ShowDelay=0";
-          #theme = "sygil-plymouth";
-          #themePackages = sygil-plymouth;
-          #themePackages = with pkgs; [
-          #(adi1090x-plymouth-themes.override {
-          #selected_themes = [ "circle" ];
-          #})
-          #];
+          themePackages = with pkgs; [
+            (adi1090x-plymouth-themes.override {
+              selected_themes = [ "circle" ];
+            })
+          ];
         };
       };
 
       # login manager
       services.displayManager.regreet = {
         enable = true;
-      };
-
-      # I put fonts here because i didn't know where tf else to put them lol
-      # duplicate to home-manager config ?
-      fonts = {
-        packages =
-          with pkgs;
-          [
-            spleen
-            terminus_font
-            terminus_font_ttf
-            nerd-fonts.symbols-only
-          ]
-          ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
-        fontDir.enable = true;
-        fontconfig = {
-          defaultFonts = {
-            serif = [ "spleen-32x64" ];
-            sansSerif = [ "spleen-32x64" ];
-            monospace = [ "TerminusTTF" ];
-          };
-        };
       };
 
     };

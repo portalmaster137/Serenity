@@ -150,9 +150,6 @@
               };
             };
 
-            # noctalia menu settings
-            #controlCenter = { };
-
           };
 
         };

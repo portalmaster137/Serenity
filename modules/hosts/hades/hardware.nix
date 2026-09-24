@@ -14,7 +14,7 @@
 
     {
 
-      # important i think lol
+      # important
       imports = [
         (modulesPath + "/installer/scan/not-detected.nix")
       ];
@@ -22,7 +22,7 @@
       # bootloader
       boot.loader.systemd-boot.enable = true;
 
-      # shrug
+      # kernel modules to include
       boot.initrd.availableKernelModules = [
         "ehci_pci"
         "xhci_pci"

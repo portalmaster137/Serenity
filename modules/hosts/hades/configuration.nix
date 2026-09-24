@@ -15,9 +15,6 @@
       # set hostname
       networking.hostName = "hades";
 
-      # specify kernel to use - disable if wanting zfs support
-      #boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
-
       # bootloader settings
       boot.loader = {
         systemd-boot.enable = true;
