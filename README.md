@@ -51,6 +51,13 @@ _Declarative NixOS configuration with Flakes & Home Manager_
 | `sudo nixos-rebuild test --flake .#<host>`  | Test configuration without switching               |
 | `sudo nixos-rebuild boot --flake .#<host>`  | Build and set for next boot                        |
 
+## 📋 To-Do List
+
+ - Enable multi-host functionality
+ - Enable multi-user functionality
+ - Provide an installer .ISO or script
+ - Provide a wiki for this config
+
 ## 📝 Dev Notes
 
  For the purposes of authenticity and earnestness:
