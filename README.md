@@ -28,7 +28,8 @@ _Declarative NixOS configuration with Flakes & Home Manager_
 | ------------------ | ------------------------------------ |
 | **OS**             | NixOS Unstable                       |
 | **Display Server** | Wayland                              |
-| **Window Manager** | Niri + ReGreet                       |
+| **Session Manager**| Regreet                              |
+| **Window Manager** | Niri                                 |
 | **Desktop**        | Noctalia                             |
 | **Terminal**       | Kitty                                |
 | **Shell**          | Fish                                 |
@@ -44,19 +45,18 @@ _Declarative NixOS configuration with Flakes & Home Manager_
 
 | Command                                     | Description                                        |
 | ------------------------------------------  | -------------------------------------------------- |
-| `git add --all && git commit -m "<message>"`| Save system changes to git tree                    |
-| `nix flake update`                          | Update all flake inputs manually                   |
-| `nix flake check`                           | Validate flake configuration                       |
-| `sudo nixos-rebuild switch --flake .#<host>`| Apply system changes                               |
-| `sudo nixos-rebuild test --flake .#<host>`  | Test configuration without switching               |
-| `sudo nixos-rebuild boot --flake .#<host>`  | Build and set for next boot                        |
+| `hx <path/to/file>`                         | Edit file                                          |
+| `nix flake update`                          | Update system                                      |
+| `git add --all && git commit -m "<message>"`| Save system changes or updates to git tree         |
+| `sudo nixos-rebuild test --flake .#<host>`  | Test changes or updates without switching          |
+| `sudo nixos-rebuild switch --flake .#<host>`| Apply system changes or updates                    |
 
 ## 📋 To-Do List
 
- - Enable multi-host functionality
- - Enable multi-user functionality
- - Provide a wiki for this config
- - Provide an installer .ISO or script
+ - [Enable multi-host functionality](https://codeberg.org/serenity-F/SerenityOS/milestone/145563)
+ - [Enable multi-user functionality](https://codeberg.org/serenity-F/SerenityOS/milestone/145563)
+ - [Provide a wiki for this config](https://codeberg.org/serenity-F/SerenityOS/milestone/145569)
+ - [Provide an installer ISO or script](https://codeberg.org/serenity-F/SerenityOS/milestone/145563)
 
 ## 📝 Dev Notes
 
