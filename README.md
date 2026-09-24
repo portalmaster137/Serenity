@@ -34,10 +34,10 @@ _Declarative NixOS configuration with Flakes & Home Manager_
 | **Desktop**        | Noctalia                             |
 | **Terminal**       | Kitty                                |
 | **Shell**          | Fish                                 |
-| **Editor**         | Helix                                |
+| **Editor**         | Helix + Micro                        |
 | **Browser**        | Firefox                              |
 | **File Manager**   | Yazi                                 |
-| **Theme**          | Stylix                               |
+| **Themeing**       | Stylix                               |
 | **Filesystem**     | Ext4 + ZFS                           |
 
 ## 🛠️ System Management
