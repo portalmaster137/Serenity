@@ -60,7 +60,7 @@ _Declarative NixOS configuration with Flakes & Home Manager_
 
 ## 📝 Dev Notes
 
- For the purposes of authenticity and earnestness:
+For the purposes of authenticity and earnestness
 
  - I will not rebase or squash any commits
  - I will not remove any outdated branches
@@ -75,24 +75,24 @@ While this is a personal configuration, suggestions and improvements are welcome
 
 ## 📜 License
 
-- MIT License - feel free to use and modify as you wish.
+- MIT License: Feel free to use and modify as you wish.
 
 ## 📚 Learning Resources
 
 - [NixOS Manual](https://nixos.org/manual/nixos/stable/)
 - [Nix Pills](https://nixos.org/guides/nix-pills/)
-- [Home Manager Manual](https://nix-community.github.io/home-manager/)
 - [Niri flake](https://github.com/epireyn/niri-flake)
+- [Home Manager Manual](https://nix-community.github.io/home-manager/)
 - [Stylix Documentation](https://stylix.danth.me/)
 
-## 🙋 Attributions
+## 📜 Attributions
 
- ### 🖼️ Artwork
+ ### Artwork
  
  - [Helvetica Blanc](https://helveticablanc.com/)
  - [Vincent Van Gogh](https://en.wikipedia.org/wiki/Almond_Blossoms/)
 
- ### 📜 Code
+ ### Code
  
  - [V3rm1n](https://codeberg.org/v3rm1n/dotfiles/)
  - [Quantenzitrone](https://codeberg.org/quantenzitrone/nixos-config/)
@@ -100,7 +100,7 @@ While this is a personal configuration, suggestions and improvements are welcome
  
 <div align="center">
 
-_Built with ❤️ and lots of ☕_
+_Built with 🩵 and lots of ☕_
 
 **[⭐ Star this repo](https://codeberg.org/Serenity-F/SerenityOS) if you found it helpful!**
 
