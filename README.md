@@ -19,6 +19,7 @@ _Declarative NixOS configuration with Flakes & Home Manager_
 - 🪟 **Niri** with **ReGreet** session management
 - 🏠 **Home Manager** for declarative user environments
 - 📦 **Modular Architecture** for easy customization
+- 💬 **Fully commented** for understanding by 3rd parties
 
 ## 💻 System Information
 
