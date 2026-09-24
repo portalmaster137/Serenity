@@ -9,6 +9,8 @@ _Declarative NixOS configuration with Flakes & Home Manager_
 
 </div>
 
+![screenshot](https://codeberg.org/serenity-F/SerenityOS/raw/branch/main/assets/repository/desktop-screenshot.png)
+
 ### ✨ Key Features
 
 - 🎨 **Unified Theming** with Stylix
