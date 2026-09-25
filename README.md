@@ -2,7 +2,8 @@
 
 # SerenityOS
 
-_Declarative NixOS configuration with Flakes & Home Manager_
+_Declarative NixOS configuration with Flakes & Home Manager_ <br>
+ (no it's not the ladybug)
 
 [![NixOS](https://img.shields.io/badge/NixOS-Unstable-blue?style=for-the-badge&logo=NixOS&logoColor=white&label=NixOS&labelColor=303446&color=91D7E3)](https://nixos.org)
 [![License](https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&colorA=313244&colorB=F5A97F&logo=unlicense&logoColor=F5A97F&)](https://codeberg.org/Serenity-F/SerenityOS/src/branch/main/LICENSE)
@@ -23,7 +24,7 @@ _Declarative NixOS configuration with Flakes & Home Manager_
 
 ## 💻 System Information
 
-### Software Stack
+### Software In Use
 
 | Component          | Implementation                       |
 | ------------------ | ------------------------------------ |
@@ -39,8 +40,6 @@ _Declarative NixOS configuration with Flakes & Home Manager_
 | **File Manager**   | Yazi                                 |
 | **Themeing**       | Stylix                               |
 | **Filesystem**     | Ext4 + ZFS                           |
-
-## 🛠️ System Management
 
 ### Common Commands
 
@@ -65,14 +64,6 @@ For the purposes of authenticity and earnestness
 
  - I will not rebase or squash any commits
  - I will not remove any outdated branches
-
-## 🤝 Contributing
-
-While this is a personal configuration, suggestions and improvements are welcome!
-
-- [Open an issue for bugs or questions](https://codeberg.org/serenity-F/SerenityOS/issues/new)
-- [Submit PRs for improvements](https://codeberg.org/serenity-F/SerenityOS/pulls)
-- [Share your own configs inspired by this setup](https://discord.com/users/875234828776247308)
 
 ## 📜 License
 
@@ -103,8 +94,6 @@ While this is a personal configuration, suggestions and improvements are welcome
 
 <br>
 
-_Built with 🩵 and lots of ☕_
-
-**[⭐ Star this repo](https://codeberg.org/Serenity-F/SerenityOS) if you found it helpful!**
+_Built with 🩵_
 
 </div>
