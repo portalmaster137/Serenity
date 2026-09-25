@@ -61,10 +61,16 @@
                 formatter.command = lib.getExe pkgs.stylish-haskell;
               }
               {
+                nMW = "rust";
+              }
+              {
                 name = "markdown";
               }
               {
                 name = "fish";
+              }
+              {
+                name = "python";
               }
             ];
 
