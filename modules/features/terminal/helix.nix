@@ -49,7 +49,6 @@
           # lsp settings
           languages = {
 
-            # nix
             language = [
               {
                 name = "nix";
@@ -60,6 +59,12 @@
                 name = "haskell";
                 auto-format = true;
                 formatter.command = lib.getExe pkgs.stylish-haskell;
+              }
+              {
+                name = "markdown";
+              }
+              {
+                name = "fish";
               }
             ];
 
