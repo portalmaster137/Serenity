@@ -56,6 +56,11 @@
                 auto-format = true;
                 formatter.command = lib.getExe pkgs.nixfmt;
               }
+              {
+                name = "haskell";
+                auto-format = true;
+                formatter.command = Lib.getExe pkgs.stylish-haskell;
+              }
             ];
 
           };
