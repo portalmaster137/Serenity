@@ -14,9 +14,9 @@
 
       # editor variables
       environment.variables = {
-        EDITOR = "helix";
-        VISUAL = "helix";
-        SYSTEMD_EDITOR = "helix";
+        EDITOR = "hx";
+        VISUAL = "hx";
+        SYSTEMD_EDITOR = "hx";
       };
 
       environment.systemPackages = with pkgs; [ helix ];
