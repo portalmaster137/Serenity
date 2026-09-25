@@ -59,7 +59,7 @@
               {
                 name = "haskell";
                 auto-format = true;
-                formatter.command = Lib.getExe pkgs.stylish-haskell;
+                formatter.command = lib.getExe pkgs.stylish-haskell;
               }
             ];
 
