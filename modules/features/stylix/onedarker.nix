@@ -101,6 +101,7 @@
             terminal = 0.8;
             desktop = 1.0;
             popups = 0.9;
+          };
 
           # application icons to use
           #icons = { };
