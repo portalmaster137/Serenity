@@ -20,8 +20,9 @@
         home.packages = with pkgs; [
 
           # players
+          tauon # offline usic player
           spotify # corporate garbage
-          strawberry # qt music player
+          strawberry # offline music player
 
           # misc
           audacity # audio editing
@@ -53,7 +54,7 @@
         home.packages = with pkgs; [
 
           # daws
-          bespokesynth
+          bespokesynth # modular synth emulator
 
         ];
 
