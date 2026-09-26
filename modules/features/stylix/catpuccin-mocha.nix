@@ -14,7 +14,7 @@
     let
 
       # set wallpaper here
-      wallpaper = ../../../assets/media/wallpapers/mimaKirigoe.jpg;
+      wallpaper = ../../../../assets/media/wallpapers/mimaKirigoe.jpg;
 
     in
 
@@ -77,14 +77,14 @@
 
         # copies avatar from flake into home
         home.file."Avatar" = {
-          source = ../../../assets/media/avatar.png;
+          source = ../../../../assets/media/avatar.png;
           target = "/home/serenity/Pictures/Avatars/";
           recursive = true;
         };
 
         # copies wallpaper from flake into home
         home.file."Wallpapers" = {
-          source = ../../../assets/media/wallpapers;
+          source = ../../../../assets/media/wallpapers;
           target = "/home/serenity/Pictures/Wallpapers";
           recursive = true;
         };
