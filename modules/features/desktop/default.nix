@@ -109,7 +109,7 @@
           gnome-calculator # simple calculator
           gnome-secrets # password manager
           file-roller # archive manager
-          obisidian # note taking
+          obsidian # note taking
           nautilus # file manager
           swayimg # image viewer
           zathura # pdf viewer
