@@ -18,25 +18,11 @@
       # packages for desktop environment
       environment.systemPackages = with pkgs; [
 
-        # other desktop app
-        gparted
-        udiskie
-
         # niri
         xwayland-satellite # xwayland support
         jq # for parsing json
 
       ];
-
-      # polkit is for gui apps run with permissions i think
-      security.polkit = {
-        enable = true;
-      };
-
-      # disk utility
-      programs.gnome-disks = {
-        enable = true;
-      };
 
       # enables niri globally
       programs.niri = {
@@ -55,28 +41,7 @@
           # for niri home manager module
           imports = [ inputs.niri.homeModules.niri ];
 
-          # disk automount service
-          services.udiskie = {
-            enable = true;
-            tray = "always";
-            notify = true;
-            automount = true;
-          };
-
-          home.packages = with pkgs; [
-
-            # personal
-            gnome-secrets # gtk password manager
-            obsidian # note taking
-
-            # desktop apps
-            gnome-calculator # simple calculator
-            file-roller # simple archive manager
-            nautilus # simple file manager
-            swayimg # terminal based image viewer
-            zathura # simple pdf viewer
-
-          ];
+          home.packages = with pkgs; [ ];
 
           programs.niri = {
             # enables niri within home manager

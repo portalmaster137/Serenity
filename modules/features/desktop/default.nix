@@ -41,18 +41,18 @@
         };
         kernelParams = [
           # grub kernel parameters, set to prevent excessive output on boot
-          #"vga=current" # use current video adapater
-          #"splash" # unsure ?
+          "vga=current" # use current video adapater
+          "splash" # unsure ?
           "quiet" # quiet log level
           "loglevel=3" # minimal output on boot
-          #"udev.log_priority=3" # more minimising of output on boot
-          #"rd.systemd.show_status=false" # unsure ?
-          #"rd.udev.log_level=0" # more minimising of output on boot
-          #"boot.shell_on_fail" # reboots to basic uefi shell on boot failure
-          #"i915.fastboot=1" # unsure ?
-          #"plymouth.debug" # I NEED ANSWERS
-          #"plymouth.use-simpledrm" # tweak to allow plymouth animations to run smoother
-          #"plymouth.ignore-serial-consoles" # unsure ?
+          "udev.log_priority=3" # more minimising of output on boot
+          "rd.systemd.show_status=false" # unsure ?
+          "rd.udev.log_level=0" # more minimising of output on boot
+          "boot.shell_on_fail" # reboots to basic uefi shell on boot failure
+          "i915.fastboot=1" # unsure ?
+          "plymouth.debug" # I NEED ANSWERS
+          "plymouth.use-simpledrm" # tweak to allow plymouth animations to run smoother
+          "plymouth.ignore-serial-consoles" # unsure ?
         ];
         loader = {
           timeout = 5; # 5 second timeout to default selection
@@ -74,6 +74,49 @@
         enable = true;
       };
 
+      # polkit
+      security.polkit = {
+        enable = true;
+      };
+
+      # password prompts
+      services.gnome-keyring.enable = true;
+
+      # disk management
+      programs.gnome-disks.enable = true;
+
+      environment.systemPackages = with pkgs; [
+
+        # disk management pkgs
+        gparted
+        udiskie
+
+      ];
+
+      home-manager.users.serenity = {
+
+        # disk automount
+        services.udiskie = {
+          enable = true;
+          tray = "always";
+          notify = true;
+          automount = true;
+        };
+
+        home.packages = with pkgs; [
+
+          # more desktop applications
+          gnome-calculator # simple calculator
+          gnome-secrets # password manager
+          file-roller # archive manager
+          obisidian # note taking
+          nautilus # file manager
+          swayimg # image viewer
+          zathura # pdf viewer
+
+        ];
+
+      };
     };
 
 }
