@@ -34,7 +34,7 @@
 
         # enables automatic themeing with catpuccin mocha
         enable = true;
-        #image = "${wallpaper}";
+        image = "${wallpaper}";
         #polarity = "dark";
         base16Scheme = "${pkgs.base16-schemes}/share/themes/catpuccin-mocha.yaml";
 
