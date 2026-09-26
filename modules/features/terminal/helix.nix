@@ -61,16 +61,20 @@
                 formatter.command = lib.getExe pkgs.stylish-haskell;
               }
               {
-                nMW = "rust";
+                name = "rust";
+                auto-format = true;
+                formatter.command = lib.getExe pkgs.rustfmt;
+              }
+              {
+                name = "python";
+                auto-format = true;
+                formatter.command = lib.getExe pkgs.black;
               }
               {
                 name = "markdown";
               }
               {
                 name = "fish";
-              }
-              {
-                name = "python";
               }
             ];
 

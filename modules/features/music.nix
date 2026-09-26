@@ -17,6 +17,11 @@
         # audio effects
         services.easyeffects.enable = true;
 
+        # music daemon
+        programs.mpd = {
+          enable = true;
+        };
+
         # music player
         programs.rmpc = {
           enable = true;
