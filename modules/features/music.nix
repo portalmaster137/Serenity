@@ -17,6 +17,11 @@
         # audio effects
         services.easyeffects.enable = true;
 
+        # music player
+        programs.rmpc = {
+          enable = true;
+        };
+
         home.packages = with pkgs; [
 
           # players
