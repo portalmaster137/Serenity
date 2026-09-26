@@ -95,8 +95,12 @@
 
           # opacity settings
           # 1.0 is opaque, 0.0 is transparent
-          opacity.applications = 0.8;
-
+          opacity = {
+            applications = 0.8;
+            terminal = 0.8;
+            desktop = 1.0;
+            popups = 0.9;
+            
           # application icons to use
           #icons = { };
 
