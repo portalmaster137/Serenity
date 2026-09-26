@@ -56,11 +56,6 @@
             applications = 12;
           };
 
-          opacity = {
-            applications = 0.8;
-            terminal = 0.8;
-            desktop = 1.0;
-            popups = 0.9;
           # emoji font to use
           emoji = {
             package = with pkgs; noto-fonts-color-emoji;
