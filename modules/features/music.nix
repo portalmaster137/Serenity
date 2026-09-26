@@ -20,6 +20,7 @@
         # music daemon
         services.mpd = {
           enable = true;
+          musicDirectory = /run/media/serenity/Orcus/media-share/Music
         };
 
         # music player
