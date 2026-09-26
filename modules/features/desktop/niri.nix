@@ -21,6 +21,11 @@
         xwayland-satellite # niri xwayland support
       ];
 
+      # disk utility
+      programs.gnome-disks = {
+        enable = true;
+      };
+
       # enables niri globally
       programs.niri = {
         enable = true;
