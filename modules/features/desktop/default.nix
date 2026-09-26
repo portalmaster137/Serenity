@@ -90,7 +90,14 @@
 
       ];
 
-      home-manager.users.serenity = {
+      environment.variables = {
+        XDG_SESSION_TYPE = "wayland";
+      };
+
+      home-manager.users.serenity = {i
+
+        # disk management
+        udisks2.enable = true;
 
         # password prompts
         services.gnome-keyring.enable = true;

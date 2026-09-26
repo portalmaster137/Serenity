@@ -65,7 +65,6 @@
                 NIXOS_OZONE_WL = "1";
                 SDL_VIDEODRIVER = "wayland";
                 # xdg variables
-                XDG_SESSION_TYPE = "wayland";
                 XDG_CURRENT_DESKTOP = "niri";
                 # qt variables
                 QT_QPA_PLATFORM = "wayland;xcb";
