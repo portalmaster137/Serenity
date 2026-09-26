@@ -21,6 +21,11 @@
         xwayland-satellite # niri xwayland support
       ];
 
+      # polkit is for gui apps run with permissions i think
+      security.polkit = {
+        enable = true;
+      };
+
       # disk utility
       programs.gnome-disks = {
         enable = true;
