@@ -14,7 +14,7 @@
     let
 
       # set wallpaper here
-      wallpaper = ../../assets/media/wallpapers/purpleWaves.png;
+      wallpaper = ../../assets/media/wallpapers/mimaKirigoe.jpg;
 
     in
 
