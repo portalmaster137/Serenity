@@ -36,7 +36,7 @@
         enable = true;
         image = "${wallpaper}";
         #polarity = "dark";
-        base16Scheme = "${pkgs.base16-schemes}/share/themes/catpuccin-mocha.yaml";
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
         # cursor settings
         cursor = {
