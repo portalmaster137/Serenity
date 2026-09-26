@@ -94,7 +94,7 @@
         XDG_SESSION_TYPE = "wayland";
       };
 
-      home-manager.users.serenity = {i
+      home-manager.users.serenity = {
 
         # disk management
         udisks2.enable = true;
