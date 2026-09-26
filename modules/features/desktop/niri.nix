@@ -33,9 +33,9 @@
       };
 
       # disk utility
-      #programs.gnome-disks = {
-      #enable = true;
-      #};
+      programs.gnome-disks = {
+        enable = true;
+      };
 
       # enables niri globally
       programs.niri = {
