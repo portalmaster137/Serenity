@@ -17,8 +17,14 @@
 
       # packages for desktop environment
       environment.systemPackages = with pkgs; [
-        jq # for parsing JSON
-        xwayland-satellite # niri xwayland support
+
+        # other desktop
+        gparted
+
+        # niri
+        xwayland-satellite # xwayland support
+        jq # for parsing json
+
       ];
 
       # polkit is for gui apps run with permissions i think
@@ -27,9 +33,9 @@
       };
 
       # disk utility
-      programs.gnome-disks = {
-        enable = true;
-      };
+      #programs.gnome-disks = {
+      #enable = true;
+      #};
 
       # enables niri globally
       programs.niri = {
