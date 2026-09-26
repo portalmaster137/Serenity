@@ -18,7 +18,7 @@
         services.easyeffects.enable = true;
 
         # music daemon
-        programs.mpd = {
+        services.mpd = {
           enable = true;
         };
 
