@@ -137,6 +137,10 @@
                     "btop"
                   ];
                 }
+                {
+                  # automanages disks
+                  argv = [ "udiskie" ];
+                }
               ];
 
               # visual settings
