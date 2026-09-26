@@ -15,7 +15,7 @@
         inputs.home-manager.nixosModules.home-manager
 
         # select user theme
-        self.nixosModules.theme-onedarker
+        self.nixosModules.theme-serenity
 
       ];
 
