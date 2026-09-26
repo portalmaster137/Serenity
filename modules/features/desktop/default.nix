@@ -80,6 +80,7 @@
       };
 
       # disk management
+      services.udisks2.enable = true;
       programs.gnome-disks.enable = true;
 
       environment.systemPackages = with pkgs; [
@@ -95,9 +96,6 @@
       };
 
       home-manager.users.serenity = {
-
-        # disk management
-        udisks2.enable = true;
 
         # password prompts
         services.gnome-keyring.enable = true;
