@@ -40,7 +40,7 @@
         # cursor settings
         cursor = {
           package = with pkgs; bibata-cursors;
-          name = "Bibata-Modern";
+          name = "Bibata-Modern-Classic";
           size = 25;
         };
 
