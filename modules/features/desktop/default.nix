@@ -79,9 +79,6 @@
         enable = true;
       };
 
-      # password prompts
-      services.gnome-keyring.enable = true;
-
       # disk management
       programs.gnome-disks.enable = true;
 
@@ -94,6 +91,9 @@
       ];
 
       home-manager.users.serenity = {
+
+        # password prompts
+        services.gnome-keyring.enable = true;
 
         # disk automount
         services.udiskie = {
