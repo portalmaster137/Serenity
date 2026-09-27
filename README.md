@@ -53,7 +53,6 @@ _Declarative NixOS configuration with Flakes & Home Manager_ <br>
 
 ## 📋 To-Do List
 
- - [Enable multi-host functionality](https://codeberg.org/serenity-F/SerenityOS/milestone/145563)
  - [Enable multi-user functionality](https://codeberg.org/serenity-F/SerenityOS/milestone/145563)
  - [Provide a wiki for this config](https://codeberg.org/serenity-F/SerenityOS/milestone/145569)
  - [Provide an installer ISO or script](https://codeberg.org/serenity-F/SerenityOS/milestone/145563)
