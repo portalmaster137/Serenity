@@ -36,23 +36,27 @@
       };
 
       # nixos user declaration
-      users.users.${username} = {
+      users.users.${username} =
 
-        # remember to change this
-        initialPassword = "password";
+        { config, ... }:
 
-        # permissions management
-        isNormalUser = true;
-        extraGroups = [
-          "wheel"
-          "networkmanager"
-        ];
+        {
 
-        # dont hardcode this ?
-        # catgirl shell
-        shell = pkgs.fish;
+          # remember to change this
+          initialPassword = "password";
 
-      };
+          # permissions management
+          isNormalUser = true;
+          extraGroups = [
+            "wheel"
+            "networkmanager"
+          ];
+
+          # dont hardcode this ?
+          # catgirl shell
+          shell = pkgs.fish;
+
+        };
 
       # needed or nix yells at me
       programs.fish.enable = true;
