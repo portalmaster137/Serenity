@@ -28,7 +28,7 @@
     {
 
       # list of per user options available
-      options.userOptions = {
+      options.user-options = {
 
         # currently unused
         colorScheme = lib.mkOption {
