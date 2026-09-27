@@ -48,6 +48,9 @@
               # automatically track remote branch
               push.autoSetupRemote = true;
 
+              # use helix as editor?
+              core.editor = "hx";
+
             };
           };
 
