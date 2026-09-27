@@ -16,13 +16,13 @@
 #     dots = "/home/myuser/.dotfiles";
 #   };
 #
-# These options are then accessible throughout all modules via `config.userOptions.*`
+# These options are then accessible throughout all modules via `config.user-options.*`
 { ... }:
 
 {
 
   # user options module declaration
-  flake.nixosModules.user-options =
+  flake.nixosModules.user-parts =
     { lib, ... }:
 
     {
