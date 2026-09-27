@@ -24,7 +24,7 @@
         #self.nixosModules.user-options
 
         # select user theme
-        self.nixosModules.theme-autogen
+        self.nixosModules.theme-atelier-plateau
 
       ];
 
