@@ -58,18 +58,24 @@
       programs.fish.enable = true;
 
       # home manager settings
-      home-manager = {
-        verbose = true;
-        overwriteBackup = true;
-        backupFileExtension = ".bak";
-        useUserPackages = true;
+      home-manager =
 
-        # home manager user declaration
-        users.${username} = {
-          home.stateVersion = "24.11";
-          nixpkgs.config.allowUnfree = true;
+        { config, ... }:
+
+        {
+
+          verbose = true;
+          overwriteBackup = true;
+          backupFileExtension = ".bak";
+          useUserPackages = true;
+
+          # home manager user declaration
+          users.${username} = {
+            home.stateVersion = "24.11";
+            nixpkgs.config.allowUnfree = true;
+          };
+
         };
-      };
 
     };
 
