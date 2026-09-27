@@ -36,7 +36,9 @@
 
         { config, ... }:
 
+        # let binding magic lets me get nice column widths
         let
+
           widthDivisions = [
             1.0
             2.0
