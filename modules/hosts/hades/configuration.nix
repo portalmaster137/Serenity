@@ -3,7 +3,7 @@
 {
 
   # host module declaration
-  flake.nixosModules.hades =
+  flake.nixosModules.hades-configuration =
 
     { pkgs, lib, ... }:
 
