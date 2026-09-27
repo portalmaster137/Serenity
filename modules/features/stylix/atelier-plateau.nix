@@ -36,7 +36,7 @@
         enable = true;
         image = "${wallpaper}";
         #polarity = "dark";
-        base16Scheme = "${pkgs.base15-schemes}/share/themes/atelier-plateau.yaml";
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-plateau.yaml";
 
         # cursor settings
         cursor = {
