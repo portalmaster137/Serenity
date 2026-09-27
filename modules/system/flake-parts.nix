@@ -3,7 +3,7 @@
 {
 
   # needed for home manager functionality
-  imports = [ inputs.home-manager.flakeModules.home-manager ];
+  #imports = [ inputs.home-manager.flakeModules.home-manager ];
 
   # misc flake-parts configuration
   config = {
