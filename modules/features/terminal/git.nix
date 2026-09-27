@@ -20,6 +20,9 @@
 
         programs = {
 
+          # visual git
+          gitui.enable = true;
+
           git = {
 
             # enables git
