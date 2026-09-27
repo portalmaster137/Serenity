@@ -3,9 +3,9 @@
 let
 
   # configure user here
-  ${user} = serenity;
-  ${avatar} = ../../assets/media/avatar.png;
-  ${wallpaper} = ../../assets/media/wallpapers/mimaKirigoe.jpg;
+  ${user} = "serenity";
+  ${avatar} = "../../assets/media/avatar.png";
+  ${wallpaper} = "../../assets/media/wallpapers/mimaKirigoe.jpg";
 
 in
 
