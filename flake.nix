@@ -61,13 +61,9 @@
     # niri window manager - https://github.com/YaLTeR/niri
     # niri flake docs - https://github.com/sodiboo/niri-flake/
     niri = {
-      # using alternate flake repo while sodiboo gets their shit together
+      # using alternate flake repo while sodiboo is away
       url = "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
-      #inputs.niri-unstable.follows = "";
-      #inputs.niri-stable.follows = "";
-      #inputs.xwayland-satellite-unstable.follows = "";
-      #inputs.xwayland-satellite-stable.follows = "";
     };
 
     # hassle free desktop shell - https://docs.noctalia.dev/getting-started/nixos/
