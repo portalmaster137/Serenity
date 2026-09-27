@@ -1,20 +1,17 @@
 { self, inputs, ... }:
 
-let
-
-  # configure user here
-  user = "serenity";
-  avatar = "../../assets/media/avatar.png";
-  wallpaper = "../../assets/media/wallpapers/mimaKirigoe.jpg";
-
-in
-
 {
 
   # user module declaration
-  flake.nixosModules.${user} =
+  flake.nixosModules.serenity =
 
     { pkgs, config, ... }:
+
+    let
+
+      username = config.user-options.username;
+
+    in
 
     {
 
@@ -23,13 +20,23 @@ in
         # necessary for home manager function
         inputs.home-manager.nixosModules.home-manager
 
+        # necessary for multi-user functionality
+        #self.nixosModules.user-options
+
         # select user theme
         self.nixosModules.theme-autogen
 
       ];
 
+      # configure user here
+      config.user-options = {
+        username = "serenity";
+        dots = "/home/serenity/SerenityOS";
+        # see `modules/features/stylix.nix` for theme declared above
+      };
+
       # nixos user declaration
-      users.users.${user} = {
+      users.users.${username} = {
 
         # remember to change this
         initialPassword = "password";
@@ -58,7 +65,7 @@ in
         useUserPackages = true;
 
         # home manager user declaration
-        users.${user} = {
+        users.${username} = {
           home.stateVersion = "24.11";
           nixpkgs.config.allowUnfree = true;
         };

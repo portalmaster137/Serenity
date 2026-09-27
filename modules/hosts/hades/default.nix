@@ -29,6 +29,7 @@
       #virtualisation
 
       # users to include on host
+      user-options
       serenity
 
     ];
