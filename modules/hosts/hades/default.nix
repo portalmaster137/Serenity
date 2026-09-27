@@ -12,8 +12,8 @@
       core
 
       # host-specific options
-      hades
-      hadesHardware
+      hades-configuration
+      hades-hardware
 
       # extra modules to include on host
       # in order of priority
