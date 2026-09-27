@@ -45,6 +45,13 @@
           size = 25;
         };
 
+        icons = {
+          enable = true;
+          package = with pkgs; material-icons;
+          dark = "material-dark";
+          light = config.stylix.icons.dark;
+        };
+
         # font settings
         fonts = {
 
