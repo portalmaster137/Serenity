@@ -36,6 +36,46 @@
 
         { config, ... }:
 
+        let
+          widthDivisions = [
+            1.0
+            2.0
+            3.0
+            4.0
+          ];
+          heightDivisions = [
+            1.0
+            2.0
+            3.0
+            4.0
+          ];
+
+          # black magic, expected output:
+          # [ { proportion = 1.0 / 1.0 }
+          # { proportion = 1.0 / 2.0 }
+          # ...
+          # { proportion = 2.0 / 1.0 }
+          # { proportion = 2.0 / 3.0 }
+          #	...
+          # { proportion = 4.0 / 4.0 } ]
+          getProportions =
+            divisions:
+            lib.lists.unique (
+              lib.lists.flatten (
+                # TODO: make this a callable function
+                map (x: map (y: { proportion = x / y; }) divisions) divisions
+              )
+            );
+
+          # then get all the unique outputs (removing double ups of 0.5 or others)
+          columnWidths = getProportions widthDivisions;
+          columnWidthsFiltered = builtins.filter (x: builtins.lessThan x.proportion 1.0) columnWidths; # just get the values that are below 1
+
+          windowHeights = getProportions heightDivisions;
+          windowHeightsFiltered = builtins.filter (x: builtins.lessThan x.proportion 1.0) windowHeights;
+
+        in
+
         {
 
           # for niri home manager module
@@ -157,6 +197,19 @@
                 slowdown = 1.25;
               };
               layout = {
+
+                # spawns windows at a specified size
+                preset-column-widths =
+                  builtins.sort
+                    # sort list for predictable behaviour
+                    (a: b: builtins.lessThan a.proportion b.proportion)
+                    columnWidthsFiltered;
+                default-column-width.proportion = 1.0 / 3.0;
+
+                preset-window-heights = builtins.sort (
+                  a: b: builtins.lessThan a.proportion b.proportion
+                ) windowHeightsFiltered;
+
                 # remove backdrop colour
                 background-color = "transparent";
                 center-focused-column = "never";
@@ -334,10 +387,6 @@
                 "Mod+Shift+WheelScrollUp".cooldown-ms = 100;
 
                 # size controls
-                #"Mod+1".action = set-column-width "25%";
-                #"Mod+2".action = set-column-width "50%";
-                #"Mod+3".action = set-column-width "75%";
-                #"Mod+4".action = set-column-width "100%";
                 "Mod+Minus".action = switch-preset-column-width-back;
                 "Mod+Equal".action = switch-preset-column-width;
                 "Mod+Shift+Minus".action = switch-preset-window-height-back;
