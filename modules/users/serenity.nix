@@ -62,6 +62,11 @@
 
         { config, ... }:
 
+        let
+
+          username = config.user-options.username;
+        in
+
         {
 
           verbose = true;
