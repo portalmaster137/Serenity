@@ -21,7 +21,7 @@
         inputs.home-manager.nixosModules.home-manager
 
         # necessary for multi-user functionality
-        #self.nixosModules.user-options
+        self.nixosModules.user-options
 
         # select user theme
         self.nixosModules.theme-autogen
@@ -36,55 +36,42 @@
       };
 
       # nixos user declaration
-      users.users.${username} =
+      users.users.${username} = {
 
-        { config, ... }:
+        # remember to change this
+        initialPassword = "password";
 
-        {
+        # permissions management
+        isNormalUser = true;
+        extraGroups = [
+          "wheel"
+          "networkmanager"
+        ];
 
-          # remember to change this
-          initialPassword = "password";
+        # dont hardcode this ?
+        # catgirl shell
+        shell = pkgs.fish;
 
-          # permissions management
-          isNormalUser = true;
-          extraGroups = [
-            "wheel"
-            "networkmanager"
-          ];
-
-          # dont hardcode this ?
-          # catgirl shell
-          shell = pkgs.fish;
-
-        };
+      };
 
       # needed or nix yells at me
       programs.fish.enable = true;
 
       # home manager settings
-      home-manager =
+      home-manager = {
 
-        { config, ... }:
+        verbose = true;
+        overwriteBackup = true;
+        backupFileExtension = ".bak";
+        useUserPackages = true;
 
-        let
-
-          username = config.user-options.username;
-        in
-
-        {
-
-          verbose = true;
-          overwriteBackup = true;
-          backupFileExtension = ".bak";
-          useUserPackages = true;
-
-          # home manager user declaration
-          users.${username} = {
-            home.stateVersion = "24.11";
-            nixpkgs.config.allowUnfree = true;
-          };
-
+        # home manager user declaration
+        users.${username} = {
+          home.stateVersion = "24.11";
+          nixpkgs.config.allowUnfree = true;
         };
+
+      };
 
     };
 
