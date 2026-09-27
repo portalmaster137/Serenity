@@ -1,9 +1,18 @@
 { self, inputs, ... }:
 
+let
+
+  # configure user here
+  ${user} = serenity;
+  ${avatar} = ../../assets/media/avatar.png;
+  ${wallpaper} = ../../assets/media/wallpapers/mimaKirigoe.jpg;
+
+in
+
 {
 
   # user module declaration
-  flake.nixosModules.serenity =
+  flake.nixosModules.${user} =
 
     { pkgs, config, ... }:
 
@@ -15,15 +24,12 @@
         inputs.home-manager.nixosModules.home-manager
 
         # select user theme
-        self.nixosModules.theme-serenity
+        self.nixosModules.theme-autogen
 
       ];
 
-      # needed or nix yells at me
-      programs.fish.enable = true;
-
       # nixos user declaration
-      users.users.serenity = {
+      users.users.${user} = {
 
         # remember to change this
         initialPassword = "password";
@@ -41,8 +47,8 @@
 
       };
 
-      # not entirely sure this is necessary tbh
-      environment.systemPackages = with pkgs; [ home-manager ];
+      # needed or nix yells at me
+      programs.fish.enable = true;
 
       # home manager settings
       home-manager = {
@@ -52,12 +58,9 @@
         useUserPackages = true;
 
         # home manager user declaration
-        users.serenity = {
+        users.${user} = {
           home.stateVersion = "24.11";
           nixpkgs.config.allowUnfree = true;
-
-          # user specific modules to include
-          #imports = [ ];
         };
       };
 
