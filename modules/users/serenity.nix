@@ -67,13 +67,8 @@
 
         # home manager user declaration
         users.${username} = {
-
-          # for user options module function ?
-          imports = [ self.nixosModules.user-options ];
-
           home.stateVersion = "24.11";
           nixpkgs.config.allowUnfree = true;
-
         };
 
       };
