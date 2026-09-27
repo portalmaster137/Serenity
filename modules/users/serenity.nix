@@ -9,7 +9,7 @@
 
     let
 
-      username = config.user-options.username;
+      username = "serenity";
 
     in
 
@@ -21,7 +21,7 @@
         inputs.home-manager.nixosModules.home-manager
 
         # necessary for multi-user functionality
-        self.nixosModules.user-options
+        #self.nixosModules.user-options
 
         # select user theme
         self.nixosModules.theme-autogen
@@ -29,11 +29,11 @@
       ];
 
       # configure user here
-      config.user-options = {
-        username = "serenity";
-        dots = "/home/serenity/SerenityOS";
-        # see `modules/features/stylix.nix` for theme declared above
-      };
+      #config.user-options = {
+      #username = "serenity";
+      #dots = "/home/serenity/SerenityOS";
+      # see `modules/features/stylix.nix` for theme declared above
+      #};
 
       # nixos user declaration
       users.users.${username} = {
