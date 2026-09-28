@@ -2,14 +2,24 @@
 
 {
 
+  # user parts module declaration
+  # use `${user-parts.<set>.variable};`
+  # in place of regular declarations.
+  # eg.
+  #
+  # home-manager.${user-parts.user.username} = {
+  #
+  #   # # copies wallpapers from flake into ~/
+  #   # home.file."Wallpapers" = {
+  #     # source = ../../assets/media/wallpapers;
+  #     # target = ${user-parts.home-directory}/Pictures/Wallpapers;
+  #   # };
+  #
+  # };
+  #
   flake.nixosModules.variables =
 
-    {
-      config,
-      lib,
-      pkgs,
-      ...
-    }:
+    { config, lib, ... }:
 
     {
       options.nixos.variables = {
