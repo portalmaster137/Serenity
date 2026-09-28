@@ -39,12 +39,14 @@
       networking.hostName = "serenityos";
 
       # bootloader settings
-      boot.loader = {
-        systemd-boot.enable = true;
-        efi.canTouchEfiVariables = true;
-        timeout = lib.mkDefault 5;
+      boot = {
+        loader = {
+          systemd-boot.enable = true;
+          efi.canTouchEfiVariables = true;
+          timeout = lib.mkDefault 5;
+        };
+        initrd.systemd.enable = true;
       };
-      boot.initrd.systemd.enable = true;
 
       # supported filesystems at boot
       boot.supportedFilesystems = [
@@ -54,7 +56,5 @@
       ];
 
     };
-
-  };
 
 }
