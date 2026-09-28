@@ -71,7 +71,7 @@
               monthBeforeDay = false;
             };
 
-            # launcher - using wofi, try disable this?
+            # launcher
             appLauncher = {
               terminalCommand = "kitty -e";
               showCategories = false;
@@ -97,13 +97,7 @@
               showCapsule = false;
               widgets = {
 
-                left = [
-                  {
-                    icon = "rocket";
-                    id = "CustomButton";
-                    leftClickExec = "wofi";
-                  }
-                ];
+                left = [ ];
 
                 center = [
                   {
