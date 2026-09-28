@@ -12,7 +12,7 @@
       core
 
       # host-specific options
-      install-configuration
+      installer-configuration
 
       # extra modules to include on host
       terminal
