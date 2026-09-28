@@ -3,7 +3,7 @@
 {
 
   # host module declaration
-  flake.nixosModules.test-configuration =
+  flake.nixosModules.installer-configuration =
 
     {
       pkgs,
@@ -17,7 +17,7 @@
       imports = [ ];
 
       # set hostname
-      networking.hostName = "test";
+      networking.hostName = "serenityos";
 
       # bootloader settings
       boot.loader = {
@@ -29,27 +29,12 @@
       boot.supportedFilesystems = [
         "vfat"
         "ext4"
-        #"ntfs"
+        "ntfs"
       ];
 
-      # enable printing support
-      services.printing.enable = true;
-
-      # fstrim for ssd
-      services.fstrim.enable = true;
-
-      # corsair mouse software
-      hardware.ckb-next.enable = true;
-
-      # other packages for hades peripherals
-      environment.systemPackages = with pkgs; [
-
-        #input-remapper
-        #razergenie
-        #openrazer-daemon
-        #openrgb-with-all-plugins
-
-      ];
+      # specifies x64 uArch
+      nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
     };
+
 }
