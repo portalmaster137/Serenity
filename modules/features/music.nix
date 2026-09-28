@@ -63,17 +63,17 @@
       ];
 
       # kernel tweaks
-      boot = {
-        kernelModules = [
-          "snd-seq"
-          "snd-rawmidi"
-        ];
-        kernelParams = [
-          "threadirqs"
-          "preempt=full"
-          "usbcore.autosuspend=-1"
-        ];
-      };
+      # boot = {
+      #   kernelModules = [
+      #     "snd-seq"
+      #     "snd-rawmidi"
+      #   ];
+      #   kernelParams = [
+      #     "threadirqs"
+      #     "preempt=full"
+      #     "usbcore.autosuspend=-1"
+      #   ];
+      # };
 
       # needed for realtime audio
       security.rtkit.enable = true;
@@ -87,40 +87,40 @@
       };
 
       # needed for security
-      services.udev = {
-        extraRules = ''
-          KERNEL=="rtc0", GROUP="audio"
-          KERNEL=="hpet", GROUP="audio"
-        '';
-      };
+      # services.udev = {
+      #   extraRules = ''
+      #     KERNEL=="rtc0", GROUP="audio"
+      #     KERNEL=="hpet", GROUP="audio"
+      #   '';
+      # };
 
       # realtime audio priority (initially for JACK2)
-      security.pam.loginLimits = [
-        {
-          domain = "@audio";
-          item = "memlock";
-          type = "-";
-          value = "unlimited";
-        }
-        {
-          domain = "@audio";
-          item = "rtprio";
-          type = "-";
-          value = "99";
-        }
-        {
-          domain = "@audio";
-          item = "nofile";
-          type = "soft";
-          value = "99999";
-        }
-        {
-          domain = "@audio";
-          item = "nofile";
-          type = "hard";
-          value = "99999";
-        }
-      ];
+      # security.pam.loginLimits = [
+      #   {
+      #     domain = "@audio";
+      #     item = "memlock";
+      #     type = "-";
+      #     value = "unlimited";
+      #   }
+      #   {
+      #     domain = "@audio";
+      #     item = "rtprio";
+      #     type = "-";
+      #     value = "99";
+      #   }
+      #   {
+      #     domain = "@audio";
+      #     item = "nofile";
+      #     type = "soft";
+      #     value = "99999";
+      #   }
+      #   {
+      #     domain = "@audio";
+      #     item = "nofile";
+      #     type = "hard";
+      #     value = "99999";
+      #   }
+      # ];
 
       # user level options
       home-manager.users.serenity = {
@@ -142,22 +142,22 @@
         ];
 
         # Use environment variables for reliable access to vsts
-        variables =
-          let
-            makePluginPath =
-              format:
-              (pkgs.lib.makeSearchPath format [
-                "$HOME/.nix-profile/lib"
-                "/run/current-system/sw/lib"
-                "/etc/profiles/per-user/$USER/lib"
-              ])
-              + ":$HOME/.${format}";
-          in
-          {
-            LV2_PATH = makePluginPath "lv2";
-            VST3_PATH = makePluginPath "vst3";
-            CLAP_PATH = makePluginPath "clap";
-          };
+        # variables =
+        #   let
+        #     makePluginPath =
+        #       format:
+        #       (pkgs.lib.makeSearchPath format [
+        #         "$HOME/.nix-profile/lib"
+        #         "/run/current-system/sw/lib"
+        #         "/etc/profiles/per-user/$USER/lib"
+        #       ])
+        #       + ":$HOME/.${format}";
+        #   in
+        #   {
+        #     LV2_PATH = makePluginPath "lv2";
+        #     VST3_PATH = makePluginPath "vst3";
+        #     CLAP_PATH = makePluginPath "clap";
+        #   };
       };
 
       # pipewire baybee
