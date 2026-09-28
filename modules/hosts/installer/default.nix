@@ -5,7 +5,7 @@
   # defines the installer specific configuration
   flake.nixosConfigurations.installer = inputs.nixpkgs.lib.nixosSystem {
 
-    # modules that comprise the host specific configuration
+    # modules that comprise the installer specific configuration
     modules = with self.nixosModules; [
 
       # shared system modules
