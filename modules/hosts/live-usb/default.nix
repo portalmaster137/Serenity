@@ -13,7 +13,8 @@
       #user-options
 
       # host-specific options
-      installer-configuration
+      usb-configuration
+      installer
 
       # extra modules to include on host
       terminal
