@@ -36,7 +36,7 @@
                 name = "serenity-F";
                 email = "serenity-F@noreply.codeberg.org";
 
-                #path to signing key
+                # path to signing key
                 signingKey = "/home/serenity/.ssh/id_ed25519.pub";
 
               };
