@@ -68,11 +68,6 @@
         };
       };
 
-      # flatpak support
-      services.flatpak = {
-        enable = true;
-      };
-
       # installs a stub elf loader to print an error
       # message in the event that a user attempts
       # to run an elf binary not compiled for nixos.
