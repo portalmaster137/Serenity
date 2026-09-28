@@ -25,7 +25,7 @@
             url = "https://codeberg.org/serenity-F/SerenityOS.git";
             # sha256 = sha;
           };
-          target = /home/serenity/flake-repo;
+          target = "/home/serenity/flake-repo";
           recursive = true;
         };
 
