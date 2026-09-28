@@ -79,7 +79,13 @@
   # virtual reality module declaration
   # README - https://wiki.nixos.org/wiki/VR
   flake.nixosModules.virtual-reality =
-    { pkgs, user, ... }:
+
+    {
+      pkgs,
+      user,
+      lib,
+      ...
+    }:
 
     {
 
@@ -87,23 +93,23 @@
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # physical input
-      users.users = {
-        serenity.extraGroups = [ "input" ];
-      };
+      users.users.serenity.extraGroups = [ "input" ];
 
       # hand tracking
-      home-manager.users = {
-        serenity = {
-          # avoids downloading large files directly
-          programs.git.lfs.enable = true;
-          # copies lfs pointers for tracking models into config dir
-          # disabled for now
-          #home.file = ".local/share/monado/hand-tracking-models".source = pkgs.fetchgit {
-          #url = "https://gitlab.freedesktop.org/monado/utilities/hand-tracking-models";
-          #sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-          #fetchLFS = true;
-          #};
-        };
+      home-manager.users.serenity = {
+        # avoids downloading large files directly
+        programs.git.lfs.enable = true;
+        # copies lfs pointers for tracking models into config dir
+        # disabled for now
+        # home.file."/home/serenity/.local/share/monado/hand-tracking-models" = {
+        #   target = "/home/serenity/.local/share/monado/hand-tracking-models";
+        #   source = builtIns.fetchGit = {
+        #     url = "https://gitlab.freedesktop.org/monado/utilities/hand-tracking-models.git";
+        #     sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+        #     fetchLFS = true;
+        #   };
+        #   recursive = true;
+        # };
       };
 
       # extra packages for vr
