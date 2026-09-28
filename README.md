@@ -14,14 +14,6 @@ _Declarative NixOS configuration with Flakes & Home Manager_ <br>
 
 ![screenshot](https://codeberg.org/serenity-F/SerenityOS/raw/branch/main/assets/repository/desktop-screenshot.png)
 
-## ✨ Key Features
-
-- 🎨 **Unified Theming** with Stylix
-- 🪟 **Niri** with **ReGreet** session management
-- 🏠 **Home Manager** for declarative user environments
-- 📦 **Modular Architecture** for easy customization
-- 💬 **Fully commented** for understanding by 3rd parties
-
 ## 💻 System Information
 
 ### Software In Use
