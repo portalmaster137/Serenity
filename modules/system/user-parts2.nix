@@ -20,11 +20,6 @@
                 type = lib.types.str;
                 default = "user";
               };
-              default-shell = lib.mkOption {
-                type = lib.types.package;
-                default = pkgs.nushell;
-                defaultText = lib.literalExpression "pkgs.nushell";
-              };
             };
           };
           default = { };
