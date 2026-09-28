@@ -10,11 +10,9 @@
 
       # shared system modules
       core
-      #user-options
 
       # host-specific options
       usb-configuration
-      installer
 
       # extra modules to include on host
       terminal
@@ -48,10 +46,8 @@
         initrd.systemd.enable = true;
       };
 
-      # supported filesystems at boot
+      # extra supported filesystems at boot
       boot.supportedFilesystems = [
-        "vfat"
-        "ext4"
         "ntfs"
       ];
 

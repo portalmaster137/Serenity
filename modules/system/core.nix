@@ -58,6 +58,12 @@
       # compresses half the ram for use as swap
       zramSwap.enable = true;
 
+      # supported filesystems at boot
+      boot.supportedFilesystems = [
+        "vfat"
+        "ext4"
+      ];
+
       # configures disk automount service
       home-manager.users.serenity = {
         services.udiskie = {

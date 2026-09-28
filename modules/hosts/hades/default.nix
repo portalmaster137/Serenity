@@ -13,7 +13,6 @@
 
           # shared system modules
           core
-          #user-options
 
           # host-specific modules
           hades-configuration
@@ -62,12 +61,6 @@
         initrd.systemd.enable = true;
       };
 
-      # supported filesystems at boot
-      boot.supportedFilesystems = [
-        "vfat"
-        "ext4"
-      ];
-
       # enable printing support
       services.printing.enable = true;
 
@@ -77,7 +70,7 @@
       # corsair mouse software
       hardware.ckb-next.enable = true;
 
-      # other packages for hades peripherals
+      # other packages for hades hardware and peripherals
       environment.systemPackages = with pkgs; [
 
         # hades performance and hardware
