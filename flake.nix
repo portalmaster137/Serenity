@@ -53,6 +53,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # repo-clone = {
+    #   url = "https://git.zynh.me/Zynh0722/repo-clone";
+    # };
+
     # easy theming - https://github.com/nix-community/stylix
     stylix = {
       url = "github:danth/stylix";
