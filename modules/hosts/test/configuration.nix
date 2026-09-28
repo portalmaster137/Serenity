@@ -8,14 +8,13 @@
     {
       pkgs,
       lib,
-      modulesPath,
       ...
     }:
 
     {
 
       # other modules to import
-      imports = [ "${modulesPath}/installer/cd-dvd/installation-cd-minimal" ];
+      imports = [ ];
 
       # set hostname
       networking.hostName = "test";
