@@ -55,7 +55,7 @@
 
     {
 
-      zfs = {
+      boot.zfs = {
         extraPools = [ "orcus" ];
         forceImportRoot = false;
       };
