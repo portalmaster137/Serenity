@@ -48,16 +48,23 @@
   # music production module declaration
   flake.nixosModules.music-production =
 
-    { pkgs, musnix, ... }:
+    { pkgs, ... }:
 
     {
 
-      # for home manager functionality
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
+      imports = [
+
+        # for home manager functionality
+        inputs.home-manager.nixosModules.home-manager
+
+        # for realtime audio production and enhancements
+        inputs.musnix.nixosModules.musnix
+
+      ];
 
       boot = { };
 
-      #musnix.enable = true;
+      musnix.enable = true;
 
       users.users.serenity.extraGroups = [ "audio" ];
       home-manager.users.serenity = {
