@@ -5,7 +5,7 @@
   # desktop supermodule declaration
   flake.nixosModules.desktop =
 
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
 
     {
 
@@ -55,7 +55,7 @@
           "plymouth.ignore-serial-consoles" # unsure ?
         ];
         loader = {
-          timeout = 5; # 5 second timeout to default selection
+          timeout = lib.mkDefault 5; # 5 second timeout to default selection
         };
         plymouth = {
           # enables plymouth boot animations
