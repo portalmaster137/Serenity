@@ -19,8 +19,6 @@
           hades-hardware
           zfs-hades
 
-          installer
-
           # feature modules
           virtualisation
           network-proxy
