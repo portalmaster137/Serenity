@@ -18,9 +18,7 @@
       # extra modules to include on host
       terminal
       zfs-support
-      virtual-reality
       network-proxy
-      virtualisation
 
       # users to include on host
       serenity
