@@ -18,18 +18,18 @@
         calamares-nixos-extensions
       ];
 
-      home-manager.users.serenity = {
+      # home-manager.users.serenity = {
 
-        home.file."flake-repo" = {
-          source = fetchGit {
-            url = "https://codeberg.org/serenity-F/SerenityOS.git";
-            # sha256 = sha;
-          };
-          target = "/home/serenity/flake-repo";
-          recursive = true;
-        };
+      #   home.file."flake-repo" = {
+      #     source = fetchGit {
+      #       url = "https://codeberg.org/serenity-F/SerenityOS.git";
+      #       # sha256 = sha;
+      #     };
+      #     target = "/home/serenity/flake-repo";
+      #     recursive = true;
+      #   };
 
-      };
+      # };
 
     };
 
