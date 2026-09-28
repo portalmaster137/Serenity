@@ -339,7 +339,7 @@
                 "Mod+O".action = toggle-overview;
                 "Mod+O".repeat = false;
                 #"Mod+Tab".action = spawn "${pkgs.wofi}/bin/wofi";
-                "Mod+Tab".repeat = false; # launcher
+                #"Mod+Tab".repeat = false; # launcher
                 "Mod+Return".action = spawn "${pkgs.kitty}/bin/kitty";
                 "Mod+Return".repeat = false; # terminal
 
