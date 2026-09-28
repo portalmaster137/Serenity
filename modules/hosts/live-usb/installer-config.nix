@@ -10,7 +10,7 @@
 
       environment.systemPackages = with pkgs; [
         #calamares
-        #calamares-nixos
+        calamares-nixos
         calamares-nixos-extensions
       ];
     };
