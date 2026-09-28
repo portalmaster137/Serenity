@@ -134,6 +134,7 @@
 
           # daws
           bespokesynth # modular synth emulator
+          vcv-rack # modular synth emulator
 
           # vsts
 
