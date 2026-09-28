@@ -5,12 +5,17 @@
   # host module declaration
   flake.nixosModules.test-configuration =
 
-    { pkgs, lib, ... }:
+    {
+      pkgs,
+      lib,
+      modulesPath,
+      ...
+    }:
 
     {
 
       # other modules to import
-      imports = [ ];
+      imports = [ "${modulesPath}/installer/cd-dvd/installation-cd-minimal" ];
 
       # set hostname
       networking.hostName = "test";
