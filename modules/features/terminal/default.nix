@@ -15,9 +15,6 @@
         # home manager
         inputs.home-manager.nixosModules.home-manager
 
-        # terminal emulator
-        self.nixosModules.kitty
-
         # text editor
         self.nixosModules.helix
 
@@ -36,6 +33,19 @@
         # version control
         self.nixosModules.git
 
+      ];
+
+    };
+
+  # to make kitty an optional include
+  flake.nixosModules.terminal-emulator =
+
+    { pkgs, ... }:
+
+    {
+
+      imports = [
+        self.nixosModules.kitty
       ];
 
     };

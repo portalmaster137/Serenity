@@ -25,12 +25,13 @@
           network-proxy
           zfs-support
           terminal
+          terminal-emulator
           desktop
           music
+          music-production
           gaming
           multimedia
           virtual-reality
-          music-production
 
           # user modules
           serenity
