@@ -78,10 +78,17 @@
       # other packages for hades peripherals
       environment.systemPackages = with pkgs; [
 
-        #input-remapper
-        #razergenie
-        #openrazer-daemon
-        #openrgb-with-all-plugins
+        # hades performance and hardware
+        s-tui # stress testing
+        undervolt # cpu tweaking
+
+        # hades peripherals
+        #input-remapper # razer keypad
+        #razergenie # razer keypad
+        #openrazer-daemon # razer keypad
+        #openrgb-with-all-plugins # for various rgb devices
+        android-cli # adb for vr headset
+        android-tools # adb for vr headset
 
       ];
 
