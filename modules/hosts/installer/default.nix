@@ -2,7 +2,7 @@
 
 {
 
-  # defines the hades specific configuration
+  # defines the installer specific configuration
   flake.nixosConfigurations.installer = inputs.nixpkgs.lib.nixosSystem {
 
     # modules that comprise the host specific configuration
