@@ -49,23 +49,23 @@
 
     {
 
-      # other modules to import
-      imports = [ ];
-
       # set hostname
       networking.hostName = "hades";
 
       # bootloader settings
-      boot.loader = {
-        systemd-boot.enable = true;
-        efi.canTouchEfiVariables = true;
+      boot = {
+        loader = {
+          systemd-boot.enable = true;
+          efi.canTouchEfiVariables = true;
+          timeout = lib.mkDefault 5;
+        };
+        initrd.systemd.enable = true;
       };
 
       # supported filesystems at boot
       boot.supportedFilesystems = [
         "vfat"
         "ext4"
-        #"ntfs"
       ];
 
       # enable printing support

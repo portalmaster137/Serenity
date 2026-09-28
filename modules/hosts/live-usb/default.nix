@@ -31,16 +31,9 @@
   # host module declaration
   flake.nixosModules.usb-configuration =
 
-    {
-      pkgs,
-      lib,
-      ...
-    }:
+    { pkgs, lib, ... }:
 
     {
-
-      # other modules to import
-      imports = [ ];
 
       # set hostname
       networking.hostName = "serenityos";
@@ -49,7 +42,9 @@
       boot.loader = {
         systemd-boot.enable = true;
         efi.canTouchEfiVariables = true;
+        timeout = lib.mkDefault 5;
       };
+      boot.initrd.systemd.enable = true;
 
       # supported filesystems at boot
       boot.supportedFilesystems = [
@@ -58,9 +53,8 @@
         "ntfs"
       ];
 
-      # specifies x64 uArch
-      nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-
     };
+
+  };
 
 }
