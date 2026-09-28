@@ -3,17 +3,20 @@
   description = "SerenityOS";
 
   # my 1 trillionth rewrite of my flake, hopefully more robust and easier to modify in future now
-  # rewriting using the 'dendritic' pattern using flake-parts and such, based on examples provided by:
-  #
-  # vimjoyer
-  # https://www.vimjoyer.com/nix/dendritic-home-manager
-  #
-  # v3rm1n
-  # https://codeberg.org/v3rm1n/dotfiles
-  #
-  # quantenzitrone
-  # https://codeberg.org/quantenzitrone/nixos-config
+  # rewriting using the 'dendritic' pattern using flake-parts and such.
 
+  # flake entry point
+  outputs =
+    inputs:
+    inputs.flake-parts.lib.mkFlake
+
+      # pass inputs to modules
+      { inherit inputs; }
+
+      # where to find modules?
+      (inputs.import-tree ./modules);
+
+  # flake inputs
   inputs = {
 
     # nix hardware - https://github.com/NixOS/nixos-hardware
@@ -29,9 +32,6 @@
     # dendritic stuff - https://github.com/mightyiam/dendritic
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
-    };
-    flake-utils = {
-      url = "github:numtide/flake-utils";
     };
     import-tree = {
       url = "github:vic/import-tree";
@@ -53,10 +53,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # repo-clone = {
-    #   url = "https://git.zynh.me/Zynh0722/repo-clone";
-    # };
-
     # easy theming - https://github.com/nix-community/stylix
     stylix = {
       url = "github:danth/stylix";
@@ -77,16 +73,5 @@
     };
 
   };
-
-  # flake entry point
-  outputs =
-    inputs:
-    inputs.flake-parts.lib.mkFlake
-
-      # pass inputs to modules
-      { inherit inputs; }
-
-      # where to find modules?
-      (inputs.import-tree ./modules);
 
 }
