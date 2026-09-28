@@ -75,14 +75,14 @@
 
       home-manager.users.serenity = {
 
-        # copies avatar from flake into home
-        home.file."Avatar" = {
-          source = ../../../assets/media/avatar.png;
-          target = "/home/serenity/Pictures/Avatars/";
+        # copies avatars from flake into home
+        home.file."Avatars" = {
+          source = ../../../assets/media/avatars;
+          target = "/home/serenity/Pictures/Avatars";
           recursive = true;
         };
 
-        # copies wallpaper from flake into home
+        # copies wallpapers from flake into home
         home.file."Wallpapers" = {
           source = ../../../assets/media/wallpapers;
           target = "/home/serenity/Pictures/Wallpapers";
