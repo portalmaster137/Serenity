@@ -3,7 +3,7 @@
 {
 
   # defines the installer specific configuration
-  flake.nixosConfigurations.installer = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.usb = inputs.nixpkgs.lib.nixosSystem {
 
     # modules that comprise the installer specific configuration
     modules = with self.nixosModules; [
@@ -28,7 +28,7 @@
   };
 
   # host module declaration
-  flake.nixosModules.installer-configuration =
+  flake.nixosModules.usb-configuration =
 
     {
       pkgs,

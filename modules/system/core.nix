@@ -76,52 +76,39 @@
       # core packages to include in base system
       environment.systemPackages = with pkgs; [
 
-        # nix utilities
-        nvd
-        nix-tree
-        nix-init
-        nix-index
-        nix-prefetch
-        nix-output-monitor
+        # tools
+        nix-output-monitor # displays more info on nix commands
+        steam
+        run # emulates fhs environment
+        tldr # simpler manual pages
+        bc # basic calculator
 
         # filesystem
-        ddrutility
-        smartmontools
-        ntfs3g
-        exfatprogs
-        btrfs-progs
+        udiskie # disk automount service
+        ddrutility # disk recovery
+        smartmontools # disk monitoring
+        ntfs3g # ntfs support
+        exfatprogs # exfat support
 
-        # compat tools
-        steam-run
-        android-cli
-        android-tools
+        # directory and file management
+        fd # find but faster
+        zip # compression
+        unzip # decompression
+        file # shows file types
+        tree # shows directory tree structure
+        tokei # displays lines of code in repository
+        gnupg # encryption key management
+        ripgrep # searches files for input
+        git-crypt # transparent file encryption in git
+        curl # receives data over http/s
+        wget # receives files and data over http/s or ftp
+        magic-wormhole # sends and receives files directly
 
         # cli tools
-        fd
-        bc
-        zip
-        icu
-        doas
-        tldr
-        wget
-        curl
-        file
-        tree
-        tokei
-        unzip
-        gnupg
-        s-tui
-        udiskie
-        busybox
-        ripgrep
-        killall
-        usbutils
-        pciutils
-        moreutils
-        libsecret
-        git-crypt
-        undervolt
-        magic-wormhole
+        usbutils # usb utilities
+        pciutils # pci utilities
+        moreutils # more utilities
+        busybox # even more utilities
 
       ];
 
