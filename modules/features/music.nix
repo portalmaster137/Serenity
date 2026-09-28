@@ -137,6 +137,8 @@
           vcv-rack # modular synth emulator
 
           # vsts
+          vital
+          helm
 
           # other
 
