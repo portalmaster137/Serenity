@@ -32,6 +32,9 @@
         "ntfs"
       ];
 
+      # for desktop-less flatpak in installer
+      xdg.portal.enable = true;
+
       # specifies x64 uArch
       nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
