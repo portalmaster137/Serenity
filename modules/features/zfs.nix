@@ -3,6 +3,7 @@
 {
 
   flake.nixosModules.zfs-support =
+
     {
       config,
       lib,
@@ -36,12 +37,6 @@
         kernelPackages = lib.mkForce latestKernelPackage;
         # adds zfs support at boot
         supportedFilesystems = [ "zfs" ];
-
-        # imports zfs pools on host device
-        zfs = {
-          extraPools = [ "orcus" ];
-          forceImportRoot = false;
-        };
       };
 
       # adds zfs to system packages
@@ -52,5 +47,18 @@
 
       # data integrity service
       services.zfs.autoScrub.enable = true;
+    };
+
+  flake.nixosModules.zfs-hades =
+
+    { config, pkgs, ... }:
+
+    {
+
+      zfs = {
+        extraPools = [ "orcus" ];
+        forceImportRoot = false;
+      };
+
     };
 }
