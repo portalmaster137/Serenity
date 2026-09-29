@@ -22,6 +22,9 @@
         xwayland-satellite # xwayland support
         jq # for parsing json
 
+        # expanded wm controls
+        kando # mouse gesture based controls
+
       ];
 
       # enables niri globally
