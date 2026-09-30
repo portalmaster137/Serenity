@@ -5,7 +5,7 @@
   # general gaming module declaration
   flake.nixosModules.gaming =
 
-    { pkgs, user, ... }:
+    { pkgs, user-parts, ... }:
 
     {
 
@@ -33,9 +33,7 @@
       };
 
       # for gamemode functionality
-      users.users = {
-        serenity.extraGroups = [ "gamemode" ];
-      };
+      users.users.${user-parts.user.username}.extraGroups = [ "gamemode" ];
 
       # gaming performance - need to research
       # https://wiki.nixos/wiki/Gamemode
@@ -82,8 +80,8 @@
 
     {
       pkgs,
-      user,
       lib,
+      user-parts,
       ...
     }:
 
@@ -93,16 +91,16 @@
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # physical input
-      users.users.serenity.extraGroups = [ "input" ];
+      users.users.${user-parts.user.username}.extraGroups = [ "input" ];
 
       # hand tracking
-      home-manager.users.serenity = {
+      home-manager.users.${user-parts.user.username} = {
         # avoids downloading large files directly
         programs.git.lfs.enable = true;
         # copies lfs pointers for tracking models into config dir
         # disabled for now
-        # home.file."/home/serenity/.local/share/monado/hand-tracking-models" = {
-        #   target = "/home/serenity/.local/share/monado/hand-tracking-models";
+        # home.file."/home/${user-parts.user.username}/.local/share/monado/hand-tracking-models" = {
+        #   target = "/home/${user-parts.user.username}/.local/share/monado/hand-tracking-models";
         #   source = builtIns.fetchGit = {
         #     url = "https://gitlab.freedesktop.org/monado/utilities/hand-tracking-models.git";
         #     sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
