@@ -23,6 +23,14 @@
           musicDirectory = /run/media/serenity/Orcus/media-share/Music;
         };
 
+        # mpris for music daemon
+        services.mpdris2 = {
+          enable = true;
+        };
+
+        # mpris for music daemon
+        #services.mpd-mpris = { enable = true; };
+
         # music player
         programs.rmpc = {
           enable = true;
@@ -31,8 +39,8 @@
         home.packages = with pkgs; [
 
           # players
-          tauon # offline usic player
           spotify # corporate garbage
+          lollypop # offline music player
           strawberry # offline music player
 
           # misc
