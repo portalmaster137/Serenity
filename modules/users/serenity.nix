@@ -12,12 +12,6 @@
       ...
     }:
 
-    let
-
-      username = "serenity";
-
-    in
-
     {
 
       imports = [
@@ -45,7 +39,7 @@
       #};
 
       # nixos user declaration
-      users.users.${username} = {
+      users.users.${user-parts.user.username} = {
 
         # remember to change this
         initialPassword = "password";
@@ -75,7 +69,7 @@
         useUserPackages = true;
 
         # home manager user declaration
-        users.${username} = {
+        users.${user-parts.user.username} = {
           home.stateVersion = "24.11";
           nixpkgs.config.allowUnfree = true;
         };
