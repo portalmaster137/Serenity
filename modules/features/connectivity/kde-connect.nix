@@ -22,7 +22,7 @@ in
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # kde connect network ports
-      networking.firewall = {
+      networking.firewall = rec {
         allowedUDPPortRanges = allowedTCPPortRanges;
         allowedTDPPortRanges = [
           {
