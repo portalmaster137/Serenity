@@ -83,8 +83,13 @@
 
         {
 
-          # for niri home manager module
-          imports = [ inputs.niri.homeModules.niri ];
+          # necessary module imports
+          imports = [
+            # for niri home manager module
+            inputs.niri.homeModules.niri
+            # for noctalia home manager functionality
+            inputs.noctali.homeModules.default
+          ];
 
           home.packages = with pkgs; [ ];
 
