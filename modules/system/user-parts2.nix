@@ -1,74 +1,81 @@
-{ self, inputs, ... }:
+# User Options Module
+#
+# This module defines the core user-level configuration options that are used
+# throughout the system. These options provide a centralized way to configure
+# user-specific settings without modifying individual modules.
+#
+# Usage:
+#   Set these options in your host configuration (e.g., hosts/Desktop/modules/userOptions.nix):
+#
+#   config.userOptions = {
+#     username = "myuser";
+#     hostName = "myhost";
+#     browser = "firefox";
+#     colorScheme = "kanagawa";
+#     wallpaper = "kanagawa.png";
+#     dots = "/home/myuser/.dotfiles";
+#   };
+#
+# These options are then accessible throughout all modules via `config.user-options.*`
+{ ... }:
 
 {
 
-  # user parts module declaration
-  # use `${user-parts.<set>.variable};`
-  # in place of regular declarations.
-  # eg.
-  #
-  # home-manager.${user-parts.user.username} = {
-  #
-  #   # # copies wallpapers from flake into ~/
-  #   # home.file."Wallpapers" = {
-  #     # source = ../../assets/media/wallpapers;
-  #     # target = ${user-parts.home-directory}/Pictures/Wallpapers;
-  #   # };
-  #
-  # };
-  #
-  flake.nixosModules.variables =
-
-    { config, lib, ... }:
+  # user options module declaration
+  flake.nixosModules.user-parts2 =
+    { lib, ... }:
 
     {
-      options.nixos.variables = {
-        user = lib.mkOption {
-          type = lib.types.submodule {
-            options = {
-              username = lib.mkOption {
-                type = lib.types.str;
-                default = "user";
-              };
-            };
-          };
-          default = { };
-        };
 
-        git = lib.mkOption {
-          type = lib.types.submodule {
-            options = {
-              username = lib.mkOption {
-                type = lib.types.str;
-                default = "DontBlameMe";
-              };
-              email = lib.mkOption {
-                type = lib.types.str;
-                default = "dontblameme@noreply.codeberg.org";
-              };
-            };
-          };
-          default = { };
-        };
+      # list of per user options available
+      options.user-options = {
 
-        home-directory = lib.mkOption {
+        # currently unused
+        colorScheme = lib.mkOption {
           type = lib.types.str;
+          description = ''
+            The base16 color scheme name for Stylix theming.
+            This will be used to theme all compatible applications system-wide.
+
+            Available schemes: https://github.com/tinted-theming/schemes
+            Popular options: "kanagawa", "catppuccin-macchiato", "tokyo-night", "gruvbox-dark-medium", "nord"
+          '';
+          example = "kanagawa";
         };
 
-        default-locale = lib.mkOption {
+        # where config is stored
+        dots = lib.mkOption {
           type = lib.types.str;
-          default = "en_US.UTF-8";
+          description = ''
+            The absolute path to the dotfiles repository (flake root).
+            Used by various modules to reference assets and configuration files.
+          '';
+          example = "/home/user/.dotfiles";
+        };
+
+        # username to use
+        username = lib.mkOption {
+          type = lib.types.str;
+          description = ''
+            The primary user's username for this system.
+            This is used throughout the configuration for Home Manager and user-specific settings.
+          '';
+          example = "myuser";
+        };
+
+        # wallpaper to use
+        wallpaper = lib.mkOption {
+          type = lib.types.str;
+          description = ''
+            The wallpaper filename (without path).
+            The file should be located in the assets/ directory of this repository.
+            Stylix will use this wallpaper and can optionally generate colors from it.
+          '';
+          example = "kanagawa.png";
         };
 
       };
 
-      config = {
-        # Make `nixos-variables` available as a module argument to all NixOS
-        # modules (home-manager modules already get it via extraSpecialArgs).
-        _module.args.nixos-variables = config.nixos.variables;
-        nixos.variables = {
-          home-directory = lib.mkDefault "/home/${config.nixos.variables.user.username}";
-        };
-      };
     };
+
 }

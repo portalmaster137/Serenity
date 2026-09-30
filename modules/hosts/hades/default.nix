@@ -12,12 +12,13 @@
         modules = with self.nixosModules; [
 
           # shared system modules
-          core
+          core # shared configuration options
+          user-parts # user variables
 
           # host-specific modules
-          hades-configuration
-          hades-hardware
-          zfs-hades
+          hades-configuration # host specific configuration options below
+          hades-hardware # hardware configuration options for host
+          zfs-hades # specific zfs configuration for host
 
           # feature modules
           virtualisation
