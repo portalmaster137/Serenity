@@ -29,9 +29,9 @@
         enable = true;
       };
 
-      environment.systemPackages = [
-        kdeconnect-send.yazi
-      ];
+      # environment.systemPackages = [
+      #   kdeconnect-send.yazi
+      # ];
 
       # home manager options
       home-manager.users.serenity = {
