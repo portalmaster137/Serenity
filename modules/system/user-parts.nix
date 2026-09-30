@@ -67,8 +67,8 @@
       config = {
         # Make `nixos-variables` available as a module argument to all NixOS
         # modules (home-manager modules already get it via extraSpecialArgs).
-        _module.args.user-parts = config.nixos.variables;
-        nixos.variables = {
+        _module.args.user-parts = config.nixos.user-parts;
+        nixos.user-parts = {
           home-directory = lib.mkDefault "/home/${config.nixos.user-parts.user.username}";
         };
       };
