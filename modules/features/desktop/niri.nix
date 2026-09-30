@@ -182,7 +182,8 @@
                 {
                   # spawns a terminal running btop
                   argv = [
-                    "kitty" "-e"
+                    "kitty"
+                    "-e"
                     "btop"
                   ];
                 }
@@ -345,7 +346,7 @@
                 #"Mod+Tab".repeat = false; # launcher
                 "Mod+Return".action = spawn "${pkgs.kitty}/bin/kitty";
                 "Mod+Return".repeat = false; # terminal
-                "Mod+Tab".action = spawn { "noctalia-shell" "ipc" "call launcher toggle"; };
+                #"Mod+Tab".action = spawn { "noctalia-shell" "ipc" "call launcher toggle"; };
                 # screen capture
                 "Mod+S".action.screenshot = {
                   show-pointer = false;
