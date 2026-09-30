@@ -88,7 +88,7 @@
             # for niri home manager module
             inputs.niri.homeModules.niri
             # for noctalia home manager functionality
-            inputs.noctali.homeModules.default
+            inputs.noctalia.homeModules.default
           ];
 
           home.packages = with pkgs; [ ];
