@@ -5,7 +5,7 @@
   # general multimedia module declaration
   flake.nixosModules.multimedia =
 
-    { pkgs, ... }:
+    { pkgs, user-parts, ... }:
 
     {
 
@@ -32,7 +32,7 @@
 
       };
 
-      home-manager.users.serenity = {
+      home-manager.users.${user-parts.user.username} = {
 
         # web browser
         programs.firefox = {

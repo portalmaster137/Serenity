@@ -5,14 +5,14 @@
   # general music module declaration
   flake.nixosModules.music =
 
-    { pkgs, ... }:
+    { pkgs, user-parts, ... }:
 
     {
 
       # for home manager functionality
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-      home-manager.users.serenity = {
+      home-manager.users.${user-parts.user.username} = {
 
         # audio effects
         services.easyeffects.enable = true;
@@ -20,7 +20,7 @@
         # music daemon
         services.mpd = {
           enable = true;
-          musicDirectory = /run/media/serenity/Orcus/media-share/Music;
+          musicDirectory = /run/media/${user-parts.user.username}/Orcus/media-share/Music;
         };
 
         # mpris for music daemon
@@ -56,7 +56,7 @@
   # music production module declaration
   flake.nixosModules.music-production =
 
-    { pkgs, ... }:
+    { pkgs, user-parts, ... }:
 
     {
 
@@ -87,7 +87,7 @@
       security.rtkit.enable = true;
 
       # adds user to necessary groups
-      users.users.serenity.extraGroups = [ "audio" ];
+      users.users.${user-parts.user.username}.extraGroups = [ "audio" ];
 
       # musnix itself
       musnix = {
@@ -131,7 +131,7 @@
       # ];
 
       # user level options
-      home-manager.users.serenity = {
+      home-manager.users.${user-parts.user.username} = {
         home.packages = with pkgs; [ ];
       };
 
