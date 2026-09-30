@@ -18,10 +18,16 @@
         allowedTCPPortRanges = [
           {
             from = 1714;
-            to = 65500;
+            to = 1716;
           }
         ];
-        allowedUDPPortRanges = allowedTCPPortRanges;
+        allowedUDPPortRanges = [
+          {
+            from = 1714;
+            to = 1716;
+          }
+        ];
+
       };
 
       # system level options
