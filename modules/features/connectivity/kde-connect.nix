@@ -23,13 +23,13 @@ in
 
       # kde connect network ports
       networking.firewall = rec {
-        allowedUDPPortRanges = allowedTCPPortRanges;
         allowedTDPPortRanges = [
           {
             from = 1714;
             to = 65500;
           }
         ];
+        allowedUDPPortRanges = allowedTCPPortRanges;
       };
 
       # system level options
