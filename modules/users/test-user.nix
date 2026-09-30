@@ -3,15 +3,14 @@
 {
 
   # user module declaration
-  flake.nixosModules.test =
+  flake.nixosModules.test-user =
 
-    { pkgs, config, ... }:
-
-    let
-
-      username = "test";
-
-    in
+    {
+      pkgs,
+      config,
+      user-parts,
+      ...
+    }:
 
     {
 
@@ -24,19 +23,23 @@
         #self.nixosModules.user-options
 
         # select user theme
-        self.nixosModules.theme-autogen
+        self.nixosModules.theme-atelier-plateau
 
       ];
 
+      nixos.user-parts = {
+        user.username = "test-user";
+      };
+
       # configure user here
       #config.user-options = {
-      #username = "test";
-      #dots = "/home/${username}/SerenityOS";
+      #username = "serenity";
+      #dots = "/home/serenity/SerenityOS";
       # see `modules/features/stylix.nix` for theme declared above
       #};
 
       # nixos user declaration
-      users.users.${username} = {
+      users.users.${user-parts.user.username} = {
 
         # remember to change this
         initialPassword = "password";
@@ -66,7 +69,7 @@
         useUserPackages = true;
 
         # home manager user declaration
-        users.${username} = {
+        users.${user-parts.user.username} = {
           home.stateVersion = "24.11";
           nixpkgs.config.allowUnfree = true;
         };

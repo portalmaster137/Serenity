@@ -36,6 +36,7 @@
 
           # user modules
           serenity
+          test-user
 
         ];
 
