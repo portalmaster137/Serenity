@@ -5,7 +5,12 @@
   # user module declaration
   flake.nixosModules.serenity =
 
-    { pkgs, config, ... }:
+    {
+      pkgs,
+      config,
+      user-parts,
+      ...
+    }:
 
     let
 
@@ -27,6 +32,10 @@
         self.nixosModules.theme-atelier-plateau
 
       ];
+
+      user-parts = {
+        user.username = "serenity";
+      };
 
       # configure user here
       #config.user-options = {

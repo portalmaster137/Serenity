@@ -7,7 +7,9 @@
   # in place of regular declarations.
   # eg.
   #
-  # home-manager.${user-parts.user.username} = {
+  # home-manager.users.${user-parts.user.username} = {
+  # OR
+  # home-manager.users.${config.nixos.user-parts.user.username} = {
   #
   #   # # copies wallpapers from flake into ~/
   #   # home.file."Wallpapers" = {
@@ -22,7 +24,7 @@
     { config, lib, ... }:
 
     {
-      options.nixos.variables = {
+      options.nixos.user-parts = {
         user = lib.mkOption {
           type = lib.types.submodule {
             options = {
@@ -65,7 +67,7 @@
       config = {
         # Make `nixos-variables` available as a module argument to all NixOS
         # modules (home-manager modules already get it via extraSpecialArgs).
-        _module.args.nixos-variables = config.nixos.variables;
+        _module.args.user-parts = config.nixos.variables;
         nixos.variables = {
           home-directory = lib.mkDefault "/home/${config.nixos.variables.user.username}";
         };
