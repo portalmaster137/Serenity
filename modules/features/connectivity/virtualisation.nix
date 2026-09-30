@@ -5,7 +5,7 @@
   # virtualisation module declaration
   flake.nixosModules.virtualisation =
 
-    { pkgs, ... }:
+    { pkgs, user-parts, ... }:
 
     {
 
@@ -13,7 +13,7 @@
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # adding user to required groups
-      users.users.serenity = {
+      users.users.${user-parts.user.username} = {
         extraGroups = [
           "libvirtd"
           "kvm"

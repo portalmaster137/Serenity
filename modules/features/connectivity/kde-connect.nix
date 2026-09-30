@@ -6,7 +6,7 @@
   # kde connect module
   flake.nixosModules.kde-connect =
 
-    { ... }:
+    { user-parts, ... }:
 
     {
 
@@ -40,7 +40,7 @@
       # ];
 
       # home manager options
-      home-manager.users.serenity = {
+      home-manager.users.${user-parts.user.username} = {
 
         # kde connect user level options
         services.kdeconnect = {

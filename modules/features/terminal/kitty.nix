@@ -5,7 +5,7 @@
   # defines a custom kitty module
   flake.nixosModules.kitty =
 
-    { pkgs, ... }:
+    { pkgs, user-parts, ... }:
 
     {
 
@@ -13,11 +13,11 @@
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # home manager options
-      home-manager.users.serenity = {
+      home-manager.users.${user-parts.user.username} = {
 
         # packages to include
         home.packages = with pkgs; [
-          kitty
+          #kitty
         ];
 
         # cli fuzzy finder

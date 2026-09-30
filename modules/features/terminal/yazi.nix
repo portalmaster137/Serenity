@@ -5,7 +5,7 @@
   # yazi module declaration
   flake.nixosModules.yazi =
 
-    { ... }:
+    { user-parts, ... }:
 
     {
 
@@ -13,7 +13,7 @@
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # home manager options
-      home-manager.users.serenity = {
+      home-manager.users.${user-parts.user.username} = {
 
         # yazi settings
         programs = {
