@@ -29,6 +29,10 @@
         enable = true;
       };
 
+      environment.systemPackages = [
+        yaziPlugins.kdeconnect-send.yazi
+      ];
+
       # home manager options
       home-manager.users.serenity = {
 
