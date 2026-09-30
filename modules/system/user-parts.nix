@@ -69,7 +69,7 @@
         # modules (home-manager modules already get it via extraSpecialArgs).
         _module.args.user-parts = config.nixos.variables;
         nixos.variables = {
-          home-directory = lib.mkDefault "/home/${config.nixos.variables.user.username}";
+          home-directory = lib.mkDefault "/home/${config.nixos.user-parts.user.username}";
         };
       };
     };
