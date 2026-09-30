@@ -30,7 +30,7 @@
       };
 
       environment.systemPackages = [
-        yaziPlugins.kdeconnect-send.yazi
+        kdeconnect-send.yazi
       ];
 
       # home manager options
