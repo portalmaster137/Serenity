@@ -22,9 +22,6 @@
         xwayland-satellite # xwayland support
         jq # for parsing json
 
-        # expanded wm controls
-        kando # mouse gesture based controls
-
       ];
 
       # enables niri globally
@@ -87,8 +84,6 @@
           imports = [
             # for niri home manager module
             inputs.niri.homeModules.niri
-            # for noctalia home manager functionality
-            inputs.noctalia.homeModules.default
           ];
 
           home.packages = with pkgs; [ ];
