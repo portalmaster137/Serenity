@@ -23,6 +23,7 @@
           virtualisation
           network-proxy
           zfs-support
+          kde-connect
           terminal
           terminal-emulator
           desktop

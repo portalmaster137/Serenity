@@ -12,7 +12,7 @@ in
 {
 
   # module name declaration, as well as any required inputs
-  flake.modules.nixos.modulename =
+  flake.modules.nixos.kde-connect =
 
     { ... }:
 
