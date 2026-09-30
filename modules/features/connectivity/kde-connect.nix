@@ -1,14 +1,6 @@
 # base level inputs, should only ever be self and inputs
 { self, inputs, ... }:
 
-# let bindings
-let
-
-  # for foo.bar
-  foobar = "barbar";
-
-in
-
 {
 
   # module name declaration, as well as any required inputs
