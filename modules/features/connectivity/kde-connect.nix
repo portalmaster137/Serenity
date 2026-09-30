@@ -23,7 +23,7 @@ in
 
       # kde connect network ports
       networking.firewall = rec {
-        allowedTDPPortRanges = [
+        allowedTCPPortRanges = [
           {
             from = 1714;
             to = 65500;
