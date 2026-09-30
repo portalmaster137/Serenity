@@ -183,7 +183,6 @@
                   # spawns a terminal running btop
                   argv = [
                     "kitty"
-                    "-e"
                     "btop"
                   ];
                 }
