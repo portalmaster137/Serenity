@@ -5,7 +5,12 @@
   # defines a custom helix module
   flake.nixosModules.helix =
 
-    { lib, pkgs, ... }:
+    {
+      lib,
+      pkgs,
+      user-parts,
+      ...
+    }:
 
     {
 
@@ -22,7 +27,7 @@
       environment.systemPackages = with pkgs; [ helix ];
 
       # home manager options
-      home-manager.users.serenity = {
+      home-manager.users.${user-parts.user.username} = {
 
         # alternate user friendly text editor
         programs.micro = {

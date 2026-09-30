@@ -5,7 +5,12 @@
   # niri window manager module declaration
   flake.nixosModules.niri =
 
-    { pkgs, lib, ... }:
+    {
+      pkgs,
+      lib,
+      user-parts,
+      ...
+    }:
 
     {
 
@@ -32,7 +37,7 @@
       };
 
       # niri personalisation
-      home-manager.users.serenity =
+      home-manager.users.${user-parts.user.username} =
 
         { config, ... }:
 

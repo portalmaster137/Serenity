@@ -5,7 +5,7 @@
   # defines a custom fish module
   flake.nixosModules.fish =
 
-    { pkgs, ... }:
+    { pkgs, user-parts, ... }:
 
     {
 
@@ -22,7 +22,7 @@
       programs.fish.enable = true;
 
       # home manager options
-      home-manager.users.serenity = {
+      home-manager.users.${user-parts.user.username} = {
 
         # program settings
         programs = {

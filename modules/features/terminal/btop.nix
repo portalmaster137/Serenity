@@ -5,7 +5,7 @@
   # defines a custom btop module
   flake.nixosModules.btop =
 
-    { pkgs, ... }:
+    { pkgs, user-parts, ... }:
 
     {
 
@@ -15,7 +15,7 @@
       environment.systemPackages = with pkgs; [ btop ];
 
       # home manager options
-      home-manager.users.serenity = {
+      home-manager.users.${user-parts.user.username} = {
 
         programs = {
 

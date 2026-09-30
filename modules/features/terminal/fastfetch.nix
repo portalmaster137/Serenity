@@ -5,7 +5,7 @@
   # fetch module declaration
   flake.nixosModules.fetch =
 
-    { pkgs, ... }:
+    { pkgs, user-parts, ... }:
 
     {
 
@@ -13,7 +13,7 @@
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # home manager options
-      home-manager.users.serenity = {
+      home-manager.users.${user-parts.user.username} = {
 
         # stuff in those screenshots on r/unixporn
         home.packages = with pkgs; [

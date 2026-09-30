@@ -5,7 +5,7 @@
   # noctalia shell module declaration
   flake.nixosModules.noctalia =
 
-    { pkgs, ... }:
+    { pkgs, user-parts, ... }:
 
     {
 
@@ -29,7 +29,7 @@
       };
 
       # home manager options
-      home-manager.users.serenity = {
+      home-manager.users.${user-parts.user.username} = {
 
         # for noctalia home manager functionality
         imports = [ inputs.noctalia.homeModules.default ];
