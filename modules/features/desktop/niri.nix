@@ -345,7 +345,7 @@
                 #"Mod+Tab".repeat = false; # launcher
                 "Mod+Return".action = spawn "${pkgs.kitty}/bin/kitty";
                 "Mod+Return".repeat = false; # terminal
-                "Mod+Tab".action = spawn "noctalia msg launcher-toggle";
+                "Mod+Tab".action = spawn-sh "${pkgs.noctalia} ipc call launcher toggle";
                 # screen capture
                 "Mod+S".action.screenshot = {
                   show-pointer = false;
