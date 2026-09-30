@@ -3,8 +3,8 @@
 
 {
 
-  # module name declaration, as well as any required inputs
-  flake.modules.nixos.kde-connect =
+  # kde connect module
+  flake.nixosModules.kde-connect =
 
     { ... }:
 
