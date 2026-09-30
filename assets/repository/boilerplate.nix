@@ -14,7 +14,7 @@ in
   # module name declaration, as well as any required inputs
   flake.modules.nixos.modulename =
 
-    { ... }:
+    { user-parts, ... }:
 
     {
 
@@ -27,7 +27,7 @@ in
       };
 
       # home manager options
-      home-manager.users.${username} = {
+      home-manager.users.${user-parts.user.username} = {
 
         # user level options
         programs.foo = {
