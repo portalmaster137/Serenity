@@ -303,7 +303,7 @@
                   matches = [
                     {
                       at-startup = true;
-                      title = "kitty" "btop";
+                      title = "btop";
                     }
                   ];
                   open-on-output = "DP-4";
