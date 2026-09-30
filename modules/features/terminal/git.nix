@@ -5,7 +5,7 @@
   # defines a custom git module
   flake.nixosModules.git =
 
-    { pkgs, ... }:
+    { pkgs, user-parts, ... }:
 
     {
 
@@ -16,7 +16,7 @@
       programs.git.enable = true;
 
       # home manager options
-      home-manager.users.serenity = {
+      home-manager.users.${user-parts.user.username} = {
 
         programs = {
 
@@ -37,7 +37,7 @@
                 email = "serenity-F@noreply.codeberg.org";
 
                 # path to signing key
-                signingKey = "/home/serenity/.ssh/id_ed25519.pub";
+                signingKey = "/home/${user-parts.user.username}/.ssh/id_ed25519.pub";
 
               };
 
