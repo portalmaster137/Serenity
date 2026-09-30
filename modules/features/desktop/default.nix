@@ -5,7 +5,12 @@
   # desktop supermodule declaration
   flake.nixosModules.desktop =
 
-    { pkgs, lib, ... }:
+    {
+      pkgs,
+      lib,
+      user-parts,
+      ...
+    }:
 
     {
 
@@ -40,7 +45,7 @@
       services.udisks2.enable = true;
       programs.gnome-disks.enable = true;
       environment.systemPackages = with pkgs; [ gparted ];
-      home-manager.users.serenity = {
+      home-manager.users.${user-parts.user.username} = {
 
         # password prompts
         services.gnome-keyring.enable = true;
