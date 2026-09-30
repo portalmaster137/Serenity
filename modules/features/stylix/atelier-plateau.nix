@@ -8,6 +8,7 @@
       config,
       lib,
       pkgs,
+      user-parts,
       ...
     }:
 
@@ -80,19 +81,19 @@
         };
       };
 
-      home-manager.users.serenity = {
+      home-manager.users.${user-parts.user.username} = {
 
         # copies avatars from flake into home
         home.file."Avatars" = {
           source = ../../../assets/media/avatars;
-          target = "/home/serenity/Pictures/Avatars";
+          target = "/home/${user-parts.user.username}/Pictures/Avatars";
           recursive = true;
         };
 
         # copies wallpapers from flake into home
         home.file."Wallpapers" = {
           source = ../../../assets/media/wallpapers;
-          target = "/home/serenity/Pictures/Wallpapers";
+          target = "/home/${user-parts.user.username}/Pictures/Wallpapers";
           recursive = true;
         };
 

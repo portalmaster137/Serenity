@@ -5,7 +5,12 @@
   # common module declaration
   flake.nixosModules.core =
 
-    { lib, pkgs, ... }:
+    {
+      lib,
+      pkgs,
+      user-parts,
+      ...
+    }:
 
     {
 
@@ -65,7 +70,7 @@
       ];
 
       # configures disk automount service
-      home-manager.users.serenity = {
+      home-manager.users.${user-parts.user.username} = {
         services.udiskie = {
           enable = true;
           tray = "always";
