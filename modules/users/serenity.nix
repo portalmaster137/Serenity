@@ -33,7 +33,7 @@
 
       ];
 
-      user-parts = {
+      nixos.user-parts = {
         user.username = "serenity";
       };
 
