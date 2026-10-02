@@ -61,14 +61,22 @@
         initrd.systemd.enable = true;
       };
 
-      # enable printing support
-      services.printing.enable = true;
+      # gpu monitoring and control
+      services.lact = {
+        enable = true;
+      };
+      hardware.amdgpu = {
+        overdrive.enable = true;
+      };
 
       # fstrim for ssd
       services.fstrim.enable = true;
 
       # corsair mouse software
       hardware.ckb-next.enable = true;
+
+      # enable printing support
+      services.printing.enable = true;
 
       # other packages for hades hardware and peripherals
       environment.systemPackages = with pkgs; [
