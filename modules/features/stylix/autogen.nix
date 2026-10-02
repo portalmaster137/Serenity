@@ -99,7 +99,7 @@
           opacity = {
             applications = 0.8;
             terminal = 0.8;
-            desktop = 1.0;
+            desktop = 0.9;
             popups = 0.9;
           };
 

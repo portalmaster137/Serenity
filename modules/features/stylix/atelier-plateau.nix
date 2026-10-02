@@ -15,7 +15,7 @@
     let
 
       # set wallpaper here
-      wallpaper = ../../../assets/media/wallpapers/mimaKirigoe.jpg;
+      wallpaper = ../../../assets/media/wallpapers/purpleWaves.png;
 
     in
 
@@ -36,7 +36,7 @@
         # enables automatic themeing based on wallpaper
         enable = true;
         image = "${wallpaper}";
-        #polarity = "dark";
+        polarity = "dark";
         base16Scheme = "${pkgs.base16-schemes}/share/themes/atelier-plateau.yaml";
 
         # cursor settings
@@ -45,13 +45,6 @@
           name = "Bibata-Modern-Classic";
           size = 25;
         };
-
-        # icons = {
-        #   enable = true;
-        #   package = with pkgs; material-icons;
-        #   dark = "material-dark";
-        #   light = config.stylix.icons.dark;
-        # };
 
         # font settings
         fonts = {
@@ -107,12 +100,9 @@
           opacity = {
             applications = 0.8;
             terminal = 0.8;
-            desktop = 1.0;
+            desktop = 0.9;
             popups = 0.9;
           };
-
-          # application icons to use
-          #icons = { };
 
         };
 
