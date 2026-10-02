@@ -3,7 +3,7 @@
 {
 
   # tokyo-night-dark theme
-  flake.nixosModules.theme-tokyo-night =
+  flake.nixosModules.theme-almond-blossoms =
     {
       config,
       lib,
