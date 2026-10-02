@@ -93,6 +93,7 @@
 
       # nixpkgs settings
       nixpkgs = {
+        hostPlatform = "";
         # allows broken and ideologically impure packages
         config = {
           allowUnfree = true;
