@@ -58,16 +58,36 @@
           timeout = lib.mkDefault 5;
         };
         initrd.systemd.enable = true;
-      };
+      };i
+
+      # cpu settings
+      hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
       # gpu monitoring and control
       services.lact = {
         enable = true;
       };
-      hardware.amdgpu.overdrive = {
-        enable = true;
-        #ppfeaturemask = "0xfffd7fff"; # default
-        ppfeaturemask = "0xffffffff"; # all overdrive features
+
+      # gpu firmware - https://nixos.wiki/wiki/AMD_GPU
+      boot = {
+        # gpu drivers during boot and pre boot
+        initrd.kernelModules = [ "amdgpu" ];
+        # exposes gpu drivers to system
+        kernelModules = [ "amdgpu" "kvm-amd" ];
+      };
+      hardware = {
+        # amd discrete graphics support
+        graphics.enable = true;
+        amdgpu = {
+          # fixes early video issues
+          initrd.enable = true;
+          # amd sanctioned overclocking
+          overdrive = {
+            enable = true;
+            #ppfeaturemask = "0xfffd7fff"; # default
+            ppfeaturemask = "0xffffffff"; # all overdrive features
+          };
+        };
       };
 
       # fstrim for ssd

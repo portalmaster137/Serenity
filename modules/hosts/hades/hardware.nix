@@ -16,9 +16,7 @@
     {
 
       # important
-      imports = [
-        (modulesPath + "/installer/scan/not-detected.nix")
-      ];
+      imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
       # kernel modules to include
       boot.initrd.availableKernelModules = [
@@ -31,34 +29,11 @@
         "sd_mod"
       ];
 
-      # enable amd radeon gpu drivers
-      # https://nixos.wiki/wiki/AMD_GPU
+      # generic kernel module options
       boot = {
-        # exposes gpu drivers
-        kernelModules = [
-          "amdgpu"
-          "kvm-amd"
-        ];
-        # gpu drivers during boot and pre boot
-        initrd.kernelModules = [ "amdgpu" ];
-      };
-      hardware = {
-        # discrete graphics support
-        graphics.enable = true;
-        # fixes early video issues
-        amdgpu.initrd.enable = true;
-      };
-
-      # luks device mapping
-      boot.initrd.luks.devices."luks-35440a88-293e-455b-a018-ee1086b07321".device =
-        "/dev/disk/by-uuid/35440a88-293e-455b-a018-ee1086b07321";
-      boot.initrd.luks.devices."luks-55f7d546-fac9-4ea0-a21e-4c50ecc0d67d".device =
-        "/dev/disk/by-uuid/55f7d546-fac9-4ea0-a21e-4c50ecc0d67d";
-
-      # root partition
-      fileSystems."/" = {
-        device = "/dev/mapper/luks-35440a88-293e-455b-a018-ee1086b07321";
-        fsType = "ext4";
+        initrd.kernelModules = [ ];
+        kernelModules = [ "kvm-amd" ];
+        extraModulePackages = [ ];
       };
 
       # boot partition
@@ -71,15 +46,22 @@
         ];
       };
 
-      # swap
+      # root device configuration
+      boot.initrd.luks.devices."luks-35440a88-293e-455b-a018-ee1086b07321".device =
+        "/dev/disk/by-uuid/35440a88-293e-455b-a018-ee1086b07321";
+      fileSystems."/" = {
+        device = "/dev/mapper/luks-35440a88-293e-455b-a018-ee1086b07321";
+        fsType = "ext4";
+      };
+
+      # swap device configuration
+      boot.initrd.luks.devices."luks-55f7d546-fac9-4ea0-a21e-4c50ecc0d67d".device =
+        "/dev/disk/by-uuid/55f7d546-fac9-4ea0-a21e-4c50ecc0d67d";
       swapDevices = [
         {
           device = "/dev/mapper/luks-55f7d546-fac9-4ea0-a21e-4c50ecc0d67d";
         }
       ];
-
-      # enables cpu microcode updates
-      hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     };
 
 }
