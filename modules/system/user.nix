@@ -20,7 +20,7 @@
         inputs.home-manager.nixosModules.home-manager
 
         # select user theme
-        self.nixosModules.theme-catpuccin
+        self.nixosModules.theme-atelier-plateau
 
       ];
 
