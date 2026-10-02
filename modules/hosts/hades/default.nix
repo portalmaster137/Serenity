@@ -11,6 +11,9 @@
         # modules that comprise the host specific configuration
         modules = with self.nixosModules; [
 
+          # user modules
+          serenity
+
           # shared system modules
           core # shared configuration options
           user-parts # user variables
@@ -18,24 +21,20 @@
           # host-specific modules
           hades-configuration # host specific configuration options below
           hades-hardware # hardware configuration options for host
-          zfs-hades # specific zfs configuration for host
+          zfs-support # zfs support module for hades specific zpool
 
           # feature modules
-          virtualisation
-          network-proxy
-          zfs-support
-          kde-connect
-          terminal
-          terminal-emulator
-          desktop
-          music
-          music-production
-          gaming
-          multimedia
-          virtual-reality
-
-          # user modules
-          serenity
+          virtualisation # virtual machines
+          network-proxy # basic dns crypt proxy
+          kde-connect # phone <-> desktop connectivity
+          terminal # most terminal programs
+          terminal-emulator # terminal program for desktops
+          desktop # most desktop programs
+          music # music consumption
+          music-production # music creation
+          gaming # gaming modules, steam, osu, etc.
+          multimedia # image and video programs
+          virtual-reality # configuration for vr setup
 
         ];
 

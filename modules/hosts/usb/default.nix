@@ -16,7 +16,6 @@
 
       # extra modules to include on host
       terminal
-      zfs-support
       network-proxy
 
       # users to include on host

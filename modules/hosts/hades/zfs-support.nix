@@ -37,6 +37,12 @@
         kernelPackages = lib.mkForce latestKernelPackage;
         # adds zfs support at boot
         supportedFilesystems = [ "zfs" ];
+        # zfs boot settings
+        boot.zfs = {
+          forceImportRoot = false;
+          # imports hades specific zpool
+          extraPools = [ "orcus" ];
+        };
       };
 
       # adds zfs to system packages
@@ -49,16 +55,4 @@
       services.zfs.autoScrub.enable = true;
     };
 
-  flake.nixosModules.zfs-hades =
-
-    { config, pkgs, ... }:
-
-    {
-
-      boot.zfs = {
-        extraPools = [ "orcus" ];
-        forceImportRoot = false;
-      };
-
-    };
 }
