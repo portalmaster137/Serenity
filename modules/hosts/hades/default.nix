@@ -26,6 +26,7 @@
           # feature modules
           virtualisation # virtual machines
           network-proxy # basic dns crypt proxy
+          media-server # remote mediashare configuration
           kde-connect # phone <-> desktop connectivity
           terminal # most terminal programs
           terminal-emulator # terminal program for desktops
