@@ -1,5 +1,5 @@
 # base level inputs, should only ever be self and inputs
-{ self, inputs, ... }:
+{ inputs, ... }:
 
 {
 
