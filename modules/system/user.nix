@@ -20,7 +20,7 @@
         inputs.home-manager.nixosModules.home-manager
 
         # select user theme
-        self.nixosModules.theme-atelier-plateau
+        self.nixosModules.theme-tokyo-night
 
       ];
 
