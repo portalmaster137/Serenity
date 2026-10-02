@@ -36,17 +36,17 @@
       };
 
       # user level configuration options
-      #home-manager.users.${user-parts.user.username} = {
+      home-manager.users.${user-parts.user.username} = {
 
-      # import home manager modules here
-      #imports = [ ];
+        # import home manager modules here
+        #imports = [ ];
 
-      # user level syncthing options go here
-      services.syncthing = {
-        enable = true;
+        # user level syncthing options go here
+        services.syncthing = {
+          enable = true;
+        };
+
       };
-
-      #};
 
     };
 
