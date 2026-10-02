@@ -16,14 +16,11 @@
 
       # for home manager functionality
       imports = [ inputs.home-manager.nixosModules.home-manager ];
-
       # for latest niri versions
       nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-
-      # packages for desktop environment
+      # system packages for desktop environment
       environment.systemPackages = with pkgs; [
-
-        # niri
+        # niri extras
         xwayland-satellite # xwayland support
         jq # for parsing json
 
@@ -43,7 +40,6 @@
 
         # let binding magic lets me get nice column widths
         let
-
           widthDivisions = [
             1.0
             2.0
@@ -56,7 +52,6 @@
             3.0
             4.0
           ];
-
           # black magic, expected output:
           # [ { proportion = 1.0 / 1.0 }
           # { proportion = 1.0 / 2.0 }
@@ -73,14 +68,11 @@
                 map (x: map (y: { proportion = x / y; }) divisions) divisions
               )
             );
-
           # then get all the unique outputs (removing double ups of 0.5 or others)
           columnWidths = getProportions widthDivisions;
           columnWidthsFiltered = builtins.filter (x: builtins.lessThan x.proportion 1.0) columnWidths; # just get the values that are below 1
-
           windowHeights = getProportions heightDivisions;
           windowHeightsFiltered = builtins.filter (x: builtins.lessThan x.proportion 1.0) windowHeights;
-
         in
 
         {
@@ -90,8 +82,6 @@
             # for niri home manager module
             inputs.niri.homeModules.niri
           ];
-
-          home.packages = with pkgs; [ ];
 
           programs.niri = {
             # enables niri within home manager
@@ -191,10 +181,6 @@
                     "btop"
                   ];
                 }
-                #{
-                # automanages disks
-                #argv = [ "udiskie" ]; # started via systemd pretty sure lol
-                #}
               ];
 
               # visual settings
@@ -222,7 +208,7 @@
 
                 # remove backdrop colour
                 background-color = "transparent";
-                center-focused-column = "never";
+                #center-focused-column = "never";
                 # window|window gaps
                 gaps = 8;
                 #window|screen edge gaps
@@ -297,7 +283,7 @@
                   };
                 }
 
-                # rules for specific windows
+                # rules for specific windows - BROKEN ?
                 {
                   # kitty opacity
                   matches = [ { app-id = "kitty"; } ];
@@ -350,6 +336,7 @@
                 #"Mod+Tab".repeat = false; # launcher
                 "Mod+Return".action = spawn "${pkgs.kitty}/bin/kitty";
                 "Mod+Return".repeat = false; # terminal
+                # noctalia launcher
                 "Mod+Tab".action = spawn-sh "${pkgs.noctalia}/bin/noctalia msg panel-toggle launcher";
                 # screen capture
                 "Mod+S".action.screenshot = {
