@@ -65,8 +65,10 @@
       services.lact = {
         enable = true;
       };
-      hardware.amdgpu = {
-        overdrive.enable = true;
+      hardware.amdgpu.overdrive = {
+        enable = true;
+        #ppfeaturemask = "0xfffd7fff"; # default
+        ppfeaturemask = "0xffffffff"; # all overdrive features
       };
 
       # fstrim for ssd
