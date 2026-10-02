@@ -10,8 +10,16 @@
 
     {
 
-      # import system level module for home manager functionality
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
+      # module imports for extended functionality
+      imports = [
+
+        # system level module for home manager functionality
+        inputs.home-manager.nixosModules.home-manager
+
+        # module import for nixflix
+        inputs.nixflix.nixosModules.default
+
+      ];
 
       # system level nixflix options
       nixflix = {
