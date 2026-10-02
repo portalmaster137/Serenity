@@ -78,8 +78,7 @@
         }
       ];
 
-      # specifies x64 uArch
-      nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+      # enables cpu microcode updates
       hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     };
 

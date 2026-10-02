@@ -93,7 +93,8 @@
 
       # nixpkgs settings
       nixpkgs = {
-        hostPlatform = "";
+        # sets x64 as default uArch
+        hostPlatform = lib.mkDefaylt "x86_64-linux";
         # allows broken and ideologically impure packages
         config = {
           allowUnfree = true;
