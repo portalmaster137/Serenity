@@ -29,9 +29,9 @@
         # address to serve web client on
         #guiAddress = "0.0.0.0:8384";
         #settings = {
-          #options = {};
-          #devices = [];
-          #folders = [];
+        #options = {};
+        #devices = [];
+        #folders = [];
         #};
       };
 
@@ -49,7 +49,7 @@
         # user level syncthing options go here
         services.syncthing = {
           enable = true;
-          guiAddress = "127.0.0.1:8384"
+          guiAddress = "127.0.0.1:8384";
         };
 
       };
