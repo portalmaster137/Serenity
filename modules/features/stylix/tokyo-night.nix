@@ -37,7 +37,7 @@
         enable = true;
         image = "${wallpaper}";
         polarity = "dark";
-        base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-storm.yaml";
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-moon.yaml";
 
         # cursor settings
         cursor = {
