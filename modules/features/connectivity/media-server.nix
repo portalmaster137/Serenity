@@ -23,21 +23,21 @@
         jellyfin = {
           enable = true;
           # sets main user as administrator
-          users.{user-parts.user.username} = {
+          users.${user-parts.user.username} = {
             policy.isAdministrator = true;
             # sets default password - change this <3
             password = "password";
           };
         };
-        
+
       };
-      
+
       # home manager options
       home-manager.users.${user-parts.user.username} = {
-        
+
         # necessary for module name functionality
         #imports = [ ];
-        
+
       };
 
     };
