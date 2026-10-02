@@ -3,7 +3,7 @@
 {
 
   # tokyo-night-dark theme
-  flake.nixosModules.gotham =
+  flake.nixosModules.theme-gotham =
     {
       config,
       lib,
