@@ -67,6 +67,7 @@ For the purposes of authenticity and earnestness
 - [Home Manager](https://nix-community.github.io/home-manager/)
 - [Niri Flake](https://github.com/epireyn/niri-flake)
 - [Stylix](https://stylix.danth.me/)
+- [Nixflix](https://kiriwalawren.github.io/nixflix/)
 
 ## 🙋 Attributions
 

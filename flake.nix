@@ -19,23 +19,17 @@
   # flake inputs
   inputs = {
 
-    # nix hardware - https://github.com/NixOS/nixos-hardware
-    hardware = {
-      url = "github:nixos/nixos-hardware";
-    };
-
+    # nixos core module inputs - https://wiki.nixos.org/wiki/NixOS_Wiki
     # nixpkgs version - https://github.com/NixOS/nixpkgs
-    nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-unstable";
-    };
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nix hardware - https://github.com/NixOS/nixos-hardware
+    hardware.url = "github:nixos/nixos-hardware";
 
     # dendritic stuff - https://github.com/mightyiam/dendritic
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-    };
-    import-tree = {
-      url = "github:vic/import-tree";
-    };
+    # flake parts - https://github.com/hercules-ci/flake-parts
+    # import tree - https://github.com/denful/import-tree
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
 
     # helix editor plugins - https://codeberg.org/maxschipper/helix-plugins-nix
     helix-plugins = {
@@ -43,14 +37,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # sound driver optimisations - https://github.com/musnix/musnix
-    musnix = {
-      url = "github:musnix/musnix";
-    };
-
     # nice-to-haves for gaming - https://github.com/fufexan/nix-gaming
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # sound driver optimisations - https://github.com/musnix/musnix
+    musnix = {
+      url = "github:musnix/musnix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # media server nixos module - https://github.com/kiriwalawren/nixflix
+    nixflix = {
+      url = "github:kiriwalawren/nixflix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # declarative dots - https://github.com/nix-community/home-manager
@@ -62,6 +64,7 @@
     # easy theming - https://github.com/nix-community/stylix
     stylix = {
       url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # niri window manager - https://github.com/YaLTeR/niri
