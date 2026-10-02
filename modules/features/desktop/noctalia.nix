@@ -13,14 +13,14 @@
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # binary cache to reduce rebuild time
-      # nix.settings = {
-      #   extra-substituters = [
-      #     "https://noctalia.cachix.org"
-      #   ];
-      #   extra-trusted-public-keys = [
-      #     "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
-      #   ];
-      # };
+      nix.settings = {
+        extra-substituters = [
+          "https://noctalia.cachix.org"
+        ];
+        extra-trusted-public-keys = [
+          "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+        ];
+      };
 
       # noctalia power management
       services = {
@@ -78,7 +78,7 @@
 
             # launcher
             appLauncher = {
-              terminalCommand = "kitty";
+              terminalCommand = "kitty -e";
               showCategories = false;
             };
 
@@ -97,6 +97,56 @@
               density = "comfortable";
               marginVertical = 0.25;
               marginHorizontal = 0.5;
+
+              # statusbar widgets
+              showCapsule = false;
+              widgets = {
+
+                left = [ ];
+
+                center = [
+                  {
+                    hideUnoccupied = false;
+                    id = "Workspace";
+                    labelMode = "none";
+                  }
+                ];
+
+                right = [
+                  {
+                    # system tray/overflow
+                    id = "tray";
+                  }
+                  {
+                    # wifi/networking widget
+                    id = "WiFi";
+                  }
+                  {
+                    # bluetooth devices/pairing
+                    id = "Bluetooth";
+                  }
+                  {
+                    # battery for laptop
+                    alwaysShowPercentage = false;
+                    id = "Battery";
+                    warningThreshold = 30;
+                  }
+                  {
+                    # statusbar clock
+                    formatHorizontal = "HH:mm";
+                    formatVertical = "HH mm";
+                    id = "Clock";
+                    useMonospacedFont = true;
+                    usePrimaryColor = true;
+                  }
+                  {
+                    # quick settings
+                    id = "ControlCenter";
+                    #useDistroLogo = true;
+                  }
+                ];
+
+              };
             };
 
           };
