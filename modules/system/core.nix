@@ -124,8 +124,7 @@
 
         # tools
         nix-output-monitor # displays more info on nix commands
-        steam
-        run # emulates fhs environment
+        steam-run # emulates fhs environment
         tldr # simpler manual pages
         bc # basic calculator
 
