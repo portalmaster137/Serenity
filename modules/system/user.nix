@@ -19,9 +19,6 @@
         # necessary for home manager function
         inputs.home-manager.nixosModules.home-manager
 
-        # necessary for multi-user functionality
-        #self.nixosModules.user-options
-
         # select user theme
         self.nixosModules.theme-catpuccin
 
