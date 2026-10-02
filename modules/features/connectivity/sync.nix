@@ -25,6 +25,11 @@
       services.syncthing = {
         enable = true;
         openDefaultPorts = true;
+        settings = {
+          gui = {
+            theme = "black";
+          };
+        };
       };
 
       # user level configuration options
@@ -47,6 +52,7 @@
 
         # sync version control
         services.git-sync = {
+
           enable = true;
 
           # obsidian notes vault lives here
