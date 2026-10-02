@@ -37,6 +37,12 @@
       url = "github:vic/import-tree";
     };
 
+    # helix editor plugins - https://codeberg.org/maxschipper/helix-plugins-nix
+    helix-plugins = {
+      url = "git+ssh://git@codeberg.org/maxschipper/helix-plugins.nix";
+      inputs.nixpkgs.follow = "nixpkgs";
+    };
+
     # sound driver optimisations - https://github.com/musnix/musnix
     musnix = {
       url = "github:musnix/musnix";

@@ -24,67 +24,84 @@
         SYSTEMD_EDITOR = "hx";
       };
 
+      # helix plugins overlay from flake
+      nixpkgs.overlays = [ inputs.helix-plugins.overlays.default ];
+
+      # system level packages for helix editor
       environment.systemPackages = with pkgs; [ helix ];
 
       # home manager options
-      home-manager.users.${user-parts.user.username} = {
+      home-manager.users.${user-parts.user.username} =
 
-        # alternate user friendly text editor
-        programs.micro = {
-          enable = true;
-        };
+        #{ config, ... }:
 
-        # primary text editor
-        programs.helix = {
+        {
 
-          # enables helix
-          enable = true;
+          # module import for helix plugins home manager module
+          imports = [ inputs.helix-plugins.homeManagerModules.default ];
 
-          settings = {
+          # alternate user friendly text editor
+          programs.micro = {
+            enable = true;
+          };
+
+          # primary text editor
+          programs.helix = {
+
+            # enables helix
+            enable = true;
 
             # cursor settings
-            editor.cursor-shape = {
+            settings.editor.cursor-shape = {
               normal = "underline";
               insert = "bar";
               select = "block";
+
             };
 
-          };
-
-          # lsp settings
-          languages = {
-
-            language = [
-              {
-                name = "nix";
-                auto-format = true;
-                formatter.command = lib.getExe pkgs.nixfmt;
-              }
-              {
-                name = "haskell";
-                auto-format = true;
-                formatter.command = lib.getExe pkgs.stylish-haskell;
-              }
-              {
-                name = "rust";
-                auto-format = true;
-                formatter.command = lib.getExe pkgs.rustfmt;
-              }
-              {
-                name = "python";
-                auto-format = true;
-                formatter.command = lib.getExe pkgs.black;
-              }
-              {
-                name = "markdown";
-              }
-              {
-                name = "fish";
-              }
+            # helix plugins
+            plugins = with pkgs.helixPlugins; [
+              smooth-scroll # allows smoother scrolling
+              steel-pty # open terminals within helix
+              show-keys # shows keypresses within helix
+              scooter # interactive find and replace
+              notify # notification popups for helix
             ];
 
+            # lsp settings
+            languages = {
+
+              language = [
+                {
+                  name = "nix";
+                  auto-format = true;
+                  formatter.command = lib.getExe pkgs.nixfmt;
+                }
+                {
+                  name = "haskell";
+                  auto-format = true;
+                  formatter.command = lib.getExe pkgs.stylish-haskell;
+                }
+                {
+                  name = "rust";
+                  auto-format = true;
+                  formatter.command = lib.getExe pkgs.rustfmt;
+                }
+                {
+                  name = "python";
+                  auto-format = true;
+                  formatter.command = lib.getExe pkgs.black;
+                }
+                {
+                  name = "markdown";
+                }
+                {
+                  name = "fish";
+                }
+              ];
+
+            };
           };
         };
-      };
     };
 }
