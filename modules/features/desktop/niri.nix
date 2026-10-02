@@ -191,10 +191,10 @@
                     "btop"
                   ];
                 }
-                {
-                  # automanages disks
-                  #argv = [ "udiskie" ]; # started via systemd pretty sure lol
-                }
+                #{
+                # automanages disks
+                #argv = [ "udiskie" ]; # started via systemd pretty sure lol
+                #}
               ];
 
               # visual settings
