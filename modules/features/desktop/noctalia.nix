@@ -28,6 +28,11 @@
         upower.enable = true;
       };
 
+      # system packages for noctalia
+      environment.systemPackages = [
+        nix-search-tv # adds nix search function to noctalia
+      ];
+
       # home manager options
       home-manager.users.${user-parts.user.username} = {
 

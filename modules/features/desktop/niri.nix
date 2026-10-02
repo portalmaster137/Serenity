@@ -193,7 +193,7 @@
                 }
                 {
                   # automanages disks
-                  argv = [ "udiskie" ];
+                  #argv = [ "udiskie" ]; # started via systemd pretty sure lol
                 }
               ];
 
