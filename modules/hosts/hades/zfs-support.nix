@@ -38,7 +38,7 @@
         # adds zfs support at boot
         supportedFilesystems = [ "zfs" ];
         # zfs boot settings
-        boot.zfs = {
+        zfs = {
           forceImportRoot = false;
           # imports hades specific zpool
           extraPools = [ "orcus" ];
