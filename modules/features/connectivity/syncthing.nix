@@ -16,28 +16,34 @@
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # opens network ports for syncthing
-      networking.firewall = {
-        allowedTCPPorts = [ 8384 ];
-        allowedUDPPorts = [ 8834 ];
-      };
+      #networking.firewall = {
+      #allowedTCPPorts = [ 8384 ];
+      #allowedUDPPorts = [ 8834 ];
+      #};
 
       # system level syncthing options go here
       services.syncthing = {
-        #enable = true;
+        enable = true;
+        openDefaultPorts = true;
+        settings = {
+          #options = {};
+          #devices = [];
+          #folders = [];
+        };
       };
 
       # user level configuration options
-      home-manager.users.${user-parts.user.username} = {
+      #home-manager.users.${user-parts.user.username} = {
 
-        # import home manager modules here
-        #imports = [ ];
+      # import home manager modules here
+      #imports = [ ];
 
-        # user level syncthing options go here
-        services.syncthing = {
-          #enable = true;
-        };
+      # user level syncthing options go here
+      #services.syncthing = {
+      #enable = true;
+      #};
 
-      };
+      #};
 
     };
 
