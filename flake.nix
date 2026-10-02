@@ -39,7 +39,7 @@
 
     # helix editor plugins - https://codeberg.org/maxschipper/helix-plugins-nix
     helix-plugins = {
-      url = "git+ssh://git@codeberg.org/maxschipper/helix-plugins.nix";
+      url = "git+ssh://git@codeberg.org/maxschipper/helix-plugins-nix.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
