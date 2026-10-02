@@ -22,6 +22,9 @@
         # select user theme
         self.nixosModules.theme-tokyo-night
 
+        # other modules to include
+        self.nixosModules.syncthing # for syncing personal files
+
       ];
 
       # configure user here

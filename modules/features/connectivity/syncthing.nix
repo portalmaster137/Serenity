@@ -4,7 +4,7 @@
 {
 
   # module name declaration
-  flake.modules.nixos.syncthing =
+  flake.nixosModules.syncthing =
 
     # function inputs and arguments
     { pkgs, user-parts, ... }:
