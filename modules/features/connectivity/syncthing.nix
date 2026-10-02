@@ -16,15 +16,18 @@
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # opens network ports for syncthing
-      #networking.firewall = {
-      #allowedTCPPorts = [ 8384 ];
-      #allowedUDPPorts = [ 8834 ];
-      #};
+      networking.firewall = {
+        allowedTCPPorts = [ 8384 ];
+        #allowedUDPPorts = [ 8834 ];
+      };
 
       # system level syncthing options go here
       services.syncthing = {
         enable = true;
         openDefaultPorts = true;
+
+        # address to serve web client on
+        guiAddress = "0.0.0.0:8384";
         settings = {
           #options = {};
           #devices = [];
@@ -39,9 +42,9 @@
       #imports = [ ];
 
       # user level syncthing options go here
-      #services.syncthing = {
-      #enable = true;
-      #};
+      services.syncthing = {
+        enable = true;
+      };
 
       #};
 
