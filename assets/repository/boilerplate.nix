@@ -29,9 +29,13 @@ in
       # home manager options
       home-manager.users.${user-parts.user.username} = {
 
+        # necessary for module name functionality
+        imports = [ inputs.module-name.homeModules.module-name ];
+
         # user level options
         programs.foo = {
           bar = "${foobar}";
+          barfoo = "${user-parts.submodule.variable1}";
         };
 
       };
