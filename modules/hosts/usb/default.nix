@@ -3,6 +3,9 @@
 {
 
   # defines the installer specific configuration
+  # use the following command to build a bootable iso
+  # with the declared system configuration
+  # `$ nix run nixpkgs#nixos-generators -- --format iso --flake .#usb -o result`
   flake.nixosConfigurations.usb = inputs.nixpkgs.lib.nixosSystem {
 
     # modules that comprise the installer specific configuration
@@ -34,7 +37,7 @@
     {
 
       # set hostname
-      networking.hostName = "serenityos";
+      networking.hostName = "serenity-os";
 
       # bootloader settings
       boot = {
