@@ -15,7 +15,7 @@
     let
 
       # set wallpaper here
-      wallpaper = ../../../assets/media/wallpapers/nixos.png;
+      wallpaper = ../../assets/media/wallpapers/nixos.png;
 
     in
 
