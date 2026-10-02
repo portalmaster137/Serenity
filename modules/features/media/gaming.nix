@@ -167,7 +167,9 @@
 
       # wivrn firewall ports
       networking.firewall = {
-        allowedTCPPorts = [ 9757 ];
+        allowedTCPPorts = [
+          9757
+        ];
         allowedUDPPorts = [
           9757
           5353
