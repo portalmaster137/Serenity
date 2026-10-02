@@ -1,4 +1,5 @@
-{ self, inputs, ... }:
+# base level inputs and arguments, should only ever be self and/or inputs
+{ inputs, ... }:
 
 {
 
