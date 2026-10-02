@@ -31,7 +31,7 @@ _Declarative NixOS configuration with Flakes & Home Manager_ <br>
 | **Browser**        | Firefox                              |
 | **File Manager**   | Yazi                                 |
 | **Themeing**       | Stylix                               |
-| **Filesystem**     | Ext4                                 |
+| **Filesystem**     | Ext4 + ZFS                           |
 
 ### Common Commands
 
