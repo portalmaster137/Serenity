@@ -58,7 +58,7 @@
           timeout = lib.mkDefault 5;
         };
         initrd.systemd.enable = true;
-      };i
+      };
 
       # cpu settings
       hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
@@ -73,7 +73,10 @@
         # gpu drivers during boot and pre boot
         initrd.kernelModules = [ "amdgpu" ];
         # exposes gpu drivers to system
-        kernelModules = [ "amdgpu" "kvm-amd" ];
+        kernelModules = [
+          "amdgpu"
+          "kvm-amd"
+        ];
       };
       hardware = {
         # amd discrete graphics support
