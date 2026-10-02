@@ -12,7 +12,7 @@
         modules = with self.nixosModules; [
 
           # user modules
-          serenity
+          serenity # user module declaration
 
           # shared system modules
           core # shared configuration options

@@ -8,18 +8,19 @@
     # modules that comprise the installer specific configuration
     modules = with self.nixosModules; [
 
+      # user modules
+      serenity # user module declaration
+
       # shared system modules
-      core
+      core # shared core system modules
+      user-parts # basic user library
 
-      # host-specific options
-      usb-configuration
+      # host-specific modules
+      usb-configuration # defined below
 
-      # extra modules to include on host
-      terminal
-      network-proxy
-
-      # users to include on host
-      serenity
+      # feature modules
+      terminal # full featured terminal supermodule
+      network-proxy # basic dnscrypt proxy
 
     ];
 
