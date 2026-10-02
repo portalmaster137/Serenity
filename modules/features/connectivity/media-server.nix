@@ -28,15 +28,15 @@
         stateDir = "/${user-parts.user.home-directory}.config/nixflix/.state";
 
         # jellyfin options
-        jellyfin = {
-          enable = true;
-          # sets main user as administrator
-          users.${user-parts.user.username} = {
-            policy.isAdministrator = true;
-            # sets default password - change this <3
-            password = "password";
-          };
-        };
+        # jellyfin = {
+        #   enable = true;
+        #   # sets main user as administrator
+        #   users.${user-parts.user.username} = {
+        #     policy.isAdministrator = true;
+        #     # sets default password - change this <3
+        #     password = "password";
+        #   };
+        # };
 
       };
 
