@@ -20,7 +20,7 @@
         inputs.home-manager.nixosModules.home-manager
 
         # select user theme
-        self.nixosModules.theme-autogen
+        self.nixosModules.theme-tokyo-night
 
         # other modules to include
         self.nixosModules.syncthing # for syncing personal files
