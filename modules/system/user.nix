@@ -28,18 +28,18 @@
       ];
 
       # configure user here
-      nixos.user-parts = {       
+      nixos.user-parts = {
         user = {
           username = "serenity";
           avatar = "../../assets/media/avatars/carpet.jpg";
-          home-directory = "/home/serenity/"
+          home-directory = "/home/serenity/";
           default-locale = "en_AU.UTF-8";
         };
         git = {
           username = "serenity-F";
           email = "serenity-F@noreply.codeberg.org";
         };
-        
+
       };
 
       # nixos user declaration
