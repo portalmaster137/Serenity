@@ -33,8 +33,8 @@
 
               # user details
               user = {
-                name = "serenity-F";
-                email = "serenity-F@noreply.codeberg.org";
+                name = "${user-parts.git.username}";
+                email = "${user-parts.git.email}";
 
                 # path to signing key
                 signingKey = "/home/${user-parts.user.username}/.ssh/id_ed25519.pub";

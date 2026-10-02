@@ -25,16 +25,44 @@
 
     {
       options.nixos.user-parts = {
+
         user = lib.mkOption {
           type = lib.types.submodule {
             options = {
+
               username = lib.mkOption {
                 type = lib.types.str;
                 default = "user";
               };
+
+              avatar = lib.mkOption {
+                type = lib.types.str;
+                default = "avatar.png";
+              };
+
+              home-directory = lib.mkOption {
+                type = lib.types.str;
+              };
+
+              default-locale = lib.mkOption {
+                type = lib.types.str;
+                default = "en_US.UTF-8";
+              };
+
             };
           };
           default = { };
+        };
+
+        shell = lib.mkOption {
+          type = lib.types.submodule {
+            options = {
+              user-shell = lib.mkOption {
+                type = lib.types.str;
+                default = "pkgs.fish";
+              };
+            };
+          };
         };
 
         git = lib.mkOption {
@@ -42,24 +70,15 @@
             options = {
               username = lib.mkOption {
                 type = lib.types.str;
-                default = "DontBlameMe";
+                default = "serenity-F";
               };
               email = lib.mkOption {
                 type = lib.types.str;
-                default = "dontblameme@noreply.codeberg.org";
+                default = "serenity-F@noreply.codeberg.org";
               };
             };
           };
           default = { };
-        };
-
-        home-directory = lib.mkOption {
-          type = lib.types.str;
-        };
-
-        default-locale = lib.mkOption {
-          type = lib.types.str;
-          default = "en_US.UTF-8";
         };
 
       };

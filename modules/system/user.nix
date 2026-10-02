@@ -27,16 +27,20 @@
 
       ];
 
-      nixos.user-parts = {
-        user.username = "serenity";
-      };
-
       # configure user here
-      #config.user-options = {
-      #username = "serenity";
-      #dots = "/home/serenity/SerenityOS";
-      # see `modules/features/stylix.nix` for theme declared above
-      #};
+      nixos.user-parts = {       
+        user = {
+          username = "serenity";
+          avatar = "../../assets/media/avatars/carpet.jpg";
+          home-directory = "/home/serenity/"
+          default-locale = "en_AU.UTF-8";
+        };
+        git = {
+          username = "serenity-F";
+          email = "serenity-F@noreply.codeberg.org";
+        };
+        
+      };
 
       # nixos user declaration
       users.users.${user-parts.user.username} = {
