@@ -42,6 +42,7 @@
 
               home-directory = lib.mkOption {
                 type = lib.types.str;
+                default = "/home/user/";
               };
 
               default-locale = lib.mkOption {
@@ -70,11 +71,11 @@
             options = {
               username = lib.mkOption {
                 type = lib.types.str;
-                default = "serenity-F";
+                default = "user";
               };
               email = lib.mkOption {
                 type = lib.types.str;
-                default = "serenity-F@noreply.codeberg.org";
+                default = "user@noreply.codeberg.org";
               };
             };
           };
