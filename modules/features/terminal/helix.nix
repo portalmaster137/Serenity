@@ -62,7 +62,6 @@
             # helix plugins
             plugins = with pkgs.helixPlugins; [
               smooth-scroll # allows smoother scrolling
-              steel-pty # open terminals within helix
               show-keys # shows keypresses within helix
               scooter # interactive find and replace
               notify # notification popups for helix
