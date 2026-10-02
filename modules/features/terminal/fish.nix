@@ -82,6 +82,16 @@
                   echo loser
                 end
               '';
+
+              # greeter function
+              fish_greeting = ''
+                if type -q kitty-img
+                  printf '<3 hiya serenity '
+                  echo 'welcome to $hostname' "~" :flag:
+                else
+                  echo <heart hira ${user-parts.user.username}, welcome to $hostname "~" :flag:
+              '';
+
             };
 
           };
