@@ -43,7 +43,12 @@
   # host module declaration
   flake.nixosModules.hades-configuration =
 
-    { pkgs, lib, ... }:
+    {
+      config,
+      pkgs,
+      lib,
+      ...
+    }:
 
     {
 
