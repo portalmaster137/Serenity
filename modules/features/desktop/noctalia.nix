@@ -29,7 +29,7 @@
       };
 
       # system packages for noctalia
-      environment.systemPackages = [
+      environment.systemPackages = with pkgs; [
         nix-search-tv # adds nix search function to noctalia
       ];
 
