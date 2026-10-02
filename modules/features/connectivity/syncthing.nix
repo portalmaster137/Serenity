@@ -18,7 +18,7 @@
       # opens network ports for syncthing
       networking.firewall = {
         allowedTCPPorts = [ 8384 ];
-        #allowedUDPPorts = [ 8834 ];
+        allowedUDPPorts = [ 8384 ];
       };
 
       # system level syncthing options go here
@@ -40,6 +40,11 @@
 
         # import home manager modules here
         #imports = [ ];
+
+        # syncthing packages to include
+        home.packages = with pkgs; [
+          syncthing
+        ];
 
         # user level syncthing options go here
         services.syncthing = {
