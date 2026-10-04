@@ -63,9 +63,6 @@
 
             # command aliases & abbreviations
             shellAbbrs = {
-              nv = "hx";
-              nvim = "hx";
-              trc = "tree -C";
             };
             shellAliases = {
               rbu = "sudo systemctl reboot --firmware-setup";
@@ -77,7 +74,6 @@
               # greeter function
               fish_greeting = ''
                 echo hiya ${user-parts.user.username}, welcome to $hostname "~"
-
               '';
 
             };
