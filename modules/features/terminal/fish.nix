@@ -81,6 +81,7 @@
                   echo 'welcome to $hostname' "~" :flag:
                 else
                   echo hiya ${user-parts.user.username}, welcome to $hostname "~"
+                end
               '';
 
             };
