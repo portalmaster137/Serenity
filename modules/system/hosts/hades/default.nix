@@ -97,6 +97,15 @@
             ppfeaturemask = "0xffffffff"; # all overdrive features
           };
         };
+
+        # bluetooth configuration
+        bluetooth = {
+          enable = true;
+          powerOnBoot = true;
+          #input.general.UserspaceHID = true;
+          #settings.General.Experimental = true;
+          #settings.General.FastConnectable = true;
+        };
       };
 
       # fstrim for ssd
