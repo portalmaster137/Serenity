@@ -78,14 +78,14 @@
 
         # copies avatars from flake into home
         home.file."Avatars" = {
-          source = ../../assets/media/avatars;
+          source = ../../../assets/media/avatars;
           target = "/home/${user-parts.user.username}/Pictures/Avatars";
           recursive = true;
         };
 
         # copies wallpapers from flake into home
         home.file."Wallpapers" = {
-          source = ../../assets/media/wallpapers;
+          source = ../../../assets/media/wallpapers;
           target = "/home/${user-parts.user.username}/Pictures/Wallpapers";
           recursive = true;
         };
