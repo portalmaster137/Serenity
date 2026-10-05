@@ -15,7 +15,7 @@
     let
 
       # set wallpaper here
-      wallpaper = ../../assets/media/wallpapers/almond-blossoms.jpg;
+      wallpaper = ../../../assets/media/wallpapers/almond-blossoms.jpg;
 
     in
 

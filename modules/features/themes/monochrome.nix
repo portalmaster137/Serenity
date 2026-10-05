@@ -15,7 +15,7 @@
     let
 
       # set wallpaper here
-      wallpaper = ../../assets/media/wallpapers/attunement.png;
+      wallpaper = ../../../assets/media/wallpapers/attunement.png;
 
     in
 

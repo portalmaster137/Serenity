@@ -15,7 +15,7 @@
     let
 
       # set wallpaper here
-      wallpaper = ../themes/tokyo-night.nix;
+      wallpaper = ../../../assets/media/wallpapers/mima-kirigoe.jpg;
 
     in
 
