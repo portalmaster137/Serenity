@@ -59,6 +59,9 @@
           nautilus # file manager
           swayimg # image viewer
           zathura # pdf viewer
+          vscodium-fhs # vscode editor
+          opencode-desktop
+          prismlauncher
         ];
 
       };

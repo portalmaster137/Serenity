@@ -33,6 +33,11 @@
         # version control
         self.nixosModules.git
 
+
+        # C Development Environment
+        self.nixosModules.cdevenv
+
+        self.nixosModules.nixd
       ];
 
     };
