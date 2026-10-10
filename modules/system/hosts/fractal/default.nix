@@ -118,22 +118,11 @@
     };
 
   flake.nixosModules.fractal-hardware =
-    { modulesPath, ... }:
+    { ... }:
     {
-      imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-
-      boot.initrd.availableKernelModules = [
-        "xhci_pci"
-        "ahci"
-        "nvme"
-        "usbhid"
-        "usb_storage"
-        "sd_mod"
-      ];
-      boot.kernelModules = [ "kvm-amd" ];
+      # This tracked root-level file is populated by nixos-generate-config.
+      imports = [ ../../../../hardware-configuration.nix ];
       boot.supportedFilesystems = [ "btrfs" ];
-
-      # Add fileSystems and swapDevices here once the NixOS target layout is chosen.
     };
 
 }

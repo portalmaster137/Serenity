@@ -37,7 +37,7 @@ _Declarative NixOS configuration with Flakes & Home Manager_ <br>
 
 The `fractal` host targets Porta's MSI MS-7C95 desktop (AMD Ryzen 5 5500, NVIDIA GeForce RTX 5060 Ti, Intel Wireless-AC 3168 Wi-Fi/Bluetooth, and x86_64 UEFI). It enables the Niri/Noctalia desktop, terminal tools, gaming, and multimedia modules. The configured displays are HDMI-A-1 at 1920×1080/180 Hz and DP-2 at 1920×1080/60 Hz.
 
-The host configuration does not select or partition a disk. Before installing NixOS, decide which drive and filesystem to use, generate its filesystem configuration, and add the resulting UUIDs to the `fractal-hardware` module. This machine currently runs Arch Linux, so the profile has not been installed or switched on the running system.
+The host configuration does not select or partition a disk. Before installing NixOS, decide which drive and filesystem to use. After mounting the target at `/mnt` and cloning this repository to `/mnt/etc/nixos`, run `nixos-generate-config --root /mnt --force`. This replaces the tracked root-level `hardware-configuration.nix` placeholder with detected hardware, filesystem, and UUID settings; the `fractal-hardware` module imports it automatically. This machine currently runs Arch Linux, so the profile has not been installed or switched on the running system.
 
 The account is configured as `porta` and uses the local Git identity. No login password is stored in the Nix configuration; after mounting the installed system at `/mnt`, set one before the first normal login with `nixos-enter --root /mnt -c 'passwd porta'`.
 
