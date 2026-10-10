@@ -297,7 +297,6 @@
                       title = "btop";
                     }
                   ];
-                  open-on-output = "DP-4";
                   open-on-workspace = "System";
                   open-maximized = true;
                 }

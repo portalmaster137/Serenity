@@ -45,7 +45,6 @@
           "rd.systemd.show_status=false" # unsure ?
           "rd.udev.log_level=0" # more minimising of output on boot
           "boot.shell_on_fail" # reboots to basic uefi shell on boot failure
-          "i915.fastboot=1" # unsure ?
           "plymouth.debug" # I NEED ANSWERS
           "plymouth.use-simpledrm" # tweak to allow plymouth animations to run smoother
           "plymouth.ignore-serial-consoles" # unsure ?
@@ -84,7 +83,7 @@
 
       # locale settings
       i18n = {
-        defaultLocale = "en_AU.UTF-8";
+        defaultLocale = "en_US.UTF-8";
         supportedLocales = [
           "en_AU.UTF-8/UTF-8"
           "en_US.UTF-8/UTF-8"

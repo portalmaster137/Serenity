@@ -30,24 +30,20 @@
       # configure user here
       nixos.user-parts = {
         user = {
-          username = "serenity";
+          username = "porta";
           avatar = "../../assets/media/avatars/carpet.jpg";
-          home-directory = "/home/serenity/";
-          default-locale = "en_AU.UTF-8";
+          home-directory = "/home/porta/";
+          default-locale = "en_US.UTF-8";
         };
         git = {
-          username = "serenity-F";
-          email = "serenity-F@noreply.codeberg.org";
+          username = "Porta";
+          email = "portalmaster137@gmail.com";
         };
 
       };
 
       # nixos user declaration
       users.users.${user-parts.user.username} = {
-
-        # remember to change this
-        initialPassword = "password";
-
         # permissions management
         isNormalUser = true;
         extraGroups = [
