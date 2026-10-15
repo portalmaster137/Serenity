@@ -69,6 +69,7 @@
         cockatrice # mtg client
         prismlauncher # modded minecraft
         osu-lazer-bin # rhythm is just a click away!
+        wine
         #inputs.nix-gaming.packages.${pkgs.system}.osu-mime # osu mime types
       ];
 

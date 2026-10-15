@@ -78,6 +78,8 @@
 
       services.fstrim.enable = true;
 
+
+      nixpkgs.config = { allowBroken = true; allowUnfree = true; };
       # Display arrangement detected on fractal: HDMI-A-1 is primary,
       # with DP-2 immediately to its right.
       home-manager.users.${user-parts.user.username} = {

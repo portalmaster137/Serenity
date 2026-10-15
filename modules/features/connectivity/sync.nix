@@ -19,7 +19,14 @@
       networking.firewall = {
         allowedTCPPorts = [ 8384 ];
         allowedUDPPorts = [ 8384 ];
+        extraCommands = ''
+          iptables -I INPUT -m pkttype --pkt-type multicast -j ACCEPT
+          iptables -A INPUT -m pkttype --pkt-type multicast -j ACCEPT
+          iptables -I INPUT -p udp -m udp --match multiport --dports 1990,2021 -j ACCEPT
+        '';
       };
+
+      
 
       # system level syncthing options go here
       services.syncthing = {
