@@ -12,6 +12,8 @@
       # machine hardware and settings
       fractal-configuration
       fractal-hardware
+      inputs.double-minegrub-menu.inputs.minegrub-world-sel-theme.nixosModules.default
+      double-minegrub-menu
 
       # selected features for this desktop
       network-proxy
@@ -45,12 +47,20 @@
             enable = true;
             device = "nodev";
             efiSupport = true;
+            double-minegrub-menu = {
+              enable = true;
+              main_menu_background = "random";
+              splash_text = "100% Declarative";
+              world_selection_background_scaled = "1920x1080";
+            };
           };
           efi.canTouchEfiVariables = true;
           timeout = lib.mkDefault 5;
         };
         initrd.systemd.enable = true;
       };
+      # Minegrub supplies its own GRUB theme; don't layer Stylix's GRUB theme over it.
+      stylix.targets.grub.enable = false;
 
       hardware.enableRedistributableFirmware = true;
       hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

@@ -25,6 +25,12 @@
     # nix hardware - https://github.com/NixOS/nixos-hardware
     hardware.url = "github:nixos/nixos-hardware";
 
+    # Minecraft-themed GRUB double-menu module
+    double-minegrub-menu = {
+      url = "github:Lxtharia/double-minegrub-menu";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # dendritic stuff - https://github.com/mightyiam/dendritic
     # flake parts - https://github.com/hercules-ci/flake-parts
     # import tree - https://github.com/denful/import-tree
