@@ -41,7 +41,11 @@
       networking.firewall.allowedUDPPorts = [ 25565 ];
       boot = {
         loader = {
-          systemd-boot.enable = true;
+          grub = {
+            enable = true;
+            device = "nodev";
+            efiSupport = true;
+          };
           efi.canTouchEfiVariables = true;
           timeout = lib.mkDefault 5;
         };
