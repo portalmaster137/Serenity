@@ -64,6 +64,11 @@
         trusted-public-keys = [ "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M=" ];
       };
 
+      programs.nh = {
+        enable = true;
+        flake = "/etc/nixos";
+      };
+
       # compresses half the ram for use as swap
       zramSwap.enable = true;
 
@@ -111,9 +116,11 @@
       # for encryption
       programs.gnupg.agent = {
         enable = true;
-        enableSSHSupport = true;
+        enableSSHSupport = false;
         #pinentryPackage = [ ];
       };
+      programs.ssh.startAgent = true;
+      services.gnome.gcr-ssh-agent.enable = false;
 
       # binary support
       # installs a stub elf loader to print an error
