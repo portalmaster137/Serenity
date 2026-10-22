@@ -33,14 +33,14 @@
         # version control
         self.nixosModules.git
 
-
         # C Development Environment
         self.nixosModules.cdevenv
 
         self.nixosModules.nixd
         self.nixosModules.go
         self.nixosModules.flatpak
-        self.nixosModules.rust    
+        self.nixosModules.rust
+        self.nixosModules.jetbrains
       ];
 
     };

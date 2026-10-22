@@ -33,7 +33,12 @@
     {
       networking.hostName = "fractal";
       networking.networkmanager.enable = true;
-
+      networking.firewall.allowedTCPPorts = [
+        22
+        80
+        25565
+      ];
+      networking.firewall.allowedUDPPorts = [ 25565 ];
       boot = {
         loader = {
           systemd-boot.enable = true;
@@ -78,8 +83,10 @@
 
       services.fstrim.enable = true;
 
-
-      nixpkgs.config = { allowBroken = true; allowUnfree = true; };
+      nixpkgs.config = {
+        allowBroken = true;
+        allowUnfree = true;
+      };
       # Display arrangement detected on fractal: HDMI-A-1 is primary,
       # with DP-2 immediately to its right.
       home-manager.users.${user-parts.user.username} = {
