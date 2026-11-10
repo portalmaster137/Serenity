@@ -11,6 +11,7 @@
 
       # for home manager functionality
       imports = [ inputs.home-manager.nixosModules.home-manager ];
+      environment.systemPackages = [ pkgs.git-filter-repo ];
 
       # system level git declaration
       programs.git.enable = true;

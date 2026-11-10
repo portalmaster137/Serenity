@@ -62,6 +62,7 @@
           vscodium-fhs # vscode editor
           opencode-desktop
           prismlauncher
+          xivlauncher
         ];
 
       };

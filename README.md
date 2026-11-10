@@ -41,6 +41,8 @@ The host configuration does not select or partition a disk. Before installing Ni
 
 The account is configured as `porta` and uses the local Git identity. No login password is stored in the Nix configuration; after mounting the installed system at `/mnt`, set one before the first normal login with `nixos-enter --root /mnt -c 'passwd porta'`.
 
+The `cream-installer` feature installs [CreamInstaller](https://github.com/Novattz/creamlinux-installer) using its upstream Nix package, pinned in `flake.lock`. It is enabled on `fractal` and applies the upstream WebKit workaround automatically when NVIDIA video drivers are configured. Add `cream-installer` to another host's module list to enable it there; run `creamlinux` or use the desktop launcher after rebuilding.
+
 ### Common Commands
 
 | Command                                     | Description                                        |

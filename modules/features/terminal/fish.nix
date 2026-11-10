@@ -16,6 +16,7 @@
       environment.systemPackages = with pkgs; [
         fish # primary shell
         bash # backup shell
+        alacritty
       ];
 
       # system level fish declaration

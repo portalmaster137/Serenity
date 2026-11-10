@@ -13,6 +13,7 @@
       fractal-configuration
       fractal-hardware
       inputs.double-minegrub-menu.inputs.minegrub-world-sel-theme.nixosModules.default
+      inputs.minecraft-plymouth-theme.nixosModules.default
       double-minegrub-menu
 
       # selected features for this desktop
@@ -21,6 +22,7 @@
       terminal-emulator
       desktop
       gaming
+      cream-installer
       multimedia
     ];
   };
@@ -38,9 +40,21 @@
       networking.firewall.allowedTCPPorts = [
         22
         80
+        443
+        8443
+        5100
         25565
+        3923
       ];
-      networking.firewall.allowedUDPPorts = [ 25565 ];
+      networking.firewall.allowedUDPPorts = [
+        25565
+        5100
+        443
+        8443
+      ];
+
+      virtualisation.docker.enable = true;
+      users.users.porta.extraGroups = [ "docker" ];
       boot = {
         loader = {
           grub = {
@@ -57,10 +71,13 @@
           efi.canTouchEfiVariables = true;
           timeout = lib.mkDefault 5;
         };
-        initrd.systemd.enable = true;
+        #        initrd.systemd.enable = true;
+        plymouth.plymouth-minecraft-theme.enable = true;
       };
       # Minegrub supplies its own GRUB theme; don't layer Stylix's GRUB theme over it.
       stylix.targets.grub.enable = false;
+      # The local Minecraft theme supplies Plymouth's theme and assets.
+      stylix.targets.plymouth.enable = false;
 
       hardware.enableRedistributableFirmware = true;
       hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

@@ -12,7 +12,10 @@
       # for home manager functionality
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-      environment.systemPackages = with pkgs; [ btop ];
+      environment.systemPackages = with pkgs; [
+        btop
+        weechat
+      ];
 
       # home manager options
       home-manager.users.${user-parts.user.username} = {

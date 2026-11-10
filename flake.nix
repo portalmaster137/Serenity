@@ -31,6 +31,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    minecraft-plymouth-theme = {
+      url = "path:/home/porta/Code/minecraft-plymouth-theme";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # dendritic stuff - https://github.com/mightyiam/dendritic
     # flake parts - https://github.com/hercules-ci/flake-parts
     # import tree - https://github.com/denful/import-tree
@@ -47,6 +52,12 @@
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # CreamInstaller's upstream Nix package
+    creamlinux-installer = {
+      url = "github:Novattz/creamlinux-installer";
+      flake = false;
     };
 
     # sound driver optimisations - https://github.com/musnix/musnix
@@ -84,6 +95,11 @@
     # hassle free desktop shell - https://docs.noctalia.dev/getting-started/nixos/
     noctalia = {
       url = "github:noctalia-dev/noctalia/cachix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    bootvine = {
+      url = "git+https://codeberg.org/wvhulle/bootvine";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

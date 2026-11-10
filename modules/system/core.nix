@@ -33,7 +33,7 @@
           ];
         };
         # kernel and boot settings for plymouth
-        initrd.verbose = false;
+        #        initrd.verbose = false;
         consoleLogLevel = 3;
         kernelParams = [
           # grub kernel parameters, set to prevent excessive output on boot
@@ -66,6 +66,8 @@
 
       programs.nh = {
         enable = true;
+        clean.enable = true;
+        clean.extraArgs = "--keep 5 --keep-since 3d";
         flake = "/etc/nixos";
       };
 
@@ -138,6 +140,10 @@
         # tools
         nix-output-monitor # displays more info on nix commands
         steam-run # emulates fhs environment
+        iproute2 # ip and ss, used by HellForge's Linux launcher
+        util-linux # unshare, used by HellForge's Linux launcher
+        procps # pgrep, used by HellForge's Linux launcher
+        socat # Steam port bridge for HellForge's Linux launcher
         tldr # simpler manual pages
         bc # basic calculator
 
@@ -167,7 +173,7 @@
         pciutils # pci utilities
         moreutils # more utilities
         busybox # even more utilities
-
+        icu
       ];
 
     };
