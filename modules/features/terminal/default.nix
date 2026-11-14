@@ -41,6 +41,7 @@
         self.nixosModules.flatpak
         self.nixosModules.rust
         self.nixosModules.jetbrains
+        self.nixosModules.bootvine
       ];
 
     };

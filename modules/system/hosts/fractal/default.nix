@@ -45,12 +45,14 @@
         5100
         25565
         3923
+        7547
       ];
       networking.firewall.allowedUDPPorts = [
         25565
         5100
         443
         8443
+        7547
       ];
 
       virtualisation.docker.enable = true;
@@ -61,23 +63,23 @@
             enable = true;
             device = "nodev";
             efiSupport = true;
-            double-minegrub-menu = {
-              enable = true;
-              main_menu_background = "random";
-              splash_text = "100% Declarative";
-              world_selection_background_scaled = "1920x1080";
-            };
+            #double-minegrub-menu = {
+            #  enable = true;
+            #  main_menu_background = "random";
+            #  splash_text = "100% Declarative";
+            #  world_selection_background_scaled = "1920x1080";
+            #};
           };
           efi.canTouchEfiVariables = true;
           timeout = lib.mkDefault 5;
         };
         #        initrd.systemd.enable = true;
-        plymouth.plymouth-minecraft-theme.enable = true;
+        #plymouth.plymouth-minecraft-theme.enable = true;
       };
       # Minegrub supplies its own GRUB theme; don't layer Stylix's GRUB theme over it.
-      stylix.targets.grub.enable = false;
+      #stylix.targets.grub.enable = false;
       # The local Minecraft theme supplies Plymouth's theme and assets.
-      stylix.targets.plymouth.enable = false;
+      #stylix.targets.plymouth.enable = false;
 
       hardware.enableRedistributableFirmware = true;
       hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
