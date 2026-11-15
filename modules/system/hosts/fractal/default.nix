@@ -36,6 +36,13 @@
     }:
     {
       networking.hostName = "fractal";
+      # The partition currently on /dev/sdb; PARTUUID survives drive renumbering.
+      fileSystems."/development" = {
+        device = "/dev/disk/by-partuuid/803c7de5-8a56-4b1e-ba60-d88d886a2efc";
+        fsType = "auto";
+        options = [ "nofail" ];
+      };
+
       networking.networkmanager.enable = true;
       networking.firewall.allowedTCPPorts = [
         22
