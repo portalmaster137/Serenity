@@ -1,4 +1,4 @@
-{ self, inputs, ... }:
+{ inputs, ... }:
 
 {
 
@@ -14,7 +14,7 @@
 
     {
 
-      # other modules to load
+      # Shared Home Manager integration for all feature modules.
       imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # don't touch this
@@ -33,7 +33,6 @@
           ];
         };
         # kernel and boot settings for plymouth
-        #        initrd.verbose = false;
         consoleLogLevel = 3;
         kernelParams = [
           # grub kernel parameters, set to prevent excessive output on boot
@@ -111,15 +110,12 @@
           allowUnfree = true;
           allowBroken = true;
         };
-        # nixpkgs overlays
-        overlays = [ ];
       };
 
       # for encryption
       programs.gnupg.agent = {
         enable = true;
         enableSSHSupport = false;
-        #pinentryPackage = [ ];
       };
       programs.ssh.startAgent = true;
       services.gnome.gcr-ssh-agent.enable = false;
@@ -140,9 +136,9 @@
         # tools
         nix-output-monitor # displays more info on nix commands
         steam-run # emulates fhs environment
-        iproute2 # ip and ss, used by HellForge's Linux launcher
-        util-linux # unshare, used by HellForge's Linux launcher
-        procps # pgrep, used by HellForge's Linux launcher
+        # Keep explicit entries to preserve their priority over system defaults.
+        util-linux # filesystem and process utilities
+        procps # process monitoring
         socat # Steam port bridge for HellForge's Linux launcher
         tldr # simpler manual pages
         bc # basic calculator
@@ -161,7 +157,6 @@
         file # shows file types
         tree # shows directory tree structure
         tokei # displays lines of code in repository
-        gnupg # encryption key management
         ripgrep # searches files for input
         git-crypt # transparent file encryption in git
         curl # receives data over http/s

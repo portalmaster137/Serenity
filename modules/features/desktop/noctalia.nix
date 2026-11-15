@@ -9,9 +9,6 @@
 
     {
 
-      # for home manager functionality
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
-
       # binary cache to reduce rebuild time
       nix.settings = {
         extra-substituters = [

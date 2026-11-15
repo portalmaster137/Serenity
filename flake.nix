@@ -18,12 +18,12 @@
 
   # flake inputs
   inputs = {
+    # Include the pinned Git submodule in the flake source.
+    self.submodules = true;
 
     # nixos core module inputs - https://wiki.nixos.org/wiki/NixOS_Wiki
     # nixpkgs version - https://github.com/NixOS/nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nix hardware - https://github.com/NixOS/nixos-hardware
-    hardware.url = "github:nixos/nixos-hardware";
 
     # Minecraft-themed GRUB double-menu module
     double-minegrub-menu = {
@@ -32,7 +32,7 @@
     };
 
     minecraft-plymouth-theme = {
-      url = "path:/home/porta/Code/minecraft-plymouth-theme";
+      url = "path:./vendor/minecraft-plymouth-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -45,12 +45,6 @@
     # helix editor plugins - https://codeberg.org/maxschipper/helix-plugins-nix
     helix-plugins = {
       url = "github:maxschipper/helix-plugins-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # nice-to-haves for gaming - https://github.com/fufexan/nix-gaming
-    nix-gaming = {
-      url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

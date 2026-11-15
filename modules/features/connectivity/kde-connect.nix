@@ -1,5 +1,5 @@
 # base level inputs, should only ever be self and/or inputs
-{ inputs, ... }:
+{ ... }:
 
 {
 
@@ -9,9 +9,6 @@
     { user-parts, ... }:
 
     {
-
-      # import system level module for home manager functionality
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # kde connect network ports
       networking.firewall = rec {

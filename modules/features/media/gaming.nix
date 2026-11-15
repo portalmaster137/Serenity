@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ ... }:
 
 {
 
@@ -70,7 +70,6 @@
         prismlauncher # modded minecraft
         osu-lazer-bin # rhythm is just a click away!
         wine
-        #inputs.nix-gaming.packages.${pkgs.system}.osu-mime # osu mime types
       ];
 
     };
@@ -81,15 +80,11 @@
 
     {
       pkgs,
-      lib,
       user-parts,
       ...
     }:
 
     {
-
-      # for home manager functionality
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # physical input
       users.users.${user-parts.user.username}.extraGroups = [ "input" ];

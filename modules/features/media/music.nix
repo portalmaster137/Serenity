@@ -9,9 +9,6 @@
 
     {
 
-      # for home manager functionality
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
-
       home-manager.users.${user-parts.user.username} = {
 
         # audio effects
@@ -61,9 +58,6 @@
     {
 
       imports = [
-
-        # for home manager functionality
-        inputs.home-manager.nixosModules.home-manager
 
         # for realtime audio production and enhancements
         inputs.musnix.nixosModules.musnix

@@ -1,19 +1,16 @@
-{ self, inputs, ... }:
+{ self, ... }:
 
 {
 
   # terminal supermodule
   flake.nixosModules.terminal =
 
-    { pkgs, ... }:
+    { ... }:
 
     {
 
       # list of modules to include
       imports = [
-
-        # home manager
-        inputs.home-manager.nixosModules.home-manager
 
         # text editor
         self.nixosModules.helix
@@ -49,7 +46,7 @@
   # to make kitty an optional include
   flake.nixosModules.terminal-emulator =
 
-    { pkgs, ... }:
+    { ... }:
 
     {
 

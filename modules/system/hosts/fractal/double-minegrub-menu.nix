@@ -1,13 +1,17 @@
 { ... }:
 {
   flake.nixosModules.double-minegrub-menu =
-    { config, lib, pkgs, ... }:
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
     let
       cfg = config.boot.loader.grub.double-minegrub-menu;
 
       backgroundArg =
-        if cfg.main_menu_background == "random" then ""
-        else "backgrounds/${cfg.main_menu_background}";
+        if cfg.main_menu_background == "random" then "" else "backgrounds/${cfg.main_menu_background}";
       splashTextArg = if cfg.splash_text == "random" then "" else cfg.splash_text;
 
       minegrubTheme = pkgs.fetchFromGitHub {
@@ -34,20 +38,22 @@
 
       themeDir = "${minegrubTheme}/minegrub";
       backgroundDir = "${minegrubTheme}/background_options";
-      themeFiles = builtins.listToAttrs (map
-        (file: {
-          name = builtins.unsafeDiscardStringContext
-            ("grub/themes/minegrub" + lib.removePrefix (toString themeDir) (toString file));
+      themeFiles = builtins.listToAttrs (
+        map (file: {
+          name = builtins.unsafeDiscardStringContext (
+            "grub/themes/minegrub" + lib.removePrefix (toString themeDir) (toString file)
+          );
           value = file;
-        })
-        (lib.filesystem.listFilesRecursive themeDir));
-      backgroundFiles = builtins.listToAttrs (map
-        (file: {
-          name = builtins.unsafeDiscardStringContext
-            ("grub/themes/minegrub/backgrounds" + lib.removePrefix (toString backgroundDir) (toString file));
+        }) (lib.filesystem.listFilesRecursive themeDir)
+      );
+      backgroundFiles = builtins.listToAttrs (
+        map (file: {
+          name = builtins.unsafeDiscardStringContext (
+            "grub/themes/minegrub/backgrounds" + lib.removePrefix (toString backgroundDir) (toString file)
+          );
           value = file;
-        })
-        (lib.filesystem.listFilesRecursive backgroundDir));
+        }) (lib.filesystem.listFilesRecursive backgroundDir)
+      );
     in
     {
       options.boot.loader.grub.double-minegrub-menu = {
@@ -83,7 +89,9 @@
           };
           extraFiles = {
             "grub/mainmenu.cfg" = ./mainmenu.cfg;
-          } // themeFiles // backgroundFiles;
+          }
+          // themeFiles
+          // backgroundFiles;
           extraConfig = ''
             if [ -z "$chosen" ] ; then
               if [ "''${config_file}" ] ; then

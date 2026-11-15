@@ -31,9 +31,11 @@ _Declarative NixOS configuration with Flakes & Home Manager_ <br>
 | **Browser**        | Firefox                              |
 | **File Manager**   | Yazi                                 |
 | **Themeing**       | Stylix                               |
-| **Filesystem**     | Ext4, Btrfs, or ZFS (host-dependent) |
+| **Filesystem**     | Btrfs (root), FAT32 (EFI) |
 
-### Local machine profile: `fractal`
+### Machine profile: `fractal`
+
+`fractal` is the only host configuration maintained in this repository.
 
 The `fractal` host targets Porta's MSI MS-7C95 desktop (AMD Ryzen 5 5500, NVIDIA GeForce RTX 5060 Ti, Intel Wireless-AC 3168 Wi-Fi/Bluetooth, and x86_64 UEFI). It enables the Niri/Noctalia desktop, terminal tools, gaming, and multimedia modules. The configured displays are HDMI-A-1 at 1920×1080/180 Hz and DP-2 at 1920×1080/60 Hz.
 
@@ -42,6 +44,38 @@ The host configuration does not select or partition a disk. Before installing Ni
 The account is configured as `porta` and uses the local Git identity. No login password is stored in the Nix configuration; after mounting the installed system at `/mnt`, set one before the first normal login with `nixos-enter --root /mnt -c 'passwd porta'`.
 
 The `cream-installer` feature installs [CreamInstaller](https://github.com/Novattz/creamlinux-installer) using its upstream Nix package, pinned in `flake.lock`. It is enabled on `fractal` and applies the upstream WebKit workaround automatically when NVIDIA video drivers are configured. Add `cream-installer` to another host's module list to enable it there; run `creamlinux` or use the desktop launcher after rebuilding.
+
+### Repository setup and Minecraft Plymouth theme
+
+Clone with `git clone --recurse-submodules <repository-url>`. For an existing
+checkout, run `git submodule update --init --recursive` before evaluating or
+rebuilding the configuration.
+
+The Minecraft Plymouth theme lives in `vendor/minecraft-plymouth-theme` as a Git
+submodule of [nikp123/minecraft-plymouth-theme](https://github.com/nikp123/minecraft-plymouth-theme).
+Its revision is pinned by the parent repository. The flake uses a relative path
+and includes submodules automatically; this requires Nix 2.27 or newer.
+`nix flake update` does not advance this submodule. To update it deliberately,
+run `git submodule update --remote vendor/minecraft-plymouth-theme`, then
+`nix flake lock`, review the changes, and commit the updated submodule pointer
+with any lock-file changes.
+
+The Fractal profile imports the theme's module but currently leaves
+`boot.plymouth.plymouth-minecraft-theme.enable` disabled. This cleanup preserves
+that boot behavior.
+
+### Themes and maintenance
+
+Feature modules rely on the shared `core` module for Home Manager integration.
+
+Select a theme by changing the `self.nixosModules.theme-tokyo-night` import in
+`modules/system/user.nix`. The variants in `modules/features/themes/` share
+fonts, cursor, media files, and opacity through `theme-common`; wallpaper and
+palette choices remain in each variant.
+
+Run `nix fmt` to format the configuration and
+`nix eval --raw .#nixosConfigurations.fractal.config.system.build.toplevel.drvPath`
+to check system evaluation before a rebuild.
 
 ### Common Commands
 

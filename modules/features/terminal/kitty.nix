@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ ... }:
 
 {
 
@@ -8,9 +8,6 @@
     { pkgs, user-parts, ... }:
 
     {
-
-      # needed for home manager functionality
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # home manager options
       home-manager.users.${user-parts.user.username} = {

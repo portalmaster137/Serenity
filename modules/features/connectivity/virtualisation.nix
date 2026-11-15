@@ -1,5 +1,5 @@
 # base level inputs and arguments, should only ever be self and/or inputs
-{ inputs, ... }:
+{ ... }:
 
 {
 
@@ -9,9 +9,6 @@
     { pkgs, user-parts, ... }:
 
     {
-
-      # for home manager functionality
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # adding user to required groups
       users.users.${user-parts.user.username} = {

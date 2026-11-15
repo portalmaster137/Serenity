@@ -1,9 +1,8 @@
-{ inputs, ... }:
+{ ... }:
 {
   flake.nixosModules.cdevenv =
-    { pkgs, user-parts, ... }:
+    { pkgs, ... }:
     {
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       # onig_sys links against the system Oniguruma library.
       nixpkgs.overlays = [

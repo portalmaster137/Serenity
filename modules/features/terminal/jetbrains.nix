@@ -1,7 +1,7 @@
-{ inputs, ... }:
+{ ... }:
 {
   flake.nixosModules.jetbrains =
-    { pkgs, user-parts, ... }:
+    { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [ jetbrains-toolbox ];
     };

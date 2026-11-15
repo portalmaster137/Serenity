@@ -1,8 +1,6 @@
-{ inputs, ... }:
+{ ... }:
 {
-  flake.nixosModules.flatpak =
-  { pkgs, user-parts, ... }: {
-    imports = [ inputs.home-manager.nixosModules.home-manager ];
+  flake.nixosModules.flatpak = { ... }: {
     services.flatpak.enable = true;
   };
 }

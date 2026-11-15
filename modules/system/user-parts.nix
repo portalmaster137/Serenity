@@ -45,40 +45,15 @@
                 default = "user";
               };
 
-              # user.avatar
-              avatar = lib.mkOption {
-                type = lib.types.str;
-                default = "avatar.png";
-              };
-
               # user.home-directory
               home-directory = lib.mkOption {
                 type = lib.types.str;
-                # defalt declared below
-              };
-
-              # user.default-locale
-              default-locale = lib.mkOption {
-                type = lib.types.str;
-                default = "en_US.UTF-8";
+                # default declared below
               };
 
             };
           };
           default = { };
-        };
-
-        # user shell to use
-        shell = lib.mkOption {
-          type = lib.types.submodule {
-            options = {
-              # fish, bash, zsh, etc.
-              user-shell = lib.mkOption {
-                type = lib.types.str;
-                default = "pkgs.fish";
-              };
-            };
-          };
         };
 
         # git config
@@ -103,8 +78,8 @@
       };
 
       config = {
-        # Make `nixos-variables` available as a module argument to all NixOS
-        # modules (home-manager modules already get it via extraSpecialArgs).
+        # Make `user-parts` available as a module argument to all NixOS
+        # modules.
         _module.args.user-parts = config.nixos.user-parts;
         # sets user.home-directory's default value based on user.username's value
         nixos.user-parts.user = {

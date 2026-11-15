@@ -56,30 +56,18 @@
       ];
 
       virtualisation.docker.enable = true;
-      users.users.porta.extraGroups = [ "docker" ];
+      users.users.${user-parts.user.username}.extraGroups = [ "docker" ];
       boot = {
         loader = {
           grub = {
             enable = true;
             device = "nodev";
             efiSupport = true;
-            #double-minegrub-menu = {
-            #  enable = true;
-            #  main_menu_background = "random";
-            #  splash_text = "100% Declarative";
-            #  world_selection_background_scaled = "1920x1080";
-            #};
           };
           efi.canTouchEfiVariables = true;
           timeout = lib.mkDefault 5;
         };
-        #        initrd.systemd.enable = true;
-        #plymouth.plymouth-minecraft-theme.enable = true;
       };
-      # Minegrub supplies its own GRUB theme; don't layer Stylix's GRUB theme over it.
-      #stylix.targets.grub.enable = false;
-      # The local Minecraft theme supplies Plymouth's theme and assets.
-      #stylix.targets.plymouth.enable = false;
 
       hardware.enableRedistributableFirmware = true;
       hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
@@ -116,10 +104,6 @@
 
       services.fstrim.enable = true;
 
-      nixpkgs.config = {
-        allowBroken = true;
-        allowUnfree = true;
-      };
       # Display arrangement detected on fractal: HDMI-A-1 is primary,
       # with DP-2 immediately to its right.
       home-manager.users.${user-parts.user.username} = {

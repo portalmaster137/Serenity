@@ -1,4 +1,4 @@
-{ self, inputs, ... }:
+{ self, ... }:
 
 {
 
@@ -7,7 +7,6 @@
 
     {
       pkgs,
-      config,
       user-parts,
       ...
     }:
@@ -15,9 +14,6 @@
     {
 
       imports = [
-
-        # necessary for home manager function
-        inputs.home-manager.nixosModules.home-manager
 
         # select user theme
         self.nixosModules.theme-tokyo-night
@@ -31,9 +27,7 @@
       nixos.user-parts = {
         user = {
           username = "porta";
-          avatar = "../../assets/media/avatars/carpet.jpg";
           home-directory = "/home/porta/";
-          default-locale = "en_US.UTF-8";
         };
         git = {
           username = "Porta";

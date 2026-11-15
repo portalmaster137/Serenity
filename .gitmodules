@@ -1,0 +1,3 @@
+[submodule "vendor/minecraft-plymouth-theme"]
+	path = vendor/minecraft-plymouth-theme
+	url = https://github.com/nikp123/minecraft-plymouth-theme

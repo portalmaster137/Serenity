@@ -1,5 +1,5 @@
 # base level inputs and arguments, should only ever be self and/or inputs
-{ inputs, ... }:
+{ ... }:
 
 {
 
@@ -12,9 +12,6 @@
     # system level configuration options
     {
 
-      # import system level module for home manager functionality
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
-
       # opens network ports for syncthing
       networking.firewall = {
         allowedTCPPorts = [ 8384 ];
@@ -25,8 +22,6 @@
           iptables -I INPUT -p udp -m udp --match multiport --dports 1990,2021 -j ACCEPT
         '';
       };
-
-      
 
       # system level syncthing options go here
       services.syncthing = {
@@ -47,7 +42,6 @@
 
         # syncthing packages to include
         home.packages = with pkgs; [
-          syncthing # syncthing package
           git-sync # for sync version control
         ];
 

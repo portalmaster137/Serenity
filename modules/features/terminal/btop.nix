@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ ... }:
 
 {
 
@@ -8,9 +8,6 @@
     { pkgs, user-parts, ... }:
 
     {
-
-      # for home manager functionality
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
 
       environment.systemPackages = with pkgs; [
         btop

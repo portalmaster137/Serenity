@@ -14,9 +14,6 @@
 
     {
 
-      # needed for home manager functionality
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
-
       # editor variables
       environment.variables = {
         EDITOR = "hx";
@@ -32,8 +29,6 @@
 
       # home manager options
       home-manager.users.${user-parts.user.username} =
-
-        #{ config, ... }:
 
         {
 
@@ -61,10 +56,10 @@
 
             # helix plugins
             plugins = with pkgs.helixPlugins; [
-              smooth-scroll # allows smoother scrolling
-              show-keys # shows keypresses within helix
-              scooter # interactive find and replace
-              notify # notification popups for helix
+              smooth-scroll-hx # allows smoother scrolling
+              show-keys-hx # shows keypresses within helix
+              scooter-hx # interactive find and replace
+              notify-hx # notification popups for helix
             ];
 
             # lsp settings

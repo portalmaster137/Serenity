@@ -14,8 +14,6 @@
 
     {
 
-      # for home manager functionality
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
       # for latest niri versions
       nixpkgs.overlays = [ inputs.niri.overlays.niri ];
       # system packages for desktop environment
@@ -63,10 +61,7 @@
           getProportions =
             divisions:
             lib.lists.unique (
-              lib.lists.flatten (
-                # TODO: make this a callable function
-                map (x: map (y: { proportion = x / y; }) divisions) divisions
-              )
+              lib.lists.flatten (map (x: map (y: { proportion = x / y; }) divisions) divisions)
             );
           # then get all the unique outputs (removing double ups of 0.5 or others)
           columnWidths = getProportions widthDivisions;
@@ -231,14 +226,6 @@
                     to = "#80c8ff";
                   };
                 };
-                # used when increasing window size in steps
-                # disabled, using black magic above
-                #preset-column-widths = [
-                #{ proportion = 0.33; }
-                #{ proportion = 0.5; }
-                #{ proportion = 0.67; }
-                #{ proportion = 1.0; }
-                #];
               };
 
               layer-rules = [
@@ -331,8 +318,6 @@
                 "Mod+Q".repeat = false;
                 "Mod+O".action = toggle-overview;
                 "Mod+O".repeat = false;
-                #"Mod+Tab".action = spawn "${pkgs.wofi}/bin/wofi";
-                #"Mod+Tab".repeat = false; # launcher
                 "Mod+Return".action = spawn "${pkgs.kitty}/bin/kitty";
                 "Mod+Return".repeat = false; # terminal
                 # noctalia launcher

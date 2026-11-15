@@ -14,7 +14,6 @@
       imports = [
 
         # system level module for home manager functionality
-        inputs.home-manager.nixosModules.home-manager
 
         # module import for nixflix
         inputs.nixflix.nixosModules.default

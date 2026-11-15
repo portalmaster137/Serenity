@@ -1,4 +1,4 @@
-{ self, inputs, ... }:
+{ self, ... }:
 
 {
 
@@ -7,7 +7,6 @@
 
     {
       pkgs,
-      lib,
       user-parts,
       ...
     }:
@@ -22,9 +21,6 @@
 
         # desktop shell/status bar
         self.nixosModules.noctalia
-
-        # for home manager functionality
-        inputs.home-manager.nixosModules.home-manager
 
       ];
 

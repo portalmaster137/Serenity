@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ ... }:
 
 {
 
@@ -9,13 +9,8 @@
 
     {
 
-      # for home manager functionality
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
-
-      # adding shell packages to system, unsure if necessary
+      # Fish and Bash are installed by the system shell modules.
       environment.systemPackages = with pkgs; [
-        fish # primary shell
-        bash # backup shell
         alacritty
       ];
 
@@ -63,8 +58,6 @@
             ];
 
             # command aliases & abbreviations
-            shellAbbrs = {
-            };
             shellAliases = {
               rbu = "sudo systemctl reboot --firmware-setup";
             };
