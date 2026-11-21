@@ -17,7 +17,6 @@
       double-minegrub-menu
 
       # selected features for this desktop
-      network-proxy
       terminal
       terminal-emulator
       desktop
@@ -31,6 +30,7 @@
     {
       config,
       lib,
+      pkgs,
       user-parts,
       ...
     }:
@@ -43,7 +43,11 @@
         options = [ "nofail" ];
       };
 
-      networking.networkmanager.enable = true;
+      networking.networkmanager = {
+        enable = true;
+        plugins = [ pkgs.networkmanager-openvpn ];
+      };
+      environment.systemPackages = [ pkgs.openvpn ];
       networking.firewall.allowedTCPPorts = [
         22
         80

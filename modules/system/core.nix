@@ -136,6 +136,7 @@
         # tools
         nix-output-monitor # displays more info on nix commands
         steam-run # emulates fhs environment
+        mono # runtime and development tools for .NET Framework applications
         # Keep explicit entries to preserve their priority over system defaults.
         util-linux # filesystem and process utilities
         procps # process monitoring

@@ -52,6 +52,7 @@
           gnome-secrets # password manager
           file-roller # archive manager
           obsidian # note taking
+          thunderbird # email client
           nautilus # file manager
           swayimg # image viewer
           zathura # pdf viewer
